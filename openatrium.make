@@ -15,7 +15,7 @@ projects[boxes][download][module] = "contributions/modules/boxes"
 projects[boxes][download][revision] = "HEAD"
 
 projects[casetracker][subdir] = "contrib"
-projects[casetracker][version] = "1.0-beta4"
+projects[casetracker][version] = "1.0-beta5"
 
 projects[cck][subdir] = "contrib"
 projects[cck][version] = "2.6"
