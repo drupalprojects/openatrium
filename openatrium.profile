@@ -100,7 +100,7 @@ function _openatrium_atrium_modules() {
     // Determine fate of shoutbox.
     'messaging_shoutbox',
     // Notifications
-    // 'mail2web', 'mailhandler',
+    //'mailhandler', 'mailcomment',
     'notifications_team',
     // Content profile
     'content_profile',

@@ -71,10 +71,11 @@ projects[imagecache][version] = "2.0-beta10"
 projects[jquery_ui][subdir] = "contrib"
 projects[jquery_ui][version] = "1"
 
-; @TODO add mailcomment (previously mail2web)
+projects[mailcomment][subdir] = "contrib"
+projects[mailcomment][version] = "1.0-beta6"
 
 projects[mailhandler][subdir] = "contrib"
-projects[mailhandler][version] = "1.8"
+projects[mailhandler][version] = "1.10"
 
 projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.1"
