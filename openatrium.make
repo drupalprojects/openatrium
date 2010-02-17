@@ -167,7 +167,7 @@ projects[litenode][subdir] = "custom"
 
 projects[feedapi2feeds][type] = "module"
 projects[feedapi2feeds][download][type] = "git"
-projects[feedapi2feeds][download][url] = "git@github.com:lxbarth/FeedAPI2Feeds.git"
+projects[feedapi2feeds][download][url] = "git://github.com/lxbarth/FeedAPI2Feeds.git"
 projects[feedapi2feeds][subdir] = "custom"
 
 ; @TODO: determine the fate of messaging shoutbox.
