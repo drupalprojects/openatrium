@@ -176,19 +176,15 @@ projects[l10n_update][subdir] = "l10n"
 ;projects[l10n_update][version] = ?
 
 ; Themes
-projects[tao][type] = "theme"
-projects[tao][download][type] = "git"
-projects[tao][download][url] = "git://github.com/developmentseed/tao.git"
+projects[tao][location] = "http://code.developmentseed.org/fserver"
+projects[tao][version] = "1.9"
 
-projects[rubik][type] = "theme"
-projects[rubik][download][type] = "git"
-projects[rubik][download][url] = "git://github.com/developmentseed/rubik.git"
+projects[rubik][location] = "http://code.developmentseed.org/fserver"
+projects[rubik][version] = "1.0-beta6"
 
 projects[ginkgo][type] = "theme"
 projects[ginkgo][download][type] = "git"
 projects[ginkgo][download][url] = "git://github.com/developmentseed/ginkgo.git"
-
-; @TODO: scene subtheme
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
