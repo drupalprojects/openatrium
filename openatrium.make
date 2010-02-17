@@ -36,7 +36,7 @@ projects[context][download][module] = "contributions/modules/context"
 projects[context][download][revision] = "DRUPAL-6--3"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.2"
+projects[ctools][version] = "1.3"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.4"
@@ -87,7 +87,7 @@ projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "2.2"
 
 projects[notifications_team][subdir] = "contrib"
-projects[notifications_team][version] = "2.0-beta5"
+projects[notifications_team][version] = "2.0-beta6"
 
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.0"
@@ -138,7 +138,7 @@ projects[ucreate][download][module] = "contributions/modules/ucreate"
 projects[ucreate][download][revision] = "DRUPAL-6--1"
 
 projects[views_bulk_operations][subdir] = "contrib"
-projects[views_bulk_operations][version] = "1.8"
+projects[views_bulk_operations][version] = "1.9"
 
 ; Patched
 projects[views][subdir] = "contrib"
