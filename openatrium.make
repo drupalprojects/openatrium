@@ -1,4 +1,4 @@
-;$Id;
+; $Id$
 core = "6.x"
 
 ; Contrib projects 

@@ -1,4 +1,4 @@
-# $Id;
+# $Id$
 
 Open Atrium 1.0 Beta 4
 
