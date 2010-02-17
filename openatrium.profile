@@ -260,20 +260,6 @@ function _openatrium_intranet_configure() {
 
   // Set a default footer message.
   variable_set('site_footer', '&copy; 2009 '. l('Development Seed', 'http://www.developmentseed.org', array('absolute' => TRUE)));
-
-  // Revert key components that are overridden by others on install.
-  $revert = array(
-    'atrium' => array('user', 'variable', 'filter'),
-    'atrium_blog' => array('user', 'variable'),
-    'atrium_book' => array('user', 'variable'),
-    'atrium_calendar' => array('user', 'variable'),
-    'atrium_casetracker' => array('user', 'variable'),
-    'atrium_groups' => array('user', 'variable'),
-    'atrium_members' => array('user', 'variable'),
-    'atrium_profile' => array('user', 'variable'),
-    'atrium_shoutbox' => array('user', 'variable'),
-  );
-  features_revert($revert);
 }
 
 /**
@@ -301,6 +287,23 @@ function _openatrium_intranet_configure_check() {
   db_query("UPDATE {system} SET status = 0 WHERE type = 'theme' and name ='%s'", 'garland');
   db_query("UPDATE {system} SET status = 0 WHERE type = 'theme' and name ='%s'", 'ginkgo');
   variable_set('theme_default', 'ginkgo');
+
+  // Revert key components that are overridden by others on install.
+  // Note that this comes after all other processes have run, as some cache
+  // clears/rebuilds actually set variables or other settings that would count
+  // as overrides. See `og_node_type()`.
+  $revert = array(
+    'atrium' => array('user', 'variable', 'filter'),
+    'atrium_blog' => array('user', 'variable'),
+    'atrium_book' => array('user', 'variable'),
+    'atrium_calendar' => array('user', 'variable'),
+    'atrium_casetracker' => array('user', 'variable'),
+    'atrium_groups' => array('user', 'variable'),
+    'atrium_members' => array('user', 'variable'),
+    'atrium_profile' => array('user', 'variable'),
+    'atrium_shoutbox' => array('user', 'variable'),
+  );
+  features_revert($revert);
 }
 
 /**
