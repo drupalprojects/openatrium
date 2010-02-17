@@ -37,10 +37,10 @@ function openatrium_profile_modules() {
     'views', 'litenode',
     // OG
     'og', 'og_access', 'og_actions', 'og_views',
-    // Context
-    'context', 'context_ui', 'context_layouts',
     // CTools
     'ctools',
+    // Context
+    'context', 'context_ui', 'context_layouts',
     // Date
     'date_api', 'date_timezone',
     // Features
