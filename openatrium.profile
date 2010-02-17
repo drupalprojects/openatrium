@@ -142,6 +142,11 @@ function openatrium_profile_tasks(&$task, $url) {
 
   // Download and install translation if needed
   if ($task == 'profile') {
+    // Rebuild the language list.
+    // When running through the CLI, the static language list will be empty
+    // unless we repopulate it from the ,newly available, database.
+    language_list('name', TRUE);
+
     if (_openatrium_language_selected() && module_exists('atrium_translate')) {
       module_load_install('atrium_translate');
       if ($batch = atrium_translate_create_batch($install_locale, 'install')) {
