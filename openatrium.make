@@ -145,7 +145,7 @@ projects[views][subdir] = "contrib"
 projects[views][type] = "module"
 projects[views][download][type] = "cvs"
 projects[views][download][module] = "contributions/modules/views"
-projects[views][download][revision] = "DRUPAL-6--2"
+projects[views][download][revision] = "DRUPAL-6--2:2010-02-17"
 
 projects[views][patch][] = "http://drupal.org/files/issues/taxonomy_views_data_v2.patch"
 projects[views][patch][] = "http://drupal.org/files/issues/views_check_perm_callback_0.patch"
