@@ -233,3 +233,10 @@ libraries[jquery_ui][download][type] = "get"
 libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip"
 libraries[jquery_ui][directory_name] = "jquery.ui"
 libraries[jquery_ui][destination] = "modules/contrib/jquery_ui"
+
+; Translations for openatrium install profile
+libraries[translations][download][type] = "get"
+libraries[translations][download][url] = "https://translate.openatrium.com/sites/translate.openatrium.com/files/drupal-installer.tar.gz"
+libraries[translations][directory_name] = "translations"
+libraries[translations][destination] = .
+
