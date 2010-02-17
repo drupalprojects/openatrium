@@ -271,12 +271,7 @@ function _openatrium_intranet_configure_check() {
   // shown on install.
   node_access_rebuild();
 
-  // @TODO: Don't appear to be necessary for functional Atrium install.
-  // Determine if these were added for Aegir.
-
   // Rebuild key tables/caches
-  // module_rebuild_cache();
-  // drupal_get_schema(NULL, TRUE);
   drupal_flush_all_caches();
 
   // Set default theme. This must happen after drupal_flush_all_caches(), which
@@ -287,6 +282,12 @@ function _openatrium_intranet_configure_check() {
   db_query("UPDATE {system} SET status = 0 WHERE type = 'theme' and name ='%s'", 'garland');
   db_query("UPDATE {system} SET status = 0 WHERE type = 'theme' and name ='%s'", 'ginkgo');
   variable_set('theme_default', 'ginkgo');
+
+  // In Aegir install processes, we need to init strongarm manually as a
+  // separate page load isn't available to do this for us.
+  if (function_exists('strongarm_init')) {
+    strongarm_init();
+  }
 
   // Revert key components that are overridden by others on install.
   // Note that this comes after all other processes have run, as some cache
