@@ -121,32 +121,25 @@ projects[views][patch][] = "http://drupal.org/files/issues/views_default_reset.p
 projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/atrium_features/views2_simple_translatables.patch"
 
 ; Custom modules
-projects[litecal][type] = "module"
-projects[litecal][download][type] = "git"
-projects[litecal][download][url] = "git://github.com/developmentseed/litecal.git"
 projects[litecal][subdir] = "custom"
+projects[litecal][location] = "http://code.developmentseed.org/fserver"
+projects[litecal][version] = "1.0-alpha2"
 
-projects[litenode][type] = "module"
-projects[litenode][download][type] = "git"
-projects[litenode][download][url] = "git://github.com/developmentseed/litenode.git"
 projects[litenode][subdir] = "custom"
+projects[litenode][location] = "http://code.developmentseed.org/fserver"
+projects[litenode][version] = "1.0-alpha1"
 
-projects[feedapi2feeds][type] = "module"
-projects[feedapi2feeds][download][type] = "git"
-projects[feedapi2feeds][download][url] = "git://github.com/lxbarth/FeedAPI2Feeds.git"
 projects[feedapi2feeds][subdir] = "custom"
+projects[feedapi2feeds][location] = "http://code.developmentseed.org/fserver"
+projects[feedapi2feeds][version] = "1.0-alpha1"
 
-; @TODO: determine the fate of messaging shoutbox.
-
-projects[seed][type] = "module"
-projects[seed][download][type] = "git"
-projects[seed][download][url] = "git://github.com/developmentseed/seed.git"
 projects[seed][subdir] = "custom"
+projects[seed][location] = "http://code.developmentseed.org/fserver"
+projects[seed][version] = "4.1"
 
-projects[xref][type] = "module"
-projects[xref][download][type] = "git"
-projects[xref][download][url] = "git://github.com/developmentseed/xref.git"
 projects[xref][subdir] = "custom"
+projects[xref][location] = "http://code.developmentseed.org/fserver"
+projects[xref][version] = "1.0-alpha1"
 
 ; Development modules
 projects[coder][subdir] = "developer"
