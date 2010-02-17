@@ -96,10 +96,7 @@ projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "2.1"
 
 projects[ucreate][subdir] = "contrib"
-projects[ucreate][type] = "module"
-projects[ucreate][download][type] = "cvs"
-projects[ucreate][download][module] = "contributions/modules/ucreate"
-projects[ucreate][download][revision] = "DRUPAL-6--1"
+projects[ucreate][version] = "1.0-beta3"
 
 projects[views_bulk_operations][subdir] = "contrib"
 projects[views_bulk_operations][version] = "1.9"
@@ -169,8 +166,11 @@ projects[atrium_features][download][type] = "git"
 projects[atrium_features][download][url] = "git://github.com/developmentseed/atrium_features.git"
 
 ; l10n
-; No version for core_translation as there's only a 1.x-dev release node, no workies with Drush Make
 projects[core_translation][subdir] = "l10n"
+projects[core_translation][type] = "module"
+projects[core_translation][download][type] = "cvs"
+projects[core_translation][download][module] = "contributions/modules/core_translation"
+projects[core_translation][download][revision] = "HEAD:2010-02-17"
 
 projects[l10n_client][subdir] = "l10n"
 projects[l10n_client][version] = "1.7"
