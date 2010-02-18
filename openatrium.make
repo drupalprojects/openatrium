@@ -169,11 +169,9 @@ projects[core_translation][download][revision] = "HEAD:2010-02-17"
 projects[l10n_client][subdir] = "l10n"
 projects[l10n_client][version] = "1.7"
 
-projects[l10n_update][type] = "module"
-projects[l10n_update][download][type] = "git"
-projects[l10n_update][download][url] = "git://github.com/developmentseed/l10n_update.git"
 projects[l10n_update][subdir] = "l10n"
-;projects[l10n_update][version] = ?
+projects[l10n_update][location] = "http://code.developmentseed.org/fserver"
+projects[l10n_update][version] = "1.0-alpha1"
 
 ; Themes
 projects[tao][location] = "http://code.developmentseed.org/fserver"
