@@ -156,7 +156,7 @@ projects[simpletest][version] = "2.8"
 
 ; Features
 projects[atrium_features][location] = "http://code.developmentseed.org/fserver"
-projects[atrium_features][version] = "1.0-alpha2"
+projects[atrium_features][version] = "1.0-alpha3"
 
 ; l10n
 projects[core_translation][subdir] = "l10n"
@@ -180,7 +180,7 @@ projects[rubik][location] = "http://code.developmentseed.org/fserver"
 projects[rubik][version] = "1.0-beta6"
 
 projects[ginkgo][location] = "http://code.developmentseed.org/fserver"
-projects[ginkgo][version] = "1.0-alpha2"
+projects[ginkgo][version] = "1.0-alpha3"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
