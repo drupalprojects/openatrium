@@ -10,7 +10,11 @@ projects[boxes][subdir] = "contrib"
 projects[boxes][version] = "1.0-beta2"
 
 projects[casetracker][subdir] = "contrib"
-projects[casetracker][version] = "1.0-beta5"
+; projects[casetracker][version] = "1.0-beta5"
+projects[casetracker][type] = "module"
+projects[casetracker][download][type] = "cvs"
+projects[casetracker][download][module] = "contributions/modules/casetracker"
+projects[casetracker][download][revision] = "DRUPAL-6--1"
 
 projects[cck][subdir] = "contrib"
 projects[cck][version] = "2.6"
