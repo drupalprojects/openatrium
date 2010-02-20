@@ -109,6 +109,7 @@ projects[views_bulk_operations][version] = "1.9"
 ; Patched
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.0"
+; http://drupal.org/node/701420
 projects[og][patch][] = "http://drupal.org/files/issues/og_views_managelink_groupcontext.patch"
 
 projects[views][subdir] = "contrib"
@@ -116,12 +117,17 @@ projects[views][type] = "module"
 projects[views][download][type] = "cvs"
 projects[views][download][module] = "contributions/modules/views"
 projects[views][download][revision] = "DRUPAL-6--2:2010-02-17"
-
+; http://drupal.org/node/488314
 projects[views][patch][] = "http://drupal.org/files/issues/taxonomy_views_data_v2.patch"
-projects[views][patch][] = "http://drupal.org/files/issues/views_check_perm_callback_0.patch"
+; http://drupal.org/node/673852
+projects[views][patch][] = "http://drupal.org/files/issues/673852_views_check_perm_callback.patch"
+; http://drupal.org/node/621980
 projects[views][patch][] = "http://drupal.org/files/issues/views_namespaced_tabs_v2.patch"
+; http://drupal.org/node/684656
 projects[views][patch][] = "http://drupal.org/files/issues/compare_views_block_hash.patch"
+; http://drupal.org/node/694094
 projects[views][patch][] = "http://drupal.org/files/issues/views_default_reset.patch"
+; original issue: http://drupal.org/node/357529
 projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/atrium_features/views2_simple_translatables.patch"
 
 ; Custom modules
