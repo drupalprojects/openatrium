@@ -29,7 +29,11 @@ projects[content_profile][subdir] = "contrib"
 projects[content_profile][version] = "1.0-beta4"
 
 projects[context][subdir] = "contrib"
-projects[context][version] = "3.0-beta2"
+; projects[context][version] = "3.0-beta2"
+projects[context][type] = "module"
+projects[context][download][type] = "cvs"
+projects[context][download][module] = "contributions/modules/context"
+projects[context][download][revision] = "DRUPAL-6--3"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.3"
