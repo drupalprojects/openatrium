@@ -35,9 +35,6 @@ projects[context][download][type] = "cvs"
 projects[context][download][module] = "contributions/modules/context"
 projects[context][download][revision] = "DRUPAL-6--3"
 
-projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.3"
-
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.4"
 
@@ -111,6 +108,11 @@ projects[views_bulk_operations][subdir] = "contrib"
 projects[views_bulk_operations][version] = "1.9"
 
 ; Patched
+projects[ctools][subdir] = "contrib"
+projects[ctools][version] = "1.3"
+; http://drupal.org/node/716288
+projects[ctools][patch][] = "http://drupal.org/files/issues/716288-1_clear_caches.patch"
+
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.0"
 ; http://drupal.org/node/701420
