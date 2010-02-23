@@ -112,7 +112,7 @@ projects[ctools][patch][] = "http://drupal.org/files/issues/716288-1_clear_cache
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.0"
 ; http://drupal.org/node/701420
-projects[og][patch][] = "http://drupal.org/files/issues/og_views_managelink_groupcontext.patch"
+projects[og][patch][] = "http://drupal.org/files/issues/701420_2010-02-23.patch"
 
 projects[views][subdir] = "contrib"
 projects[views][type] = "module"
