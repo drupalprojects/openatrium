@@ -113,14 +113,21 @@ projects[views_bulk_operations][version] = "1.9"
 
 ; Patched
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.3"
+projects[ctools][download][type] = "cvs"
+projects[ctools][download][module] = "contributions/modules/ctools"
+projects[ctools][download][revision] = "DRUPAL-6--1:2010-02-28"
+; http://drupal.org/node/728508
+projects[ctools][patch][] = "http://drupal.org/files/issues/ctools_plugin_static_cache.patch"
+; Patch below committed to CTools on Feb 23.
 ; http://drupal.org/node/716288
-projects[ctools][patch][] = "http://drupal.org/files/issues/716288-1_clear_caches.patch"
+; projects[ctools][patch][] = "http://drupal.org/files/issues/716288-1_clear_caches.patch"
 
 projects[og][subdir] = "contrib"
-projects[og][version] = "2.0"
+projects[og][download][type] = "cvs"
+projects[og][download][module] = "contributions/modules/og"
+projects[og][download][revision] = "DRUPAL-6--2:2010-02-28"
 ; http://drupal.org/node/701420
-projects[og][patch][] = "http://drupal.org/files/issues/701420_2010-02-23.patch"
+projects[og][patch][] = "http://drupal.org/files/issues/701420_2010-02-28.patch"
 
 projects[views][subdir] = "contrib"
 projects[views][type] = "module"
