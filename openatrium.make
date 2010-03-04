@@ -59,6 +59,9 @@ projects[imagecache][version] = "2.0-beta10"
 projects[jquery_ui][subdir] = "contrib"
 projects[jquery_ui][version] = "1"
 
+projects[libraries][subdir] = "contrib"
+projects[libraries][version] = "1.0-alpha1"
+
 projects[mailcomment][subdir] = "contrib"
 projects[mailcomment][version] = "1.0"
 

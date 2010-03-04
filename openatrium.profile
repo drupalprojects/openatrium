@@ -51,6 +51,8 @@ function openatrium_profile_modules() {
     'token',
     // Transliteration
     'transliteration',
+    // Libraries
+    'libraries',
     // Messaging
     'messaging', 'messaging_mail',
     // Notifications
