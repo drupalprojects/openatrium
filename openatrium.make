@@ -7,7 +7,11 @@ projects[admin][subdir] = "contrib"
 projects[admin][version] = "2.0-beta2"
 
 projects[boxes][subdir] = "contrib"
-projects[boxes][version] = "1.0-beta3"
+; projects[boxes][version] = "1.0-beta3"
+projects[boxes][type] = "module"
+projects[boxes][download][type] = "cvs"
+projects[boxes][download][module] = "contributions/modules/boxes"
+projects[boxes][download][revision] = "HEAD"
 
 projects[casetracker][subdir] = "contrib"
 projects[casetracker][version] = "1.0-beta6"
