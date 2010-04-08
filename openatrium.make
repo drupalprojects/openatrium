@@ -140,17 +140,8 @@ projects[og][patch][] = "http://drupal.org/files/issues/701420_2010-02-28.patch"
 projects[views][subdir] = "contrib"
 projects[views][type] = "module"
 projects[views][version] = "2.9"
-;projects[views][download][type] = "cvs"
-;projects[views][download][module] = "contributions/modules/views"
-;projects[views][download][revision] = "DRUPAL-6--2:2010-02-17"
 ; http://drupal.org/node/488314
 projects[views][patch][] = "http://drupal.org/files/issues/taxonomy_views_data_v2.patch"
-; http://drupal.org/node/673852
-;projects[views][patch][] = "http://drupal.org/files/issues/673852_views_check_perm_callback.patch"
-; http://drupal.org/node/621980
-;projects[views][patch][] = "http://drupal.org/files/issues/views_namespaced_tabs_v2.patch"
-; http://drupal.org/node/684656
-;projects[views][patch][] = "http://drupal.org/files/issues/compare_views_block_hash.patch"
 ; http://drupal.org/node/694094
 projects[views][patch][] = "http://drupal.org/files/issues/views_default_reset.patch"
 ; original issue: http://drupal.org/node/357529
