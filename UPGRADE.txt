@@ -1,5 +1,19 @@
 # $Id$
 
+Upgrading to Atrium 1.0 beta 6
+==============================
+
+_note: If upgrading a version older than beta 4, update to beta 4 first_
+
+1. Backup both the code and database.
+
+2. Replace your Atrium codebase, be sure to preserve the files directory.
+
+3. Clear your caches
+
+4. Run any database updates.
+
+
 Upgrading from Atrium 1.0-beta3.x to 1.0-beta4
 ==============================================
 
