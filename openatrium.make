@@ -52,7 +52,7 @@ projects[features][download][module] = "contributions/modules/features"
 projects[features][download][revision] = "DRUPAL-6--1"
 
 projects[feeds][subdir] = "contrib"
-projects[feeds][version] = "1.0-alpha12"
+projects[feeds][version] = "1.0-alpha13"
 
 projects[imageapi][subdir] = "contrib"
 projects[imageapi][version] = "1.6"
