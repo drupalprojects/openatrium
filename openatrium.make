@@ -11,7 +11,7 @@ projects[boxes][subdir] = "contrib"
 projects[boxes][type] = "module"
 projects[boxes][download][type] = "cvs"
 projects[boxes][download][module] = "contributions/modules/boxes"
-projects[boxes][download][revision] = "HEAD"
+projects[boxes][download][revision] = "DRUPAL-6--1"
 
 projects[casetracker][subdir] = "contrib"
 projects[casetracker][version] = "1.0-beta6"
