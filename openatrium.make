@@ -35,6 +35,9 @@ projects[context][download][type] = "cvs"
 projects[context][download][module] = "contributions/modules/context"
 projects[context][download][revision] = "DRUPAL-6--3"
 
+projects[ctools][subdir] = "contrib"
+projects[ctools][version] = "1.4"
+
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.4"
 
@@ -84,6 +87,9 @@ projects[notifications][version] = "2.2"
 projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.0-beta6"
 
+projects[og][subdir] = "contrib"
+projects[og][version] = "2.1"
+
 projects[openidadmin][subdir] = "contrib"
 projects[openidadmin][version] = "1.2"
 
@@ -120,30 +126,11 @@ projects[ucreate][subdir] = "contrib"
 projects[ucreate][version] = "1.0-beta3"
 
 ; Patched
-projects[ctools][subdir] = "contrib"
-projects[ctools][download][type] = "cvs"
-projects[ctools][download][module] = "contributions/modules/ctools"
-projects[ctools][download][revision] = "DRUPAL-6--1:2010-02-28"
-; http://drupal.org/node/728508
-projects[ctools][patch][] = "http://drupal.org/files/issues/ctools_plugin_static_cache.patch"
-; Patch below committed to CTools on Feb 23.
-; http://drupal.org/node/716288
-; projects[ctools][patch][] = "http://drupal.org/files/issues/716288-1_clear_caches.patch"
-
-projects[og][subdir] = "contrib"
-projects[og][download][type] = "cvs"
-projects[og][download][module] = "contributions/modules/og"
-projects[og][download][revision] = "DRUPAL-6--2:2010-02-28"
-; http://drupal.org/node/701420
-projects[og][patch][] = "http://drupal.org/files/issues/701420_2010-02-28.patch"
-
 projects[views][subdir] = "contrib"
 projects[views][type] = "module"
 projects[views][version] = "2.10"
-; http://drupal.org/node/488314
-projects[views][patch][] = "http://drupal.org/files/issues/taxonomy_views_data_v2.patch"
 ; http://drupal.org/node/694094
-projects[views][patch][] = "http://drupal.org/files/issues/views_default_reset.patch"
+projects[views][patch][] = "http://drupal.org/files/issues/694094_views_default_reset_2010-05-25.patch"
 ; original issue: http://drupal.org/node/357529
 projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/atrium_features/views2_simple_translatables.patch"
 
