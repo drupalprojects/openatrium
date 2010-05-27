@@ -43,7 +43,7 @@ projects[features][subdir] = "contrib"
 projects[features][version] = "1.0-beta7"
 
 projects[feeds][subdir] = "contrib"
-projects[feeds][version] = "1.0-alpha13"
+projects[feeds][version] = "1.0-alpha15"
 
 projects[imageapi][subdir] = "contrib"
 projects[imageapi][version] = "1.6"
