@@ -88,7 +88,7 @@ projects[prepopulate][subdir] = "contrib"
 projects[prepopulate][version] = "1.1"
 
 projects[purl][subdir] = "contrib"
-projects[purl][version] = "1.0-beta11"
+projects[purl][version] = "1.0-beta12"
 
 projects[spaces][subdir] = "contrib"
 projects[spaces][version] = "3.0-beta4"
