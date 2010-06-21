@@ -4,7 +4,7 @@ core = "6.x"
 ; Contrib projects 
 
 projects[admin][subdir] = "contrib"
-projects[admin][version] = "2.0-beta2"
+projects[admin][version] = "2.0-beta3"
 
 projects[boxes][subdir] = "contrib"
 projects[boxes][version] = "1.0-beta6"
@@ -13,7 +13,7 @@ projects[casetracker][subdir] = "contrib"
 projects[casetracker][version] = "1.0-beta7"
 
 projects[cck][subdir] = "contrib"
-projects[cck][version] = "2.6"
+projects[cck][version] = "2.7"
 
 projects[codefilter][subdir] = "contrib"
 projects[codefilter][version] = "1.0"
@@ -22,13 +22,13 @@ projects[comment_upload][subdir] = "contrib"
 projects[comment_upload][version] = "1.0-alpha5"
 
 projects[content_profile][subdir] = "contrib"
-projects[content_profile][version] = "1.0-beta4"
+projects[content_profile][version] = "1.0"
 
 projects[context][subdir] = "contrib"
 projects[context][version] = "3.0-beta5"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.4"
+projects[ctools][version] = "1.6"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.4"
@@ -40,13 +40,13 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1-alpha3"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0-beta7"
+projects[features][version] = "1.0-beta8"
 
 projects[feeds][subdir] = "contrib"
-projects[feeds][version] = "1.0-alpha15"
+projects[feeds][version] = "1.0-alpha16"
 
 projects[imageapi][subdir] = "contrib"
-projects[imageapi][version] = "1.6"
+projects[imageapi][version] = "1.8"
 
 projects[imagecache][subdir] = "contrib"
 projects[imagecache][version] = "2.0-beta10"
@@ -64,7 +64,7 @@ projects[mailhandler][subdir] = "contrib"
 projects[mailhandler][version] = "1.10"
 
 projects[markdown][subdir] = "contrib"
-projects[markdown][version] = "1.1"
+projects[markdown][version] = "1.2"
 
 projects[messaging][subdir] = "contrib"
 projects[messaging][version] = "2.2"
@@ -97,7 +97,7 @@ projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0-rc1"
 
 projects[token][subdir] = "contrib"
-projects[token][version] = "1.12"
+projects[token][version] = "1.13"
 
 projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "2.1"
@@ -108,7 +108,7 @@ projects[ucreate][version] = "1.0-beta3"
 ; Patched
 projects[views][subdir] = "contrib"
 projects[views][type] = "module"
-projects[views][version] = "2.10"
+projects[views][version] = "2.11"
 ; http://drupal.org/node/694094
 projects[views][patch][] = "http://drupal.org/files/issues/694094_views_default_reset_2010-05-25.patch"
 ; original issue: http://drupal.org/node/357529
@@ -117,7 +117,7 @@ projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/at
 ; Custom modules
 projects[litecal][subdir] = "custom"
 projects[litecal][location] = "http://code.developmentseed.org/fserver"
-projects[litecal][version] = "1.0-alpha2"
+projects[litecal][version] = "1.0-alpha3"
 
 projects[litenode][subdir] = "custom"
 projects[litenode][location] = "http://code.developmentseed.org/fserver"
@@ -140,13 +140,13 @@ projects[coder][subdir] = "developer"
 projects[coder][version] = "2.0-beta1"
 
 projects[devel][subdir] = "developer"
-projects[devel][version] = "1.18"
+projects[devel][version] = "1.20"
 
 projects[schema][subdir] = "developer"
 projects[schema][version] = "1.7"
 
 projects[simpletest][subdir] = "developer"
-projects[simpletest][version] = "2.8"
+projects[simpletest][version] = "2.10"
 
 ; Features
 ; projects[atrium_features][location] = "http://code.developmentseed.org/fserver"
