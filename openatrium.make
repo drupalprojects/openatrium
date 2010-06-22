@@ -7,7 +7,7 @@ projects[admin][subdir] = "contrib"
 projects[admin][version] = "2.0-beta3"
 
 projects[boxes][subdir] = "contrib"
-projects[boxes][version] = "1.0-beta7"
+projects[boxes][version] = "1.0-beta8"
 
 projects[casetracker][subdir] = "contrib"
 projects[casetracker][version] = "1.0-beta7"
