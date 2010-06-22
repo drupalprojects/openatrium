@@ -1,6 +1,6 @@
 # $Id$
 
-Upgrading to Atrium 1.0 beta 6
+Upgrading to Atrium 1.0 beta 7
 ==============================
 
 _note: If upgrading a version older than beta 4, update to beta 4 first_
