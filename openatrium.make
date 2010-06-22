@@ -31,7 +31,11 @@ projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.6"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.4"
+;projects[date][version] = "2.4"
+projects[date][type] = "module"
+projects[date][download][type] = "cvs"
+projects[date][download][module] = "contributions/modules/date"
+projects[date][download][revision] = "DRUPAL-6--2:2010-06-20"
 
 projects[designkit][subdir] = "contrib"
 projects[designkit][version] = "1.0-alpha5"
