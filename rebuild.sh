@@ -40,6 +40,8 @@ EOF
       if [ $TAG = "(none)" ]; then
         TAG="HEAD"
         VERSION="head"
+      elif [ $TAG = "HEAD" ]; then
+        VERSION="head"
       else
         VERSION="${TAG:10}"
       fi
