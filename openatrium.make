@@ -7,7 +7,7 @@ projects[admin][subdir] = "contrib"
 projects[admin][version] = "2.0-beta3"
 
 projects[boxes][subdir] = "contrib"
-projects[boxes][version] = "1.0-beta8"
+projects[boxes][version] = "1.0-beta9"
 
 projects[casetracker][subdir] = "contrib"
 projects[casetracker][version] = "1.0-beta7"
@@ -40,7 +40,7 @@ projects[features][subdir] = "contrib"
 projects[features][version] = "1.0-beta8"
 
 projects[feeds][subdir] = "contrib"
-projects[feeds][version] = "1.0-alpha16"
+projects[feeds][version] = "1.0-beta1"
 
 projects[imageapi][subdir] = "contrib"
 projects[imageapi][version] = "1.8"
