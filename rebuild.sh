@@ -39,9 +39,12 @@ EOF
     if [ -n $TAG ]; then
       if [ $TAG = "(none)" ]; then
         TAG="HEAD"
+        VERSION="head"
+      else
+        VERSION="${TAG:10}"
       fi
       MAKE="$MAKE $TAG\n"
-      NAME=`echo "openatrium-$TAG" | tr '[:upper:]' '[:lower:]'`
+      NAME=`echo "atrium-$VERSION" | tr '[:upper:]' '[:lower:]'`
       echo $MAKE | drush make --yes --tar - $NAME
     else
       echo 'Could not determine CVS tag. Is openatium.make a CVS checkout?'
