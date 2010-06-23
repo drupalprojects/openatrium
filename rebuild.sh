@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This command expects to be run within the Open Atrium profile directory. To
 # generate a full distribution you it must be a CVS checkout.
@@ -7,11 +7,11 @@
 #
 
 if [ -f openatrium.make ]; then
-  echo "\nThis command can be used to run openatrium.make in place, or to generate"
-  echo "a complete distribution of Open Atrium.\n\nWhich would you like?"
+  echo -e "\nThis command can be used to run openatrium.make in place, or to generate"
+  echo -e "a complete distribution of Open Atrium.\n\nWhich would you like?"
   echo "  [1] Rebuild Open Atrium in place."
   echo "  [2] Build a full Open Atrium distribution"
-  echo "Selection: \c"
+  echo -e "Selection: \c"
   read SELECTION
 
   if [ $SELECTION = "1" ]; then
@@ -45,7 +45,7 @@ EOF
       fi
       MAKE="$MAKE $TAG\n"
       NAME=`echo "atrium-$VERSION" | tr '[:upper:]' '[:lower:]'`
-      echo $MAKE | drush make --yes --tar - $NAME
+      echo -e $MAKE | drush make --yes --tar - $NAME
     else
       echo 'Could not determine CVS tag. Is openatium.make a CVS checkout?'
     fi
@@ -53,5 +53,5 @@ EOF
    echo "Invalid selection."
   fi
 else
-  echo 'Could not locate file "openatrium.make'
+  echo 'Could not locate file "openatrium.make"'
 fi
