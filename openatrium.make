@@ -4,7 +4,7 @@ core = "6.x"
 ; Contrib projects 
 
 projects[admin][subdir] = "contrib"
-projects[admin][version] = "2.0-beta3"
+projects[admin][version] = "2.0-beta4"
 
 projects[boxes][subdir] = "contrib"
 projects[boxes][version] = "1.0-beta9"
@@ -153,11 +153,8 @@ projects[simpletest][subdir] = "developer"
 projects[simpletest][version] = "2.10"
 
 ; Features
-; projects[atrium_features][location] = "http://code.developmentseed.org/fserver"
-; projects[atrium_features][version] = "1.0-alpha4"
-projects[atrium_features][type] = "module"
-projects[atrium_features][download][type] = "git"
-projects[atrium_features][download][url] = "git://github.com/developmentseed/atrium_features.git"
+projects[atrium_features][location] = "http://code.developmentseed.org/fserver"
+projects[atrium_features][version] = "1.0-alpha5"
 
 ; l10n
 projects[core_translation][subdir] = "l10n"
