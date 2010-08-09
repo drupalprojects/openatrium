@@ -286,7 +286,7 @@ function _openatrium_intranet_configure_check() {
     'atrium_blog' => array('user_permission', 'variable'),
     'atrium_book' => array('user_permission', 'variable'),
     'atrium_calendar' => array('user_permission', 'variable'),
-    'atrium_casetracker' => array('user', 'variable'),
+    'atrium_casetracker' => array('user_permission', 'variable'),
     'atrium_groups' => array('user_permission', 'variable'),
     'atrium_members' => array('user_permission', 'variable'),
     'atrium_profile' => array('user_permission', 'variable'),
