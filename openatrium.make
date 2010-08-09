@@ -4,13 +4,10 @@ core = "6.x"
 ; Contrib projects 
 
 projects[admin][subdir] = "contrib"
-projects[admin][version] = "2.0-beta5"
+projects[admin][version] = "2.0-beta6"
 
 projects[boxes][subdir] = "contrib"
-projects[boxes][type] = "module"
-projects[boxes][download][type] = "cvs"
-projects[boxes][download][module] = "contributions/modules/boxes"
-projects[boxes][download][revision] = "DRUPAL-6--1"
+projects[boxes][version] = "1.0-beta11"
 
 projects[casetracker][subdir] = "contrib"
 projects[casetracker][version] = "1.0-beta8"
@@ -28,10 +25,7 @@ projects[content_profile][subdir] = "contrib"
 projects[content_profile][version] = "1.0"
 
 projects[context][subdir] = "contrib"
-projects[context][type] = "module"
-projects[context][download][type] = "cvs"
-projects[context][download][module] = "contributions/modules/context"
-projects[context][download][revision] = "DRUPAL-6--3"
+projects[context][version] = "3.0-beta8"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
@@ -43,10 +37,7 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1-alpha3"
 
 projects[features][subdir] = "contrib"
-projects[features][type] = "module"
-projects[features][download][type] = "cvs"
-projects[features][download][module] = "contributions/modules/features"
-projects[features][download][revision] = "DRUPAL-6--1"
+projects[features][version] = "1.0-beta12"
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta4"
@@ -103,7 +94,7 @@ projects[spaces][download][module] = "contributions/modules/spaces"
 projects[spaces][download][revision] = "DRUPAL-6--3"
 
 projects[strongarm][subdir] = "contrib"
-projects[strongarm][version] = "2.0-rc1"
+projects[strongarm][version] = "2.0"
 
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.13"
