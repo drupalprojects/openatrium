@@ -99,15 +99,13 @@ function _openatrium_atrium_modules() {
     'content', 'nodereference', 'text', 'optionwidgets',
     // Feeds
     'feeds', 'parser_ical',
-    // Determine fate of shoutbox.
-    'messaging_shoutbox',
     // Notifications
     //'mailhandler', 'mailcomment',
     'notifications_team',
     // Content profile
     'content_profile',
     // Atrium features
-    'atrium', 'atrium_blog', 'atrium_book', 'atrium_calendar', 'atrium_casetracker', 'atrium_groups', 'atrium_members', 'atrium_profile', 'atrium_shoutbox',
+    'atrium', 'atrium_activity', 'atrium_blog', 'atrium_book', 'atrium_calendar', 'atrium_casetracker', 'atrium_groups', 'atrium_members', 'atrium_profile', 'atrium_shoutbox',
     // Dashboard
     'spaces_dashboard', 'jquery_ui',
     // Formats
@@ -241,21 +239,6 @@ function _openatrium_intranet_configure() {
   // Create user picture directory
   $picture_path = file_create_path(variable_get('user_picture_path', 'pictures'));
   file_check_directory($picture_path, 1, 'user_picture_path');
-
-  // Create freetagging vocab
-  $vocab = array(
-    'name' => 'Keywords',
-    'multiple' => 0,
-    'required' => 0,
-    'hierarchy' => 0,
-    'relations' => 0,
-    'module' => 'event',
-    'weight' => 0,
-    'nodes' => array('blog' => 1, 'book' => 1, 'casetracker_basic_case' => 1, 'casetracker_basic_project' => 1, 'event' => 1),
-    'tags' => TRUE,
-    'help' => t('Enter tags related to your post.'),
-  );
-  taxonomy_save_vocabulary($vocab);
 
   // Set time zone
   // @TODO: This is not sufficient. We either need to display a message or
