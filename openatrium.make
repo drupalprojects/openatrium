@@ -103,7 +103,10 @@ projects[purl][subdir] = "contrib"
 projects[purl][version] = "1.0-beta12"
 
 projects[reldate][subdir] = "contrib"
-projects[reldate][version] = "1.0-beta1"
+projects[reldate][type] = "module"
+projects[reldate][download][type] = "cvs"
+projects[reldate][download][module] = "contributions/modules/reldate"
+projects[reldate][download][revision] = "DRUPAL-6--1"
 
 projects[spaces][subdir] = "contrib"
 projects[spaces][type] = "module"
