@@ -48,6 +48,15 @@ projects[imageapi][version] = "1.8"
 projects[imagecache][subdir] = "contrib"
 projects[imagecache][version] = "2.0-beta10"
 
+projects[imagecache_profiles][subdir] = "contrib"
+projects[imagecache_profiles][version] = "1.3"
+
+projects[itweak_upload][subdir] = "contrib"
+projects[itweak_upload][type] = "module"
+projects[itweak_upload][download][type] = "cvs"
+projects[itweak_upload][download][module] = "contributions/modules/itweak_upload"
+projects[itweak_upload][download][revision] = "DRUPAL-6--2-4"
+
 projects[jquery_ui][subdir] = "contrib"
 projects[jquery_ui][version] = "1"
 
@@ -65,6 +74,9 @@ projects[markdown][version] = "1.2"
 
 projects[messaging][subdir] = "contrib"
 projects[messaging][version] = "2.2"
+
+projects[nodeformcols][subdir] = "contrib"
+projects[nodeformcols][version] = "1.6"
 
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "2.2"
@@ -124,6 +136,11 @@ projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/at
 projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_module.patch"
 
 ; Custom modules
+projects[crayon][subdir] = "custom"
+projects[crayon][type] = "module"
+projects[crayon][download][type] = "git"
+projects[crayon][download][url] = "git://github.com/developmentseed/crayon.git"
+
 projects[litecal][subdir] = "custom"
 projects[litecal][location] = "http://code.developmentseed.org/fserver"
 projects[litecal][version] = "1.0-alpha3"
@@ -137,9 +154,10 @@ projects[feedapi2feeds][subdir] = "custom"
 projects[feedapi2feeds][location] = "http://code.developmentseed.org/fserver"
 projects[feedapi2feeds][version] = "1.0-alpha1"
 
-projects[seed][subdir] = "custom"
-projects[seed][location] = "http://code.developmentseed.org/fserver"
-projects[seed][version] = "4.2"
+projects[reldate][subdir] = "custom"
+projects[reldate][type] = "module"
+projects[reldate][download][type] = "git"
+projects[reldate][download][url] = "git://github.com/developmentseed/reldate.git"
 
 projects[xref][subdir] = "custom"
 projects[xref][location] = "http://code.developmentseed.org/fserver"
@@ -179,10 +197,11 @@ projects[l10n_update][version] = "1.0-alpha1"
 
 ; Themes
 projects[tao][location] = "http://code.developmentseed.org/fserver"
-projects[tao][version] = "2.1"
+projects[tao][version] = "2.2"
 
-projects[rubik][location] = "http://code.developmentseed.org/fserver"
-projects[rubik][version] = "2.0-beta2"
+projects[rubik][type] = "theme"
+projects[rubik][download][type] = "git"
+projects[rubik][download][url] = "git://github.com/developmentseed/rubik.git"
 
 projects[ginkgo][type] = "theme"
 projects[ginkgo][download][type] = "git"
