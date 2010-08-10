@@ -27,6 +27,9 @@ projects[content_profile][version] = "1.0"
 projects[context][subdir] = "contrib"
 projects[context][version] = "3.0-beta8"
 
+projects[crayon][subdir] = "contrib"
+projects[crayon][version] = "1.0-beta1"
+
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
 
@@ -99,6 +102,9 @@ projects[prepopulate][version] = "1.1"
 projects[purl][subdir] = "contrib"
 projects[purl][version] = "1.0-beta12"
 
+projects[reldate][subdir] = "contrib"
+projects[reldate][version] = "1.0-beta1"
+
 projects[spaces][subdir] = "contrib"
 projects[spaces][type] = "module"
 projects[spaces][download][type] = "cvs"
@@ -136,14 +142,10 @@ projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/at
 projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_module.patch"
 
 ; Custom modules
-projects[crayon][subdir] = "custom"
-projects[crayon][type] = "module"
-projects[crayon][download][type] = "git"
-projects[crayon][download][url] = "git://github.com/developmentseed/crayon.git"
-
 projects[litecal][subdir] = "custom"
-projects[litecal][location] = "http://code.developmentseed.org/fserver"
-projects[litecal][version] = "1.0-alpha3"
+projects[litecal][type] = "module"
+projects[litecal][download][type] = "git"
+projects[litecal][download][url] = "git://github.com/developmentseed/litecal.git"
 
 projects[litenode][subdir] = "custom"
 projects[litenode][type] = "module"
@@ -153,11 +155,6 @@ projects[litenode][download][url] = "git://github.com/developmentseed/litenode.g
 projects[feedapi2feeds][subdir] = "custom"
 projects[feedapi2feeds][location] = "http://code.developmentseed.org/fserver"
 projects[feedapi2feeds][version] = "1.0-alpha1"
-
-projects[reldate][subdir] = "custom"
-projects[reldate][type] = "module"
-projects[reldate][download][type] = "git"
-projects[reldate][download][url] = "git://github.com/developmentseed/reldate.git"
 
 projects[xref][subdir] = "custom"
 projects[xref][location] = "http://code.developmentseed.org/fserver"
