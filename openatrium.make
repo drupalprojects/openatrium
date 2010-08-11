@@ -169,7 +169,10 @@ projects[schema][subdir] = "developer"
 projects[schema][version] = "1.7"
 
 projects[simpletest][subdir] = "developer"
-projects[simpletest][version] = "2.10"
+projects[simpletest][type] = "module"
+projects[simpletest][download][type] = "cvs"
+projects[simpletest][download][module] = "contributions/modules/simpletest"
+projects[simpletest][download][revision] = "DRUPAL-6--2:2010-01-27"
 
 ; Features
 projects[atrium_features][type] = "module"
