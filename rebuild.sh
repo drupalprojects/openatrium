@@ -27,7 +27,7 @@ if [ -f openatrium.make ]; then
 
 MAKE=$(cat <<EOF
 core = "6.x"\n
-projects[drupal][version] = "6.17"\n
+projects[drupal][version] = "6.19"\n
 projects[openatrium][type] = "profile"\n
 projects[openatrium][download][type] = "cvs"\n
 projects[openatrium][download][module] = "contributions/profiles/openatrium"\n
