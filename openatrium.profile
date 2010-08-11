@@ -34,7 +34,7 @@ function openatrium_profile_modules() {
     // Admin
     'admin',
     // Views
-    'views', 'litenode',
+    'views',
     // OG
     'og', 'og_access', 'og_views',
     // CTools

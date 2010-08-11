@@ -100,7 +100,7 @@ projects[prepopulate][subdir] = "contrib"
 projects[prepopulate][version] = "1.1"
 
 projects[purl][subdir] = "contrib"
-projects[purl][version] = "1.0-beta12"
+projects[purl][version] = "1.0-beta13"
 
 projects[reldate][subdir] = "contrib"
 projects[reldate][type] = "module"
@@ -149,11 +149,6 @@ projects[litecal][subdir] = "custom"
 projects[litecal][type] = "module"
 projects[litecal][download][type] = "git"
 projects[litecal][download][url] = "git://github.com/developmentseed/litecal.git"
-
-projects[litenode][subdir] = "custom"
-projects[litenode][type] = "module"
-projects[litenode][download][type] = "git"
-projects[litenode][download][url] = "git://github.com/developmentseed/litenode.git"
 
 projects[feedapi2feeds][subdir] = "custom"
 projects[feedapi2feeds][location] = "http://code.developmentseed.org/fserver"
