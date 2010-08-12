@@ -34,16 +34,13 @@ projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
 
 projects[designkit][subdir] = "contrib"
-projects[designkit][version] = "1.0-alpha5"
+projects[designkit][version] = "1.0-beta1"
 
 projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1"
 
 projects[features][subdir] = "contrib"
-projects[features][type] = "module"
-projects[features][download][type] = "cvs"
-projects[features][download][module] = "contributions/modules/features"
-projects[features][download][revision] = "DRUPAL-6--1"
+projects[features][version] = "1.0-rc1"
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta4"
@@ -200,11 +197,10 @@ projects[l10n_update][version] = "1.0-alpha1"
 
 ; Themes
 projects[tao][location] = "http://code.developmentseed.org/fserver"
-projects[tao][version] = "2.2"
+projects[tao][version] = "2.3"
 
-projects[rubik][type] = "theme"
-projects[rubik][download][type] = "git"
-projects[rubik][download][url] = "git://github.com/developmentseed/rubik.git"
+projects[rubik][location] = "http://code.developmentseed.org/fserver"
+projects[rubik][version] = "2.0-beta5"
 
 projects[ginkgo][type] = "theme"
 projects[ginkgo][download][type] = "git"
