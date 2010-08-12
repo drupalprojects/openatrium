@@ -4,7 +4,7 @@ core = "6.x"
 ; Contrib projects 
 
 projects[admin][subdir] = "contrib"
-projects[admin][version] = "2.0-beta6"
+projects[admin][version] = "2.0-rc1"
 
 projects[boxes][subdir] = "contrib"
 projects[boxes][version] = "1.0-beta11"
@@ -25,7 +25,7 @@ projects[content_profile][subdir] = "contrib"
 projects[content_profile][version] = "1.0"
 
 projects[context][subdir] = "contrib"
-projects[context][version] = "3.0-beta8"
+projects[context][version] = "3.0-rc1"
 
 projects[crayon][subdir] = "contrib"
 projects[crayon][version] = "1.0-beta1"
@@ -40,7 +40,10 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0-beta12"
+projects[features][type] = "module"
+projects[features][download][type] = "cvs"
+projects[features][download][module] = "contributions/modules/features"
+projects[features][download][revision] = "DRUPAL-6--1"
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta4"
@@ -111,16 +114,13 @@ projects[reldate][download][module] = "contributions/modules/reldate"
 projects[reldate][download][revision] = "DRUPAL-6--1"
 
 projects[spaces][subdir] = "contrib"
-projects[spaces][type] = "module"
-projects[spaces][download][type] = "cvs"
-projects[spaces][download][module] = "contributions/modules/spaces"
-projects[spaces][download][revision] = "DRUPAL-6--3"
+projects[spaces][version] = "3.0-beta6"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
 projects[token][subdir] = "contrib"
-projects[token][version] = "1.13"
+projects[token][version] = "1.14"
 
 projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "3.0"
