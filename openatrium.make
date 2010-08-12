@@ -105,10 +105,7 @@ projects[purl][subdir] = "contrib"
 projects[purl][version] = "1.0-beta13"
 
 projects[reldate][subdir] = "contrib"
-projects[reldate][type] = "module"
-projects[reldate][download][type] = "cvs"
-projects[reldate][download][module] = "contributions/modules/reldate"
-projects[reldate][download][revision] = "DRUPAL-6--1"
+projects[reldate][version] = "1.0-beta2"
 
 projects[spaces][subdir] = "contrib"
 projects[spaces][version] = "3.0-beta6"
@@ -147,18 +144,16 @@ projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_m
 
 ; Custom modules
 projects[litecal][subdir] = "custom"
-projects[litecal][type] = "module"
-projects[litecal][download][type] = "git"
-projects[litecal][download][url] = "git://github.com/developmentseed/litecal.git"
+projects[litecal][location] = "http://code.developmentseed.org/fserver"
+projects[litecal][version] = "1.0-alpha4"
 
 projects[feedapi2feeds][subdir] = "custom"
 projects[feedapi2feeds][location] = "http://code.developmentseed.org/fserver"
 projects[feedapi2feeds][version] = "1.0-alpha1"
 
 projects[xref][subdir] = "custom"
-projects[xref][type] = "module"
-projects[xref][download][type] = "git"
-projects[xref][download][url] = "git://github.com/developmentseed/xref.git"
+projects[xref][location] = "http://code.developmentseed.org/fserver"
+projects[xref][version] = "1.0-alpha2"
 
 ; Development modules
 projects[coder][subdir] = "developer"
