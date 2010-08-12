@@ -98,6 +98,8 @@ projects[parser_ical][version] = "2.0-alpha1"
 
 projects[prepopulate][subdir] = "contrib"
 projects[prepopulate][version] = "2.0"
+; http://drupal.org/node/360613#comment-3319884
+projects[prepopulate][patch][] = "http://drupal.org/files/issues/360613_20100812.patch"
 
 projects[purl][subdir] = "contrib"
 projects[purl][version] = "1.0-beta13"
@@ -155,8 +157,9 @@ projects[feedapi2feeds][location] = "http://code.developmentseed.org/fserver"
 projects[feedapi2feeds][version] = "1.0-alpha1"
 
 projects[xref][subdir] = "custom"
-projects[xref][location] = "http://code.developmentseed.org/fserver"
-projects[xref][version] = "1.0-alpha1"
+projects[xref][type] = "module"
+projects[xref][download][type] = "git"
+projects[xref][download][url] = "git://github.com/developmentseed/xref.git"
 
 ; Development modules
 projects[coder][subdir] = "developer"
