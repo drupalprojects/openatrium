@@ -37,7 +37,7 @@ projects[designkit][subdir] = "contrib"
 projects[designkit][version] = "1.0-alpha5"
 
 projects[diff][subdir] = "contrib"
-projects[diff][version] = "2.1-alpha3"
+projects[diff][version] = "2.1"
 
 projects[features][subdir] = "contrib"
 projects[features][version] = "1.0-beta12"
