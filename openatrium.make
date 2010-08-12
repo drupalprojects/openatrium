@@ -135,6 +135,8 @@ projects[date][download][type] = "cvs"
 projects[date][download][module] = "contributions/modules/date"
 projects[date][download][revision] = "DRUPAL-6--2:2010-06-20"
 projects[date][patch][] = "http://drupal.org/files/issues/date-772180-element-description-1.patch"
+; http://drupal.org/node/552154
+projects[date][patch][] = "http://drupal.org/files/issues/date-first-day-inconsistency-552154-2.patch"
 
 projects[views][subdir] = "contrib"
 projects[views][type] = "module"
