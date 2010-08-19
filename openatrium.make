@@ -62,6 +62,8 @@ projects[itweak_upload][type] = "module"
 projects[itweak_upload][download][type] = "cvs"
 projects[itweak_upload][download][module] = "contributions/modules/itweak_upload"
 projects[itweak_upload][download][revision] = "DRUPAL-6--2-4"
+; http://drupal.org/node/888198
+projects[itweak_upload][patch][] = "http://drupal.org/files/issues/itweak_upload_weight.patch"
 
 projects[jquery_ui][subdir] = "contrib"
 projects[jquery_ui][version] = "1"
