@@ -4,7 +4,7 @@ core = "6.x"
 ; Contrib projects 
 
 projects[admin][subdir] = "contrib"
-projects[admin][version] = "2.0-rc1"
+projects[admin][version] = "2.0"
 
 projects[boxes][subdir] = "contrib"
 projects[boxes][version] = "1.0-beta11"
@@ -22,10 +22,10 @@ projects[content_profile][subdir] = "contrib"
 projects[content_profile][version] = "1.0"
 
 projects[context][subdir] = "contrib"
-projects[context][version] = "3.0-rc1"
+projects[context][version] = "3.0-rc2"
 
 projects[crayon][subdir] = "contrib"
-projects[crayon][version] = "1.0-beta1"
+projects[crayon][version] = "1.0-beta2"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
@@ -40,7 +40,10 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0-rc1"
+projects[features][type] = "module"
+projects[features][download][type] = "cvs"
+projects[features][download][module] = "contributions/modules/features"
+projects[features][download][revision] = "DRUPAL-6--1"
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta4"
@@ -191,7 +194,7 @@ projects[tao][location] = "http://code.developmentseed.org/fserver"
 projects[tao][version] = "2.3"
 
 projects[rubik][location] = "http://code.developmentseed.org/fserver"
-projects[rubik][version] = "2.0-beta5"
+projects[rubik][version] = "2.0-beta6"
 
 projects[ginkgo][type] = "theme"
 projects[ginkgo][download][type] = "git"
