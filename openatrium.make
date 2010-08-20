@@ -196,7 +196,7 @@ projects[rubik][location] = "http://code.developmentseed.org/fserver"
 projects[rubik][version] = "2.0-beta6"
 
 projects[ginkgo][location] = "http://code.developmentseed.org/fserver"
-projects[ginkgo][version] = "1.0-alpha5"
+projects[ginkgo][version] = "1.0-alpha6"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
