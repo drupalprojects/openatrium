@@ -40,7 +40,7 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0-rc2"
+projects[features][version] = "1.0-rc3"
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta4"
@@ -110,7 +110,7 @@ projects[reldate][subdir] = "contrib"
 projects[reldate][version] = "1.0-beta2"
 
 projects[spaces][subdir] = "contrib"
-projects[spaces][version] = "3.0-rc1"
+projects[spaces][version] = "3.0-rc2"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
@@ -195,9 +195,8 @@ projects[tao][version] = "2.3"
 projects[rubik][location] = "http://code.developmentseed.org/fserver"
 projects[rubik][version] = "2.0-beta6"
 
-projects[ginkgo][type] = "theme"
-projects[ginkgo][download][type] = "git"
-projects[ginkgo][download][url] = "git://github.com/developmentseed/ginkgo.git"
+projects[ginkgo][location] = "http://code.developmentseed.org/fserver"
+projects[ginkgo][version] = "1.0-alpha5"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
