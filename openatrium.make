@@ -7,7 +7,7 @@ projects[admin][subdir] = "contrib"
 projects[admin][version] = "2.0"
 
 projects[boxes][subdir] = "contrib"
-projects[boxes][version] = "1.0-beta11"
+projects[boxes][version] = "1.0"
 
 projects[cck][subdir] = "contrib"
 projects[cck][version] = "2.8"
@@ -40,10 +40,7 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1"
 
 projects[features][subdir] = "contrib"
-projects[features][type] = "module"
-projects[features][download][type] = "cvs"
-projects[features][download][module] = "contributions/modules/features"
-projects[features][download][revision] = "DRUPAL-6--1"
+projects[features][version] = "1.0-rc2"
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta4"
@@ -113,7 +110,7 @@ projects[reldate][subdir] = "contrib"
 projects[reldate][version] = "1.0-beta2"
 
 projects[spaces][subdir] = "contrib"
-projects[spaces][version] = "3.0-beta6"
+projects[spaces][version] = "3.0-rc1"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
