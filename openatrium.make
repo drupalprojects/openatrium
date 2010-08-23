@@ -40,7 +40,7 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0-rc3"
+projects[features][version] = "1.0"
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta4"
@@ -171,7 +171,7 @@ projects[simpletest][download][revision] = "DRUPAL-6--2:2010-01-27"
 
 ; Features
 projects[atrium_features][location] = "http://code.developmentseed.org/fserver"
-projects[atrium_features][version] = "1.0-alpha6"
+projects[atrium_features][version] = "1.0-alpha7"
 
 ; l10n
 projects[core_translation][subdir] = "l10n"
@@ -189,13 +189,13 @@ projects[l10n_update][version] = "1.0-alpha1"
 
 ; Themes
 projects[tao][location] = "http://code.developmentseed.org/fserver"
-projects[tao][version] = "2.3"
+projects[tao][version] = "3.1"
 
 projects[rubik][location] = "http://code.developmentseed.org/fserver"
-projects[rubik][version] = "2.0-beta6"
+projects[rubik][version] = "3.0-beta1"
 
 projects[ginkgo][location] = "http://code.developmentseed.org/fserver"
-projects[ginkgo][version] = "1.0-alpha6"
+projects[ginkgo][version] = "1.0-alpha8"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
