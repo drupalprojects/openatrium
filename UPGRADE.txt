@@ -1,17 +1,41 @@
 # $Id$
 
-Upgrading to Atrium 1.0 beta 7
-==============================
+Upgrading between any versions from Atrium 1.0-beta4 to 1.0-beta8
+=================================================================
 
 _note: If upgrading a version older than beta 4, update to beta 4 first_
 
-1. Backup both the code and database.
+1. Backup both the code and database of your old Atrium site.
 
-2. Replace your Atrium codebase, be sure to preserve the files directory.
+2. Replace your Atrium codebase by moving your old Atrium drupal directory out
+   of the way and replacing it with the new Atrium directory (this ensures that
+   any files that have been moved or deleted are properly cleaned up). Be sure
+   to preserve the files directory of your site (usually `sites/[x]/files`)
+   and any site-specific modules, themes and settings.
 
-3. Clear your caches
+3. Clear your caches using `drush cc all` or clicking the `Clear cached data`
+   button on the `admin/settings/performance` page.
 
-4. Run any database updates.
+4. Run any database updates using `drush updb` or `update.php`.
+
+5. For more detail on steps 1-4 above see
+
+   https://community.openatrium.com/documentation-en/node/1942
+
+**The following steps are specific to Atrium 1.0-beta8**
+
+6. Run `drush -y fr-all` to revert all of your features. Very important if you
+   overrode any views, contexts, variable, permissions, and other configuration,
+   on your site. This will delete your overrides and set everything back to the
+   default Open Atrium configuration as defined in the code.
+
+   If you've made extensive overrides you will want to carefully manage this
+   step and preserve or recreate configuration overrides.
+
+7. The last required step is to clear your caches again (see step 3). If you
+   clear the cache from `admin/settings/performance` do not be alarmed if your
+   theme is not working correctly; it should work correctly after you've
+   cleared the cache (issue for reference only http://drupal.org/node/545452).
 
 
 Upgrading from Atrium 1.0-beta3.x to 1.0-beta4
