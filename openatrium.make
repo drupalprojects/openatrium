@@ -63,7 +63,7 @@ projects[itweak_upload][download][revision] = "DRUPAL-6--2-4"
 projects[itweak_upload][patch][] = "http://drupal.org/files/issues/itweak_upload_weight.patch"
 
 projects[jquery_ui][subdir] = "contrib"
-projects[jquery_ui][version] = "1"
+projects[jquery_ui][version] = "1.3"
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "1.0-alpha1"
@@ -96,7 +96,7 @@ projects[openidadmin][subdir] = "contrib"
 projects[openidadmin][version] = "1.2"
 
 projects[parser_ical][subdir] = "contrib"
-projects[parser_ical][version] = "2.0-alpha1"
+projects[parser_ical][version] = "2.0-alpha2"
 
 projects[prepopulate][subdir] = "contrib"
 projects[prepopulate][version] = "2.0"
@@ -171,7 +171,7 @@ projects[simpletest][download][revision] = "DRUPAL-6--2:2010-01-27"
 
 ; Features
 projects[atrium_features][location] = "http://code.developmentseed.org/fserver"
-projects[atrium_features][version] = "1.0-alpha7"
+projects[atrium_features][version] = "1.0-alpha9"
 
 ; l10n
 projects[core_translation][subdir] = "l10n"
@@ -195,7 +195,7 @@ projects[rubik][location] = "http://code.developmentseed.org/fserver"
 projects[rubik][version] = "3.0-beta1"
 
 projects[ginkgo][location] = "http://code.developmentseed.org/fserver"
-projects[ginkgo][version] = "1.0-alpha8"
+projects[ginkgo][version] = "1.0-alpha9"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
