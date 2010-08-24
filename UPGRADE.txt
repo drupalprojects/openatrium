@@ -11,19 +11,19 @@ _note: If upgrading a version older than beta 4, update to beta 4 first_
 
 **The following steps are specific to Atrium 1.0-beta8**
 
-2. Run `drush -y fr-all` to revert all of your features. **Very important** if
-   you overrode any views, contexts, variable, permissions, and other
-   configuration, on your site. This will delete your overrides and set
-   everything back to the default Open Atrium configuration as defined in the
-   code.
+2. Revert all your features using `drush -y fr-all` from the commandline or
+   or using the UI at /admin/build/features. **Very important** if you overrode
+   any views, contexts, variable, permissions, and other configuration, on your
+   site. This will delete your overrides and set everything back to the default
+   Open Atrium configuration as defined in code.
 
    If you've made extensive overrides you will want to carefully manage this
    step and preserve or recreate configuration overrides.
 
-3. Clear your caches using with `drush cc all` from the commandline or using
-   the 'Clear cached data' button on /admin/settings/performance. If you clear
-   the cache from /admin/settings/performance do not be alarmed if your theme
-   is not working initially; it should work correctly only after you've cleared
+3. Clear your caches using `drush cc all` from the commandline or using the
+   'Clear cached data' button on /admin/settings/performance. If you clear the
+   cache from /admin/settings/performance do not be alarmed if your theme is
+   not working initially; it should work correctly only after you've cleared
    the cache (related issue for reference only http://drupal.org/node/545452).
 
 
