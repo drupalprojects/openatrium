@@ -42,6 +42,5 @@ testing against:
 Internet Explorer 6 is not supported. Clients with javascript disabled are also
 not supported.
 
-The Atrium core theme Ginkgo is designed for at least a 1024x768 resolution, but
-there is a Ginkgo Thin variant that can be used with 800x600.
-
+The Atrium core theme Ginkgo is designed for at least a 1024x768 resolution but
+can be used with lower resolutions if necessary.
