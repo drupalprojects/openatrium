@@ -193,8 +193,9 @@ projects[tao][version] = "3.1"
 projects[rubik][location] = "http://code.developmentseed.org/fserver"
 projects[rubik][version] = "3.0-beta1"
 
-projects[ginkgo][location] = "http://code.developmentseed.org/fserver"
-projects[ginkgo][version] = "1.0-alpha9"
+projects[ginkgo][type] = "theme"
+projects[ginkgo][download][type] = "git"
+projects[ginkgo][download][url] = "git://github.com/developmentseed/ginkgo.git"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
