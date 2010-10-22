@@ -168,9 +168,8 @@ projects[simpletest][download][module] = "contributions/modules/simpletest"
 projects[simpletest][download][revision] = "DRUPAL-6--2:2010-01-27"
 
 ; Features
-projects[atrium_features][type] = "module"
-projects[atrium_features][download][type] = "git"
-projects[atrium_features][download][url] = "git://github.com/developmentseed/atrium_features.git"
+projects[atrium_features][location] = "http://code.developmentseed.org/fserver"
+projects[atrium_features][version] = "1.0-alpha10"
 
 ; l10n
 projects[core_translation][subdir] = "l10n"
@@ -187,17 +186,11 @@ projects[l10n_update][location] = "http://code.developmentseed.org/fserver"
 projects[l10n_update][version] = "1.0-alpha1"
 
 ; Themes
-projects[tao][type] = "theme"
-projects[tao][download][type] = "cvs"
-projects[tao][download][module] = "contributions/themes/tao"
-projects[tao][download][revision] = "DRUPAL-6--3"
+projects[tao][version] = "3.2"
+projects[rubik][version] = "3.0-beta2"
 
-projects[rubik][location] = "http://code.developmentseed.org/fserver"
-projects[rubik][version] = "3.0-beta1"
-
-projects[ginkgo][type] = "theme"
-projects[ginkgo][download][type] = "git"
-projects[ginkgo][download][url] = "git://github.com/developmentseed/ginkgo.git"
+projects[ginkgo][location] = "http://code.developmentseed.org/fserver"
+projects[ginkgo][version] = "1.0-alpha10"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
