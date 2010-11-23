@@ -141,7 +141,7 @@ projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_m
 ; Custom modules
 projects[litecal][subdir] = "custom"
 projects[litecal][location] = "http://code.developmentseed.org/fserver"
-projects[litecal][version] = "1.0-alpha4"
+projects[litecal][version] = "1.0-alpha5"
 
 projects[feedapi2feeds][subdir] = "custom"
 projects[feedapi2feeds][location] = "http://code.developmentseed.org/fserver"
