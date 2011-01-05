@@ -32,10 +32,10 @@ projects[crayon][subdir] = "contrib"
 projects[crayon][version] = "1.0-beta2"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.7"
+projects[ctools][version] = "1.8"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.6"
+projects[date][version] = "2.7"
 
 projects[designkit][subdir] = "contrib"
 projects[designkit][version] = "1.0-beta1"
@@ -47,10 +47,10 @@ projects[features][subdir] = "contrib"
 projects[features][version] = "1.0"
 
 projects[feeds][subdir] = "contrib"
-projects[feeds][version] = "1.0-beta4"
+projects[feeds][version] = "1.0-beta10"
 
 projects[imageapi][subdir] = "contrib"
-projects[imageapi][version] = "1.8"
+projects[imageapi][version] = "1.9"
 
 projects[imagecache][subdir] = "contrib"
 projects[imagecache][version] = "2.0-beta10"
@@ -66,8 +66,11 @@ projects[itweak_upload][download][revision] = "DRUPAL-6--2-4"
 ; http://drupal.org/node/888198
 projects[itweak_upload][patch][] = "http://drupal.org/files/issues/itweak_upload_weight.patch"
 
+projects[job_scheduler][subdir] = "contrib"
+projects[job_scheduler][version] = "1.0-beta3"
+
 projects[jquery_ui][subdir] = "contrib"
-projects[jquery_ui][version] = "1.3"
+projects[jquery_ui][version] = "1.4"
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "1.0-alpha1"
@@ -82,13 +85,13 @@ projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.2"
 
 projects[messaging][subdir] = "contrib"
-projects[messaging][version] = "2.2"
+projects[messaging][version] = "2.3"
 
 projects[nodeformcols][subdir] = "contrib"
 projects[nodeformcols][version] = "1.6"
 
 projects[notifications][subdir] = "contrib"
-projects[notifications][version] = "2.2"
+projects[notifications][version] = "2.3"
 
 projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.1-beta8"
@@ -100,7 +103,7 @@ projects[openidadmin][subdir] = "contrib"
 projects[openidadmin][version] = "1.2"
 
 projects[parser_ical][subdir] = "contrib"
-projects[parser_ical][version] = "2.0-alpha2"
+projects[parser_ical][version] = "2.0-beta1"
 
 projects[prepopulate][subdir] = "contrib"
 projects[prepopulate][version] = "2.1"
@@ -118,7 +121,7 @@ projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
 projects[token][subdir] = "contrib"
-projects[token][version] = "1.14"
+projects[token][version] = "1.15"
 
 projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "3.0"
