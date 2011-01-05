@@ -96,7 +96,7 @@ function _openatrium_atrium_modules() {
     // CCK
     'content', 'nodereference', 'text', 'optionwidgets',
     // Feeds
-    'feeds', 'parser_ical',
+    'job_scheduler', 'feeds', 'parser_ical',
     // Notifications
     //'mailhandler', 'mailcomment',
     'notifications_team',
