@@ -27,7 +27,9 @@ if [ -f openatrium.make ]; then
 
 MAKE=$(cat <<EOF
 core = "6.x"\n
+api = "2"\n
 projects[drupal][version] = "6.20"\n
+projects[drupal][patch][] = "http://drupalcode.org/viewvc/drupal/contributions/profiles/openatrium/robots_txt_rollback.patch?revision=1.1&content-type=text%2Fplain&view=co" \n
 projects[openatrium][type] = "profile"\n
 projects[openatrium][download][type] = "cvs"\n
 projects[openatrium][download][module] = "contributions/profiles/openatrium"\n
