@@ -1,4 +1,3 @@
-# $Id$
 
 Upgrading between any versions from Atrium 1.0-beta4 to 1.0-beta8
 =================================================================
