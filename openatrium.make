@@ -115,7 +115,7 @@ projects[reldate][subdir] = "contrib"
 projects[reldate][version] = "1.0-beta2"
 
 projects[spaces][subdir] = "contrib"
-projects[spaces][version] = "3.0"
+projects[spaces][version] = "3.1"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
