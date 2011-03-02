@@ -141,15 +141,15 @@ projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_m
 
 ; Custom modules
 projects[litecal][subdir] = "custom"
-projects[litecal][location] = "http://code.developmentseed.org/fserver"
+projects[litecal][location] = "http://featureserver.phase2technology.com/fserver"
 projects[litecal][version] = "1.0-alpha5"
 
 projects[feedapi2feeds][subdir] = "custom"
-projects[feedapi2feeds][location] = "http://code.developmentseed.org/fserver"
+projects[feedapi2feeds][location] = "http://featureserver.phase2technology.com/fserver"
 projects[feedapi2feeds][version] = "1.0-alpha1"
 
 projects[xref][subdir] = "custom"
-projects[xref][location] = "http://code.developmentseed.org/fserver"
+projects[xref][location] = "http://featureserver.phase2technology.com/fserver"
 projects[xref][version] = "1.0-alpha2"
 
 ; Development modules
@@ -169,7 +169,7 @@ projects[simpletest][download][module] = "contributions/modules/simpletest"
 projects[simpletest][download][revision] = "DRUPAL-6--2:2010-01-27"
 
 ; Features
-projects[atrium_features][location] = "http://code.developmentseed.org/fserver"
+projects[atrium_features][location] = "http://featureserver.phase2technology.com/fserver"
 projects[atrium_features][version] = "1.0-alpha11"
 
 ; l10n
@@ -183,14 +183,14 @@ projects[l10n_client][subdir] = "l10n"
 projects[l10n_client][version] = "1.7"
 
 projects[l10n_update][subdir] = "l10n"
-projects[l10n_update][location] = "http://code.developmentseed.org/fserver"
+projects[l10n_update][location] = "http://featureserver.phase2technology.com/fserver"
 projects[l10n_update][version] = "1.0-alpha1"
 
 ; Themes
 projects[tao][version] = "3.2"
 projects[rubik][version] = "3.0-beta2"
 
-projects[ginkgo][location] = "http://code.developmentseed.org/fserver"
+projects[ginkgo][location] = "http://featureserver.phase2technology.com/fserver"
 projects[ginkgo][version] = "1.0-alpha10"
 
 ; Libraries

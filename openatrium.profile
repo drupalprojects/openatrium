@@ -6,7 +6,7 @@
 function openatrium_profile_details() {
   return array(
     'name' => 'Open Atrium',
-    'description' => 'Open Atrium by Development Seed.',
+    'description' => 'Open Atrium by Phase2 Technology.',
     'old_short_name' => 'atrium_installer',
   );
 }
@@ -121,8 +121,8 @@ function openatrium_profile_task_list() {
   if (_openatrium_language_selected()) {
     $tasks['intranet-translation-batch'] = st('Download and import translation');
   }
-  $tasks['intranet-modules-batch'] = st('Install intranet modules');
-  $tasks['intranet-configure-batch'] = st('Configure intranet');
+  $tasks['intranet-modules-batch'] = st('Install Open Atrium modules');
+  $tasks['intranet-configure-batch'] = st('Configure Open Atrium');
   return $tasks;
 }
 
@@ -244,7 +244,7 @@ function _openatrium_intranet_configure() {
   variable_set('date_default_timezone', $tz_offset);
 
   // Set a default footer message.
-  variable_set('site_footer', '&copy; 2009 '. l('Development Seed', 'http://www.developmentseed.org', array('absolute' => TRUE)));
+  variable_set('site_footer', '&copy; 2011 '. l('Phase2 Technology', 'http://www.phase2technology.com', array('absolute' => TRUE)));
 }
 
 /**
