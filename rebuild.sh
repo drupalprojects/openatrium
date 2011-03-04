@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 # This command expects to be run within the Open Atrium profile directory. To
-# generate a full distribution you it must be a CVS checkout.
+# generate a full distribution you must be in a git checkout.
 #
-# To use this command you must have `drush make`, `cvs` and `git` installed.
+# To use this command you must have `drush make` and `git` installed.
 #
 
 if [ -f openatrium.make ]; then
@@ -18,7 +18,7 @@ if [ -f openatrium.make ]; then
 
     # Run openatrium.make only.
     echo "Building Open Atrium install profile..."
-    drush make --working-copy --no-core --contrib-destination=. openatrium.make
+    drush make --download-mechanism='drush_make' --working-copy --no-core --contrib-destination=. openatrium.make
 
   elif [ $SELECTION = "2" ]; then
 
@@ -47,7 +47,7 @@ EOF
       fi
       MAKE="$MAKE $MAKETAG\n"
       NAME=`echo "atrium-$VERSION" | tr '[:upper:]' '[:lower:]'`
-      echo -e $MAKE | drush make --yes --tar - $NAME
+      echo -e $MAKE | drush make --download-mechanism='drush_make' --yes --tar - $NAME
     else
       echo 'Could not determine git tag. Is openatium git clone checkout?'
     fi
