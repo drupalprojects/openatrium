@@ -1,17 +1,6 @@
-From 16a67eceb0660697f2cd879c415fea0aefa54d78 Mon Sep 17 00:00:00 2001
-From: Frank Febbraro <frank@phase2technology.com>
-Date: Fri, 4 Mar 2011 14:47:44 -0500
-Subject: [PATCH] rollback for OA
-
----
- robots.txt |    1 +
- 1 files changed, 1 insertions(+), 0 deletions(-)
-
-diff --git a/robots.txt b/robots.txt
-index 0c706ff..d78fcdd 100644
---- a/robots.txt
-+++ b/robots.txt
-@@ -24,6 +24,7 @@ Disallow: /misc/
+--- robots.txt.o	2011-03-04 14:52:38.000000000 -0500
++++ robots.txt	2011-03-04 14:52:48.000000000 -0500
+@@ -25,6 +25,7 @@ Disallow: /misc/
  Disallow: /modules/
  Disallow: /profiles/
  Disallow: /scripts/
@@ -19,6 +8,3 @@ index 0c706ff..d78fcdd 100644
  Disallow: /themes/
  # Files
  Disallow: /CHANGELOG.txt
--- 
-1.7.3.2
-
