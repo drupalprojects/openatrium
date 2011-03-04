@@ -59,12 +59,7 @@ projects[imagecache_profiles][subdir] = "contrib"
 projects[imagecache_profiles][version] = "1.3"
 
 projects[itweak_upload][subdir] = "contrib"
-projects[itweak_upload][type] = "module"
-projects[itweak_upload][download][type] = "cvs"
-projects[itweak_upload][download][module] = "contributions/modules/itweak_upload"
-projects[itweak_upload][download][revision] = "DRUPAL-6--2-4"
-; http://drupal.org/node/888198
-projects[itweak_upload][patch][] = "http://drupal.org/files/issues/itweak_upload_weight.patch"
+projects[itweak_upload][version] = "2.4"
 
 projects[job_scheduler][subdir] = "contrib"
 projects[job_scheduler][version] = "1.0-beta3"
@@ -85,7 +80,7 @@ projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.2"
 
 projects[messaging][subdir] = "contrib"
-projects[messaging][version] = "2.3"
+projects[messaging][version] = "2.4"
 
 projects[nodeformcols][subdir] = "contrib"
 projects[nodeformcols][version] = "1.6"
@@ -187,9 +182,13 @@ projects[l10n_update][location] = "http://featureserver.phase2technology.com/fse
 projects[l10n_update][version] = "1.0-alpha1"
 
 ; Themes
+projects[tao][type] = "theme"
 projects[tao][version] = "3.2"
+
+projects[rubik][type] = "theme"
 projects[rubik][version] = "3.0-beta2"
 
+projects[ginkgo][type] = "theme"
 projects[ginkgo][location] = "http://featureserver.phase2technology.com/fserver"
 projects[ginkgo][version] = "1.0-alpha10"
 
@@ -203,4 +202,4 @@ libraries[jquery_ui][destination] = "modules/contrib/jquery_ui"
 libraries[translations][download][type] = "get"
 libraries[translations][download][url] = "https://translate.openatrium.com/sites/translate.openatrium.com/files/atrium-installer-beta9.tar.gz"
 libraries[translations][directory_name] = "translations"
-libraries[translations][destination] = .
+libraries[translations][destination] = "."
