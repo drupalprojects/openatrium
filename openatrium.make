@@ -1,4 +1,3 @@
-; $Id$
 core = "6.x"
 api = "2"
 
@@ -158,10 +157,7 @@ projects[schema][subdir] = "developer"
 projects[schema][version] = "1.7"
 
 projects[simpletest][subdir] = "developer"
-projects[simpletest][type] = "module"
-projects[simpletest][download][type] = "cvs"
-projects[simpletest][download][module] = "contributions/modules/simpletest"
-projects[simpletest][download][revision] = "DRUPAL-6--2:2010-01-27"
+projects[simpletest][version] = "2.11"
 
 ; Features
 projects[atrium_features][location] = "http://featureserver.phase2technology.com/fserver"
@@ -169,10 +165,9 @@ projects[atrium_features][version] = "1.0-alpha11"
 
 ; l10n
 projects[core_translation][subdir] = "l10n"
-projects[core_translation][type] = "module"
-projects[core_translation][download][type] = "cvs"
-projects[core_translation][download][module] = "contributions/modules/core_translation"
-projects[core_translation][download][revision] = "HEAD:2010-02-17"
+projects[core_translation][download][type] = "git"
+projects[core_translation][download][url] = "http://git.drupal.org/project/core_translation.git"
+projects[core_translation][download][revision] = "41f1adc088491305296f027c0866bc728f9021a2"
 
 projects[l10n_client][subdir] = "l10n"
 projects[l10n_client][version] = "1.7"
@@ -182,13 +177,9 @@ projects[l10n_update][location] = "http://featureserver.phase2technology.com/fse
 projects[l10n_update][version] = "1.0-alpha1"
 
 ; Themes
-projects[tao][type] = "theme"
 projects[tao][version] = "3.2"
-
-projects[rubik][type] = "theme"
 projects[rubik][version] = "3.0-beta2"
 
-projects[ginkgo][type] = "theme"
 projects[ginkgo][location] = "http://featureserver.phase2technology.com/fserver"
 projects[ginkgo][version] = "1.0-alpha10"
 
