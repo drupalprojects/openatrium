@@ -154,7 +154,7 @@ projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_m
 
 projects[litecal][subdir] = "custom"
 projects[litecal][download][type] = "git"
-projects[litecal][download][url] = "git://github.com/phase2/litecal.git"
+projects[litecal][download][url] = "https://github.com/phase2/litecal.git"
 projects[litecal][download][branch] = "master"
 
 projects[feedapi2feeds][subdir] = "custom"
@@ -181,7 +181,7 @@ projects[simpletest][version] = "2.11"
 ; Features
 project[atrium_features][type] = "module"
 project[atrium_features][download][type] = "git"
-project[atrium_features][download][url] = "git://github.com/phase2/atrium_features.git"
+project[atrium_features][download][url] = "https://github.com/phase2/atrium_features.git"
 project[atrium_features][download][branch] = "master"
 
 ; l10n
