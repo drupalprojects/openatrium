@@ -1,6 +1,9 @@
 core = "6.x"
 api = "2"
 
+projects[drupal][type] = "core"
+projects[drupal][version] = "6.22"
+
 ; Contrib projects 
 
 projects[admin][subdir] = "contrib"
@@ -30,7 +33,7 @@ projects[context][version] = "3.0"
 projects[crayon][subdir] = "contrib"
 projects[crayon][version] = "1.0-beta2"
 ; http://drupal.org/node/1212256
-projects[crayon][patch][] = "http://drupal.org/files/issues/additional_matched_color_set.patch"
+;projects[crayon][patch][] = "http://drupal.org/files/issues/additional_matched_color_set.patch"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.8"
@@ -122,9 +125,9 @@ projects[reldate][version] = "1.0-beta2"
 projects[spaces][subdir] = "contrib"
 projects[spaces][version] = "3.1"
 ; http://drupal.org/node/936234
-projects[spaces][patch][] = "http://drupal.org/files/issues/936234-spaces_only_test_when_current_space_reroute_in_init-34.patch"
+;projects[spaces][patch][] = "http://drupal.org/files/issues/936234-spaces_only_test_when_current_space_reroute_in_init-34.patch"
 ; http://drupal.org/node/825048
-projects[spaces][patch][] = "http://drupal.org/files/issues/825048_access_feature_is_being_akward.patch"
+;projects[spaces][patch][] = "http://drupal.org/files/issues/825048_access_feature_is_being_akward.patch"
 ; http://drupal.org/node/939792
 projects[spaces][patch][] = "http://drupal.org/files/issues/spaces_access_space_0.patch"
 
@@ -153,9 +156,9 @@ projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_m
 ; Custom modules
 
 projects[litecal][subdir] = "custom"
+projects[litecal][type] = "module"
 projects[litecal][download][type] = "git"
-projects[litecal][download][url] = "https://github.com/phase2/litecal.git"
-projects[litecal][download][branch] = "master"
+projects[litecal][download][url] = "git://github.com/phase2/litecal.git"
 
 projects[feedapi2feeds][subdir] = "custom"
 projects[feedapi2feeds][location] = "http://featureserver.phase2technology.com/fserver"
@@ -181,8 +184,7 @@ projects[simpletest][version] = "2.11"
 ; Features
 project[atrium_features][type] = "module"
 project[atrium_features][download][type] = "git"
-project[atrium_features][download][url] = "https://github.com/phase2/atrium_features.git"
-project[atrium_features][download][branch] = "master"
+project[atrium_features][download][url] = "git//github.com/phase2/atrium_features.git"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
