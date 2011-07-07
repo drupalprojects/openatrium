@@ -29,6 +29,8 @@ projects[context][version] = "3.0"
 
 projects[crayon][subdir] = "contrib"
 projects[crayon][version] = "1.0-beta2"
+; http://drupal.org/node/1212256
+projects[crayon][patch][] = "http://drupal.org/files/issues/additional_matched_color_set.patch"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.8"
@@ -44,9 +46,15 @@ projects[diff][version] = "2.1"
 
 projects[features][subdir] = "contrib"
 projects[features][version] = "1.0"
+; http://drupal.org/node/908634
+projects[features][patch][] = "http://drupal.org/files/issues/add_order_by_to_features_get_roles.patch"
+
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta11"
+
+projects[data][subdir] = "contrib"
+projects[data][version] = "1.0-alpha14"
 
 projects[imageapi][subdir] = "contrib"
 projects[imageapi][version] = "1.10"
@@ -113,6 +121,12 @@ projects[reldate][version] = "1.0-beta2"
 
 projects[spaces][subdir] = "contrib"
 projects[spaces][version] = "3.1"
+; http://drupal.org/node/936234
+projects[spaces][patch][] = "http://drupal.org/files/issues/936234-spaces_only_test_when_current_space_reroute_in_init-34.patch"
+; http://drupal.org/node/825048
+projects[spaces][patch][] = "http://drupal.org/files/issues/825048_access_feature_is_being_akward.patch"
+; http://drupal.org/node/939792
+projects[spaces][patch][] = "http://drupal.org/files/issues/spaces_access_space_0.patch"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
@@ -139,8 +153,9 @@ projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_m
 ; Custom modules
 
 projects[litecal][subdir] = "custom"
-projects[litecal][location] = "http://featureserver.phase2technology.com/fserver"
-projects[litecal][version] = "1.0-alpha5"
+projects[litecal][download][type] = "git"
+projects[litecal][download][url] = "git://github.com/phase2/litecal.git"
+projects[litecal][download][branch] = "master"
 
 projects[feedapi2feeds][subdir] = "custom"
 projects[feedapi2feeds][location] = "http://featureserver.phase2technology.com/fserver"
@@ -164,8 +179,10 @@ projects[simpletest][subdir] = "developer"
 projects[simpletest][version] = "2.11"
 
 ; Features
-projects[atrium_features][location] = "http://featureserver.phase2technology.com/fserver"
-projects[atrium_features][version] = "1.0-alpha11"
+project[atrium_features][type] = "module"
+project[atrium_features][download][type] = "git"
+project[atrium_features][download][url] = "git://github.com/phase2/atrium_features.git"
+project[atrium_features][download][branch] = "master"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
