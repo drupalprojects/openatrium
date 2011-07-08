@@ -150,13 +150,13 @@ projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_m
 
 ; Custom modules
 
-projects[litecal][subdir] = "custom"
+projects[litecal][subdir] = "contrib"
 projects[litecal][type] = "module"
 projects[litecal][download][type] = "git"
 projects[litecal][download][url] = "http://git.drupal.org/project/litecal.git"
 projects[litecal][download][branch] = "6.x-1.x" 
 
-projects[xref][subdir] = "custom"
+projects[xref][subdir] = "contrib"
 projects[xref][type] = "module"
 projects[xref][download][type] = "git"
 projects[xref][download][url] = "http://git.drupal.org/project/xref.git"
@@ -175,8 +175,9 @@ projects[schema][version] = "1.7"
 projects[simpletest][subdir] = "developer"
 projects[simpletest][version] = "2.11"
 
-; Features
+; Featuresi
 project[atrium_features][type] = "module"
+project[atrium_features][subdir] = "contrib"
 project[atrium_features][download][type] = "git"
 project[atrium_features][download][url] = "http://git.drupal.org/project/atrium_features.git"
 project[atrium_features][download][branch] = "6.x-1.x"
