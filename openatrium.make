@@ -175,12 +175,13 @@ projects[schema][version] = "1.7"
 projects[simpletest][subdir] = "developer"
 projects[simpletest][version] = "2.11"
 
-; Featuresi
-project[atrium_features][type] = "module"
-project[atrium_features][subdir] = "contrib"
-project[atrium_features][download][type] = "git"
-project[atrium_features][download][url] = "http://git.drupal.org/project/atrium_features.git"
-project[atrium_features][download][branch] = "6.x-1.x"
+; Features
+projects[atrium_features][type] = "module"
+projects[atrium_features][subdir] = "features"
+projects[atrium_features][download][type] = "git"
+projects[atrium_features][download][url] = "http://git.drupal.org/project/atrium_features.git"
+projects[atrium_features][download][url] = "http://git.drupal.org/project/atrium_features.git"
+projects[atrium_features][download][branch] = "6.x-1.x"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
