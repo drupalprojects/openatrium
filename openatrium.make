@@ -28,9 +28,10 @@ projects[context][subdir] = "contrib"
 projects[context][version] = "3.0"
 
 projects[crayon][subdir] = "contrib"
-projects[crayon][version] = "1.0-beta2"
-; http://drupal.org/node/1212256
-;projects[crayon][patch][] = "http://drupal.org/files/issues/additional_matched_color_set.patch"
+projects[crayon][type] = "module"
+projects[crayon][download][type] = "git"
+projects[crayon][download][url] = "http://git.drupal.org/project/crayon.git"
+projects[crayon][download][branch] = "6.x-1.x"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.8"
@@ -45,10 +46,10 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0"
-; http://drupal.org/node/908634
-projects[features][patch][] = "http://drupal.org/files/issues/add_order_by_to_features_get_roles.patch"
-
+projects[features][type] = "module"
+projects[features][download][type] = "git"
+projects[features][download][url] = "http://git.drupal.org/project/features.git"
+projects[features][download][branch] = "6.x-1.x"
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta11"
@@ -120,13 +121,10 @@ projects[reldate][subdir] = "contrib"
 projects[reldate][version] = "1.0-beta2"
 
 projects[spaces][subdir] = "contrib"
-projects[spaces][version] = "3.1"
-; http://drupal.org/node/936234
-;projects[spaces][patch][] = "http://drupal.org/files/issues/936234-spaces_only_test_when_current_space_reroute_in_init-34.patch"
-; http://drupal.org/node/825048
-;projects[spaces][patch][] = "http://drupal.org/files/issues/825048_access_feature_is_being_akward.patch"
-; http://drupal.org/node/939792
-projects[spaces][patch][] = "http://drupal.org/files/issues/spaces_access_space_0.patch"
+projects[spaces][type] = "module"
+projects[spaces][download][type] = "git"
+projects[spaces][download][url] = "http://git.drupal.org/project/spaces.git"
+projects[spaces][download][branch] = "6.x-3.x"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
@@ -155,15 +153,14 @@ projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_m
 projects[litecal][subdir] = "custom"
 projects[litecal][type] = "module"
 projects[litecal][download][type] = "git"
-projects[litecal][download][url] = "git://github.com/phase2/litecal.git"
-
-projects[feedapi2feeds][subdir] = "custom"
-projects[feedapi2feeds][location] = "http://featureserver.phase2technology.com/fserver"
-projects[feedapi2feeds][version] = "1.0-alpha1"
+projects[litecal][download][url] = "http://git.drupal.org/project/litecal.git"
+projects[litecal][download][branch] = "6.x-1.x" 
 
 projects[xref][subdir] = "custom"
-projects[xref][location] = "http://featureserver.phase2technology.com/fserver"
-projects[xref][version] = "1.0-alpha2"
+projects[xref][type] = "module"
+projects[xref][download][type] = "git"
+projects[xref][download][url] = "http://git.drupal.org/project/xref.git"
+projects[xref][download][branch] = "6.x-1.x"
 
 ; Development modules
 projects[coder][subdir] = "developer"
@@ -181,7 +178,8 @@ projects[simpletest][version] = "2.11"
 ; Features
 project[atrium_features][type] = "module"
 project[atrium_features][download][type] = "git"
-project[atrium_features][download][url] = "git//github.com/phase2/atrium_features.git"
+project[atrium_features][download][url] = "http://git.drupal.org/project/atrium_features.git"
+project[atrium_features][download][branch] = "6.x-1.x"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
@@ -195,8 +193,10 @@ projects[l10n_update][version] = "1.0-alpha1"
 projects[tao][version] = "3.2"
 projects[rubik][version] = "3.0-beta2"
 
-projects[ginkgo][location] = "http://featureserver.phase2technology.com/fserver"
-projects[ginkgo][version] = "1.0-alpha10"
+projects[ginkgo][type] = "theme"
+projects[ginkgo][download][type] = "git"
+projects[ginkgo][download][url] = "http://git.drupal.org/project/ginkgo.git"
+projects[ginkgo][download][branch] = "6.x-1.x"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
