@@ -75,8 +75,8 @@ projects[job_scheduler][version] = "1.0-beta3"
 projects[jquery_ui][subdir] = "contrib"
 projects[jquery_ui][version] = "1.5"
 
-projects[jquery_update] = "contrib"
-projects[jquery_update] = "2.0-alpha1"
+projects[jquery_update][subdir] = "contrib"
+projects[jquery_update][version] = "2.0-alpha1"
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "1.0"
