@@ -81,6 +81,9 @@ projects[jquery_update][version] = "2.0-alpha1"
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "1.0"
 
+projects[litecal][subdir] = "contrib"
+projects[litecal][version] = "1.0"
+
 projects[mailcomment][subdir] = "contrib"
 projects[mailcomment][version] = "1.0"
 
@@ -148,19 +151,8 @@ projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/at
 ; http://drupal.org/node/789674#comment-3230930
 projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_module.patch"
 
-; Custom modules
-
-projects[litecal][subdir] = "contrib"
-projects[litecal][type] = "module"
-projects[litecal][download][type] = "git"
-projects[litecal][download][url] = "http://git.drupal.org/project/litecal.git"
-projects[litecal][download][branch] = "6.x-1.x" 
-
 projects[xref][subdir] = "contrib"
-projects[xref][type] = "module"
-projects[xref][download][type] = "git"
-projects[xref][download][url] = "http://git.drupal.org/project/xref.git"
-projects[xref][download][branch] = "6.x-1.x"
+projects[xref][version] = "1.0"
 
 ; Development modules
 projects[coder][subdir] = "developer"
@@ -179,9 +171,8 @@ projects[simpletest][version] = "2.11"
 projects[atrium_features][type] = "module"
 projects[atrium_features][subdir] = "features"
 projects[atrium_features][download][type] = "git"
-projects[atrium_features][download][url] = "http://git.drupal.org/project/atrium_features.git"
-projects[atrium_features][download][url] = "http://git.drupal.org/project/atrium_features.git"
-projects[atrium_features][download][branch] = "6.x-1.x"
+projects[atrium_features][download][url] = "http://github.com/phase2/atrium_features.git"
+projects[atrium_features][download][tag] = "6.x-1.0"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
@@ -197,8 +188,8 @@ projects[rubik][version] = "3.0-beta2"
 
 projects[ginkgo][type] = "theme"
 projects[ginkgo][download][type] = "git"
-projects[ginkgo][download][url] = "http://git.drupal.org/project/ginkgo.git"
-projects[ginkgo][download][branch] = "6.x-1.x"
+projects[ginkgo][download][url] = "http://github.com/phase2/ginkgo.git"
+projects[ginkgo][download][tag] = "6.x-1.0"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
