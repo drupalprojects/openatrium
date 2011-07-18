@@ -1,5 +1,5 @@
 
-Upgrading between any versions from Atrium 1.0-beta4 to 1.0-beta8
+Upgrading between any versions from Open Atrium 1.0-beta4 to 1.0
 =================================================================
 
 _note: If upgrading a version older than beta 4, update to beta 4 first_
@@ -8,7 +8,7 @@ _note: If upgrading a version older than beta 4, update to beta 4 first_
 
    https://community.openatrium.com/documentation-en/node/1942
 
-**The following steps are specific to Atrium 1.0-beta8**
+**The following steps are specific to Open Atrium 1.0**
 
 2. Revert all your features using `drush -y fr-all` from the commandline or
    or using the UI at /admin/build/features. **Very important** if you overrode
