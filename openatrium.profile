@@ -64,6 +64,8 @@ function openatrium_profile_modules() {
     'spaces', 'spaces_user', 'spaces_og',
     // Ucreate
     'ucreate', 'ucreate_og',
+    // jQuery Update
+    'jquery_update',
   );
 
   // If language is not English we add the 'atrium_translate' module the first
