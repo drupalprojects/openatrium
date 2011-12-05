@@ -40,7 +40,7 @@ projects[designkit][subdir] = "contrib"
 projects[designkit][version] = "1.0-beta1"
 
 projects[diff][subdir] = "contrib"
-projects[diff][version] = "2.1"
+projects[diff][version] = "2.3"
 
 projects[features][subdir] = "contrib"
 projects[features][version = "1.1"
@@ -61,7 +61,7 @@ projects[imagecache_profiles][subdir] = "contrib"
 projects[imagecache_profiles][version] = "1.3"
 
 projects[itweak_upload][subdir] = "contrib"
-projects[itweak_upload][version] = "2.4"
+projects[itweak_upload][version] = "2.5"
 
 projects[job_scheduler][subdir] = "contrib"
 projects[job_scheduler][version] = "1.0-beta3"
@@ -124,7 +124,7 @@ projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
 projects[token][subdir] = "contrib"
-projects[token][version] = "1.16"
+projects[token][version] = "1.18"
 
 projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "3.0"
@@ -134,13 +134,15 @@ projects[ucreate][version] = "1.0-beta4"
 
 projects[views][subdir] = "contrib"
 projects[views][type] = "module"
-projects[views][version] = "2.12"
+projects[views][version] = "2.16"
 ; http://drupal.org/node/694094
 projects[views][patch][] = "http://drupal.org/files/issues/views-static-cache-resets-694094-7.patch"
 ; original issue: http://drupal.org/node/357529
 projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/atrium_features/views2_simple_translatables.patch"
 ; http://drupal.org/node/789674#comment-3230930
-projects[views][patch][] = "http://drupal.org/files/issues/789674-5_vocabulary_module.patch"
+projects[views][patch][] = "http://drupal.org/files/789674-29-vocabulary_module-6.x-2.x.patch"
+; fix views SQL missing alias
+projects[views][patch][] = "https://raw.github.com/gist/1434459/99c827d0500acd78c2e428a72eb1d29d642d1a2a/views-2.16-1040744.patch"
 
 projects[xref][subdir] = "contrib"
 projects[xref][version] = "1.0"
@@ -162,7 +164,7 @@ projects[simpletest][version] = "2.11"
 projects[atrium_features][type] = "module"
 projects[atrium_features][download][type] = "git"
 projects[atrium_features][download][url] = "http://github.com/phase2/atrium_features.git"
-projects[atrium_features][download][tag] = "6.x-1.0"
+projects[atrium_features][download][branch] = "master"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
