@@ -153,7 +153,7 @@ projects[coder][subdir] = "developer"
 projects[coder][version] = "2.0-beta1"
 
 projects[devel][subdir] = "developer"
-projects[devel][version] = "1.24"
+projects[devel][version] = "1.26"
 
 projects[schema][subdir] = "developer"
 projects[schema][version] = "1.7"
