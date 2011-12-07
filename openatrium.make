@@ -95,6 +95,7 @@ projects[nodeformcols][version] = "1.6"
 
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "2.3"
+projects[notifications][patch][] = "https://raw.github.com/gist/1444791/77e3bc869fe8fab2b78f782c28799e662a959dad/plain_check--notification-6.x-2.3.patch"
 
 projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.1-beta8"
