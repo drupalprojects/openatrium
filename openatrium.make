@@ -122,7 +122,7 @@ projects[spaces][subdir] = "contrib"
 projects[spaces][version = "3.2"
 
 projects[strongarm][subdir] = "contrib"
-projects[strongarm][version] = "2.0"
+projects[strongarm][version] = "2.1"
 
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.18"
@@ -150,7 +150,7 @@ projects[xref][version] = "1.0"
 
 ; Development modules
 projects[coder][subdir] = "developer"
-projects[coder][version] = "2.0-beta1"
+projects[coder][version] = "2.0-rc1"
 
 projects[devel][subdir] = "developer"
 projects[devel][version] = "1.26"
@@ -165,7 +165,7 @@ projects[simpletest][version] = "2.11"
 projects[atrium_features][type] = "module"
 projects[atrium_features][download][type] = "git"
 projects[atrium_features][download][url] = "http://github.com/phase2/atrium_features.git"
-projects[atrium_features][download][branch] = "master"
+projects[atrium_features][download][tag] = "6.x-1.1"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
@@ -182,7 +182,7 @@ projects[rubik][version] = "3.0-beta2"
 projects[ginkgo][type] = "theme"
 projects[ginkgo][download][type] = "git"
 projects[ginkgo][download][url] = "http://github.com/phase2/ginkgo.git"
-projects[ginkgo][download][tag] = "6.x-1.0"
+projects[ginkgo][download][tag] = "6.x-1.1"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
