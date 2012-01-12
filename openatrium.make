@@ -34,7 +34,7 @@ projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.8"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.7"
+projects[date][version] = "2.8"
 
 projects[designkit][subdir] = "contrib"
 projects[designkit][version] = "1.0-beta1"
@@ -49,7 +49,7 @@ projects[feeds][subdir] = "contrib"
 projects[feeds][version] = "1.0-beta11"
 
 projects[data][subdir] = "contrib"
-projects[data][version] = "1.0-alpha14"
+projects[data][version] = "1.0"
 
 projects[imageapi][subdir] = "contrib"
 projects[imageapi][version] = "1.10"
