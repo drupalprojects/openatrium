@@ -101,7 +101,7 @@ projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.1-beta8"
 
 projects[og][subdir] = "contrib"
-projects[og][version] = "2.1"
+projects[og][version] = "2.2"
 
 projects[openidadmin][subdir] = "contrib"
 projects[openidadmin][version] = "1.2"
