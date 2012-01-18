@@ -165,7 +165,7 @@ projects[simpletest][version] = "2.11"
 projects[atrium_features][type] = "module"
 projects[atrium_features][download][type] = "git"
 projects[atrium_features][download][url] = "http://github.com/phase2/atrium_features.git"
-projects[atrium_features][download][tag] = "6.x-1.1"
+projects[atrium_features][download][tag] = "6.x-1.2"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
