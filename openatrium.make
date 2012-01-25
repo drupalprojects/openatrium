@@ -7,7 +7,7 @@ projects[admin][subdir] = "contrib"
 projects[admin][version] = "2.0"
 
 projects[boxes][subdir] = "contrib"
-projects[boxes][version] = "1.0"
+projects[boxes][version] = "1.1"
 
 projects[casetracker][subdir] = "contrib"
 projects[casetracker][version] = "1.0-beta9"
@@ -119,7 +119,7 @@ projects[reldate][subdir] = "contrib"
 projects[reldate][version] = "1.0-beta2"
 
 projects[spaces][subdir] = "contrib"
-projects[spaces][version = "3.2"
+projects[spaces][version = "3.3"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.1"
