@@ -14,6 +14,8 @@ projects[casetracker][version] = "1.0-beta9"
 
 projects[cck][subdir] = "contrib"
 projects[cck][version] = "2.9"
+; PHP E_STRICT fix
+projects[cck][patch][] = "http://drupal.org/files/cck-php53-strict-d6-2x.patch"
 
 projects[codefilter][subdir] = "contrib"
 projects[codefilter][version] = "1.0"
@@ -35,6 +37,10 @@ projects[ctools][version] = "1.8"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.8"
+; PHP E_STRICT warnings
+projects[date][patch][] = "http://drupal.org/files/date-1463438-3-d6-2x.patch"
+projects[date][patch][] = "http://drupal.org/files/issues/strict_notices-1162962-1.patch"
+projects[date][patch][] = "http://drupal.org/files/date-1223956-2-d6-2.8.patch"
 
 projects[designkit][subdir] = "contrib"
 projects[designkit][version] = "1.0-beta1"
@@ -102,6 +108,8 @@ projects[notifications_team][version] = "2.1-beta8"
 
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.2"
+; PHP E_STRICT fix
+projects[og][patch][] = "http://drupal.org/files/og-strict-d6-2x.patch"
 
 projects[openidadmin][subdir] = "contrib"
 projects[openidadmin][version] = "1.2"
@@ -144,6 +152,9 @@ projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/at
 projects[views][patch][] = "http://drupal.org/files/789674-29-vocabulary_module-6.x-2.x.patch"
 ; fix views SQL missing alias
 projects[views][patch][] = "https://raw.github.com/gist/1434459/99c827d0500acd78c2e428a72eb1d29d642d1a2a/views-2.16-1040744.patch"
+; PHP E_STRICT fix
+projects[views][patch][] = "http://drupal.org/files/views-465332-11-d6-2x.patch"
+projects[views][patch][] = "http://drupal.org/files/views-893128-27-d6.2.x.patch"
 
 projects[xref][subdir] = "contrib"
 projects[xref][version] = "1.0"

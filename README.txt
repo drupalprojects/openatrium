@@ -1,7 +1,7 @@
 
 RESOURCES
 
-For the official home of the project and CVS repository for the install profile
+For the official home of the project and GIT repository for the install profile
 visit: http://drupal.org/project/openatrium
 
 For documentation and to report bugs visit: https://community.openatrium.com
