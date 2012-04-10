@@ -184,8 +184,9 @@ projects[l10n_client][version] = "2.0"
 
 projects[l10n_update][type] = "module" 
 projects[l10n_update][subdir] = "l10n"
-projects[l10n_update][location] = "http://featureserver.phase2technology.com/fserver"
-projects[l10n_update][version] = "1.0-alpha1"
+projects[l10n_update][download][type] = "git"
+projects[l10n_update][download][url] = "http://github.com/phase2/l10n_update.git"
+projects[l10n_update][download][tag] = "drupal-6--1-0-alpha1"
 
 ; Themes
 projects[tao][version] = "3.3"
