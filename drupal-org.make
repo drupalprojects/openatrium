@@ -95,7 +95,7 @@ projects[nodeformcols][version] = "1.6"
 
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "2.3"
-projects[notifications][patch][] = "http://drupalcode.org/project/openatrium.git/blob_plain/refs/heads/master:/patches/plain_check--notification-6.x-2.3.patch"
+;projects[notifications][patch][] = "http://drupalcode.org/project/openatrium.git/blob_plain/refs/heads/master:/patches/plain_check--notification-6.x-2.3.patch"
 
 projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.1-beta8"
