@@ -1,5 +1,5 @@
-core = "6.x"
 api = "2"
+core = "6.x"
 
 ; Contrib projects 
 
@@ -95,7 +95,7 @@ projects[nodeformcols][version] = "1.6"
 
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "2.3"
-projects[notifications][patch][] = "https://raw.github.com/gist/1444791/77e3bc869fe8fab2b78f782c28799e662a959dad/plain_check--notification-6.x-2.3.patch"
+projects[notifications][patch][] = "http://drupalcode.org/project/openatrium.git/blob_plain/refs/heads/master:/patches/plain_check--notification-6.x-2.3.patch"
 
 projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.1-beta8"
@@ -139,11 +139,11 @@ projects[views][version] = "2.16"
 ; http://drupal.org/node/694094
 projects[views][patch][] = "http://drupal.org/files/issues/views-static-cache-resets-694094-7.patch"
 ; original issue: http://drupal.org/node/357529
-projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/atrium_features/views2_simple_translatables.patch"
+projects[views][patch][] = "http://drupalcode.org/project/openatrium.git/blob_plain/refs/heads/master:/patches/views2_simple_translatables.patch"
 ; http://drupal.org/node/789674#comment-3230930
 projects[views][patch][] = "http://drupal.org/files/789674-29-vocabulary_module-6.x-2.x.patch"
 ; fix views SQL missing alias
-projects[views][patch][] = "https://raw.github.com/gist/1434459/99c827d0500acd78c2e428a72eb1d29d642d1a2a/views-2.16-1040744.patch"
+projects[views][patch][] = "http://drupalcode.org/project/openatrium.git/blob_plain/refs/heads/master:/patches/views-2.16-1040744.patch"
 
 projects[xref][subdir] = "contrib"
 projects[xref][version] = "1.0"
@@ -162,38 +162,22 @@ projects[simpletest][subdir] = "developer"
 projects[simpletest][version] = "2.11"
 
 ; Features
-projects[atrium_features][type] = "module"
-projects[atrium_features][download][type] = "git"
-projects[atrium_features][download][url] = "http://github.com/phase2/atrium_features.git"
-projects[atrium_features][download][tag] = "6.x-1.2"
+projects[atrium_features][version] = "6.x-1.2"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
 projects[l10n_client][version] = "2.0"
 
-projects[l10n_update][type] = "module" 
 projects[l10n_update][subdir] = "l10n"
-projects[l10n_update][download][type] = "git"
-projects[l10n_update][download][url] = "http://github.com/phase2/l10n_update.git"
-projects[l10n_update][download][tag] = "drupal-6--1-0-alpha1"
+projects[l10n_update][version] = "1.0-beta3"
 
 ; Themes
 projects[tao][version] = "3.3"
 projects[rubik][version] = "3.0-beta3"
-
-projects[ginkgo][type] = "theme"
-projects[ginkgo][download][type] = "git"
-projects[ginkgo][download][url] = "http://github.com/phase2/ginkgo.git"
-projects[ginkgo][download][tag] = "6.x-1.1"
+projects[ginkgo][version] = "6.x-1.1"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
 libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery-ui-1.7.3.zip"
 libraries[jquery_ui][directory_name] = "jquery.ui"
 libraries[jquery_ui][destination] = "modules/contrib/jquery_ui"
-
-; Translations for openatrium install profile
-libraries[translations][download][type] = "get"
-libraries[translations][download][url] = "https://translate.openatrium.com/sites/translate.openatrium.com/files/atrium-installer-beta9.tar.gz"
-libraries[translations][directory_name] = "translations"
-libraries[translations][destination] = "."
