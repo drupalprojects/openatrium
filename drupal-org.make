@@ -1,5 +1,5 @@
-api = "2"
-core = "6.x"
+api = 2
+core = 6.x
 
 ; Contrib projects 
 
@@ -162,7 +162,7 @@ projects[simpletest][subdir] = "developer"
 projects[simpletest][version] = "2.11"
 
 ; Features
-projects[atrium_features][version] = "6.x-1.2"
+projects[atrium_features][version] = "1.2"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
@@ -174,10 +174,13 @@ projects[l10n_update][version] = "1.0-beta3"
 ; Themes
 projects[tao][version] = "3.3"
 projects[rubik][version] = "3.0-beta3"
-projects[ginkgo][version] = "6.x-1.1"
+projects[ginkgo][version] = "1.1"
 
 ; Libraries
 libraries[jquery_ui][download][type] = "get"
 libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery-ui-1.7.3.zip"
 libraries[jquery_ui][directory_name] = "jquery.ui"
 libraries[jquery_ui][destination] = "modules/contrib/jquery_ui"
+
+; Translations
+projects[l10n_install][version] = "1.0-beta6"
