@@ -107,7 +107,7 @@ projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.1-beta8"
 
 projects[og][subdir] = "contrib"
-projects[og][version] = "2.2"
+projects[og][version] = "2.3"
 ; PHP E_STRICT fix
 projects[og][patch][] = "http://drupal.org/files/og-strict-d6-2x.patch"
 
@@ -192,9 +192,3 @@ libraries[jquery_ui][download][type] = "get"
 libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery-ui-1.7.3.zip"
 libraries[jquery_ui][directory_name] = "jquery.ui"
 libraries[jquery_ui][destination] = "modules/contrib/jquery_ui"
-
-; Translations for openatrium install profile
-libraries[translations][download][type] = "get"
-libraries[translations][download][url] = "https://translate.openatrium.com/sites/translate.openatrium.com/files/atrium-installer-beta9.tar.gz"
-libraries[translations][directory_name] = "translations"
-libraries[translations][destination] = "."
