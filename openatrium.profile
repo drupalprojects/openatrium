@@ -75,7 +75,7 @@ function openatrium_profile_modules() {
     // We need locale before l10n_update because it adds fields to locale tables
     $modules[] = 'locale';
     $modules[] = 'l10n_update';
-    $modules[] = 'atrium_translate';
+    //$modules[] = 'atrium_translate';
   }
 
   return $modules;
@@ -120,10 +120,10 @@ function _openatrium_atrium_modules() {
  * Implementation of hook_profile_task_list().
  */
 function openatrium_profile_task_list() {
+  $tasks['intranet-modules-batch'] = st('Install Open Atrium modules');  
   if (_openatrium_language_selected()) {
-    $tasks['intranet-translation-batch'] = st('Download and import translation');
+    $tasks['l10n-install-batch'] = st('Download and import translation');
   }
-  $tasks['intranet-modules-batch'] = st('Install Open Atrium modules');
   $tasks['intranet-configure-batch'] = st('Configure Open Atrium');
   return $tasks;
 }
@@ -143,30 +143,15 @@ function openatrium_profile_tasks(&$task, $url) {
     // When running through the CLI, the static language list will be empty
     // unless we repopulate it from the ,newly available, database.
     language_list('name', TRUE);
-
-    if (_openatrium_language_selected() && module_exists('atrium_translate')) {
-      module_load_install('atrium_translate');
-      if ($batch = atrium_translate_create_batch($install_locale, 'install')) {
-        $batch['finished'] = '_openatrium_translate_batch_finished';
-        // Remove temporary variables and set install task
-        variable_del('install_locale_batch_components');
-        variable_set('install_task', 'intranet-translation-batch');
-        batch_set($batch);
-        batch_process($url, $url);
-        // Jut for cli installs. We'll never reach here on interactive installs.
-        return;
-      }
-    }
-    // If we reach here, means no language install, move on to the next task
     $task = 'intranet-modules';
   }
 
   // We are running a batch task for this profile so basically do nothing and return page
-  if (in_array($task, array('intranet-modules-batch', 'intranet-translation-batch', 'intranet-configure-batch'))) {
+  if (in_array($task, array('intranet-modules-batch', 'l10n-install-batch', 'intranet-configure-batch'))) {
     include_once 'includes/batch.inc';
     $output = _batch_page();
   }
-  
+    
   // Install some more modules and maybe localization helpers too
   if ($task == 'intranet-modules') {
     $modules = _openatrium_atrium_modules();
@@ -184,9 +169,35 @@ function openatrium_profile_tasks(&$task, $url) {
     variable_set('install_task', 'intranet-modules-batch');
     batch_set($batch);
     batch_process($url, $url);
-    // Jut for cli installs. We'll never reach here on interactive installs.
+
+    // Just for cli installs. We'll never reach here on interactive installs.
     return;
   }
+
+  if ($task == 'l10n-install') {
+    if (_openatrium_language_selected()) {
+      $history = l10n_update_get_history();
+      module_load_include('check.inc', 'l10n_update');
+      $available = l10n_update_available_releases();
+      $updates = l10n_update_build_updates($history, $available);
+      module_load_include('batch.inc', 'l10n_update');
+      $updates = _l10n_update_prepare_updates($updates, NULL, array());
+      $batch = l10n_update_batch_multiple($updates, LOCALE_IMPORT_KEEP);
+      
+      // Overwrite batch finish callback, so we can modify install task too.
+      $batch['finished'] = '_openatrium_translate_batch_finished';
+
+      // Start a batch, switch to 'l10n-install-batch' task. We need to
+      // set the variable here, because batch_process() redirects.
+      variable_set('install_task', 'l10n-install-batch');
+      batch_set($batch);
+      batch_process($url, $url);
+    }
+
+    // Just for cli installs. We'll never reach here on interactive installs.
+    return;
+  }
+  
 
   // Run additional configuration tasks
   // @todo Review all the cache/rebuild options at the end, some of them may not be needed
@@ -294,24 +305,7 @@ function _openatrium_intranet_configure_check() {
   features_revert($revert);
 }
 
-/**
- * Finish configuration batch
- * 
- * @todo Handle error condition
- */
-function _openatrium_intranet_configure_finished($success, $results) {
-  variable_set('atrium_install', 1);
-  // Get out of this batch and let the installer continue. If loaded translation,
-  // we skip the locale remaining batch and move on to the next.
-  // However, if we didn't make it with the translation file, or they downloaded
-  // an unsupported language, we let the standard locale do its work.
-  if (variable_get('atrium_translate_done', 0)) {
-    variable_set('install_task', 'finished');
-  }
-  else {
-    variable_set('install_task', 'profile-finished');
-  } 
-}
+
 
 /**
  * Finished callback for the modules install batch.
@@ -319,7 +313,7 @@ function _openatrium_intranet_configure_finished($success, $results) {
  * Advance installer task to language import.
  */
 function _openatrium_profile_batch_finished($success, $results) {
-  variable_set('install_task', 'intranet-configure');
+  variable_set('install_task', 'l10n-install');
 }
 
 /**
@@ -328,11 +322,23 @@ function _openatrium_profile_batch_finished($success, $results) {
  * Advance installer task to the configure screen.
  */
 function _openatrium_translate_batch_finished($success, $results) {
-  include_once 'includes/locale.inc';
-  // Let the installer now we've already imported locales
-  variable_set('atrium_translate_done', 1);
-  variable_set('install_task', 'intranet-modules');
-  _locale_batch_language_finished($success, $results);
+  variable_set('install_task', 'intranet-configure');
+  
+  // Invoke default batch finish function too.
+  module_load_include('batch.inc', 'l10n_update');
+  _l10n_update_batch_finished($success, $results);
+}
+
+/**
+ * Finish configuration batch
+ * 
+ * @todo Handle error condition
+ */
+function _openatrium_intranet_configure_finished($success, $results) {
+  variable_set('atrium_install', 1);
+  if ($success) {
+    variable_set('install_task', 'profile-finished');
+  }
 }
 
 /**
