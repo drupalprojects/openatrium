@@ -192,10 +192,12 @@ function openatrium_profile_tasks(&$task, $url) {
       variable_set('install_task', 'l10n-install-batch');
       batch_set($batch);
       batch_process($url, $url);
+
+      // Just for cli installs. We'll never reach here on interactive installs.
+      return;
     }
 
-    // Just for cli installs. We'll never reach here on interactive installs.
-    return;
+    $task = 'intranet-configure';
   }
   
 
