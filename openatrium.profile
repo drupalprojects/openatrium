@@ -259,7 +259,7 @@ function _openatrium_intranet_configure() {
   variable_set('date_default_timezone', $tz_offset);
 
   // Set a default footer message.
-  variable_set('site_footer', 'Built with '. l('Open Atrium', 'http://www.openatrium.com', array('absolute' => TRUE)));
+  variable_set('site_footer', st('Built with <a href="@oalink">Open Atrium</a>', array('@oalink' => 'http://www.openatrium.com')));
 }
 
 /**
