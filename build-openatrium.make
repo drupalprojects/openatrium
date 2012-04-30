@@ -1,5 +1,5 @@
 api = 2
-core = 6.x
+core = 7.x
 
 ;Include the definition for how to build Drupal core directly, including patches:
 includes[] = drupal-org-core.make
@@ -8,4 +8,4 @@ includes[] = drupal-org-core.make
 projects[openatrium][type] = "profile"
 projects[openatrium][download][type] = "git"
 projects[openatrium][download][url] = "http://git.drupal.org/project/openatrium.git"
-projects[openatrium][download][branch] = "master"
+projects[openatrium][download][branch] = "7.x-2.x"

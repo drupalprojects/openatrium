@@ -477,3 +477,21 @@ function _openatrium_system_theme_data() {
     db_query("INSERT INTO {system} (name, owner, info, type, filename, status, throttle, bootstrap) VALUES ('%s', '%s', '%s', '%s', '%s', %d, %d, %d)", $theme->name, $theme->owner, serialize($theme->info), 'theme', $theme->filename, isset($theme->status) ? $theme->status : 0, 0, 0);
   }
 }
+
+/**
+ * Implements hook_appstore_stores_info
+ */
+function openpatrium_apps_servers_info() {
+ $info =  drupal_parse_info_file(dirname(__file__) . '/openatrium.info');
+ return array(
+   'openatrium' => array(
+     'title' => 'Open Atrium',
+     'description' => "Apps for the Open Atrium",
+     'manifest' => 'http://appserver.openatrium.com/app/query/openatrium',
+     'profile' => 'Open Atrium',
+     'profile_version' => isset($info['version']) ? $info['version'] : '7.x-2.x-dev',
+     'server_name' => $_SERVER['SERVER_NAME'],
+     'server_ip' => $_SERVER['SERVER_ADDR'],
+   ),
+ );
+}
