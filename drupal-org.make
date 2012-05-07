@@ -34,7 +34,7 @@ projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.8"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.8"
+projects[date][version] = "2.9"
 
 projects[designkit][subdir] = "contrib"
 projects[designkit][version] = "1.0-beta1"
@@ -61,7 +61,7 @@ projects[imagecache_profiles][subdir] = "contrib"
 projects[imagecache_profiles][version] = "1.3"
 
 projects[itweak_upload][subdir] = "contrib"
-projects[itweak_upload][version] = "2.5"
+projects[itweak_upload][version] = "2.6"
 
 projects[job_scheduler][subdir] = "contrib"
 projects[job_scheduler][version] = "1.0-beta3"
