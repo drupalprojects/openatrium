@@ -67,7 +67,7 @@ projects[imagecache_profiles][subdir] = "contrib"
 projects[imagecache_profiles][version] = "1.3"
 
 projects[itweak_upload][subdir] = "contrib"
-projects[itweak_upload][version] = "2.5"
+projects[itweak_upload][version] = "2.6"
 
 projects[job_scheduler][subdir] = "contrib"
 projects[job_scheduler][version] = "1.0-beta3"
