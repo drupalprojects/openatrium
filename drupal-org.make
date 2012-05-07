@@ -95,7 +95,7 @@ projects[nodeformcols][version] = "1.6"
 
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "2.3"
-;projects[notifications][patch][] = "http://drupalcode.org/project/openatrium.git/blob_plain/refs/heads/master:/patches/plain_check--notification-6.x-2.3.patch"
+;projects[notifications][patch][] = "http://drupal.org/files/plain_check--notification-6.x-2.3.patch"
 
 projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.1-beta8"
@@ -139,11 +139,11 @@ projects[views][version] = "2.16"
 ; http://drupal.org/node/694094
 projects[views][patch][] = "http://drupal.org/files/issues/views-static-cache-resets-694094-7.patch"
 ; original issue: http://drupal.org/node/357529
-projects[views][patch][] = "http://drupalcode.org/project/openatrium.git/blob_plain/refs/heads/master:/patches/views2_simple_translatables.patch"
+projects[views][patch][] = "http://drupal.org/files/views2_simple_translatables.patch"
 ; http://drupal.org/node/789674#comment-3230930
 projects[views][patch][] = "http://drupal.org/files/789674-29-vocabulary_module-6.x-2.x.patch"
 ; fix views SQL missing alias
-projects[views][patch][] = "http://drupalcode.org/project/openatrium.git/blob_plain/refs/heads/master:/patches/views-2.16-1040744.patch"
+projects[views][patch][] = "http://drupal.org/files/views-1040744-8.patch"
 
 projects[xref][subdir] = "contrib"
 projects[xref][version] = "1.0"

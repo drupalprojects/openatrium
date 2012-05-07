@@ -3,4 +3,4 @@ core = 6.x
 
 projects[drupal][type] = "core"
 projects[drupal][version] = "6.26"
-projects[drupal][patch][] = "http://drupalcode.org/project/openatrium.git/blob_plain/refs/heads/master:/patches/robots_txt_rollback.patch"
+projects[drupal][patch][] = "http://drupal.org/files/robots_txt_rollback.patch"
