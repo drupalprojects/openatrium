@@ -46,7 +46,7 @@ projects[features][subdir] = "contrib"
 projects[features][version = "1.1"
 
 projects[feeds][subdir] = "contrib"
-projects[feeds][version] = "1.0-beta11"
+projects[feeds][version] = "1.0-beta12"
 
 projects[data][subdir] = "contrib"
 projects[data][version] = "1.1"
@@ -98,7 +98,7 @@ projects[notifications][version] = "2.3"
 ;projects[notifications][patch][] = "http://drupal.org/files/plain_check--notification-6.x-2.3.patch"
 
 projects[notifications_team][subdir] = "contrib"
-projects[notifications_team][version] = "2.1-beta8"
+projects[notifications_team][version] = "2.1-beta9"
 
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.3"
@@ -166,7 +166,7 @@ projects[atrium_features][version] = "1.2"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
-projects[l10n_client][version] = "2.0"
+projects[l10n_client][version] = "2.1"
 
 projects[l10n_update][subdir] = "l10n"
 projects[l10n_update][version] = "1.0-beta3"
