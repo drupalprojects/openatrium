@@ -145,6 +145,9 @@ projects[notifications_team][version] = "3.x-dev"
 projects[og][subdir] = "contrib"
 projects[og][version] = "1.3"
 
+projects[og_views][subdir] = "contrib"
+projects[og_views][version] = "1.0"
+
 projects[omega_tools][subdir] = contrib
 projects[omega_tools][version] = 3.0-rc4
 
@@ -166,8 +169,10 @@ projects[references][version] = 2.0
 ;projects[reldate][subdir] = "contrib"
 ;projects[reldate][version] = "1.0-beta2"
 
-projects[spaces][subdir] = "contrib"
-projects[spaces][version] = "3.0-alpha1"
+projects[spaces][type] = "module"
+projects[spaces][download][type] = "git"
+projects[spaces][download][url] = "http://git.drupal.org/project/spaces.git"
+projects[spaces][download][branch] = "7.x-3.x"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0-rc1"
