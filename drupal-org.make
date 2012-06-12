@@ -55,7 +55,7 @@ projects[imageapi][subdir] = "contrib"
 projects[imageapi][version] = "1.10"
 
 projects[imagecache][subdir] = "contrib"
-projects[imagecache][version] = "2.0-beta12"
+projects[imagecache][version] = "2.0-rc1"
 
 projects[imagecache_profiles][subdir] = "contrib"
 projects[imagecache_profiles][version] = "1.3"
@@ -128,7 +128,7 @@ projects[token][subdir] = "contrib"
 projects[token][version] = "1.18"
 
 projects[transliteration][subdir] = "contrib"
-projects[transliteration][version] = "3.0"
+projects[transliteration][version] = "3.1"
 
 projects[ucreate][subdir] = "contrib"
 projects[ucreate][version] = "1.0-beta4"
