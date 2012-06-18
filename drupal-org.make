@@ -101,7 +101,7 @@ projects[notifications_team][subdir] = "contrib"
 projects[notifications_team][version] = "2.1-beta9"
 
 projects[og][subdir] = "contrib"
-projects[og][version] = "2.3"
+projects[og][version] = "2.4"
 
 projects[openidadmin][subdir] = "contrib"
 projects[openidadmin][version] = "1.2"
@@ -122,7 +122,7 @@ projects[spaces][subdir] = "contrib"
 projects[spaces][version = "3.4"
 
 projects[strongarm][subdir] = "contrib"
-projects[strongarm][version] = "2.1"
+projects[strongarm][version] = "2.2"
 
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.18"
@@ -146,14 +146,14 @@ projects[views][patch][] = "http://drupal.org/files/789674-29-vocabulary_module-
 projects[views][patch][] = "http://drupal.org/files/views-1040744-8.patch"
 
 projects[xref][subdir] = "contrib"
-projects[xref][version] = "1.0"
+projects[xref][version] = "1.1"
 
 ; Development modules
 projects[coder][subdir] = "developer"
 projects[coder][version] = "2.0-rc1"
 
 projects[devel][subdir] = "developer"
-projects[devel][version] = "1.26"
+projects[devel][version] = "1.27"
 
 projects[schema][subdir] = "developer"
 projects[schema][version] = "1.7"
