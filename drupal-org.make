@@ -162,7 +162,7 @@ projects[simpletest][subdir] = "developer"
 projects[simpletest][version] = "2.11"
 
 ; Features
-projects[atrium_features][version] = "1.2"
+projects[atrium_features][version] = "1.3"
 
 ; l10n
 projects[l10n_client][subdir] = "l10n"
