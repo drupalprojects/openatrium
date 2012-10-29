@@ -31,7 +31,7 @@ projects[crayon][subdir] = "contrib"
 projects[crayon][version] = "1.0-beta3"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.8"
+projects[ctools][version] = "1.9"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.9"
@@ -125,7 +125,7 @@ projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.2"
 
 projects[token][subdir] = "contrib"
-projects[token][version] = "1.18"
+projects[token][version] = "1.19"
 
 projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "3.1"
