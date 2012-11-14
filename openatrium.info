@@ -23,4 +23,13 @@ dependencies[] = panopoly_wysiwyg
 
 ; Panopoly Recommended
 dependencies[] = admin
-;dependencies[] = devel
+dependencies[] = devel
+
+
+; Organic Groups
+dependencies[] = og
+dependencies[] = og_access
+dependencies[] = og_context
+dependencies[] = og_register
+dependencies[] = og_ui
+
