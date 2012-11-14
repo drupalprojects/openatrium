@@ -1,0 +1,4 @@
+name = OpenAtrium
+distribution_name = OpenAtrium
+description = A team collaboration platform
+core = 7.x
