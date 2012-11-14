@@ -2,3 +2,25 @@ name = OpenAtrium
 distribution_name = OpenAtrium
 description = A team collaboration platform
 core = 7.x
+
+base[] = panopoly
+
+files[] = openatrium.profile
+
+; Panopoly Foundation
+dependencies[] = panopoly_core
+dependencies[] = panopoly_images
+dependencies[] = panopoly_theme
+dependencies[] = panopoly_magic
+dependencies[] = panopoly_widgets
+dependencies[] = panopoly_admin
+dependencies[] = panopoly_users
+
+; Panopoly Toolset
+dependencies[] = panopoly_pages
+dependencies[] = panopoly_search
+dependencies[] = panopoly_wysiwyg
+
+; Panopoly Recommended
+dependencies[] = admin
+;dependencies[] = devel

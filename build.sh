@@ -1,12 +1,12 @@
 #!/bin/sh
-# Script to build the Wilson Quarterly.
+# Script to build OpenAtrium 2.x
 # Make sure the correct number of args was passed from the command line
 if [ $# -eq 0 ]; then
   echo "Usage $0 target_build_dir"
   exit 1
 fi
 DRUSH_OPTS='--working-copy --no-gitinfofile'
-MAKEFILE='build-panopoly.make'
+MAKEFILE='build-openatrium.make'
 TARGET=$1
 # Make sure we have a target directory
 if [ -z "$TARGET" ]; then
@@ -36,7 +36,7 @@ drush make $DRUSH_OPTS $ABS_CALLPATH/$MAKEFILE $TARGET
 # Build Symlinks
 echo 'Setting up symlinks...'
 DRUPAL=`cd $TARGET; pwd -P`
-ln -s $ABS_CALLPATH $DRUPAL/profiles/panopoly
+ln -s $ABS_CALLPATH $DRUPAL/profiles/openatrium
 ln -s /opt/development/files/openatrium $DRUPAL/sites/default/files
 ln -s ../../../settings.local.inc $DRUPAL/sites/default/settings.local.inc
  
