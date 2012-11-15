@@ -19,6 +19,7 @@ features[features_api][] = api:1
 features[field][] = node-openatrium_group-body
 features[field][] = node-openatrium_group-field_group_logo
 features[field][] = node-openatrium_group-field_group_thumbnail
+features[field][] = node-openatrium_group-group_access
 features[field][] = node-openatrium_group-group_group
 features[node][] = openatrium_group
 features[variable][] = field_bundle_settings_node__openatrium_group
