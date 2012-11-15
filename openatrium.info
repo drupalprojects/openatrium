@@ -7,6 +7,10 @@ base[] = panopoly
 
 files[] = openatrium.profile
 
+;
+; Panopoly Modules
+;
+
 ; Panopoly Foundation
 dependencies[] = panopoly_core
 dependencies[] = panopoly_images
@@ -25,6 +29,14 @@ dependencies[] = panopoly_wysiwyg
 dependencies[] = admin
 dependencies[] = devel
 
+
+;
+; Open Atrium Modules
+;
+
+
+; Open Atrium 2.0 Features
+dependencies[] = openatrium2_groups
 
 ; Organic Groups
 dependencies[] = og
