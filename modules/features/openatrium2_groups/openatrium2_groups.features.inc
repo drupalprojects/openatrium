@@ -9,6 +9,10 @@
  */
 function openatrium2_groups_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -23,6 +27,14 @@ function openatrium2_groups_node_info() {
       'name' => t('Group'),
       'base' => 'node_content',
       'description' => t('A collection of members'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'openatrium_organization' => array(
+      'name' => t('Organization'),
+      'base' => 'node_content',
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
