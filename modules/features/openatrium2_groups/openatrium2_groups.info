@@ -1,7 +1,7 @@
 name = OpenAtrium2 Groups
 description = Collection of group
 core = 7.x
-package = Open Atrium 2.x
+package = Open Atrium 2.0
 php = 5.2.4
 version = 7.x-2.0
 project = openatrium2_groups
@@ -18,6 +18,7 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:1
 features[field][] = node-openatrium_group-body
 features[field][] = node-openatrium_group-field_group_logo
+features[field][] = node-openatrium_group-field_group_thumbnail
 features[field][] = node-openatrium_group-group_group
 features[node][] = openatrium_group
 features[variable][] = field_bundle_settings_node__openatrium_group
