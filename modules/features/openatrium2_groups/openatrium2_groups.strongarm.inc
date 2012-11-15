@@ -53,6 +53,26 @@ function openatrium2_groups_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__section_page';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '3',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__section_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__team';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -91,6 +111,13 @@ function openatrium2_groups_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_section_page';
+  $strongarm->value = array();
+  $export['menu_options_section_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_team';
   $strongarm->value = array();
   $export['menu_options_team'] = $strongarm;
@@ -108,6 +135,13 @@ function openatrium2_groups_strongarm() {
   $strongarm->name = 'menu_parent_openatrium_organization';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_openatrium_organization'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_section_page';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_section_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -137,6 +171,15 @@ function openatrium2_groups_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_section_page';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_section_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_team';
   $strongarm->value = array(
     0 => 'status',
@@ -160,6 +203,13 @@ function openatrium2_groups_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_section_page';
+  $strongarm->value = '1';
+  $export['node_preview_section_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_team';
   $strongarm->value = '1';
   $export['node_preview_team'] = $strongarm;
@@ -177,6 +227,13 @@ function openatrium2_groups_strongarm() {
   $strongarm->name = 'node_submitted_openatrium_organization';
   $strongarm->value = 0;
   $export['node_submitted_openatrium_organization'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_section_page';
+  $strongarm->value = 0;
+  $export['node_submitted_section_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
