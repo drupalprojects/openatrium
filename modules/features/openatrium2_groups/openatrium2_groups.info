@@ -6,7 +6,6 @@ php = 5.2.4
 version = 7.x-2.0
 project = openatrium2_groups
 dependencies[] = ctools
-dependencies[] = defaultconfig
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = field_group
