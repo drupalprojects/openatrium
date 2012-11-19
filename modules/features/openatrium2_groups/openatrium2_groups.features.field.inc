@@ -966,13 +966,17 @@ function openatrium2_groups_field_default_fields() {
       'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
-        'handler' => 'base',
+        'handler' => 'og',
         'handler_settings' => array(
           'behaviors' => array(
+            'og_behavior' => array(
+              'status' => TRUE,
+            ),
             'views-select-list' => array(
               'status' => 0,
             ),
           ),
+          'membership_type' => 'og_membership_type_default',
           'sort' => array(
             'type' => 'none',
           ),
@@ -1018,6 +1022,17 @@ function openatrium2_groups_field_default_fields() {
       'label' => 'Organizations',
       'required' => 0,
       'settings' => array(
+        'behaviors' => array(
+          'og_widget' => array(
+            'admin' => array(
+              'widget_type' => 'entityreference_autocomplete',
+            ),
+            'default' => array(
+              'widget_type' => 'options_select',
+            ),
+            'status' => TRUE,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1109,10 +1124,14 @@ function openatrium2_groups_field_default_fields() {
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 0,
-        'module' => 'og',
-        'settings' => array(),
-        'type' => 'og_complex',
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete_tags',
         'weight' => '5',
       ),
     ),
@@ -1152,11 +1171,9 @@ function openatrium2_groups_field_default_fields() {
           'sort' => array(
             'type' => 'none',
           ),
-          'target_bundles' => array(
-            'og_membership_type_default' => 'og_membership_type_default',
-          ),
+          'target_bundles' => array(),
         ),
-        'target_type' => 'og_membership',
+        'target_type' => 'user',
       ),
       'translatable' => '0',
       'type' => 'entityreference',
@@ -1197,10 +1214,14 @@ function openatrium2_groups_field_default_fields() {
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 0,
-        'module' => 'og',
-        'settings' => array(),
-        'type' => 'og_complex',
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete_tags',
         'weight' => '6',
       ),
     ),
