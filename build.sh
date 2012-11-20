@@ -38,7 +38,6 @@ echo 'Setting up symlinks...'
 DRUPAL=`cd $TARGET; pwd -P`
 ln -s $ABS_CALLPATH $DRUPAL/profiles/openatrium
 ln -s /opt/development/files/openatrium $DRUPAL/sites/default/files
-ln -s ../../../settings.local.inc $DRUPAL/sites/default/settings.local.inc
  
 # Restore settings
 echo 'Restoring settings...'
