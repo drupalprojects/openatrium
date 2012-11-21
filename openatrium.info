@@ -47,4 +47,4 @@ dependencies[] = og_ui
 
 ; Open Atrium 2.0 Features
 dependencies[] = openatrium2_groups
-
+dependencies[] = openatrium2_demo_content
