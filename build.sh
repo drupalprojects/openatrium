@@ -42,6 +42,12 @@ ln -s /opt/development/files/openatrium $DRUPAL/sites/default/files
 # Restore settings
 echo 'Restoring settings...'
 mv settings.php $DRUPAL/sites/default/settings.php
+
+# Move files and directories around
+#   These instructions should be incorporated into the make file in the future
+mkdir $DRUPAL/sites/all//libraries
+mv -v $DRUPAL/profiles/panopoly/libraries/tinymce $DRUPAL/sites/all/libraries/tinymce
+
 # Clear caches and Run updates
 cd $DRUPAL;
 echo 'Clearing caches...'
