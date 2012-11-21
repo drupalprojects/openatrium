@@ -17,6 +17,18 @@ projects[og][download][url] = http://git.drupal.org/project/og.git
 projects[og][download][branch] = 7.x-2.x
 projects[og][subdir] = contrib
 
+; Rules
+projects[rules][subdir] = contrib
+projects[rules][version] = 2.2
+
+; Message Notify
+projects[message_notify][subdir] = contrib
+projects[message_notify][version] = 2.3
+
+; Entity Reference Prepopulate
+projects[entityreference_prepopulate][subdir] = contrib
+projects[entityreference_prepopulate][version] = 1.1
+
 ; Devel
 projects[devel][type] = module
 projects[devel][download][type] = git
