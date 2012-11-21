@@ -21,6 +21,10 @@ projects[og][subdir] = contrib
 projects[rules][subdir] = contrib
 projects[rules][version] = 2.2
 
+; Message
+projects[message][subdir] = contrib
+projects[message][version] = 1.6
+
 ; Message Notify
 projects[message_notify][subdir] = contrib
 projects[message_notify][version] = 2.3
