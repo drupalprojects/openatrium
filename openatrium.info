@@ -33,7 +33,9 @@ dependencies[] = devel
 ;
 ; Open Atrium Modules
 ;
-
+dependencies[] = rules
+dependencies[] = message_notify
+dependencies[] = entityreference_prepopulate
 
 ; Organic Groups
 dependencies[] = og
