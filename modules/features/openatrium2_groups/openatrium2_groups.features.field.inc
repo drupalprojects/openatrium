@@ -1466,6 +1466,7 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'team',
       'default_value' => NULL,
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1494,8 +1495,13 @@ function openatrium2_groups_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_team_users',
       'label' => 'Users',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'status' => 0,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
