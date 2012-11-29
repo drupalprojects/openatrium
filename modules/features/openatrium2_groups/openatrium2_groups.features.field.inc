@@ -1091,6 +1091,7 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'section_page',
       'default_value' => NULL,
+      'default_value_function' => 'entityreference_prepopulate_field_default_value',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1121,6 +1122,14 @@ function openatrium2_groups_field_default_fields() {
       'label' => 'Teams',
       'required' => 0,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'action' => 'none',
+            'fallback' => 'none',
+            'skip_perm' => '0',
+            'status' => 1,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1279,6 +1288,7 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'section_page',
       'default_value' => NULL,
+      'default_value_function' => 'entityreference_prepopulate_field_default_value',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1316,6 +1326,12 @@ function openatrium2_groups_field_default_fields() {
               'widget_type' => 'options_select',
             ),
             'status' => TRUE,
+          ),
+          'prepopulate' => array(
+            'action' => 'none',
+            'fallback' => 'none',
+            'skip_perm' => '0',
+            'status' => 1,
           ),
         ),
         'user_register_form' => FALSE,
@@ -1466,7 +1482,6 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'team',
       'default_value' => NULL,
-      'default_value_function' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1495,13 +1510,8 @@ function openatrium2_groups_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_team_users',
       'label' => 'Users',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
-        'behaviors' => array(
-          'prepopulate' => array(
-            'status' => 0,
-          ),
-        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1570,6 +1580,7 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'team',
       'default_value' => NULL,
+      'default_value_function' => 'entityreference_prepopulate_field_default_value',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1607,6 +1618,12 @@ function openatrium2_groups_field_default_fields() {
               'widget_type' => 'options_select',
             ),
             'status' => TRUE,
+          ),
+          'prepopulate' => array(
+            'action' => 'none',
+            'fallback' => 'none',
+            'skip_perm' => '0',
+            'status' => 1,
           ),
         ),
         'user_register_form' => FALSE,
