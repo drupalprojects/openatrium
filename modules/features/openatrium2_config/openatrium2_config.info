@@ -1,0 +1,15 @@
+name = OpenAtrium2 Config
+description = System configuration variables
+core = 7.x
+package = Open Atrium 2.0
+version = 7.x-2.0
+project = openatrium2_config
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[variable][] = file_default_scheme
+features[variable][] = file_private_path
+features[variable][] = file_public_path
+features[variable][] = file_temporary_path
+project path = profiles/openatrium/modules/features

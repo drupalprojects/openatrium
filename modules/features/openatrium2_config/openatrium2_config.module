@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenAtrium2 Config feature.
+ */
+
+include_once 'openatrium2_config.features.inc';
