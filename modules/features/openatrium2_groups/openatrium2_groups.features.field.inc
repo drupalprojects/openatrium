@@ -1297,7 +1297,7 @@ function openatrium2_groups_field_default_fields() {
           'module' => 'og_ui',
           'settings' => array(),
           'type' => 'og_list_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'featured' => array(
           'label' => 'above',

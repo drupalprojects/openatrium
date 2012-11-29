@@ -19,6 +19,13 @@ function openatrium2_groups_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function openatrium2_groups_views_api() {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function openatrium2_groups_node_info() {
