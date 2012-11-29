@@ -903,7 +903,7 @@ function openatrium2_groups_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'featured' => array(
           'label' => 'above',
@@ -1102,7 +1102,7 @@ function openatrium2_groups_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 3,
+          'weight' => '3',
         ),
         'featured' => array(
           'label' => 'above',
