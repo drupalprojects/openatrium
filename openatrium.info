@@ -26,7 +26,6 @@ dependencies[] = panopoly_search
 dependencies[] = panopoly_wysiwyg
 
 ; Panopoly Recommended
-dependencies[] = admin
 dependencies[] = devel
 
 
@@ -37,6 +36,8 @@ dependencies[] = rules
 dependencies[] = message
 dependencies[] = message_notify
 dependencies[] = entityreference_prepopulate
+dependencies[] = navbar
+dependencies[] = module_filter
 
 ; Organic Groups
 dependencies[] = og
