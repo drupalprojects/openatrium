@@ -1069,18 +1069,17 @@ function openatrium2_groups_field_default_fields() {
       'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
-        'handler' => 'base',
+        'handler' => 'views',
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
               'status' => 0,
             ),
           ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'team' => 'team',
+          'view' => array(
+            'args' => array(),
+            'display_name' => 'entityreference_1',
+            'view_name' => 'open_atrium_2_team_filters',
           ),
         ),
         'target_type' => 'node',
@@ -1134,13 +1133,13 @@ function openatrium2_groups_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'entityreference',
+        'module' => 'options',
         'settings' => array(
           'match_operator' => 'CONTAINS',
           'path' => '',
-          'size' => '60',
+          'size' => 60,
         ),
-        'type' => 'entityreference_autocomplete_tags',
+        'type' => 'options_select',
         'weight' => '5',
       ),
     ),
@@ -1170,17 +1169,18 @@ function openatrium2_groups_field_default_fields() {
       'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
-        'handler' => 'base',
+        'handler' => 'views',
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
               'status' => 0,
             ),
           ),
-          'sort' => array(
-            'type' => 'none',
+          'view' => array(
+            'args' => array(),
+            'display_name' => 'entityreference_1',
+            'view_name' => 'open_atrium_2_user_filters',
           ),
-          'target_bundles' => array(),
         ),
         'target_type' => 'user',
       ),
@@ -1190,6 +1190,7 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'section_page',
       'default_value' => NULL,
+      'default_value_function' => 'entityreference_prepopulate_field_default_value',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1220,17 +1221,21 @@ function openatrium2_groups_field_default_fields() {
       'label' => 'Users',
       'required' => 0,
       'settings' => array(
+        'behaviors' => array(
+          'prepopulate' => array(
+            'action' => 'none',
+            'fallback' => 'none',
+            'skip_perm' => '0',
+            'status' => 1,
+          ),
+        ),
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'entityreference',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => '60',
-        ),
-        'type' => 'entityreference_autocomplete_tags',
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
         'weight' => '6',
       ),
     ),
