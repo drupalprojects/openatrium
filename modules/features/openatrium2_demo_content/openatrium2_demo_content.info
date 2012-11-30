@@ -2,6 +2,7 @@ name = OpenAtrium2 Demo Content
 description = Temporary demo content for development purposes.
 core = 7.x
 package = Open Atrium 2.0
+php = 5.2.4
 version = 7.x-2.0
 project = openatrium2_demo_content
 dependencies[] = ctools

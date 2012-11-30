@@ -141,6 +141,7 @@ function openatrium2_demo_content_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'group_article',
       'default_value' => NULL,
+      'default_value_function' => 'entityreference_prepopulate_field_default_value',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -167,7 +168,7 @@ function openatrium2_demo_content_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'og_group_ref',
       'label' => 'Groups audience',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'behaviors' => array(
           'og_widget' => array(
@@ -178,6 +179,12 @@ function openatrium2_demo_content_field_default_fields() {
               'widget_type' => 'options_select',
             ),
             'status' => TRUE,
+          ),
+          'prepopulate' => array(
+            'action' => 'none',
+            'fallback' => 'none',
+            'skip_perm' => '0',
+            'status' => 1,
           ),
         ),
         'user_register_form' => FALSE,
@@ -195,6 +202,7 @@ function openatrium2_demo_content_field_default_fields() {
         ),
       ),
       'widget' => array(
+        'active' => 0,
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
