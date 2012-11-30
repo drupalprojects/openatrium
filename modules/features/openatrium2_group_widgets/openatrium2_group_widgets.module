@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenAtrium2 Group Widgets feature.
+ */
+
+include_once 'openatrium2_group_widgets.features.inc';

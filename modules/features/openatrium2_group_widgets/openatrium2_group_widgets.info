@@ -1,0 +1,14 @@
+name = OpenAtrium2 Group Widgets
+description = Contains widgets specially tailored to groups
+core = 7.x
+package = Open Atrium 2.0
+php = 5.2.4
+version = 7.x-2.0
+project = openatrium2_group_widgets
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[views_view][] = open_atrium_2_member_widget
+features_exclude[dependencies][ctools] = ctools
+project path = profiles/openatrium/modules/features
