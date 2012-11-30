@@ -29,6 +29,10 @@ projects[message][version] = 1.6
 projects[message_notify][subdir] = contrib
 projects[message_notify][version] = 2.3
 
+; Chosen
+projects[chosen][subdir] = contrib
+projects[chosen][version] = 1.0
+
 ; Entity Reference Prepopulate
 projects[entityreference_prepopulate][subdir] = contrib
 projects[entityreference_prepopulate][version] = 1.1
@@ -39,3 +43,7 @@ projects[devel][download][type] = git
 projects[devel][download][url] = http://git.drupal.org/project/devel.git
 projects[devel][download][branch] = 7.x-1.x
 projects[devel][subdir] = contrib
+
+; Diff
+projects[diff][subdir] = contrib
+projects[diff][version] = 3.2

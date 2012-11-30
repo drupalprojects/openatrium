@@ -25,9 +25,6 @@ dependencies[] = panopoly_pages
 dependencies[] = panopoly_search
 dependencies[] = panopoly_wysiwyg
 
-; Panopoly Recommended
-dependencies[] = devel
-
 
 ;
 ; Open Atrium Modules
@@ -38,6 +35,7 @@ dependencies[] = message_notify
 dependencies[] = entityreference_prepopulate
 dependencies[] = navbar
 dependencies[] = module_filter
+dependencies[] = chosen
 
 ; Organic Groups
 dependencies[] = og
@@ -50,3 +48,7 @@ dependencies[] = og_ui
 ; Open Atrium 2.0 Features
 dependencies[] = openatrium2_groups
 dependencies[] = openatrium2_demo_content
+
+; Development Modules - Temporary
+dependencies[] = devel
+dependencies[] = diff
