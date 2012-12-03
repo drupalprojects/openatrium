@@ -22,6 +22,7 @@ function openatrium2_group_widgets_views_default_views() {
 
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
+  $handler->display->display_options['title'] = 'Members in Group';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -40,10 +41,28 @@ function openatrium2_group_widgets_views_default_views() {
     ),
   );
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: View area */
+  $handler->display->display_options['header']['view']['id'] = 'view';
+  $handler->display->display_options['header']['view']['table'] = 'views';
+  $handler->display->display_options['header']['view']['field'] = 'view';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'open_atrium_2_member_widget:panel_pane_1';
   /* Relationship: OG membership: OG membership from User */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['alter']['preserve_tags'] = '<img>';
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'openatrium2_thumbnail',
+    'image_link' => 'content',
+  );
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -68,8 +87,6 @@ function openatrium2_group_widgets_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['title'] = '%1 members';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
@@ -81,14 +98,71 @@ function openatrium2_group_widgets_views_default_views() {
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    3 => '3',
+  );
 
   /* Display: Members in Group */
   $handler = $view->new_display('panel_pane', 'Members in Group', 'members_in_group_pane');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: View area */
+  $handler->display->display_options['header']['view']['id'] = 'view';
+  $handler->display->display_options['header']['view']['table'] = 'views';
+  $handler->display->display_options['header']['view']['field'] = 'view';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'open_atrium_2_member_widget:admins_in_group_pane';
+  $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['operator'] = 'not';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    3 => '3',
+  );
   $handler->display->display_options['pane_title'] = 'Members in Group';
   $handler->display->display_options['pane_description'] = 'Displays members within a group.';
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium Groups';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Managers of Group */
+  $handler = $view->new_display('panel_pane', 'Managers of Group', 'admins_in_group_pane');
+  $handler->display->display_options['display_description'] = 'Displays only administrative users in group.';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['pane_title'] = 'Members in Group';
+  $handler->display->display_options['pane_description'] = 'Displays members within a group.';
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium Groups';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $export['open_atrium_2_member_widget'] = $view;
 
   return $export;
