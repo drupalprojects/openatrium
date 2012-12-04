@@ -32,7 +32,6 @@ dependencies[] = panopoly_wysiwyg
 dependencies[] = rules
 dependencies[] = message
 dependencies[] = message_notify
-dependencies[] = entityreference_prepopulate
 dependencies[] = navbar
 dependencies[] = module_filter
 dependencies[] = chosen
