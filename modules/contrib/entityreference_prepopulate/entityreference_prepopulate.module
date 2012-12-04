@@ -184,10 +184,21 @@ function entityreference_prepopulate_field_access($op, $field, $entity_type, $en
     return;
   }
   $items = entityreference_prepopulate_get_values($field, $instance);
-
+dpm($items);
   if (empty($items) && $settings['fallback'] == 'hide') {
     return FALSE;
   }
+}
+
+/**
+ * Instantiate og data from og context
+ */
+function entityreference_prepopulate_node_view($node, $view_mode) {
+  if ($og_context = og_context()) {
+    //setcookie('oa2_group_id', $og_context['gid'], strtotime( '+1 days' ), '/');
+    $_SESSION['oa2_group_id'] = $og_context['gid'];
+  }
+  dpm($_SESSION['oa2_group_id']);
 }
 
 /**
@@ -204,11 +215,21 @@ function entityreference_prepopulate_field_access($op, $field, $entity_type, $en
 function entityreference_prepopulate_get_values($field, $instance, $flat_array = FALSE) {
   $settings = $instance['settings']['behaviors']['prepopulate'];
 
+  if ($session = entityreference_prepopulate_get_values_from_session()) {
+    return $session;
+  }
+
   if (!empty($settings['og_context']) && module_exists('og_context')) {
     return entityreference_prepopulate_get_values_from_og_context($field, $instance, $flat_array);
   }
 
   return entityreference_prepopulate_get_values_from_url($field, $instance, $flat_array);
+}
+
+function entityreference_prepopulate_get_values_from_session() {
+  $items[] = array( 'target_id' => $_SESSION['oa2_group_id'] );
+
+  return $items;
 }
 
 function entityreference_prepopulate_get_values_from_og_context($field, $instance, $flat_array = FALSE) {
