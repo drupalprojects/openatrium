@@ -1335,6 +1335,7 @@ function openatrium2_groups_field_default_fields() {
           'prepopulate' => array(
             'action' => 'none',
             'fallback' => 'none',
+            'og_context' => 0,
             'skip_perm' => '0',
             'status' => 1,
           ),
