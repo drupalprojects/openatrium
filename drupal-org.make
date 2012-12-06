@@ -33,10 +33,6 @@ projects[message_notify][version] = 2.3
 projects[chosen][subdir] = contrib
 projects[chosen][version] = 1.0
 
-; Entity Reference Prepopulate
-projects[entityreference_prepopulate][subdir] = contrib
-projects[entityreference_prepopulate][version] = 1.1
-
 ; Devel
 projects[devel][type] = module
 projects[devel][download][type] = git
