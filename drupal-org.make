@@ -32,6 +32,7 @@ projects[message_notify][version] = 2.3
 ; Chosen
 projects[chosen][subdir] = contrib
 projects[chosen][version] = 1.0
+projects[chosen][patch][] = http://drupal.org/files/issues/chosen-7.x-1.x-install_profile.patch
 
 ; Devel
 projects[devel][type] = module

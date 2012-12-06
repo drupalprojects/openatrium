@@ -903,7 +903,7 @@ function openatrium2_groups_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => 1,
         ),
         'featured' => array(
           'label' => 'above',
@@ -1090,7 +1090,7 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'section_page',
       'default_value' => NULL,
-      'default_value_function' => 'entityreference_prepopulate_field_default_value',
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1123,10 +1123,7 @@ function openatrium2_groups_field_default_fields() {
       'settings' => array(
         'behaviors' => array(
           'prepopulate' => array(
-            'action' => 'none',
-            'fallback' => 'none',
-            'skip_perm' => '0',
-            'status' => 1,
+            'status' => 0,
           ),
         ),
         'user_register_form' => FALSE,
@@ -1134,11 +1131,7 @@ function openatrium2_groups_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => 60,
-        ),
+        'settings' => array(),
         'type' => 'options_select',
         'weight' => '5',
       ),
@@ -1190,7 +1183,7 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'section_page',
       'default_value' => NULL,
-      'default_value_function' => 'entityreference_prepopulate_field_default_value',
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1223,10 +1216,7 @@ function openatrium2_groups_field_default_fields() {
       'settings' => array(
         'behaviors' => array(
           'prepopulate' => array(
-            'action' => 'none',
-            'fallback' => 'none',
-            'skip_perm' => '0',
-            'status' => 1,
+            'status' => 0,
           ),
         ),
         'user_register_form' => FALSE,
@@ -1293,7 +1283,7 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'section_page',
       'default_value' => NULL,
-      'default_value_function' => 'entityreference_prepopulate_field_default_value',
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1333,11 +1323,7 @@ function openatrium2_groups_field_default_fields() {
             'status' => TRUE,
           ),
           'prepopulate' => array(
-            'action' => 'none',
-            'fallback' => 'none',
-            'og_context' => 0,
-            'skip_perm' => '0',
-            'status' => 1,
+            'status' => 0,
           ),
         ),
         'user_register_form' => FALSE,
@@ -1586,7 +1572,7 @@ function openatrium2_groups_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'team',
       'default_value' => NULL,
-      'default_value_function' => 'entityreference_prepopulate_field_default_value',
+      'default_value_function' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1626,10 +1612,7 @@ function openatrium2_groups_field_default_fields() {
             'status' => TRUE,
           ),
           'prepopulate' => array(
-            'action' => 'none',
-            'fallback' => 'none',
-            'skip_perm' => '0',
-            'status' => 1,
+            'status' => 0,
           ),
         ),
         'user_register_form' => FALSE,
