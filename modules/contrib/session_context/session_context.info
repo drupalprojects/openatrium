@@ -1,0 +1,9 @@
+name = Session Context
+description = Prepopulate entity reference values and provides og context value from session variables.
+package = OpenAtrium2
+core = 7.x
+php = 5.1
+
+dependencies[] = og
+dependencies[] = og_context
+dependencies[] = openatrium2_groups
