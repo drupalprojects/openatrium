@@ -22,12 +22,11 @@ function session_context_og_context_negotiation_info() {
  *   content page visited.
  */
 function session_context_og_context_handler_sessions() {
+  $gids = FALSE;
   if (isset($_SESSION['oa2_group_id'])) {
     $gids['node'][0] = $_SESSION['oa2_group_id'];
   }
-  else {
-    $gids = FALSE;
-  }
+
   return $gids;
 }
 
@@ -44,11 +43,9 @@ function session_context_field_access($op, $field, $entity_type, $entity, $accou
   }
 
   $_SESSION['oa2_group_id'] = $entity->nid;
-
   if (!empty($entity->og_group_ref[$entity->language][0]['target_id'])) {
     $_SESSION['oa2_group_id'] = $entity->og_group_ref[$entity->language][0]['target_id'];
   }
-
 }
 
 /**
@@ -58,7 +55,7 @@ function session_context_field_access($op, $field, $entity_type, $entity, $accou
  *   exists.
  */
 function session_context_form_alter(&$form, &$form_state, $form_id) {
-  if (strpos($form_id, 'node_form') && empty($form['og_group_ref']['und'][0]['default']['#default_value'])) {
+  if (strstr($form_id, 'node_form') && empty($form['og_group_ref']['und'][0]['default']['#default_value'])) {
     $form['og_group_ref'][$form['language']['#value']][0]['default']['#default_value'] = $_SESSION['og_context']['gid'];
   }
 }

@@ -12,8 +12,8 @@ function openatrium2_groups_views_default_views() {
 
   $view = new view();
   $view->name = 'open_atrium_2_team_filters';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Provides a filtered list of teams for the Section Page content type.';
+  $view->tag = 'OpenAtrium2';
   $view->base_table = 'node';
   $view->human_name = 'Open Atrium 2 Team Filters';
   $view->core = 7;
@@ -89,8 +89,8 @@ function openatrium2_groups_views_default_views() {
 
   $view = new view();
   $view->name = 'open_atrium_2_user_filters';
-  $view->description = 'Newest group members.';
-  $view->tag = 'og';
+  $view->description = 'Provides a list of users filtered by the existing group content type.';
+  $view->tag = 'OpenAtrium2';
   $view->base_table = 'users';
   $view->human_name = 'Open Atrium 2 User Filters';
   $view->core = 0;
