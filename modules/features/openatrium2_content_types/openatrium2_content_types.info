@@ -1,10 +1,10 @@
-name = OpenAtrium2 Groups
+name = OpenAtrium2 Content Types
 description = Collection of group
 core = 7.x
 package = Open Atrium 2.0
 php = 5.2.4
 version = 7.x-2.0
-project = openatrium2_groups
+project = openatrium2_content_types
 dependencies[] = ctools
 dependencies[] = defaultconfig
 dependencies[] = entityreference

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * openatrium2_groups.strongarm.inc
+ * openatrium2_content_types.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function openatrium2_groups_strongarm() {
+function openatrium2_content_types_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

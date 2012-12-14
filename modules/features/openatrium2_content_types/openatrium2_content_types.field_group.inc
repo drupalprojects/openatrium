@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * openatrium2_groups.field_group.inc
+ * openatrium2_content_types.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function openatrium2_groups_field_group_info() {
+function openatrium2_content_types_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();

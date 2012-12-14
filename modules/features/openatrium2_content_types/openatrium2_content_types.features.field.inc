@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * openatrium2_groups.features.field.inc
+ * openatrium2_content_types.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function openatrium2_groups_field_default_fields() {
+function openatrium2_content_types_field_default_fields() {
   $fields = array();
 
   // Exported field: 'node-openatrium_group-body'.

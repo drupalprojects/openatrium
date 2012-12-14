@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * openatrium2_groups.features.inc
+ * openatrium2_content_types.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function openatrium2_groups_ctools_plugin_api() {
+function openatrium2_content_types_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
@@ -21,14 +21,14 @@ function openatrium2_groups_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function openatrium2_groups_views_api() {
+function openatrium2_content_types_views_api() {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function openatrium2_groups_node_info() {
+function openatrium2_content_types_node_info() {
   $items = array(
     'openatrium_group' => array(
       'name' => t('Group'),

@@ -4,4 +4,4 @@
  * Code for the OpenAtrium2 Groups feature.
  */
 
-include_once 'openatrium2_groups.features.inc';
+include_once 'openatrium2_content_types.features.inc';

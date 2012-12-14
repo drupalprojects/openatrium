@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * openatrium2_groups.views_default.inc
+ * openatrium2_content_types.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function openatrium2_groups_views_default_views() {
+function openatrium2_content_types_views_default_views() {
   $export = array();
 
   $view = new view();
