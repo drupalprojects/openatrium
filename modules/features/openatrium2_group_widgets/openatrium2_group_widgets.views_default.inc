@@ -12,8 +12,8 @@ function openatrium2_group_widgets_views_default_views() {
 
   $view = new view();
   $view->name = 'open_atrium_2_member_widget';
-  $view->description = 'Newest group members.';
-  $view->tag = 'og';
+  $view->description = 'Provides a widget containing a group\'s list of members';
+  $view->tag = 'OpenAtrium2';
   $view->base_table = 'users';
   $view->human_name = 'Open Atrium 2 Member Widget';
   $view->core = 0;
