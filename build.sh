@@ -38,7 +38,7 @@ drush make $DRUSH_OPTS $ABS_CALLPATH/$MAKEFILE $TARGET
 echo 'Setting up symlinks...'
 DRUPAL=`cd $TARGET; pwd -P`
 ln -s $ABS_CALLPATH $DRUPAL/profiles/openatrium
-ln -s /opt/development/files/openatrium $DRUPAL/sites/default/files
+ln -s /opt/files/openatrium $DRUPAL/sites/default/files
 # Restore settings
 echo 'Restoring settings...'
 ln -s $BASE_PATH/settings.php $DRUPAL/sites/default/settings.php
