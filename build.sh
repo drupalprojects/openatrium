@@ -15,6 +15,7 @@ if [ -z "$TARGET" ]; then
 fi
 CALLPATH=`dirname $0`
 ABS_CALLPATH=`cd $CALLPATH; pwd -P`
+BASE_PATH=`cd ..; pwd`
 
 echo '_______      ___'
 echo '| ___ |     /  |'
@@ -23,7 +24,7 @@ echo '| |_| |   / /| |'
 echo '|____ |  / / | |'
 echo '   OpenAtrium   '
 echo '================'
- 
+
 # Temp move settings
 echo 'Backing up settings.php...'
 mv $TARGET/sites/default/settings.php settings.php
@@ -37,19 +38,20 @@ drush make $DRUSH_OPTS $ABS_CALLPATH/$MAKEFILE $TARGET
 echo 'Setting up symlinks...'
 DRUPAL=`cd $TARGET; pwd -P`
 ln -s $ABS_CALLPATH $DRUPAL/profiles/openatrium
-ln -s /opt/development/files/openatrium $DRUPAL/sites/default/files
- 
+ln -s /opt/files/openatrium $DRUPAL/sites/default/files
 # Restore settings
 echo 'Restoring settings...'
-mv settings.php $DRUPAL/sites/default/settings.php
+ln -s $BASE_PATH/settings.php $DRUPAL/sites/default/settings.php
 
 # Move files and directories around
 #   These instructions should be incorporated into the make file in the future
-mkdir $DRUPAL/sites/all//libraries
+mkdir $DRUPAL/sites/all/libraries
 mv -v $DRUPAL/profiles/panopoly/libraries/tinymce $DRUPAL/sites/all/libraries/tinymce
 
 # Clear caches and Run updates
 cd $DRUPAL;
+echo 'Setting ownership to www-data'
+chown -R www-data .
 echo 'Clearing caches...'
 drush cc all; drush cc all;
 echo 'Running updates...'
