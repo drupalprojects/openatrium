@@ -1,0 +1,5 @@
+name = Open Atrium 2 Widget Preprocessor
+description = Custom preprocessing functions for widgets
+package = Open Atrium 2.0
+core = 7.x
+php = 5.1
