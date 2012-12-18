@@ -15,6 +15,7 @@ if [ -z "$TARGET" ]; then
 fi
 CALLPATH=`dirname $0`
 ABS_CALLPATH=`cd $CALLPATH; pwd -P`
+BASE_PATH=`cd ..; pwd`
 
 echo '_______      ___'
 echo '| ___ |     /  |'
@@ -38,10 +39,9 @@ echo 'Setting up symlinks...'
 DRUPAL=`cd $TARGET; pwd -P`
 ln -s $ABS_CALLPATH $DRUPAL/profiles/openatrium
 ln -s /opt/development/files/openatrium $DRUPAL/sites/default/files
-
 # Restore settings
 echo 'Restoring settings...'
-mv settings.php $DRUPAL/sites/default/settings.php
+ln -s $BASE_PATH/settings.php $DRUPAL/sites/default/settings.php
 
 # Move files and directories around
 #   These instructions should be incorporated into the make file in the future
