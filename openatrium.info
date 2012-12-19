@@ -45,10 +45,18 @@ dependencies[] = og_ui
 
 
 ; Open Atrium 2.0 Features
-dependencies[] = openatrium2_groups
-dependencies[] = openatrium2_demo_content
+dependencies[] = openatrium2_content_types
 dependencies[] = openatrium2_config
 dependencies[] = openatrium2_group_widgets
+dependencies[] = openatrium2_groups
+dependencies[] = openatrium2_section_pages
+
+dependencies[] = openatrium2_demo_content
+
+; Open Atrium 2.0 Modules
+dependencies[] = oa2_dashboard
+dependencies[] = session_context
+
 
 ; Development Modules - Temporary
 dependencies[] = devel
