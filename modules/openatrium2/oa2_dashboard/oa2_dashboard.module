@@ -16,6 +16,8 @@ function oa2_dashboard_block_info() {
  * Implements hook_block_view()
  */
 function oa2_dashboard_block_view($delta = '') {
+  $block = array();
+
   switch($delta) {
   	case 'oa2_toolbar':
   	  $block['subject'] = t('Open Atrium Toolbar');
@@ -62,4 +64,12 @@ function oa2_dashboard_preprocess_oa2_toolbar(&$variables) {
   }
 
   $variables['sections_list'] = views_embed_view('open_atrium_2_section_pages', 'section_pages_within_groups');
+}
+
+
+function oa2_dashboard_preprocess_views_view(&$variables) {
+  if ($variables['display_id'] === 'section_pages_within_groups') {
+    $group = node_load($_SESSION['oa2_group_id']);
+    $variables['attachment_before'] = l(t('Group page'), 'node/' . $_SESSION['oa2_group_id']);
+  }
 }
