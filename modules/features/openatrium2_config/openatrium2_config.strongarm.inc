@@ -52,5 +52,27 @@ function openatrium2_config_strongarm() {
   $strongarm->value = '/tmp';
   $export['file_temporary_path'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'og_context_negotiation_group_context';
+  $strongarm->value = array(
+    'sessions' => array(),
+  );
+  $export['og_context_negotiation_group_context'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'og_context_providers_weight_group_context';
+  $strongarm->value = array(
+    'sessions' => '-10',
+    'node' => '-9',
+    'user-edit' => '-8',
+    'user-view' => '-7',
+    'url' => '-6',
+  );
+  $export['og_context_providers_weight_group_context'] = $strongarm;
+
   return $export;
 }

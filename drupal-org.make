@@ -29,6 +29,14 @@ projects[message][version] = 1.6
 projects[message_notify][subdir] = contrib
 projects[message_notify][version] = 2.3
 
+; Message Subscribe
+projects[message_subscribe][subdir] = contrib
+projects[message_subscribe][version] = 1.0-alpha2
+
+; Flag
+projects[flag][subdir] = contrib
+projects[flag][version] = 2.0
+
 ; Chosen
 projects[chosen][subdir] = contrib
 projects[chosen][version] = 1.0
