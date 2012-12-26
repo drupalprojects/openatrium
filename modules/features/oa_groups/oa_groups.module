@@ -5,3 +5,199 @@
  */
 
 include_once 'oa_groups.features.inc';
+
+/**
+ * Name of default OpenAtrium Section field (for Organic Groups Fields UI).
+ */
+define('OA_SECTION_FIELD', 'oa_section_ref');
+/**
+ * Name of OpenAtrium Section content type.
+ */
+define('OA_SECTION_TYPE', 'oa_section');
+/**
+ * Name of OpenAtrium Team content type.
+ */
+define('OA_TEAM_TYPE', 'oa_team');
+
+/**
+ * Determine if a user is a member of a team
+ * @param  int $team_id
+ * @param  int $user_id
+ * @return boolean TRUE if user is in team
+ */
+function oa_member_of_team($team_id, $user_id) {
+  static $cache = array();
+
+  if (!isset($cache[$team_id][$user_id])) {
+    $query = new EntityFieldQuery();
+    $query
+      ->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', OA_TEAM_TYPE)
+      ->entityCondition('entity_id', $team_id)
+      ->propertyCondition('status', 1)
+      ->fieldCondition('field_oa_team_users', 'target_id', $user_id, '=');
+    $result = $query->execute();
+    $cache[$team_id][$user_id] = (!empty($result['node'])) ? TRUE : FALSE;
+  }
+  return $cache[$team_id][$user_id];
+}
+
+/**
+ * Determine access to a Open Atrium Section
+ * Same arguments as hook_node_access
+ */
+function oa_groups_section_access($node, $op, $account) {
+  // Handle access to a section
+  if (empty($node->field_oa_organization_ref[LANGUAGE_NONE]) &&
+      empty($node->field_oa_team_ref[LANGUAGE_NONE]) &&
+      empty($node->field_oa_user_ref[LANGUAGE_NONE])) {
+    // No access fields are set, so it's a public section
+    return NODE_ACCESS_ALLOW;
+  }
+
+  // Test Organization membership
+  if (!empty($node->field_oa_organization_ref[LANGUAGE_NONE])) {
+    $org_ids = array();
+    foreach ($node->field_oa_organization_ref[LANGUAGE_NONE] as $org_ref) {
+      $org_ids[] = $org_ref['target_id'];
+    }
+    $groups = og_get_entity_groups('user', $account);
+    foreach ($groups as $group_type => $gids) {
+      foreach ($gids as $gid) {
+        if (in_array($gid, $org_ids)) {
+          return NODE_ACCESS_ALLOW;
+        }
+      }
+    }
+  }
+
+  // Test Team membership
+  if (!empty($node->field_oa_team_ref[LANGUAGE_NONE])) {
+    foreach ($node->field_oa_team_ref[LANGUAGE_NONE] as $team_ref) {
+      if (oa_member_of_team($team_ref['target_id'], $account->uid)) {
+        return NODE_ACCESS_ALLOW;
+      }
+    }
+  }
+
+  // Test User membership
+  if (!empty($node->field_oa_user_ref[LANGUAGE_NONE])) {
+    foreach ($node->field_oa_user_ref[LANGUAGE_NONE] as $team_ref) {
+      if ($team_ref['target_id'] == $account->uid) {
+        return NODE_ACCESS_ALLOW;
+      }
+    }
+  }
+
+  // none of the organizations, teams, or users allowed access, so deny access
+  return NODE_ACCESS_DENY;
+
+}
+
+/**
+ * Implements hook_node_access.
+ */
+function oa_groups_node_access($node, $op, $account) {
+  if (!is_object($node)) {
+    // only interested in actual nodes
+    return NODE_ACCESS_IGNORE;
+  }
+  if ($node->type == OA_SECTION_TYPE) {
+    return oa_groups_section_access($node, $op, $account);
+  }
+  // Look for the default OA_SECTION_FIELD
+  if (!empty($node->{OA_SECTION_FIELD})) {
+    // Found a section reference, so defer access to section
+    // Loop through referenced sections to test access
+    foreach ($node->{OA_SECTION_FIELD}[LANGUAGE_NONE] as $entity_ref) {
+      $section = node_load($entity_ref['target_id']);
+      if (isset($section->nid) && ($section->nid != $node->nid)) {
+        $access = node_access($op, $section, $account);
+        if ($access == NODE_ACCESS_ALLOW) {
+          return $access;
+        }
+      }
+    }
+    // none of the sections allowed access, so deny access
+    return NODE_ACCESS_DENY;
+  }
+
+  // Look for any other Section Reference fields in node
+  foreach ($node as $key => $field) {
+    $field_info = field_info_field($key);
+    if (isset($field_info['type']) && ($field_info['type'] == 'entityreference')) {
+      // looking for an EntityReference field with a Section in the bundle
+      // Doesn't work if an EntityReference View is being used on the field
+      if (in_array(OA_SECTION_TYPE, $field_info['settings']['handler_settings']['target_bundles'])) {
+        // Found a section reference, so defer access to section
+        // If field is empty, then it's open access
+        if (!empty($field[LANGUAGE_NONE])) {
+          // Loop through referenced sections to test access
+          foreach ($field[LANGUAGE_NONE] as $entity_ref) {
+            $section = node_load($entity_ref['target_id']);
+            if (isset($section->nid) && ($section->nid != $node->nid)) {
+              $access = node_access($op, $section, $account);
+              if ($access == NODE_ACCESS_ALLOW) {
+                return $access;
+              }
+            }
+          }
+          // none of the sections allowed access, so deny access
+          return NODE_ACCESS_DENY;
+        }
+      }
+    }
+  }
+  return NODE_ACCESS_IGNORE;
+}
+
+/**
+ * Implements hook_og_fields_info().
+ */
+function oa_groups_og_fields_info() {
+  $items[OA_SECTION_FIELD] = array(
+    'no ui' => TRUE,
+    'type' => array('group content'),
+    'description' => t('Determine to which Open Atrium section this group content is assigned to.'),
+    'field' => array(
+      'field_name' => OA_SECTION_FIELD,
+      'type' => 'entityreference',
+      'cardinality' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'section_page' => OA_SECTION_TYPE,
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'instance' => array(
+      'label' => t('OpenAtrium Section'),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => 60,
+        ),
+        'type' => 'entityreference_autocomplete',
+      ),
+    ),
+  );
+
+  return $items;
+}
