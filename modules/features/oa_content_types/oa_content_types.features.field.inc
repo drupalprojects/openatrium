@@ -1079,7 +1079,7 @@ function oa_content_types_field_default_fields() {
           'view' => array(
             'args' => array(),
             'display_name' => 'entityreference_1',
-            'view_name' => 'open_atrium_2_team_filters',
+            'view_name' => 'open_atrium_team_filters',
           ),
         ),
         'target_type' => 'node',
@@ -1172,7 +1172,7 @@ function oa_content_types_field_default_fields() {
           'view' => array(
             'args' => array(),
             'display_name' => 'entityreference_1',
-            'view_name' => 'open_atrium_2_user_filters',
+            'view_name' => 'open_atrium_user_filters',
           ),
         ),
         'target_type' => 'user',

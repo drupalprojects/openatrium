@@ -11,11 +11,11 @@ function oa_section_pages_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'open_atrium_2_section_pages';
+  $view->name = 'open_atrium_section_pages';
   $view->description = 'Show all content (nodes) of a group.';
   $view->tag = 'og';
   $view->base_table = 'node';
-  $view->human_name = 'Open Atrium 2 Section Pages';
+  $view->human_name = 'Open Atrium Section Pages';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -98,7 +98,7 @@ function oa_section_pages_views_default_views() {
       'label' => 'OG membership: Group ID',
     ),
   );
-  $export['open_atrium_2_section_pages'] = $view;
+  $export['open_atrium_section_pages'] = $view;
 
   return $export;
 }

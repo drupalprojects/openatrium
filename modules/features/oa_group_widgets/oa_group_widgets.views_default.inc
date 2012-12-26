@@ -11,11 +11,11 @@ function oa_group_widgets_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'open_atrium_2_member_widget';
+  $view->name = 'open_atrium_member_widget';
   $view->description = 'Provides a widget containing a group\'s list of members';
-  $view->tag = 'OpenAtrium2';
+  $view->tag = 'OpenAtrium';
   $view->base_table = 'users';
-  $view->human_name = 'Open Atrium 2 Member Widget';
+  $view->human_name = 'Open Atrium Member Widget';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -55,7 +55,7 @@ function oa_group_widgets_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'openatrium2_thumbnail',
+    'image_style' => 'openatrium_thumbnail',
     'image_link' => 'content',
   );
   /* Field: User: Name */
@@ -157,7 +157,7 @@ function oa_group_widgets_views_default_views() {
     'members_in_group_pane' => 'members_in_group_pane',
     'default' => 0,
   );
-  $export['open_atrium_2_member_widget'] = $view;
+  $export['open_atrium_member_widget'] = $view;
 
   return $export;
 }
