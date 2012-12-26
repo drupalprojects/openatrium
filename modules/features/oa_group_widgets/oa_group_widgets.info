@@ -9,6 +9,6 @@ dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
-features[views_view][] = open_atrium_2_member_widget
+features[views_view][] = open_atrium_member_widget
 features_exclude[dependencies][ctools] = ctools
 project path = profiles/openatrium/modules/features
