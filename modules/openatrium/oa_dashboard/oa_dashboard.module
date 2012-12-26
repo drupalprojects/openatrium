@@ -39,7 +39,7 @@ function oa_dashboard_theme() {
   );
 }
 
-function oa_dashboard_preprocess_oa2_toolbar(&$variables) {
+function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   // Separators
   $variables['oa_toolbar_separator'] = t('&gt;');
   $variables['home_label'] = l('&#8962;','<front>', array('html' => true));
