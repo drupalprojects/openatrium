@@ -1,6 +1,6 @@
 name = Open Atrium 2 Dashboard
 description = Generates dashboard widgets for the header region
-package = Open Atrium 2.0
+package = Open Atrium
 core = 7.x
 php = 5.1
 

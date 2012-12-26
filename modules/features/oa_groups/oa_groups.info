@@ -1,7 +1,7 @@
 name = Open Atrium Groups
 description = Lists and views relevant to listing groups.
 core = 7.x
-package = Open Atrium 2.0
+package = Open Atrium
 version = 7.x-2.0
 project = oa_groups
 dependencies[] = views
