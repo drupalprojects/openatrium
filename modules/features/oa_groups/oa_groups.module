@@ -176,7 +176,7 @@ function oa_groups_og_fields_info() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'section_page' => OA_SECTION_TYPE,
+            OA_SECTION_TYPE => OA_SECTION_TYPE,
           ),
         ),
         'target_type' => 'node',

@@ -59,7 +59,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   $section = menu_get_object();
 
   $variables['sections_label'] = t('Main');
-  if ($section->type == 'section_page') {
+  if (isset($section->type) && ($section->type == OA_SECTION_TYPE)) {
     $variables['sections_label'] = $section->title;
   }
 
