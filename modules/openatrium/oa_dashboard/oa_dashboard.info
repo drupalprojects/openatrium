@@ -1,4 +1,4 @@
-name = Open Atrium 2 Dashboard
+name = Open Atrium Dashboard
 description = Generates dashboard widgets for the header region
 package = Open Atrium
 core = 7.x
