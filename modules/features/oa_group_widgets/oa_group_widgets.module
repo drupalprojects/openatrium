@@ -4,4 +4,4 @@
  * Code for the OpenAtrium2 Group Widgets feature.
  */
 
-include_once 'oa_group_widget.features.inc';
+include_once 'oa_group_widgets.features.inc';

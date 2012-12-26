@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * oa_group_widget.views_default.inc
+ * oa_group_widgets.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function oa_group_widget_views_default_views() {
+function oa_group_widgets_views_default_views() {
   $export = array();
 
   $view = new view();

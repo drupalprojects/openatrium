@@ -6,4 +6,4 @@ php = 5.1
 
 dependencies[] = og
 dependencies[] = og_context
-dependencies[] = openatrium2_groups
+dependencies[] = oa_groups
