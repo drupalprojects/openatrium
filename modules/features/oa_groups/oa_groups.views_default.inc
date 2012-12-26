@@ -11,11 +11,11 @@ function oa_groups_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'open_atrium_2_groups';
+  $view->name = 'open_atrium_groups';
   $view->description = 'Show groups of a user.';
-  $view->tag = 'OpenAtrium2';
+  $view->tag = 'OA';
   $view->base_table = 'og_membership';
-  $view->human_name = 'Open Atrium 2 Groups';
+  $view->human_name = 'Open Atrium Groups';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -91,7 +91,7 @@ function oa_groups_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Toolbar', 'groups');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pane_title'] = 'User groups';
-  $handler->display->display_options['pane_category']['name'] = 'Open Atrium 2.0';
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'etid' => array(
@@ -103,7 +103,7 @@ function oa_groups_views_default_views() {
       'label' => 'We pass to the &quot;Entity ID&quot; the User ID.',
     ),
   );
-  $export['open_atrium_2_groups'] = $view;
+  $export['open_atrium_groups'] = $view;
 
   return $export;
 }
