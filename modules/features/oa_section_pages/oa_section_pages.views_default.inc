@@ -81,7 +81,7 @@ function oa_section_pages_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'section_page' => 'section_page',
+    'oa_section' => 'oa_section',
   );
 
   /* Display: Section Pages within Groups */

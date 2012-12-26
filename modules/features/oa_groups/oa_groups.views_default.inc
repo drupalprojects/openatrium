@@ -84,7 +84,7 @@ function oa_groups_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'openatrium_group' => 'openatrium_group',
+    'oa_group' => 'oa_group',
   );
 
   /* Display: Toolbar */

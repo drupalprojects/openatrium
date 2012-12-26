@@ -128,7 +128,7 @@ function oa_demo_content_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'openatrium_group' => 'openatrium_group',
+            'oa_group' => 'oa_group',
           ),
         ),
         'handler_submit' => 'Change handler',
