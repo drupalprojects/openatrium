@@ -71,7 +71,7 @@ function oa_content_types_views_default_views() {
     'oa_team' => 'oa_team',
   );
 
-  /* Display: Section Page - Teams */
+  /* Display: Section Page - Team */
   $handler = $view->new_display('entityreference', 'Section Page - Team', 'entityreference_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;

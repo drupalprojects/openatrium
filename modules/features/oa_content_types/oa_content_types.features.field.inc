@@ -1649,7 +1649,7 @@ function oa_content_types_field_default_fields() {
   t('Groups ID');
   t('Logo');
   t('Organizations');
-  t('oa_teams');
+  t('Team');
   t('Thumbnail');
   t('Users');
 
