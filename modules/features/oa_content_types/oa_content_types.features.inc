@@ -30,7 +30,7 @@ function oa_content_types_views_api() {
  */
 function oa_content_types_node_info() {
   $items = array(
-    'openatrium_group' => array(
+    'oa_group' => array(
       'name' => t('Group'),
       'base' => 'node_content',
       'description' => t('A collection of members'),
@@ -38,7 +38,7 @@ function oa_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'openatrium_organization' => array(
+    'oa_organization' => array(
       'name' => t('Organization'),
       'base' => 'node_content',
       'description' => '',
@@ -46,7 +46,7 @@ function oa_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'section_page' => array(
+    'oa_section' => array(
       'name' => t('Section Page'),
       'base' => 'node_content',
       'description' => '',
@@ -54,7 +54,7 @@ function oa_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'team' => array(
+    'oa_team' => array(
       'name' => t('Team'),
       'base' => 'node_content',
       'description' => '',

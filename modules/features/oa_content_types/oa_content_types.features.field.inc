@@ -10,8 +10,8 @@
 function oa_content_types_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-openatrium_group-body'.
-  $fields['node-openatrium_group-body'] = array(
+  // Exported field: 'node-oa_group-body'.
+  $fields['node-oa_group-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -40,7 +40,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_group',
+      'bundle' => 'oa_group',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -90,8 +90,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openatrium_group-field_logo'.
-  $fields['node-openatrium_group-field_logo'] = array(
+  // Exported field: 'node-oa_group-field_logo'.
+  $fields['node-oa_group-field_logo'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -121,7 +121,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'image',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_group',
+      'bundle' => 'oa_group',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -176,8 +176,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openatrium_group-field_logo_thumbnail'.
-  $fields['node-openatrium_group-field_logo_thumbnail'] = array(
+  // Exported field: 'node-oa_group-field_logo_thumbnail'.
+  $fields['node-oa_group-field_logo_thumbnail'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -207,7 +207,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'image',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_group',
+      'bundle' => 'oa_group',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -262,8 +262,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openatrium_group-group_access'.
-  $fields['node-openatrium_group-group_access'] = array(
+  // Exported field: 'node-oa_group-group_access'.
+  $fields['node-oa_group-group_access'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -290,7 +290,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'list_boolean',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_group',
+      'bundle' => 'oa_group',
       'default_value' => array(
         0 => array(
           'value' => 0,
@@ -346,8 +346,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openatrium_group-group_group'.
-  $fields['node-openatrium_group-group_group'] = array(
+  // Exported field: 'node-oa_group-group_group'.
+  $fields['node-oa_group-group_group'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -373,7 +373,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'list_boolean',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_group',
+      'bundle' => 'oa_group',
       'default_value' => array(
         0 => array(
           'value' => 1,
@@ -437,8 +437,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openatrium_organization-body'.
-  $fields['node-openatrium_organization-body'] = array(
+  // Exported field: 'node-oa_organization-body'.
+  $fields['node-oa_organization-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -467,7 +467,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_organization',
+      'bundle' => 'oa_organization',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -517,8 +517,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openatrium_organization-field_logo'.
-  $fields['node-openatrium_organization-field_logo'] = array(
+  // Exported field: 'node-oa_organization-field_logo'.
+  $fields['node-oa_organization-field_logo'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -548,7 +548,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'image',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_organization',
+      'bundle' => 'oa_organization',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -603,8 +603,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openatrium_organization-field_logo_thumbnail'.
-  $fields['node-openatrium_organization-field_logo_thumbnail'] = array(
+  // Exported field: 'node-oa_organization-field_logo_thumbnail'.
+  $fields['node-oa_organization-field_logo_thumbnail'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -634,7 +634,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'image',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_organization',
+      'bundle' => 'oa_organization',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -689,8 +689,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openatrium_organization-group_access'.
-  $fields['node-openatrium_organization-group_access'] = array(
+  // Exported field: 'node-oa_organization-group_access'.
+  $fields['node-oa_organization-group_access'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -717,7 +717,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'list_boolean',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_organization',
+      'bundle' => 'oa_organization',
       'default_value' => array(
         0 => array(
           'value' => 0,
@@ -773,8 +773,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openatrium_organization-group_group'.
-  $fields['node-openatrium_organization-group_group'] = array(
+  // Exported field: 'node-oa_organization-group_group'.
+  $fields['node-oa_organization-group_group'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -800,7 +800,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'list_boolean',
     ),
     'field_instance' => array(
-      'bundle' => 'openatrium_organization',
+      'bundle' => 'oa_organization',
       'default_value' => array(
         0 => array(
           'value' => 1,
@@ -863,8 +863,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-section_page-body'.
-  $fields['node-section_page-body'] = array(
+  // Exported field: 'node-oa_section-body'.
+  $fields['node-oa_section-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -893,7 +893,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'section_page',
+      'bundle' => 'oa_section',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -942,14 +942,14 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-section_page-field_section_page_organizations'.
-  $fields['node-section_page-field_section_page_organizations'] = array(
+  // Exported field: 'node-oa_section-field_oa_organization_ref'.
+  $fields['node-oa_section-field_oa_organization_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_section_page_organizations',
+      'field_name' => 'field_oa_organization_ref',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -981,7 +981,7 @@ function oa_content_types_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'openatrium_organization' => 'openatrium_organization',
+            'oa_organization' => 'oa_organization',
           ),
         ),
         'target_type' => 'node',
@@ -990,7 +990,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'section_page',
+      'bundle' => 'oa_section',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -1018,7 +1018,7 @@ function oa_content_types_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_section_page_organizations',
+      'field_name' => 'field_oa_organization_ref',
       'label' => 'Organizations',
       'required' => 0,
       'settings' => array(
@@ -1045,14 +1045,14 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-section_page-field_section_page_teams'.
-  $fields['node-section_page-field_section_page_teams'] = array(
+  // Exported field: 'node-oa_section-field_oa_team_ref'.
+  $fields['node-oa_section-field_oa_team_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_section_page_teams',
+      'field_name' => 'field_oa_team_ref',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -1088,7 +1088,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'section_page',
+      'bundle' => 'oa_section',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
@@ -1117,8 +1117,8 @@ function oa_content_types_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_section_page_teams',
-      'label' => 'Teams',
+      'field_name' => 'field_oa_team_ref',
+      'label' => 'Team',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -1138,14 +1138,14 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-section_page-field_section_page_users'.
-  $fields['node-section_page-field_section_page_users'] = array(
+  // Exported field: 'node-oa_section-field_oa_user_ref'.
+  $fields['node-oa_section-field_oa_user_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_section_page_users',
+      'field_name' => 'field_oa_user_ref',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -1181,7 +1181,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'section_page',
+      'bundle' => 'oa_section',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
@@ -1210,7 +1210,7 @@ function oa_content_types_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_section_page_users',
+      'field_name' => 'field_oa_user_ref',
       'label' => 'Users',
       'required' => 0,
       'settings' => array(
@@ -1231,8 +1231,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-section_page-og_group_ref'.
-  $fields['node-section_page-og_group_ref'] = array(
+  // Exported field: 'node-oa_section-og_group_ref'.
+  $fields['node-oa_section-og_group_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -1270,7 +1270,7 @@ function oa_content_types_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'openatrium_group' => 'openatrium_group',
+            'oa_group' => 'oa_group',
           ),
         ),
         'handler_submit' => 'Change handler',
@@ -1281,7 +1281,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'section_page',
+      'bundle' => 'oa_section',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
@@ -1350,8 +1350,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-team-body'.
-  $fields['node-team-body'] = array(
+  // Exported field: 'node-oa_team-body'.
+  $fields['node-oa_team-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -1380,7 +1380,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'team',
+      'bundle' => 'oa_team',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -1430,14 +1430,14 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-team-field_team_users'.
-  $fields['node-team-field_team_users'] = array(
+  // Exported field: 'node-oa_team-field_oa_team_users'.
+  $fields['node-oa_team-field_oa_team_users'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_team_users',
+      'field_name' => 'field_oa_team_users',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -1472,7 +1472,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'team',
+      'bundle' => 'oa_team',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -1500,7 +1500,7 @@ function oa_content_types_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_team_users',
+      'field_name' => 'field_oa_team_users',
       'label' => 'Users',
       'required' => 1,
       'settings' => array(
@@ -1520,8 +1520,8 @@ function oa_content_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-team-og_group_ref'.
-  $fields['node-team-og_group_ref'] = array(
+  // Exported field: 'node-oa_team-og_group_ref'.
+  $fields['node-oa_team-og_group_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -1559,7 +1559,7 @@ function oa_content_types_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'openatrium_group' => 'openatrium_group',
+            'oa_group' => 'oa_group',
           ),
         ),
         'handler_submit' => 'Change handler',
@@ -1570,7 +1570,7 @@ function oa_content_types_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'team',
+      'bundle' => 'oa_team',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
@@ -1649,7 +1649,7 @@ function oa_content_types_field_default_fields() {
   t('Groups ID');
   t('Logo');
   t('Organizations');
-  t('Teams');
+  t('oa_teams');
   t('Thumbnail');
   t('Users');
 

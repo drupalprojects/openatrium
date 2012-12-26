@@ -13,7 +13,7 @@ function oa_content_types_views_default_views() {
   $view = new view();
   $view->name = 'open_atrium_2_team_filters';
   $view->description = 'Provides a filtered list of teams for the Section Page content type.';
-  $view->tag = 'OpenAtrium2';
+  $view->tag = 'OA';
   $view->base_table = 'node';
   $view->human_name = 'Open Atrium 2 Team Filters';
   $view->core = 7;
@@ -68,10 +68,10 @@ function oa_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'team' => 'team',
+    'oa_team' => 'oa_team',
   );
 
-  /* Display: Section Page - Team */
+  /* Display: Section Page - Teams */
   $handler = $view->new_display('entityreference', 'Section Page - Team', 'entityreference_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
@@ -90,7 +90,7 @@ function oa_content_types_views_default_views() {
   $view = new view();
   $view->name = 'open_atrium_2_user_filters';
   $view->description = 'Provides a list of users filtered by the existing group content type.';
-  $view->tag = 'OpenAtrium2';
+  $view->tag = 'OA';
   $view->base_table = 'users';
   $view->human_name = 'Open Atrium 2 User Filters';
   $view->core = 0;

@@ -13,10 +13,10 @@ function oa_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_logos|node|openatrium_group|form';
+  $field_group->identifier = 'group_logos|node|oa_group|form';
   $field_group->group_name = 'group_logos';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'openatrium_group';
+  $field_group->bundle = 'oa_group';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -36,15 +36,15 @@ function oa_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_logos|node|openatrium_group|form'] = $field_group;
+  $export['group_logos|node|oa_group|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_logos|node|openatrium_organization|form';
+  $field_group->identifier = 'group_logos|node|oa_organization|form';
   $field_group->group_name = 'group_logos';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'openatrium_organization';
+  $field_group->bundle = 'oa_organization';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -64,7 +64,7 @@ function oa_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_logos|node|openatrium_organization|form'] = $field_group;
+  $export['group_logos|node|oa_organization|form'] = $field_group;
 
   return $export;
 }
