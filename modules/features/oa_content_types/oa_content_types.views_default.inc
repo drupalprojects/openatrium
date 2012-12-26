@@ -11,11 +11,11 @@ function oa_content_types_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'open_atrium_2_team_filters';
+  $view->name = 'open_atrium_team_filters';
   $view->description = 'Provides a filtered list of teams for the Section Page content type.';
   $view->tag = 'OA';
   $view->base_table = 'node';
-  $view->human_name = 'Open Atrium 2 Team Filters';
+  $view->human_name = 'Open Atrium Team Filters';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -85,14 +85,14 @@ function oa_content_types_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $export['open_atrium_2_team_filters'] = $view;
+  $export['open_atrium_team_filters'] = $view;
 
   $view = new view();
-  $view->name = 'open_atrium_2_user_filters';
+  $view->name = 'open_atrium_user_filters';
   $view->description = 'Provides a list of users filtered by the existing group content type.';
   $view->tag = 'OA';
   $view->base_table = 'users';
-  $view->human_name = 'Open Atrium 2 User Filters';
+  $view->human_name = 'Open Atrium User Filters';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -145,8 +145,8 @@ function oa_content_types_views_default_views() {
     1 => '1',
   );
 
-  /* Display: Open Atrium 2 User Filter */
-  $handler = $view->new_display('entityreference', 'Open Atrium 2 User Filter', 'entityreference_1');
+  /* Display: Open Atrium User Filter */
+  $handler = $view->new_display('entityreference', 'Open Atrium User Filter', 'entityreference_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -160,7 +160,7 @@ function oa_content_types_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $export['open_atrium_2_user_filters'] = $view;
+  $export['open_atrium_user_filters'] = $view;
 
   return $export;
 }

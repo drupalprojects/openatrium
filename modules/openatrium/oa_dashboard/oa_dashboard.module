@@ -4,8 +4,8 @@
  * Implements hook_block_info()
  */
 function oa_dashboard_block_info() {
-  $blocks['oa2_toolbar'] = array(
-    'info' => t('Open Atrium 2 Toolbar'),
+  $blocks['oa_toolbar'] = array(
+    'info' => t('Open Atrium Toolbar'),
     'cache' => DRUPAL_NO_CACHE,
   );
 
@@ -19,9 +19,9 @@ function oa_dashboard_block_view($delta = '') {
   $block = array();
 
   switch($delta) {
-  	case 'oa2_toolbar':
+  	case 'oa_toolbar':
   	  $block['subject'] = t('Open Atrium Toolbar');
-      $block['content'] = theme('oa2_toolbar');
+      $block['content'] = theme('oa_toolbar');
   	  break;
   }
 
@@ -33,27 +33,27 @@ function oa_dashboard_block_view($delta = '') {
  */
 function oa_dashboard_theme() {
   return array(
-    'oa2_toolbar' => array(
-      'template' => 'oa2_toolbar',
+    'oa_toolbar' => array(
+      'template' => 'oa_toolbar',
     ),
   );
 }
 
 function oa_dashboard_preprocess_oa2_toolbar(&$variables) {
   // Separators
-  $variables['oa2_toolbar_separator'] = t('&gt;');
+  $variables['oa_toolbar_separator'] = t('&gt;');
   $variables['home_label'] = l('&#8962;','<front>', array('html' => true));
 
   // Groups
-  if (isset($_SESSION['oa2_group_id'])) {
-    $group = node_load($_SESSION['oa2_group_id']);
+  if (isset($_SESSION['oa_group_id'])) {
+    $group = node_load($_SESSION['oa_group_id']);
   }
-  $variables['groups_label'] = t('OpenAtrium2');
+  $variables['groups_label'] = t('Open Atrium');
   if (isset($group)) {
     $variables['groups_label'] = $group->title;
   }
 
-  $variables['groups_recent'] = views_embed_view('open_atrium_2_groups', 'groups');
+  $variables['groups_recent'] = views_embed_view('open_atrium_groups', 'groups');
 
   // Sections
   $section = menu_get_object();
@@ -63,13 +63,13 @@ function oa_dashboard_preprocess_oa2_toolbar(&$variables) {
     $variables['sections_label'] = $section->title;
   }
 
-  $variables['sections_list'] = views_embed_view('open_atrium_2_section_pages', 'section_pages_within_groups');
+  $variables['sections_list'] = views_embed_view('open_atrium_section_pages', 'section_pages_within_groups');
 }
 
 
 function oa_dashboard_preprocess_views_view(&$variables) {
   if ($variables['display_id'] === 'section_pages_within_groups') {
-    $group = node_load($_SESSION['oa2_group_id']);
-    $variables['attachment_before'] = l(t('Group page'), 'node/' . $_SESSION['oa2_group_id']);
+    $group = node_load($_SESSION['oa_group_id']);
+    $variables['attachment_before'] = l(t('Group page'), 'node/' . $_SESSION['oa_group_id']);
   }
 }
