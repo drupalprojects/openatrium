@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * Implements hook_block_info()
+ */
+function oa_dashboard_block_info() {
+  $blocks['oa2_toolbar'] = array(
+    'info' => t('Open Atrium 2 Toolbar'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function oa_dashboard_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+  	case 'oa2_toolbar':
+  	  $block['subject'] = t('Open Atrium Toolbar');
+      $block['content'] = theme('oa2_toolbar');
+  	  break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme()
+ */
+function oa_dashboard_theme() {
+  return array(
+    'oa2_toolbar' => array(
+      'template' => 'oa2_toolbar',
+    ),
+  );
+}
+
+function oa_dashboard_preprocess_oa2_toolbar(&$variables) {
+  // Separators
+  $variables['oa2_toolbar_separator'] = t('&gt;');
+  $variables['home_label'] = l('&#8962;','<front>', array('html' => true));
+
+  // Groups
+  if (isset($_SESSION['oa2_group_id'])) {
+    $group = node_load($_SESSION['oa2_group_id']);
+  }
+  $variables['groups_label'] = t('OpenAtrium2');
+  if (isset($group)) {
+    $variables['groups_label'] = $group->title;
+  }
+
+  $variables['groups_recent'] = views_embed_view('open_atrium_2_groups', 'groups');
+
+  // Sections
+  $section = menu_get_object();
+
+  $variables['sections_label'] = t('Main');
+  if ($section->type == 'section_page') {
+    $variables['sections_label'] = $section->title;
+  }
+
+  $variables['sections_list'] = views_embed_view('open_atrium_2_section_pages', 'section_pages_within_groups');
+}
+
+
+function oa_dashboard_preprocess_views_view(&$variables) {
+  if ($variables['display_id'] === 'section_pages_within_groups') {
+    $group = node_load($_SESSION['oa2_group_id']);
+    $variables['attachment_before'] = l(t('Group page'), 'node/' . $_SESSION['oa2_group_id']);
+  }
+}

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the OpenAtrium2 Section Pages feature.
- */
-
-include_once 'openatrium2_section_pages.features.inc';

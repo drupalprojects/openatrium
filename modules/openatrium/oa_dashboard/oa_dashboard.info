@@ -1,0 +1,10 @@
+name = Open Atrium 2 Dashboard
+description = Generates dashboard widgets for the header region
+package = Open Atrium 2.0
+core = 7.x
+php = 5.1
+
+stylesheets[all][] = css/oa_dashboard.css
+
+dependencies[] = block
+dependencies[] = session_context

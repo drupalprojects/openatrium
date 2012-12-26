@@ -1,0 +1,13 @@
+name = Open Atrium Section Pages
+description = Displays a list of section pages relevant to a group
+core = 7.x
+package = Open Atrium 2.0
+version = 7.x-2.0
+project = oa_section_pages
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[views_view][] = open_atrium_2_section_pages
+features_exclude[dependencies][ctools] = ctools
+project path = profiles/openatrium/modules/features
