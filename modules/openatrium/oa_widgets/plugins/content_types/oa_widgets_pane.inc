@@ -51,7 +51,7 @@ function oa_widgets_oa_define_content_types($nodes = array()) {
   $nodes = node_type_get_types();
   $valid = array();
   foreach ($nodes as $node) {
-    if ($node->module === 'oa_content_types' && user_access('create ' . $node->type . ' content')) {
+    if ($node->module === 'oa_groups' && user_access('create ' . $node->type . ' content')) {
       $valid[] = $nodes[$node->type];
     }
   }
