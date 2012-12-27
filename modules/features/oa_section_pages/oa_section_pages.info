@@ -2,6 +2,7 @@ name = Open Atrium Section Pages
 description = Displays a list of section pages relevant to a group
 core = 7.x
 package = Open Atrium
+php = 5.2.4
 version = 7.x-2.0
 project = oa_section_pages
 dependencies[] = views

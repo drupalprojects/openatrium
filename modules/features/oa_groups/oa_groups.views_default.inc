@@ -33,8 +33,12 @@ function oa_groups_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -102,6 +106,22 @@ function oa_groups_views_default_views() {
       'fixed' => '',
       'label' => 'We pass to the &quot;Entity ID&quot; the User ID.',
     ),
+  );
+  $translatables['open_atrium_groups'] = array(
+    t('Master'),
+    t('User groups'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('User is not a member of any group.'),
+    t('Group node from OG membership'),
+    t('All'),
+    t('%1 groups'),
+    t('Toolbar'),
+    t('Open Atrium'),
   );
   $export['open_atrium_groups'] = $view;
 
