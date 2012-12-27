@@ -41,31 +41,13 @@ function oa_widgets_content_type_render($subtype, $conf, $context = NULL) {
   return FALSE;
 }
 
-
-/**
- * Implements hook_oa_define_content_types
- * 
- * Passes a list of content types that the user can created 
- */
-function oa_widgets_oa_define_content_types($nodes = array()) {
-  $nodes = node_type_get_types();
-  $valid = array();
-  foreach ($nodes as $node) {
-    if ($node->module === 'oa_groups' && user_access('create ' . $node->type . ' content')) {
-      $valid[] = $nodes[$node->type];
-    }
-  }
-dpm($valid);
-  return $valid;
-}
-
 /**
  * 'Edit form' callback for the content type.
  */
 function oa_widgets_content_type_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
 
-  $nodes = module_invoke_all('oa_define_content_types');
+  $nodes = oa_list_content_types();
 
   $options = array();
   foreach ($nodes as $node) {

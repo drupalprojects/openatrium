@@ -201,3 +201,20 @@ function oa_groups_og_fields_info() {
 
   return $items;
 }
+
+/**
+ * Returns a list of content types throughout the system. List
+ *   leaves out content types specified by other modules/apps.
+ */
+function oa_list_content_types() {
+  $nodes = node_type_get_types();
+
+  // Queries hook_oa_define_content_types to determine what conten types
+  //   modules wants to hide.
+  $deny = module_invoke_all('oa_omit_content_types');
+  foreach ($deny as $remove) {
+    unset($nodes[$remove]);
+  }
+
+  return $nodes;
+}
