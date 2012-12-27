@@ -51,7 +51,10 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   $variables['groups_label'] = t('Open Atrium');
   $variables['sections_main'] = '';
   if (isset($group)) {
-    $variables['groups_label'] = $group->title;
+    $variables['groups_label'] = l($group->title, 'node/' . $group->nid,
+      array('attributes' => array(
+        'class' => array('dropdown-toggle', 'btn', 'btn-large', 'btn-success'),
+        )));
     $variables['sections_main'] = l(t('Group page'), 'node/' . $group->nid);
   }
 
