@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * oa_content_types.features.field.inc
+ * oa_groups.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function oa_content_types_field_default_fields() {
+function oa_groups_field_default_fields() {
   $fields = array();
 
   // Exported field: 'node-oa_group-body'.

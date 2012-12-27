@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * oa_content_types.strongarm.inc
+ * oa_groups.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function oa_content_types_strongarm() {
+function oa_groups_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -338,27 +338,6 @@ function oa_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_blog_pattern';
-  $strongarm->value = 'blogs/[user:name]';
-  $export['pathauto_blog_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_forum_pattern';
-  $strongarm->value = '[term:vocabulary]/[term:name]';
-  $export['pathauto_forum_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_group_article_pattern';
-  $strongarm->value = '[node:og-group-ref:title]/article/[node:title]';
-  $export['pathauto_node_group_article_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_oa_group_pattern';
   $strongarm->value = 'group/[node:title]';
   $export['pathauto_node_oa_group_pattern'] = $strongarm;
@@ -383,27 +362,6 @@ function oa_content_types_strongarm() {
   $strongarm->name = 'pathauto_node_oa_team_pattern';
   $strongarm->value = '[node:og-group-ref:title]/oa_team/[node:title]';
   $export['pathauto_node_oa_team_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_panopoly_page_pattern';
-  $strongarm->value = 'page/[node:title]';
-  $export['pathauto_node_panopoly_page_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_pattern';
-  $strongarm->value = 'content/[node:title]';
-  $export['pathauto_node_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_user_pattern';
-  $strongarm->value = 'users/[user:name]';
-  $export['pathauto_user_pattern'] = $strongarm;
 
   return $export;
 }

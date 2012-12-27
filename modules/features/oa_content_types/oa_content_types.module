@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the OpenAtrium2 Groups feature.
- */
-
-include_once 'oa_content_types.features.inc';
