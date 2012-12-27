@@ -5,3 +5,9 @@
  */
 
 include_once 'oa_demo_content.features.inc';
+
+function oa_demo_content_oa_define_content_types() {
+	$node = array();
+	$node[] = node_type_load('group_article');
+	return $node;
+}

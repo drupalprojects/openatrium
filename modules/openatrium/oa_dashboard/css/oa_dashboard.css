@@ -5,7 +5,6 @@ ul#oa_toolbar {
 	float: left;
 	width: 100%;
 	position: relative;
-	z-index: 9999;
 }
 
 ul#oa_toolbar li {
