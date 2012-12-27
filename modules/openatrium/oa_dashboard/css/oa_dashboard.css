@@ -1,39 +1,49 @@
-ul#oa_toolbar {
+#oa_toolbar {
   list-style: none;
-	font-weight: bold;
-	margin-bottom: 10px;
-	float: left;
-	width: 100%;
+	font-weight: normal;
+	font-size: 18px;
+	padding-top: 22px;
 	position: relative;
+	min-height: 40px;
 }
 
-ul#oa_toolbar li {
-	padding: 1em;
-  display: inline;
+#oa_toolbar a {
+	color: white;
+	padding: 0 0.5em;
 }
 
-ul#oa_toolbar li:hover {
-  background-color: #000;
-}
-ul#oa_toolbar li.oa2_toolbar_separator:hover {
-	background-color: inherit;
+#oa_toolbar a:hover {
+	color: yellow;
 }
 
-ul#oa_toolbar ul {
-  background: #fff;
-	background: rgba(255,255,255,0);
-	list-style: none;
-	position: absolute;
-	left: -9999px;
+#oa_toolbar li a {
+	color: black;
+	padding: 0 0.5em;
+	margin: 0;
+}
+#oa_toolbar li a:hover {
+	color: yellow;
+}
+#oa_toolbar ul {
+	padding: 0.25em 0.5em;
+	margin: 0;
+}
+#oa_toolbar li ul li a {
+	color: black;
+	padding: 0;
 }
 
-ul#oa_toolbar ul li {
-	padding-top: 1px;
-	float: none;
+#oa_toolbar .icon-home {
+	font-size: 24px;
+	vertical-align: baseline;
+	padding: 0;
+	margin: 0;
 }
 
-ul#oa_toolbar li:hover ul {
-	background-color: #333;
-	width: 30em;
-	left: 0;
+#oa_toolbar .caret {
+	border-top-color: white;
+}
+#oa_toolbar .dropdown-toggle {
+	padding: 0.5em 1em;
+	margin: 0 0.25em;
 }

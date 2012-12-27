@@ -49,8 +49,10 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
     $group = node_load($_SESSION['oa_group_id']);
   }
   $variables['groups_label'] = t('Open Atrium');
+  $variables['sections_main'] = '';
   if (isset($group)) {
     $variables['groups_label'] = $group->title;
+    $variables['sections_main'] = l(t('Group page'), 'node/' . $group->nid);
   }
 
   $variables['groups_recent'] = views_embed_view('open_atrium_groups', 'groups');
@@ -69,7 +71,5 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
 
 function oa_dashboard_preprocess_views_view(&$variables) {
   if ($variables['display_id'] === 'section_pages_within_groups') {
-    $group = node_load($_SESSION['oa_group_id']);
-    $variables['attachment_before'] = l(t('Group page'), 'node/' . $_SESSION['oa_group_id']);
   }
 }
