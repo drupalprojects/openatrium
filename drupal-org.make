@@ -42,6 +42,11 @@ projects[chosen][subdir] = contrib
 projects[chosen][version] = 1.0
 projects[chosen][patch][] = http://drupal.org/files/issues/chosen-7.x-1.x-install_profile.patch
 
+; Navbar (Overridden from Panopoly)
+projects[navbar][subdir] = contrib
+projects[navbar][version] = 1.0-alpha3
+projects[navbar][patch][] = http://drupal.org/files/navbar_has_mismatching_closing_tag_1875254_1.patch
+
 ; Devel
 projects[devel][type] = module
 projects[devel][download][type] = git

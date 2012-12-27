@@ -6,8 +6,11 @@
 
 include_once 'oa_demo_content.features.inc';
 
-function oa_demo_content_oa_define_content_types() {
-	$node = array();
-	$node[] = node_type_load('group_article');
-	return $node;
+/**
+ * Implements hook_oa_omit_content_types
+ *
+ * Passes a list of content types that should be omitted
+ */
+function oa_demo_content_oa_omit_content_types() {
+	return array('group_article');
 }

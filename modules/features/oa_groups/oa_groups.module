@@ -25,7 +25,7 @@ define('OA_TEAM_TYPE', 'oa_team');
  * @param  int $user_id
  * @return boolean TRUE if user is in team
  */
-function oa_member_of_team($team_id, $user_id) {
+function oa_groups_member_of_team($team_id, $user_id) {
   static $cache = array();
 
   if (!isset($cache[$team_id][$user_id])) {
@@ -74,7 +74,7 @@ function oa_groups_section_access($node, $op, $account) {
   // Test Team membership
   if (!empty($node->field_oa_team_ref[LANGUAGE_NONE])) {
     foreach ($node->field_oa_team_ref[LANGUAGE_NONE] as $team_ref) {
-      if (oa_member_of_team($team_ref['target_id'], $account->uid)) {
+      if (oa_groups_member_of_team($team_ref['target_id'], $account->uid)) {
         return NODE_ACCESS_ALLOW;
       }
     }
@@ -200,4 +200,21 @@ function oa_groups_og_fields_info() {
   );
 
   return $items;
+}
+
+/**
+ * Returns a list of content types throughout the system. List
+ *   leaves out content types specified by other modules/apps.
+ */
+function oa_list_content_types() {
+  $nodes = node_type_get_types();
+
+  // Queries hook_oa_define_content_types to determine what content types
+  //   modules wants to hide.
+  $deny = module_invoke_all('oa_omit_content_types');
+  foreach ($deny as $remove) {
+    unset($nodes[$remove]);
+  }
+
+  return $nodes;
 }
