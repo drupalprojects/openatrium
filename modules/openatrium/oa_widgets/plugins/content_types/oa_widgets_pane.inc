@@ -1,14 +1,9 @@
 <?php
-/**
- * This plugin array is more or less self documenting
- */
+
 $plugin = array(
-  // the title in the admin
-  'title' => t('Add content'),
-  'description' => t('asdf'),
-  // no one knows if "single" defaults to FALSE...
+  'title' => t('Add content types'),
+  'description' => t('List of content types in a widget.'),
   'single' => TRUE,
-  // oh joy, I get my own section of panel panes
   'category' => array(t('Open Atrium Groups'), -9),
   'edit form' => 'oa_widgets_content_type_edit_form',
   'render callback' => 'oa_widgets_content_type_render',
@@ -42,7 +37,7 @@ function oa_widgets_content_type_render($subtype, $conf, $context = NULL) {
 }
 
 /**
- * 'Edit form' callback for the content type.
+ * Custom edit form to allow users to enable/disable selectable content types
  */
 function oa_widgets_content_type_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
@@ -60,13 +55,13 @@ function oa_widgets_content_type_edit_form($form, &$form_state) {
     '#default_value' => $conf['types'],
     '#description' => t('Select which content types you would like to enable for this widget.'),
   );
- 
+
   return $form;
 }
 
 
 /**
- * Submit function, note anything in the formstate[conf] automatically gets saved 
+ * Saves changes to the widget.
  */
 function oa_widgets_content_type_edit_form_submit($form, &$form_state) {
   foreach (array_keys($form_state['values']) as $key) {
