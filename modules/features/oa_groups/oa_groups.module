@@ -209,7 +209,7 @@ function oa_groups_og_fields_info() {
 function oa_list_content_types() {
   $nodes = node_type_get_types();
 
-  // Queries hook_oa_define_content_types to determine what conten types
+  // Queries hook_oa_define_content_types to determine what content types
   //   modules wants to hide.
   $deny = module_invoke_all('oa_omit_content_types');
   foreach ($deny as $remove) {
