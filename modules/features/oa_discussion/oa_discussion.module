@@ -1,0 +1,10 @@
+<?php
+/**
+ * @file
+ * Code for the OpenAtrium Discussion feature.
+ */
+
+include_once 'oa_discussion.features.inc';
+
+function oa_discussion_node_insert($node) {
+}
