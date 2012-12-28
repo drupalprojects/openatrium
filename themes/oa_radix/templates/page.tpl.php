@@ -87,7 +87,7 @@
     <div class="row">
       <div class="span12">
         <div class="inner">
-          <?php print render($footer_menu); ?>
+          <?php print render($page['footer']); ?>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <div id="oa_toolbar">
   <div class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-home"></i></a>
+    <a href="<?php echo $home_url; ?>"><i class="icon-home"></i></a>
   </div>
   <div class="oa-toolbar-separator"><?php print $oa_toolbar_separator; ?></div>
     <div class="dropdown btn-group">

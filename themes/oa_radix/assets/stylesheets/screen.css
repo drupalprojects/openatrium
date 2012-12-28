@@ -6239,11 +6239,14 @@ a.label:hover, a.badge:hover {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important; } }
-/* line 5, ../sass/_layout.scss */
-.navbar-inner {
-  min-height: 40px;
+/* line 6, ../sass/_layout.scss */
+.navbar-inner,
+#block-menu-menu-open-atrium-footer {
+  min-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
+  border: 1px solid #d4d4d4;
+  color: white;
   background-color: #378b32;
   background-image: -moz-linear-gradient(top, #3e9d38, #2e712a);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3e9d38), to(#2e712a));
@@ -6252,39 +6255,59 @@ a.label:hover, a.badge:hover {
   background-image: linear-gradient(to bottom, #3e9d38, #2e712a);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3E9D38', endColorstr='#FF2E712A', GradientType=0);
-  border: 1px solid #d4d4d4;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-  color: white; }
+  display: block; }
 
-/* line 17, ../sass/_layout.scss */
+/* line 19, ../sass/_layout.scss */
 .navbar .brand {
   color: white;
   text-shadow: 0 1px 0 #3e9d38; }
 
-/* line 21, ../sass/_layout.scss */
+/* line 23, ../sass/_layout.scss */
 #logo img {
   vertical-align: middle; }
 
-/* line 24, ../sass/_layout.scss */
+/* line 26, ../sass/_layout.scss */
 #site-name {
   display: inline-block;
   padding: 10px 0.5em;
   margin: 0; }
 
-/* line 29, ../sass/_layout.scss */
+/* line 31, ../sass/_layout.scss */
 #search-form {
   padding-top: 10px; }
 
-/* line 32, ../sass/_layout.scss */
+/* line 34, ../sass/_layout.scss */
 #oa_toolbar {
   padding-top: 10px;
   padding-bottom: 10px;
   min-height: 20px; }
+
+/* line 40, ../sass/_layout.scss */
+#block-menu-menu-open-atrium-footer {
+  background-image: url("../../logo.png");
+  background-repeat: no-repeat;
+  background-position: 1% center; }
+
+/* line 46, ../sass/_layout.scss */
+#block-menu-menu-open-atrium-footer div ul {
+  float: right; }
+
+/* line 50, ../sass/_layout.scss */
+#block-menu-menu-open-atrium-footer div ul li {
+  list-style: none !important;
+  float: left; }
+
+/* line 55, ../sass/_layout.scss */
+#block-menu-menu-open-atrium-footer div ul li a {
+  line-height: 52px;
+  color: white;
+  display: block; }
 
 /* line 7, ../sass/_menu.scss */
 #main-menu {

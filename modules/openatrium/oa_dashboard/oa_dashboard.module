@@ -42,19 +42,21 @@ function oa_dashboard_theme() {
 function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   // Separators
   $variables['oa_toolbar_separator'] = t('&gt;');
-  $variables['home_label'] = l('&#8962;','<front>', array('html' => true));
+  $variables['home_url'] = url('<front>', array('absolute' => TRUE));
 
   // Groups
   if (isset($_SESSION['oa_group_id'])) {
     $group = node_load($_SESSION['oa_group_id']);
   }
-  $variables['groups_label'] = t('Open Atrium');
+  $group_options = array(
+                      'attributes' => array(
+                        'class' => array('dropdown-toggle', 'btn', 'btn-large', 'btn-success'),
+                        )
+                      );
+  $variables['groups_label'] = l(t('Groups'), '<front>', $group_options);
   $variables['sections_main'] = '';
-  if (isset($group)) {
-    $variables['groups_label'] = l($group->title, 'node/' . $group->nid,
-      array('attributes' => array(
-        'class' => array('dropdown-toggle', 'btn', 'btn-large', 'btn-success'),
-        )));
+  if (isset($group) && $group->type === 'oa_group') {
+    $variables['groups_label'] = l($group->title, 'node/' . $group->nid, $group_options);
     $variables['sections_main'] = l(t('Group page'), 'node/' . $group->nid);
   }
 
