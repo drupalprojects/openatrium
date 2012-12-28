@@ -1,54 +1,14 @@
 /*
-Syntax error: Undefined mixin 'box-shadow'.
-        on line 24 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/_menu.scss, in `box-shadow'
-        from line 24 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/_menu.scss
-        from line 12 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/style.scss
+Syntax error: Undefined mixin 'gradient-vertical'.
+        on line 9 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/_layout.scss, in `gradient-vertical'
+        from line 9 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/_layout.scss
+        from line 10 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/style.scss
 
 Backtrace:
-/opt/development/mpotter/profile/themes/oa_radix/assets/sass/_menu.scss:24:in `box-shadow'
-/opt/development/mpotter/profile/themes/oa_radix/assets/sass/_menu.scss:24
-/opt/development/mpotter/profile/themes/oa_radix/assets/sass/style.scss:12
+/opt/development/mpotter/profile/themes/oa_radix/assets/sass/_layout.scss:9:in `gradient-vertical'
+/opt/development/mpotter/profile/themes/oa_radix/assets/sass/_layout.scss:9
+/opt/development/mpotter/profile/themes/oa_radix/assets/sass/style.scss:10
 /var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:251:in `visit_mixin'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `map'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `map'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `map'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `map'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
 /var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `visit'
 /var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:98:in `visit'
 /var/lib/gems/1.9.1/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -121,4 +81,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'box-shadow'.\A         on line 24 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/_menu.scss, in `box-shadow'\A         from line 24 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/_menu.scss\A         from line 12 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/style.scss"; }
+  content: "Syntax error: Undefined mixin 'gradient-vertical'.\A         on line 9 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/_layout.scss, in `gradient-vertical'\A         from line 9 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/_layout.scss\A         from line 10 of /opt/development/mpotter/profile/themes/oa_radix/assets/sass/style.scss"; }

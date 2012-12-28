@@ -1,0 +1,13 @@
+name = Open Atrium Layouts
+description = Contains the default panels pages and layouts
+core = 7.x
+package = Open Atrium
+php = 5.2.4
+version = 7.x-2.0
+project = open_atrium_layouts
+dependencies[] = ctools
+dependencies[] = panelizer
+features[ctools][] = panelizer:panelizer:1
+features[features_api][] = api:1
+features[panelizer_defaults][] = node:openatrium_group:default
+project path = profiles/openatrium/modules/features

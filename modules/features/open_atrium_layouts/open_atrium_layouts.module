@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Open Atrium Layouts feature.
+ */
+
+include_once 'open_atrium_layouts.features.inc';

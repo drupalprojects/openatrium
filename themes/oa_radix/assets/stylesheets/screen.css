@@ -3673,7 +3673,7 @@ input[type="submit"].btn {
 .navbar {
   overflow: visible;
   margin-bottom: 20px;
-  color: white;
+  color: #555555;
   *position: relative;
   *z-index: 2; }
 
@@ -3682,14 +3682,14 @@ input[type="submit"].btn {
   min-height: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #378b32;
-  background-image: -moz-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3e9d38), to(#2e712a));
-  background-image: -webkit-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: -o-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: linear-gradient(to bottom, #3e9d38, #2e712a);
+  background-color: #f9f9f9;
+  background-image: -moz-linear-gradient(top, white, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
+  background-image: -o-linear-gradient(top, white, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3E9D38', endColorstr='#FF2E712A', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2', GradientType=0);
   border: 1px solid #d4d4d4;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -3714,8 +3714,8 @@ input[type="submit"].btn {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: white;
-  text-shadow: 0 1px 0 #3e9d38; }
+  color: #555555;
+  text-shadow: 0 1px 0 white; }
   /* line 56, ../sass/bootstrap/_navbar.scss */
   .navbar .brand:hover {
     text-decoration: none; }
@@ -3727,17 +3727,17 @@ input[type="submit"].btn {
 
 /* line 70, ../sass/bootstrap/_navbar.scss */
 .navbar-link {
-  color: #ffc40d; }
+  color: #555555; }
   /* line 72, ../sass/bootstrap/_navbar.scss */
   .navbar-link:hover {
-    color: #ffc40d; }
+    color: #333333; }
 
 /* line 79, ../sass/bootstrap/_navbar.scss */
 .navbar .divider-vertical {
   height: 40px;
   margin: 0 9px;
-  border-left: 1px solid #2e712a;
-  border-right: 1px solid #3e9d38; }
+  border-left: 1px solid #f2f2f2;
+  border-right: 1px solid white; }
 
 /* line 89, ../sass/bootstrap/_navbar.scss */
 .navbar .btn,
@@ -3886,9 +3886,9 @@ input[type="submit"].btn {
 .navbar .nav > li > a {
   float: none;
   padding: 10px 15px 10px;
-  color: #ffc40d;
+  color: #555555;
   text-decoration: none;
-  text-shadow: 0 1px 0 #3e9d38; }
+  text-shadow: 0 1px 0 white; }
 
 /* line 238, ../sass/bootstrap/_navbar.scss */
 .navbar .nav .dropdown-toggle .caret {
@@ -3898,14 +3898,14 @@ input[type="submit"].btn {
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   background-color: transparent;
-  color: #ffc40d;
+  color: #333333;
   text-decoration: none; }
 
 /* line 253, ../sass/bootstrap/_navbar.scss */
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  color: #ffc40d;
+  color: #555555;
   text-decoration: none;
   background-color: #e6e6e6;
   -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
@@ -3921,17 +3921,17 @@ input[type="submit"].btn {
   margin-right: 5px;
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #30782b;
-  background-image: -moz-linear-gradient(top, #378a31, #265e23);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#378a31), to(#265e23));
-  background-image: -webkit-linear-gradient(top, #378a31, #265e23);
-  background-image: -o-linear-gradient(top, #378a31, #265e23);
-  background-image: linear-gradient(to bottom, #378a31, #265e23);
+  background-color: #ededed;
+  background-image: -moz-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: -o-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: linear-gradient(to bottom, #f2f2f2, #e6e6e6);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF378A31', endColorstr='#FF265E23', GradientType=0);
-  border-color: #265e23 #265e23 #10270e;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF2F2F2', endColorstr='#FFE6E6E6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
-  *background-color: #265e23;
+  *background-color: #e6e6e6;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
@@ -3940,11 +3940,11 @@ input[type="submit"].btn {
   /* line 487, ../sass/bootstrap/_mixins.scss */
   .navbar .btn-navbar:hover, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
     color: white;
-    background-color: #265e23;
-    *background-color: #1f4c1c; }
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9; }
   /* line 495, ../sass/bootstrap/_mixins.scss */
   .navbar .btn-navbar:active, .navbar .btn-navbar.active {
-    background-color: #173915 \9; }
+    background-color: #cccccc \9; }
 
 /* line 273, ../sass/bootstrap/_navbar.scss */
 .navbar .btn-navbar .icon-bar {
@@ -4004,19 +4004,19 @@ input[type="submit"].btn {
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: #e6e6e6;
-  color: #ffc40d; }
+  color: #555555; }
 
 /* line 338, ../sass/bootstrap/_navbar.scss */
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
-  border-top-color: #ffc40d;
-  border-bottom-color: #ffc40d; }
+  border-top-color: #555555;
+  border-bottom-color: #555555; }
 
 /* line 344, ../sass/bootstrap/_navbar.scss */
 .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
-  border-top-color: #ffc40d;
-  border-bottom-color: #ffc40d; }
+  border-top-color: #555555;
+  border-bottom-color: #555555; }
 
 /* line 351, ../sass/bootstrap/_navbar.scss */
 .navbar .pull-right > li > .dropdown-menu,
@@ -6135,7 +6135,7 @@ a.label:hover, a.badge:hover {
 
   /* line 62, ../sass/bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav .nav-header {
-    color: white;
+    color: #555555;
     text-shadow: none; }
 
   /* line 68, ../sass/bootstrap/_responsive-navbar.scss */
@@ -6143,7 +6143,7 @@ a.label:hover, a.badge:hover {
   .nav-collapse .dropdown-menu a {
     padding: 9px 15px;
     font-weight: bold;
-    color: #ffc40d;
+    color: #555555;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px; }
@@ -6163,7 +6163,7 @@ a.label:hover, a.badge:hover {
   /* line 84, ../sass/bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav > li > a:hover,
   .nav-collapse .dropdown-menu a:hover {
-    background-color: #2e712a; }
+    background-color: #f2f2f2; }
 
   /* line 88, ../sass/bootstrap/_responsive-navbar.scss */
   .navbar-inverse .nav-collapse .nav > li > a:hover,
@@ -6209,8 +6209,8 @@ a.label:hover, a.badge:hover {
     float: none;
     padding: 10px 15px;
     margin: 10px 0;
-    border-top: 1px solid #2e712a;
-    border-bottom: 1px solid #2e712a;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1); }
@@ -6239,21 +6239,48 @@ a.label:hover, a.badge:hover {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important; } }
-/* line 8, ../sass/_layout.scss */
+/* line 5, ../sass/_layout.scss */
+.navbar-inner {
+  min-height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #378b32;
+  background-image: -moz-linear-gradient(top, #3e9d38, #2e712a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3e9d38), to(#2e712a));
+  background-image: -webkit-linear-gradient(top, #3e9d38, #2e712a);
+  background-image: -o-linear-gradient(top, #3e9d38, #2e712a);
+  background-image: linear-gradient(to bottom, #3e9d38, #2e712a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3E9D38', endColorstr='#FF2E712A', GradientType=0);
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  color: white; }
+
+/* line 17, ../sass/_layout.scss */
+.navbar .brand {
+  color: white;
+  text-shadow: 0 1px 0 #3e9d38; }
+
+/* line 21, ../sass/_layout.scss */
 #logo img {
   vertical-align: middle; }
 
-/* line 11, ../sass/_layout.scss */
+/* line 24, ../sass/_layout.scss */
 #site-name {
   display: inline-block;
   padding: 10px 0.5em;
   margin: 0; }
 
-/* line 16, ../sass/_layout.scss */
+/* line 29, ../sass/_layout.scss */
 #search-form {
   padding-top: 10px; }
 
-/* line 19, ../sass/_layout.scss */
+/* line 32, ../sass/_layout.scss */
 #oa_toolbar {
   padding-top: 10px;
   padding-bottom: 10px;

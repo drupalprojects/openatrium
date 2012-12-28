@@ -107,6 +107,22 @@ function oa_groups_views_default_views() {
       'label' => 'We pass to the &quot;Entity ID&quot; the User ID.',
     ),
   );
+  $translatables['open_atrium_groups'] = array(
+    t('Master'),
+    t('User groups'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('User is not a member of any group.'),
+    t('Group node from OG membership'),
+    t('All'),
+    t('%1 groups'),
+    t('Toolbar'),
+    t('Open Atrium'),
+  );
   $export['open_atrium_groups'] = $view;
 
   $view = new view();
@@ -184,6 +200,25 @@ function oa_groups_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $translatables['open_atrium_team_filters'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('OG membership from node'),
+    t('All'),
+    t('Section Page - Team'),
+  );
   $export['open_atrium_team_filters'] = $view;
 
   $view = new view();
@@ -259,6 +294,18 @@ function oa_groups_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $translatables['open_atrium_user_filters'] = array(
+    t('Defaults'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('OG membership from user'),
+    t('All'),
+    t('Open Atrium User Filter'),
+  );
   $export['open_atrium_user_filters'] = $view;
 
   return $export;
