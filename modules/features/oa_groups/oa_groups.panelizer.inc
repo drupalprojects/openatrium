@@ -30,16 +30,22 @@ function oa_groups_panelizer_defaults() {
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
   $display = new panels_display();
-  $display->layout = 'flexible';
+  $display->layout = 'bryant_flipped_flipped';
   $display->layout_settings = array();
-  $display->panel_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'sidebar' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
   $display->cache = array();
   $display->title = '%node:title';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1';
-    $pane->panel = 'center';
+    $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:group_group';
     $pane->shown = TRUE;
@@ -56,16 +62,18 @@ function oa_groups_panelizer_defaults() {
       'context' => 'panelizer',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-1'] = $pane;
-    $display->panels['center'][0] = 'new-1';
+    $display->panels['contentmain'][0] = 'new-1';
     $pane = new stdClass();
     $pane->pid = 'new-2';
-    $pane->panel = 'center';
+    $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:body';
     $pane->shown = TRUE;
@@ -80,16 +88,18 @@ function oa_groups_panelizer_defaults() {
       'context' => 'panelizer',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
     $display->content['new-2'] = $pane;
-    $display->panels['center'][1] = 'new-2';
+    $display->panels['contentmain'][1] = 'new-2';
     $pane = new stdClass();
     $pane->pid = 'new-3';
-    $pane->panel = 'center';
+    $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:group_access';
     $pane->shown = TRUE;
@@ -104,16 +114,18 @@ function oa_groups_panelizer_defaults() {
       'context' => 'panelizer',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
     $display->content['new-3'] = $pane;
-    $display->panels['center'][2] = 'new-3';
+    $display->panels['contentmain'][2] = 'new-3';
     $pane = new stdClass();
     $pane->pid = 'new-4';
-    $pane->panel = 'center';
+    $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_logo';
     $pane->shown = TRUE;
@@ -131,16 +143,18 @@ function oa_groups_panelizer_defaults() {
       'context' => 'panelizer',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
     $display->content['new-4'] = $pane;
-    $display->panels['center'][3] = 'new-4';
+    $display->panels['contentmain'][3] = 'new-4';
     $pane = new stdClass();
     $pane->pid = 'new-5';
-    $pane->panel = 'center';
+    $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_logo_thumbnail';
     $pane->shown = TRUE;
@@ -158,16 +172,18 @@ function oa_groups_panelizer_defaults() {
       'context' => 'panelizer',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
     $display->content['new-5'] = $pane;
-    $display->panels['center'][4] = 'new-5';
+    $display->panels['contentmain'][4] = 'new-5';
     $pane = new stdClass();
     $pane->pid = 'new-6';
-    $pane->panel = 'center';
+    $pane->panel = 'contentmain';
     $pane->type = 'node_links';
     $pane->subtype = 'node_links';
     $pane->shown = TRUE;
@@ -181,7 +197,9 @@ function oa_groups_panelizer_defaults() {
       'context' => 'panelizer',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array(
       'css_class' => 'link-wrapper',
     );
@@ -189,7 +207,42 @@ function oa_groups_panelizer_defaults() {
     $pane->position = 5;
     $pane->locks = array();
     $display->content['new-6'] = $pane;
-    $display->panels['center'][5] = 'new-6';
+    $display->panels['contentmain'][5] = 'new-6';
+    $pane = new stdClass();
+    $pane->pid = 'new-7';
+    $pane->panel = 'sidebar';
+    $pane->type = 'oa_widgets_pane';
+    $pane->subtype = 'oa_widgets_pane';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Save',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'types' => array(
+        'oa_group' => 'oa_group',
+        'oa_organization' => 'oa_organization',
+        'oa_section' => 'oa_section',
+        'oa_team' => 'oa_team',
+        'oa_discussion_post' => 0,
+        'panopoly_page' => 0,
+      ),
+      'form_build_id' => 'form-qGoZgsej8tB41-BFE0oMHzB2ivhvZjhlK4mOXoQZW1U',
+      'form_token' => 'iwOFnX68BvoqY3otNpZsnZZTC1bT1Giwf_tQC-LSud8',
+      'form_id' => 'oa_widgets_content_type_edit_form',
+      'op' => 'Save',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-7'] = $pane;
+    $display->panels['sidebar'][0] = 'new-7';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1';
   $panelizer->display = $display;
@@ -223,7 +276,7 @@ function oa_groups_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-7';
+    $pane->pid = 'new-8';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:group_group';
@@ -246,10 +299,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['center'][0] = 'new-7';
+    $display->content['new-8'] = $pane;
+    $display->panels['center'][0] = 'new-8';
     $pane = new stdClass();
-    $pane->pid = 'new-8';
+    $pane->pid = 'new-9';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:body';
@@ -270,10 +323,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['center'][1] = 'new-8';
+    $display->content['new-9'] = $pane;
+    $display->panels['center'][1] = 'new-9';
     $pane = new stdClass();
-    $pane->pid = 'new-9';
+    $pane->pid = 'new-10';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_logo';
@@ -297,10 +350,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['center'][2] = 'new-9';
+    $display->content['new-10'] = $pane;
+    $display->panels['center'][2] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-10';
+    $pane->pid = 'new-11';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_logo_thumbnail';
@@ -324,10 +377,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['center'][3] = 'new-10';
+    $display->content['new-11'] = $pane;
+    $display->panels['center'][3] = 'new-11';
     $pane = new stdClass();
-    $pane->pid = 'new-11';
+    $pane->pid = 'new-12';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:group_access';
@@ -348,10 +401,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-11'] = $pane;
-    $display->panels['center'][4] = 'new-11';
+    $display->content['new-12'] = $pane;
+    $display->panels['center'][4] = 'new-12';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-13';
     $pane->panel = 'center';
     $pane->type = 'node_links';
     $pane->subtype = 'node_links';
@@ -373,10 +426,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-12'] = $pane;
-    $display->panels['center'][5] = 'new-12';
+    $display->content['new-13'] = $pane;
+    $display->panels['center'][5] = 'new-13';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-12';
+  $display->title_pane = 'new-13';
   $panelizer->display = $display;
   $export['node:oa_organization:default'] = $panelizer;
 
@@ -408,7 +461,7 @@ function oa_groups_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-13';
+    $pane->pid = 'new-14';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:og_group_ref';
@@ -429,10 +482,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-13'] = $pane;
-    $display->panels['center'][0] = 'new-13';
+    $display->content['new-14'] = $pane;
+    $display->panels['center'][0] = 'new-14';
     $pane = new stdClass();
-    $pane->pid = 'new-14';
+    $pane->pid = 'new-15';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:body';
@@ -453,10 +506,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-14'] = $pane;
-    $display->panels['center'][1] = 'new-14';
+    $display->content['new-15'] = $pane;
+    $display->panels['center'][1] = 'new-15';
     $pane = new stdClass();
-    $pane->pid = 'new-15';
+    $pane->pid = 'new-16';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_oa_organization_ref';
@@ -479,10 +532,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-15'] = $pane;
-    $display->panels['center'][2] = 'new-15';
+    $display->content['new-16'] = $pane;
+    $display->panels['center'][2] = 'new-16';
     $pane = new stdClass();
-    $pane->pid = 'new-16';
+    $pane->pid = 'new-17';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_oa_team_ref';
@@ -505,10 +558,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-16'] = $pane;
-    $display->panels['center'][3] = 'new-16';
+    $display->content['new-17'] = $pane;
+    $display->panels['center'][3] = 'new-17';
     $pane = new stdClass();
-    $pane->pid = 'new-17';
+    $pane->pid = 'new-18';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_oa_user_ref';
@@ -531,10 +584,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $display->content['new-17'] = $pane;
-    $display->panels['center'][4] = 'new-17';
+    $display->content['new-18'] = $pane;
+    $display->panels['center'][4] = 'new-18';
     $pane = new stdClass();
-    $pane->pid = 'new-18';
+    $pane->pid = 'new-19';
     $pane->panel = 'center';
     $pane->type = 'node_links';
     $pane->subtype = 'node_links';
@@ -556,10 +609,10 @@ function oa_groups_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
-    $display->content['new-18'] = $pane;
-    $display->panels['center'][5] = 'new-18';
+    $display->content['new-19'] = $pane;
+    $display->panels['center'][5] = 'new-19';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-13';
+  $display->title_pane = 'new-14';
   $panelizer->display = $display;
   $export['node:oa_section:default'] = $panelizer;
 

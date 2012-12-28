@@ -252,12 +252,12 @@ function oa_groups_strongarm() {
       'page_manager' => array(
         'status' => 1,
         'default' => 1,
-        'choice' => 1,
+        'choice' => 0,
       ),
       'default' => array(
         'status' => 1,
-        'default' => 0,
-        'choice' => 1,
+        'default' => 1,
+        'choice' => 0,
       ),
       'teaser' => array(
         'status' => 0,
