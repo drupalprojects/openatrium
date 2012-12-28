@@ -10,14 +10,14 @@
 function oa_messages_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'message-oa_create-field_node_ref'.
-  $fields['message-oa_create-field_node_ref'] = array(
+  // Exported field: 'message-oa_create-field_oa_node_ref'.
+  $fields['message-oa_create-field_oa_node_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_node_ref',
+      'field_name' => 'field_oa_node_ref',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -42,9 +42,6 @@ function oa_messages_field_default_fields() {
             ),
           ),
           'sort' => array(
-            'direction' => 'ASC',
-            'field' => 'body:value',
-            'property' => 'nid',
             'type' => 'none',
           ),
           'target_bundles' => array(),
@@ -69,35 +66,48 @@ function oa_messages_field_default_fields() {
           'type' => 'entityreference_label',
           'weight' => 0,
         ),
+        'message_notify_email_body' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'message_notify_email_subject' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'message',
-      'field_name' => 'field_node_ref',
+      'field_name' => 'field_oa_node_ref',
       'label' => 'Node',
-      'required' => FALSE,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'entityreference',
         'settings' => array(
           'match_operator' => 'CONTAINS',
           'path' => '',
-          'size' => 60,
+          'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
 
-  // Exported field: 'message-oa_delete-field_node_ref'.
-  $fields['message-oa_delete-field_node_ref'] = array(
+  // Exported field: 'message-oa_delete-field_oa_node_ref'.
+  $fields['message-oa_delete-field_oa_node_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_node_ref',
+      'field_name' => 'field_oa_node_ref',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -160,9 +170,9 @@ function oa_messages_field_default_fields() {
         ),
       ),
       'entity_type' => 'message',
-      'field_name' => 'field_node_ref',
+      'field_name' => 'field_oa_node_ref',
       'label' => 'Node',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -180,14 +190,14 @@ function oa_messages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'message-oa_update-field_node_ref'.
-  $fields['message-oa_update-field_node_ref'] = array(
+  // Exported field: 'message-oa_update-field_oa_node_ref'.
+  $fields['message-oa_update-field_oa_node_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_node_ref',
+      'field_name' => 'field_oa_node_ref',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -250,9 +260,9 @@ function oa_messages_field_default_fields() {
         ),
       ),
       'entity_type' => 'message',
-      'field_name' => 'field_node_ref',
+      'field_name' => 'field_oa_node_ref',
       'label' => 'Node',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -265,7 +275,7 @@ function oa_messages_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '2',
+        'weight' => '1',
       ),
     ),
   );
