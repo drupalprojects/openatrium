@@ -69,7 +69,7 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'discussion_post' => 'discussion_post',
+    'oa_discussion_post' => 'oa_discussion_post',
   );
 
   /* Display: Content pane */
@@ -106,7 +106,7 @@ function oa_discussion_views_default_views() {
     t('OG membership from node'),
     t('All'),
     t('Content pane'),
-    t('Open Atrium Discussions'),
+    t('OpenAtrium Discussions'),
   );
   $export['oa_discussions'] = $view;
 
