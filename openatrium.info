@@ -30,6 +30,7 @@ dependencies[] = panopoly_wysiwyg
 ; Open Atrium Modules
 ;
 dependencies[] = rules
+dependencies[] = rules_admin
 dependencies[] = message
 dependencies[] = message_notify
 dependencies[] = navbar
