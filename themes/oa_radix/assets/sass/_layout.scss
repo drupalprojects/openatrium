@@ -3,7 +3,7 @@
 // Styles for main layout
 // --------------------------------------------------
 .navbar-inner,
-#block-menu-menu-open-atrium-footer {
+.region-footer {
   min-height: 60px;
   padding-left:  20px;
   padding-right: 20px;
@@ -37,22 +37,22 @@
   min-height: 20px;
 }
 
-#block-menu-menu-open-atrium-footer {
+.region-footer {
   background-image: url('../../logo.png');
   background-repeat: no-repeat;
   background-position: 1% center;
 }
 
-#block-menu-menu-open-atrium-footer div ul {
+.region-footer .menu {
   float: right;
 }
 
-#block-menu-menu-open-atrium-footer div ul li {
+.region-footer .menu li {
   list-style: none !important;
   float: left;
 }
 
-#block-menu-menu-open-atrium-footer div ul li a {
+.region-footer .menu li a {
   line-height: 52px;
   color: white;
   display: block;
