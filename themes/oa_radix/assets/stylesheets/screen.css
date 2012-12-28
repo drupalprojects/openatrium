@@ -6239,9 +6239,25 @@ a.label:hover, a.badge:hover {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important; } }
-/* line 5, ../sass/_layout.scss */
+/* line 8, ../sass/_layout.scss */
+#logo img {
+  vertical-align: middle; }
+
+/* line 11, ../sass/_layout.scss */
+#site-name {
+  display: inline-block;
+  padding: 10px 0.5em;
+  margin: 0; }
+
+/* line 16, ../sass/_layout.scss */
 #search-form {
-  padding-top: 20px; }
+  padding-top: 10px; }
+
+/* line 19, ../sass/_layout.scss */
+#oa_toolbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 20px; }
 
 /* line 7, ../sass/_menu.scss */
 #main-menu {

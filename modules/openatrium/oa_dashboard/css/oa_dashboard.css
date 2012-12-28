@@ -2,45 +2,61 @@
   list-style: none;
 	font-weight: normal;
 	font-size: 18px;
-	padding-top: 22px;
 	position: relative;
-	min-height: 40px;
 }
 
+#oa_toolbar .btn {
+	padding: 0.5em 1em;
+	margin: 0 0;
+}
+#oa_toolbar .dropdown {
+	display: inline-block;
+	margin: 0 0.25em 0 0.25em;
+}
+#oa_toolbar .btn-group {
+	margin: 0;
+}
+
+#oa_toolbar .oa-toolbar-separator {
+	display: inline-block;
+	padding: 0 0.25em;
+}
+
+#oa_toolbar ul {
+	padding: 0.25em 0.5em;
+	margin: 0;
+	min-width: 250px;
+}
 #oa_toolbar a {
 	font-size: 18px;
 	color: white;
-	padding: 0 0.5em;
 }
 
 #oa_toolbar a:hover {
 	color: yellow;
 }
 
-#oa_toolbar li a {
+#oa_toolbar ul li a {
 	color: black;
 	padding: 0 0.5em;
 	margin: 0;
 }
-#oa_toolbar li ul li {
-	padding: 0.25em 0;
-}
-#oa_toolbar li a:hover {
+#oa_toolbar ul li a:hover {
 	color: yellow;
 }
-#oa_toolbar ul {
-	padding: 0.25em 0.5em;
-	margin: 10px 0 0 0;
-	min-width: 250px;
-}
-#oa_toolbar ul ul {
+
+#oa_toolbar ul li ul {
 	margin: 0;
 }
-#oa_toolbar li ul li a {
+#oa_toolbar ul li ul li {
+	padding: 0.25em 0;
+}
+#oa_toolbar ul li ul li a {
 	color: black;
 	padding: 0;
 	margin: 0;
 }
+
 
 #oa_toolbar .icon-home {
 	font-size: 24px;
@@ -51,14 +67,4 @@
 
 #oa_toolbar .caret {
 	border-top-color: white;
-}
-#oa_toolbar .btn {
-	padding: 0.5em 1em;
-	margin: 0 0;
-}
-#oa_toolbar .dropdown {
-	margin-right: 0.25em;
-}
-#oa_toolbar .oa_toolbar_separator {
-	padding: 0 0.25em;
 }

@@ -26,7 +26,7 @@
 
               <?php if ($logo): ?>
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="pull-left brand">
-                   <img src="<?php print $logo; ?>">&nbsp;<?php print $site_name; ?>
+                   <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
                 </a>
               <?php endif; ?>
 
