@@ -51,3 +51,29 @@
     }
   }
 }
+
+//
+// Footer styles
+//
+// Applies formatting to drupal menu blocks that appear within the footer region
+//
+.region-footer {
+  background-image: url('../../logo.png');
+  background-repeat: no-repeat;
+  background-position: 1% center;
+}
+
+.region-footer .menu {
+  float: right;
+}
+
+.region-footer .menu li {
+  list-style: none !important;
+  float: left;
+}
+
+.region-footer .menu li a {
+  line-height: 52px;
+  color: white;
+  display: block;
+}

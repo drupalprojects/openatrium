@@ -6288,27 +6288,6 @@ a.label:hover, a.badge:hover {
   padding-bottom: 10px;
   min-height: 20px; }
 
-/* line 40, ../sass/_layout.scss */
-.region-footer {
-  background-image: url("../../logo.png");
-  background-repeat: no-repeat;
-  background-position: 1% center; }
-
-/* line 46, ../sass/_layout.scss */
-.region-footer .menu {
-  float: right; }
-
-/* line 50, ../sass/_layout.scss */
-.region-footer .menu li {
-  list-style: none !important;
-  float: left; }
-
-/* line 55, ../sass/_layout.scss */
-.region-footer .menu li a {
-  line-height: 52px;
-  color: white;
-  display: block; }
-
 /* line 7, ../sass/_menu.scss */
 #main-menu {
   clear: left; }
@@ -6361,3 +6340,24 @@ a.label:hover, a.badge:hover {
   #main-menu > ul.menu > li.open > a {
     color: #555;
     background-color: #E5E5E5; }
+
+/* line 60, ../sass/_menu.scss */
+.region-footer {
+  background-image: url("../../logo.png");
+  background-repeat: no-repeat;
+  background-position: 1% center; }
+
+/* line 66, ../sass/_menu.scss */
+.region-footer .menu {
+  float: right; }
+
+/* line 70, ../sass/_menu.scss */
+.region-footer .menu li {
+  list-style: none !important;
+  float: left; }
+
+/* line 75, ../sass/_menu.scss */
+.region-footer .menu li a {
+  line-height: 52px;
+  color: white;
+  display: block; }
