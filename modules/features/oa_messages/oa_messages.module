@@ -10,18 +10,17 @@ include_once 'oa_messages.features.inc';
  * Implements hook_node_insert().
  */
 function oa_messages_node_insert($node) {
-  return;
   $types = oa_list_content_types();
   if (!array_key_exists($node->type, $types)) {
     // only create messages for node types we care about
     return;
   }
-  $message_type = 'oa_created';
+  $message_type = 'oa_create';
   $account = user_load($node->uid);
   $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
   // Save reference to the node in the node reference field.
   $wrapper = entity_metadata_wrapper('message', $message);
-  $wrapper->field_node_ref->set($node);
+  $wrapper->field_oa_node_ref = $node;
   $wrapper->save();
   $options = array(
     'rendered fields' => array(
@@ -33,25 +32,17 @@ function oa_messages_node_insert($node) {
 }
 
 function oa_messages_node_update($node) {
-  return;
-  dsm('Updating');
-  dsm($node);
   $types = oa_list_content_types();
-  dsm($types);
   if (!array_key_exists($node->type, $types)) {
     // only create messages for node types we care about
-    dsm('Returning');
     return;
   }
   $message_type = 'oa_update';
   $account = user_load($node->uid);
-  dsm('Creating message');
   $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
   // Save reference to the node in the node reference field.
-  dsm($message);
   $wrapper = entity_metadata_wrapper('message', $message);
-  dsm($wrapper);
-//  $wrapper->field_node_ref->set($node);
+  $wrapper->field_oa_node_ref = $node;
   $wrapper->save();
   $options = array(
     'rendered fields' => array(
@@ -63,18 +54,17 @@ function oa_messages_node_update($node) {
 }
 
 function oa_messages_node_delete($node) {
-  return;
   $types = oa_list_content_types();
   if (!array_key_exists($node->type, $types)) {
     // only create messages for node types we care about
     return;
   }
-  $message_type = 'oa_deleted';
+  $message_type = 'oa_delete';
   $account = user_load($node->uid);
   $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
   // Save reference to the node in the node reference field.
   $wrapper = entity_metadata_wrapper('message', $message);
-  $wrapper->field_node_ref->set($node);
+  $wrapper->field_oa_node_ref = $node;
   $wrapper->save();
   $options = array(
     'rendered fields' => array(
