@@ -50,8 +50,6 @@ mv -v $DRUPAL/profiles/panopoly/libraries/tinymce $DRUPAL/sites/all/libraries/ti
 
 # Clear caches and Run updates
 cd $DRUPAL;
-echo 'Setting ownership to www-data'
-chown -R www-data .
 echo 'Clearing caches...'
 drush cc all; drush cc all;
 echo 'Running updates...'
