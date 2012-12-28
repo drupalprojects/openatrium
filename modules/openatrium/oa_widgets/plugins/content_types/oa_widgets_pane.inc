@@ -52,7 +52,7 @@ function oa_widgets_content_type_edit_form($form, &$form_state) {
     '#title' => t('Enable content types'),
     '#type' => 'checkboxes',
     '#options' => $options,
-    '#default_value' => $conf['types'],
+    '#default_value' => ($conf['types'] ? $conf['types'] : array_values($options)),
     '#description' => t('Select which content types you would like to enable for this widget.'),
   );
 
