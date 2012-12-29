@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * open_atrium_layouts.panelizer.inc
+ * oa_layout.panelizer.inc
  */
 
 /**
  * Implements hook_panelizer_defaults().
  */
-function open_atrium_layouts_panelizer_defaults() {
+function oa_layout_panelizer_defaults() {
   $export = array();
 
   $panelizer = new stdClass();
