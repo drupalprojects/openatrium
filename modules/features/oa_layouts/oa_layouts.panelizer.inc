@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * oa_layout.panelizer.inc
+ * oa_layouts.panelizer.inc
  */
 
 /**
  * Implements hook_panelizer_defaults().
  */
-function oa_layout_panelizer_defaults() {
+function oa_layouts_panelizer_defaults() {
   $export = array();
 
   $panelizer = new stdClass();
