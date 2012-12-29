@@ -4,4 +4,4 @@
  * Code for the Open Atrium Layouts feature.
  */
 
-include_once 'oa_layoutss.features.inc';
+include_once 'oa_layouts.features.inc';
