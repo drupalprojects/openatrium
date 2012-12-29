@@ -13,7 +13,7 @@ function oa_discussion_views_default_views() {
   $view = new view();
   $view->name = 'oa_discussions';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'OA';
   $view->base_table = 'node';
   $view->human_name = 'Open Atrium Discussions';
   $view->core = 7;
@@ -75,7 +75,7 @@ function oa_discussion_views_default_views() {
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'OpenAtrium Discussions';
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium Discussions';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'gid' => array(
@@ -86,27 +86,6 @@ function oa_discussion_views_default_views() {
       'fixed' => '',
       'label' => 'OG membership: Group ID',
     ),
-  );
-  $translatables['oa_discussions'] = array(
-    t('Master'),
-    t('Recent Posts'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('OG membership from node'),
-    t('All'),
-    t('Content pane'),
-    t('OpenAtrium Discussions'),
   );
   $export['oa_discussions'] = $view;
 
