@@ -6288,6 +6288,10 @@ a.label:hover, a.badge:hover {
   padding-bottom: 10px;
   min-height: 20px; }
 
+/* line 40, ../sass/_layout.scss */
+#main-wrapper {
+  min-height: 360px; }
+
 /* line 7, ../sass/_menu.scss */
 #main-menu {
   clear: left; }
