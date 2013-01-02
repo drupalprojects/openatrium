@@ -55,6 +55,7 @@ dependencies[] = oa_groups
 dependencies[] = oa_section_pages
 dependencies[] = oa_demo_content
 dependencies[] = oa_layouts
+dependencies[] = oa_favorites
 
 ; Open Atrium 2.0 Modules
 dependencies[] = oa_dashboard

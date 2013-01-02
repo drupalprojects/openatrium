@@ -40,6 +40,8 @@ function oa_dashboard_theme() {
 }
 
 function oa_dashboard_preprocess_oa_toolbar(&$variables) {
+  global $user;
+
   // Separators
   $variables['oa_toolbar_separator'] = t('&gt;');
   $variables['home_url'] = url('<front>', array('absolute' => TRUE));
@@ -60,19 +62,77 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
     $variables['sections_main'] = l(t('Group page'), 'node/' . $group->nid);
   }
 
-  $variables['groups_recent'] = views_embed_view('open_atrium_groups', 'groups');
+  // grab list of user's groups and sections
+  $sections = oa_groups_section_list($user->uid);
 
-  // Sections
+  // get names of groups
+  $query = db_select('node', 'n');
+  $query
+    ->fields('n', array('nid', 'title'))
+    ->condition('n.type', 'oa_group')
+    ->condition('n.nid', array_keys($sections), 'IN');
+  $result = $query->execute();
+  $items = array();
+  while ($row = $result->fetchAssoc()) {
+    $items[] = l($row['title'], 'node/' . $row['nid']);
+  }
+
+  $variables['groups_recent'] = theme('item_list', array(
+    'items' => $items,
+    'title' => t('Active Groups'),
+    'type' => 'ul'));
+
+  $variables['groups_favorite'] = '';
+  if (module_exists('oa_favorites')) {
+    if ($flag = flag_get_flag('favorite_group')) {
+      $query = db_select('node', 'n');
+      $query->join('flag_content', 'f', 'n.nid = f.content_id');
+      $query
+        ->fields('n', array('nid', 'title'))
+        ->condition('f.uid', $user->uid);
+      $result = $query->execute();
+      $items = array();
+      while ($row = $result->fetchAssoc()) {
+        $items[] = l($row['title'], 'node/' . $row['nid']);
+      }
+      if (!empty($items)) {
+        $variables['groups_favorite'] = theme('item_list', array(
+          'items' => $items,
+          'title' => t('Favorite Groups'),
+          'type' => 'ul'));
+      }
+    }
+  }
+
+  $variables['sections_label'] = t('Group page');
+  $items = array();
+  $variables['sections_list'] = '';
+  if (isset($group->nid)) {
+    $items[] = l(t('Group page'), 'node/' . $group->nid);
+    if (!empty($sections[$group->nid])) {
+      // get names of sections
+      $query = db_select('node', 'n');
+      $query
+        ->fields('n', array('nid', 'title'))
+        ->condition('n.nid', $sections[$group->nid], 'IN');
+      $result = $query->execute();
+      while ($row = $result->fetchAssoc()) {
+        $items[] = l($row['title'], 'node/' . $row['nid']);
+      }
+    }
+  }
+  if (!empty($items)) {
+    $variables['sections_list'] = theme('item_list', array(
+      'items' => $items,
+      'type' => 'ul'));
+  }
+
+  // Current Section Name
   $section = menu_get_object();
-
-  $variables['sections_label'] = t('Main');
   if (isset($section->type) && ($section->type == OA_SECTION_TYPE)) {
     $variables['sections_label'] = $section->title;
   }
-
-  $variables['sections_list'] = views_embed_view('open_atrium_section_pages', 'section_pages_within_groups');
 }
-
 
 function oa_dashboard_preprocess_views_view(&$variables) {
   if ($variables['display_id'] === 'section_pages_within_groups') {

@@ -20,6 +20,69 @@ define('OA_SECTION_TYPE', 'oa_section');
 define('OA_TEAM_TYPE', 'oa_team');
 
 /**
+ * Return a list of sections and groups a user can access
+ * @param  int $user_id
+ * @return array keyed by group_id, nested array of section ids
+ */
+function oa_groups_section_list($user_id) {
+  // look up section access data for user
+//  $query = db_select('oa_section_access', 's')
+//    ->fields('s', array('data'))
+//    ->condition('uid', $user_id);
+//  $result = $query->execute()->fetchAssoc();
+//  if (empty($result['data'])) {
+  if (TRUE) {
+    // access list not cached, so compute from scratch
+    //
+    // First, get list of groups user is a member of
+    $account = user_load($user_id);
+    $section_list = array();
+    if ($user_id == 0) {
+      // get list of all public groups
+      $all_groups = og_get_all_group();
+      foreach ($all_groups as $gid) {
+        $node = node_load($gid);
+        $access = node_access('view', $node, $account);
+        if ($access == NODE_ACCESS_ALLOW) {
+          $groups['node'][] = $gid;
+        }
+      }
+    }
+    else {
+      $groups = og_get_entity_groups('user', $account);
+      }
+    if (!empty($groups['node'])) {
+      foreach ($groups['node'] as $gid) {
+        $section_list[$gid] = array();
+      }
+
+      // get the list of sections assigned to the list of groups
+      $query = db_select('node', 'n');
+      $query->join('og_membership', 'og', 'n.nid = og.etid');
+      $query
+        ->fields('n', array('nid', 'title'))
+        ->fields('og', array('gid'))
+        ->condition('n.type', OA_SECTION_TYPE)
+        ->condition('og.gid', $groups['node'], 'IN');
+      $result = $query->execute();
+      // loop through each result to determine access to section
+      while ($row = $result->fetchAssoc()) {
+        // load the section node
+        $node = node_load($row['nid']);
+        $access = node_access('view', $node, $account);
+        if ($access == NODE_ACCESS_ALLOW) {
+          $section_list[$row['gid']][$row['nid']] = $row['nid'];
+        }
+      }
+    }
+  }
+  else {
+    $section_list = unserialize($result['data']);
+  }
+  return $section_list;
+}
+
+/**
  * Determine if a user is a member of a team
  * @param  int $team_id
  * @param  int $user_id
@@ -53,6 +116,11 @@ function oa_groups_section_access($node, $op, $account) {
       empty($node->field_oa_user_ref[LANGUAGE_NONE])) {
     // No access fields are set, so it's a public section
     return NODE_ACCESS_ALLOW;
+  }
+
+  if ($account->uid == 0) {
+    // anonymous users not allowed to see sections with any access fields
+    return NODE_ACCESS_DENY;
   }
 
   // Test Organization membership
@@ -200,6 +268,11 @@ function oa_groups_og_fields_info() {
   );
 
   return $items;
+}
+
+function oa_groups_node_view($node) {
+  global $user;
+  oa_groups_section_list(0);
 }
 
 /**

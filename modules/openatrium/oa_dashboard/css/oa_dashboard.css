@@ -23,11 +23,19 @@
 	padding: 0 0.25em;
 	vertical-align: middle;
 }
+#oa_toolbar ul .dropdown-column {
+	float: left;
+	margin: 0;
+	padding: 1em 1em 1em 1em;
+}
 
 #oa_toolbar ul {
-	padding: 0.25em 0.5em;
+	padding: 0;
 	margin: 0;
-	min-width: 250px;
+}
+#oa_toolbar ul li {
+	padding: 0;
+	margin: 0;
 }
 #oa_toolbar a {
 	font-size: 18px;
@@ -51,14 +59,21 @@
 	margin: 0;
 }
 #oa_toolbar ul li ul li {
-	padding: 0.25em 0;
+	padding: 0 0;
 }
 #oa_toolbar ul li ul li a {
 	color: black;
-	padding: 0;
+	padding: 0.25em 0;
 	margin: 0;
 }
-
+#oa_toolbar ul h3 {
+	color: black;
+	font-size: 18px;
+	margin: 0;
+}
+#oa_toolbar ul li a.active {
+	font-style: italic;
+}
 
 #oa_toolbar .icon-home {
 	font-size: 24px;
