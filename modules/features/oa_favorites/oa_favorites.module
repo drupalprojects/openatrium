@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Open Atrium Favorites feature.
+ */
+
+include_once 'oa_favorites.features.inc';
