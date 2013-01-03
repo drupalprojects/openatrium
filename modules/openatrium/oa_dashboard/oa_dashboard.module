@@ -64,17 +64,18 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
 
   // grab list of user's groups and sections
   $sections = oa_groups_section_list($user->uid);
-
-  // get names of groups
-  $query = db_select('node', 'n');
-  $query
-    ->fields('n', array('nid', 'title'))
-    ->condition('n.type', 'oa_group')
-    ->condition('n.nid', array_keys($sections), 'IN');
-  $result = $query->execute();
   $items = array();
-  while ($row = $result->fetchAssoc()) {
-    $items[] = l($row['title'], 'node/' . $row['nid']);
+  if (!empty($sections)) {
+    // get names of groups
+    $query = db_select('node', 'n');
+    $query
+      ->fields('n', array('nid', 'title'))
+      ->condition('n.type', 'oa_group')
+      ->condition('n.nid', array_keys($sections), 'IN');
+    $result = $query->execute();
+    while ($row = $result->fetchAssoc()) {
+      $items[] = l($row['title'], 'node/' . $row['nid']);
+    }
   }
 
   $variables['groups_recent'] = theme('item_list', array(
