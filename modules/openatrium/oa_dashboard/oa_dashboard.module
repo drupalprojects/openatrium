@@ -89,7 +89,8 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
       $query->join('flag_content', 'f', 'n.nid = f.content_id');
       $query
         ->fields('n', array('nid', 'title'))
-        ->condition('f.uid', $user->uid);
+        ->condition('f.uid', $user->uid)
+        ->condition('type', 'oa_group');
       $result = $query->execute();
       $items = array();
       while ($row = $result->fetchAssoc()) {
