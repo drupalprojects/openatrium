@@ -4,7 +4,7 @@ $plugin = array(
   'title' => t('Add content types'),
   'description' => t('List of content types in a widget.'),
   'single' => TRUE,
-  'category' => array(t('Open Atrium Groups'), -9),
+  'category' => array(t('Open Atrium'), -9),
   'edit form' => 'oa_widgets_content_type_edit_form',
   'render callback' => 'oa_widgets_content_type_render',
 );
