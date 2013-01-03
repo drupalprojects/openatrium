@@ -7,6 +7,10 @@ $plugin = array(
   'category' => array(t('Open Atrium'), -9),
   'edit form' => 'oa_widgets_content_type_edit_form',
   'render callback' => 'oa_widgets_content_type_render',
+  'defaults' => array(
+    'oa_widgets_types' => array(),
+    'oa_widgets_use_all' => TRUE,
+  ),
 );
 
 
@@ -15,7 +19,7 @@ $plugin = array(
  * See ctools_plugin_examples for more advanced info
  */
 function oa_widgets_content_type_render($subtype, $conf, $context = NULL) {
-  $nodes = $conf['types'];
+  $nodes = $conf['oa_widgets_types'];
 
   $links = array();
   foreach ($nodes as $node) {
@@ -48,11 +52,11 @@ function oa_widgets_content_type_edit_form($form, &$form_state) {
   foreach ($nodes as $node) {
     $options[$node->type] = check_plain($node->name);
   }
-  $form['settings']['types'] = array(
+  $form['settings']['oa_widgets_types'] = array(
     '#title' => t('Enable content types'),
     '#type' => 'checkboxes',
     '#options' => $options,
-    '#default_value' => isset($conf['types']) ? $conf['types'] : array_values($options),
+    '#default_value' => isset($conf['oa_widgets_types']) ? $conf['oa_widgets_types'] : array_values($options),
     '#description' => t('Select which content types you would like to enable for this widget.'),
   );
 
