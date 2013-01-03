@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * Implements hook_field_access
+ *
+ * Determines the current section id value
+ */
+function oa_section_context_field_access($op, $field, $entity_type, $entity, $account) {
+  if (empty($entity->nid)) {
+    return;
+  }
+  if (($entity_type == 'node') && ($entity->type == 'oa_section')) {
+    // get group id directly from section nodes
+    $_SESSION['oa_section_id'] = $entity->nid;
+  }
+  elseif ($field['field_name'] == 'oa_section_ref') {
+    // otherwise get section id from any section field reference
+    if (isset($entity->oa_section_ref[LANGUAGE_NONE][0]['target_id'])) {
+      $_SESSION['oa_section_id'] = $entity->oa_section_ref[LANGUAGE_NONE][0]['target_id'];
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter
+ *
+ * Instantiates the default value for the field 'oa_section_ref' from
+ * session context if it exists.
+ */
+function oa_section_context_form_alter(&$form, &$form_state, $form_id) {
+  if (strstr($form_id, 'node_form') && empty($form['oa_section_ref'][LANGUAGE_NONE]['#default_value'])) {
+    $form['oa_section_ref'][LANGUAGE_NONE]['#default_value'] = $_SESSION['oa_section_id'];
+  }
+}
