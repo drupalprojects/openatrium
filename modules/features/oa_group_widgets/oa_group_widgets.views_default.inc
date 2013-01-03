@@ -123,7 +123,7 @@ function oa_group_widgets_views_default_views() {
   );
   $handler->display->display_options['pane_title'] = 'Members in Group';
   $handler->display->display_options['pane_description'] = 'Displays members within a group.';
-  $handler->display->display_options['pane_category']['name'] = 'Open Atrium Groups';
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
@@ -156,6 +156,21 @@ function oa_group_widgets_views_default_views() {
   $handler->display->display_options['displays'] = array(
     'members_in_group_pane' => 'members_in_group_pane',
     'default' => 0,
+  );
+  $translatables['open_atrium_member_widget'] = array(
+    t('Defaults'),
+    t('Members in Group'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('OG membership from user'),
+    t('All'),
+    t('Displays members within a group.'),
+    t('Open Atrium'),
+    t('Attachment to \'Members in Group\''),
   );
   $export['open_atrium_member_widget'] = $view;
 

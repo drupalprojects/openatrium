@@ -32,7 +32,6 @@ features[variable][] = menu_parent_oa_discussion_post
 features[variable][] = node_options_oa_discussion_post
 features[variable][] = node_preview_oa_discussion_post
 features[variable][] = node_submitted_oa_discussion_post
-features[views_view][] = oa_discussions
 features_exclude[dependencies][og] = og
 features_exclude[dependencies][og_ui] = og_ui
 project path = profiles/openatrium/modules/features

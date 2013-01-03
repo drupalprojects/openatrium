@@ -79,6 +79,7 @@ features[variable][] = pathauto_node_oa_group_pattern
 features[variable][] = pathauto_node_oa_organization_pattern
 features[variable][] = pathauto_node_oa_section_pattern
 features[variable][] = pathauto_node_oa_team_pattern
+features[views_view][] = open_atrium_content
 features[views_view][] = open_atrium_groups
 features[views_view][] = open_atrium_team_filters
 features[views_view][] = open_atrium_user_filters

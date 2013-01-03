@@ -93,6 +93,8 @@ function oa_section_pages_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Section Pages within Groups', 'section_pages_within_groups');
   $handler->display->display_options['display_description'] = 'Displays section pages within groups';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'gid' => array(
       'type' => 'context',
@@ -123,7 +125,7 @@ function oa_section_pages_views_default_views() {
     t('All'),
     t('Section Pages within Groups'),
     t('Displays section pages within groups'),
-    t('View panes'),
+    t('Open Atrium'),
   );
   $export['open_atrium_section_pages'] = $view;
 

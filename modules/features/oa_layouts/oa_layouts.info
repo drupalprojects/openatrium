@@ -9,5 +9,5 @@ dependencies[] = ctools
 dependencies[] = panelizer
 features[ctools][] = panelizer:panelizer:1
 features[features_api][] = api:1
-features[panelizer_defaults][] = node:openatrium_group:default
+features[panelizer_defaults][] = node:oa_group:default:default
 project path = profiles/openatrium/modules/features
