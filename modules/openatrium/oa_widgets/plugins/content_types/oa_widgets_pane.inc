@@ -46,13 +46,13 @@ function oa_widgets_content_type_edit_form($form, &$form_state) {
 
   $options = array();
   foreach ($nodes as $node) {
-    $options[$node->type] = check_plain($node->name);
+    $options[$node->type] = $node->type;
   }
-  $form['types'] = array(
+  $form['settings']['types'] = array(
     '#title' => t('Enable content types'),
     '#type' => 'checkboxes',
     '#options' => $options,
-    '#default_value' => ($conf['types'] ? $conf['types'] : array_values($options)),
+    '#default_value' => isset($conf['types']) ? $conf['types'] : array_values($options),
     '#description' => t('Select which content types you would like to enable for this widget.'),
   );
 
