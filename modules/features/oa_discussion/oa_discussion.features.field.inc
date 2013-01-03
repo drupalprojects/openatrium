@@ -441,13 +441,13 @@ function oa_discussion_field_default_fields() {
       ),
       'widget' => array(
         'active' => 0,
-        'module' => 'entityreference',
+        'module' => 'options',
         'settings' => array(
           'match_operator' => 'CONTAINS',
           'path' => '',
           'size' => 60,
         ),
-        'type' => 'entityreference_autocomplete',
+        'type' => 'options_select',
         'weight' => '7',
       ),
     ),

@@ -87,6 +87,27 @@ function oa_discussion_views_default_views() {
       'label' => 'OG membership: Group ID',
     ),
   );
+  $translatables['oa_discussions'] = array(
+    t('Master'),
+    t('Recent Posts'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('OG membership from node'),
+    t('All'),
+    t('Content pane'),
+    t('Open Atrium Discussions'),
+  );
   $export['oa_discussions'] = $view;
 
   return $export;

@@ -253,16 +253,17 @@ function oa_groups_og_fields_info() {
       'type' => 'entityreference',
     ),
     'instance' => array(
-      'label' => t('OpenAtrium Section'),
+      'label' => t('Open Atrium Section'),
       'widget' => array(
         'active' => 0,
-        'module' => 'entityreference',
+        'module' => 'options',
         'settings' => array(
           'match_operator' => 'CONTAINS',
           'path' => '',
           'size' => 60,
         ),
-        'type' => 'entityreference_autocomplete',
+        'type' => 'options_select',
+        'weight' => '7',
       ),
     ),
   );
