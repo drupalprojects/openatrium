@@ -59,7 +59,8 @@ dependencies[] = oa_favorites
 
 ; Open Atrium 2.0 Modules
 dependencies[] = oa_dashboard
-dependencies[] = session_context
+dependencies[] = og_session_context
+dependencies[] = oa_section_context
 
 
 ; Development Modules - Temporary
