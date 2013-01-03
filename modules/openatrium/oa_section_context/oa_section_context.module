@@ -29,6 +29,8 @@ function oa_section_context_field_access($op, $field, $entity_type, $entity, $ac
  */
 function oa_section_context_form_alter(&$form, &$form_state, $form_id) {
   if (strstr($form_id, 'node_form') && empty($form['oa_section_ref'][LANGUAGE_NONE]['#default_value'])) {
-    $form['oa_section_ref'][LANGUAGE_NONE]['#default_value'] = $_SESSION['oa_section_id'];
+    if (!empty($_SESSION['oa_section_id'])) {
+      $form['oa_section_ref'][LANGUAGE_NONE]['#default_value'] = $_SESSION['oa_section_id'];
+    }
   }
 }
