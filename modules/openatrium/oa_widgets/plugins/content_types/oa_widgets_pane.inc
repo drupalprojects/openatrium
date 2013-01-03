@@ -42,11 +42,11 @@ function oa_widgets_content_type_render($subtype, $conf, $context = NULL) {
 function oa_widgets_content_type_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
 
-  $nodes = oa_list_content_types();
+  $nodes = oa_groups_list_content_types();
 
   $options = array();
   foreach ($nodes as $node) {
-    $options[$node->type] = $node->type;
+    $options[$node->type] = check_plain($node->name);
   }
   $form['settings']['types'] = array(
     '#title' => t('Enable content types'),

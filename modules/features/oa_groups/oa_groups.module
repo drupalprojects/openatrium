@@ -282,7 +282,7 @@ function oa_groups_node_view($node) {
  *
  * @return array of strings denoting content types marked for omission
  */
-function oa_list_content_types() {
+function oa_groups_list_content_types() {
   $nodes = node_type_get_types();
 
   // Queries hook_oa_omit_content_types to determine what content types

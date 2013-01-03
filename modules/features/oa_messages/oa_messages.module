@@ -10,7 +10,7 @@ include_once 'oa_messages.features.inc';
  * Implements hook_node_insert().
  */
 function oa_messages_node_insert($node) {
-  $types = oa_list_content_types();
+  $types = oa_groups_list_content_types();
   if (!array_key_exists($node->type, $types)) {
     // only create messages for node types we care about
     return;
@@ -32,7 +32,7 @@ function oa_messages_node_insert($node) {
 }
 
 function oa_messages_node_update($node) {
-  $types = oa_list_content_types();
+  $types = oa_groups_list_content_types();
   if (!array_key_exists($node->type, $types)) {
     // only create messages for node types we care about
     return;
@@ -54,7 +54,7 @@ function oa_messages_node_update($node) {
 }
 
 function oa_messages_node_delete($node) {
-  $types = oa_list_content_types();
+  $types = oa_groups_list_content_types();
   if (!array_key_exists($node->type, $types)) {
     // only create messages for node types we care about
     return;
