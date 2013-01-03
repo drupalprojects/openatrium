@@ -7,4 +7,4 @@ php = 5.1
 stylesheets[all][] = css/oa_dashboard.css
 
 dependencies[] = block
-dependencies[] = session_context
+dependencies[] = og_session_context
