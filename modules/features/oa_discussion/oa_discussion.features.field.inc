@@ -50,7 +50,7 @@ function oa_discussion_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '0',
         ),
         'featured' => array(
           'label' => 'above',
@@ -130,7 +130,7 @@ function oa_discussion_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 4,
+          'weight' => '2',
         ),
         'featured' => array(
           'label' => 'above',
@@ -209,7 +209,7 @@ function oa_discussion_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 6,
+          'weight' => '1',
         ),
         'featured' => array(
           'label' => 'above',
@@ -320,7 +320,7 @@ function oa_discussion_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 3,
+          'weight' => '3',
         ),
         'featured' => array(
           'label' => 'above',
@@ -417,7 +417,7 @@ function oa_discussion_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 5,
+          'weight' => '5',
         ),
         'featured' => array(
           'label' => 'above',
@@ -448,7 +448,7 @@ function oa_discussion_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'options_select',
-        'weight' => '7',
+        'weight' => '3',
       ),
     ),
   );
@@ -513,7 +513,7 @@ function oa_discussion_field_default_fields() {
           'module' => 'og_ui',
           'settings' => array(),
           'type' => 'og_list_default',
-          'weight' => 0,
+          'weight' => '4',
         ),
         'featured' => array(
           'label' => 'above',
@@ -562,7 +562,7 @@ function oa_discussion_field_default_fields() {
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
-        'weight' => '6',
+        'weight' => '2',
       ),
     ),
   );
