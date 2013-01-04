@@ -28,11 +28,11 @@ function oa_messages_default_message_type() {
     "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" } },
     "language" : "en",
     "arguments" : null,
-    "message_text" : { "en" : [
+    "message_text" : { "und" : [
         {
-          "value" : "\\u003Cp\\u003EA piece of content has been created on the site.\\u003C\\/p\\u003E",
+          "value" : "\\u003Cp\\u003EContent has been created.\\u003C\\/p\\u003E",
           "format" : "panopoly_wysiwyg_text",
-          "safe_value" : "\\u003Cp\\u003EA piece of content has been created on the site.\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EContent has been created.\\u003C\\/p\\u003E\\n"
         }
       ]
     }
@@ -46,7 +46,7 @@ function oa_messages_default_message_type() {
     "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" } },
     "language" : "en",
     "arguments" : null,
-    "message_text" : { "en" : [
+    "message_text" : { "und" : [
         {
           "value" : "\\u003Cp\\u003EContent has been deleted.\\u003C\\/p\\u003E",
           "format" : "panopoly_wysiwyg_text",
@@ -64,7 +64,7 @@ function oa_messages_default_message_type() {
     "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" } },
     "language" : "en",
     "arguments" : null,
-    "message_text" : { "en" : [
+    "message_text" : { "und" : [
         {
           "value" : "\\u003Cp\\u003EContent has been UPDATED.\\u003C\\/p\\u003E",
           "format" : "panopoly_wysiwyg_text",
