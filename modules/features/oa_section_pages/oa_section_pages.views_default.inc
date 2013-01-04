@@ -13,7 +13,7 @@ function oa_section_pages_views_default_views() {
   $view = new view();
   $view->name = 'open_atrium_section_pages';
   $view->description = 'Show all content (nodes) of a group.';
-  $view->tag = 'og';
+  $view->tag = 'OA';
   $view->base_table = 'node';
   $view->human_name = 'Open Atrium Section Pages';
   $view->core = 0;
@@ -104,28 +104,6 @@ function oa_section_pages_views_default_views() {
       'fixed' => '',
       'label' => 'OG membership: Group ID',
     ),
-  );
-  $translatables['open_atrium_section_pages'] = array(
-    t('Defaults'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('There is no content in this group.'),
-    t('OG membership from node'),
-    t('All'),
-    t('Section Pages within Groups'),
-    t('Displays section pages within groups'),
-    t('Open Atrium'),
   );
   $export['open_atrium_section_pages'] = $view;
 
