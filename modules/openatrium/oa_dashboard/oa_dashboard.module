@@ -64,77 +64,73 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
 
   // grab list of user's groups and sections
   $sections = oa_groups_section_list($user->uid);
-  $items = array();
+  $variables['groups_recent'] = '';
   if (!empty($sections)) {
     // get names of groups
-    $query = db_select('node', 'n');
-    $query
-      ->fields('n', array('nid', 'title'))
-      ->condition('n.type', 'oa_group')
-      ->condition('n.nid', array_keys($sections), 'IN');
-    $result = $query->execute();
-    while ($row = $result->fetchAssoc()) {
-      $items[] = l($row['title'], 'node/' . $row['nid']);
+    $items = oa_groups_get_titles(array_keys($sections), 'oa_group');
+    $list = oa_groups_truncate_list($items['links'], 10,
+      l('All groups...', 'groups',
+        array('attributes' => array('class' => array('more-link')))));
+    if (!empty($list)) {
+      $variables['groups_recent'] = theme('item_list', array(
+        'items' => $list,
+        'title' => t('Active Groups'),
+        'type' => 'ul',
+      ));
     }
   }
-
-  $variables['groups_recent'] = theme('item_list', array(
-    'items' => $items,
-    'title' => t('Active Groups'),
-    'type' => 'ul'));
 
   $variables['groups_favorite'] = '';
   if (module_exists('oa_favorites')) {
-    if ($flag = flag_get_flag('favorite_group')) {
-      $query = db_select('node', 'n');
-      $query->join('flag_content', 'f', 'n.nid = f.content_id');
-      $query
-        ->fields('n', array('nid', 'title'))
-        ->condition('f.uid', $user->uid)
-        ->condition('f.fid', $flag->fid)
-        ->condition('type', 'oa_group');
-      $result = $query->execute();
-      $items = array();
-      while ($row = $result->fetchAssoc()) {
-        $items[] = l($row['title'], 'node/' . $row['nid']);
-      }
-      if (!empty($items)) {
-        $variables['groups_favorite'] = theme('item_list', array(
-          'items' => $items,
-          'title' => t('Favorite Groups'),
-          'type' => 'ul'));
-      }
+    // get list of favorite groups
+    $items = oa_favorites_get_groups($user);
+    if (!empty($items['links'])) {
+      $variables['groups_favorite'] = theme('item_list', array(
+        'items' => $items['links'],
+        'title' => t('Favorite Groups'),
+        'type' => 'ul',
+      ));
     }
   }
 
-  $variables['sections_label'] = t('Group page');
-  $items = array();
+  $current_section = !empty($_SESSION['oa_section_id']) ? $_SESSION['oa_section_id'] : 0;
+  $section_name = '';
+
+  $variables['sections_label'] = t('Group home');
   $variables['sections_list'] = '';
   if (isset($group->nid)) {
-    $items[] = l(t('Group page'), 'node/' . $group->nid);
-    if (!empty($sections[$group->nid])) {
-      // get names of sections
-      $query = db_select('node', 'n');
-      $query
-        ->fields('n', array('nid', 'title'))
-        ->condition('n.nid', $sections[$group->nid], 'IN');
-      $result = $query->execute();
-      while ($row = $result->fetchAssoc()) {
-        $items[] = l($row['title'], 'node/' . $row['nid']);
+    $group_link = l(t('Group home'), 'node/' . $group->nid);
+    // grab the titles of the sections for the current group
+    $items = oa_groups_get_titles($sections[$group->nid]);
+    // check for match with current section id
+    for ($i = 0; $i < count($items['ids']); $i++) {
+      if ($items['ids'][$i] == $current_section) {
+        $section_name = $items['titles'][$i];
+        break;
       }
     }
-  }
-  if (!empty($items)) {
-    $variables['sections_list'] = theme('item_list', array(
-      'items' => $items,
-      'type' => 'ul'));
+    // add the Group home page link and create the ul list
+    array_unshift($items['links'], $group_link);
+    if (!empty($items['links'])) {
+      $variables['sections_list'] = theme('item_list', array(
+        'items' => $items['links'],
+        'type' => 'ul',
+      ));
+    }
   }
 
-  // Current Section Name
+  // Current Section Name from current page name
   $section = menu_get_object();
-  if (isset($section->type) && ($section->type == OA_SECTION_TYPE)) {
-    $variables['sections_label'] = $section->title;
+  if (isset($section->type)) {
+    switch ($section->type) {
+      case OA_SECTION_TYPE:
+        $section_name = $section->title;
+        break;
+      case OA_GROUP_TYPE:
+        $section_name = $variables['sections_label'];
+    }
   }
+  $variables['sections_label'] = $section_name;
 }
 
 function oa_dashboard_preprocess_views_view(&$variables) {

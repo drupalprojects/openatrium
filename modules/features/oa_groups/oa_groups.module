@@ -11,6 +11,10 @@ include_once 'oa_groups.features.inc';
  */
 define('OA_SECTION_FIELD', 'oa_section_ref');
 /**
+ * Name of default OpenAtrium Group type.
+ */
+define('OA_GROUP_TYPE', 'oa_group');
+/**
  * Name of OpenAtrium Section content type.
  */
 define('OA_SECTION_TYPE', 'oa_section');
@@ -295,4 +299,49 @@ function oa_groups_list_content_types() {
   }
 
   return $nodes;
+}
+
+/**
+ * Helper function to retrieve an array of node titles and links given
+ * a list of node ids
+ * @param  array  $ids array of node ids to fetch
+ * @param  string $type optional node type to filter
+ * @return array      associative array:
+ *   'titles' is a list of node titles (clean)
+ *   'links' is a list of node links
+ *   'ids' is a list of the node ids
+ */
+function oa_groups_get_titles($ids = array(), $type = '') {
+  $items = array('titles' => array(), 'links' => array(), 'ids' => array());
+  if (!empty($ids)) {
+    $query = db_select('node', 'n');
+    $query
+      ->fields('n', array('nid', 'title'))
+      ->condition('n.nid', $ids, 'IN');
+    if (!empty($type)) {
+      $query->condition('n.type', $type);
+    }
+    $result = $query->execute();
+    while ($row = $result->fetchAssoc()) {
+      $items['ids'][]    = $row['nid'];
+      $items['titles'][] = check_plain($row['title']);
+      $items['links'][]  = l($row['title'], 'node/' . $row['nid']);
+    }
+  }
+  return $items;
+}
+
+/**
+ * truncate a list to a given number of items with optional More link
+ * @param  array $list      array to be truncated
+ * @param  int $count     number of items desired
+ * @param  string $more_link optional "More" link added to end of array
+ * @return array            new list of items
+ */
+function oa_groups_truncate_list($list, $count, $more_link = '') {
+  $new_list = array_slice($list, 0, $count);
+  if (!empty($more_link) && (count($list) != count($new_list))) {
+    $new_list[] = $more_link;
+  }
+  return $new_list;
 }
