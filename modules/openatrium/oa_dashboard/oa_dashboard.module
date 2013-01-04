@@ -91,6 +91,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
       $query
         ->fields('n', array('nid', 'title'))
         ->condition('f.uid', $user->uid)
+        ->condition('f.fid', $flag->fid)
         ->condition('type', 'oa_group');
       $result = $query->execute();
       $items = array();
