@@ -1,4 +1,5 @@
 <div id="oa_toolbar">
+  <?php if (!empty($groups_label)): ?>
   <div class="dropdown">
     <a href="<?php print $home_url; ?>"><i class="icon-home"></i></a>
   </div>
@@ -18,4 +19,5 @@
       <li class="dropdown-column"><?php print $sections_list; ?></li>
     </ul>
   </div>
+  <?php endif; ?>
 </div>

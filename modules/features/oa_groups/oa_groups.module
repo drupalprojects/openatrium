@@ -24,69 +24,6 @@ define('OA_SECTION_TYPE', 'oa_section');
 define('OA_TEAM_TYPE', 'oa_team');
 
 /**
- * Return a list of sections and groups a user can access
- * @param  int $user_id
- * @return array keyed by group_id, nested array of section ids
- */
-function oa_groups_section_list($user_id) {
-  // look up section access data for user
-//  $query = db_select('oa_section_access', 's')
-//    ->fields('s', array('data'))
-//    ->condition('uid', $user_id);
-//  $result = $query->execute()->fetchAssoc();
-//  if (empty($result['data'])) {
-  if (TRUE) {
-    // access list not cached, so compute from scratch
-    //
-    // First, get list of groups user is a member of
-    $account = user_load($user_id);
-    $section_list = array();
-    if ($user_id == 0) {
-      // get list of all public groups
-      $all_groups = og_get_all_group();
-      foreach ($all_groups as $gid) {
-        $node = node_load($gid);
-        $access = node_access('view', $node, $account);
-        if ($access == NODE_ACCESS_ALLOW) {
-          $groups['node'][] = $gid;
-        }
-      }
-    }
-    else {
-      $groups = og_get_entity_groups('user', $account);
-      }
-    if (!empty($groups['node'])) {
-      foreach ($groups['node'] as $gid) {
-        $section_list[$gid] = array();
-      }
-
-      // get the list of sections assigned to the list of groups
-      $query = db_select('node', 'n');
-      $query->join('og_membership', 'og', 'n.nid = og.etid');
-      $query
-        ->fields('n', array('nid', 'title'))
-        ->fields('og', array('gid'))
-        ->condition('n.type', OA_SECTION_TYPE)
-        ->condition('og.gid', $groups['node'], 'IN');
-      $result = $query->execute();
-      // loop through each result to determine access to section
-      while ($row = $result->fetchAssoc()) {
-        // load the section node
-        $node = node_load($row['nid']);
-        $access = node_access('view', $node, $account);
-        if ($access == NODE_ACCESS_ALLOW) {
-          $section_list[$row['gid']][$row['nid']] = $row['nid'];
-        }
-      }
-    }
-  }
-  else {
-    $section_list = unserialize($result['data']);
-  }
-  return $section_list;
-}
-
-/**
  * Determine if a user is a member of a team
  * @param  int $team_id
  * @param  int $user_id
@@ -167,6 +104,79 @@ function oa_groups_section_access($node, $op, $account) {
 }
 
 /**
+ * Return a list of sections and groups a user can access
+ * @param  int $user_id
+ * @return array keyed by group_id, nested array of section ids
+ */
+function oa_groups_section_list($user_id) {
+  static $cache = array();
+  // look up section access data for user
+//  $query = db_select('oa_section_access', 's')
+//    ->fields('s', array('data'))
+//    ->condition('uid', $user_id);
+//  $result = $query->execute()->fetchAssoc();
+//  if (empty($result['data'])) {
+  if (isset($cache[$user_id])) {
+    return $cache[$user_id];
+  }
+  if (TRUE) {
+    // access list not cached, so compute from scratch
+    //
+    // First, get list of groups user is a member of
+    $account = user_load($user_id);
+    $section_list = array();
+    $groups = og_get_entity_groups('user', $account);
+    if (!empty($groups['node'])) {
+      foreach ($groups['node'] as $gid) {
+        $section_list[$gid] = array();
+      }
+
+      // get the list of sections assigned to the list of groups
+      $query = db_select('node', 'n');
+      $query->join('og_membership', 'og', 'n.nid = og.etid');
+      $query
+        ->fields('n', array('nid', 'title'))
+        ->fields('og', array('gid'))
+        ->condition('n.type', OA_SECTION_TYPE)
+        ->condition('og.entity_type', 'node')
+        ->condition('og.gid', $groups['node'], 'IN')
+        ->groupby('n.nid');
+      $result = $query->execute();
+      // loop through each result to determine access to section
+      while ($row = $result->fetchAssoc()) {
+        // load the section node
+        $node = node_load($row['nid']);
+        $access = oa_groups_section_access($node, 'view', $account);
+        if ($access == NODE_ACCESS_ALLOW) {
+          $section_list[$row['gid']][$row['nid']] = $row['nid'];
+        }
+      }
+    }
+  }
+  else {
+    $section_list = unserialize($result['data']);
+  }
+  $cache[$user_id] = $section_list;
+  return $section_list;
+}
+
+/**
+ * Takes the nested list of a user's groups/sections and returns a list
+ * of just unique section numbers
+ * @param  array $section_list
+ * @return array
+ */
+function oa_groups_flatten_section($section_list) {
+  $result = array();
+  foreach ($section_list as $gid => $list) {
+    foreach ($list as $key => $value) {
+      $result[$value] = $value;
+    }
+  }
+  return $result;
+}
+
+/**
  * Implements hook_node_access.
  */
 function oa_groups_node_access($node, $op, $account) {
@@ -175,51 +185,30 @@ function oa_groups_node_access($node, $op, $account) {
     return NODE_ACCESS_IGNORE;
   }
   if ($node->type == OA_SECTION_TYPE) {
-    return oa_groups_section_access($node, $op, $account);
+    $sections = oa_groups_section_list($account->uid);
+    $sections = oa_groups_flatten_section($sections);
+    if (isset($sections[$node->nid])) {
+      return NODE_ACCESS_ALLOW;
+    }
+    else {
+      return NODE_ACCESS_DENY;
+    }
   }
   // Look for the default OA_SECTION_FIELD
   if (!empty($node->{OA_SECTION_FIELD})) {
+    $sections = oa_groups_section_list($account->uid);
+    $sections = oa_groups_flatten_section($sections);
     // Found a section reference, so defer access to section
     // Loop through referenced sections to test access
     foreach ($node->{OA_SECTION_FIELD}[LANGUAGE_NONE] as $entity_ref) {
-      $section = node_load($entity_ref['target_id']);
-      if (isset($section->nid) && ($section->nid != $node->nid)) {
-        $access = node_access($op, $section, $account);
-        if ($access == NODE_ACCESS_ALLOW) {
-          return $access;
-        }
+      if (isset($sections[$entity_ref['target_id']])) {
+        return NODE_ACCESS_ALLOW;
       }
     }
     // none of the sections allowed access, so deny access
     return NODE_ACCESS_DENY;
   }
 
-  // Look for any other Section Reference fields in node
-  foreach ($node as $key => $field) {
-    $field_info = field_info_field($key);
-    if (isset($field_info['type']) && ($field_info['type'] == 'entityreference')) {
-      // looking for an EntityReference field with a Section in the bundle
-      // Doesn't work if an EntityReference View is being used on the field
-      if (in_array(OA_SECTION_TYPE, $field_info['settings']['handler_settings']['target_bundles'])) {
-        // Found a section reference, so defer access to section
-        // If field is empty, then it's open access
-        if (!empty($field[LANGUAGE_NONE])) {
-          // Loop through referenced sections to test access
-          foreach ($field[LANGUAGE_NONE] as $entity_ref) {
-            $section = node_load($entity_ref['target_id']);
-            if (isset($section->nid) && ($section->nid != $node->nid)) {
-              $access = node_access($op, $section, $account);
-              if ($access == NODE_ACCESS_ALLOW) {
-                return $access;
-              }
-            }
-          }
-          // none of the sections allowed access, so deny access
-          return NODE_ACCESS_DENY;
-        }
-      }
-    }
-  }
   return NODE_ACCESS_IGNORE;
 }
 
@@ -273,11 +262,6 @@ function oa_groups_og_fields_info() {
   );
 
   return $items;
-}
-
-function oa_groups_node_view($node) {
-  global $user;
-  oa_groups_section_list(0);
 }
 
 /**
