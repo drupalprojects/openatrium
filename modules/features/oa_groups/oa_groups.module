@@ -7,10 +7,6 @@
 include_once 'oa_groups.features.inc';
 
 /**
- * Name of default OpenAtrium Section field (for Organic Groups Fields UI).
- */
-define('OA_SECTION_FIELD', 'oa_section_ref');
-/**
  * Name of default OpenAtrium Group type.
  */
 define('OA_GROUP_TYPE', 'oa_group');
@@ -19,9 +15,29 @@ define('OA_GROUP_TYPE', 'oa_group');
  */
 define('OA_SECTION_TYPE', 'oa_section');
 /**
+ * Name of OpenAtrium Organization content type.
+ */
+define('OA_ORG_TYPE', 'oa_organization');
+/**
  * Name of OpenAtrium Team content type.
  */
 define('OA_TEAM_TYPE', 'oa_team');
+/**
+ * Name of default OpenAtrium Section field (for Organic Groups Fields UI).
+ */
+define('OA_SECTION_FIELD', 'oa_section_ref');
+/**
+ * Name of default OpenAtrium Group field (for Organic Groups Fields UI).
+ */
+define('OA_GROUP_FIELD', 'og_group_ref');
+/**
+ * Name of default OpenAtrium Organization field (for Organic Groups Fields UI).
+ */
+define('OA_ORG_FIELD', 'field_oa_organization_ref');
+/**
+ * Name of default OpenAtrium Team field (for Organic Groups Fields UI).
+ */
+define('OA_TEAM_FIELD', 'field_oa_team_ref');
 
 /**
  * Determine if a user is a member of a team
@@ -130,17 +146,15 @@ function oa_groups_section_list($user_id) {
       foreach ($groups['node'] as $gid) {
         $section_list[$gid] = array();
       }
-
       // get the list of sections assigned to the list of groups
       $query = db_select('node', 'n');
-      $query->join('og_membership', 'og', 'n.nid = og.etid');
+      $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');
       $query
         ->fields('n', array('nid', 'title'))
         ->fields('og', array('gid'))
         ->condition('n.type', OA_SECTION_TYPE)
         ->condition('og.entity_type', 'node')
-        ->condition('og.gid', $groups['node'], 'IN')
-        ->groupby('n.nid');
+        ->condition('og.gid', $groups['node'], 'IN');
       $result = $query->execute();
       // loop through each result to determine access to section
       while ($row = $result->fetchAssoc()) {
