@@ -88,6 +88,10 @@ function oa_section_pages_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'oa_section' => 'oa_section',
   );
+  /* Filter criterion: Open Atrium: Section Access (Section) */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'oa_section_access';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
 
   /* Display: Section Pages within Groups */
   $handler = $view->new_display('panel_pane', 'Section Pages within Groups', 'section_pages_within_groups');
@@ -104,6 +108,28 @@ function oa_section_pages_views_default_views() {
       'fixed' => '',
       'label' => 'OG membership: Group ID',
     ),
+  );
+  $translatables['open_atrium_section_pages'] = array(
+    t('Defaults'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('There is no content in this group.'),
+    t('OG membership from node'),
+    t('All'),
+    t('Section Pages within Groups'),
+    t('Displays section pages within groups'),
+    t('Open Atrium'),
   );
   $export['open_atrium_section_pages'] = $view;
 

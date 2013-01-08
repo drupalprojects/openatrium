@@ -20,7 +20,7 @@ function oa_dashboard_block_view($delta = '') {
 
   switch($delta) {
   	case 'oa_toolbar':
-  	  $block['subject'] = t('Open Atrium Toolbar');
+  	  $block['subject'] = '';
       $block['content'] = theme('oa_toolbar');
   	  break;
   }
