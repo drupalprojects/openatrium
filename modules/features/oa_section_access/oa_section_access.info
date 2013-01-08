@@ -1,0 +1,11 @@
+name = Open Atrium Section Access
+description = Handle access control for section pages
+core = 7.x
+package = Open Atrium
+php = 5.2.4
+version = 7.x-2.0
+dependencies[] = views
+dependencies[] = oa_groups
+files[] = views/oa_section_access.views.inc
+files[] = views/handlers/oa_section_access_content_filter.inc
+files[] = views/handlers/oa_section_access_section_filter.inc
