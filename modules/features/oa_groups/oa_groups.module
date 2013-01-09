@@ -85,11 +85,13 @@ function oa_groups_member_of_team($team_id, $user_id) {
  */
 function oa_groups_section_access($nid, $account) {
   // grab the organization entity reference list
-  $orgs = db_select('field_data_field_oa_organization_ref', 'f')
-    ->fields('f', array('field_oa_organization_ref_target_id'))
-    ->condition('entity_type', 'node')
-    ->condition('entity_id', $nid)
-    ->condition('deleted', 0)
+  // this is an organic groups reference, so actually get it
+  // from the og_membership table
+  $orgs = db_select('og_membership', 'og')
+    ->fields('og', array('gid'))
+    ->condition('og.entity_type', 'node')
+    ->condition('og.field_name', OA_ORG_FIELD)
+    ->condition('og.etid', $nid)
     ->execute()
     ->fetchCol(0);
   // grab the teams entity reference list
