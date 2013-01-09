@@ -30,7 +30,6 @@ function oa_section_access_views_data() {
         'node' => array(
           'left_field' => 'nid',
           'field' => 'sid',
-          'type' => 'INNER',
         ),
       ),
     )
