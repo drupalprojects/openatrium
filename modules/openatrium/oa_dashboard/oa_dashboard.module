@@ -51,7 +51,6 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   if (isset($_SESSION['oa_group_id'])) {
     $group_id = $_SESSION['oa_group_id'];
   }
-
   $variables['groups_label'] = '';
   $variables['groups_recent'] = '';
   $variables['groups_favorite'] = '';

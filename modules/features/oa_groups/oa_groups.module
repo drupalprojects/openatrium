@@ -131,50 +131,74 @@ function oa_groups_section_access($node, $op, $account) {
  */
 function oa_groups_section_list($user_id) {
   static $cache = array();
-  // look up section access data for user
-//  $query = db_select('oa_section_access', 's')
-//    ->fields('s', array('data'))
-//    ->condition('uid', $user_id);
-//  $result = $query->execute()->fetchAssoc();
-//  if (empty($result['data'])) {
   if (isset($cache[$user_id])) {
     return $cache[$user_id];
   }
-  if (TRUE) {
-    // access list not cached, so compute from scratch
-    //
-    // First, get list of groups user is a member of
-    $account = user_load($user_id);
+
+  // look up section access data for user
+  // return list of sections this user has access to
+  $result = db_select('oa_section_access', 's')
+    ->fields('s', array('sid', 'gid'))
+    ->condition('uid', $user_id)
+    ->execute();
+  if ($result->rowCount() > 0) {
+    // build section list from table cache
     $section_list = array();
-    $groups = og_get_entity_groups('user', $account);
-    if (!empty($groups['node'])) {
-      foreach ($groups['node'] as $gid) {
-        $section_list[$gid] = array();
+    while ($row = $result->fetchAssoc()) {
+      if (!isset($section_list[$row['gid']])) {
+        $section_list[$row['gid']] = array();
       }
-      // get the list of sections assigned to the list of groups
-      $query = db_select('node', 'n');
-      $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');
-      $query
-        ->fields('n', array('nid', 'title'))
-        ->fields('og', array('gid'))
-        ->condition('n.type', OA_SECTION_TYPE)
-        ->condition('og.entity_type', 'node')
-        ->condition('og.gid', $groups['node'], 'IN');
-      $result = $query->execute();
-      // loop through each result to determine access to section
-      while ($row = $result->fetchAssoc()) {
-        // load the section node
-        $node = node_load($row['nid']);
-        $access = oa_groups_section_access($node, 'view', $account);
-        if ($access == NODE_ACCESS_ALLOW) {
-          $section_list[$row['gid']][$row['nid']] = $row['nid'];
-        }
+      $section_list[$row['gid']][] = $row['sid'];
+    }
+    $cache[$user_id] = $section_list;
+    return $section_list;
+  }
+  // otherwise the oa_section_access cache table was empty
+  // so rebuild entries for this user
+
+  // First, get list of groups user is a member of
+  $account = user_load($user_id);
+  $section_list = array();
+  if ($account->uid == 0) {
+    $groups = oa_get_public_groups();
+  }
+  else {
+    $groups = og_get_entity_groups('user', $account);
+  }
+  if (!empty($groups['node'])) {
+    foreach ($groups['node'] as $gid) {
+      $section_list[$gid] = array();
+    }
+    // get the list of sections assigned to the list of groups
+    $query = db_select('node', 'n');
+    $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');
+    $query
+      ->fields('n', array('nid', 'title'))
+      ->fields('og', array('gid'))
+      ->condition('n.type', OA_SECTION_TYPE)
+      ->condition('og.entity_type', 'node')
+      ->condition('og.field_name', OA_GROUP_FIELD)
+      ->condition('og.gid', $groups['node'], 'IN');
+    $result = $query->execute();
+    // loop through each result to determine access to section
+    while ($row = $result->fetchAssoc()) {
+      // load the section node
+      $node = node_load($row['nid']);
+      dsm($node->title);
+      $access = oa_groups_section_access($node, 'view', $account);
+      if ($access == NODE_ACCESS_ALLOW) {
+        $section_list[$row['gid']][$row['nid']] = $row['nid'];
+        // update oa_section_access db cache table
+        $record = array(
+          'uid' => $user_id,
+          'sid' => $row['nid'],
+          'gid' => $row['gid'],
+        );
+        drupal_write_record('oa_section_access', $record);
       }
     }
   }
-  else {
-    $section_list = unserialize($result['data']);
-  }
+
   $cache[$user_id] = $section_list;
   return $section_list;
 }
@@ -347,4 +371,19 @@ function oa_groups_truncate_list($list, $count, $more_link = '') {
     $new_list[] = $more_link;
   }
   return $new_list;
+}
+
+/**
+ * Return a list of public groups
+ * since og_get_entity_groups doesn't return anything for anonymous users
+ * @return array array['node'] contains array of public gids
+ */
+function oa_get_public_groups() {
+  $query = db_select('field_data_group_access', 'g')
+    ->fields('g', array('entity_id'))
+    ->condition('bundle', OA_GROUP_TYPE)
+    ->condition('entity_type', 'node')
+    ->condition('group_access_value', 0);
+  $result['node'] = $query->execute()->fetchCol(0);
+  return $result;
 }
