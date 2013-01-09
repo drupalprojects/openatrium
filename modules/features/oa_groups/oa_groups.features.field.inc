@@ -966,17 +966,13 @@ function oa_groups_field_default_fields() {
       'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
-        'handler' => 'og',
+        'handler' => 'base',
         'handler_settings' => array(
           'behaviors' => array(
-            'og_behavior' => array(
-              'status' => TRUE,
-            ),
             'views-select-list' => array(
               'status' => 0,
             ),
           ),
-          'membership_type' => 'og_membership_type_default',
           'sort' => array(
             'type' => 'none',
           ),
@@ -1036,10 +1032,10 @@ function oa_groups_field_default_fields() {
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 0,
-        'module' => 'og',
+        'active' => 1,
+        'module' => 'options',
         'settings' => array(),
-        'type' => 'og_complex',
+        'type' => 'options_select',
         'weight' => '4',
       ),
     ),

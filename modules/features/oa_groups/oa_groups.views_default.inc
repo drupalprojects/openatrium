@@ -82,10 +82,6 @@ function oa_groups_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Open Atrium: Section Access (Content) */
-  $handler->display->display_options['filters']['entity_id']['id'] = 'entity_id';
-  $handler->display->display_options['filters']['entity_id']['table'] = 'field_data_oa_section_ref';
-  $handler->display->display_options['filters']['entity_id']['field'] = 'entity_id';
 
   /* Display: Recent Group Content */
   $handler = $view->new_display('panel_pane', 'Recent Group Content', 'panel_pane_1');
