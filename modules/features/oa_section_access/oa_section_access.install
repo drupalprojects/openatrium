@@ -14,12 +14,6 @@ function oa_section_access_schema() {
   $schema['oa_section_access'] = array(
     'description' => 'Stores the section access for Open Atrium.',
     'fields' => array(
-      'id' => array(
-        'description' => 'unique id.',
-        'type' => 'serial',
-        'unsigned' => TRUE,
-        'not null' => TRUE,
-      ),
       'uid' => array(
         'description' => 'User id.',
         'type' => 'int',
@@ -39,7 +33,7 @@ function oa_section_access_schema() {
         'not null' => TRUE,
       ),
     ),
-    'primary key' => array('id'),
+    'primary key' => array('uid','sid'),
     'indexes' => array(
       'section' => array('sid'),
       'user' => array('uid'),

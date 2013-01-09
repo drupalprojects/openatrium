@@ -77,7 +77,7 @@ function oa_groups_section_access($node, $op, $account) {
       empty($node->field_oa_team_ref[LANGUAGE_NONE]) &&
       empty($node->field_oa_user_ref[LANGUAGE_NONE])) {
     // No access fields are set, so it's a public section
-    return NODE_ACCESS_ALLOW;
+    return NODE_ACCESS_IGNORE;
   }
 
   if ($account->uid == 0) {
@@ -125,6 +125,85 @@ function oa_groups_section_access($node, $op, $account) {
 }
 
 /**
+ * Returns TRUE if we are caching section access in db
+ */
+function oa_groups_cache_enabled() {
+  return (module_exists('oa_section_access') &&
+    variable_get('oa_access_cache', TRUE));
+}
+
+/**
+ * Check for any database cache of section access data
+ * @param  int $user_id
+ * @return array $section_list array
+ *   or NULL if no cache entries exists
+ */
+function oa_groups_get_section_cache($user_id) {
+  $section_list = NULL;
+  if (oa_groups_cache_enabled()) {
+    $or = db_or();
+    $or->condition('uid', $user_id);
+    if ($user_id != 0) {
+      // also include any public sections
+      $or->condition('uid', 0);
+    }
+    $result = db_select('oa_section_access', 's')
+      ->fields('s', array('sid', 'gid'))
+      ->condition($or)
+      ->execute();
+    if ($result->rowCount() > 0) {
+      $section_list = array();
+      // build section list from table cache
+      while ($row = $result->fetchAssoc()) {
+        if (!isset($section_list[$row['gid']])) {
+          $section_list[$row['gid']] = array();
+        }
+        $section_list[$row['gid']][] = $row['sid'];
+      }
+    }
+  }
+  return $section_list;
+}
+
+/**
+ * update oa_section_access db cache table
+ * if Access is IGNORE then it's a public section, so allow anonymous access
+ * @return [type] [description]
+ */
+/**
+ * update oa_section_access db cache table
+ * @param  int $sid    section id
+ * @param  int $uid    user id
+ * @param  int $gid    group id
+ * @param  $access NODE_ACCESS_ALLOW or NODE_ACCESS_IGNORE
+ */
+function oa_groups_update_section_cache($sid, $gid, $uid, $access) {
+  // if Access is IGNORE then it's a public section, so allow anonymous access
+  if (oa_groups_cache_enabled()) {
+    $user_id = ($access == NODE_ACCESS_IGNORE) ? 0 : $uid;
+    $record = array(
+      'uid' => $user_id,
+      'sid' => $sid,
+      'gid' => $gid,
+    );
+    // first remove any existing rows for this access
+    db_delete('oa_section_access')
+      ->condition('uid', $user_id)
+      ->condition('sid', $sid)
+      ->execute();
+    if ($uid != $user_id) {
+      // also remove any old access for this specific user
+      db_delete('oa_section_access')
+        ->condition('uid', $uid)
+        ->condition('sid', $sid)
+        ->execute();
+    }
+    // now write new access records
+    drupal_write_record('oa_section_access', $record);
+  }
+}
+
+/**
  * Return a list of sections and groups a user can access
  * @param  int $user_id
  * @return array keyed by group_id, nested array of section ids
@@ -137,29 +216,20 @@ function oa_groups_section_list($user_id) {
 
   // look up section access data for user
   // return list of sections this user has access to
-  $result = db_select('oa_section_access', 's')
-    ->fields('s', array('sid', 'gid'))
-    ->condition('uid', $user_id)
-    ->execute();
-  if ($result->rowCount() > 0) {
-    // build section list from table cache
-    $section_list = array();
-    while ($row = $result->fetchAssoc()) {
-      if (!isset($section_list[$row['gid']])) {
-        $section_list[$row['gid']] = array();
-      }
-      $section_list[$row['gid']][] = $row['sid'];
-    }
+  $section_list = oa_groups_get_section_cache($user_id);
+  if (!is_null($section_list)) {
     $cache[$user_id] = $section_list;
     return $section_list;
   }
   // otherwise the oa_section_access cache table was empty
   // so rebuild entries for this user
 
-  // First, get list of groups user is a member of
   $account = user_load($user_id);
   $section_list = array();
+  // First, get list of groups user is a member of
   if ($account->uid == 0) {
+    // og_get_entity_groups doesn't return anything for anonymous users
+    // so return list of all public groups
     $groups = oa_get_public_groups();
   }
   else {
@@ -169,7 +239,7 @@ function oa_groups_section_list($user_id) {
     foreach ($groups['node'] as $gid) {
       $section_list[$gid] = array();
     }
-    // get the list of sections assigned to the list of groups
+    // get the list of all section nodes assigned to the list of groups
     $query = db_select('node', 'n');
     $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');
     $query
@@ -185,15 +255,9 @@ function oa_groups_section_list($user_id) {
       // load the section node
       $node = node_load($row['nid']);
       $access = oa_groups_section_access($node, 'view', $account);
-      if ($access == NODE_ACCESS_ALLOW) {
+      if (($access == NODE_ACCESS_ALLOW) || ($access == NODE_ACCESS_IGNORE)) {
         $section_list[$row['gid']][$row['nid']] = $row['nid'];
-        // update oa_section_access db cache table
-        $record = array(
-          'uid' => $user_id,
-          'sid' => $row['nid'],
-          'gid' => $row['gid'],
-        );
-        drupal_write_record('oa_section_access', $record);
+        oa_groups_update_section_cache($row['nid'], $row['gid'], $user_id, $access);
       }
     }
   }
