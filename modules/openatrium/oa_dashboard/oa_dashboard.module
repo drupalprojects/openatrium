@@ -58,88 +58,99 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   $variables['sections_list'] = '';
 
   // grab list of user's groups and sections
-  $sections = oa_groups_section_list($user->uid);
-  if (!empty($sections)) {
-    $group_options = array(
-      'attributes' => array(
-        'class' => array('dropdown-toggle', 'btn', 'btn-large', 'btn-success'),
-        )
-      );
-    $variables['groups_label'] = l(t('Groups'), 'groups', $group_options);
-    if (isset($group_id)) {
-      // get name of current group (without fully loading node)
-      $title = oa_groups_get_titles(array($group_id));
-      $variables['groups_label'] = l($title['titles'][0], 'node/' . $group_id, $group_options);
-    }
+  $group_options = array(
+    'attributes' => array(
+      'class' => array('dropdown-toggle', 'btn', 'btn-large', 'btn-success'),
+      )
+    );
+  $variables['groups_label'] = l(t('Groups'), 'groups', $group_options);
+  if (isset($group_id)) {
+    // get name of current group (without fully loading node)
+    $title = oa_groups_get_titles(array($group_id));
+    $variables['groups_label'] = l($title['titles'][0], 'node/' . $group_id, $group_options);
+  }
 
-    // get names of groups
-    $items = oa_groups_get_titles(array_keys($sections), OA_GROUP_TYPE);
+  // get names of groups
+  if ($user->uid == 0) {
+    // og_get_entity_groups doesn't return anything for anonymous users
+    // so return list of all public groups
+    $groups = oa_get_public_groups();
+  }
+  else {
+    $groups = og_get_entity_groups('user', $user);
+  }
+  if (empty($groups['node'])) {
+    $list = array();
+  }
+  else {
+    $items = oa_groups_get_titles($groups['node'], OA_GROUP_TYPE);
     $list = oa_groups_truncate_list($items['links'], 10,
       l('All groups...', 'groups',
         array('attributes' => array('class' => array('more-link')))));
-    if (!empty($list)) {
-      $variables['groups_recent'] = theme('item_list', array(
-        'items' => $list,
-        'title' => t('Active Groups'),
+  }
+  if (!empty($list)) {
+    $variables['groups_recent'] = theme('item_list', array(
+      'items' => $list,
+      'title' => t('Active Groups'),
+      'type' => 'ul',
+    ));
+  }
+
+  if (module_exists('oa_favorites')) {
+    // get list of favorite groups
+    $items = oa_favorites_get_groups($user);
+    if (!empty($items['links'])) {
+      $variables['groups_favorite'] = theme('item_list', array(
+        'items' => $items['links'],
+        'title' => t('Favorite Groups'),
         'type' => 'ul',
       ));
     }
-
-    if (module_exists('oa_favorites')) {
-      // get list of favorite groups
-      $items = oa_favorites_get_groups($user);
-      if (!empty($items['links'])) {
-        $variables['groups_favorite'] = theme('item_list', array(
-          'items' => $items['links'],
-          'title' => t('Favorite Groups'),
-          'type' => 'ul',
-        ));
-      }
-    }
-
-    $current_section = !empty($_SESSION['oa_section_id']) ? $_SESSION['oa_section_id'] : 0;
-    $section_name = '';
-
-    $variables['sections_label'] = t('Group home');
-    if (isset($group_id)) {
-      $group_link = l(t('Group home'), 'node/' . $group_id);
-      // grab the titles of the sections for the current group
-      if (isset($sections[$group_id])) {
-        $items = oa_groups_get_titles($sections[$group_id]);
-        // check for match with current section id
-        for ($i = 0; $i < count($items['ids']); $i++) {
-          if ($items['ids'][$i] == $current_section) {
-            $section_name = $items['titles'][$i];
-            break;
-          }
-        }
-        // add the Group home page link and create the ul list
-        array_unshift($items['links'], $group_link);
-      }
-      else {
-        $items['links'][] = $group_link;
-      }
-      if (!empty($items['links'])) {
-        $variables['sections_list'] = theme('item_list', array(
-          'items' => $items['links'],
-          'type' => 'ul',
-        ));
-      }
-    }
-
-    // Current Section Name from current page name
-    $section = menu_get_object();
-    if (isset($section->type)) {
-      switch ($section->type) {
-        case OA_SECTION_TYPE:
-          $section_name = $section->title;
-          break;
-        case OA_GROUP_TYPE:
-          $section_name = $variables['sections_label'];
-      }
-    }
-    $variables['sections_label'] = $section_name;
   }
+
+  $current_section = !empty($_SESSION['oa_section_id']) ? $_SESSION['oa_section_id'] : 0;
+  $section_name = '';
+
+  $variables['sections_label'] = t('Group home');
+  if (isset($group_id)) {
+    $group_link = l(t('Group home'), 'node/' . $group_id);
+    $items = array();
+    // grab the titles of the sections for the current group
+    $sections = oa_groups_group_sections($group_id);
+    if (!empty($sections)) {
+      // check for match with current section id
+      foreach ($sections as $sid => $title) {
+        $items[] = l($title, 'node/' . $sid);
+        if ($sid == $current_section) {
+          $section_name = $title;
+        }
+      }
+      // add the Group home page link and create the ul list
+      array_unshift($items, $group_link);
+    }
+    else {
+      $items[] = $group_link;
+    }
+    if (!empty($items)) {
+      $variables['sections_list'] = theme('item_list', array(
+        'items' => $items,
+        'type' => 'ul',
+      ));
+    }
+  }
+
+  // Current Section Name from current page name
+  $section = menu_get_object();
+  if (isset($section->type)) {
+    switch ($section->type) {
+      case OA_SECTION_TYPE:
+        $section_name = $section->title;
+        break;
+      case OA_GROUP_TYPE:
+        $section_name = $variables['sections_label'];
+    }
+  }
+  $variables['sections_label'] = $section_name;
 }
 
 function oa_dashboard_preprocess_views_view(&$variables) {
