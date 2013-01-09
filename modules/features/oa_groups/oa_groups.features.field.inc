@@ -903,7 +903,7 @@ function oa_groups_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => 1,
         ),
         'featured' => array(
           'label' => 'above',
@@ -1390,7 +1390,7 @@ function oa_groups_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => 1,
         ),
         'featured' => array(
           'label' => 'above',
@@ -1581,7 +1581,7 @@ function oa_groups_field_default_fields() {
           'module' => 'og_ui',
           'settings' => array(),
           'type' => 'og_list_default',
-          'weight' => '0',
+          'weight' => 0,
         ),
         'featured' => array(
           'label' => 'above',
