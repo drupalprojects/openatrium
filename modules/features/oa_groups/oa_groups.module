@@ -184,7 +184,6 @@ function oa_groups_section_list($user_id) {
     while ($row = $result->fetchAssoc()) {
       // load the section node
       $node = node_load($row['nid']);
-      dsm($node->title);
       $access = oa_groups_section_access($node, 'view', $account);
       if ($access == NODE_ACCESS_ALLOW) {
         $section_list[$row['gid']][$row['nid']] = $row['nid'];
