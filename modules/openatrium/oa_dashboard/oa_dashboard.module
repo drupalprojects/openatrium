@@ -67,7 +67,9 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   if (isset($group_id)) {
     // get name of current group (without fully loading node)
     $title = oa_groups_get_titles(array($group_id));
-    $variables['groups_label'] = l($title['titles'][0], 'node/' . $group_id, $group_options);
+    if (!empty($title['titles'][0])) {
+      $variables['groups_label'] = l($title['titles'][0], 'node/' . $group_id, $group_options);
+    }
   }
 
   // get names of groups
