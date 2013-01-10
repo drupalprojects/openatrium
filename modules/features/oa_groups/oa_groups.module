@@ -61,6 +61,7 @@ function oa_groups_member_of_team($team_id, $user_id) {
       ->condition('deleted', 0)
       ->execute();
     if ($result->rowCount() > 0) {
+      print "In team<br>\n";
       $access = TRUE;
     }
     else {
@@ -72,6 +73,7 @@ function oa_groups_member_of_team($team_id, $user_id) {
         ->execute()
         ->fetchAssoc();
       $access = ($result['uid'] == $user_id) ? TRUE : FALSE;
+      print "Owner<br>\n";
     }
     $cache[$team_id][$user_id] = $access;
   }
