@@ -89,14 +89,17 @@ function oa_groups_section_access($row, $groups, $account) {
   $team_id = $row['field_oa_team_ref_target_id'];
   $user_id = $row['field_oa_user_ref_target_id'];
 
+print "GID: $gid  Team: $team_id  User: $user_id<br>\n";
   // check if no access fields are set
   if (is_null($gid) && is_null($team_id) && is_null($user_id)) {
+    print "Allow, no access<br>\n";
     return NODE_ACCESS_ALLOW;
   }
 
   // Test Organization membership
   if (!is_null($gid) && !empty($groups['node'])) {
     if (in_array($gid, $groups['node'])) {
+    print "Allow Org<br>\n";
       return NODE_ACCESS_ALLOW;
     }
   }
@@ -104,6 +107,7 @@ function oa_groups_section_access($row, $groups, $account) {
   // Test Team membership
   if (!is_null($team_id)) {
     if (oa_groups_member_of_team($team_id, $account->uid)) {
+    print "Allow Team<br>\n";
       return NODE_ACCESS_ALLOW;
     }
   }
@@ -111,11 +115,13 @@ function oa_groups_section_access($row, $groups, $account) {
   // Test User membership
   if (!is_null($user_id)) {
     if ($user_id == $account->uid) {
+    print "Allow user<br>\n";
       return NODE_ACCESS_ALLOW;
     }
   }
 
   // none of the organizations, teams, or users allowed access, so deny access
+    print "Deny<br>\n";
   return NODE_ACCESS_DENY;
 }
 
