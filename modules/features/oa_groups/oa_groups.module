@@ -70,7 +70,7 @@ function oa_groups_member_of_team($team_id, $user_id) {
       // do NOT use node_load as this is called from hook_node_grants()
       $result = db_select('node', 'n')
         ->fields('n', array('uid'))
-        ->condition('nid', $nid)
+        ->condition('nid', $team_id)
         ->execute()
         ->fetchAssoc();
       $access = ($result['uid'] == $user_id) ? TRUE : FALSE;
