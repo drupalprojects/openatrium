@@ -62,7 +62,6 @@ function oa_groups_member_of_team($team_id, $user_id) {
       ->condition('deleted', 0)
       ->execute();
     if ($result->rowCount() > 0) {
-      print "In team<br>\n";
       $access = TRUE;
     }
     else {
@@ -74,7 +73,6 @@ function oa_groups_member_of_team($team_id, $user_id) {
         ->execute()
         ->fetchAssoc();
       $access = ($result['uid'] == $user_id) ? TRUE : FALSE;
-      print "Owner<br>\n";
     }
     $cache[$team_id][$user_id] = $access;
   }
@@ -92,17 +90,14 @@ function oa_groups_section_access($row, $groups, $account) {
   $team_id = $row['field_oa_team_ref_target_id'];
   $user_id = $row['field_oa_user_ref_target_id'];
 
-print "GID: $gid  Team: $team_id  User: $user_id<br>\n";
   // check if no access fields are set
   if (is_null($gid) && is_null($team_id) && is_null($user_id)) {
-    print "Allow, no access<br>\n";
     return NODE_ACCESS_ALLOW;
   }
 
   // Test Organization membership
   if (!is_null($gid) && !empty($groups['node'])) {
     if (in_array($gid, $groups['node'])) {
-    print "Allow Org<br>\n";
       return NODE_ACCESS_ALLOW;
     }
   }
@@ -110,7 +105,6 @@ print "GID: $gid  Team: $team_id  User: $user_id<br>\n";
   // Test Team membership
   if (!is_null($team_id)) {
     if (oa_groups_member_of_team($team_id, $account->uid)) {
-    print "Allow Team<br>\n";
       return NODE_ACCESS_ALLOW;
     }
   }
@@ -118,13 +112,11 @@ print "GID: $gid  Team: $team_id  User: $user_id<br>\n";
   // Test User membership
   if (!is_null($user_id)) {
     if ($user_id == $account->uid) {
-    print "Allow user<br>\n";
       return NODE_ACCESS_ALLOW;
     }
   }
 
   // none of the organizations, teams, or users allowed access, so deny access
-    print "Deny<br>\n";
   return NODE_ACCESS_DENY;
 }
 
@@ -183,7 +175,6 @@ function oa_groups_node_grants($account, $op) {
       $sid = $row['nid'];
       // only check detailed access for non-public sections
       $access = oa_groups_section_access($row, $member_groups, $account);
-      print "Node: $sid  Access: $access<br>\n";
       if (($access == NODE_ACCESS_ALLOW) || ($access == NODE_ACCESS_IGNORE)) {
         $grants[OA_ACCESS_REALM][] = $sid;
       }
