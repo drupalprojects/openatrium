@@ -95,7 +95,7 @@ function oa_groups_section_access($row, $groups, $account) {
   }
 
   // Test Organization membership
-  if (!is_null($gid)) {
+  if (!is_null($gid) && !empty($groups['node'])) {
     if (in_array($gid, $groups['node'])) {
       return NODE_ACCESS_ALLOW;
     }
