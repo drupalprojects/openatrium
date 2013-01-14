@@ -1,10 +1,12 @@
 api = 2
 core = 7.x
 
+; Drupal Core
 projects[drupal][type] = core
-projects[drupal][version] = 7.16
+projects[drupal][version] = 7.18
 projects[drupal][patch][] = http://drupal.org/files/1356276-make-D7-21.patch
 
+; Panopoly Core
 projects[panopoly][type] = profile
 projects[panopoly][download][type] = git
 projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
