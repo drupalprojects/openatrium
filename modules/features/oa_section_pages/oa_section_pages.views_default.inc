@@ -56,7 +56,6 @@ function oa_section_pages_views_default_views() {
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Contextual filter: OG membership: Group ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
   $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
@@ -89,10 +88,6 @@ function oa_section_pages_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'oa_section' => 'oa_section',
   );
-  /* Filter criterion: Open Atrium: Section Access (Section) */
-  $handler->display->display_options['filters']['nid']['id'] = 'nid';
-  $handler->display->display_options['filters']['nid']['table'] = 'oa_section_access';
-  $handler->display->display_options['filters']['nid']['field'] = 'nid';
 
   /* Display: Section Pages within Groups */
   $handler = $view->new_display('panel_pane', 'Section Pages within Groups', 'section_pages_within_groups');
@@ -119,29 +114,21 @@ function oa_section_pages_views_default_views() {
       'label' => 'OG membership: Group ID',
     ),
   );
-  $translatables['open_atrium_section_pages'] = array(
-    t('Defaults'),
-    t('Sections'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('There is no content in this group.'),
-    t('OG membership from node'),
-    t('All'),
-    t('Section Pages within Groups'),
-    t('Displays section pages within groups'),
-    t('Open Atrium'),
+
+  /* Display: Section Reference */
+  $handler = $view->new_display('entityreference', 'Section Reference', 'entityreference_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
   );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['open_atrium_section_pages'] = $view;
 
   return $export;
