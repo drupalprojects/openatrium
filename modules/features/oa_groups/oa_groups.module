@@ -322,6 +322,19 @@ function oa_groups_og_fields_info() {
 }
 
 /**
+ * Implements hook_form_alter
+ *
+ * Add the owner of the team to the user list when first created
+ */
+function oa_groups_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  if (strstr($form_id, 'node_form') && empty($form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'])) {
+    $form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'] =
+      $user->uid;
+  }
+}
+
+/**
  * Returns a list of content types throughout the system. List
  *   leaves out content types specified by other modules/apps.
  *
