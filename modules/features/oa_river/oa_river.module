@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Open Atrium Recent Activity feature.
+ */
+
+include_once 'oa_river.features.inc';
