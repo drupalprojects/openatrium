@@ -52,7 +52,7 @@ function oa_messages_node_update($node) {
       'message_notify_email_body' => 'field_message_rendered_body',
     ),
   );
-  message_subscribe_process_message('node', $node, $message, array('email' => $options));dd($wrapper);
+  message_subscribe_process_message('node', $node, $message, array('email' => $options));
 }
 
 function oa_messages_node_delete($node) {
