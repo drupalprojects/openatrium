@@ -1,6 +1,0 @@
-<?php
-function oa_widget_preprocessor_preprocess_views_view($variables) {
-  if ($variables['display_id'] === 'members_in_group_pane') {
-    //dpm($variables);
-  }
-}
