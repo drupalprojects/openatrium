@@ -21,6 +21,7 @@ function oa_messages_node_insert($node) {
   // Save reference to the node in the node reference field.
   $wrapper = entity_metadata_wrapper('message', $message);
   $wrapper->field_oa_node_ref = $node;
+  $wrapper->field_oa_group_id = $_SESSION['og_context']['gid'];
   $wrapper->save();
   $options = array(
     'rendered fields' => array(
@@ -43,6 +44,7 @@ function oa_messages_node_update($node) {
   // Save reference to the node in the node reference field.
   $wrapper = entity_metadata_wrapper('message', $message);
   $wrapper->field_oa_node_ref = $node;
+  $wrapper->field_oa_group_id = $_SESSION['og_context']['gid'];
   $wrapper->save();
   $options = array(
     'rendered fields' => array(
@@ -50,7 +52,7 @@ function oa_messages_node_update($node) {
       'message_notify_email_body' => 'field_message_rendered_body',
     ),
   );
-  message_subscribe_process_message('node', $node, $message, array('email' => $options));
+  message_subscribe_process_message('node', $node, $message, array('email' => $options));dd($wrapper);
 }
 
 function oa_messages_node_delete($node) {
@@ -65,6 +67,7 @@ function oa_messages_node_delete($node) {
   // Save reference to the node in the node reference field.
   $wrapper = entity_metadata_wrapper('message', $message);
   $wrapper->field_oa_node_ref = $node;
+  $wrapper->field_oa_group_id = $_SESSION['og_context']['gid'];
   $wrapper->save();
   $options = array(
     'rendered fields' => array(
