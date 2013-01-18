@@ -134,6 +134,16 @@ function oa_group_widgets_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'gid' => array(
+      'type' => 'none',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'OG membership: Group ID',
+    ),
+  );
 
   /* Display: Attachment to 'Members in Group' */
   $handler = $view->new_display('attachment', 'Attachment to \'Members in Group\'', 'admins_in_group_attachment');
@@ -156,21 +166,6 @@ function oa_group_widgets_views_default_views() {
   $handler->display->display_options['displays'] = array(
     'members_in_group_pane' => 'members_in_group_pane',
     'default' => 0,
-  );
-  $translatables['open_atrium_member_widget'] = array(
-    t('Defaults'),
-    t('Members in Group'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('OG membership from user'),
-    t('All'),
-    t('Displays members within a group.'),
-    t('Open Atrium'),
-    t('Attachment to \'Members in Group\''),
   );
   $export['open_atrium_member_widget'] = $view;
 
