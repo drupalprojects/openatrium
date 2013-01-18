@@ -385,18 +385,17 @@ function oa_discussion_field_default_fields() {
       'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
-        'handler' => 'base',
+        'handler' => 'views',
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
               'status' => 0,
             ),
           ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'section_page' => 'oa_section',
+          'view' => array(
+            'args' => array(),
+            'display_name' => 'entityreference_1',
+            'view_name' => 'open_atrium_section_pages',
           ),
         ),
         'target_type' => 'node',
@@ -435,18 +434,14 @@ function oa_discussion_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'oa_section_ref',
       'label' => 'OpenAtrium Section',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 0,
+        'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => 60,
-        ),
+        'settings' => array(),
         'type' => 'options_select',
         'weight' => '3',
       ),
