@@ -87,7 +87,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   else {
     $items = oa_groups_get_titles($groups['node'], OA_GROUP_TYPE);
     $list = oa_groups_truncate_list($items['links'], 10,
-      l('All groups...', 'groups',
+      l(t('All groups...'), 'groups',
         array('attributes' => array('class' => array('more-link')))));
   }
   if (!empty($list)) {

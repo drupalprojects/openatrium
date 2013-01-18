@@ -8,11 +8,13 @@ projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
 projects[panopoly][download][branch] = 7.x-1.x
 
 ; Organic Groups
-projects[og][type] = module
-projects[og][download][type] = git
-projects[og][download][url] = http://git.drupal.org/project/og.git
-projects[og][download][branch] = 7.x-2.x
 projects[og][subdir] = contrib
+projects[og][version] = 2.0-rc2
+
+projects[og_menu][type] = module
+projects[og_menu][download][type] = git
+projects[og_menu][download][url] = http://git.drupal.org/project/og_menu.git
+projects[og_menu][download][branch] = 7.x-3.x
 
 ; Rules
 projects[rules][subdir] = contrib

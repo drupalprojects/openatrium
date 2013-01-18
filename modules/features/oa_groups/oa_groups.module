@@ -151,7 +151,6 @@ function oa_groups_node_grants($account, $op) {
     $result = $query->execute();
     // get a list of sections that don't have any access fields
     // loop through each result to determine access to section
-    $result = $query->execute();
     $sections = $result->fetchCol(0);
 
     // do a big complex query to grab all section access fields
@@ -218,6 +217,59 @@ function oa_groups_node_access_records($node) {
 }
 
 /**
+ * Update the node_access_records of the given nodes
+ * @param  array $nodes array of nids
+ */
+function oa_groups_update_access_records($nodes) {
+  foreach ($nodes as $nid) {
+    $node = node_load($nid);
+    node_access_acquire_grants($node);
+  }
+}
+
+/**
+ * Implements hook_node_update
+ * if saving a section or group node, update access locks on related content
+ */
+function oa_groups_node_update($node) {
+  if ($node->type == OA_GROUP_TYPE) {
+    // check if group access changed and update group content grants
+    if (isset($node->group_access[LANGUAGE_NONE][0]['value']) &&
+      isset($node->original->group_access[LANGUAGE_NONE][0]['value']) &&
+      ($node->group_access[LANGUAGE_NONE][0]['value'] !=
+       $node->original->group_access[LANGUAGE_NONE][0]['value'])) {
+      // rebuild group content nodes
+      $nodes = db_select('og_membership', 'og')
+        ->fields('og', array('etid'))
+        ->condition('og.entity_type', 'node')
+        ->condition('og.gid', $node->nid)  // all content nodes of this group
+        ->execute()
+        ->fetchCol(0);
+      oa_groups_update_access_records($nodes);
+    }
+  }
+  elseif ($node->type == OA_SECTION_TYPE) {
+    // if section node changed from public to private, update content grants
+    $was_public = empty($node->original->field_oa_organization_ref[LANGUAGE_NONE]) &&
+      empty($node->original->field_oa_team_ref[LANGUAGE_NONE]) &&
+      empty($node->original->field_oa_user_ref[LANGUAGE_NONE]);
+    $is_public = empty($node->field_oa_organization_ref[LANGUAGE_NONE]) &&
+      empty($node->field_oa_team_ref[LANGUAGE_NONE]) &&
+      empty($node->field_oa_user_ref[LANGUAGE_NONE]);
+    if ($was_public != $is_public) {
+      // rebuild section content nodes
+      $query = db_select('field_data_' . OA_SECTION_FIELD, 'n')
+        ->fields('n', array('entity_id'))
+        ->condition('n.entity_type', 'node')
+        ->condition('n.oa_section_ref_target_id', $node->nid)
+        ->execute()
+        ->fetchCol(0);
+      oa_groups_update_access_records($nodes);
+    }
+  }
+}
+
+/**
  * Implements hook_og_fields_info().
  */
 function oa_groups_og_fields_info() {
@@ -267,6 +319,19 @@ function oa_groups_og_fields_info() {
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_form_alter
+ *
+ * Add the owner of the team to the user list when first created
+ */
+function oa_groups_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  if (strstr($form_id, 'node_form') && empty($form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'])) {
+    $form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'] =
+      $user->uid;
+  }
 }
 
 /**
