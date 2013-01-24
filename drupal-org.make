@@ -15,6 +15,7 @@ projects[og_menu][type] = module
 projects[og_menu][download][type] = git
 projects[og_menu][download][url] = http://git.drupal.org/project/og_menu.git
 projects[og_menu][download][branch] = 7.x-3.x
+projects[og_menu][patch][] = http://drupal.org/files/og_menu-js-10515420-11.patch
 
 ; Rules
 projects[rules][subdir] = contrib
