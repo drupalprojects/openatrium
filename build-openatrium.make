@@ -8,4 +8,4 @@ includes[] = drupal-org-core.make
 projects[openatrium][type] = "profile"
 projects[openatrium][download][type] = "git"
 projects[openatrium][download][url] = "http://git.drupal.org/project/openatrium.git"
-projects[openatrium][download][tag] = "6.x-1.5"
+projects[openatrium][download][tag] = "6.x-1.7"
