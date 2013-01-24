@@ -81,6 +81,17 @@ function oa_groups_member_of_team($team_id, $user_id) {
 }
 
 /**
+ * Returns TRUE if the section $node has open access to public
+ */
+function oa_groups_section_is_public($node) {
+  return (
+       empty($node->field_oa_organization_ref[LANGUAGE_NONE])
+    && empty($node->field_oa_team_ref[LANGUAGE_NONE])
+    && empty($node->field_oa_user_ref[LANGUAGE_NONE])
+    );
+}
+
+/**
  * Determine access to a Open Atrium Section
  * do NOT use node_load here as it gets called from hook_node_grants()
  */
@@ -190,12 +201,17 @@ function oa_groups_node_grants($account, $op) {
 function oa_groups_node_access_records($node) {
   $sids = array();
   if ($node->type == OA_SECTION_TYPE) {
-    $sids[] = $node->nid;
+    if (!oa_groups_section_is_public($node)) {
+      $sids[] = $node->nid;
+    }
   }
   // Look for the default section reference
   else if (!empty($node->{OA_SECTION_FIELD})) {
     foreach ($node->{OA_SECTION_FIELD}[LANGUAGE_NONE] as $entity_ref) {
-      $sids[] = $entity_ref['target_id'];
+      $section = node_load($entity_ref['target_id']);
+      if (!oa_groups_section_is_public($section)) {
+        $sids[] = $entity_ref['target_id'];
+      }
     }
   }
   if (empty($sids)) {
@@ -245,25 +261,27 @@ function oa_groups_node_update($node) {
         ->condition('og.gid', $node->nid)  // all content nodes of this group
         ->execute()
         ->fetchCol(0);
+      // clear the static node cache for the group node so correct access
+      // values are tested in hook_node_access_records
+      entity_get_controller('node')->resetCache(array($node->nid));
       oa_groups_update_access_records($nodes);
     }
   }
   elseif ($node->type == OA_SECTION_TYPE) {
     // if section node changed from public to private, update content grants
-    $was_public = empty($node->original->field_oa_organization_ref[LANGUAGE_NONE]) &&
-      empty($node->original->field_oa_team_ref[LANGUAGE_NONE]) &&
-      empty($node->original->field_oa_user_ref[LANGUAGE_NONE]);
-    $is_public = empty($node->field_oa_organization_ref[LANGUAGE_NONE]) &&
-      empty($node->field_oa_team_ref[LANGUAGE_NONE]) &&
-      empty($node->field_oa_user_ref[LANGUAGE_NONE]);
+    $was_public = oa_groups_section_is_public($node->original);
+    $is_public  = oa_groups_section_is_public($node);
     if ($was_public != $is_public) {
       // rebuild section content nodes
-      $query = db_select('field_data_' . OA_SECTION_FIELD, 'n')
+      $nodes = db_select('field_data_' . OA_SECTION_FIELD, 'n')
         ->fields('n', array('entity_id'))
         ->condition('n.entity_type', 'node')
         ->condition('n.oa_section_ref_target_id', $node->nid)
         ->execute()
         ->fetchCol(0);
+      // clear the static node cache for the group node so correct access
+      // values are tested in hook_node_access_records
+      entity_get_controller('node')->resetCache(array($node->nid));
       oa_groups_update_access_records($nodes);
     }
   }
