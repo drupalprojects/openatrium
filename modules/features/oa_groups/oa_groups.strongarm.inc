@@ -318,7 +318,7 @@ function oa_groups_strongarm() {
       'page_manager' => array(
         'status' => 1,
         'default' => 1,
-        'choice' => 0,
+        'choice' => 1,
       ),
       'default' => array(
         'status' => 1,
