@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Open Atrium Teams feature.
+ */
+
+include_once 'oa_teams.features.inc';
