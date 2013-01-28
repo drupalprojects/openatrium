@@ -46,22 +46,6 @@ function oa_groups_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'oa_section' => array(
-      'name' => t('Section Page'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-    'oa_team' => array(
-      'name' => t('Team'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
   );
   return $items;
 }
