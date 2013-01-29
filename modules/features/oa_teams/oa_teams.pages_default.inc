@@ -17,7 +17,7 @@ function oa_teams_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -28;
   $handler->conf = array(
     'title' => 'Team Edit Page',
     'no_blocks' => 0,

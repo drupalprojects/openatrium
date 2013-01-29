@@ -33,7 +33,7 @@ function oa_groups_node_info() {
     'oa_group' => array(
       'name' => t('Group'),
       'base' => 'node_content',
-      'description' => t('A collection of members'),
+      'description' => t('A collection of content and users (members)'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -41,7 +41,7 @@ function oa_groups_node_info() {
     'oa_organization' => array(
       'name' => t('Organization'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('A collection of users that exists across all groups.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

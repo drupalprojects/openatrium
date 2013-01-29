@@ -1,3 +1,32 @@
 // Page
 // Styles for panels
 // --------------------------------------------------
+
+#node-edit .panel-pane.pane-node-field-oa-organization-ref,
+#node-edit .panel-pane.pane-node-field-oa-team-ref,
+#node-edit .panel-pane.pane-node-field-oa-user-ref {
+  padding: 1px 10px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+#node-edit .panel-pane.pane-node-field-oa-organization-ref {
+  padding-top: 10px;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+#node-edit .panel-pane.pane-node-field-oa-team-ref {
+  margin-bottom: 0;
+  margin-top: 0;
+  border-bottom: 0;
+  border-top: 0;
+}
+
+#node-edit .panel-pane.pane-node-field-oa-user-ref {
+  border-top: 0;
+  margin-top: 0;
+}

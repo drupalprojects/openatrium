@@ -341,14 +341,19 @@ function oa_groups_og_fields_info() {
 
 /**
  * Implements hook_form_alter
- *
- * Add the owner of the team to the user list when first created
  */
 function oa_groups_form_alter(&$form, &$form_state, $form_id) {
   global $user;
-  if (strstr($form_id, 'node_form') && empty($form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'])) {
-    $form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'] =
-      $user->uid;
+  if (strstr($form_id, 'node_form')) {
+    // we are in an edit form
+    // Add the owner of the team to the user list when first created
+    if (isset($form['field_oa_team_users']) &&
+      empty($form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'])) {
+      $form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'] = $user->uid;
+    }
+    if (isset($form['panelizer'])) {
+      $form['panelizer']['page_manager']['name']['#title'] = t('Select Layout');
+    }
   }
 }
 

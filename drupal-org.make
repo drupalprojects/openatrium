@@ -7,6 +7,13 @@ projects[panopoly][download][type] = git
 projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
 projects[panopoly][download][branch] = 7.x-1.x
 
+; override panelizer version
+projects[panelizer][version] = 3.x-dev
+projects[panelizer][subdir] = contrib
+projects[panelizer][download][type] = git
+projects[panelizer][download][revision] = 8a58e76da74fa01d1f8eab1ece9b5117a20ab7ff
+projects[panelizer][download][branch] = 7.x-3.x
+
 ; Organic Groups
 projects[og][subdir] = contrib
 projects[og][version] = 2.0-rc2

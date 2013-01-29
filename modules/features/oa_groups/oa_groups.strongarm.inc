@@ -13,6 +13,13 @@ function oa_groups_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_oa_organization';
+  $strongarm->value = '0';
+  $export['language_content_type_oa_organization'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'panelizer_defaults_node_oa_group';
   $strongarm->value = array(
     'status' => 1,
@@ -25,7 +32,7 @@ function oa_groups_strongarm() {
       'default' => array(
         'status' => 1,
         'default' => 1,
-        'choice' => 1,
+        'choice' => 0,
       ),
       'teaser' => array(
         'status' => 0,
@@ -50,13 +57,13 @@ function oa_groups_strongarm() {
     'view modes' => array(
       'page_manager' => array(
         'status' => 1,
-        'default' => 0,
-        'choice' => 1,
+        'default' => 1,
+        'choice' => 0,
       ),
       'default' => array(
         'status' => 1,
-        'default' => 0,
-        'choice' => 1,
+        'default' => 1,
+        'choice' => 0,
       ),
       'teaser' => array(
         'status' => 0,

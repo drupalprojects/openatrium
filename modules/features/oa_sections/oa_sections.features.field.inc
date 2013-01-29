@@ -136,7 +136,7 @@ function oa_sections_field_default_fields() {
       'bundle' => 'oa_section',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Leave empty for public access, otherwise select Organizations that can view this Section.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -235,7 +235,7 @@ function oa_sections_field_default_fields() {
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Leave empty for public access, otherwise select Teams that can view this Section.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -261,7 +261,7 @@ function oa_sections_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_oa_team_ref',
-      'label' => 'Team',
+      'label' => 'Teams',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -328,7 +328,7 @@ function oa_sections_field_default_fields() {
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Leave empty for public access, otherwise select Group Members that can view this Section.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -398,18 +398,12 @@ function oa_sections_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Determines order of Section in lists.  Higher value moves the section later in the list.  Lower value moves section earlier in the list.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '5',
         ),
         'featured' => array(
@@ -568,9 +562,13 @@ function oa_sections_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Determines order of Section in lists.  Higher value moves the section later in the list.  Lower value moves section earlier in the list.');
   t('Groups ID');
+  t('Leave empty for public access, otherwise select Group Members that can view this Section.');
+  t('Leave empty for public access, otherwise select Organizations that can view this Section.');
+  t('Leave empty for public access, otherwise select Teams that can view this Section.');
   t('Organizations');
-  t('Team');
+  t('Teams');
   t('Users');
   t('Weight');
 

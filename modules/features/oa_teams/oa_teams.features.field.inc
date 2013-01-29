@@ -136,7 +136,7 @@ function oa_teams_field_default_fields() {
       'bundle' => 'oa_team',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Select the members of the group that are a member of this team.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -162,7 +162,7 @@ function oa_teams_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_oa_team_users',
-      'label' => 'Users',
+      'label' => 'Members',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -180,7 +180,8 @@ function oa_teams_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Description');
-  t('Users');
+  t('Members');
+  t('Select the members of the group that are a member of this team.');
 
   return $fields;
 }

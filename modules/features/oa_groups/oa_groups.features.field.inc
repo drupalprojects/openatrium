@@ -85,19 +85,19 @@ function oa_groups_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
 
-  // Exported field: 'node-oa_group-field_logo'.
-  $fields['node-oa_group-field_logo'] = array(
+  // Exported field: 'node-oa_group-field_featured_image'.
+  $fields['node-oa_group-field_featured_image'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_logo',
+      'field_name' => 'field_featured_image',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -133,7 +133,7 @@ function oa_groups_field_default_fields() {
             'image_style' => '',
           ),
           'type' => 'image',
-          'weight' => 5,
+          'weight' => 7,
         ),
         'featured' => array(
           'label' => 'above',
@@ -149,94 +149,8 @@ function oa_groups_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_logo',
-      'label' => 'Logo',
-      'required' => 0,
-      'settings' => array(
-        'alt_field' => 1,
-        'default_image' => 0,
-        'file_directory' => 'logo',
-        'file_extensions' => 'png gif jpg jpeg',
-        'max_filesize' => '',
-        'max_resolution' => '',
-        'min_resolution' => '',
-        'title_field' => 0,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'image',
-        'settings' => array(
-          'preview_image_style' => 'thumbnail',
-          'progress_indicator' => 'throbber',
-        ),
-        'type' => 'image_image',
-        'weight' => '5',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-oa_group-field_logo_thumbnail'.
-  $fields['node-oa_group-field_logo_thumbnail'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_logo_thumbnail',
-      'foreign keys' => array(
-        'fid' => array(
-          'columns' => array(
-            'fid' => 'fid',
-          ),
-          'table' => 'file_managed',
-        ),
-      ),
-      'indexes' => array(
-        'fid' => array(
-          0 => 'fid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'image',
-      'settings' => array(
-        'default_image' => 0,
-        'uri_scheme' => 'public',
-      ),
-      'translatable' => '0',
-      'type' => 'image',
-    ),
-    'field_instance' => array(
-      'bundle' => 'oa_group',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-          ),
-          'type' => 'image',
-          'weight' => 6,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_logo_thumbnail',
-      'label' => 'Thumbnail',
+      'field_name' => 'field_featured_image',
+      'label' => 'Primary Image',
       'required' => 0,
       'settings' => array(
         'alt_field' => 1,
@@ -253,11 +167,11 @@ function oa_groups_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
-          'preview_image_style' => 'thumbnail',
+          'preview_image_style' => 'panopoly_image_full',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '6',
+        'weight' => '4',
       ),
     ),
   );
@@ -340,7 +254,7 @@ function oa_groups_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '5',
+        'weight' => '7',
       ),
       'widget_type' => 'options_select',
     ),
@@ -432,7 +346,7 @@ function oa_groups_field_default_fields() {
           'og_hide' => 1,
         ),
         'type' => 'options_onoff',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -512,19 +426,19 @@ function oa_groups_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
 
-  // Exported field: 'node-oa_organization-field_logo'.
-  $fields['node-oa_organization-field_logo'] = array(
+  // Exported field: 'node-oa_organization-field_featured_image'.
+  $fields['node-oa_organization-field_featured_image'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_logo',
+      'field_name' => 'field_featured_image',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -560,7 +474,7 @@ function oa_groups_field_default_fields() {
             'image_style' => '',
           ),
           'type' => 'image',
-          'weight' => 2,
+          'weight' => 5,
         ),
         'featured' => array(
           'label' => 'above',
@@ -576,8 +490,8 @@ function oa_groups_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_logo',
-      'label' => 'Logo',
+      'field_name' => 'field_featured_image',
+      'label' => 'Primary Image',
       'required' => 0,
       'settings' => array(
         'alt_field' => 1,
@@ -594,97 +508,11 @@ function oa_groups_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
-          'preview_image_style' => 'thumbnail',
+          'preview_image_style' => 'panopoly_image_full',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '5',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-oa_organization-field_logo_thumbnail'.
-  $fields['node-oa_organization-field_logo_thumbnail'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_logo_thumbnail',
-      'foreign keys' => array(
-        'fid' => array(
-          'columns' => array(
-            'fid' => 'fid',
-          ),
-          'table' => 'file_managed',
-        ),
-      ),
-      'indexes' => array(
-        'fid' => array(
-          0 => 'fid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'image',
-      'settings' => array(
-        'default_image' => 0,
-        'uri_scheme' => 'public',
-      ),
-      'translatable' => '0',
-      'type' => 'image',
-    ),
-    'field_instance' => array(
-      'bundle' => 'oa_organization',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-          ),
-          'type' => 'image',
-          'weight' => 3,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_logo_thumbnail',
-      'label' => 'Thumbnail',
-      'required' => 0,
-      'settings' => array(
-        'alt_field' => 1,
-        'default_image' => 0,
-        'file_directory' => '',
-        'file_extensions' => 'png gif jpg jpeg',
-        'max_filesize' => '',
-        'max_resolution' => '',
-        'min_resolution' => '',
-        'title_field' => 0,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'image',
-        'settings' => array(
-          'preview_image_style' => 'thumbnail',
-          'progress_indicator' => 'throbber',
-        ),
-        'type' => 'image_image',
-        'weight' => '6',
+        'weight' => '3',
       ),
     ),
   );
@@ -767,7 +595,7 @@ function oa_groups_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '6',
       ),
       'widget_type' => 'options_select',
     ),
@@ -858,7 +686,7 @@ function oa_groups_field_default_fields() {
           'og_hide' => TRUE,
         ),
         'type' => 'options_onoff',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -869,8 +697,7 @@ function oa_groups_field_default_fields() {
   t('Determine if this is an OG group.');
   t('Group');
   t('Group visibility');
-  t('Logo');
-  t('Thumbnail');
+  t('Primary Image');
 
   return $fields;
 }
