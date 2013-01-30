@@ -51,7 +51,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['message_render']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['message_render']['partials'] = 0;
   $handler->display->display_options['fields']['message_render']['partials_delta'] = '0';
-  /* Field: Field: Groups ID */
+  /* Field: Field: Groups audience */
   $handler->display->display_options['fields']['og_group_ref_2']['id'] = 'og_group_ref_2';
   $handler->display->display_options['fields']['og_group_ref_2']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref_2']['field'] = 'og_group_ref';
@@ -79,6 +79,16 @@ function oa_river_views_default_views() {
   $handler->display->display_options['sorts']['mid']['field'] = 'mid';
   $handler->display->display_options['sorts']['mid']['relationship'] = 'reverse_field_oa_node_ref_message';
   $handler->display->display_options['sorts']['mid']['order'] = 'DESC';
+  /* Contextual filter: Message: Group ID (field_oa_group_id) */
+  $handler->display->display_options['arguments']['field_oa_group_id_value']['id'] = 'field_oa_group_id_value';
+  $handler->display->display_options['arguments']['field_oa_group_id_value']['table'] = 'field_data_field_oa_group_id';
+  $handler->display->display_options['arguments']['field_oa_group_id_value']['field'] = 'field_oa_group_id_value';
+  $handler->display->display_options['arguments']['field_oa_group_id_value']['relationship'] = 'reverse_field_oa_node_ref_message';
+  $handler->display->display_options['arguments']['field_oa_group_id_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_oa_group_id_value']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['field_oa_group_id_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_oa_group_id_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_oa_group_id_value']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
