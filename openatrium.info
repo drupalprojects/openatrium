@@ -30,7 +30,7 @@ dependencies[] = panopoly_wysiwyg
 ; Open Atrium Modules
 ;
 dependencies[] = entity
-dependencies[] = library
+dependencies[] = libraries
 dependencies[] = rules
 dependencies[] = rules_admin
 dependencies[] = message
@@ -52,14 +52,16 @@ dependencies[] = og_menu
 
 ; Open Atrium 2.0 Features
 dependencies[] = oa_config
-dependencies[] = oa_content_types
 dependencies[] = oa_group_widgets
 dependencies[] = oa_groups
 dependencies[] = oa_teams
 dependencies[] = oa_sections
-dependencies[] = oa_demo_content
 dependencies[] = oa_layouts
 dependencies[] = oa_favorites
+dependencies[] = oa_discussion
+dependencies[] = oa_documents
+dependencies[] = oa_messages
+dependencies[] = oa_river
 
 ; Open Atrium 2.0 Modules
 dependencies[] = oa_dashboard
