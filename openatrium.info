@@ -47,7 +47,7 @@ dependencies[] = og_access
 dependencies[] = og_context
 dependencies[] = og_register
 dependencies[] = og_ui
-dependencies[] = og_menu
+;dependencies[] = og_menu
 
 
 ; Open Atrium 2.0 Features
