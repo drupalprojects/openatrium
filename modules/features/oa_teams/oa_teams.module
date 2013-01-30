@@ -5,3 +5,19 @@
  */
 
 include_once 'oa_teams.features.inc';
+
+/**
+ * Implements hook_form_alter
+ */
+function oa_teams_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  if (strstr($form_id, 'node_form')) {
+    // we are in an edit form
+    // Add the owner of the team to the user list when first created
+    if (isset($form['field_oa_team_users']) &&
+      empty($form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'])) {
+      $form['field_oa_team_users'][LANGUAGE_NONE]['#default_value'] = $user->uid;
+    }
+  }
+}
+

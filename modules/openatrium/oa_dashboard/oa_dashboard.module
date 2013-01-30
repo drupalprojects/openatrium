@@ -155,7 +155,3 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   $variables['sections_label'] = $section_name;
 }
 
-function oa_dashboard_preprocess_views_view(&$variables) {
-  if ($variables['display_id'] === 'section_pages_within_groups') {
-  }
-}
