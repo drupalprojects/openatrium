@@ -626,7 +626,7 @@ function oa_layouts_default_page_manager_handlers() {
     $display->content['new-23'] = $pane;
     $display->panels['sidebar'][6] = 'new-23';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-16';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_edit_panel_context_4'] = $handler;
 
