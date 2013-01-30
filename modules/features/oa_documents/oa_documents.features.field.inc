@@ -351,6 +351,7 @@ function oa_documents_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(
+          'apply_chosen' => 0,
           'match_operator' => 'CONTAINS',
           'path' => '',
           'size' => '60',
@@ -441,7 +442,9 @@ function oa_documents_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'apply_chosen' => 0,
+        ),
         'type' => 'options_select',
         'weight' => '3',
       ),
