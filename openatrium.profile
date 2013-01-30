@@ -4,7 +4,7 @@
  * Required to inherit the panopoly distribution into OpenAtrium
  */
 require_once ("profiles/panopoly/panopoly.profile");
-    
+
 /**
  * Implements hook_install_tasks()
  */

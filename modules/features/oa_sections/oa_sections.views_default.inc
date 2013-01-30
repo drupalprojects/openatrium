@@ -126,30 +126,6 @@ function oa_sections_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $translatables['open_atrium_section_pages'] = array(
-    t('Defaults'),
-    t('Sections'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('There is no content in this group.'),
-    t('OG membership from node'),
-    t('All'),
-    t('Section Pages within Groups'),
-    t('Displays section pages within groups'),
-    t('Open Atrium'),
-    t('Section Reference'),
-  );
   $export['open_atrium_section_pages'] = $view;
 
   return $export;

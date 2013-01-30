@@ -50,7 +50,7 @@ function oa_teams_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => 1,
         ),
         'featured' => array(
           'label' => 'above',
@@ -170,7 +170,9 @@ function oa_teams_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'apply_chosen' => 0,
+        ),
         'type' => 'options_select',
         'weight' => '2',
       ),
