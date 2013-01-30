@@ -5,3 +5,79 @@
  */
 
 include_once 'oa_discussion.features.inc';
+
+/**
+ * Implements hook_block_info()
+ */
+function oa_discussion_block_info() {
+  $blocks['oa_discussion_reply'] = array(
+    'info' => t('Open Atrium Reply'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function oa_discussion_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case 'oa_discussion_reply':
+      $node = menu_get_object();
+      // no threaded discussions, so if parent is already set, get it's parent
+      if (isset($node->oa_parent[LANGUAGE_NONE][0]['target_id'])) {
+        $nid = $node->oa_parent[LANGUAGE_NONE][0]['target_id'];
+      }
+      else {
+        $nid = $node->nid;
+      }
+      $block['subject'] = '';
+      $block['content'] = theme('oa_discussion_reply', array(
+        'parent_id' => $nid));
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme()
+ */
+function oa_discussion_theme() {
+  return array(
+    'oa_discussion_reply' => array(
+      'variables' => array('parent_id' => NULL),
+    ),
+  );
+}
+
+function theme_oa_discussion_reply($vars) {
+  $output = l('Reply', 'node/add/oa-discussion-post/' . $vars['parent_id'],
+    array('attributes' => array(
+      'class' => array('btn', 'btn-success'),
+    )
+  ));
+  return $output;
+}
+
+/**
+ * Implements hook_form_alter
+ */
+function oa_discussion_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  if (strstr($form_id, 'node_form') && (arg(1) == 'add') &&
+    (arg(2) == 'oa-discussion-post')) {
+    $nid = arg(3);
+    // we are in an node/add form
+    // Set the Parent field if we have an argument passed to us
+    if (!empty($nid)) {
+      if (isset($form['oa_parent']) &&
+        empty($form['oa_parent'][LANGUAGE_NONE]['#default_value'])) {
+        $form['oa_parent'][LANGUAGE_NONE]['#default_value'] = $nid;
+      }
+    }
+  }
+}
