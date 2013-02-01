@@ -22,6 +22,10 @@ function og_session_context_og_context_negotiation_info() {
  *   content page visited.
  */
 function og_session_context_og_context_handler_sessions() {
+  if (og_session_context_set_context()) {
+    $_SESSION['oa_group_id'] = og_session_context_set_context();
+  }
+
   $gids = FALSE;
   if (isset($_SESSION['oa_group_id'])) {
     $gids['node'][0] = $_SESSION['oa_group_id'];
@@ -31,24 +35,27 @@ function og_session_context_og_context_handler_sessions() {
 }
 
 /**
- * Implements hook_field_access
- *
  * Determines the og context value for og_session_context_og_context_handler_sessions
  *   by looking the entity's node value or the og_group_ref field value on
  *   group and group content page.
  */
-function og_session_context_field_access($op, $field, $entity_type, $entity, $account) {
-  if (empty($entity->nid)) {
+function og_session_context_set_context() {
+  $nid = menu_get_object()->nid;
+
+  $node = node_load($nid);
+
+  if (empty($node)) {
     return;
   }
-  if (og_is_group($entity_type, $entity)) {
+
+  if (og_is_group('node', $node)) {
     // get group id directly from group nodes
-    $_SESSION['oa_group_id'] = $entity->nid;
+    $_SESSION['oa_group_id'] = $nid;
   }
-  elseif ($field['field_name'] == 'og_group_ref') {
+  elseif (!empty($node->og_group_ref)) {
     // otherwise get group id from group field reference
     if (isset($entity->{$field['field_name']}[LANGUAGE_NONE][0]['target_id'])) {
-    $_SESSION['oa_group_id'] = $entity->{$field['field_name']}[LANGUAGE_NONE][0]['target_id'];
+      $_SESSION['oa_group_id'] = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
     }
   }
 }
