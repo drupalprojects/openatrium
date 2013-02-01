@@ -316,7 +316,7 @@ function oa_discussion_panelizer_defaults() {
     $pane->pid = 'new-7';
     $pane->panel = 'sidebar';
     $pane->type = 'block';
-    $pane->subtype = 'oa_discussion-oa_discussion_reply';
+    $pane->subtype = 'oa_discussion-oa_discussion_node_access_meta';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -335,6 +335,27 @@ function oa_discussion_panelizer_defaults() {
     $display->panels['sidebar'][0] = 'new-7';
     $pane = new stdClass();
     $pane->pid = 'new-8';
+    $pane->panel = 'sidebar';
+    $pane->type = 'block';
+    $pane->subtype = 'oa_discussion-oa_discussion_reply';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-8'] = $pane;
+    $display->panels['sidebar'][1] = 'new-8';
+    $pane = new stdClass();
+    $pane->pid = 'new-9';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:og_group_ref';
@@ -355,49 +376,6 @@ function oa_discussion_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['sidebar'][1] = 'new-8';
-    $pane = new stdClass();
-    $pane->pid = 'new-9';
-    $pane->panel = 'sidebar';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:oa_section_ref';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'entityreference_label',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'link' => 1,
-      ),
-      'context' => array(),
-      'override_title' => 0,
-      'override_title_text' => '',
-      'view_mode' => NULL,
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
-      'exposed' => array(
-        'sort_by' => NULL,
-        'sort_order' => NULL,
-      ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'more_link' => NULL,
-      'path' => NULL,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
     $display->content['new-9'] = $pane;
@@ -406,7 +384,7 @@ function oa_discussion_panelizer_defaults() {
     $pane->pid = 'new-10';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:oa_parent';
+    $pane->subtype = 'node:oa_section_ref';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -445,8 +423,51 @@ function oa_discussion_panelizer_defaults() {
     $pane->locks = array();
     $display->content['new-10'] = $pane;
     $display->panels['sidebar'][3] = 'new-10';
+    $pane = new stdClass();
+    $pane->pid = 'new-11';
+    $pane->panel = 'sidebar';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:oa_parent';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'entityreference_label',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'link' => 1,
+      ),
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'view_mode' => NULL,
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $display->content['new-11'] = $pane;
+    $display->panels['sidebar'][4] = 'new-11';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-8';
+  $display->title_pane = 'new-9';
   $panelizer->display = $display;
   $export['node:oa_discussion_post:default'] = $panelizer;
 
