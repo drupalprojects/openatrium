@@ -1,0 +1,47 @@
+<?php
+class og_group_AccessWebTest extends og_groupBaseWebTest {
+  static function getInfo() {
+    return array(
+      'name' => 'og_group_section_is_public function Tests',
+      'description' => 'Test the public interface of the og_group_section_is_public function',
+      'group' => 'OAWeb',
+    );
+  }
+  public function setUp() {
+    parent::setUp();
+  }
+  /* Turn of non working test
+  public function testoa_groups_test_create_organization() {
+    $this->assertEqual(
+      $this->createOrg("test_group", array()),
+      "bobby"
+    );
+  }
+  */
+  protected function createUser($name) {
+    $newUser = array(
+      'name' => $name,
+      'pass' => 'password', // note: do not md5 the password
+      'mail' => $name . "@bob",
+      'status' => 1,
+      'init' => $name . "@bob"
+    );            
+    user_save(null, $newUser);
+  }
+  protected function createOrg($name, $users) {
+    $org = (object) array(
+      'type' => 'oa_organization',
+      'title' => $name,
+    );
+    print_r($org);
+    return $org;
+    if($node = node_save($org)) {
+      return $node;
+    }
+  }
+  protected function createGroup($name, $users) {
+  }
+  protected function createTeam($name, $users) {
+  }
+
+}
