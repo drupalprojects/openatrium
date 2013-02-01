@@ -32,7 +32,7 @@ projects[rules][version] = 2.2
 
 ; Message
 projects[message][subdir] = contrib
-projects[message][version] = 1.6
+projects[message][version] = 1.7
 
 ; Message Notify
 projects[message_notify][subdir] = contrib
@@ -40,7 +40,7 @@ projects[message_notify][version] = 2.3
 
 ; Message Subscribe
 projects[message_subscribe][subdir] = contrib
-projects[message_subscribe][version] = 1.0-alpha2
+projects[message_subscribe][version] = 1.0-alpha3
 
 ; Flag
 projects[flag][subdir] = contrib
