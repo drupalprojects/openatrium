@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function oa_notifications_schema() {
+  $schema = array();
+
+  $schema['oa_notifications'] = array(
+    'description' => 'The database table for OA Notifications',
+    'fields' => array(
+      'notification_id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'nid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'size' => 'normal',
+      ),
+      'type' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'size' => 'normal',
+      ),
+      'target_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'size' => 'normal',
+      ),
+    ),
+    'primary key' => array('notification_id'),
+  );
+
+  return $schema;
+}

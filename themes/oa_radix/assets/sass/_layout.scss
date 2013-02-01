@@ -1,0 +1,42 @@
+//
+// Layout
+// Styles for main layout
+// --------------------------------------------------
+.navbar-inner,
+.region-footer {
+  min-height: 60px;
+  padding-left:  20px;
+  padding-right: 20px;
+  border: 1px solid $navbarBorder;
+  color: white;
+  @include gradient-vertical($navbarBackgroundHighlight, $navbarBackground);
+  @include border-radius(4px);
+  @include box-shadow(0 1px 4px rgba(0,0,0,.065));
+  display: block;
+}
+// Brand: website or project name
+// -------------------------
+.navbar .brand {
+  color: $navbarBrandColor;
+  text-shadow: 0 1px 0 $navbarBackgroundHighlight;
+}
+#logo img {
+  vertical-align: middle;
+}
+#site-name {
+  display: inline-block;
+  padding: 10px 0.5em;
+  margin: 0;
+}
+#search-form {
+  padding-top: 10px;
+}
+#oa_toolbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 20px;
+}
+
+#main-wrapper {
+  min-height: 360px;
+}

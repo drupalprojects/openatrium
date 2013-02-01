@@ -1,48 +1,68 @@
 api = 2
 core = 7.x
 
-; The Panopoly Foundation
+; Panopoly Core
+projects[panopoly][type] = profile
+projects[panopoly][download][type] = git
+projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
+projects[panopoly][download][branch] = 7.x-1.x
 
-projects[panopoly_core][version] = 1.0-rc2
-projects[panopoly_core][subdir] = panopoly
+; override panelizer version
+projects[panelizer][version] = 3.x-dev
+projects[panelizer][subdir] = contrib
+projects[panelizer][download][type] = git
+projects[panelizer][download][revision] = 8a58e76da74fa01d1f8eab1ece9b5117a20ab7ff
+projects[panelizer][download][branch] = 7.x-3.x
 
-projects[panopoly_images][version] = 1.0-rc2
-projects[panopoly_images][subdir] = panopoly
+; Organic Groups
+projects[og][subdir] = contrib
+projects[og][version] = 2.0-rc2
 
-projects[panopoly_theme][version] = 1.0-rc2
-projects[panopoly_theme][subdir] = panopoly
+; Organic Groups Menu
+projects[og_menu][type] = module
+projects[og_menu][subdir] = contrib
+projects[og_menu][download][type] = git
+projects[og_menu][download][url] = http://git.drupal.org/project/og_menu.git
+projects[og_menu][download][branch] = 7.x-3.x
+projects[og_menu][patch][] = http://drupal.org/files/og_menu-js-10515420-11.patch
 
-projects[panopoly_magic][version] = 1.0-rc1
-projects[panopoly_magic][subdir] = panopoly
+; Rules
+projects[rules][subdir] = contrib
+projects[rules][version] = 2.2
 
-projects[panopoly_widgets][version] = 1.0-rc2
-projects[panopoly_widgets][subdir] = panopoly
+; Message
+projects[message][subdir] = contrib
+projects[message][version] = 1.7
 
-projects[panopoly_admin][version] = 1.0-rc2
-projects[panopoly_admin][subdir] = panopoly
+; Message Notify
+projects[message_notify][subdir] = contrib
+projects[message_notify][version] = 2.3
 
-projects[panopoly_users][version] = 1.0-rc2
-projects[panopoly_users][subdir] = panopoly
+; Message Subscribe
+projects[message_subscribe][subdir] = contrib
+projects[message_subscribe][version] = 1.0-alpha3
 
-; The Panopoly Toolset
+; Flag
+projects[flag][subdir] = contrib
+projects[flag][version] = 2.0
 
-projects[panopoly_pages][version] = 1.0-rc2
-projects[panopoly_pages][subdir] = panopoly
+; Chosen
+projects[chosen][subdir] = contrib
+projects[chosen][version] = 1.0
+projects[chosen][patch][] = http://drupal.org/files/issues/chosen-7.x-1.x-install_profile.patch
 
-projects[panopoly_wysiwyg][version] = 1.0-rc2
-projects[panopoly_wysiwyg][subdir] = panopoly
+; Navbar (Overridden from Panopoly)
+projects[navbar][subdir] = contrib
+projects[navbar][version] = 1.0-alpha3
+projects[navbar][patch][] = http://drupal.org/files/navbar_has_mismatching_closing_tag_1875254_1.patch
 
-projects[panopoly_search][version] = 1.0-rc2
-projects[panopoly_search][subdir] = panopoly
-
-; Panopoly Recommended
-
-projects[devel][version] = 1.3
+; Devel
+projects[devel][type] = module
+projects[devel][download][type] = git
+projects[devel][download][url] = http://git.drupal.org/project/devel.git
+projects[devel][download][branch] = 7.x-1.x
 projects[devel][subdir] = contrib
 
-projects[uuid][version] = 1.x-dev
-projects[uuid][subdir] = contrib
-projects[uuid][download][type] = git
-projects[uuid][download][revision] = 4730c67
-projects[uuid][download][branch] = 7.x-1.x
-projects[uuid][patch][1605284] = http://drupal.org/files/1605284-define-types-for-tokens-6.patch
+; Diff
+projects[diff][subdir] = contrib
+projects[diff][version] = 3.2

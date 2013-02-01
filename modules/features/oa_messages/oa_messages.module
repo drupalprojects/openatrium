@@ -1,0 +1,79 @@
+<?php
+/**
+ * @file
+ * Code for the Open Atrium Messages feature.
+ */
+
+include_once 'oa_messages.features.inc';
+
+/**
+ * Implements hook_node_insert().
+ */
+function oa_messages_node_insert($node) {
+  $types = oa_groups_list_content_types(TRUE);
+  if (!array_key_exists($node->type, $types)) {
+    // only create messages for node types we care about
+    return;
+  }
+  $message_type = 'oa_create';
+  $account = user_load($node->uid);
+  $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
+  // Save reference to the node in the node reference field.
+  $wrapper = entity_metadata_wrapper('message', $message);
+  $wrapper->field_oa_node_ref = $node;
+  $wrapper->field_oa_group_id = $_SESSION['og_context']['gid'];
+  $wrapper->save();
+  $options = array(
+    'rendered fields' => array(
+      'message_notify_email_subject' => 'field_message_rendered_subject',
+      'message_notify_email_body' => 'field_message_rendered_body',
+    ),
+  );
+  message_subscribe_process_message('node', $node, $message, array('email' => $options));
+}
+
+function oa_messages_node_update($node) {
+  $types = oa_groups_list_content_types(TRUE);
+  if (!array_key_exists($node->type, $types)) {
+    // only create messages for node types we care about
+    return;
+  }
+  $message_type = 'oa_update';
+  $account = user_load($node->uid);
+  $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
+  // Save reference to the node in the node reference field.
+  $wrapper = entity_metadata_wrapper('message', $message);
+  $wrapper->field_oa_node_ref = $node;
+  $wrapper->field_oa_group_id = $_SESSION['og_context']['gid'];
+  $wrapper->save();
+  $options = array(
+    'rendered fields' => array(
+      'message_notify_email_subject' => 'field_message_rendered_subject',
+      'message_notify_email_body' => 'field_message_rendered_body',
+    ),
+  );
+  message_subscribe_process_message('node', $node, $message, array('email' => $options));
+}
+
+function oa_messages_node_delete($node) {
+  $types = oa_groups_list_content_types(TRUE);
+  if (!array_key_exists($node->type, $types)) {
+    // only create messages for node types we care about
+    return;
+  }
+  $message_type = 'oa_delete';
+  $account = user_load($node->uid);
+  $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
+  // Save reference to the node in the node reference field.
+  $wrapper = entity_metadata_wrapper('message', $message);
+  $wrapper->field_oa_node_ref = $node;
+  $wrapper->field_oa_group_id = $_SESSION['og_context']['gid'];
+  $wrapper->save();
+  $options = array(
+    'rendered fields' => array(
+      'message_notify_email_subject' => 'field_message_rendered_subject',
+      'message_notify_email_body' => 'field_message_rendered_body',
+    ),
+  );
+  message_subscribe_process_message('node', $node, $message, array('email' => $options));
+}

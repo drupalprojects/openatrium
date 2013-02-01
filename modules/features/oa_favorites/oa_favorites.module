@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * Code for the Open Atrium Favorites feature.
+ */
+
+include_once 'oa_favorites.features.inc';
+
+function oa_favorites_get_groups($account = NULL) {
+  global $user;
+  $uid = isset($account) ? $account->uid : $user->uid;
+
+  $items = array('ids' => array(), 'titles' => array(), 'links' => array());
+  if ($flag = flag_get_flag('favorite_group')) {
+    $query = db_select('node', 'n');
+    $query->join('flag_content', 'f', 'n.nid = f.content_id');
+    $query
+      ->fields('n', array('nid', 'title'))
+      ->condition('f.uid', $account->uid)
+      ->condition('f.fid', $flag->fid)
+      ->condition('type', 'oa_group');
+    $result = $query->execute();
+    while ($row = $result->fetchAssoc()) {
+      $items['ids'][]    = $row['nid'];
+      $items['titles'][] = check_plain($row['title']);
+      $items['links'][]  = l($row['title'], 'node/' . $row['nid']);
+    }
+  }
+  return $items;
+}

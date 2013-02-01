@@ -1,0 +1,94 @@
+#oa_toolbar {
+  list-style: none;
+	font-weight: normal;
+	font-size: 18px;
+	position: relative;
+}
+
+#oa_toolbar .btn {
+	padding: 0.5em 1em;
+	margin: 0 0;
+}
+#oa_toolbar .dropdown {
+	display: inline-block;
+	margin: 0 0.25em 0 0.25em;
+	vertical-align: middle;
+}
+#oa_toolbar .btn-group {
+	margin: 0;
+}
+
+#oa_toolbar .oa-toolbar-separator {
+	display: inline-block;
+	padding: 0 0.25em;
+	vertical-align: middle;
+}
+#oa_toolbar ul .dropdown-column {
+	float: left;
+	margin: 0.5em;
+	padding: 0;
+	background-color: #EEE;
+	border: 1px solid #CCC;
+}
+#oa_toolbar ul h3 {
+	color: white;
+	font-size: 18px;
+	margin: 0;
+	padding: 0 1em;
+	background-color: #333
+}
+
+#oa_toolbar ul {
+	padding: 0;
+	margin: 0;
+}
+#oa_toolbar ul li {
+	padding: 0 0;
+	margin: 0;
+}
+#oa_toolbar a {
+	font-size: 18px;
+	color: white;
+}
+
+#oa_toolbar a:hover {
+	color: yellow;
+}
+
+#oa_toolbar ul li a {
+	color: black;
+	padding: 0 0.5em;
+	margin: 0;
+}
+#oa_toolbar ul li a:hover {
+	color: yellow;
+}
+
+#oa_toolbar ul li ul {
+	margin: 0.5em 0;
+}
+#oa_toolbar ul li ul li {
+	padding: 0 0;
+}
+#oa_toolbar ul li ul li a {
+	color: black;
+	padding: 0.25em 1em;
+	margin: 0;
+}
+#oa_toolbar ul li a.active {
+	font-style: italic;
+}
+
+#oa_toolbar .icon-home {
+	font-size: 24px;
+	vertical-align: baseline;
+	padding: 0;
+	margin: 0;
+}
+
+#oa_toolbar .caret {
+	border-top-color: white;
+}
+#oa_toolbar .more-link {
+	font-size: 14px;
+}

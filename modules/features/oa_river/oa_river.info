@@ -1,0 +1,14 @@
+name = Open Atrium Recent Activity
+description = Displays a consolidated list of recent activities across all applications.
+core = 7.x
+package = Open Atrium
+php = 5.2.4
+version = 7.x-2.0
+project = oa_river
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[views_view][] = open_atrium_recent_activity
+features_exclude[dependencies][ctools] = ctools
+project path = profiles/openatrium/modules/features
