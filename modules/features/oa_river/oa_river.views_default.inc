@@ -15,7 +15,7 @@ function oa_river_views_default_views() {
   $view->description = 'Displays recent activity for users and groups';
   $view->tag = 'OA';
   $view->base_table = 'node';
-  $view->human_name = 'Open Atrium Recent Activity';
+  $view->human_name = 'Open Atrium River';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -28,6 +28,10 @@ function oa_river_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Entity Reference: Referencing entity */
@@ -101,7 +105,9 @@ function oa_river_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Groups', 'group_river');
   $handler->display->display_options['display_description'] = 'Recent Activity for Groups';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'OA';
+  $handler->display->display_options['pane_title'] = 'Group River';
+  $handler->display->display_options['pane_description'] = 'Displays recent activity for a group.';
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['open_atrium_recent_activity'] = $view;
 

@@ -7,13 +7,6 @@ projects[panopoly][download][type] = git
 projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
 projects[panopoly][download][branch] = 7.x-1.x
 
-; override panelizer version
-projects[panelizer][version] = 3.x-dev
-projects[panelizer][subdir] = contrib
-projects[panelizer][download][type] = git
-projects[panelizer][download][revision] = 8a58e76da74fa01d1f8eab1ece9b5117a20ab7ff
-projects[panelizer][download][branch] = 7.x-3.x
-
 ; Organic Groups
 projects[og][subdir] = contrib
 projects[og][version] = 2.0-rc2
@@ -32,7 +25,7 @@ projects[rules][version] = 2.2
 
 ; Message
 projects[message][subdir] = contrib
-projects[message][version] = 1.6
+projects[message][version] = 1.7
 
 ; Message Notify
 projects[message_notify][subdir] = contrib
@@ -40,7 +33,7 @@ projects[message_notify][version] = 2.3
 
 ; Message Subscribe
 projects[message_subscribe][subdir] = contrib
-projects[message_subscribe][version] = 1.0-alpha2
+projects[message_subscribe][version] = 1.0-alpha3
 
 ; Flag
 projects[flag][subdir] = contrib
