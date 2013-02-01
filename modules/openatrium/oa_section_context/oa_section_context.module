@@ -6,26 +6,29 @@
 define('OA_SESSION_SECTION', 'oa_section_id');
 
 /**
- * Implements hook_field_access
- *
  * Determines the current section id value
  */
-function oa_section_context_field_access($op, $field, $entity_type, $entity, $account) {
-  if (empty($entity->nid)) {
+function oa_section_context_init() {
+  $nid = menu_get_object()->nid;
+
+  $node = node_load($nid);
+
+  if (empty($node)) {
     return;
   }
-  if (($entity_type == 'node') && ($entity->type == OA_SECTION_TYPE)) {
-    // get group id directly from section nodes
-    $_SESSION[OA_SESSION_SECTION] = $entity->nid;
+
+  if ($node->type == 'oa_section') {
+    // get group id directly from group nodes
+    $_SESSION[OA_SESSION_SECTION] = $node->nid;
   }
-  elseif ($field['field_name'] == OA_SECTION_FIELD) {
+  elseif (!empty($node->og_group_ref)) {dpm($node->og_group_ref[LANGUAGE_NONE][0]['target_id']);
     // otherwise get section id from any section field reference
     if (isset($entity->{OA_SECTION_FIELD}[LANGUAGE_NONE][0]['target_id'])) {
-      $_SESSION[OA_SESSION_SECTION] = $entity->{OA_SECTION_FIELD}[LANGUAGE_NONE][0]['target_id'];
+      $_SESSION[OA_SESSION_SECTION] = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
     }
     else {
       // clear this when there is a section field that doesn't have any value
-      unset($_SESSION['oa_section_id']);
+      unset($_SESSION[OA_SESSION_SECTION]);
     }
   }
 }
