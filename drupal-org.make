@@ -18,7 +18,9 @@ projects[panelizer][download][branch] = 7.x-3.x
 projects[og][subdir] = contrib
 projects[og][version] = 2.0-rc2
 
+; Organic Groups Menu
 projects[og_menu][type] = module
+projects[og_menu][subdir] = contrib
 projects[og_menu][download][type] = git
 projects[og_menu][download][url] = http://git.drupal.org/project/og_menu.git
 projects[og_menu][download][branch] = 7.x-3.x
