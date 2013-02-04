@@ -74,5 +74,26 @@ function oa_config_strongarm() {
   );
   $export['og_context_providers_weight_group_context'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'twitter_bootstrap_ui_autoload';
+  $strongarm->value = 1;
+  $export['twitter_bootstrap_ui_autoload'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'twitter_bootstrap_ui_css';
+  $strongarm->value = 'exclude';
+  $export['twitter_bootstrap_ui_css'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'twitter_bootstrap_ui_js';
+  $strongarm->value = 'bootstrap.min.js';
+  $export['twitter_bootstrap_ui_js'] = $strongarm;
+
   return $export;
 }
