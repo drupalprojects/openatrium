@@ -22,7 +22,7 @@ stylesheets-conditional[IE][all][] = assets/stylesheets/ie.css
 
 ; Javascript
 scripts[] = assets/javascripts/script.js
-scripts[] = ../radix/assets/javascripts/bootstrap-dropdown.js
+
 ; Information added by drupal.org packaging script on 2012-12-19
 version = "7.x-2.x-dev"
 core = "7.x"
