@@ -1,0 +1,78 @@
+<?php
+class og_group_section_accessUnitTest extends og_groupBaseUnitTest {
+  static function getInfo() {
+    return array(
+      'name' => 'og_group_section_access function Tests',
+      'description' => 'Test the public interface of the og_group_section_access function',
+      'group' => 'OA',
+    );
+  }
+  public function testoa_groups_section_access() {
+
+    $conf = array(
+      'row' => array(
+        'field_oa_organization_ref_target_id' => NULL,
+        'field_oa_team_ref_target_id' => NULL,
+        'field_oa_user_ref_target_id' => NULL,
+      ),
+      'groups' => array(),
+      'account' => array(),
+    );
+    $this->assertEqual(
+      oa_groups_section_access($conf['row'], $conf['groups'], $conf['account']),
+      NODE_ACCESS_ALLOW,
+      'If no access rules, access is granted'
+    );
+
+    $conf = array(
+      'row' => array(
+        'field_oa_organization_ref_target_id' => 10,
+        'field_oa_team_ref_target_id' => NULL,
+        'field_oa_user_ref_target_id' => NULL,
+      ),
+      'groups' => array('node'=> array(10)),
+      'account' => array(),
+    );
+    $this->assertEqual(
+      oa_groups_section_access($conf['row'], $conf['groups'], $conf['account']),
+      NODE_ACCESS_ALLOW,
+      'If the section visibility includes a OG of which the account is a member, access is granted'
+    );
+
+    // dip our hand into oa_groups_member_of_team
+    // and set the static cache it is with notting that if
+    // oa_groups changes it methodioligy this might break
+    $cache = &drupal_static("oa_groups_member_of_team");
+    $cache[100][10] = TRUE;
+    $conf = array(
+      'row' => array(
+        'field_oa_organization_ref_target_id' => NULL,
+        'field_oa_team_ref_target_id' => 100,
+        'field_oa_user_ref_target_id' => NULL,
+      ),
+      'groups' => array(),
+      'account' => (object) array( 'uid' => 10),
+    );
+    $this->assertEqual(
+      oa_groups_section_access($conf['row'], $conf['groups'], $conf['account']),
+      NODE_ACCESS_ALLOW,
+      'If the section visibility includes a team of which the account is a member, access is granted'
+    );
+
+
+    $conf = array(
+      'row' => array(
+        'field_oa_organization_ref_target_id' => NULL,
+        'field_oa_team_ref_target_id' => NULL,
+        'field_oa_user_ref_target_id' => 10,
+      ),
+      'groups' => array(),
+      'account' => (object) array( 'uid' => 10),
+    );
+    $this->assertEqual(
+      oa_groups_section_access($conf['row'], $conf['groups'], $conf['account']),
+      NODE_ACCESS_ALLOW,
+      'If the section visibility includes the account, access is granted'
+    );
+  }
+}

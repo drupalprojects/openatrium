@@ -51,7 +51,7 @@ define('OA_ACCESS_REALM', 'oa_access');
  * @return boolean TRUE if user is in team
  */
 function oa_groups_member_of_team($team_id, $user_id) {
-  static $cache = array();
+  $cache = &drupal_static(__FUNCTION__);
 
   if (!isset($cache[$team_id][$user_id])) {
     $result = db_select('field_data_field_oa_team_users', 'f')
