@@ -40,10 +40,13 @@ function og_session_context_og_context_handler_sessions() {
  *   group and group content page.
  */
 function og_session_context_set_context() {
-  $nid = menu_get_object()->nid;
+  $menu = menu_get_object();
+  if (!isset($menu->nid)) {
+    return;
+  }
 
+  $nid = $menu->nid;
   $node = node_load($nid);
-
   if (empty($node)) {
     return;
   }

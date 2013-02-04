@@ -9,10 +9,13 @@ define('OA_SESSION_SECTION', 'oa_section_id');
  * Determines the current section id value
  */
 function oa_section_context_init() {
-  $nid = menu_get_object()->nid;
+  $menu = menu_get_object();
+  if (!isset($menu->nid)) {
+    return;
+  }
 
+  $nid = $menu->nid;
   $node = node_load($nid);
-
   if (empty($node)) {
     return;
   }
