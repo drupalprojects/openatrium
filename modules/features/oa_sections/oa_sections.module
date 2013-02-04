@@ -5,3 +5,16 @@
  */
 
 include_once 'oa_sections.features.inc';
+
+/**
+ * Name of default OpenAtrium Organization field in Section.
+ */
+define('OA_ORG_FIELD', 'field_oa_organization_ref');
+/**
+ * Name of default OpenAtrium Team field in Section.
+ */
+define('OA_TEAM_FIELD', 'field_oa_team_ref');
+/**
+ * Name of default OpenAtrium User field in Section.
+ */
+define('OA_USER_FIELD', 'field_oa_user_ref');

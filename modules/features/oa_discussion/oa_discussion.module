@@ -5,115 +5,15 @@
  */
 
 include_once 'oa_discussion.features.inc';
+include_once 'oa_discussion.theme.inc';
 
-/**
- * Implements hook_block_info()
+/*
+ * Implements hook_ctools_plugin_directory
  */
-function oa_discussion_block_info() {
-  $blocks['oa_discussion_reply'] = array(
-    'info' => t('Open Atrium Reply'),
-    'cache' => DRUPAL_NO_CACHE,
-  );
-
-  $blocks['oa_discussion_node_access_meta'] = array(
-    'info' => t('Open Atrium Access Information'),
-    'cache' => DRUPAL_NO_CACHE,
-  );
-
-  return $blocks;
-}
-
-/**
- * Implements hook_block_view()
- */
-function oa_discussion_block_view($delta = '') {
-  $block = array();
-
-  switch($delta) {
-    case 'oa_discussion_reply':
-      $node = menu_get_object();
-      // no threaded discussions, so if parent is already set, get it's parent
-      if (isset($node->oa_parent[LANGUAGE_NONE][0]['target_id'])) {
-        $nid = $node->oa_parent[LANGUAGE_NONE][0]['target_id'];
-      }
-      else {
-        $nid = $node->nid;
-      }
-      $block['subject'] = '';
-      $block['content'] = theme('oa_discussion_reply', array(
-        'parent_id' => $nid));
-      break;
-    case 'oa_discussion_node_access_meta':
-      $discussion_node = menu_get_object();
-      $group_reference_field = field_get_items('node', $discussion_node, 'og_group_ref');
-      $section_reference_field = field_get_items('node', $discussion_node, 'oa_section_ref');
-      $section_node = node_load($section_reference_field[0]['target_id']);
-      $group_node = node_load($group_reference_field[0]['target_id']);
-      $node_is_public = oa_groups_section_is_public($section_node);
-      $block_content = '';
-      if ($node_is_public) {
-        $block_content = '<p>PUBLIC</p>';
-      } else {
-        $block_content = '<p>PRIVATE</p>';
-        $section_organization_field = field_get_items('node', $section_node, 'field_oa_organization_ref');
-        if (!empty($section_organization_field)) {
-          $block_content .= '<p>Organizations: ';
-          $organization_node_links =  array();
-          foreach ($section_organization_field as $organization_reference) {
-            $organization_node = node_load($organization_reference['target_id']);
-            $organization_node_links[] = l($organization_node->title, 'node/' . $organization_node->nid);
-          }
-          $block_content .= implode(' ', $organization_node_links) . '</p>';
-        }
-        $section_team_field =  field_get_items('node', $section_node, 'field_oa_team_ref');
-        if (!empty($section_team_field)) {
-          $block_content .= '<p>Teams: ';
-          $team_node_links = array();
-          foreach ($section_team_field as $team_reference) {
-            $team_node = node_load($team_reference['target_id']);
-            $team_node_links[] = l($team_node->title, 'node/' . $team_node->nid);
-          }
-          $block_content .= implode(' ', $team_node_links) . '</p>';
-        }
-        $section_user_ref_field = field_get_items('node', $section_node, 'field_oa_user_ref');
-        if (!empty($section_user_ref_field)) {
-          $block_content .= '<p>Users: ';
-          $user_names = array();
-          foreach ($section_user_ref_field as $user_reference) {
-            $user_object = user_load($user_reference['target_id']);
-            $user_names[] = l($user_object->name, 'user/' . $user_object->uid);
-          }
-          $block_content .= implode(' ', $user_names) . '</p>';
-        }
-        $block_content .= '<p>Group: ' . l($group_node->title, 'node/' . $group_node->nid) . '</p>';
-        $block_content .= '<p>Section: ' . l($section_node->title, 'node/' . $section_node->nid) . '</p>';
-      }
-      $block['subject'] = 'Access Information';
-      $block['content'] = $block_content;
-      break;
+function oa_discussion_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
   }
-
-  return $block;
-}
-
-/**
- * Implements hook_theme()
- */
-function oa_discussion_theme() {
-  return array(
-    'oa_discussion_reply' => array(
-      'variables' => array('parent_id' => NULL),
-    ),
-  );
-}
-
-function theme_oa_discussion_reply($vars) {
-  $output = l('Reply', 'node/add/oa-discussion-post/' . $vars['parent_id'],
-    array('attributes' => array(
-      'class' => array('btn', 'btn-success'),
-    )
-  ));
-  return $output;
 }
 
 /**

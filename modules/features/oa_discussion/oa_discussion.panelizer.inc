@@ -315,13 +315,21 @@ function oa_discussion_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-7';
     $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'oa_discussion-oa_discussion_node_access_meta';
+    $pane->type = 'oa_widgets_content_visibility';
+    $pane->subtype = 'oa_widgets_content_visibility';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'oa_widgets_types' => array(),
+      'oa_widgets_use_all' => TRUE,
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
       'override_title' => 0,
       'override_title_text' => '',
+      'form_build_id' => 'form-ciEIL27evvx2pcxkUzIE7q77zwS3cmxP36WIWbh515Q',
+      'form_token' => '9z5_KSKRALhJNDQB1WfX-u_pvlHrOby0NbKpH5_pM6I',
+      'form_id' => 'oa_widgets_content_visibility_edit_form',
+      'op' => 'Finish',
     );
     $pane->cache = array();
     $pane->style = array(

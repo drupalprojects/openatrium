@@ -4,3 +4,5 @@ core = 7.x
 files[] = oa_group_widgets.module
 
 dependencies[] = ctools
+dependencies[] = oa_groups
+dependencies[] = oa_sections

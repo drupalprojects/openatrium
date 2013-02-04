@@ -140,7 +140,6 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
       ));
     }
   }
-
   // Current Section Name from current page name
   $section = menu_get_object();
   if (isset($section->type)) {

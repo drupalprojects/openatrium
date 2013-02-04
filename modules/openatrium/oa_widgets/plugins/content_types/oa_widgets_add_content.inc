@@ -5,8 +5,8 @@ $plugin = array(
   'description' => t('List of content types in a widget.'),
   'single' => TRUE,
   'category' => array(t('Open Atrium'), -9),
-  'edit form' => 'oa_widgets_content_type_edit_form',
-  'render callback' => 'oa_widgets_content_type_render',
+  'edit form' => 'oa_widgets_add_content_edit_form',
+  'render callback' => 'oa_widgets_add_content_render',
   'defaults' => array(
     'oa_widgets_types' => array(),
     'oa_widgets_use_all' => TRUE,
@@ -18,7 +18,7 @@ $plugin = array(
  * Run-time rendering of the body of the block (content type)
  * See ctools_plugin_examples for more advanced info
  */
-function oa_widgets_content_type_render($subtype, $conf, $context = NULL) {
+function oa_widgets_add_content_render($subtype, $conf, $args, $context = NULL) {
   $nodes = $conf['oa_widgets_types'];
 
   $links = array();
@@ -43,7 +43,7 @@ function oa_widgets_content_type_render($subtype, $conf, $context = NULL) {
 /**
  * Custom edit form to allow users to enable/disable selectable content types
  */
-function oa_widgets_content_type_edit_form($form, &$form_state) {
+function oa_widgets_add_content_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
 
   $nodes = oa_groups_list_content_types();
@@ -67,7 +67,7 @@ function oa_widgets_content_type_edit_form($form, &$form_state) {
 /**
  * Saves changes to the widget.
  */
-function oa_widgets_content_type_edit_form_submit($form, &$form_state) {
+function oa_widgets_add_content_edit_form_submit($form, &$form_state) {
   foreach (array_keys($form_state['values']) as $key) {
     if (isset($form_state['values'][$key])) {
       $form_state['conf'][$key] = $form_state['values'][$key];

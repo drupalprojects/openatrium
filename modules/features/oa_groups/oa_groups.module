@@ -31,14 +31,6 @@ define('OA_SECTION_FIELD', 'oa_section_ref');
  */
 define('OA_GROUP_FIELD', 'og_group_ref');
 /**
- * Name of default OpenAtrium Organization field (for Organic Groups Fields UI).
- */
-define('OA_ORG_FIELD', 'field_oa_organization_ref');
-/**
- * Name of default OpenAtrium Team field (for Organic Groups Fields UI).
- */
-define('OA_TEAM_FIELD', 'field_oa_team_ref');
-/**
  * The access realm of group member.
  */
 define('OA_ACCESS_REALM', 'oa_access');
