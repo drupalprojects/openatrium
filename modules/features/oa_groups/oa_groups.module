@@ -346,6 +346,15 @@ function oa_groups_form_alter(&$form, &$form_state, $form_id) {
   global $user;
   if (strstr($form_id, 'node_form')) {
     // we are in an edit form
+
+    // autofill empty group audience field
+    if (isset($form[OA_GROUP_FIELD]) && empty($form[OA_GROUP_FIELD][LANGUAGE_NONE][0]['default']['#default_value'])) {
+      if (!empty($_SESSION['og_context']['gid'])) {
+        $form[OA_GROUP_FIELD][LANGUAGE_NONE][0]['default']['#default_value'] = $_SESSION['og_context']['gid'];
+      }
+    }
+
+    // modify label on Panelizer layout field
     if (isset($form['panelizer'])) {
       $form['panelizer']['page_manager']['name']['#title'] = t('Select Layout');
     }
