@@ -44,6 +44,19 @@ projects[chosen][subdir] = contrib
 projects[chosen][version] = 1.0
 projects[chosen][patch][] = http://drupal.org/files/issues/chosen-7.x-1.x-install_profile.patch
 
+; Twitter Bootstrap UI
+projects[twitter_bootstrap_ui][type] = module
+projects[twitter_bootstrap_ui][subdir] = contrib
+projects[twitter_bootstrap_ui][download][type] = git
+projects[twitter_bootstrap_ui][download][url] = http://git.drupal.org/project/twitter_bootstrap_ui.git
+projects[twitter_bootstrap_ui][download][branch] = 7.x-2.x
+projects[twitter_bootstrap_ui][patch][] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-1.patch
+projects[twitter_bootstrap_ui][download][revision] = 7dccf08a63d6e2ee301c481a044a3a1a58f4e912
+
+libraries[twitter_bootstrap][type] = "libraries"
+libraries[twitter_bootstrap][download][type] = "file"
+libraries[twitter_bootstrap][download][url] = "http://twitter.github.com/bootstrap/assets/bootstrap.zip"
+
 ; Navbar (Overridden from Panopoly)
 projects[navbar][subdir] = contrib
 projects[navbar][version] = 1.0-alpha3
