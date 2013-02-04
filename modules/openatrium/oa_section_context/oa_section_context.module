@@ -24,29 +24,13 @@ function oa_section_context_init() {
     // get group id directly from group nodes
     $_SESSION[OA_SESSION_SECTION] = $node->nid;
   }
-  elseif (!empty($node->og_group_ref)) {dpm($node->og_group_ref[LANGUAGE_NONE][0]['target_id']);
+  elseif (isset($entity->{OA_SECTION_FIELD})) {
     // otherwise get section id from any section field reference
     if (isset($entity->{OA_SECTION_FIELD}[LANGUAGE_NONE][0]['target_id'])) {
       $_SESSION[OA_SESSION_SECTION] = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
     }
     else {
-      // clear this when there is a section field that doesn't have any value
-      unset($_SESSION[OA_SESSION_SECTION]);
-    }
-  }
-}
-
-/**
- * Implements hook_node_view.
- */
-function oa_section_context_node_view($node) {
-  if (isset($node->{OA_SECTION_FIELD})) {
-    // node has a section field
-    if (isset($node->{OA_SECTION_FIELD}[LANGUAGE_NONE][0]['target_id'])) {
-      $_SESSION[OA_SESSION_SECTION] = $node->{OA_SECTION_FIELD}[LANGUAGE_NONE][0]['target_id'];
-    }
-    else {
-      // clear this when there is a section field that doesn't have any value
+      // clear this when there is a section field but it doesn't have any value
       unset($_SESSION[OA_SESSION_SECTION]);
     }
   }
