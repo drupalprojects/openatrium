@@ -7,6 +7,10 @@ projects[panopoly][download][type] = git
 projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
 projects[panopoly][download][branch] = 7.x-1.x
 
+; Parent Theme
+projects[radix][version] = 2.0-alpha3
+projects[radix][patch][] = http://drupal.org/files/radix-template-1907666-2.patch
+
 ; Organic Groups
 projects[og][subdir] = contrib
 projects[og][version] = 2.0-rc2
