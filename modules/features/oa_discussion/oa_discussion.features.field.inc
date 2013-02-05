@@ -390,7 +390,7 @@ function oa_discussion_field_default_fields() {
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'view' => array(
@@ -442,9 +442,7 @@ function oa_discussion_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'apply_chosen' => 0,
-        ),
+        'settings' => array(),
         'type' => 'options_select',
         'weight' => '3',
       ),
@@ -482,7 +480,7 @@ function oa_discussion_field_default_fields() {
               'status' => TRUE,
             ),
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'membership_type' => 'og_membership_type_default',
@@ -529,7 +527,7 @@ function oa_discussion_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'og_group_ref',
       'label' => 'Groups audience',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'behaviors' => array(
           'og_widget' => array(
@@ -557,6 +555,7 @@ function oa_discussion_field_default_fields() {
         ),
       ),
       'widget' => array(
+        'active' => 0,
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',

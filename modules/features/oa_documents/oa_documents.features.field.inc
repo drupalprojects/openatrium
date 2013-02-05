@@ -390,7 +390,7 @@ function oa_documents_field_default_fields() {
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'view' => array(
@@ -482,7 +482,7 @@ function oa_documents_field_default_fields() {
               'status' => TRUE,
             ),
             'views-select-list' => array(
-              'status' => 0,
+              'status' => 1,
             ),
           ),
           'membership_type' => 'og_membership_type_default',
