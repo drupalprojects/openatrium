@@ -279,28 +279,20 @@ function oa_layouts_panelizer_defaults() {
     $pane->pid = 'new-8';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_content-panel_pane_1';
+    $pane->subtype = 'oa_recent_activity-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'items_per_page' => '10',
-      'exposed' => array(
-        'type' => array(
-          'oa_discussion_post' => 'oa_discussion_post',
-        ),
-        'widget_title' => 'Recent Content',
-        'use_pager' => 1,
-        'pager_id' => '0',
-        'sort_by' => NULL,
-        'sort_order' => NULL,
-      ),
       'context' => array(
         0 => 'panelizer',
       ),
-      'override_title' => '',
-      'override_title_text' => '',
       'view_mode' => 'teaser',
-      'widget_title' => 'Recent Content',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
       'use_pager' => NULL,
       'pager_id' => NULL,
       'offset' => NULL,
