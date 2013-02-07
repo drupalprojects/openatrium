@@ -43,7 +43,6 @@
     <?php print $type; ?>
     <?php print $type_1; ?>:
     <?php print $title; ?>
-    <?php print $display; ?>
   </div>
   <div class="accordion" id="oa-river-accordion<?php print $index; ?>">
     <div>
