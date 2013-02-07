@@ -462,3 +462,13 @@ function oa_groups_group_sections($gid) {
   return $result->fetchAllKeyed(0, 1);
 }
 
+/**
+ * Implementation of hook_preprocess_views_view_fields()
+ * Perform field-level replacement/processing here
+ */
+function oa_groups_preprocess_views_view_fields(&$vars) {
+  $vars['index'] = $vars['view']->row_index;
+  foreach ($vars['fields'] as $id => $field) {
+    $vars[$id] = $field->content;
+  }
+}

@@ -43,6 +43,11 @@ projects[message_subscribe][version] = 1.0-alpha3
 projects[flag][subdir] = contrib
 projects[flag][version] = 2.0
 
+; RealName
+projects[realname][subdir] = contrib
+projects[realname][version] = 1.0
+projects[realname][patch][] = http://drupal.org/files/985944_realname_Replace+user+autocomplete+with+realname+autocomplete.patch
+
 ; Chosen
 projects[chosen][subdir] = contrib
 projects[chosen][version] = 1.0

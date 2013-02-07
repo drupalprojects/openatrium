@@ -2,3 +2,20 @@
 // User
 // Styles for User pages
 // --------------------------------------------------
+.user-badge {
+  border: 1px solid #CCC;
+  background-color: #EEE;
+  padding: 3px 8px 3px 3px;
+  margin-left: 10px;
+  min-width: 160px;
+  @include border-radius(4px);
+  img {
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+}
+
+.oa-river .user-badge {
+  border-top: 0;
+  border-right: 0;
+}

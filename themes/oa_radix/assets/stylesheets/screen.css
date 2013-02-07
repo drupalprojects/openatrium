@@ -14560,6 +14560,24 @@ html.js input.throbbing {
 #main-wrapper {
   min-height: 360px; }
 
+/* line 43, ../sass/_layout.scss */
+.oa-river.well {
+  background-color: #FAFAFA;
+  padding: 0 0 5px 5px;
+  margin-bottom: 5px; }
+
+/* line 48, ../sass/_layout.scss */
+.oa-river-header {
+  padding-top: 2px; }
+
+/* line 51, ../sass/_layout.scss */
+.oa-river .accordion {
+  margin-bottom: 0; }
+
+/* line 54, ../sass/_layout.scss */
+.oa-river .accordion-heading .accordion-toggle {
+  padding: 3px 5px; }
+
 /* line 4, ../sass/_menu.scss */
 #main-menu {
   clear: left; }
@@ -14662,3 +14680,23 @@ html.js input.throbbing {
 #node-edit .panel-pane.pane-node-field-oa-user-ref {
   border-top: 0;
   margin-top: 0; }
+
+/* line 5, ../sass/_user.scss */
+.user-badge {
+  border: 1px solid #cccccc;
+  background-color: #EEE;
+  padding: 3px 8px 3px 3px;
+  margin-left: 10px;
+  min-width: 160px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+  /* line 12, ../sass/_user.scss */
+  .user-badge img {
+    vertical-align: middle;
+    margin-right: 8px; }
+
+/* line 18, ../sass/_user.scss */
+.oa-river .user-badge {
+  border-top: 0;
+  border-right: 0; }
