@@ -468,6 +468,7 @@ function oa_groups_group_sections($gid) {
  */
 function oa_groups_preprocess_views_view_fields(&$vars) {
   $vars['index'] = $vars['view']->row_index;
+  $vars['display'] = $vars['view']->current_display;
   foreach ($vars['fields'] as $id => $field) {
     $vars[$id] = $field->content;
   }

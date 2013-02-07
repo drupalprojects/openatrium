@@ -14578,6 +14578,17 @@ html.js input.throbbing {
 .oa-river .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
 
+/* line 57, ../sass/_layout.scss */
+.oa-river .label {
+  color: white; }
+  /* line 59, ../sass/_layout.scss */
+  .oa-river .label a {
+    color: white; }
+
+/* line 63, ../sass/_layout.scss */
+.oa-river-category {
+  text-align: right; }
+
 /* line 4, ../sass/_menu.scss */
 #main-menu {
   clear: left; }

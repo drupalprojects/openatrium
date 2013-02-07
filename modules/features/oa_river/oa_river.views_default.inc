@@ -259,7 +259,7 @@ function oa_river_views_default_views() {
   );
 
   /* Display: Group Activity */
-  $handler = $view->new_display('panel_pane', 'Group Activity', 'panel_pane_1');
+  $handler = $view->new_display('panel_pane', 'Group Activity', 'group_activity');
   $handler->display->display_options['display_description'] = 'Recent activity within a group';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -270,7 +270,8 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['timestamp_1']['label'] = '';
   $handler->display->display_options['fields']['timestamp_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['timestamp_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['timestamp_1']['date_format'] = 'time ago';
+  $handler->display->display_options['fields']['timestamp_1']['date_format'] = 'panopoly_day';
+  $handler->display->display_options['fields']['timestamp_1']['oa_date'] = 'oa_date';
   /* Field: Message: Message ID */
   $handler->display->display_options['fields']['mid']['id'] = 'mid';
   $handler->display->display_options['fields']['mid']['table'] = 'message';
@@ -291,6 +292,13 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'user';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  $handler->display->display_options['fields']['realname']['relationship'] = 'user';
+  $handler->display->display_options['fields']['realname']['label'] = '';
+  $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
   /* Field: Message: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'message';
@@ -316,8 +324,11 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['relationship'] = 'field_oa_node_ref_target_id';
-  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Group';
-  $handler->display->display_options['fields']['og_group_ref']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['og_group_ref']['label'] = '';
+  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'span';
+  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'label';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
     'link' => 1,
   );
@@ -327,8 +338,10 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['oa_section_ref']['field'] = 'oa_section_ref';
   $handler->display->display_options['fields']['oa_section_ref']['relationship'] = 'field_oa_node_ref_target_id';
   $handler->display->display_options['fields']['oa_section_ref']['label'] = '';
+  $handler->display->display_options['fields']['oa_section_ref']['element_type'] = 'span';
   $handler->display->display_options['fields']['oa_section_ref']['element_class'] = 'label';
   $handler->display->display_options['fields']['oa_section_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['oa_section_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['oa_section_ref']['settings'] = array(
     'link' => 1,
   );
@@ -371,13 +384,6 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
-  /* Field: Realname: Real name */
-  $handler->display->display_options['fields']['realname']['id'] = 'realname';
-  $handler->display->display_options['fields']['realname']['table'] = 'realname';
-  $handler->display->display_options['fields']['realname']['field'] = 'realname';
-  $handler->display->display_options['fields']['realname']['relationship'] = 'user';
-  $handler->display->display_options['fields']['realname']['label'] = '';
-  $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: OpenAtrium Section (oa_section_ref) */
@@ -451,46 +457,9 @@ function oa_river_views_default_views() {
   );
 
   /* Display: User Activity */
-  $handler = $view->new_display('panel_pane', 'User Activity', 'panel_pane_2');
+  $handler = $view->new_display('panel_pane', 'User Activity', 'user_activity');
   $handler->display->display_options['display_description'] = 'Recent activity for a user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'timestamp_1',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'panels_fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'timestamp' => 'timestamp',
-    'name' => 'name',
-    'type' => 'type',
-    'type_1' => 'type_1',
-    'title' => 'title',
-  );
-  $handler->display->display_options['row_options']['layout'] = 'selby_flipped';
-  $handler->display->display_options['row_options']['regions'] = array(
-    'timestamp_1' => 'contentcolumn1',
-    'mid' => 'contentcolumn1',
-    'timestamp' => 'contentheader',
-    'name' => 'contentheader',
-    'type' => 'contentheader',
-    'type_1' => 'contentheader',
-    'title' => 'contentheader',
-    'og_group_ref' => 'sidebar',
-    'oa_section_ref' => 'sidebar',
-    'field_user_picture' => 'sidebar',
-    'body' => 'contentfooter',
-    'fieldset' => 'contentfooter',
-    'rendered_entity' => 'contentfooter',
-  );
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Message: Timestamp */
   $handler->display->display_options['fields']['timestamp_1']['id'] = 'timestamp_1';
@@ -500,12 +469,12 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['timestamp_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['timestamp_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['timestamp_1']['date_format'] = 'panopoly_day';
+  $handler->display->display_options['fields']['timestamp_1']['oa_date'] = 'oa_date';
   /* Field: Message: Message ID */
   $handler->display->display_options['fields']['mid']['id'] = 'mid';
   $handler->display->display_options['fields']['mid']['table'] = 'message';
   $handler->display->display_options['fields']['mid']['field'] = 'mid';
   $handler->display->display_options['fields']['mid']['label'] = '';
-  $handler->display->display_options['fields']['mid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['mid']['element_label_colon'] = FALSE;
   /* Field: Message: Timestamp */
   $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
@@ -521,6 +490,13 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'user';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  $handler->display->display_options['fields']['realname']['relationship'] = 'user';
+  $handler->display->display_options['fields']['realname']['label'] = '';
+  $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
   /* Field: Message: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'message';
@@ -546,7 +522,11 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['relationship'] = 'field_oa_node_ref_target_id';
-  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Group';
+  $handler->display->display_options['fields']['og_group_ref']['label'] = '';
+  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'span';
+  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'label';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
     'link' => 1,
   );
@@ -555,7 +535,11 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['oa_section_ref']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['fields']['oa_section_ref']['field'] = 'oa_section_ref';
   $handler->display->display_options['fields']['oa_section_ref']['relationship'] = 'field_oa_node_ref_target_id';
-  $handler->display->display_options['fields']['oa_section_ref']['label'] = 'Section';
+  $handler->display->display_options['fields']['oa_section_ref']['label'] = '';
+  $handler->display->display_options['fields']['oa_section_ref']['element_type'] = 'span';
+  $handler->display->display_options['fields']['oa_section_ref']['element_class'] = 'label';
+  $handler->display->display_options['fields']['oa_section_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['oa_section_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['oa_section_ref']['settings'] = array(
     'link' => 1,
   );
@@ -565,11 +549,12 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'user';
   $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'panopoly_image_thumbnail',
+    'image_style' => 'oa_small_thumbnail',
     'image_link' => 'content',
   );
   /* Field: Content: Body */
@@ -578,21 +563,15 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['relationship'] = 'field_oa_node_ref_target_id';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_type'] = '0';
+  $handler->display->display_options['fields']['body']['element_class'] = 'clear-fix';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '80',
   );
-  /* Field: Global: Fieldset */
-  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
-  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['label'] = 'More';
-  $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'rendered_entity',
-  );
-  $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
-  $handler->display->display_options['fields']['fieldset']['fieldset']['collapsed'] = 1;
   /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
@@ -621,6 +600,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['relationship'] = 'field_oa_node_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
   $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Group';
@@ -638,6 +618,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['filters']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['relationship'] = 'field_oa_node_ref_target_id';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['group'] = 1;
   $handler->display->display_options['filters']['oa_section_ref_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['operator_id'] = 'oa_section_ref_target_id_op';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['label'] = 'Section';
@@ -655,6 +636,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['relationship'] = 'field_oa_node_ref_target_id';
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
@@ -670,13 +652,13 @@ function oa_river_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
-    'user' => array(
+    'field_oa_group_id_value' => array(
       'type' => 'context',
-      'context' => 'entity:user.uid',
-      'context_optional' => 0,
+      'context' => 'entity:node.nid',
+      'context_optional' => 1,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Message: User uid',
+      'label' => 'Message: Group ID (field_oa_group_id)',
     ),
   );
   $export['oa_recent_activity'] = $view;

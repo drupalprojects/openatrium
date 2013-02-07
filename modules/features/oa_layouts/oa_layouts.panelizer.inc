@@ -38,6 +38,7 @@ function oa_layouts_panelizer_defaults() {
       'column1' => NULL,
       'column2' => NULL,
       'contentmain' => NULL,
+      'sidebar' => NULL,
     ),
   );
   $display->cache = array();
@@ -277,30 +278,30 @@ function oa_layouts_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-8';
     $pane->panel = 'sidebar';
-    $pane->type = 'oa_widgets_pane';
-    $pane->subtype = 'oa_widgets_pane';
+    $pane->type = 'oa_widgets_add_content';
+    $pane->subtype = 'oa_widgets_add_content';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'oa_widgets_types' => array(
         'oa_discussion_post' => 'oa_discussion_post',
+        'oa_documents_post' => 'oa_documents_post',
         'oa_section' => 'oa_section',
         'oa_team' => 'oa_team',
         'oa_group' => 0,
         'oa_organization' => 0,
         'panopoly_page' => 0,
-        'panopoly_news_article' => 0,
-        'post' => 0,
+        'group_article' => 0,
       ),
       'oa_widgets_use_all' => TRUE,
-      'return' => 'Save',
+      'return' => 'Finish',
       'cancel' => 'Cancel',
       'override_title' => 0,
       'override_title_text' => '',
-      'form_build_id' => 'form-HEXm-kPvwLl2fVgzqnZKmmIUDItdQPnUZz8s0eJJ7js',
-      'form_token' => 'XFtrgPNXevJ87aWMpQTbnUn-46INTQGFp7YPTjmq8Eg',
-      'form_id' => 'oa_widgets_content_type_edit_form',
-      'op' => 'Save',
+      'form_build_id' => 'form-NCeBbkNs0xefX-oWcMs0GVkG52vSrxA89ugf8S0lkp8',
+      'form_token' => 'kiQSddYUuMh58if0Y8q8bvZG5EqYhlYm1Wz94OcraDs',
+      'form_id' => 'oa_widgets_add_content_edit_form',
+      'op' => 'Finish',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -959,30 +960,30 @@ function oa_layouts_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-25';
     $pane->panel = 'sidebar';
-    $pane->type = 'oa_widgets_pane';
-    $pane->subtype = 'oa_widgets_pane';
+    $pane->type = 'oa_widgets_add_content';
+    $pane->subtype = 'oa_widgets_add_content';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'oa_widgets_types' => array(
         'oa_discussion_post' => 'oa_discussion_post',
+        'oa_documents_post' => 'oa_documents_post',
         'oa_group' => 0,
         'oa_organization' => 0,
         'oa_section' => 0,
         'oa_team' => 0,
         'panopoly_page' => 0,
-        'panopoly_news_article' => 0,
-        'post' => 0,
+        'group_article' => 0,
       ),
       'oa_widgets_use_all' => TRUE,
-      'return' => 'Save',
+      'return' => 'Finish',
       'cancel' => 'Cancel',
       'override_title' => 0,
       'override_title_text' => '',
-      'form_build_id' => 'form-LJZu2y1gN0gcT9Re8zN-euw-WbUbupRpHkKkAfGnhLA',
-      'form_token' => 'XFtrgPNXevJ87aWMpQTbnUn-46INTQGFp7YPTjmq8Eg',
-      'form_id' => 'oa_widgets_content_type_edit_form',
-      'op' => 'Save',
+      'form_build_id' => 'form-tgMZSPjytPpLcU1uBkoPBCEXf6GNViFx1V-FpxtiSdQ',
+      'form_token' => 'kiQSddYUuMh58if0Y8q8bvZG5EqYhlYm1Wz94OcraDs',
+      'form_id' => 'oa_widgets_add_content_edit_form',
+      'op' => 'Finish',
     );
     $pane->cache = array();
     $pane->style = array(

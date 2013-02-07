@@ -25,9 +25,17 @@
  */
 ?>
 <div class='oa-river well'>
-  <div class='pull-right user-badge'>
-    <?php print $field_user_picture; ?>
-    <?php print $name; ?>
+  <?php if ($display != 'user_activity'): ?>
+    <div class='pull-right user-badge'>
+      <?php print $field_user_picture; ?>
+      <?php print $name; ?>
+    </div>
+  <?php endif; ?>
+  <div class='oa-river-category pull-right'>
+    <?php if ($display != 'group_activity'): ?>
+      <?php print $og_group_ref; ?><br \>
+    <?php endif; ?>
+    <?php print $oa_section_ref; ?>
   </div>
   <div class='oa-river-header'>
     <?php print $timestamp; ?>
@@ -35,6 +43,7 @@
     <?php print $type; ?>
     <?php print $type_1; ?>:
     <?php print $title; ?>
+    <?php print $display; ?>
   </div>
   <div class="accordion" id="oa-river-accordion<?php print $index; ?>">
     <div>
