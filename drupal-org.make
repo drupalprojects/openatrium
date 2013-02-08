@@ -59,7 +59,7 @@ projects[twitter_bootstrap_ui][subdir] = contrib
 projects[twitter_bootstrap_ui][download][type] = git
 projects[twitter_bootstrap_ui][download][url] = http://git.drupal.org/project/twitter_bootstrap_ui.git
 projects[twitter_bootstrap_ui][download][branch] = 7.x-2.x
-projects[twitter_bootstrap_ui][patch][] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-1.patch
+projects[twitter_bootstrap_ui][patch][] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-2.patch
 projects[twitter_bootstrap_ui][download][revision] = 7dccf08a63d6e2ee301c481a044a3a1a58f4e912
 
 libraries[twitter_bootstrap][type] = "libraries"
