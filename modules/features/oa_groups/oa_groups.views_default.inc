@@ -59,7 +59,6 @@ function oa_groups_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  $handler->display->display_options['arguments']['gid']['validate_options']['group_type'] = 'node';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -125,7 +124,6 @@ function oa_groups_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  $handler->display->display_options['arguments']['gid']['validate_options']['group_type'] = 'node';
   /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
@@ -163,29 +161,6 @@ function oa_groups_views_default_views() {
       'fixed' => '',
       'label' => 'Content: OpenAtrium Section (oa_section_ref)',
     ),
-  );
-  $translatables['open_atrium_content'] = array(
-    t('Master'),
-    t('Recent Content'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('OG membership from node'),
-    t('All'),
-    t('Type'),
-    t('Recent Group Content'),
-    t('Open Atrium'),
-    t('Recent Section Content'),
   );
   $export['open_atrium_content'] = $view;
 
@@ -291,23 +266,6 @@ function oa_groups_views_default_views() {
   $handler = $view->new_display('page', 'Groups Page', 'groups_page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'groups';
-  $translatables['open_atrium_groups'] = array(
-    t('Master'),
-    t('User groups'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('User is not a member of any group.'),
-    t('Group node from OG membership'),
-    t('All'),
-    t('%1 groups'),
-    t('Toolbar'),
-    t('Open Atrium'),
-    t('Groups Page'),
-  );
   $export['open_atrium_groups'] = $view;
 
   $view = new view();
@@ -387,18 +345,6 @@ function oa_groups_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $translatables['open_atrium_user_filters'] = array(
-    t('Defaults'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('OG membership from user'),
-    t('All'),
-    t('Open Atrium User Filter'),
-  );
   $export['open_atrium_user_filters'] = $view;
 
   return $export;
