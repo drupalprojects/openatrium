@@ -31,6 +31,7 @@ features[field][] = node-oa_organization-body
 features[field][] = node-oa_organization-field_featured_image
 features[field][] = node-oa_organization-group_access
 features[field][] = node-oa_organization-group_group
+features[field][] = user-user-og_user_node
 features[image][] = oa_small_thumbnail
 features[node][] = oa_group
 features[node][] = oa_organization
