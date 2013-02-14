@@ -80,12 +80,12 @@ function oa_discussion_default_page_manager_handlers() {
     $pane->pid = 'new-1';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_discussions-panel_pane_2';
+    $pane->subtype = 'open_atrium_discussions-original_post';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => array(
-        1 => 'relationship_entity_from_field:oa_parent-node-node_1',
+        0 => 'relationship_entity_from_field:oa_parent-node-node_1',
       ),
       'view_mode' => 'teaser',
       'widget_title' => NULL,
@@ -117,12 +117,12 @@ function oa_discussion_default_page_manager_handlers() {
     $pane->pid = 'new-2';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_discussions-panel_pane_1';
+    $pane->subtype = 'open_atrium_discussions-replies';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => array(
-        0 => 'context_node_add_form_1',
+        0 => 'relationship_entity_from_field:oa_parent-node-node_1',
       ),
       'view_mode' => 'teaser',
       'widget_title' => NULL,
