@@ -11,6 +11,19 @@ projects[panopoly][download][branch] = 7.x-1.x
 projects[radix][version] = 2.0-alpha3
 projects[radix][patch][] = http://drupal.org/files/radix-template-1907666-2.patch
 
+; Update Panelizer to latest with features override patch
+projects[panelizer][type] = module
+projects[panelizer][subdir] = contrib
+projects[panelizer][download][type] = git
+projects[panelizer][download][url] = http://git.drupal.org/project/panelizer.git
+projects[panelizer][download][branch] = 7.x-3.x
+projects[panelizer][download][revision] = 775e91df7a50d8bd7591e2258780aba106558151
+projects[panelizer][patch][] = http://drupal.org/files/panelizer-features-override-1912162-2.patch
+
+; Features Override
+projects[features_override][subdir] = contrib
+projects[features_override][version] = 2.0-beta2
+
 ; Organic Groups
 projects[og][subdir] = contrib
 projects[og][version] = 2.0-rc2
