@@ -27,8 +27,8 @@
 <div class='oa-river well'>
   <?php if ($display != 'user_activity'): ?>
     <div class='pull-right user-badge'>
-      <?php print $field_user_picture; ?>
       <?php print $name; ?>
+      <?php print $field_user_picture; ?>
     </div>
   <?php endif; ?>
   <div class='oa-river-category pull-right'>
