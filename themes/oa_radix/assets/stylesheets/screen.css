@@ -14561,32 +14561,32 @@ html.js input.throbbing {
   min-height: 360px; }
 
 /* line 43, ../sass/_layout.scss */
-.oa-river.well {
+.oa-list.well {
   background-color: #FAFAFA;
   padding: 0 0 5px 5px;
   margin-bottom: 5px; }
 
 /* line 48, ../sass/_layout.scss */
-.oa-river-header {
+.oa-list-header {
   padding-top: 2px; }
 
 /* line 51, ../sass/_layout.scss */
-.oa-river .accordion {
+.oa-list .accordion {
   margin-bottom: 0; }
 
 /* line 54, ../sass/_layout.scss */
-.oa-river .accordion-heading .accordion-toggle {
+.oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
 
 /* line 57, ../sass/_layout.scss */
-.oa-river .label {
+.oa-list .label {
   color: white; }
   /* line 59, ../sass/_layout.scss */
-  .oa-river .label a {
+  .oa-list .label a {
     color: white; }
 
 /* line 63, ../sass/_layout.scss */
-.oa-river-category {
+.oa-list-category {
   text-align: right; }
 
 /* line 4, ../sass/_menu.scss */
