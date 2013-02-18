@@ -150,16 +150,12 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '80',
   );
-  /* Field: Global: Fieldset */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['label'] = 'More';
-  $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'rendered_entity',
-  );
-  $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
-  $handler->display->display_options['fields']['fieldset']['fieldset']['collapsed'] = 1;
+  $handler->display->display_options['fields']['fieldset']['element_default_classes'] = FALSE;
   /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
@@ -445,6 +441,15 @@ function oa_river_views_default_views() {
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'field_oa_group_id_value' => array(
       'type' => 'context',
@@ -651,6 +656,15 @@ function oa_river_views_default_views() {
   );
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'field_oa_group_id_value' => array(
       'type' => 'context',
