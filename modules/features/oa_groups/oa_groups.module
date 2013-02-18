@@ -192,7 +192,11 @@ function oa_groups_node_grants($account, $op) {
  */
 function oa_groups_node_access_records($node) {
   $sids = array();
-  if ($node->type == OA_SECTION_TYPE) {
+  if ($node->status == 0) {
+    // don't change access for unpublished nodes
+    // keep normal Drupal access (should be set for only Own access)
+  }
+  else if ($node->type == OA_SECTION_TYPE) {
     if (!oa_groups_section_is_public($node)) {
       $sids[] = $node->nid;
     }
