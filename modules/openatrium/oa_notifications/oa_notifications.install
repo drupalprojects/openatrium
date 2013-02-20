@@ -13,23 +13,40 @@ function oa_notifications_schema() {
         'type' => 'serial',
         'not null' => TRUE,
       ),
-      'nid' => array(
-        'type' => 'int',
+      'source_type' => array(
+        'description' => 'The type of the item requiring notification, eg "node"',
+        'type' => 'varchar',
+        'length' => '128',
         'not null' => TRUE,
-        'size' => 'normal',
+        'default' => '',
       ),
-      'type' => array(
+      'source_id' => array(
+        'description' => 'The unique ID of the object, such as {nid}.',
         'type' => 'int',
+        'unsigned' => TRUE,
         'not null' => TRUE,
-        'size' => 'normal',
+        'default' => 0,
+      ),
+      'target_type' => array(
+        'description' => 'The type of entity to be notified, eg "user", "organization", "team".',
+        'type' => 'varchar',
+        'length' => '128',
+        'not null' => TRUE,
+        'default' => '',
       ),
       'target_id' => array(
+        'description' => 'The unique ID of the object, such as either the {uid} or {nid}.',
         'type' => 'int',
+        'unsigned' => TRUE,
         'not null' => TRUE,
-        'size' => 'normal',
+        'default' => 0,
       ),
     ),
     'primary key' => array('notification_id'),
+    'indexes' => array(
+      'source_type_id' => array('source_type', 'source_id'),
+      'target_type_id' => array('target_type', 'target_id'),
+    ),
   );
 
   return $schema;
