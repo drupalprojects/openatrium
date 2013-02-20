@@ -21,22 +21,112 @@ function oa_messages_strongarm() {
       'display' => array(
         'message__message_text__0' => array(
           'message_notify_email_subject' => array(
+            'weight' => '0',
             'visible' => TRUE,
-            'weight' => 0,
           ),
           'message_notify_email_body' => array(
+            'weight' => '0',
             'visible' => FALSE,
-            'weight' => 0,
+          ),
+          'oa_river_header' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '0',
+            'visible' => FALSE,
           ),
         ),
         'message__message_text__1' => array(
           'message_notify_email_subject' => array(
+            'weight' => '0',
             'visible' => FALSE,
-            'weight' => 0,
           ),
           'message_notify_email_body' => array(
+            'weight' => '0',
             'visible' => TRUE,
-            'weight' => 0,
+          ),
+          'oa_river_header' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'message__message_text__2' => array(
+          'message_notify_email_subject' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'message_notify_email_body' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'oa_river_header' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+        'message__message_text__3' => array(
+          'message_notify_email_subject' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'message_notify_email_body' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'oa_river_header' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+        ),
+        'message__message_text__4' => array(
+          'message_notify_email_subject' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'message_notify_email_body' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'oa_river_header' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '4',
+            'visible' => TRUE,
           ),
         ),
       ),
@@ -55,22 +145,112 @@ function oa_messages_strongarm() {
       'display' => array(
         'message__message_text__0' => array(
           'message_notify_email_subject' => array(
+            'weight' => '0',
             'visible' => TRUE,
-            'weight' => 0,
           ),
           'message_notify_email_body' => array(
+            'weight' => '0',
             'visible' => FALSE,
-            'weight' => 0,
+          ),
+          'oa_river_header' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '0',
+            'visible' => FALSE,
           ),
         ),
         'message__message_text__1' => array(
           'message_notify_email_subject' => array(
+            'weight' => '0',
             'visible' => FALSE,
-            'weight' => 0,
           ),
           'message_notify_email_body' => array(
+            'weight' => '0',
             'visible' => TRUE,
-            'weight' => 0,
+          ),
+          'oa_river_header' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'message__message_text__2' => array(
+          'message_notify_email_subject' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'message_notify_email_body' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'oa_river_header' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+        'message__message_text__3' => array(
+          'message_notify_email_subject' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'message_notify_email_body' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'oa_river_header' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+        ),
+        'message__message_text__4' => array(
+          'message_notify_email_subject' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'message_notify_email_body' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'oa_river_header' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '4',
+            'visible' => TRUE,
           ),
         ),
       ),
@@ -89,22 +269,112 @@ function oa_messages_strongarm() {
       'display' => array(
         'message__message_text__0' => array(
           'message_notify_email_subject' => array(
+            'weight' => '0',
             'visible' => TRUE,
-            'weight' => 0,
           ),
           'message_notify_email_body' => array(
+            'weight' => '3',
             'visible' => FALSE,
-            'weight' => 0,
+          ),
+          'oa_river_header' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '0',
+            'visible' => FALSE,
           ),
         ),
         'message__message_text__1' => array(
           'message_notify_email_subject' => array(
+            'weight' => '1',
             'visible' => FALSE,
-            'weight' => 0,
           ),
           'message_notify_email_body' => array(
+            'weight' => '0',
             'visible' => TRUE,
-            'weight' => 0,
+          ),
+          'oa_river_header' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'message__message_text__2' => array(
+          'message_notify_email_subject' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'message_notify_email_body' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'oa_river_header' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+        'message__message_text__3' => array(
+          'message_notify_email_subject' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'message_notify_email_body' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'oa_river_header' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+        ),
+        'message__message_text__4' => array(
+          'message_notify_email_subject' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'message_notify_email_body' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'oa_river_header' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'oa_river_accordian' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'oa_river_body' => array(
+            'weight' => '4',
+            'visible' => TRUE,
           ),
         ),
       ),

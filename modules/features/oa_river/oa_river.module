@@ -24,3 +24,21 @@ function oa_river_theme() {
     ),
   );
 }
+
+/**
+ * Implements hook_entity_info_alter().
+ *
+ * Add a the river view modes to messages.
+ */
+function oa_river_entity_info_alter(&$entity_info) {
+  $view_modes = array(
+    'oa_river_header' => array('label' => t('Open Atrium - River Header')),
+    'oa_river_accordian' => array('label' => t('Open Atrium - River Accordian')),
+    'oa_river_body' => array('label' => t('Open Atrium - River Body')),
+  );
+  foreach ($view_modes as &$view_mode) {
+    $view_mode += array('custom settings' => TRUE);
+  }
+  $entity_info['message']['view modes'] += $view_modes;
+}
+
