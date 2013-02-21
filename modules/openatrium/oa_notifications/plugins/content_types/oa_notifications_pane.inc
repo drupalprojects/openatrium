@@ -62,9 +62,17 @@ function oa_notifications_render_view($node) {
   if (array_key_exists('user', $notifications)) {
     $users = user_load_multiple(array_keys($notifications['user']));
     foreach ($users as $user) {
-      $render['#user'][] = $user->name;
+      $render['#user'][] = array(
+        'name' => $user->name,
+        'access' => node_access('view', $node, $user),
+      );
     }
   }
+
+  // Attach the bootstrap tooltip in case there is an access denied user.
+  drupal_add_js('jQuery(document).ready(function () {
+    jQuery("span.label-important").tooltip();
+  });', 'inline');
 
   return $render;
 }

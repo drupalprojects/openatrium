@@ -22,7 +22,11 @@
     <div class="notification-group">
       <h5><?php print t('Users'); ?></h5>
       <?php foreach ($user as $u): ?>
-        <span class="label label-info"><?php print $u; ?></span>
+        <?php if ($u['access']): ?>
+          <span class="label label-info">
+        <?php else: ?>
+          <span class="label label-important" data-toggle="tooltip" title="<?php print t('No current access'); ?>">
+        <?php endif; ?><?php print $u['name']; ?></span>
       <?php endforeach; ?>
     </div>
   <?php endif; ?>
