@@ -73,6 +73,7 @@ dependencies[] = oa_documents
 dependencies[] = oa_messages
 dependencies[] = oa_river
 dependencies[] = oa_panopoly_users
+dependencies[] = oa_styles
 
 ; Development Modules - Temporary
 dependencies[] = devel
