@@ -84,6 +84,7 @@ function oa_discussion_strongarm() {
   $strongarm->name = 'node_options_oa_discussion_post';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_oa_discussion_post'] = $strongarm;
 
