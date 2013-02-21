@@ -14563,12 +14563,12 @@ html.js input.throbbing {
 /* line 43, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #FAFAFA;
-  padding: 0 0 5px 5px;
+  padding: 0;
   margin-bottom: 5px; }
 
 /* line 48, ../sass/_layout.scss */
 .oa-list-header {
-  padding-top: 2px; }
+  padding: 3px 5px 0 5px; }
 
 /* line 51, ../sass/_layout.scss */
 .oa-list .accordion {

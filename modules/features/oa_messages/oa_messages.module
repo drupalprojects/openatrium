@@ -10,46 +10,57 @@ include_once 'oa_messages.features.inc';
  * Helper function to create a specific message type
  * Fills in the wrapper fields for group and section
  * @param  string $message_type machine name of message
- * @param  object $node         the node to assign (if any)
+ * @param int     $entity_id id of entity being referenced
+ * @param string  $entity_type type of entity being referenced
+ * @param array   $args optional data to send to hooks
  * @param boolean $send TRUE/FALSE to trigger notifications
  * @return object               the message entity created
  */
-function oa_messages_create($message_type, $node = NULL, $send = TRUE) {
+function oa_messages_create($message_type, $entity_id, $entity_type = 'node', $args = NULL, $send = TRUE) {
   global $user;
 
-  if (isset($node)) {
-    $account = user_load($node->uid);
+  $entity = array_shift( entity_load($entity_type, array($entity_id)));
+  if ($entity_type == 'user') {
+    $account = $entity;
+  }
+  else if (isset($entity->uid)) {
+    $account = user_load($entity->uid);
   }
   else {
     $account = $user;
   }
 
   // allow other modules to alter the message type to be created
-  $context = array('node' => $node);
+  $context = array(
+    'account' => $account,
+    'entity' => $entity,
+    'entity_type' => $entity_type,
+    'entity_id' => $entity_id,
+    'arguments' => $args,
+  );
   drupal_alter('oa_messages_type', $message_type, $context);
   $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => time()));
 
   // Save reference to the node in the node reference field.
   $wrapper = entity_metadata_wrapper('message', $message);
-  if (isset($node)) {
+  $entity_wrapper  = entity_metadata_wrapper($entity_type, $entity_id);
+  if (isset($entity_wrapper->{OA_GROUP_FIELD})) {
+    $wrapper->field_oa_message_group = $entity_wrapper->{OA_GROUP_FIELD}->value();
+  }
+  if (isset($entity_wrapper->{OA_SECTION_FIELD})) {
+    $wrapper->field_oa_message_section = $entity_wrapper->{OA_SECTION_FIELD}->value();
+  }
+  if ($entity_type == 'node') {
     if (isset($wrapper->field_oa_node_ref)) {
-      $wrapper->field_oa_node_ref = $node;
-    }
-    $group_id = field_get_items('node', $node, OA_GROUP_FIELD);
-    if (isset($group_id[0]['target_id'])) {
-      $wrapper->field_oa_message_group = $group_id[0]['target_id'];
-    }
-    $section_id = field_get_items('node', $node, OA_SECTION_FIELD);
-    if (isset($section_id[0]['target_id'])) {
-      $wrapper->field_oa_message_section = $section_id[0]['target_id'];
+      $wrapper->field_oa_node_ref = $entity_id;
     }
   }
 
   // allow other modules to add stuff to the wrapper
-  $context = array(
+  $context += array(
     'message_type' => $message_type,
     'message' => $message,
-    'node' => $node,
+    'entity_wrapper' => $entity_wrapper,
   );
 
   drupal_alter('oa_messages_create', $wrapper, $context);
@@ -76,7 +87,7 @@ function oa_messages_node_insert($node) {
     // only create messages for node types we care about
     return;
   }
-  $message = oa_messages_create('oa_create', $node);
+  $message = oa_messages_create('oa_create', $node->nid);
 }
 
 function oa_messages_node_update($node) {
@@ -85,7 +96,7 @@ function oa_messages_node_update($node) {
     // only create messages for node types we care about
     return;
   }
-  $message = oa_messages_create('oa_update', $node);
+  $message = oa_messages_create('oa_update', $node->nid);
 }
 
 function oa_messages_node_delete($node) {
@@ -94,7 +105,43 @@ function oa_messages_node_delete($node) {
     // only create messages for node types we care about
     return;
   }
-  $message = oa_messages_create('oa_delete', $node);
+  $message = oa_messages_create('oa_delete', $node->nid);
+}
+
+/**
+ * Implements hook_og_membership_insert().
+ */
+function oa_messages_og_membership_insert($og_membership) {
+  if ($og_membership->entity_type == 'user') {
+    $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
+      array('action' => 'added', 'group' => $og_membership->gid));
+  }
+}
+
+/**
+ * Implements hook_og_membership_update().
+ */
+function oa_messages_og_membership_update($og_membership) {
+  if ($og_membership->entity_type == 'user') {
+    if ($og_membership->original->state != OG_STATE_ACTIVE && $og_membership->state == OG_STATE_ACTIVE) {
+      $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
+        array('action' => 'approved', 'group' => $og_membership->gid));
+    }
+    if ($og_membership->original->state != OG_STATE_BLOCKED && $og_membership->state == OG_STATE_BLOCKED) {
+      $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
+        array('action' => 'blocked', 'group' => $og_membership->gid));
+    }
+  }
+}
+
+/**
+ * Implements hook_og_membership_delete().
+ */
+function oa_messages_og_membership_delete($og_membership) {
+  if ($og_membership->entity_type == 'user') {
+    $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
+      array('action' => 'removed', 'group' => $og_membership->gid));
+  }
 }
 
 /**
@@ -102,21 +149,27 @@ function oa_messages_node_delete($node) {
  * Add additional fields to wrapper for messages
  */
 function oa_messages_oa_messages_create_alter(&$wrapper, $context) {
-  if ($context['message_type'] == 'oa_delete') {
-    // save some values from the node that is about to be deleted
-    $node = $context['node'];
-    if (isset($node)) {
+  switch ($context['message_type']) {
+    case 'oa_delete':
+      // save some values from the node that is about to be deleted
+      $entity_wrapper = $context['entity_wrapper'];
       if (isset($wrapper->field_deleted_title)) {
-        $wrapper->field_deleted_title = $node->title;
+        $wrapper->field_deleted_title = $entity_wrapper->title->value();
       }
       if (isset($wrapper->field_deleted_summary)) {
-        $body = field_get_items('node', $node, 'body');
-        $body_value = field_view_value('node', $node, 'body', $body[0], array(
+        $body_value = field_view_field($context['entity_type'], $context['entity'], 'body', array(
             'label'=>'hidden',
             'type' => 'text_summary_or_trimmed',
           ));
         $wrapper->field_deleted_summary->set(array('value' => render($body_value)));
       }
-    }
+      break;
+
+    case 'oa_member':
+      if (isset($wrapper->field_member_action)) {
+        $wrapper->field_member_action = $context['arguments']['action'];
+      }
+      $wrapper->field_oa_message_group = $context['arguments']['group'];
+      break;
   }
 }

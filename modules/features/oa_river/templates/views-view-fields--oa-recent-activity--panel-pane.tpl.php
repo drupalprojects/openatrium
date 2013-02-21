@@ -24,7 +24,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class='oa-list well'>
+<div class='oa-list well clearfix'>
   <?php if ($display != 'user_activity'): ?>
     <div class='pull-right user-badge'>
       <?php print $name; ?>
@@ -57,5 +57,7 @@
       </div>
     </div>
   </div>
+  <?php elseif (strlen(trim(strip_tags($rendered_entity_1))) > 0): ?>
+    <?php print $rendered_entity_1; ?>
   <?php endif; ?>
 </div>

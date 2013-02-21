@@ -162,6 +162,8 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['ui_name'] = 'Message River Header';
   $handler->display->display_options['fields']['rendered_entity']['label'] = '';
   $handler->display->display_options['fields']['rendered_entity']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['preserve_tags'] = '<b> <i> <strong> <em> <a> <span> <img>';
   $handler->display->display_options['fields']['rendered_entity']['element_type'] = 'span';
   $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['rendered_entity']['element_default_classes'] = FALSE;
