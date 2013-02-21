@@ -24,7 +24,6 @@ $plugin = array(
  * Render callback for a single pane.
  */
 function theme_oa_styles_well_style_render_pane($vars) {
-  dpm($vars, "VARS");
   $content = $vars['content'];
   $pane = $vars['pane'];
   $display = $vars['display'];
@@ -33,11 +32,11 @@ function theme_oa_styles_well_style_render_pane($vars) {
     return;
   }
 
+  // Render the pane as normal
   $output = theme('panels_pane', array('content' => $content, 'pane' => $pane, 'display' => $display));
 
-  // Just stick a box around the standard theme_panels_pane.
-  $output = theme('oa_styles_well_box', array('content' => $output, 'settings' => $vars['settings']));
-  return $output;
+  // Then wrap it in a well
+  return theme('oa_styles_well_box', array('content' => $output, 'settings' => $vars['settings']));
 }
 
 /**
