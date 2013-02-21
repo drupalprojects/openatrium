@@ -14563,12 +14563,12 @@ html.js input.throbbing {
 /* line 43, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #FAFAFA;
-  padding: 0 0 5px 5px;
+  padding: 0;
   margin-bottom: 5px; }
 
 /* line 48, ../sass/_layout.scss */
 .oa-list-header {
-  padding-top: 2px; }
+  padding: 3px 5px 0 5px; }
 
 /* line 51, ../sass/_layout.scss */
 .oa-list .accordion {
@@ -14577,17 +14577,30 @@ html.js input.throbbing {
 /* line 54, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
+  /* line 56, ../sass/_layout.scss */
+  .oa-list .accordion-heading .accordion-toggle:hover {
+    background-color: #E0EEFF; }
 
-/* line 57, ../sass/_layout.scss */
+/* line 60, ../sass/_layout.scss */
 .oa-list .label {
   color: white; }
-  /* line 59, ../sass/_layout.scss */
+  /* line 62, ../sass/_layout.scss */
   .oa-list .label a {
     color: white; }
 
-/* line 63, ../sass/_layout.scss */
+/* line 66, ../sass/_layout.scss */
 .oa-list-category {
   text-align: right; }
+
+/* line 69, ../sass/_layout.scss */
+.oa-list .links {
+  float: right;
+  margin-right: 5px; }
+  /* line 72, ../sass/_layout.scss */
+  .oa-list .links a {
+    padding: 0 5px;
+    color: #777;
+    font-size: 0.9em; }
 
 /* line 4, ../sass/_menu.scss */
 #main-menu {

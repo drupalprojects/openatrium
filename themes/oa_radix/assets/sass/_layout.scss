@@ -42,17 +42,20 @@
 }
 .oa-list.well {
   background-color: #FAFAFA;
-  padding: 0 0 5px 5px;
+  padding: 0;
   margin-bottom: 5px;
 }
 .oa-list-header {
-  padding-top: 2px;
+  padding: 3px 5px 0 5px;
 }
 .oa-list .accordion {
   margin-bottom: 0;
 }
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px;
+  &:hover {
+    background-color: #E0EEFF;
+  }
 }
 .oa-list .label {
   color: white;
@@ -63,4 +66,12 @@
 .oa-list-category {
   text-align: right;
 }
-
+.oa-list .links {
+  float: right;
+  margin-right: 5px;
+  a {
+    padding: 0 5px;
+    color: #777;
+    font-size: 0.9em;
+  }
+}

@@ -55,6 +55,7 @@ dependencies[] = twitter_bootstrap_ui
 
 ; Open Atrium 2.0 Modules
 dependencies[] = oa_date
+dependencies[] = oa_diff
 dependencies[] = oa_dashboard
 dependencies[] = oa_notifications
 dependencies[] = og_session_context
@@ -73,6 +74,7 @@ dependencies[] = oa_documents
 dependencies[] = oa_messages
 dependencies[] = oa_river
 dependencies[] = oa_panopoly_users
+dependencies[] = oa_styles
 
 ; Development Modules - Temporary
 dependencies[] = devel

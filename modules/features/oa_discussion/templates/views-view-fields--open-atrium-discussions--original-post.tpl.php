@@ -24,7 +24,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class='oa-list well'>
+<div class='oa-list well clearfix'>
   <div class='pull-right user-badge'>
     <?php print $name; ?>
     <?php print $field_user_picture; ?>
@@ -33,5 +33,10 @@
     <?php print $created; ?>
     <?php print $title; ?>
     <?php print $body; ?>
+    <div class="links">
+      <a href='#'>reply</a>
+      <?php print $edit_node; ?>
+      <?php print $delete_node; ?>
+    </div>
   </div>
 </div>
