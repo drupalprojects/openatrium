@@ -7,6 +7,67 @@
 include_once 'oa_messages.features.inc';
 
 /**
+ * Helper function to create a specific message type
+ * Fills in the wrapper fields for group and section
+ * @param  string $message_type machine name of message
+ * @param  object $node         the node to assign (if any)
+ * @param boolean $send TRUE/FALSE to trigger notifications
+ * @return object               the message entity created
+ */
+function oa_messages_create($message_type, $node = NULL, $send = TRUE) {
+  global $user;
+
+  if (isset($node)) {
+    $account = user_load($node->uid);
+  }
+  else {
+    $account = $user;
+  }
+
+  // allow other modules to alter the message type to be created
+  $context = array('node' => $node);
+  drupal_alter('oa_messages_type', $message_type, $context);
+  $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => time()));
+
+  // Save reference to the node in the node reference field.
+  $wrapper = entity_metadata_wrapper('message', $message);
+  if (isset($node)) {
+    if (isset($wrapper->field_oa_node_ref)) {
+      $wrapper->field_oa_node_ref = $node;
+    }
+    $group_id = field_get_items('node', $node, OA_GROUP_FIELD);
+    if (isset($group_id[0]['target_id'])) {
+      $wrapper->field_oa_message_group = $group_id[0]['target_id'];
+    }
+    $section_id = field_get_items('node', $node, OA_SECTION_FIELD);
+    if (isset($section_id[0]['target_id'])) {
+      $wrapper->field_oa_message_section = $section_id[0]['target_id'];
+    }
+  }
+
+  // allow other modules to add stuff to the wrapper
+  $context = array(
+    'message_type' => $message_type,
+    'message' => $message,
+    'node' => $node,
+  );
+
+  drupal_alter('oa_messages_create', $wrapper, $context);
+
+  $wrapper->save();
+
+  if ($send && isset($node)) {
+    $options = array(
+      'rendered fields' => array(
+        'message_notify_email_subject' => 'field_message_rendered_subject',
+        'message_notify_email_body' => 'field_message_rendered_body',
+      ),
+    );
+    message_subscribe_process_message('node', $node, $message, array('email' => $options));
+  }
+}
+
+/**
  * Implements hook_node_insert().
  */
 function oa_messages_node_insert($node) {
@@ -15,21 +76,7 @@ function oa_messages_node_insert($node) {
     // only create messages for node types we care about
     return;
   }
-  $message_type = 'oa_create';
-  $account = user_load($node->uid);
-  $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
-  // Save reference to the node in the node reference field.
-  $wrapper = entity_metadata_wrapper('message', $message);
-  $wrapper->field_oa_node_ref = $node;
-  $wrapper->field_oa_group_id = $_SESSION['og_context']['gid'];
-  $wrapper->save();
-  $options = array(
-    'rendered fields' => array(
-      'message_notify_email_subject' => 'field_message_rendered_subject',
-      'message_notify_email_body' => 'field_message_rendered_body',
-    ),
-  );
-  message_subscribe_process_message('node', $node, $message, array('email' => $options));
+  $message = oa_messages_create('oa_create', $node);
 }
 
 function oa_messages_node_update($node) {
@@ -38,21 +85,7 @@ function oa_messages_node_update($node) {
     // only create messages for node types we care about
     return;
   }
-  $message_type = 'oa_update';
-  $account = user_load($node->uid);
-  $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
-  // Save reference to the node in the node reference field.
-  $wrapper = entity_metadata_wrapper('message', $message);
-  $wrapper->field_oa_node_ref = $node;
-  $wrapper->field_oa_group_id = $_SESSION['og_context']['gid'];
-  $wrapper->save();
-  $options = array(
-    'rendered fields' => array(
-      'message_notify_email_subject' => 'field_message_rendered_subject',
-      'message_notify_email_body' => 'field_message_rendered_body',
-    ),
-  );
-  message_subscribe_process_message('node', $node, $message, array('email' => $options));
+  $message = oa_messages_create('oa_update', $node);
 }
 
 function oa_messages_node_delete($node) {
@@ -61,19 +94,29 @@ function oa_messages_node_delete($node) {
     // only create messages for node types we care about
     return;
   }
-  $message_type = 'oa_delete';
-  $account = user_load($node->uid);
-  $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
-  // Save reference to the node in the node reference field.
-  $wrapper = entity_metadata_wrapper('message', $message);
-  $wrapper->field_oa_node_ref = $node;
-  $wrapper->field_oa_group_id = $_SESSION['og_context']['gid'];
-  $wrapper->save();
-  $options = array(
-    'rendered fields' => array(
-      'message_notify_email_subject' => 'field_message_rendered_subject',
-      'message_notify_email_body' => 'field_message_rendered_body',
-    ),
-  );
-  message_subscribe_process_message('node', $node, $message, array('email' => $options));
+  $message = oa_messages_create('oa_delete', $node);
+}
+
+/**
+ * Implements hook_oa_messages_create_alter
+ * Add additional fields to wrapper for messages
+ */
+function oa_messages_oa_messages_create_alter(&$wrapper, $context) {
+  if ($context['message_type'] == 'oa_delete') {
+    // save some values from the node that is about to be deleted
+    $node = $context['node'];
+    if (isset($node)) {
+      if (isset($wrapper->field_deleted_title)) {
+        $wrapper->field_deleted_title = $node->title;
+      }
+      if (isset($wrapper->field_deleted_summary)) {
+        $body = field_get_items('node', $node, 'body');
+        $body_value = field_view_value('node', $node, 'body', $body[0], array(
+            'label'=>'hidden',
+            'type' => 'text_summary_or_trimmed',
+          ));
+        $wrapper->field_deleted_summary->set(array('value' => render($body_value)));
+      }
+    }
+  }
 }

@@ -30,9 +30,29 @@ function oa_messages_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "\\u003Cp\\u003EContent has been created.\\u003C\\/p\\u003E",
+          "value" : "[message:field-oa-message-group] : [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]",
+          "format" : "plain_text",
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group] : [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "\\u003Cp\\u003E[message:field-oa-node-ref:body]\\u003C\\/p\\u003E",
           "format" : "panopoly_wysiwyg_text",
-          "safe_value" : "\\u003Cp\\u003EContent has been created.\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-node-ref:body]\\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E created new [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E created new [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "[message:field-oa-node-ref:body]",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E [message:field-oa-node-ref:body] \\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "\\u003Cp\\u003E\\u003Cspan\\u003E[message:field-oa-node-ref:body]\\u003C\\/span\\u003E\\u003C\\/p\\u003E",
+          "format" : "panopoly_wysiwyg_text",
+          "safe_value" : "\\u003Cp\\u003E\\u003Cspan\\u003E[message:field-oa-node-ref:body]\\u003C\\/span\\u003E\\u003C\\/p\\u003E\\n"
         }
       ]
     }
@@ -48,9 +68,29 @@ function oa_messages_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "\\u003Cp\\u003EContent has been deleted.\\u003C\\/p\\u003E",
-          "format" : "panopoly_wysiwyg_text",
-          "safe_value" : "\\u003Cp\\u003EContent has been deleted.\\u003C\\/p\\u003E\\n"
+          "value" : "@{message:user:name} deleted: [message:field-deleted-title]",
+          "format" : "plain_text",
+          "safe_value" : "\\u003Cp\\u003E@{message:user:name} deleted: [message:field-deleted-title]\\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "@{message:user:name} deleted [message:field-deleted-title]",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E @{message:user:name} deleted [message:field-deleted-title] \\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted: [message:field-deleted-title]",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted: [message:field-deleted-title] \\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "[message:field-deleted-summary:value]",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E [message:field-deleted-summary:value] \\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "[message:field-deleted-summary:value]",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E [message:field-deleted-summary:value] \\u003C\\/p\\u003E\\n"
         }
       ]
     }
@@ -66,9 +106,29 @@ function oa_messages_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "\\u003Cp\\u003EContent has been UPDATED.\\u003C\\/p\\u003E",
+          "value" : "[message:field-oa-message-group] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]",
+          "format" : "plain_text",
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "\\u003Cp\\u003EDetails: [message:field-oa-node-ref:log]\\u003C\\/p\\u003E\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E",
           "format" : "panopoly_wysiwyg_text",
-          "safe_value" : "\\u003Cp\\u003EContent has been UPDATED.\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EDetails: [message:field-oa-node-ref:log]\\u003C\\/p\\u003E\\n\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated [message:field-oa-node-ref:content-type] : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:title]\\u003C\\/a\\u003E",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated [message:field-oa-node-ref:content-type] : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "Details: @{message:field-oa-node-ref:log}",
+          "format" : "full_html",
+          "safe_value" : "Details: @{message:field-oa-node-ref:log}"
+        },
+        {
+          "value" : "[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E [message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}] \\u003C\\/p\\u003E\\n"
         }
       ]
     }
