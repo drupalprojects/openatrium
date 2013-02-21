@@ -379,7 +379,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(
+        'well_modifier' => 'well-small',
+      ),
+      'style' => 'oa_styles_well',
     );
     $pane->css = array();
     $pane->extras = array();
