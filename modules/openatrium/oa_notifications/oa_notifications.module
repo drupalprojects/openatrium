@@ -65,15 +65,15 @@ function oa_notifications_get_teams_for_group($gid = NULL) {
 }
 
 /**
- * Get the listing of users that are in the specified group, or the current
- * group is no group is specified.
+ * Get the listing of user with that are in the specified group, or the current
+ * group is no group is specified that have access to the provided node.
  *
  * @TODO: Consider the case where user.name is the not name to be used.
  *
  * @param int $gid
  *    The Group ID
  */
-function oa_notifications_get_users_for_group($gid = NULL) {
+function oa_notifications_get_users_for_node($node, $gid = NULL) {
   if (!isset($gid)) {
     $gid = $_SESSION[OG_SESSION_CONTEXT_ID];
   }
@@ -81,9 +81,21 @@ function oa_notifications_get_users_for_group($gid = NULL) {
   $query->rightJoin('og_membership', 'og', 'u.uid = og.etid');
   $query->fields('u', array('uid', 'name'))
       ->condition('og.entity_type', 'user')
-      ->condition('og.gid', $gid)
-      ->addTag('node_access');
-  return $query->execute()->fetchAllAssoc('uid');
+      ->condition('og.gid', $gid);
+
+  $results = $query->execute()->fetchAllAssoc('uid');
+
+  // @TODO: This won't scale. We need users that have access to the given node
+  // which is controlled by node_access grants, etc.  Not easily queried.
+  // The move to an autocomplete might make this potential performance problem disappear.
+  $users = user_load_multiple(array_keys($results));
+  foreach ($users as $uid => $user) {
+    // @TODO: Need a full user object here... :(
+    if (!node_access('view', $node, $user)) {
+      unset($users[$uid]);
+    }
+  }
+  return $users;
 }
 
 /**

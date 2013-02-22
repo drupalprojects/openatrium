@@ -120,7 +120,7 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
     '#default_value' => array_key_exists('team', $notifications) ? array_keys($notifications['team']) : array(),
   );
 
-  $group_users = oa_notifications_get_users_for_group();
+  $group_users = oa_notifications_get_users_for_node($node);
   $form['user'] = array(
     '#type' => 'select',
     '#title' => t('Users'),
