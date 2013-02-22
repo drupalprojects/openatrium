@@ -152,3 +152,27 @@ function oa_notifications_save_for_source($source_id, $source_type, $notificatio
   }
 }
 
+/**
+ * Implements hook_node_delete().
+ *
+ * Cleanup the notifications for teams and organizations as they are removed.
+ *
+ * @param $node
+ *    The Node being deleted
+ */
+function oa_notifications_node_delete($node) {
+  if ($node->type == 'oa_team') {
+    $target_type = 'team';
+  }
+  else if ($node->type == 'oa_organization') {
+    $target_type = 'organization';
+  }
+
+  if (isset($target_type)) {
+    db_delete('oa_notifications')
+        ->condition('target_id', $node->nid)
+        ->condition('target_type', $target_type)
+        ->execute();
+  }
+}
+
