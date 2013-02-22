@@ -10,16 +10,24 @@ include_once 'oa_messages.features.inc';
  * Helper function to create a specific message type
  * Fills in the wrapper fields for group and section
  * @param  string $message_type machine name of message
- * @param int     $entity_id id of entity being referenced
+ * @param int     $entity entity or entity_id of entity being referenced
  * @param string  $entity_type type of entity being referenced
+ * @param string  $text optional text to be added to message
  * @param array   $args optional data to send to hooks
  * @param boolean $send TRUE/FALSE to trigger notifications
  * @return object               the message entity created
  */
-function oa_messages_create($message_type, $entity_id, $entity_type = 'node', $args = NULL, $send = TRUE) {
+function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node', $text = '', $args = NULL, $send = TRUE) {
   global $user;
 
-  $entity = array_shift( entity_load($entity_type, array($entity_id)));
+  if (!empty($entity) && !is_object($entity)) {
+    $entity_id = $entity;
+    $entity = array_shift( entity_load($entity_type, array($entity_id)));
+  }
+  else {
+    $entity_info = entity_get_info($entity_type);
+    $entity_id = $entity->{$entity_info['entity keys']['id']};
+  }
   if ($entity_type == 'user') {
     $account = $entity;
   }
@@ -36,45 +44,51 @@ function oa_messages_create($message_type, $entity_id, $entity_type = 'node', $a
     'entity' => $entity,
     'entity_type' => $entity_type,
     'entity_id' => $entity_id,
+    'text' => $text,
     'arguments' => $args,
   );
   drupal_alter('oa_messages_type', $message_type, $context);
-  $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => time()));
+  if (!empty($message_type)) {
+    $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => time()));
 
-  // Save reference to the node in the node reference field.
-  $wrapper = entity_metadata_wrapper('message', $message);
-  $entity_wrapper  = entity_metadata_wrapper($entity_type, $entity_id);
-  if (isset($entity_wrapper->{OA_GROUP_FIELD})) {
-    $wrapper->field_oa_message_group = $entity_wrapper->{OA_GROUP_FIELD}->value();
-  }
-  if (isset($entity_wrapper->{OA_SECTION_FIELD})) {
-    $wrapper->field_oa_message_section = $entity_wrapper->{OA_SECTION_FIELD}->value();
-  }
-  if ($entity_type == 'node') {
-    if (isset($wrapper->field_oa_node_ref)) {
-      $wrapper->field_oa_node_ref = $entity_id;
+    // Save reference to the node in the node reference field.
+    $wrapper = entity_metadata_wrapper('message', $message);
+    $entity_wrapper  = entity_metadata_wrapper($entity_type, $entity_id);
+    if (isset($entity_wrapper->{OA_GROUP_FIELD})) {
+      $wrapper->field_oa_message_group = $entity_wrapper->{OA_GROUP_FIELD}->value();
     }
-  }
+    if (isset($entity_wrapper->{OA_SECTION_FIELD})) {
+      $wrapper->field_oa_message_section = $entity_wrapper->{OA_SECTION_FIELD}->value();
+    }
+    if (!empty($text)) {
+      $wrapper->field_oa_message_text->set(array('value' => $text, 'format' => 'full_html'));
+    }
+    if ($entity_type == 'node') {
+      if (isset($wrapper->field_oa_node_ref)) {
+        $wrapper->field_oa_node_ref = $entity_id;
+      }
+    }
 
-  // allow other modules to add stuff to the wrapper
-  $context += array(
-    'message_type' => $message_type,
-    'message' => $message,
-    'entity_wrapper' => $entity_wrapper,
-  );
-
-  drupal_alter('oa_messages_create', $wrapper, $context);
-
-  $wrapper->save();
-
-  if ($send && isset($node)) {
-    $options = array(
-      'rendered fields' => array(
-        'message_notify_email_subject' => 'field_message_rendered_subject',
-        'message_notify_email_body' => 'field_message_rendered_body',
-      ),
+    // allow other modules to add stuff to the wrapper
+    $context += array(
+      'message_type' => $message_type,
+      'message' => $message,
+      'entity_wrapper' => $entity_wrapper,
     );
-    message_subscribe_process_message('node', $node, $message, array('email' => $options));
+
+    drupal_alter('oa_messages_create', $wrapper, $context);
+
+    $wrapper->save();
+
+    if ($send && isset($node)) {
+      $options = array(
+        'rendered fields' => array(
+          'message_notify_email_subject' => 'field_message_rendered_subject',
+          'message_notify_email_body' => 'field_message_rendered_body',
+        ),
+      );
+      message_subscribe_process_message('node', $node, $message, array('email' => $options));
+    }
   }
 }
 
@@ -87,7 +101,7 @@ function oa_messages_node_insert($node) {
     // only create messages for node types we care about
     return;
   }
-  $message = oa_messages_create('oa_create', $node->nid);
+  $message = oa_messages_create('oa_create', $node);
 }
 
 function oa_messages_node_update($node) {
@@ -96,7 +110,7 @@ function oa_messages_node_update($node) {
     // only create messages for node types we care about
     return;
   }
-  $message = oa_messages_create('oa_update', $node->nid);
+  $message = oa_messages_create('oa_update', $node, 'node', t('Changes:'));
 }
 
 function oa_messages_node_delete($node) {
@@ -105,7 +119,7 @@ function oa_messages_node_delete($node) {
     // only create messages for node types we care about
     return;
   }
-  $message = oa_messages_create('oa_delete', $node->nid);
+  $message = oa_messages_create('oa_delete', $node);
 }
 
 /**
@@ -113,8 +127,9 @@ function oa_messages_node_delete($node) {
  */
 function oa_messages_og_membership_insert($og_membership) {
   if ($og_membership->entity_type == 'user') {
+    $group = node_load($og_membership->gid);
     $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
-      array('action' => 'added', 'group' => $og_membership->gid));
+      t('added to ' . $group->type), $og_membership->gid);
   }
 }
 
@@ -125,11 +140,11 @@ function oa_messages_og_membership_update($og_membership) {
   if ($og_membership->entity_type == 'user') {
     if ($og_membership->original->state != OG_STATE_ACTIVE && $og_membership->state == OG_STATE_ACTIVE) {
       $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
-        array('action' => 'approved', 'group' => $og_membership->gid));
+        'approved', $og_membership->gid);
     }
     if ($og_membership->original->state != OG_STATE_BLOCKED && $og_membership->state == OG_STATE_BLOCKED) {
       $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
-        array('action' => 'blocked', 'group' => $og_membership->gid));
+        'blocked', $og_membership->gid);
     }
   }
 }
@@ -139,8 +154,9 @@ function oa_messages_og_membership_update($og_membership) {
  */
 function oa_messages_og_membership_delete($og_membership) {
   if ($og_membership->entity_type == 'user') {
+    $group = node_load($og_membership->gid);
     $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
-      array('action' => 'removed', 'group' => $og_membership->gid));
+      t('removed from ' . $group->type), $og_membership->gid);
   }
 }
 
@@ -165,6 +181,24 @@ function oa_messages_oa_messages_create_alter(&$wrapper, $context) {
       }
       break;
 
+    case 'oa_update':
+      if (($context['entity_type'] == 'node') && isset($context['entity'])) {
+        $node = $context['entity'];
+        if ($node->type == 'oa_team') {
+          // modify message when changing membership in a team
+          $old_users = field_get_items('node', $node->original, 'field_oa_team_users');
+          $new_users = field_get_items('node', $node, 'field_oa_team_users');
+          $output = theme('oa_team_update', array(
+            'old_users' => $old_users,
+            'new_users' => $new_users,
+          ));
+
+          // override normal message text with themed team diff
+          $wrapper->field_oa_message_text->set(array('value' => $output, 'format' => 'full_html'));
+        }
+      }
+      break;
+
     case 'oa_member':
       if (isset($wrapper->field_member_action)) {
         $wrapper->field_member_action = $context['arguments']['action'];
@@ -172,4 +206,68 @@ function oa_messages_oa_messages_create_alter(&$wrapper, $context) {
       $wrapper->field_oa_message_group = $context['arguments']['group'];
       break;
   }
+}
+
+/**
+ * Implements hook_theme()
+ */
+function oa_messages_theme() {
+  return array(
+    'oa_team_update' => array(
+      'variables' => array('old_users' => array(), 'new_users' => array()),
+    ),
+  );
+}
+/**
+ * Theme function for showing who is added and removed from team
+ * @param  $vars['old_users'] the old value of field_oa_team_users
+ * @return $vars['new_users'] the new value of field_oa_team_users
+ */
+function theme_oa_team_update($vars) {
+  $old_users = $vars['old_users'];
+  $new_users = $vars['new_users'];
+
+  // convert values of field into a simple array of uids
+  $old = array();
+  $new = array();
+  foreach ($old_users as $item) {
+    $old[] = $item['target_id'];
+  }
+  foreach ($new_users as $item) {
+    $new[] = $item['target_id'];
+  }
+
+  // grab all user's real names
+  $uids = array_merge($old, $new);
+  $users = entity_load('user', $uids);
+  foreach ($users as $uid => $user) {
+    // handle case where realname isn't set or installed
+    if (empty($user->realname)) {
+      $users[$uid]->realname = $user->name;
+    }
+  }
+
+  $output = '';
+
+  // determine who was added
+  $diff = array_diff($new, $old);
+  $add_links = array();
+  foreach ($diff as $uid) {
+    $add_links[] = l($users[$uid]->realname, 'users/' . $uid);
+  }
+  if (!empty($add_links)) {
+    $output .= t('Added ') . implode(', ', $add_links) . '. ';
+  }
+
+  // determine who was removed
+  $diff = array_diff($old, $new);
+  $remove_links = array();
+  foreach ($diff as $uid) {
+    $remove_links[] = l($users[$uid]->realname, 'users/' . $uid);
+  }
+  if (!empty($remove_links)) {
+    $output .= t('Removed ') . implode(', ', $remove_links) . '. ';
+  }
+
+  return $output;
 }
