@@ -25,7 +25,7 @@
         <?php if ($u['access']): ?>
           <span class="label label-info">
         <?php else: ?>
-          <span class="label label-important" data-toggle="tooltip" title="<?php print t('No current access'); ?>">
+          <span class="label label-important" data-toggle="tooltip" title="<?php print t('Access has been revoked'); ?>">
         <?php endif; ?><?php print $u['name']; ?></span>
       <?php endforeach; ?>
     </div>
