@@ -317,7 +317,7 @@ function oa_layouts_panelizer_defaults() {
         'oa_section' => 'oa_section',
         'oa_team' => 'oa_team',
         'oa_discussion_post' => 0,
-        'oa_documents_post' => 0,
+        'oa_pages_page' => 0,
         'oa_group' => 0,
         'oa_organization' => 0,
         'panopoly_page' => 0,
@@ -591,7 +591,7 @@ function oa_layouts_panelizer_defaults() {
         'oa_section' => 'oa_section',
         'oa_team' => 'oa_team',
         'oa_discussion_post' => 0,
-        'oa_documents_post' => 0,
+        'oa_pages_page' => 0,
         'oa_group' => 0,
         'oa_organization' => 0,
         'panopoly_page' => 0,
@@ -976,28 +976,21 @@ function oa_layouts_panelizer_defaults() {
     $pane->pid = 'new-24';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_content-panel_pane_2';
+    $pane->subtype = 'oa_recent_activity-section_activity';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'items_per_page' => '10',
+      'context' => array(
+        0 => 'panelizer',
+        1 => 'empty',
+      ),
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
       'exposed' => array(
-        'type' => array(
-          'oa_discussion_post' => 'oa_discussion_post',
-        ),
-        'widget_title' => 'Recent Discussions',
-        'use_pager' => 1,
-        'pager_id' => '0',
         'sort_by' => NULL,
         'sort_order' => NULL,
       ),
-      'context' => array(
-        1 => 'panelizer',
-      ),
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_mode' => 'teaser',
-      'widget_title' => 'Recent Discussions',
       'use_pager' => NULL,
       'pager_id' => NULL,
       'offset' => NULL,
@@ -1027,21 +1020,22 @@ function oa_layouts_panelizer_defaults() {
     $pane->configuration = array(
       'oa_widgets_types' => array(
         'oa_discussion_post' => 'oa_discussion_post',
-        'oa_documents_post' => 'oa_documents_post',
+        'oa_pages_page' => 'oa_pages_page',
         'oa_group' => 0,
         'oa_organization' => 0,
         'oa_section' => 0,
         'oa_team' => 0,
         'panopoly_page' => 0,
         'group_article' => 0,
+        'oa_documents_post' => 0,
       ),
       'oa_widgets_use_all' => TRUE,
       'return' => 'Finish',
       'cancel' => 'Cancel',
       'override_title' => 0,
       'override_title_text' => '',
-      'form_build_id' => 'form-tgMZSPjytPpLcU1uBkoPBCEXf6GNViFx1V-FpxtiSdQ',
-      'form_token' => 'kiQSddYUuMh58if0Y8q8bvZG5EqYhlYm1Wz94OcraDs',
+      'form_build_id' => 'form-GmGjqaj6uN8Gd1Y9_p1_Mrhzdxri10zUfORVp-ISzBo',
+      'form_token' => 'xDRyA2ZlrWbx2Q9zke81MDb3gj0cIZzC3Cj7dG2G3Dc',
       'form_id' => 'oa_widgets_add_content_edit_form',
       'op' => 'Finish',
     );

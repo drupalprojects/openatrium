@@ -4,4 +4,4 @@
  * Code for the OpenAtrium Documents feature.
  */
 
-include_once 'oa_documents.features.inc';
+include_once 'oa_pages.features.inc';

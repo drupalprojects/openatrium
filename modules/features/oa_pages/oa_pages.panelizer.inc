@@ -1,22 +1,22 @@
 <?php
 /**
  * @file
- * oa_documents.panelizer.inc
+ * oa_pages.panelizer.inc
  */
 
 /**
  * Implements hook_panelizer_defaults().
  */
-function oa_documents_panelizer_defaults() {
+function oa_pages_panelizer_defaults() {
   $export = array();
 
   $panelizer = new stdClass();
   $panelizer->disabled = FALSE; /* Edit this to true to make a default panelizer disabled initially */
   $panelizer->api_version = 1;
-  $panelizer->name = 'node:oa_documents_post:default';
+  $panelizer->name = 'node:oa_pages_page:default';
   $panelizer->title = 'Default';
   $panelizer->panelizer_type = 'node';
-  $panelizer->panelizer_key = 'oa_documents_post';
+  $panelizer->panelizer_key = 'oa_pages_page';
   $panelizer->no_blocks = FALSE;
   $panelizer->css_id = '';
   $panelizer->css = '';
@@ -211,7 +211,7 @@ function oa_documents_panelizer_defaults() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-3';
   $panelizer->display = $display;
-  $export['node:oa_documents_post:default'] = $panelizer;
+  $export['node:oa_pages_page:default'] = $panelizer;
 
   return $export;
 }

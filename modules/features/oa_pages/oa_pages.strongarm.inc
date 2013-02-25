@@ -1,19 +1,19 @@
 <?php
 /**
  * @file
- * oa_documents.strongarm.inc
+ * oa_pages.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function oa_documents_strongarm() {
+function oa_pages_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__oa_documents_post';
+  $strongarm->name = 'field_bundle_settings_node__oa_pages_page';
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
@@ -53,53 +53,53 @@ function oa_documents_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__oa_documents_post'] = $strongarm;
+  $export['field_bundle_settings_node__oa_pages_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_oa_documents_post';
+  $strongarm->name = 'language_content_type_oa_pages_page';
   $strongarm->value = '0';
-  $export['language_content_type_oa_documents_post'] = $strongarm;
+  $export['language_content_type_oa_pages_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_oa_documents_post';
+  $strongarm->name = 'menu_options_oa_pages_page';
   $strongarm->value = array(
     0 => 'main-menu',
   );
-  $export['menu_options_oa_documents_post'] = $strongarm;
+  $export['menu_options_oa_pages_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_oa_documents_post';
+  $strongarm->name = 'menu_parent_oa_pages_page';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_oa_documents_post'] = $strongarm;
+  $export['menu_parent_oa_pages_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_oa_documents_post';
+  $strongarm->name = 'node_options_oa_pages_page';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_oa_documents_post'] = $strongarm;
+  $export['node_options_oa_pages_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_oa_documents_post';
+  $strongarm->name = 'node_preview_oa_pages_page';
   $strongarm->value = '1';
-  $export['node_preview_oa_documents_post'] = $strongarm;
+  $export['node_preview_oa_pages_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_oa_documents_post';
+  $strongarm->name = 'node_submitted_oa_pages_page';
   $strongarm->value = 1;
-  $export['node_submitted_oa_documents_post'] = $strongarm;
+  $export['node_submitted_oa_pages_page'] = $strongarm;
 
   return $export;
 }
