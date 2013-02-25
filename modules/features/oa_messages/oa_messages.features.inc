@@ -35,9 +35,9 @@ function oa_messages_default_message_type() {
           "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group] : [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "\\u003Cp\\u003E[message:field-oa-message-text]\\u0026nbsp;[message:field-oa-node-ref:body]\\u003C\\/p\\u003E",
+          "value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u0026nbsp;[message:field-oa-node-ref:body]\\u003C\\/p\\u003E",
           "format" : "panopoly_wysiwyg_text",
-          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-text]\\u00a0[message:field-oa-node-ref:body]\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u00a0[message:field-oa-node-ref:body]\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E created new [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E",
@@ -45,9 +45,9 @@ function oa_messages_default_message_type() {
           "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E created new [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "[message:field-oa-message-text] [message:field-oa-node-ref:body]",
+          "value" : "[message:field-oa-message-text:value] [message:field-oa-node-ref:body]",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:field-oa-message-text] [message:field-oa-node-ref:body] \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E [message:field-oa-message-text:value] [message:field-oa-node-ref:body] \\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "\\u003Cp\\u003E\\u003Cspan\\u003E[message:field-oa-node-ref:body]\\u003C\\/span\\u003E\\u003C\\/p\\u003E",
@@ -95,6 +95,34 @@ function oa_messages_default_message_type() {
       ]
     }
   }');
+  $items['oa_member'] = entity_import('message_type', '{
+    "name" : "oa_member",
+    "description" : "Open Atrium Member",
+    "argument_keys" : [],
+    "argument" : [],
+    "category" : "message_type",
+    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" } },
+    "language" : "en",
+    "arguments" : null,
+    "message_text" : { "und" : [
+        {
+          "value" : "[message:field-oa-message-group:title] : @{message:user:name} updated Group",
+          "format" : "plain_text",
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group:title] : @{message:user:name} updated Group\\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "[message:field-oa-message-group:title] : [message:field-oa-message-text:value]",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E [message:field-oa-message-group:title] : [message:field-oa-message-text:value] \\u003C\\/p\\u003E\\n"
+        },
+        {
+          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Group : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-group:nid]\\u0022\\u003E[message:field-oa-message-group:title]\\u003C\\/a\\u003E",
+          "format" : "panopoly_html_text",
+          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Group : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-group:nid]\\u0022\\u003E[message:field-oa-message-group:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
+        }
+      ]
+    }
+  }');
   $items['oa_update'] = entity_import('message_type', '{
     "name" : "oa_update",
     "description" : "Open Atrium Update Content",
@@ -111,9 +139,9 @@ function oa_messages_default_message_type() {
           "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "\\u003Cp\\u003E[message:field-oa-message-text]\\u0026nbsp;[message:field-oa-node-ref:log]\\u003C\\/p\\u003E\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E",
+          "value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u0026nbsp;[message:field-oa-node-ref:log]\\u003C\\/p\\u003E\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E",
           "format" : "panopoly_wysiwyg_text",
-          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-text]\\u00a0[message:field-oa-node-ref:log]\\u003C\\/p\\u003E\\n\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u00a0[message:field-oa-node-ref:log]\\u003C\\/p\\u003E\\n\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated [message:field-oa-node-ref:content-type] : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:title]\\u003C\\/a\\u003E",

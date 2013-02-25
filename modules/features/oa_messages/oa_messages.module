@@ -24,9 +24,12 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     $entity_id = $entity;
     $entity = array_shift( entity_load($entity_type, array($entity_id)));
   }
-  else {
+  elseif (!empty($entity) && is_object($entity)) {
     $entity_info = entity_get_info($entity_type);
     $entity_id = $entity->{$entity_info['entity keys']['id']};
+  }
+  else {
+    $entity_id = NULL;
   }
   if ($entity_type == 'user') {
     $account = $entity;
@@ -38,32 +41,40 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     $account = $user;
   }
 
+  if (isset($entity)) {
+    $entity_wrapper  = entity_metadata_wrapper($entity_type, $entity);
+  }
+  else {
+    $entity_wrapper = NULL;
+  }
+
   // allow other modules to alter the message type to be created
   $context = array(
     'account' => $account,
     'entity' => $entity,
     'entity_type' => $entity_type,
     'entity_id' => $entity_id,
+    'entity_wrapper' => $entity_wrapper,
     'text' => $text,
     'arguments' => $args,
   );
   drupal_alter('oa_messages_type', $message_type, $context);
+
   if (!empty($message_type)) {
     $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => time()));
 
     // Save reference to the node in the node reference field.
     $wrapper = entity_metadata_wrapper('message', $message);
-    $entity_wrapper  = entity_metadata_wrapper($entity_type, $entity_id);
-    if (isset($entity_wrapper->{OA_GROUP_FIELD})) {
+    if (isset($entity_wrapper->{OA_GROUP_FIELD}) && isset($wrapper->field_oa_message_group)) {
       $wrapper->field_oa_message_group = $entity_wrapper->{OA_GROUP_FIELD}->value();
     }
-    if (isset($entity_wrapper->{OA_SECTION_FIELD})) {
+    if (isset($entity_wrapper->{OA_SECTION_FIELD}) && isset($wrapper->field_oa_message_section)) {
       $wrapper->field_oa_message_section = $entity_wrapper->{OA_SECTION_FIELD}->value();
     }
-    if (!empty($text)) {
+    if (isset($wrapper->field_oa_message_text)) {
       $wrapper->field_oa_message_text->set(array('value' => $text, 'format' => 'full_html'));
     }
-    if ($entity_type == 'node') {
+    if (isset($entity) && ($entity_type == 'node')) {
       if (isset($wrapper->field_oa_node_ref)) {
         $wrapper->field_oa_node_ref = $entity_id;
       }
@@ -73,21 +84,20 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     $context += array(
       'message_type' => $message_type,
       'message' => $message,
-      'entity_wrapper' => $entity_wrapper,
     );
 
     drupal_alter('oa_messages_create', $wrapper, $context);
 
     $wrapper->save();
 
-    if ($send && isset($node)) {
+    if ($send && isset($entity) && ($entity_type == 'node')) {
       $options = array(
         'rendered fields' => array(
           'message_notify_email_subject' => 'field_message_rendered_subject',
           'message_notify_email_body' => 'field_message_rendered_body',
         ),
       );
-      message_subscribe_process_message('node', $node, $message, array('email' => $options));
+      message_subscribe_process_message('node', $entity, $message, array('email' => $options));
     }
   }
 }
@@ -123,13 +133,27 @@ function oa_messages_node_delete($node) {
 }
 
 /**
+ * Helper function to handle OG Membership messages
+ */
+function oa_messages_og_membership_prepare($og_membership, $action, $add_type = TRUE) {
+  $group = node_load($og_membership->gid);
+  $user = user_load($og_membership->etid);
+  $realname = !empty($user->realname) ? $user->realname :$user->name;
+  $text = l($realname, '/user/' . $user->uid) . ' ' . $action;
+  if ($add_type && isset($group->type)) {
+    $info = entity_get_info('node');
+    $text .= $info['bundles'][$group->type]['label'];
+  }
+  $message = oa_messages_create('oa_member', NULL, '', $text, $og_membership->gid);
+  return $message;
+}
+
+/**
  * Implements hook_og_membership_insert().
  */
 function oa_messages_og_membership_insert($og_membership) {
   if ($og_membership->entity_type == 'user') {
-    $group = node_load($og_membership->gid);
-    $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
-      t('added to ' . $group->type), $og_membership->gid);
+    oa_messages_og_membership_prepare( $og_membership, t('added to '));
   }
 }
 
@@ -139,12 +163,10 @@ function oa_messages_og_membership_insert($og_membership) {
 function oa_messages_og_membership_update($og_membership) {
   if ($og_membership->entity_type == 'user') {
     if ($og_membership->original->state != OG_STATE_ACTIVE && $og_membership->state == OG_STATE_ACTIVE) {
-      $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
-        'approved', $og_membership->gid);
+      oa_messages_og_membership_prepare( $og_membership, t('approved'), FALSE);
     }
     if ($og_membership->original->state != OG_STATE_BLOCKED && $og_membership->state == OG_STATE_BLOCKED) {
-      $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
-        'blocked', $og_membership->gid);
+      oa_messages_og_membership_prepare( $og_membership, t('blocked'), FALSE);
     }
   }
 }
@@ -154,9 +176,7 @@ function oa_messages_og_membership_update($og_membership) {
  */
 function oa_messages_og_membership_delete($og_membership) {
   if ($og_membership->entity_type == 'user') {
-    $group = node_load($og_membership->gid);
-    $message = oa_messages_create('oa_member', $og_membership->etid, 'user',
-      t('removed from ' . $group->type), $og_membership->gid);
+    oa_messages_og_membership_prepare($og_membership, t('removed from '));
   }
 }
 
@@ -200,10 +220,7 @@ function oa_messages_oa_messages_create_alter(&$wrapper, $context) {
       break;
 
     case 'oa_member':
-      if (isset($wrapper->field_member_action)) {
-        $wrapper->field_member_action = $context['arguments']['action'];
-      }
-      $wrapper->field_oa_message_group = $context['arguments']['group'];
+      $wrapper->field_oa_message_group = $context['arguments'];
       break;
   }
 }

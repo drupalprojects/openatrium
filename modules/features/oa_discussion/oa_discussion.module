@@ -34,3 +34,21 @@ function oa_discussion_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 }
+
+/**
+ * Implements hook_oa_messages_type_alter
+ * Override the oa_create message for discussion replies
+ */
+function oa_discussion_oa_messages_type_alter(&$message_type, $context) {
+  if ($message_type == 'oa_create') {
+    $entity_wrapper = $context['entity_wrapper'];
+    if (isset($entity_wrapper->oa_parent)) {
+      // just tells us the field exists, not if it points to a node
+      $parent = $entity_wrapper->oa_parent->value();
+      // cannot use isset directly on wrapper->parent->value() unfortunately
+      if (isset($parent)) {
+        $message_type = 'oa_reply';
+      }
+    }
+  }
+}
