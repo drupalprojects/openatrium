@@ -23,13 +23,19 @@ function oa_discussion_form_alter(&$form, &$form_state, $form_id) {
   global $user;
   if (strstr($form_id, 'node_form') && (arg(1) == 'add') &&
     (arg(2) == 'oa-discussion-post')) {
-    $nid = arg(3);
+    $parent_id = arg(3);
     // we are in an node/add form
     // Set the Parent field if we have an argument passed to us
-    if (!empty($nid)) {
+    $node = node_load($parent_id);
+    if (!empty($node)) {
+      // don't allow a child of a child...single level structure
+      $parent_parent = field_get_items('node', $node, 'oa_parent');
+      if (!empty($parent_parent[0]['target_id'])) {
+        $parent_id = $parent_parent[0]['target_id'];
+      }
       if (isset($form['oa_parent']) &&
         empty($form['oa_parent'][LANGUAGE_NONE]['#default_value'])) {
-        $form['oa_parent'][LANGUAGE_NONE]['#default_value'] = $nid;
+        $form['oa_parent'][LANGUAGE_NONE]['#default_value'] = $parent_id;
       }
     }
   }
