@@ -63,10 +63,18 @@ function oa_discussion_reply_edit_form_submit($form, &$form_state) {
  *    The form
  */
 function oa_discussion_reply_form($form, &$form_state, $node) {
+  $parent = field_get_items('node', $node, 'oa_parent');
+  $parent_id = !empty($parent[0]['target_id']) ? $parent[0]['target_id'] : 0;
+
   $form['oa_reply']['body'] = array(
     '#type' => 'text_format',
     '#default_value' => '',
     '#format' => 'panopoly_wysiwyg_text',
+  );
+
+  $form['oa_reply']['reply'] = array(
+    '#markup' => theme('oa_discussion_reply', array('parent_id' => $parent_id)),
+    '#suffix' => '&nbsp;',
   );
 
   $form['oa_reply']['submit'] = array(

@@ -31,15 +31,9 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
   else {
     $entity_id = NULL;
   }
-  if ($entity_type == 'user') {
-    $account = $entity;
-  }
-  else if (isset($entity->uid)) {
-    $account = user_load($entity->uid);
-  }
-  else {
-    $account = $user;
-  }
+
+  // uid of message is current user, not the user who created the node
+  $account = $user;
 
   if (isset($entity)) {
     $entity_wrapper  = entity_metadata_wrapper($entity_type, $entity);
