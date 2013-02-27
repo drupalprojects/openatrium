@@ -35,7 +35,6 @@ define('OA_GROUP_FIELD', 'og_group_ref');
  */
 define('OA_ACCESS_REALM', 'oa_access');
 
-
 /**
  * Determine if a user is a member of a team
  * @param  int $team_id

@@ -180,7 +180,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity_1']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['rendered_entity_1']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['rendered_entity_1']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['rendered_entity_1']['alter']['preserve_tags'] = '<b> <i> <strong> <em>';
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['preserve_tags'] = '<b> <i> <strong> <em> <a> <img>';
   $handler->display->display_options['fields']['rendered_entity_1']['element_type'] = 'span';
   $handler->display->display_options['fields']['rendered_entity_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['rendered_entity_1']['element_default_classes'] = FALSE;
@@ -205,6 +205,14 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity_2']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity_2']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity_2']['view_mode'] = 'oa_river_body';
+  /* Field: Message: Custom Text */
+  $handler->display->display_options['fields']['field_oa_message_text']['id'] = 'field_oa_message_text';
+  $handler->display->display_options['fields']['field_oa_message_text']['table'] = 'field_data_field_oa_message_text';
+  $handler->display->display_options['fields']['field_oa_message_text']['field'] = 'field_oa_message_text';
+  $handler->display->display_options['fields']['field_oa_message_text']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_message_text']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_oa_message_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_message_text']['element_default_classes'] = FALSE;
   /* Sort criterion: Message: Timestamp */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'message';

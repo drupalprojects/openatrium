@@ -39,25 +39,36 @@
       <?php print $field_oa_message_section; ?>
     <?php endif; ?>
   </div>
-  <div class='oa-list-header'>
-    <?php print $rendered_entity; ?>
-  </div>
-  <?php if (strlen(trim(strip_tags($rendered_entity_2))) > 0): ?>
-  <div class="accordion" id="oa-river-accordion<?php print $index; ?>">
-    <div>
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#oa-river-accordion<?php print $index; ?>" href="#oa-river-body<?php print $index; ?>">
-          <i class="icon-plus" vertical-align="middle"></i>&nbsp;<?php print $rendered_entity_1; ?>...
-        </a>
-      </div>
-      <div id="oa-river-body<?php print $index; ?>" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <?php print $rendered_entity_2; ?>
+  <?php if (strlen(trim(strip_tags($rendered_entity))) > 0): ?>
+    <div class='oa-list-header'>
+      <?php print $rendered_entity; ?>
+    </div>
+    <?php if (strlen(trim(strip_tags($rendered_entity_2))) > 0): ?>
+    <div class="accordion" id="oa-river-accordion<?php print $index; ?>">
+      <div>
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#oa-river-accordion<?php print $index; ?>" href="#oa-river-body<?php print $index; ?>">
+            <i class="icon-plus" vertical-align="middle"></i>&nbsp;
+            <?php print $field_oa_message_text; ?>
+            <?php print $rendered_entity_1; ?>...
+          </a>
+        </div>
+        <div id="oa-river-body<?php print $index; ?>" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <?php print $rendered_entity_2; ?>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <?php elseif (strlen(trim(strip_tags($rendered_entity_1))) > 0): ?>
-    <?php print $rendered_entity_1; ?>
+    <?php else: ?>
+      <div class='oa-list-header'>
+        <?php print $field_oa_message_text; ?>
+        <?php print $rendered_entity_1; ?>
+      </div>
+    <?php endif; ?>
+  <?php else: ?>
+    <div class='oa-list-header'>
+      <?php print $field_oa_message_text; ?>
+    </div>
   <?php endif; ?>
 </div>

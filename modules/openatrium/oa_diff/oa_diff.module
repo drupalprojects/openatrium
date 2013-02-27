@@ -40,7 +40,7 @@ function oa_diff_tokens($type, $tokens, array $data = array(), array $options = 
       if (!empty($values[0]) && ($values[0] == 'oa-diff')) {
         $revisons = node_revision_list($node);
         if (count($revisons) == 1) {
-          $replacements[$original] = t('(No previous revision available.)');
+          $replacements[$original] = '';
         }
         else {
           module_load_include('inc', 'diff', 'diff.pages');

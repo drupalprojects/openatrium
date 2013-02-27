@@ -1,17 +1,17 @@
 <?php
 /**
  * @file
- * oa_documents.features.field.inc
+ * oa_pages.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function oa_documents_field_default_fields() {
+function oa_pages_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-oa_documents_post-body'.
-  $fields['node-oa_documents_post-body'] = array(
+  // Exported field: 'node-oa_pages_page-body'.
+  $fields['node-oa_pages_page-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -40,7 +40,7 @@ function oa_documents_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'oa_documents_post',
+      'bundle' => 'oa_pages_page',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -89,14 +89,14 @@ function oa_documents_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-oa_documents_post-field_oa_documents_attachments'.
-  $fields['node-oa_documents_post-field_oa_documents_attachments'] = array(
+  // Exported field: 'node-oa_pages_page-field_oa_pages_attachments'.
+  $fields['node-oa_pages_page-field_oa_pages_attachments'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_oa_documents_attachments',
+      'field_name' => 'field_oa_pages_attachments',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -121,7 +121,7 @@ function oa_documents_field_default_fields() {
       'type' => 'file',
     ),
     'field_instance' => array(
-      'bundle' => 'oa_documents_post',
+      'bundle' => 'oa_pages_page',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -146,7 +146,7 @@ function oa_documents_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_oa_documents_attachments',
+      'field_name' => 'field_oa_pages_attachments',
       'label' => 'Attachments',
       'required' => 0,
       'settings' => array(
@@ -168,14 +168,14 @@ function oa_documents_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-oa_documents_post-field_oa_documents_media'.
-  $fields['node-oa_documents_post-field_oa_documents_media'] = array(
+  // Exported field: 'node-oa_pages_page-field_oa_pages_media'.
+  $fields['node-oa_pages_page-field_oa_pages_media'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_oa_documents_media',
+      'field_name' => 'field_oa_pages_media',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -200,7 +200,7 @@ function oa_documents_field_default_fields() {
       'type' => 'file',
     ),
     'field_instance' => array(
-      'bundle' => 'oa_documents_post',
+      'bundle' => 'oa_pages_page',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -225,7 +225,7 @@ function oa_documents_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_oa_documents_media',
+      'field_name' => 'field_oa_pages_media',
       'label' => 'Media',
       'required' => 0,
       'settings' => array(
@@ -265,8 +265,8 @@ function oa_documents_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-oa_documents_post-oa_parent'.
-  $fields['node-oa_documents_post-oa_parent'] = array(
+  // Exported field: 'node-oa_pages_page-oa_parent'.
+  $fields['node-oa_pages_page-oa_parent'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -307,7 +307,7 @@ function oa_documents_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'oa_documents_post',
+      'bundle' => 'oa_pages_page',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
@@ -362,8 +362,8 @@ function oa_documents_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-oa_documents_post-oa_section_ref'.
-  $fields['node-oa_documents_post-oa_section_ref'] = array(
+  // Exported field: 'node-oa_pages_page-oa_section_ref'.
+  $fields['node-oa_pages_page-oa_section_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -405,7 +405,7 @@ function oa_documents_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'oa_documents_post',
+      'bundle' => 'oa_pages_page',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -451,8 +451,8 @@ function oa_documents_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-oa_documents_post-og_group_ref'.
-  $fields['node-oa_documents_post-og_group_ref'] = array(
+  // Exported field: 'node-oa_pages_page-og_group_ref'.
+  $fields['node-oa_pages_page-og_group_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -501,7 +501,7 @@ function oa_documents_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'oa_documents_post',
+      'bundle' => 'oa_pages_page',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
