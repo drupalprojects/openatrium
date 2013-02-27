@@ -48,14 +48,14 @@ function oa_notifications_render_view($node) {
   if (array_key_exists('organization', $notifications)) {
     $orgs = node_load_multiple(array_keys($notifications['organization']));
     foreach ($orgs as $org) {
-      $render['#organization'][] = $org->title;
+      $render['#organization'][$org->nid] = $org->title;
     }
   }
 
   if (array_key_exists('team', $notifications)) {
     $teams = node_load_multiple(array_keys($notifications['team']));
     foreach ($teams as $team) {
-      $render['#team'][] = $team->title;
+      $render['#team'][$team->nid] = $team->title;
     }
   }
 
@@ -63,7 +63,8 @@ function oa_notifications_render_view($node) {
     $users = user_load_multiple(array_keys($notifications['user']));
     foreach ($users as $user) {
       $render['#user'][] = array(
-        'name' => $user->name,
+        'uid' => $user->uid,
+        'name' => $user->realname,
         'access' => node_access('view', $node, $user),
       );
     }
@@ -125,7 +126,7 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
     '#type' => 'select',
     '#title' => t('Users'),
     '#multiple' => TRUE,
-    '#options' => array_map(create_function('$user', 'return $user->name;'), $group_users),
+    '#options' => array_map(create_function('$user', 'return $user->realname;'), $group_users),
     '#default_value' => array_key_exists('user', $notifications) ? array_keys($notifications['user']) : array(),
   );
 

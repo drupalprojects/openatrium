@@ -66,7 +66,7 @@ function oa_notifications_get_teams_for_group($gid = NULL) {
 
 /**
  * Get the listing of user with that are in the specified group, or the current
- * group is no group is specified that have access to the provided node.
+ * group if no group is specified that also have access to the provided node.
  *
  * @TODO: Consider the case where user.name is the not name to be used.
  *
@@ -90,7 +90,6 @@ function oa_notifications_get_users_for_node($node, $gid = NULL) {
   // The move to an autocomplete might make this potential performance problem disappear.
   $users = user_load_multiple(array_keys($results));
   foreach ($users as $uid => $user) {
-    // @TODO: Need a full user object here... :(
     if (!node_access('view', $node, $user)) {
       unset($users[$uid]);
     }
@@ -169,10 +168,23 @@ function oa_notifications_node_delete($node) {
   }
 
   if (isset($target_type)) {
-    db_delete('oa_notifications')
-        ->condition('target_id', $node->nid)
-        ->condition('target_type', $target_type)
-        ->execute();
+    oa_notifications_delete_for_target($node->nid, $target_type);
   }
+}
+
+/**
+ * Delete notifications for a target
+ *
+ * @param int $id
+ *    The target id (e.g. node id)
+ * @param string $type
+ *    The target type (e.g. 'organization', 'team')
+ */
+function oa_notifications_delete_for_target($id, $type)
+{
+  db_delete('oa_notifications')
+    ->condition('target_id', $id)
+    ->condition('target_type', $type)
+    ->execute();
 }
 
