@@ -10,7 +10,6 @@ $plugin = array(
   'required context' => new ctools_context_required(t('Node'), 'node'),
 );
 
-
 /**
  * Run-time rendering of the body of the block (content type)
  * See ctools_plugin_examples for more advanced info
@@ -66,15 +65,13 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
   $parent = field_get_items('node', $node, 'oa_parent');
   $parent_id = !empty($parent[0]['target_id']) ? $parent[0]['target_id'] : 0;
 
+  $form['#node'] = $node;
+  $form['#parent_id'] = $parent_id;
+
   $form['oa_reply']['body'] = array(
     '#type' => 'text_format',
     '#default_value' => '',
     '#format' => 'panopoly_wysiwyg_text',
-  );
-
-  $form['oa_reply']['reply'] = array(
-    '#markup' => theme('oa_discussion_reply', array('parent_id' => $parent_id)),
-    '#suffix' => '&nbsp;',
   );
 
   $form['oa_reply']['submit'] = array(
@@ -88,5 +85,15 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
  * Submit handler for the Notifications Pane
  */
 function oa_discussion_reply_form_submit($form, &$form_state) {
-  dsm('REPLY SUBMITTED');
+  $node = $form['#node'];
+  $parent_id = $form['#parent_id'];
+  $body = $form_state['values']['body'];
+  if (!empty($parent_id) && !empty($body['value'])) {
+    // create a new reply node
+    $reply = oa_groups_create_node('oa_discussion_post', 'New Title', $node);
+    $wrapper = entity_metadata_wrapper('node', $reply);
+    $wrapper->oa_parent = $parent_id;
+    $wrapper->body->set(array('value' => $body['value'], 'format' => $body['format']));
+    $wrapper->save();
+  }
 }
