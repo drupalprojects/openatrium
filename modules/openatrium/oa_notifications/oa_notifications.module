@@ -188,3 +188,18 @@ function oa_notifications_delete_for_target($id, $type)
     ->execute();
 }
 
+/**
+ * Callback for AJAX saving of the notification configuration when on a screen with a quick reply.
+ *
+ * @param $form
+ * @param $form_state
+ * @return mixed
+ */
+function oa_notifications_ajax_callback($form, $form_state) {
+  oa_notifications_edit_form_submit($form, $form_state);
+
+  $element = $form_state['triggering_element']['#name'];
+  return $form[$element];
+  //unset($form_state['build_info']['args']);
+  //return "<pre>" . print_r($form_state, TRUE) . "</pre>";
+}

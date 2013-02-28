@@ -91,6 +91,9 @@ function oa_notifications_render_view($node) {
  *    The form
  */
 function oa_notifications_edit_form($form, &$form_state, $node) {
+  // Since this form functions via AJAX we need to tell the form handlers to include it when processing the form
+  ctools_form_include_file($form_state, drupal_get_path('module', 'oa_notifications') . '/plugins/content_types/oa_notifications_pane.inc');
+
   $form['source_type'] = array(
     '#type' => 'value',
     '#value' => 'node',
@@ -101,7 +104,6 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
   );
 
   $notifications = oa_notifications_load_multiple($node->nid);
-  //dpm($notifications, "Notifications");
 
   $all_orgs = oa_notifications_get_orgs();
   $form['organization'] = array(
@@ -110,6 +112,13 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
     '#multiple' => TRUE,
     '#options' => array_map(create_function('$org', 'return $org->title;'), $all_orgs),
     '#default_value' => array_key_exists('organization', $notifications) ? array_keys($notifications['organization']) : array(),
+    '#ajax' => array(
+      'callback' => 'oa_notifications_ajax_callback',
+      'wrapper' => 'organization-div',
+      'method' => 'replace',
+    ),
+    '#prefix' => '<div id="organization-div">',
+    '#suffix' => '</div>',
   );
 
   $group_teams = oa_notifications_get_teams_for_group();
@@ -119,6 +128,13 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
     '#multiple' => TRUE,
     '#options' => array_map(create_function('$team', 'return $team->title;'), $group_teams),
     '#default_value' => array_key_exists('team', $notifications) ? array_keys($notifications['team']) : array(),
+    '#ajax' => array(
+      'callback' => 'oa_notifications_ajax_callback',
+      'wrapper' => 'team-div',
+      'method' => 'replace',
+    ),
+    '#prefix' => '<div id="team-div">',
+    '#suffix' => '</div>',
   );
 
   $group_users = oa_notifications_get_users_for_node($node);
@@ -128,12 +144,15 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
     '#multiple' => TRUE,
     '#options' => array_map(create_function('$user', 'return $user->realname;'), $group_users),
     '#default_value' => array_key_exists('user', $notifications) ? array_keys($notifications['user']) : array(),
+    '#ajax' => array(
+      'callback' => 'oa_notifications_ajax_callback',
+      'wrapper' => 'user-div',
+      'method' => 'replace',
+    ),
+    '#prefix' => '<div id="user-div">',
+    '#suffix' => '</div>',
   );
 
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Update'),
-  );
   return $form;
 }
 
