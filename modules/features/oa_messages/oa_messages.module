@@ -14,10 +14,11 @@ include_once 'oa_messages.features.inc';
  * @param string  $entity_type type of entity being referenced
  * @param string  $text optional text to be added to message
  * @param array   $args optional data to send to hooks
+ * @param object  $uid optional user id assigned to message
  * @param boolean $send TRUE/FALSE to trigger notifications
  * @return object               the message entity created
  */
-function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node', $text = '', $args = NULL, $send = TRUE) {
+function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node', $text = '', $args = NULL, $uid = NULL, $send = TRUE) {
   global $user;
 
   if (!empty($entity) && !is_object($entity)) {
@@ -32,8 +33,10 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     $entity_id = NULL;
   }
 
-  // uid of message is current user, not the user who created the node
-  $account = $user;
+  if (empty($uid)) {
+    // uid of message is current user, not the user who created the node
+    $uid = $user->uid;
+  }
 
   if (isset($entity)) {
     $entity_wrapper  = entity_metadata_wrapper($entity_type, $entity);
@@ -44,7 +47,7 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
 
   // allow other modules to alter the message type to be created
   $context = array(
-    'account' => $account,
+    'uid' => $uid,
     'entity' => $entity,
     'entity_type' => $entity_type,
     'entity_id' => $entity_id,
@@ -55,7 +58,7 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
   drupal_alter('oa_messages_type', $message_type, $context);
 
   if (!empty($message_type)) {
-    $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => time()));
+    $message = message_create($message_type, array('uid' => $uid, 'timestamp' => time()));
 
     // Save reference to the node in the node reference field.
     $wrapper = entity_metadata_wrapper('message', $message);
@@ -105,7 +108,9 @@ function oa_messages_node_insert($node) {
     // only create messages for node types we care about
     return;
   }
-  $message = oa_messages_create('oa_create', $node);
+  // create message given with node's uid rather than current logged in user
+  // to allow admin to change Authored By at node creation time
+  $message = oa_messages_create('oa_create', $node, 'node', '', NULL, $node->uid);
 }
 
 function oa_messages_node_update($node) {

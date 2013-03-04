@@ -68,6 +68,14 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
   $form['#node'] = $node;
   $form['#parent_id'] = $parent_id;
 
+  $form['oa_reply']['subject'] = array(
+    '#type' => 'textfield',
+    '#default_value' => '',
+    '#attributes' => array(
+      'placeholder' => t('Optional Subject'),
+    ),
+  );
+
   $form['oa_reply']['body'] = array(
     '#type' => 'text_format',
     '#default_value' => '',

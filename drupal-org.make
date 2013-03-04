@@ -75,9 +75,8 @@ projects[twitter_bootstrap_ui][download][branch] = 7.x-2.x
 projects[twitter_bootstrap_ui][patch][] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-2.patch
 projects[twitter_bootstrap_ui][download][revision] = 7dccf08a63d6e2ee301c481a044a3a1a58f4e912
 
-libraries[twitter_bootstrap][type] = "libraries"
-libraries[twitter_bootstrap][download][type] = "file"
-libraries[twitter_bootstrap][download][url] = "http://twitter.github.com/bootstrap/assets/bootstrap.zip"
+libraries[twitter_bootstrap][download][type] = file
+libraries[twitter_bootstrap][download][url] = http://twitter.github.com/bootstrap/assets/bootstrap.zip
 
 ; Navbar (Overridden from Panopoly)
 projects[navbar][subdir] = contrib
