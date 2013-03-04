@@ -15,3 +15,16 @@
   bottom: 15px;
   right: 0;
 }
+
+.view-display-id-replies .accordion-inner {
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.view-display-id-replies .accordion-inner.current-node {
+  border-left: 6px solid #CCC;
+  background-color: #EEE;
+}
+
+.view-display-id-replies .accordion-inner .links {
+}

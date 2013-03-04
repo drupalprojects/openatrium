@@ -33,6 +33,9 @@
     <?php print $counter; ?>
     <?php print $created; ?>
     <?php print $title; ?>
+    <div class='pull-right'>
+      <?php print $timestamp; ?>
+    </div>
   </div>
   <div class="accordion" id="oa-reply-accordion<?php print $index; ?>">
     <div>
@@ -41,8 +44,8 @@
           <i class="icon-plus" vertical-align="middle"></i>&nbsp;<?php print $body_1; ?>...
         </a>
       </div>
-      <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse">
-        <div class="accordion-inner">
+      <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
+        <div class="accordion-inner <?php print $current_class; ?>">
           <?php print $body; ?>
           <div class="links">
             <a href='#'>reply</a>
