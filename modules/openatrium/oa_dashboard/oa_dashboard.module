@@ -8,6 +8,10 @@ function oa_dashboard_block_info() {
     'info' => t('Open Atrium Toolbar'),
     'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['oa_user_badge'] = array(
+    'info' => t('Open Atrium User Badge'),
+    'cache' => DRUPAL_CACHE_PER_USER,
+  );
 
   return $blocks;
 }
@@ -23,6 +27,9 @@ function oa_dashboard_block_view($delta = '') {
   	  $block['subject'] = '';
       $block['content'] = theme('oa_toolbar');
   	  break;
+    case 'oa_user_badge':
+      $block['subject'] = '';
+      $block['content'] = theme('oa_user_badge');
   }
 
   return $block;
@@ -36,9 +43,15 @@ function oa_dashboard_theme() {
     'oa_toolbar' => array(
       'template' => 'oa_toolbar',
     ),
+    'oa_user_badge' => array(
+      'template' => 'oa_user_badge',
+    ),
   );
 }
 
+/**
+ * Preprocess function for the oa_toolbar block.
+ */
 function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   global $user;
 
@@ -154,3 +167,33 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   $variables['sections_label'] = $section_name;
 }
 
+
+/**
+ * Preprocess function for the oa_user_badge block.
+ */
+function oa_dashboard_preprocess_oa_user_badge(&$vars) {
+  global $user;
+  
+  if ($user->uid) {
+    // user_load gets us the fields the global variable doesn't have.
+    $user = user_load($user->uid);
+    $vars['user'] = $user;
+    
+    if (!empty($user->field_user_picture)) {
+      $picture = $user->field_user_picture[LANGUAGE_NONE][0];
+      $image = array(
+        'style_name' => 'oa_small_thumbnail',
+        'path' => $picture['uri'],
+        'width' => $picture['width'],
+        'height' => $picture['height'],
+        'alt' => t('Your profile picture'),
+      );
+      $vars['picture'] = theme('image_style', $image);
+    }
+  
+    //Build out links
+    $vars['links']['dashboard'] = l(t('Dashboard'), 'user');
+    $vars['links']['edit_profile'] = l(t('Edit profile'), 'user/' . $user->uid . '/edit');
+    $vars['links']['log_out'] = l(t('Log out'), 'user/logout');
+  }
+}

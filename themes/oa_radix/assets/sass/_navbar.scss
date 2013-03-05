@@ -1,11 +1,65 @@
 // 
-// Styles for Navbar module
+// Styles for navbar
 // --------------------------------------------------
-#navbar {
-  .navbar-bar {
-    // Navbar Bar  
+.navbar {
+  // Brand: website or project name
+  // -------------------------
+  .brand {
+    color: $navbarBrandColor;
+    text-shadow: 0 1px 0 $navbarBackgroundHighlight;
   }
-  .navbar-tray {
-    // Navbar Tray
+  .search-form {
+    padding-top: 10px;
+    margin: 0 20px;
+    input {
+      width: 170px;
+    }
   }
+  #oa-user-badge {
+    position: relative;
+    padding-top: 5px;
+    .user-badge {
+      width: 95px;
+      min-width: 0;
+      padding: 5px;
+      margin: 0;
+      border-color: $black;
+      @include gradientBar($grayDark, $grayDarker);
+      &:hover {
+        @include gradientBar($grayDarker, $grayDark);
+      }
+      .user-name {
+        width: 60px;
+        margin-right: 5px;
+      }
+      img {
+        margin: 0;
+      }
+    }
+    .dropdown-menu {
+      @include gradientBar($grayDark, $grayDarker);
+      left: -50%;
+      ul {
+        margin: 0;
+        li {
+          margin: 0;
+          a {
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}
+
+.oa-dropdown {
+  display: inline-block;
+	margin: 0 0.25em 0 0.25em;
+	vertical-align: middle;
+	ul {
+	  margin: 0.5em 0;
+	  li {
+	    margin: 0;
+	  }
+	}
 }

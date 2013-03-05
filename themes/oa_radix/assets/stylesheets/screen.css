@@ -14531,72 +14531,63 @@ html.js input.throbbing {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   display: block; }
 
-/* line 19, ../sass/_layout.scss */
-.navbar .brand {
-  color: white;
-  text-shadow: 0 1px 0 #3e9d38; }
-
-/* line 23, ../sass/_layout.scss */
+/* line 18, ../sass/_layout.scss */
 #logo img {
   vertical-align: middle; }
 
-/* line 26, ../sass/_layout.scss */
+/* line 21, ../sass/_layout.scss */
 #site-name {
   display: inline-block;
   padding: 10px 0.5em;
   margin: 0; }
 
-/* line 31, ../sass/_layout.scss */
-#search-form {
-  padding-top: 10px; }
-
-/* line 34, ../sass/_layout.scss */
+/* line 26, ../sass/_layout.scss */
 #oa_toolbar {
   padding-top: 10px;
   padding-bottom: 10px;
   min-height: 20px; }
 
-/* line 40, ../sass/_layout.scss */
+/* line 32, ../sass/_layout.scss */
 #main-wrapper {
   min-height: 360px; }
 
-/* line 43, ../sass/_layout.scss */
+/* line 35, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #FAFAFA;
   padding: 0;
   margin-bottom: 5px; }
 
-/* line 48, ../sass/_layout.scss */
+/* line 40, ../sass/_layout.scss */
 .oa-list-header {
   padding: 3px 5px 0 5px; }
 
-/* line 51, ../sass/_layout.scss */
+/* line 43, ../sass/_layout.scss */
 .oa-list .accordion {
   margin-bottom: 0; }
 
-/* line 54, ../sass/_layout.scss */
+/* line 46, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
-  /* line 56, ../sass/_layout.scss */
+  /* line 48, ../sass/_layout.scss */
   .oa-list .accordion-heading .accordion-toggle:hover {
     background-color: #E0EEFF; }
 
-/* line 60, ../sass/_layout.scss */
+/* line 52, ../sass/_layout.scss */
 .oa-list .label {
   color: white; }
-  /* line 62, ../sass/_layout.scss */
+  /* line 54, ../sass/_layout.scss */
   .oa-list .label a {
     color: white; }
 
-/* line 66, ../sass/_layout.scss */
+/* line 58, ../sass/_layout.scss */
 .oa-list-category {
   text-align: right; }
 
-/* line 69, ../sass/_layout.scss */
+/* line 61, ../sass/_layout.scss */
 .oa-list .links {
   float: right;
   margin-right: 5px; }
-  /* line 72, ../sass/_layout.scss */
+  /* line 64, ../sass/_layout.scss */
   .oa-list .links a {
     padding: 0 5px;
     color: #777;
@@ -14675,6 +14666,98 @@ html.js input.throbbing {
   line-height: 52px;
   color: white;
   display: block; }
+
+/* line 7, ../sass/_navbar.scss */
+.navbar .brand {
+  color: white;
+  text-shadow: 0 1px 0 #3e9d38; }
+/* line 11, ../sass/_navbar.scss */
+.navbar .search-form {
+  padding-top: 10px;
+  margin: 0 20px; }
+  /* line 14, ../sass/_navbar.scss */
+  .navbar .search-form input {
+    width: 170px; }
+/* line 18, ../sass/_navbar.scss */
+.navbar #oa-user-badge {
+  position: relative;
+  padding-top: 5px; }
+  /* line 21, ../sass/_navbar.scss */
+  .navbar #oa-user-badge .user-badge {
+    width: 95px;
+    min-width: 0;
+    padding: 5px;
+    margin: 0;
+    border-color: black;
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #2c2c2c;
+    background-image: -moz-linear-gradient(top, #333333, #222222);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
+    background-image: -webkit-linear-gradient(top, #333333, #222222);
+    background-image: -o-linear-gradient(top, #333333, #222222);
+    background-image: linear-gradient(to bottom, #333333, #222222);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF333333', endColorstr='#FF222222', GradientType=0);
+    border-color: #222222 #222222 black;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); }
+    /* line 28, ../sass/_navbar.scss */
+    .navbar #oa-user-badge .user-badge:hover {
+      color: white;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+      background-color: #282828;
+      background-image: -moz-linear-gradient(top, #222222, #333333);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#333333));
+      background-image: -webkit-linear-gradient(top, #222222, #333333);
+      background-image: -o-linear-gradient(top, #222222, #333333);
+      background-image: linear-gradient(to bottom, #222222, #333333);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF222222', endColorstr='#FF333333', GradientType=0);
+      border-color: #333333 #333333 #0d0d0d;
+      border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); }
+    /* line 31, ../sass/_navbar.scss */
+    .navbar #oa-user-badge .user-badge .user-name {
+      width: 60px;
+      margin-right: 5px; }
+    /* line 35, ../sass/_navbar.scss */
+    .navbar #oa-user-badge .user-badge img {
+      margin: 0; }
+  /* line 39, ../sass/_navbar.scss */
+  .navbar #oa-user-badge .dropdown-menu {
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #2c2c2c;
+    background-image: -moz-linear-gradient(top, #333333, #222222);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
+    background-image: -webkit-linear-gradient(top, #333333, #222222);
+    background-image: -o-linear-gradient(top, #333333, #222222);
+    background-image: linear-gradient(to bottom, #333333, #222222);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF333333', endColorstr='#FF222222', GradientType=0);
+    border-color: #222222 #222222 black;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    left: -50%; }
+    /* line 42, ../sass/_navbar.scss */
+    .navbar #oa-user-badge .dropdown-menu ul {
+      margin: 0; }
+      /* line 44, ../sass/_navbar.scss */
+      .navbar #oa-user-badge .dropdown-menu ul li {
+        margin: 0; }
+        /* line 46, ../sass/_navbar.scss */
+        .navbar #oa-user-badge .dropdown-menu ul li a {
+          color: #FFF; }
+
+/* line 55, ../sass/_navbar.scss */
+.oa-dropdown {
+  display: inline-block;
+  margin: 0 0.25em 0 0.25em;
+  vertical-align: middle; }
+  /* line 59, ../sass/_navbar.scss */
+  .oa-dropdown ul {
+    margin: 0.5em 0; }
+    /* line 61, ../sass/_navbar.scss */
+    .oa-dropdown ul li {
+      margin: 0; }
 
 /* line 6, ../sass/_panel.scss */
 #node-edit .panel-pane.pane-node-field-oa-organization-ref,

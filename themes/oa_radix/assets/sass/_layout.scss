@@ -14,12 +14,7 @@
   @include box-shadow(0 1px 4px rgba(0,0,0,.065));
   display: block;
 }
-// Brand: website or project name
-// -------------------------
-.navbar .brand {
-  color: $navbarBrandColor;
-  text-shadow: 0 1px 0 $navbarBackgroundHighlight;
-}
+
 #logo img {
   vertical-align: middle;
 }
@@ -27,9 +22,6 @@
   display: inline-block;
   padding: 10px 0.5em;
   margin: 0;
-}
-#search-form {
-  padding-top: 10px;
 }
 #oa_toolbar {
   padding-top: 10px;

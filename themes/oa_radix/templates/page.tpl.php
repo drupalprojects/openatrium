@@ -37,6 +37,10 @@
               <?php if ($search_form): ?>
                 <?php print $search_form; ?>
               <?php endif; ?>
+              
+              <?php if ($user_badge): ?>
+                <?php print $user_badge; ?>
+              <?php endif; ?>
 
                 <?php if ($main_menu): ?>
                   <nav id="main-menu" class="main-menu" role="navigation">
