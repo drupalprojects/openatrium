@@ -97,8 +97,21 @@ function oa_discussion_reply_form_submit($form, &$form_state) {
   $parent_id = $form['#parent_id'];
   $body = $form_state['values']['body'];
   if (!empty($parent_id) && !empty($body['value'])) {
+    // determine a title for the reply
+    if (!empty($form_state['values']['subject'])) {
+      $title = $form_state['values']['subject'];
+    }
+    else {
+      $alter = array(
+        'max_length' => 40,
+        'word_boundary' => TRUE,
+        'ellipsis' => TRUE,
+        'html' => TRUE,
+      );
+      $title = strip_tags( views_trim_text($alter, $body['value']));
+    }
     // create a new reply node
-    $reply = oa_groups_create_node('oa_discussion_post', 'New Title', $node);
+    $reply = oa_groups_create_node('oa_discussion_post', $title, $node);
     $wrapper = entity_metadata_wrapper('node', $reply);
     $wrapper->oa_parent = $parent_id;
     $wrapper->body->set(array('value' => $body['value'], 'format' => $body['format']));
