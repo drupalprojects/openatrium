@@ -24,19 +24,21 @@
  * @ingroup views_templates
  */
 ?>
-<div class='oa-list well clearfix'>
+<div class='oa-list well clearfix <?php print $current_class; ?>'>
   <div class='pull-right user-badge'>
     <?php print $name; ?>
     <?php print $field_user_picture; ?>
   </div>
   <div class='oa-list-header'>
     <?php print $created; ?>
-    <?php print $title; ?>
-    <?php print $body; ?>
-    <div class="links">
-      <a href='#'>reply</a>
-      <?php print $edit_node; ?>
-      <?php print $delete_node; ?>
+    <div class='oa-body'>
+      <?php print $title; ?>
+      <?php print $body; ?>
+      <div class="links">
+        <a href='#'>reply</a>
+        <?php print $edit_node; ?>
+        <?php print $delete_node; ?>
+      </div>
     </div>
   </div>
 </div>
