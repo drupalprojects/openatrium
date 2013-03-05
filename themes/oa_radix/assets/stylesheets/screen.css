@@ -14705,8 +14705,12 @@ html.js input.throbbing {
   border-top: 0;
   margin-top: 0; }
 
-/* line 7, ../sass/_comment.scss */
-.view-display-id-replies .current-node {
+/* line 5, ../sass/_node.scss */
+.oa-body {
+  padding: 0 10px; }
+
+/* line 8, ../sass/_node.scss */
+.well.current-node {
   border-left: 6px solid #b0eba3; }
 
 /* line 5, ../sass/_user.scss */

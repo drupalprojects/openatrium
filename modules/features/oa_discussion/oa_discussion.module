@@ -46,17 +46,26 @@ function oa_discussion_form_alter(&$form, &$form_state, $form_id) {
  * Perform field-level replacement/processing here
  */
 function oa_discussion_preprocess_views_view_fields(&$vars) {
-  if ($vars['view']->current_display == 'replies') {
-    // determine if the is the specific reply we are looking at
-    $nid = arg(1);
-    $vars['current'] = ($nid == $vars['fields']['nid']->raw);
-    // determine if accordian for this row should be expanded
-    // (add "in" class to bootstrap accordian)
-    $vars['in'] = '';
-    $vars['current_class'] = ($vars['current']) ? 'current-node' : '';
-    if ((strlen(trim(strip_tags($vars['fields']['timestamp']->content))) > 0) || $vars['current']) {
-      $vars['in'] = 'in';
-    }
+  switch ($vars['view']->current_display) {
+    case 'replies':
+      // determine if the is the specific reply we are looking at
+      $nid = arg(1);
+      $vars['current'] = ($nid == $vars['fields']['nid']->raw);
+      $vars['current_class'] = ($vars['current']) ? 'current-node' : '';
+      // determine if accordian for this row should be expanded
+      // (add "in" class to bootstrap accordian)
+      $vars['in'] = '';
+      if ((strlen(trim(strip_tags($vars['fields']['timestamp']->content))) > 0) || $vars['current']) {
+        $vars['in'] = 'in';
+      }
+      break;
+
+    case 'original_post':
+      // determine if the is the specific reply we are looking at
+      $nid = arg(1);
+      $vars['current'] = ($nid == $vars['fields']['nid']->raw);
+      $vars['current_class'] = ($vars['current']) ? 'current-node' : '';
+      break;
   }
 }
 

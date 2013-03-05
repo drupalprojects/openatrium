@@ -21,10 +21,6 @@
   padding-bottom: 0;
 }
 
-.view-display-id-replies .current-node {
+.well.current-node {
   border-left: 6px solid #CCC;
-  background-color: #EEE;
-}
-
-.view-display-id-replies .accordion-inner .links {
 }
