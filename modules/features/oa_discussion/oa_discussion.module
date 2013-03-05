@@ -42,6 +42,17 @@ function oa_discussion_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ * Implements hook_views_query_alter().
+ * Change contextual filters to OR, to get both parent and children discussions.
+ */
+function oa_discussion_views_query_alter(&$view, &$query) {
+  if ($view->current_display == 'attachments') {
+    $query->where[0]['type'] = 'OR';
+    dpm($query);
+  }
+}
+
+/**
  * Implementation of hook_preprocess_views_view_fields()
  * Perform field-level replacement/processing here
  */

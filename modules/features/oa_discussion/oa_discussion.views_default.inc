@@ -159,13 +159,6 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['arguments']['oa_parent_target_id']['field'] = 'oa_parent_target_id';
   $handler->display->display_options['arguments']['oa_parent_target_id']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['oa_parent_target_id']['summary']['format'] = 'default_summary';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -173,6 +166,13 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'oa_discussion_post' => 'oa_discussion_post',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 1;
 
   /* Display: Discussion Replies */
   $handler = $view->new_display('panel_pane', 'Discussion Replies', 'replies');
@@ -300,6 +300,106 @@ function oa_discussion_views_default_views() {
       'type' => 'context',
       'context' => 'entity:node.nid',
       'context_optional' => 1,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Parent (oa_parent)',
+    ),
+  );
+
+  /* Display: Discussion Attachments */
+  $handler = $view->new_display('panel_pane', 'Discussion Attachments', 'attachments');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Documents/Media';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = '';
+  $handler->display->display_options['fields']['counter']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['counter']['alter']['text'] = '#[counter]';
+  $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['counter']['counter_start'] = '0';
+  /* Field: Content: Attachments */
+  $handler->display->display_options['fields']['field_oa_discussion_attachments']['id'] = 'field_oa_discussion_attachments';
+  $handler->display->display_options['fields']['field_oa_discussion_attachments']['table'] = 'field_data_field_oa_discussion_attachments';
+  $handler->display->display_options['fields']['field_oa_discussion_attachments']['field'] = 'field_oa_discussion_attachments';
+  $handler->display->display_options['fields']['field_oa_discussion_attachments']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_discussion_attachments']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_discussion_attachments']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_oa_discussion_attachments']['settings'] = array(
+    'file_view_mode' => 'default',
+  );
+  $handler->display->display_options['fields']['field_oa_discussion_attachments']['delta_offset'] = '0';
+  /* Field: Content: Media */
+  $handler->display->display_options['fields']['field_oa_discussion_media']['id'] = 'field_oa_discussion_media';
+  $handler->display->display_options['fields']['field_oa_discussion_media']['table'] = 'field_data_field_oa_discussion_media';
+  $handler->display->display_options['fields']['field_oa_discussion_media']['field'] = 'field_oa_discussion_media';
+  $handler->display->display_options['fields']['field_oa_discussion_media']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_discussion_media']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_discussion_media']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_oa_discussion_media']['delta_offset'] = '0';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'oa_small_thumbnail';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '3';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Parent (oa_parent) */
+  $handler->display->display_options['arguments']['oa_parent_target_id']['id'] = 'oa_parent_target_id';
+  $handler->display->display_options['arguments']['oa_parent_target_id']['table'] = 'field_data_oa_parent';
+  $handler->display->display_options['arguments']['oa_parent_target_id']['field'] = 'oa_parent_target_id';
+  $handler->display->display_options['arguments']['oa_parent_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['oa_parent_target_id']['default_argument_options']['index'] = '3';
+  $handler->display->display_options['arguments']['oa_parent_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['oa_parent_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['oa_parent_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['oa_parent_target_id']['break_phrase'] = TRUE;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+    'oa_parent_target_id' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Parent (oa_parent)',
+    ),
+    'nid_1' => array(
+      'type' => 'context',
+      'context' => 'entity:node.oa_parent',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+    'oa_parent_target_id_1' => array(
+      'type' => 'context',
+      'context' => 'entity:node.oa_parent',
+      'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
       'label' => 'Content: Parent (oa_parent)',

@@ -28,18 +28,6 @@ function oa_discussion_strongarm() {
             'visible' => FALSE,
             'weight' => 0,
           ),
-          'oa_river_header' => array(
-            'weight' => '0',
-            'visible' => FALSE,
-          ),
-          'oa_river_accordian' => array(
-            'weight' => '0',
-            'visible' => FALSE,
-          ),
-          'oa_river_body' => array(
-            'weight' => '0',
-            'visible' => FALSE,
-          ),
         ),
         'message__message_text__1' => array(
           'message_notify_email_subject' => array(
@@ -49,18 +37,6 @@ function oa_discussion_strongarm() {
           'message_notify_email_body' => array(
             'visible' => TRUE,
             'weight' => 0,
-          ),
-          'oa_river_header' => array(
-            'weight' => '1',
-            'visible' => FALSE,
-          ),
-          'oa_river_accordian' => array(
-            'weight' => '1',
-            'visible' => FALSE,
-          ),
-          'oa_river_body' => array(
-            'weight' => '1',
-            'visible' => FALSE,
           ),
         ),
         'message__message_text__2' => array(
