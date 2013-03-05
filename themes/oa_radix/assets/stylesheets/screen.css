@@ -14705,6 +14705,10 @@ html.js input.throbbing {
   border-top: 0;
   margin-top: 0; }
 
+/* line 7, ../sass/_comment.scss */
+.view-display-id-replies .current-node {
+  border-left: 6px solid #b0eba3; }
+
 /* line 5, ../sass/_user.scss */
 .user-badge {
   border: 1px solid #cccccc;

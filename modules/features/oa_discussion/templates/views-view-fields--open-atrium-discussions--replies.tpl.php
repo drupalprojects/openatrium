@@ -24,7 +24,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class='oa-list well clearfix'>
+<div class='oa-list well clearfix <?php print $current_class; ?>'>
   <div class='pull-right user-badge'>
     <?php print $name; ?>
     <?php print $field_user_picture; ?>
@@ -45,7 +45,7 @@
         </a>
       </div>
       <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
-        <div class="accordion-inner <?php print $current_class; ?>">
+        <div class="accordion-inner">
           <?php print $body; ?>
           <div class="links">
             <a href='#'>reply</a>
