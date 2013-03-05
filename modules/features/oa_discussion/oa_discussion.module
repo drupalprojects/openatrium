@@ -86,7 +86,8 @@ function oa_discussion_views_pre_render(&$view) {
   // Hide results that don't contain attachments or media. This is not done
   // by a views filter because we need to increment per result to get comment #.
   if ($view->name == 'open_atrium_discussions' && $view->current_display == 'attachments') {
-    for ($i = 0; $i < count($view->result); $i++) {
+    $count = count($view->result);
+    for ($i = 0; $i < $count; $i++) {
       if (empty($view->result[$i]->field_field_oa_discussion_attachments) && empty($view->results[$i]->field_field_oa_discussion_media)) {
         unset($view->result[$i]);
       }
