@@ -332,6 +332,13 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Global: View result counter */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
@@ -339,8 +346,39 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['counter']['label'] = '';
   $handler->display->display_options['fields']['counter']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['counter']['alter']['text'] = '#[counter]';
+  $handler->display->display_options['fields']['counter']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['counter']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['counter']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '0';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'oa_small_thumbnail',
+    'image_link' => 'content',
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'g:ia D M j';
+  $handler->display->display_options['fields']['created']['oa_date'] = '0';
   /* Field: Content: Attachments */
   $handler->display->display_options['fields']['field_oa_discussion_attachments']['id'] = 'field_oa_discussion_attachments';
   $handler->display->display_options['fields']['field_oa_discussion_attachments']['table'] = 'field_data_field_oa_discussion_attachments';
@@ -352,6 +390,7 @@ function oa_discussion_views_default_views() {
     'file_view_mode' => 'default',
   );
   $handler->display->display_options['fields']['field_oa_discussion_attachments']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_oa_discussion_attachments']['multi_type'] = 'ul';
   /* Field: Content: Media */
   $handler->display->display_options['fields']['field_oa_discussion_media']['id'] = 'field_oa_discussion_media';
   $handler->display->display_options['fields']['field_oa_discussion_media']['table'] = 'field_data_field_oa_discussion_media';
@@ -360,14 +399,7 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['field_oa_discussion_media']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_oa_discussion_media']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_oa_discussion_media']['delta_offset'] = '0';
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'oa_small_thumbnail';
+  $handler->display->display_options['fields']['field_oa_discussion_media']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -388,6 +420,22 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['arguments']['oa_parent_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['oa_parent_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['oa_parent_target_id']['break_phrase'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'oa_discussion_post' => 'oa_discussion_post',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 1;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',

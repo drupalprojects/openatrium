@@ -48,7 +48,6 @@ function oa_discussion_form_alter(&$form, &$form_state, $form_id) {
 function oa_discussion_views_query_alter(&$view, &$query) {
   if ($view->current_display == 'attachments') {
     $query->where[0]['type'] = 'OR';
-    dpm($query);
   }
 }
 
@@ -77,6 +76,21 @@ function oa_discussion_preprocess_views_view_fields(&$vars) {
       $vars['current'] = ($nid == $vars['fields']['nid']->raw);
       $vars['current_class'] = ($vars['current']) ? 'current-node' : '';
       break;
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function oa_discussion_views_pre_render(&$view) {
+  // Hide results that don't contain attachments or media. This is not done
+  // by a views filter because we need to increment per result to get comment #.
+  if ($view->name == 'open_atrium_discussions' && $view->current_display == 'attachments') {
+    for ($i = 0; $i < count($view->result); $i++) {
+      if (empty($view->result[$i]->field_field_oa_discussion_attachments) && empty($view->results[$i]->field_field_oa_discussion_media)) {
+        unset($view->result[$i]);
+      }
+    }
   }
 }
 

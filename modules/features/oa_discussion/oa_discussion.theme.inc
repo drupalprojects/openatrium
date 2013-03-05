@@ -31,6 +31,17 @@ function oa_discussion_theme() {
       'arguments' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
       'path' => drupal_get_path('module', 'oa_discussion') . '/templates',
     ),
+    'views_view_fields__open_atrium_discussions__attachments' => array(
+      'template'  => 'views-view-fields--open-atrium-discussions--attachments',
+      'base hook' => 'views_view_fields',
+      'preprocess functions' => array(
+        'template_preprocess',
+        'template_preprocess_views_view_fields',
+        'oa_groups_preprocess_views_view_fields',
+      ),
+      'arguments' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
+      'path' => drupal_get_path('module', 'oa_discussion') . '/templates',
+    ),
   );
 }
 
