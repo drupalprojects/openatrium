@@ -205,7 +205,9 @@ function oa_notifications_node_update($node) {
  */
 function oa_notifications_is_notification_type($node) {
   // @TODO: Implement this as configurable
-  return $node->type == 'oa_discussion_post';
+  // for now, add notifications to any group-content type
+  $types = oa_groups_list_content_types(TRUE);
+  return (array_key_exists($node->type, $types));
 }
 
 /**
@@ -313,8 +315,10 @@ function oa_notifications_form_fields(&$form, &$form_state, $node) {
  * @param $form_state
  * @param $form_id
  */
-function oa_notifications_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == "oa_discussion_post_node_form" && isset($form['nid'])) {
+function oa_notifications_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // we are on a node/edit/add form.
+  // check content type
+  if (isset($form['#node']) && (oa_notifications_is_notification_type($form['#node']))) {
     $form['oa_notifications'] = array(
       '#type' => 'fieldset',
       '#title' => t('Notifications'),
