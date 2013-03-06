@@ -88,7 +88,7 @@ function oa_discussion_views_pre_render(&$view) {
   if ($view->name == 'open_atrium_discussions' && $view->current_display == 'attachments') {
     $count = count($view->result);
     for ($i = 0; $i < $count; $i++) {
-      if (empty($view->result[$i]->field_field_oa_discussion_attachments) && empty($view->results[$i]->field_field_oa_discussion_media)) {
+      if (empty($view->result[$i]->field_field_oa_discussion_attachments) && empty($view->result[$i]->field_field_oa_discussion_media)) {
         unset($view->result[$i]);
       }
     }
