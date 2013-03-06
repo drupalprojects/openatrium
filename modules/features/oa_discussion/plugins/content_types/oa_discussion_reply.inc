@@ -81,6 +81,14 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
     '#default_value' => '',
     '#format' => 'panopoly_wysiwyg_text',
   );
+  
+  // field_default_form requires #parents be set.
+  $form['#parents'] = empty($form['#parents']) ? array() : $form['#parents'];
+  $field = field_info_field('field_oa_discussion_media');
+  $instance = field_info_instance('node', 'field_oa_discussion_media', 'oa_discussion_post');
+  
+  $form['oa_reply']['media'] = field_default_form('node', NULL, $field, $instance, $node->language, NULL, $form, $form_state);
+  form_load_include($form_state, 'inc', 'oa_discussion', 'plugins/content_types/oa_discussion_reply'); // For AJAX add more
 
   $form['oa_reply']['submit'] = array(
     '#type' => 'submit',
@@ -96,12 +104,14 @@ function oa_discussion_reply_form_submit($form, &$form_state) {
   $node = $form['#node'];
   $parent_id = $form['#parent_id'];
   $body = $form_state['values']['body'];
-  if (!empty($parent_id) && !empty($body['value'])) {
+  $media = $form_state['values']['field_oa_discussion_media'][LANGUAGE_NONE];
+  if (!empty($parent_id) && (!empty($body['value']) || !empty($media))) {
     // determine a title for the reply
     if (!empty($form_state['values']['subject'])) {
       $title = $form_state['values']['subject'];
     }
-    else {
+    // Supply title from body
+    elseif (!empty($body['value'])) {
       $alter = array(
         'max_length' => 40,
         'word_boundary' => TRUE,
@@ -110,11 +120,28 @@ function oa_discussion_reply_form_submit($form, &$form_state) {
       );
       $title = strip_tags( views_trim_text($alter, $body['value']));
     }
+    // Supply title from media
+    elseif (!empty($media)) {
+      $files = array();
+      foreach ($media as $delta => $file) {
+        if (is_numeric($delta)) {
+          $file = file_load($file['fid']);
+          $files[] = $file->filename;
+        }
+      }
+      $title = 'Attached ' . implode(', ', $files);
+    }
+    
     // create a new reply node
     $reply = oa_groups_create_node('oa_discussion_post', $title, $node);
     $wrapper = entity_metadata_wrapper('node', $reply);
     $wrapper->oa_parent = $parent_id;
     $wrapper->body->set(array('value' => $body['value'], 'format' => $body['format']));
+    foreach ($media as $delta => $file) {
+      if (is_numeric($delta)) {
+        $wrapper->field_oa_discussion_media[$delta]->set(array('fid' => $file['fid'], 'display' => $file['display']));
+      }
+    }
     $wrapper->save();
   }
 }

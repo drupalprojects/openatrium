@@ -14810,6 +14810,38 @@ html.js input.throbbing {
 .pane-oa-widgets-content-visibility .visibility {
   text-transform: uppercase; }
 
+/* line 7, ../sass/_form.scss */
+#oa-discussion-reply-form {
+  position: relative; }
+  /* line 9, ../sass/_form.scss */
+  #oa-discussion-reply-form .form-item {
+    margin: 0; }
+  /* line 12, ../sass/_form.scss */
+  #oa-discussion-reply-form input#edit-subject {
+    width: 75%; }
+  /* line 15, ../sass/_form.scss */
+  #oa-discussion-reply-form .field-name-field-oa-discussion-media {
+    position: relative; }
+    /* line 17, ../sass/_form.scss */
+    #oa-discussion-reply-form .field-name-field-oa-discussion-media .tabledrag-toggle-weight-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px; }
+    /* line 24, ../sass/_form.scss */
+    #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item img {
+      display: block;
+      margin: auto;
+      width: auto; }
+    /* line 29, ../sass/_form.scss */
+    #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item .file a {
+      display: none; }
+  /* line 34, ../sass/_form.scss */
+  #oa-discussion-reply-form #edit-submit {
+    position: absolute;
+    bottom: 2px;
+    right: 0; }
+
 /* line 5, ../sass/_node.scss */
 .oa-body {
   padding: 0 10px;

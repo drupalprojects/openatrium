@@ -2,3 +2,38 @@
 // Layout
 // Styles for Forms
 // --------------------------------------------------
+
+// Discussion quick reply
+#oa-discussion-reply-form {
+  position: relative;
+  .form-item {
+    margin: 0;
+  }
+  input#edit-subject {
+    width: 75%;
+  }
+  .field-name-field-oa-discussion-media {
+    position: relative;
+    .tabledrag-toggle-weight-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px;
+    }
+    .media-item {
+      img {
+        display: block;
+        margin: auto;
+        width: auto;
+      }
+      .file a {
+        display: none;
+      }
+    }
+  }
+  #edit-submit {
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+  }
+}

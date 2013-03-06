@@ -1,21 +1,3 @@
-#oa-discussion-reply-form {
-  position: relative;
-}
-
-#oa-discussion-reply-form .form-item {
-  margin: 0;
-}
-
-#oa-discussion-reply-form input#edit-subject {
-  width: 75%;
-}
-
-#oa-discussion-reply-form input#edit-submit {
-  position: absolute;
-  bottom: 15px;
-  right: 0;
-}
-
 .view-display-id-replies .accordion-inner {
   overflow: hidden;
   padding-bottom: 0;
