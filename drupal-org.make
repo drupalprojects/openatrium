@@ -20,6 +20,15 @@ projects[panelizer][download][branch] = 7.x-3.x
 projects[panelizer][download][revision] = 775e91df7a50d8bd7591e2258780aba106558151
 projects[panelizer][patch][] = http://drupal.org/files/panelizer-features-override-1912162-2.patch
 
+; Update File entity to handle private content
+projects[file_entity][type] = module
+projects[file_entity][subdir] = contrib
+projects[file_entity][download][type] = git
+projects[file_entity][download][url] = http://git.drupal.org/project/file_entity.git
+projects[file_entity][download][branch] = 7.x-2.x
+projects[file_entity][download][revision] = e1fa3e05a8f849e54cddd703a9dc1b6e8f7c55de
+projects[file_entity][patch][] = http://drupal.org/files/1420812-file_download-41.patch
+
 ; Features Override
 projects[features_override][subdir] = contrib
 projects[features_override][version] = 2.0-beta2
