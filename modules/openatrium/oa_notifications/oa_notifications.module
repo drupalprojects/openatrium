@@ -136,22 +136,24 @@ function oa_notifications_load_multiple($source_id, $source_type = 'node', $targ
  * @param $values
  */
 function oa_notifications_save_notifications($values) {
-  $source_id = $values['source_id'];
-  $source_type = $values['source_type'];
+  if (isset($values['source_id']) && isset($values['source_type'])) {
+    $source_id = $values['source_id'];
+    $source_type = $values['source_type'];
 
-  $notifications = array();
-  foreach (array('organization', 'team', 'user') as $type) {
-    foreach ($values[$type] as $id) {
-      $n = new stdClass;
-      $n->source_id = $source_id;
-      $n->source_type = $source_type;
-      $n->target_id = $id;
-      $n->target_type = $type;
-      $notifications[] = $n;
+    $notifications = array();
+    foreach (array('organization', 'team', 'user') as $type) {
+      foreach ($values[$type] as $id) {
+        $n = new stdClass;
+        $n->source_id = $source_id;
+        $n->source_type = $source_type;
+        $n->target_id = $id;
+        $n->target_type = $type;
+        $notifications[] = $n;
+      }
     }
-  }
 
-  oa_notifications_save_for_source($source_id, $source_type, $notifications);
+    oa_notifications_save_for_source($source_id, $source_type, $notifications);
+  }
 }
 
 /**
