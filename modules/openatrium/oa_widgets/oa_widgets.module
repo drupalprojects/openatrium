@@ -1,4 +1,7 @@
 <?php
+
+include_once 'oa_widgets.theme.inc';
+
 /* 
  * Implements hook_ctools_plugin_directory
  */ 

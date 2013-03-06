@@ -14806,6 +14806,10 @@ html.js input.throbbing {
     .attachments .oa-body ul li {
       margin: 0 0 5px; }
 
+/* line 59, ../sass/_panel.scss */
+.pane-oa-widgets-content-visibility .visibility {
+  text-transform: uppercase; }
+
 /* line 5, ../sass/_node.scss */
 .oa-body {
   padding: 0 10px;

@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Code for Theme functions for OpenAtrium widgets
+ */
+
+
+/**
+ * Implements hook_theme()
+ */
+function oa_widgets_theme() {
+  return array(
+    'oa_widgets_content_visibility' => array(
+      'template'  => 'oa-widgets-content-visibility',
+      'arguments' => array(
+        'public' => NULL,
+        'links'  => array(),
+      ),
+      'path' => drupal_get_path('module', 'oa_widgets') . '/templates',
+    ),
+  );
+}
