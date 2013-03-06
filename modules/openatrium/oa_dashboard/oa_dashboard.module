@@ -178,6 +178,7 @@ function oa_dashboard_preprocess_oa_user_badge(&$vars) {
     // user_load gets us the fields the global variable doesn't have.
     $user = user_load($user->uid);
     $vars['user'] = $user;
+    $vars['name'] = empty($user->realname) ? $user->name : $user->realname;
     
     if (!empty($user->field_user_picture)) {
       $picture = $user->field_user_picture[LANGUAGE_NONE][0];

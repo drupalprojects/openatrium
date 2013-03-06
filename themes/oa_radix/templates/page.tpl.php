@@ -34,12 +34,12 @@
                 <?php print render($page['navigation']); ?>
               </nav>
 
-              <?php if ($search_form): ?>
-                <?php print $search_form; ?>
-              <?php endif; ?>
-              
               <?php if ($user_badge): ?>
                 <?php print $user_badge; ?>
+              <?php endif; ?>
+
+              <?php if ($search_form): ?>
+                <?php print $search_form; ?>
               <?php endif; ?>
 
                 <?php if ($main_menu): ?>

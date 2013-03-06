@@ -20,7 +20,7 @@ function oa_radix_preprocess_page(&$vars) {
     $search_box_form['basic']['keys']['#attributes']['class'][] = 'search-query';
     $search_box_form['basic']['submit']['#value'] = t('Search');
     $search_box_form['#attributes']['class'][] = 'navbar-form';
-    $search_box_form['#attributes']['class'][] = 'pull-left';
+    $search_box_form['#attributes']['class'][] = 'pull-right';
     $search_box = drupal_render($search_box_form);
     $vars['search_form'] = (user_access('search content')) ? $search_box : NULL;
   }
