@@ -89,9 +89,11 @@ function oa_notifications_get_users_for_node($node, $gid = NULL) {
   // which is controlled by node_access grants, etc.  Not easily queried.
   // The move to an autocomplete might make this potential performance problem disappear.
   $users = user_load_multiple(array_keys($results));
-  foreach ($users as $uid => $user) {
-    if (!node_access('view', $node, $user)) {
-      unset($users[$uid]);
+  if (isset($node->nid)) {
+    foreach ($users as $uid => $user) {
+      if (!node_access('view', $node, $user)) {
+        unset($users[$uid]);
+      }
     }
   }
   return $users;
@@ -131,6 +133,30 @@ function oa_notifications_load_multiple($source_id, $source_type = 'node', $targ
 }
 
 /**
+ * @param $values
+ */
+function oa_notifications_save_notifications($values) {
+  if (isset($values['source_id']) && isset($values['source_type'])) {
+    $source_id = $values['source_id'];
+    $source_type = $values['source_type'];
+
+    $notifications = array();
+    foreach (array('organization', 'team', 'user') as $type) {
+      foreach ($values[$type] as $id) {
+        $n = new stdClass;
+        $n->source_id = $source_id;
+        $n->source_type = $source_type;
+        $n->target_id = $id;
+        $n->target_type = $type;
+        $notifications[] = $n;
+      }
+    }
+
+    oa_notifications_save_for_source($source_id, $source_type, $notifications);
+  }
+}
+
+/**
  * Save a collection of Notifications for a particular source item.
  *
  * @param int $source_id
@@ -151,6 +177,39 @@ function oa_notifications_save_for_source($source_id, $source_type, $notificatio
   }
 }
 
+
+/**
+ * Implements hook_node_insert().
+ */
+function oa_notifications_node_insert($node) {
+  if (oa_notifications_is_notification_type($node)) {
+    $node->oa_notifications['source_id'] = $node->nid;
+    oa_notifications_save_notifications($node->oa_notifications);
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function oa_notifications_node_update($node) {
+  if (oa_notifications_is_notification_type($node)) {
+    oa_notifications_save_notifications($node->oa_notifications);
+  }
+}
+
+/**
+ * Determine if this is an entity type on which we need to provide notifications
+ *
+ * @param $node
+ * @return
+ */
+function oa_notifications_is_notification_type($node) {
+  // @TODO: Implement this as configurable
+  // for now, add notifications to any group-content type
+  $types = oa_groups_list_content_types(TRUE);
+  return (array_key_exists($node->type, $types));
+}
+
 /**
  * Implements hook_node_delete().
  *
@@ -160,10 +219,10 @@ function oa_notifications_save_for_source($source_id, $source_type, $notificatio
  *    The Node being deleted
  */
 function oa_notifications_node_delete($node) {
-  if ($node->type == 'oa_team') {
+  if ($node->type == OA_TEAM_TYPE) {
     $target_type = 'team';
   }
-  else if ($node->type == 'oa_organization') {
+  else if ($node->type == OA_ORG_TYPE) {
     $target_type = 'organization';
   }
 
@@ -196,10 +255,77 @@ function oa_notifications_delete_for_target($id, $type)
  * @return mixed
  */
 function oa_notifications_ajax_callback($form, $form_state) {
-  oa_notifications_edit_form_submit($form, $form_state);
+  oa_notifications_save_notifications($form_state['values']);
 
   $element = $form_state['triggering_element']['#name'];
   return $form[$element];
-  //unset($form_state['build_info']['args']);
-  //return "<pre>" . print_r($form_state, TRUE) . "</pre>";
+}
+
+/**
+ * Define the fields that are used for configuring notifications.
+ *
+ * @param $form
+ * @param $form_state
+ * @param $node
+ */
+function oa_notifications_form_fields(&$form, &$form_state, $node) {
+  $nid = isset($node->nid) ? $node->nid : NULL;
+  $form['source_type'] = array(
+    '#type' => 'value',
+    '#value' => 'node',
+  );
+  $form['source_id'] = array(
+    '#type' => 'value',
+    '#value' => $nid
+  );
+
+  $notifications = isset($nid) ? oa_notifications_load_multiple($nid) : array();
+
+  $all_orgs = oa_notifications_get_orgs();
+  $form['organization'] = array(
+    '#type' => 'select',
+    '#title' => t('Organizations'),
+    '#multiple' => TRUE,
+    '#options' => array_map(create_function('$org', 'return $org->title;'), $all_orgs),
+    '#default_value' => array_key_exists('organization', $notifications) ? array_keys($notifications['organization']) : array(),
+  );
+
+  $group_teams = oa_notifications_get_teams_for_group();
+  $form['team'] = array(
+    '#type' => 'select',
+    '#title' => t('Teams'),
+    '#multiple' => TRUE,
+    '#options' => array_map(create_function('$team', 'return $team->title;'), $group_teams),
+    '#default_value' => array_key_exists('team', $notifications) ? array_keys($notifications['team']) : array(),
+  );
+
+  $group_users = oa_notifications_get_users_for_node($node);
+  $form['user'] = array(
+    '#type' => 'select',
+    '#title' => t('Users'),
+    '#multiple' => TRUE,
+    '#options' => array_map(create_function('$user', 'return $user->realname;'), $group_users),
+    '#default_value' => array_key_exists('user', $notifications) ? array_keys($notifications['user']) : array(),
+  );
+
+}
+
+/**
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
+function oa_notifications_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // we are on a node/edit/add form.
+  // check content type
+  if (isset($form['#node']) && (oa_notifications_is_notification_type($form['#node']))) {
+    $form['oa_notifications'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Notifications'),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+      '#tree' => TRUE,
+    );
+    oa_notifications_form_fields($form['oa_notifications'], $form_state, $form['#node']);
+  }
 }

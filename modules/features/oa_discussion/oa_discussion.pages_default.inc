@@ -326,15 +326,11 @@ function oa_discussion_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-10';
     $pane->panel = 'sidebar';
-    $pane->type = 'node_form_menu';
-    $pane->subtype = 'node_form_menu';
+    $pane->type = 'node_form_oa_notifications';
+    $pane->subtype = 'node_form_oa_notifications';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_node_edit_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -348,8 +344,8 @@ function oa_discussion_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-11';
     $pane->panel = 'sidebar';
-    $pane->type = 'node_form_publishing';
-    $pane->subtype = 'node_form_publishing';
+    $pane->type = 'node_form_menu';
+    $pane->subtype = 'node_form_menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -370,12 +366,12 @@ function oa_discussion_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-12';
     $pane->panel = 'sidebar';
-    $pane->type = 'node_form_author';
-    $pane->subtype = 'node_form_author';
+    $pane->type = 'node_form_publishing';
+    $pane->subtype = 'node_form_publishing';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(),
+      'context' => 'argument_node_edit_1',
       'override_title' => 0,
       'override_title_text' => '',
     );
@@ -392,6 +388,28 @@ function oa_discussion_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-13';
     $pane->panel = 'sidebar';
+    $pane->type = 'node_form_author';
+    $pane->subtype = 'node_form_author';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $display->content['new-13'] = $pane;
+    $display->panels['sidebar'][6] = 'new-13';
+    $pane = new stdClass();
+    $pane->pid = 'new-14';
+    $pane->panel = 'sidebar';
     $pane->type = 'node_form_buttons';
     $pane->subtype = 'node_form_buttons';
     $pane->shown = TRUE;
@@ -407,10 +425,10 @@ function oa_discussion_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 7;
     $pane->locks = array();
-    $display->content['new-13'] = $pane;
-    $display->panels['sidebar'][6] = 'new-13';
+    $display->content['new-14'] = $pane;
+    $display->panels['sidebar'][7] = 'new-14';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-6';
   $handler->conf['display'] = $display;
