@@ -37,23 +37,25 @@
       <?php print $timestamp; ?>
     </div>
   </div>
-  <div class="accordion" id="oa-reply-accordion<?php print $index; ?>">
-    <div>
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
-          <i class="icon-plus" vertical-align="middle"></i>&nbsp;<?php print $body_1; ?>...
-        </a>
-      </div>
-      <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
-        <div class="accordion-inner">
-          <?php print $body; ?>
-          <div class="links">
-            <a href='#'>reply</a>
-            <?php print $edit_node; ?>
-            <?php print $delete_node; ?>
+  <?php if (!empty($body_1)): ?>
+    <div class="accordion" id="oa-reply-accordion<?php print $index; ?>">
+      <div>
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
+            <i class="icon-plus" vertical-align="middle"></i>&nbsp;<?php print $body_1; ?>...
+          </a>
+        </div>
+        <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
+          <div class="accordion-inner">
+            <?php print $body; ?>
+            <div class="links">
+              <a href='#'>reply</a>
+              <?php print $edit_node; ?>
+              <?php print $delete_node; ?>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <?php endif; ?>
 </div>
