@@ -26,7 +26,7 @@ function oa_discussion_reply_render($subtype, $conf, $args, $context = NULL) {
   $output = drupal_get_form('oa_discussion_reply_form', $node);
 
   $block = new stdClass();
-  $block->title = t('Quick Reply');
+  $block->title = t('New Reply');
   $block->content = $output;
   return $block;
 }

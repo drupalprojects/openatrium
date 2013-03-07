@@ -6,3 +6,7 @@
 .well.current-node {
   border-left: 6px solid #CCC;
 }
+
+.pane-oa-discussion-reply .tabledrag-toggle-weight-wrapper {
+  display: none;
+}
