@@ -95,17 +95,6 @@ projects[twitter_bootstrap_ui][download][revision] = 7dccf08a63d6e2ee301c481a044
 libraries[twitter_bootstrap][download][type] = file
 libraries[twitter_bootstrap][download][url] = http://twitter.github.com/bootstrap/assets/bootstrap.zip
 
-; Colorbox
-projects[colorbox][subdir] = contrib
-projects[colorbox][version] = 2.3
-
-projects[media_colorbox][subdir] = contrib
-projects[media_colorbox][version] = 1.0-rc3
-
-libraries[colorbox][download][type] = file
-libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip
-libraries[colorbox][directory_name] = colorbox
-
 ; Devel
 projects[devel][type] = module
 projects[devel][download][type] = git
