@@ -22,12 +22,11 @@ function oa_discussion_ctools_plugin_directory($owner, $plugin_type) {
 function oa_discussion_menu() {
 
   // Panelizer "revert" page callback
-  $items['node/%/remove'] = array(
+  $items['node/%node/remove'] = array(
     'type' => MENU_CALLBACK,
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('oa_discussion_remove', 1),
-    'access callback' => 'panopoly_admin_panelizer_revert_access',
-    'access arguments' => array(3, 4),
+    'page callback' => 'oa_discussion_remove',
+    'page arguments' => array(1),
+    'access arguments' => array('create oa discussion post content'),
   );
 
   return $items;
@@ -51,6 +50,15 @@ function oa_discussion_views_data() {
     'handler' => 'views_handler_argument_oa_parent_id',
   );
   return $data;
+}
+
+function oa_discussion_remove($node) {
+  if (!empty($node)) {
+    $node->status = 0; // unpublish;
+    node_save($node);
+  }
+  drupal_set_message(t("Content '@title' removed.", array('@title' => $node->title)));
+  drupal_goto('node/' . $node->nid);
 }
 
 /**
