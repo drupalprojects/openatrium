@@ -54,4 +54,5 @@ features[variable][] = node_options_oa_discussion_post
 features[variable][] = node_preview_oa_discussion_post
 features[variable][] = node_submitted_oa_discussion_post
 features[views_view][] = open_atrium_discussions
+files[] = views/views_handler_argument_oa_parent_id.inc
 project path = profiles/openatrium/modules/features

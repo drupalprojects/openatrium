@@ -148,22 +148,16 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['sorts']['nid']['id'] = 'nid';
   $handler->display->display_options['sorts']['nid']['table'] = 'node';
   $handler->display->display_options['sorts']['nid']['field'] = 'nid';
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '3';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Parent (oa_parent) */
-  $handler->display->display_options['arguments']['oa_parent_target_id']['id'] = 'oa_parent_target_id';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['table'] = 'field_data_oa_parent';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['field'] = 'oa_parent_target_id';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['summary']['format'] = 'default_summary';
+  /* Contextual filter: Open Atrium: Parent ID (Content) */
+  $handler->display->display_options['arguments']['entity_id']['id'] = 'entity_id';
+  $handler->display->display_options['arguments']['entity_id']['table'] = 'field_data_oa_parent';
+  $handler->display->display_options['arguments']['entity_id']['field'] = 'entity_id';
+  $handler->display->display_options['arguments']['entity_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['entity_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['entity_id']['default_argument_options']['index'] = '3';
+  $handler->display->display_options['arguments']['entity_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['entity_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['entity_id']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -189,25 +183,16 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '1';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Parent (oa_parent) */
-  $handler->display->display_options['arguments']['oa_parent_target_id']['id'] = 'oa_parent_target_id';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['table'] = 'field_data_oa_parent';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['field'] = 'oa_parent_target_id';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['default_argument_options']['index'] = '3';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
-    'oa_parent_target_id' => array(
+    'entity_id' => array(
       'type' => 'context',
       'context' => 'entity:node.nid',
       'context_optional' => 1,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Content: Parent (oa_parent)',
+      'label' => 'Open Atrium: Parent ID (Content)',
     ),
   );
 
@@ -217,6 +202,10 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['title'] = 'Original Post';
   $handler->display->display_options['display_description'] = 'Parent of a discussion';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -293,33 +282,16 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['delete_node']['label'] = '';
   $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delete_node']['text'] = 'remove';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '3';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
-    'nid' => array(
+    'entity_id' => array(
       'type' => 'context',
       'context' => 'entity:node.nid',
       'context_optional' => 1,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Content: Nid',
-    ),
-    'oa_parent_target_id' => array(
-      'type' => 'context',
-      'context' => 'entity:node.nid',
-      'context_optional' => 1,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: Parent (oa_parent)',
+      'label' => 'Open Atrium: Parent ID (Content)',
     ),
   );
 
@@ -408,26 +380,6 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['field_oa_discussion_media']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_oa_discussion_media']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_oa_discussion_media']['multi_type'] = 'ul';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '3';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Parent (oa_parent) */
-  $handler->display->display_options['arguments']['oa_parent_target_id']['id'] = 'oa_parent_target_id';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['table'] = 'field_data_oa_parent';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['field'] = 'oa_parent_target_id';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['default_argument_options']['index'] = '3';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['oa_parent_target_id']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -444,38 +396,16 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
   $handler->display->display_options['filters']['status_1']['value'] = '1';
   $handler->display->display_options['filters']['status_1']['group'] = 1;
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
-    'nid' => array(
+    'entity_id' => array(
       'type' => 'context',
       'context' => 'entity:node.nid',
-      'context_optional' => 0,
+      'context_optional' => 1,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Content: Nid',
-    ),
-    'oa_parent_target_id' => array(
-      'type' => 'context',
-      'context' => 'entity:node.nid',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: Parent (oa_parent)',
-    ),
-    'nid_1' => array(
-      'type' => 'context',
-      'context' => 'entity:node.oa_parent',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: Nid',
-    ),
-    'oa_parent_target_id_1' => array(
-      'type' => 'context',
-      'context' => 'entity:node.oa_parent',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: Parent (oa_parent)',
+      'label' => 'Open Atrium: Parent ID (Content)',
     ),
   );
   $export['open_atrium_discussions'] = $view;

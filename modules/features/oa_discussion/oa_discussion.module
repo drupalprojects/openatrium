@@ -17,6 +17,50 @@ function oa_discussion_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
+ * Implements hook_views_data().
+ */
+function oa_discussion_views_data() {
+  $data = array();
+  $data['field_data_oa_parent'] = array(
+    'table' => array(
+      'group' => t('Open Atrium'),
+    )
+  );
+  // Adds our field in the "Filters" section of Views
+  $data['field_data_oa_parent']['entity_id']['argument'] = array(
+    'title' => 'Parent ID (Content)',
+    'help' => 'Filter on the parent node id.',
+    'handler' => 'views_handler_argument_oa_parent_id',
+  );
+
+/*
+  $data['node']['oa_parent'] = array(
+    'real field' => 'nid',
+    'title' => t('Parent ID'),
+    'group' => t('Content'),
+    'help' => t('The parent node ID.'),
+    'argument' => array(
+      'handler' => 'views_handler_argument_parent_id',
+      'name field' => 'parent_id',
+      'numeric' => TRUE,
+      'skip base' => 'taxonomy_term_data',
+    ),
+    */
+    /*
+    'filter' => array(
+      'title' => t('Parent ID'),
+      'handler' => 'views_handler_filter_parent_id',
+      'hierarchy table' => 'taxonomy_term_hierarchy',
+      'numeric' => TRUE,
+      'skip base' => 'taxonomy_term_data',
+      'allow empty' => TRUE,
+    ),
+  );
+  */
+  return $data;
+}
+
+/**
  * Implements hook_form_alter
  */
 function oa_discussion_form_alter(&$form, &$form_state, $form_id) {
