@@ -63,7 +63,7 @@ function oa_discussion_reply_edit_form_submit($form, &$form_state) {
  */
 function oa_discussion_reply_form($form, &$form_state, $node) {
   $parent = field_get_items('node', $node, 'oa_parent');
-  $parent_id = !empty($parent[0]['target_id']) ? $parent[0]['target_id'] : 0;
+  $parent_id = !empty($parent[0]['target_id']) ? $parent[0]['target_id'] : $node->nid;
 
   $form['#node'] = $node;
   $form['#parent_id'] = $parent_id;
