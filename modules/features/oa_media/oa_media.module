@@ -8,6 +8,12 @@
  * to fix image resizing
  * copied from http://drupal.org/node/1514406
  */
+function oa_media_theme_registry_alter(&$theme_registry) {
+  if (!empty($theme_registry['media_colorbox']['function'])) {
+    $theme_registry['media_colorbox']['function'] = 'oa_media_media_colorbox';
+  }
+}
+
 function oa_media_media_colorbox($variables) {
   $entity_id = $variables['entity_id'];
   $file_id = $variables['file_id'];
