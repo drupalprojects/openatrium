@@ -7,10 +7,7 @@ projects[panopoly][download][type] = git
 projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
 projects[panopoly][download][branch] = 7.x-1.x
 
-; Parent Theme
-projects[radix][version] = 2.0-alpha3
-projects[radix][patch][] = http://drupal.org/files/radix-template-1907666-2.patch
-
+; **** Panopoly Overrides ****
 ; Update Panelizer to latest with features override patch
 projects[panelizer][type] = module
 projects[panelizer][subdir] = contrib
@@ -28,6 +25,17 @@ projects[file_entity][download][url] = http://git.drupal.org/project/file_entity
 projects[file_entity][download][branch] = 7.x-2.x
 projects[file_entity][download][revision] = e1fa3e05a8f849e54cddd703a9dc1b6e8f7c55de
 projects[file_entity][patch][] = http://drupal.org/files/1420812-file_download-41.patch
+
+; Navbar (Overridden from Panopoly)
+projects[navbar][subdir] = contrib
+projects[navbar][version] = 1.0-alpha3
+projects[navbar][patch][] = http://drupal.org/files/navbar_has_mismatching_closing_tag_1875254_1.patch
+;
+; **** end of overrides ****
+
+; Parent Theme
+projects[radix][version] = 2.0-alpha3
+projects[radix][patch][] = http://drupal.org/files/radix-template-1907666-2.patch
 
 ; Features Override
 projects[features_override][subdir] = contrib
@@ -87,10 +95,16 @@ projects[twitter_bootstrap_ui][download][revision] = 7dccf08a63d6e2ee301c481a044
 libraries[twitter_bootstrap][download][type] = file
 libraries[twitter_bootstrap][download][url] = http://twitter.github.com/bootstrap/assets/bootstrap.zip
 
-; Navbar (Overridden from Panopoly)
-projects[navbar][subdir] = contrib
-projects[navbar][version] = 1.0-alpha3
-projects[navbar][patch][] = http://drupal.org/files/navbar_has_mismatching_closing_tag_1875254_1.patch
+; Colorbox
+projects[colorbox][subdir] = contrib
+projects[colorbox][version] = 2.3
+
+projects[media_colorbox][subdir] = contrib
+projects[media_colorbox][version] = 1.0-rc3
+
+libraries[colorbox][download][type] = file
+libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip
+libraries[colorbox][directory_name] = colorbox
 
 ; Devel
 projects[devel][type] = module

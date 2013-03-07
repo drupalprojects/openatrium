@@ -60,6 +60,10 @@ dependencies[] = og_ui
 
 ; Libraries
 dependencies[] = twitter_bootstrap_ui
+dependencies[] = colorbox
+
+; Media
+dependencies[] = media_colorbox
 
 ; Open Atrium 2.0 Modules
 dependencies[] = oa_date

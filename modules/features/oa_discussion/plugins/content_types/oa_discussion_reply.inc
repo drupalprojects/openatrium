@@ -84,8 +84,8 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
 
   // field_default_form requires #parents be set.
   $form['#parents'] = empty($form['#parents']) ? array() : $form['#parents'];
-  $field = field_info_field('field_oa_discussion_media');
-  $instance = field_info_instance('node', 'field_oa_discussion_media', 'oa_discussion_post');
+  $field = field_info_field('field_oa_media');
+  $instance = field_info_instance('node', 'field_oa_media', 'oa_discussion_post');
 
   $form['oa_reply']['media'] = field_default_form('node', NULL, $field, $instance, $node->language, NULL, $form, $form_state);
   form_load_include($form_state, 'inc', 'oa_discussion', 'plugins/content_types/oa_discussion_reply'); // For AJAX add more
@@ -104,7 +104,7 @@ function oa_discussion_reply_form_submit($form, &$form_state) {
   $node = $form['#node'];
   $parent_id = $form['#parent_id'];
   $body = $form_state['values']['body'];
-  $media = $form_state['values']['field_oa_discussion_media'][LANGUAGE_NONE];
+  $media = $form_state['values']['field_oa_media'][LANGUAGE_NONE];
   if (!empty($parent_id) && (!empty($body['value']) || !empty($media))) {
     // determine a title for the reply
     if (!empty($form_state['values']['subject'])) {
@@ -139,10 +139,11 @@ function oa_discussion_reply_form_submit($form, &$form_state) {
     foreach ($media as $delta => $file) {
       if (!empty($file['fid'])) {
         if (is_numeric($delta)) {
-          $wrapper->field_oa_discussion_media[$delta]->set(array('fid' => $file['fid'], 'display' => $file['display']));
+          $wrapper->field_oa_media[$delta]->set(array('fid' => $file['fid'], 'display' => $file['display']));
         }
       }
     }
     $wrapper->save();
   }
 }
+

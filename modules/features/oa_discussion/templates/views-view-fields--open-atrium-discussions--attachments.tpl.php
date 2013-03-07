@@ -26,24 +26,13 @@
 ?>
 <div class='oa-list well clearfix attachments'>
   <div class='pull-right user-badge'>
-    <div class='pull-left'>
-      <div class='user-picture'>
-        <?php print $field_user_picture; ?>
-      </div>
-    </div>
-    <div class='pull-right'>
-      <div class='name'>
-        <?php print $name; ?>
-      </div>
-      <div class='created'>
-        <?php print $created; ?>
-      </div>
-    </div>
+    <?php print $name; ?>
+    <?php print $field_user_picture; ?>
   </div>
   <div class='oa-list-header'>
     <?php print $counter; ?>
   </div>
-  <div class='oa-body'>
+  <div class='pull-left'>
     <?php print $field_oa_media; ?>
   </div>
 </div>

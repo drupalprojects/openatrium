@@ -36,6 +36,10 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'counter' => 'counter',
+    'field_oa_media' => 'field_oa_media',
+  );
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
@@ -108,6 +112,7 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['body_1']['element_type'] = '0';
   $handler->display->display_options['fields']['body_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['body_1']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body_1']['settings'] = array(
     'trim_length' => '80',
@@ -311,6 +316,12 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'No files have been attached to this discussion';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -329,7 +340,9 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['counter']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['counter']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['counter']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['counter']['element_type'] = '0';
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['counter']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '0';
   /* Field: User: Picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
@@ -337,7 +350,9 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'uid';
   $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'image_style' => 'oa_small_thumbnail',
@@ -349,7 +364,9 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_type'] = 'span';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -364,9 +381,23 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['field_oa_media']['table'] = 'field_data_field_oa_media';
   $handler->display->display_options['fields']['field_oa_media']['field'] = 'field_oa_media';
   $handler->display->display_options['fields']['field_oa_media']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_media']['element_type'] = '0';
   $handler->display->display_options['fields']['field_oa_media']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_media']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_oa_media']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_oa_media']['type'] = 'media_colorbox';
+  $handler->display->display_options['fields']['field_oa_media']['settings'] = array(
+    'file_view_mode' => 'preview',
+    'colorbox_view_mode' => 'colorbox',
+    'fixed_width' => '800',
+    'fixed_height' => '600',
+    'colorbox_gallery' => 'field_page',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'title',
+    'audio_playlist' => 0,
+  );
   $handler->display->display_options['fields']['field_oa_media']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_oa_media']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */

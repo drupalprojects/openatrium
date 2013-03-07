@@ -2114,7 +2114,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url('../images/glyphicons-halflings.png?1362411437');
+  background-image: url('../images/glyphicons-halflings.png?1360096772');
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px; }
@@ -2134,7 +2134,7 @@ table th[class*="span"],
 .dropdown-menu > .active > a > [class*=" icon-"],
 .dropdown-submenu:hover > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"] {
-  background-image: url('../images/glyphicons-halflings-white.png?1362411437'); }
+  background-image: url('../images/glyphicons-halflings-white.png?1360096772'); }
 
 /* line 48, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_sprites.scss */
 .icon-glass {
@@ -12974,7 +12974,7 @@ select[size] {
 
 /* line 70, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
 html.js input.form-autocomplete {
-  background: url('../images/throbber.gif?1362411437') no-repeat right 8px white !important; }
+  background: url('../images/throbber.gif?1360096772') no-repeat right 8px white !important; }
 
 /* line 73, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
 html.js input.throbbing {
@@ -14848,6 +14848,15 @@ html.js input.throbbing {
   clear: both; }
 
 /* line 9, ../sass/_node.scss */
+.oa-media {
+  padding: 5px 10px; }
+
+/* line 12, ../sass/_node.scss */
+.oa-description {
+  font-size: 12px;
+  color: #555; }
+
+/* line 16, ../sass/_node.scss */
 .well.current-node {
   border-left: 6px solid #b0eba3; }
 
