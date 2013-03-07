@@ -1,7 +1,7 @@
 name = Open Atrium Media
 description = Media improvements for Open Atrium
 core = 7.x
-package = Features
+package = Open Atrium
 version = 7.x-2.0
 project = oa_media
 dependencies[] = colorbox
