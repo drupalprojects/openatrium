@@ -390,7 +390,13 @@ function oa_groups_list_content_types($group_content = FALSE) {
  * @param  string $bundle  name of node bundle to create
  * @param  object $context an optional code to copy group/section from
  *   if not specified, current Session group/section context is used
- * @return object          node
+ * @return object $wrapper entity metadata wrapper around node
+ *
+ * NOTE: The created node is NOT SAVED.  You need to use:
+ *   $wrapper = oa_groups_create_node(...);
+ *   $wrapper->save();
+ * to actually save the created node.  This allows you to set other
+ * wrapper fields before saving
  */
 function oa_groups_create_node($bundle, $title = '', $context = NULL) {
   global $user;
@@ -426,10 +432,7 @@ function oa_groups_create_node($bundle, $title = '', $context = NULL) {
     $wrapper->{OA_SECTION_FIELD} = $section_id;
   }
 
-  $wrapper->save(true);
-  entity_save('node', $entity);
-
-  return $entity;
+  return $wrapper;
 }
 
 /**

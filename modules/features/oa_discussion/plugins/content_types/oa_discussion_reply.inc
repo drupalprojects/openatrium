@@ -81,12 +81,12 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
     '#default_value' => '',
     '#format' => 'panopoly_wysiwyg_text',
   );
-  
+
   // field_default_form requires #parents be set.
   $form['#parents'] = empty($form['#parents']) ? array() : $form['#parents'];
   $field = field_info_field('field_oa_discussion_media');
   $instance = field_info_instance('node', 'field_oa_discussion_media', 'oa_discussion_post');
-  
+
   $form['oa_reply']['media'] = field_default_form('node', NULL, $field, $instance, $node->language, NULL, $form, $form_state);
   form_load_include($form_state, 'inc', 'oa_discussion', 'plugins/content_types/oa_discussion_reply'); // For AJAX add more
 
@@ -131,15 +131,16 @@ function oa_discussion_reply_form_submit($form, &$form_state) {
       }
       $title = 'Attached ' . implode(', ', $files);
     }
-    
+
     // create a new reply node
-    $reply = oa_groups_create_node('oa_discussion_post', $title, $node);
-    $wrapper = entity_metadata_wrapper('node', $reply);
+    $wrapper = oa_groups_create_node('oa_discussion_post', $title, $node);
     $wrapper->oa_parent = $parent_id;
     $wrapper->body->set(array('value' => $body['value'], 'format' => $body['format']));
     foreach ($media as $delta => $file) {
-      if (is_numeric($delta)) {
-        $wrapper->field_oa_discussion_media[$delta]->set(array('fid' => $file['fid'], 'display' => $file['display']));
+      if (!empty($file['fid'])) {
+        if (is_numeric($delta)) {
+          $wrapper->field_oa_discussion_media[$delta]->set(array('fid' => $file['fid'], 'display' => $file['display']));
+        }
       }
     }
     $wrapper->save();

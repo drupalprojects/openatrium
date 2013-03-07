@@ -32,41 +32,15 @@ function oa_discussion_views_data() {
     'help' => 'Filter on the parent node id.',
     'handler' => 'views_handler_argument_oa_parent_id',
   );
-
-/*
-  $data['node']['oa_parent'] = array(
-    'real field' => 'nid',
-    'title' => t('Parent ID'),
-    'group' => t('Content'),
-    'help' => t('The parent node ID.'),
-    'argument' => array(
-      'handler' => 'views_handler_argument_parent_id',
-      'name field' => 'parent_id',
-      'numeric' => TRUE,
-      'skip base' => 'taxonomy_term_data',
-    ),
-    */
-    /*
-    'filter' => array(
-      'title' => t('Parent ID'),
-      'handler' => 'views_handler_filter_parent_id',
-      'hierarchy table' => 'taxonomy_term_hierarchy',
-      'numeric' => TRUE,
-      'skip base' => 'taxonomy_term_data',
-      'allow empty' => TRUE,
-    ),
-  );
-  */
   return $data;
 }
 
 /**
  * Implements hook_form_alter
  */
-function oa_discussion_form_alter(&$form, &$form_state, $form_id) {
+function oa_discussion_form_node_form_alter(&$form, &$form_state, $form_id) {
   global $user;
-  if (strstr($form_id, 'node_form') && (arg(1) == 'add') &&
-    (arg(2) == 'oa-discussion-post')) {
+  if ((arg(1) == 'add') && (arg(2) == 'oa-discussion-post')) {
     $parent_id = arg(3);
     // we are in an node/add form
     // Set the Parent field if we have an argument passed to us
