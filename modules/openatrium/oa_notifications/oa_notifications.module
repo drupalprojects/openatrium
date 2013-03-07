@@ -192,7 +192,7 @@ function oa_notifications_node_insert($node) {
  * Implements hook_node_update().
  */
 function oa_notifications_node_update($node) {
-  if (oa_notifications_is_notification_type($node)) {
+  if (oa_notifications_is_notification_type($node) && isset($node->oa_notifications)) {
     oa_notifications_save_notifications($node->oa_notifications);
   }
 }
