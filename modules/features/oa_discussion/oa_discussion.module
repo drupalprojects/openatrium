@@ -18,6 +18,7 @@ function oa_discussion_ctools_plugin_directory($owner, $plugin_type) {
 
 /**
  * Implements hook_views_data().
+ * Define a custom views contextual filter for Parent node
  */
 function oa_discussion_views_data() {
   $data = array();
@@ -33,40 +34,6 @@ function oa_discussion_views_data() {
     'handler' => 'views_handler_argument_oa_parent_id',
   );
   return $data;
-}
-
-/**
- * Implements hook_form_alter
- */
-function oa_discussion_form_node_form_alter(&$form, &$form_state, $form_id) {
-  global $user;
-  if ((arg(1) == 'add') && (arg(2) == 'oa-discussion-post')) {
-    $parent_id = arg(3);
-    // we are in an node/add form
-    // Set the Parent field if we have an argument passed to us
-    $node = node_load($parent_id);
-    if (!empty($node)) {
-      // don't allow a child of a child...single level structure
-      $parent_parent = field_get_items('node', $node, 'oa_parent');
-      if (!empty($parent_parent[0]['target_id'])) {
-        $parent_id = $parent_parent[0]['target_id'];
-      }
-      if (isset($form['oa_parent']) &&
-        empty($form['oa_parent'][LANGUAGE_NONE]['#default_value'])) {
-        $form['oa_parent'][LANGUAGE_NONE]['#default_value'] = $parent_id;
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_views_query_alter().
- * Change contextual filters to OR, to get both parent and children discussions.
- */
-function oa_discussion_views_query_alter(&$view, &$query) {
-  if ($view->current_display == 'attachments') {
-//    $query->where[0]['type'] = 'OR';
-  }
 }
 
 /**

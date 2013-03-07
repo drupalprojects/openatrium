@@ -22,16 +22,7 @@ function oa_discussion_panelizer_defaults() {
   $panelizer->css = '';
   $panelizer->pipeline = 'standard';
   $panelizer->contexts = array();
-  $panelizer->relationships = array(
-    0 => array(
-      'identifier' => 'Parent Node',
-      'keyword' => 'parent',
-      'name' => 'entity_from_field:oa_parent-node-node',
-      'delta' => 0,
-      'context' => 'panelizer',
-      'id' => 1,
-    ),
-  );
+  $panelizer->relationships = array();
   $panelizer->access = array();
   $panelizer->view_mode = 'page_manager';
   $panelizer->css_class = '';
@@ -59,16 +50,7 @@ function oa_discussion_panelizer_defaults() {
     $pane->subtype = 'open_atrium_discussions-original_post';
     $pane->shown = TRUE;
     $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'context_exists',
-          'settings' => array(
-            'exists' => '0',
-          ),
-          'context' => 'relationship_entity_from_field:oa_parent-node-node_1',
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
     );
     $pane->configuration = array(
       'context' => array(
@@ -104,23 +86,14 @@ function oa_discussion_panelizer_defaults() {
     $pane->pid = 'new-2';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_discussions-original_post';
+    $pane->subtype = 'open_atrium_discussions-replies';
     $pane->shown = TRUE;
     $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'context_exists',
-          'settings' => array(
-            'exists' => '1',
-          ),
-          'context' => 'relationship_entity_from_field:oa_parent-node-node_1',
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
     );
     $pane->configuration = array(
       'context' => array(
-        0 => 'relationship_entity_from_field:oa_parent-node-node_1',
+        0 => 'panelizer',
       ),
       'view_mode' => 'teaser',
       'widget_title' => NULL,
@@ -151,102 +124,6 @@ function oa_discussion_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_discussions-replies';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'context_exists',
-          'settings' => array(
-            'exists' => '0',
-          ),
-          'context' => 'relationship_entity_from_field:oa_parent-node-node_1',
-          'not' => FALSE,
-        ),
-      ),
-    );
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'panelizer',
-      ),
-      'view_mode' => 'teaser',
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
-      'exposed' => array(
-        'sort_by' => NULL,
-        'sort_order' => NULL,
-      ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'more_link' => NULL,
-      'path' => NULL,
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['contentmain'][2] = 'new-3';
-    $pane = new stdClass();
-    $pane->pid = 'new-4';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_discussions-replies';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'context_exists',
-          'settings' => array(
-            'exists' => '1',
-          ),
-          'context' => 'relationship_entity_from_field:oa_parent-node-node_1',
-          'not' => FALSE,
-        ),
-      ),
-    );
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'relationship_entity_from_field:oa_parent-node-node_1',
-      ),
-      'view_mode' => 'teaser',
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
-      'exposed' => array(
-        'sort_by' => NULL,
-        'sort_order' => NULL,
-      ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'more_link' => NULL,
-      'path' => NULL,
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['contentmain'][3] = 'new-4';
-    $pane = new stdClass();
-    $pane->pid = 'new-5';
-    $pane->panel = 'contentmain';
     $pane->type = 'node_links';
     $pane->subtype = 'node_links';
     $pane->shown = TRUE;
@@ -267,12 +144,12 @@ function oa_discussion_panelizer_defaults() {
       'css_class' => 'link-wrapper',
     );
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['contentmain'][4] = 'new-5';
+    $display->content['new-3'] = $pane;
+    $display->panels['contentmain'][2] = 'new-3';
     $pane = new stdClass();
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-4';
     $pane->panel = 'contentmain';
     $pane->type = 'oa_discussion_reply';
     $pane->subtype = 'oa_discussion_reply';
@@ -284,8 +161,8 @@ function oa_discussion_panelizer_defaults() {
       'context' => 'panelizer',
       'override_title' => 0,
       'override_title_text' => '',
-      'form_build_id' => 'form-CsweUe9hjbWtGhzGWgsjGhqAcah2_TQvAig-U2IjhRo',
-      'form_token' => 'jpd1SmLOSjPYhV0jy7hocYhHKjBYtwSQLESwggm7XKU',
+      'form_build_id' => 'form-iVavqOC6bzBA_ErXsVB7zwrNYyoHM1BHhC1eMooaeqk',
+      'form_token' => '4CdQgzPlDP9xxRzmRMKu1oy6AB4yaHSwnO7i8ygSNj0',
       'form_id' => 'oa_discussion_reply_edit_form',
       'op' => 'Finish',
     );
@@ -295,12 +172,12 @@ function oa_discussion_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['contentmain'][5] = 'new-6';
+    $display->content['new-4'] = $pane;
+    $display->panels['contentmain'][3] = 'new-4';
     $pane = new stdClass();
-    $pane->pid = 'new-7';
+    $pane->pid = 'new-5';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_content_visibility';
     $pane->subtype = 'oa_widgets_content_visibility';
@@ -329,10 +206,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['sidebar'][0] = 'new-7';
+    $display->content['new-5'] = $pane;
+    $display->panels['sidebar'][0] = 'new-5';
     $pane = new stdClass();
-    $pane->pid = 'new-8';
+    $pane->pid = 'new-6';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_notifications_pane';
     $pane->subtype = 'oa_notifications_pane';
@@ -350,10 +227,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['sidebar'][1] = 'new-8';
+    $display->content['new-6'] = $pane;
+    $display->panels['sidebar'][1] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-9';
+    $pane->pid = 'new-7';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
     $pane->subtype = 'open_atrium_discussions-attachments';
@@ -376,8 +253,7 @@ function oa_discussion_panelizer_defaults() {
       'view_settings' => 'fields',
       'header_type' => 'none',
       'context' => array(
-        0 => 'relationship_entity_from_field:oa_parent-node-node_1',
-        1 => 'relationship_entity_from_field:oa_parent-node-node_1',
+        0 => 'panelizer',
       ),
     );
     $pane->cache = array();
@@ -391,8 +267,8 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['sidebar'][2] = 'new-9';
+    $display->content['new-7'] = $pane;
+    $display->panels['sidebar'][2] = 'new-7';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
@@ -432,7 +308,7 @@ function oa_discussion_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-10';
+    $pane->pid = 'new-8';
     $pane->panel = 'contentmain';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:body';
@@ -455,10 +331,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['contentmain'][0] = 'new-10';
+    $display->content['new-8'] = $pane;
+    $display->panels['contentmain'][0] = 'new-8';
     $pane = new stdClass();
-    $pane->pid = 'new-11';
+    $pane->pid = 'new-9';
     $pane->panel = 'contentmain';
     $pane->type = 'node_links';
     $pane->subtype = 'node_links';
@@ -482,10 +358,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-11'] = $pane;
-    $display->panels['contentmain'][1] = 'new-11';
+    $display->content['new-9'] = $pane;
+    $display->panels['contentmain'][1] = 'new-9';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-10';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'open_atrium_content-panel_pane_2';
@@ -527,10 +403,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-12'] = $pane;
-    $display->panels['contentmain'][2] = 'new-12';
+    $display->content['new-10'] = $pane;
+    $display->panels['contentmain'][2] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-13';
+    $pane->pid = 'new-11';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_add_content';
     $pane->subtype = 'oa_widgets_add_content';
@@ -565,10 +441,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-13'] = $pane;
-    $display->panels['sidebar'][0] = 'new-13';
+    $display->content['new-11'] = $pane;
+    $display->panels['sidebar'][0] = 'new-11';
     $pane = new stdClass();
-    $pane->pid = 'new-14';
+    $pane->pid = 'new-12';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:og_group_ref';
@@ -591,10 +467,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-14'] = $pane;
-    $display->panels['sidebar'][1] = 'new-14';
+    $display->content['new-12'] = $pane;
+    $display->panels['sidebar'][1] = 'new-12';
     $pane = new stdClass();
-    $pane->pid = 'new-15';
+    $pane->pid = 'new-13';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_oa_organization_ref';
@@ -634,10 +510,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-15'] = $pane;
-    $display->panels['sidebar'][2] = 'new-15';
+    $display->content['new-13'] = $pane;
+    $display->panels['sidebar'][2] = 'new-13';
     $pane = new stdClass();
-    $pane->pid = 'new-16';
+    $pane->pid = 'new-14';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_oa_team_ref';
@@ -677,10 +553,10 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-16'] = $pane;
-    $display->panels['sidebar'][3] = 'new-16';
+    $display->content['new-14'] = $pane;
+    $display->panels['sidebar'][3] = 'new-14';
     $pane = new stdClass();
-    $pane->pid = 'new-17';
+    $pane->pid = 'new-15';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_oa_user_ref';
@@ -720,8 +596,8 @@ function oa_discussion_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $display->content['new-17'] = $pane;
-    $display->panels['sidebar'][4] = 'new-17';
+    $display->content['new-15'] = $pane;
+    $display->panels['sidebar'][4] = 'new-15';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
