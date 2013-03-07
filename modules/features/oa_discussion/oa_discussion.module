@@ -65,7 +65,7 @@ function oa_discussion_form_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function oa_discussion_views_query_alter(&$view, &$query) {
   if ($view->current_display == 'attachments') {
-    $query->where[0]['type'] = 'OR';
+//    $query->where[0]['type'] = 'OR';
   }
 }
 
@@ -106,7 +106,7 @@ function oa_discussion_views_pre_render(&$view) {
   if ($view->name == 'open_atrium_discussions' && $view->current_display == 'attachments') {
     $count = count($view->result);
     for ($i = 0; $i < $count; $i++) {
-      if (empty($view->result[$i]->field_field_oa_discussion_attachments) && empty($view->result[$i]->field_field_oa_discussion_media)) {
+      if (empty($view->result[$i]->field_field_oa_media)) {
         unset($view->result[$i]);
       }
     }

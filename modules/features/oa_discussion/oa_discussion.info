@@ -1,4 +1,5 @@
 name = Open Atrium Discussion
+description = Discussion posts for Open Atrium
 core = 7.x
 package = Open Atrium
 php = 5.2.4
@@ -34,8 +35,7 @@ features[field][] = message-oa_reply-field_oa_message_section
 features[field][] = message-oa_reply-field_oa_message_text
 features[field][] = message-oa_reply-field_oa_node_ref
 features[field][] = node-oa_discussion_post-body
-features[field][] = node-oa_discussion_post-field_oa_discussion_attachments
-features[field][] = node-oa_discussion_post-field_oa_discussion_media
+features[field][] = node-oa_discussion_post-field_oa_media
 features[field][] = node-oa_discussion_post-oa_parent
 features[field][] = node-oa_discussion_post-oa_section_ref
 features[field][] = node-oa_discussion_post-og_group_ref

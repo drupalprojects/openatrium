@@ -44,7 +44,6 @@
     <?php print $counter; ?>
   </div>
   <div class='oa-body'>
-    <?php print $field_oa_discussion_attachments; ?>
-    <?php print $field_oa_discussion_media; ?>
+    <?php print $field_oa_media; ?>
   </div>
 </div>

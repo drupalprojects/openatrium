@@ -360,26 +360,13 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'g:ia D M j';
   $handler->display->display_options['fields']['created']['oa_date'] = '0';
   /* Field: Content: Attachments */
-  $handler->display->display_options['fields']['field_oa_discussion_attachments']['id'] = 'field_oa_discussion_attachments';
-  $handler->display->display_options['fields']['field_oa_discussion_attachments']['table'] = 'field_data_field_oa_discussion_attachments';
-  $handler->display->display_options['fields']['field_oa_discussion_attachments']['field'] = 'field_oa_discussion_attachments';
-  $handler->display->display_options['fields']['field_oa_discussion_attachments']['label'] = '';
-  $handler->display->display_options['fields']['field_oa_discussion_attachments']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_oa_discussion_attachments']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_oa_discussion_attachments']['settings'] = array(
-    'file_view_mode' => 'default',
-  );
-  $handler->display->display_options['fields']['field_oa_discussion_attachments']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_oa_discussion_attachments']['multi_type'] = 'ul';
-  /* Field: Content: Media */
-  $handler->display->display_options['fields']['field_oa_discussion_media']['id'] = 'field_oa_discussion_media';
-  $handler->display->display_options['fields']['field_oa_discussion_media']['table'] = 'field_data_field_oa_discussion_media';
-  $handler->display->display_options['fields']['field_oa_discussion_media']['field'] = 'field_oa_discussion_media';
-  $handler->display->display_options['fields']['field_oa_discussion_media']['label'] = '';
-  $handler->display->display_options['fields']['field_oa_discussion_media']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_oa_discussion_media']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_oa_discussion_media']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_oa_discussion_media']['multi_type'] = 'ul';
+  $handler->display->display_options['fields']['field_oa_media']['id'] = 'field_oa_media';
+  $handler->display->display_options['fields']['field_oa_media']['table'] = 'field_data_field_oa_media';
+  $handler->display->display_options['fields']['field_oa_media']['field'] = 'field_oa_media';
+  $handler->display->display_options['fields']['field_oa_media']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_media']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_media']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_oa_media']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */

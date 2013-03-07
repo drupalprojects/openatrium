@@ -89,14 +89,14 @@ function oa_pages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-oa_pages_page-field_oa_pages_attachments'.
-  $fields['node-oa_pages_page-field_oa_pages_attachments'] = array(
+  // Exported field: 'node-oa_pages_page-field_oa_media'.
+  $fields['node-oa_pages_page-field_oa_media'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_oa_pages_attachments',
+      'field_name' => 'field_oa_media',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -130,7 +130,7 @@ function oa_pages_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '2',
+          'weight' => 6,
         ),
         'featured' => array(
           'label' => 'above',
@@ -146,92 +146,13 @@ function oa_pages_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_oa_pages_attachments',
+      'field_name' => 'field_oa_media',
       'label' => 'Attachments',
       'required' => 0,
       'settings' => array(
-        'description_field' => 1,
-        'file_directory' => 'files/[site:og-context--node:title]',
-        'file_extensions' => 'txt doc docx xls xlsx ppt pptx rtf jpg png gif pdf psd zip z tar',
-        'max_filesize' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'file',
-        'settings' => array(
-          'progress_indicator' => 'throbber',
-        ),
-        'type' => 'file_generic',
-        'weight' => '5',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-oa_pages_page-field_oa_pages_media'.
-  $fields['node-oa_pages_page-field_oa_pages_media'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_oa_pages_media',
-      'foreign keys' => array(
-        'fid' => array(
-          'columns' => array(
-            'fid' => 'fid',
-          ),
-          'table' => 'file_managed',
-        ),
-      ),
-      'indexes' => array(
-        'fid' => array(
-          0 => 'fid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'file',
-      'settings' => array(
-        'display_default' => 0,
-        'display_field' => 0,
-        'uri_scheme' => 'private',
-      ),
-      'translatable' => '0',
-      'type' => 'file',
-    ),
-    'field_instance' => array(
-      'bundle' => 'oa_pages_page',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
-          'weight' => '1',
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_oa_pages_media',
-      'label' => 'Media',
-      'required' => 0,
-      'settings' => array(
         'description_field' => 0,
-        'file_directory' => '',
-        'file_extensions' => 'gif png jpg jpeg',
+        'file_directory' => '[site:og-context--node:title]',
+        'file_extensions' => 'gif png jpg jpeg pdf doc docx xls xlsx txt',
         'max_filesize' => '',
         'user_register_form' => FALSE,
       ),
@@ -247,7 +168,7 @@ function oa_pages_field_default_fields() {
           ),
           'allowed_types' => array(
             'audio' => 0,
-            'document' => 0,
+            'document' => 'document',
             'image' => 'image',
             'video' => 'video',
           ),
@@ -260,7 +181,7 @@ function oa_pages_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '4',
+        'weight' => '6',
       ),
     ),
   );
@@ -570,7 +491,6 @@ function oa_pages_field_default_fields() {
   t('Attachments');
   t('Body');
   t('Groups audience');
-  t('Media');
   t('OpenAtrium Section');
   t('Parent');
 
