@@ -17,6 +17,23 @@ function oa_discussion_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
+ * Implementation of hook_menu
+ */
+function oa_discussion_menu() {
+
+  // Panelizer "revert" page callback
+  $items['node/%/remove'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('oa_discussion_remove', 1),
+    'access callback' => 'panopoly_admin_panelizer_revert_access',
+    'access arguments' => array(3, 4),
+  );
+
+  return $items;
+}
+
+/**
  * Implements hook_views_data().
  * Define a custom views contextual filter for Parent node
  */
