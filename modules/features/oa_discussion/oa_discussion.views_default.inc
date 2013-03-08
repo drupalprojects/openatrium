@@ -112,7 +112,7 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['body_1']['element_type'] = '0';
   $handler->display->display_options['fields']['body_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['body_1']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['body_1']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body_1']['settings'] = array(
     'trim_length' => '80',
@@ -122,8 +122,9 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
@@ -138,8 +139,6 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['label'] = '';
-  $handler->display->display_options['fields']['delete_node']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['delete_node']['alter']['text'] = '<a href="/node/[nid]/remove">remove</a>';
   $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delete_node']['text'] = 'remove';
   /* Field: Content: Has new content */
@@ -161,6 +160,17 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['status']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['status']['type'] = 'published-notpublished';
   $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Attachments */
+  $handler->display->display_options['fields']['field_oa_media']['id'] = 'field_oa_media';
+  $handler->display->display_options['fields']['field_oa_media']['table'] = 'field_data_field_oa_media';
+  $handler->display->display_options['fields']['field_oa_media']['field'] = 'field_oa_media';
+  $handler->display->display_options['fields']['field_oa_media']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_media']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_oa_media']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_media']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_media']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_oa_media']['type'] = 'file_table';
+  $handler->display->display_options['fields']['field_oa_media']['delta_offset'] = '0';
   /* Sort criterion: Content: Nid */
   $handler->display->display_options['sorts']['nid']['id'] = 'nid';
   $handler->display->display_options['sorts']['nid']['table'] = 'node';
@@ -293,6 +303,27 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['delete_node']['label'] = '';
   $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delete_node']['text'] = 'remove';
+  /* Field: Content: Attachments */
+  $handler->display->display_options['fields']['field_oa_media']['id'] = 'field_oa_media';
+  $handler->display->display_options['fields']['field_oa_media']['table'] = 'field_data_field_oa_media';
+  $handler->display->display_options['fields']['field_oa_media']['field'] = 'field_oa_media';
+  $handler->display->display_options['fields']['field_oa_media']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_media']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_oa_media']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_media']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_media']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_oa_media']['type'] = 'file_table';
+  $handler->display->display_options['fields']['field_oa_media']['delta_offset'] = '0';
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = '';
+  $handler->display->display_options['fields']['status']['element_type'] = '0';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['status']['type'] = 'published-notpublished';
+  $handler->display->display_options['fields']['status']['not'] = 0;
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(

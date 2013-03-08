@@ -21,10 +21,15 @@ function oa_discussion_ctools_plugin_directory($owner, $plugin_type) {
  */
 function oa_discussion_menu() {
 
-  // Panelizer "revert" page callback
   $items['node/%node/remove'] = array(
     'type' => MENU_CALLBACK,
     'page callback' => 'oa_discussion_remove',
+    'page arguments' => array(1),
+    'access arguments' => array('create oa discussion post content'),
+  );
+  $items['node/%node/publish'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'oa_discussion_publish',
     'page arguments' => array(1),
     'access arguments' => array('create oa discussion post content'),
   );
@@ -61,36 +66,57 @@ function oa_discussion_remove($node) {
   drupal_goto('node/' . $node->nid);
 }
 
+function oa_discussion_publish($node) {
+  if (!empty($node)) {
+    $node->status = 1; // publish;
+    node_save($node);
+  }
+  drupal_set_message(t("Content '@title' published.", array('@title' => $node->title)));
+  drupal_goto('node/' . $node->nid);
+}
+
 /**
  * Implementation of hook_preprocess_views_view_fields()
  * Perform field-level replacement/processing here
  */
 function oa_discussion_preprocess_views_view_fields(&$vars) {
-  switch ($vars['view']->current_display) {
-    case 'replies':
-      // determine if the is the specific reply we are looking at
+  if ($vars['view']->name == 'open_atrium_discussions') {
+    // set variables for all displays
+    // determine if the is the specific reply we are looking at
+
+    if (isset($vars['fields']['nid'])) {
       $nid = arg(1);
       $vars['current'] = ($nid == $vars['fields']['nid']->raw);
       $vars['current_class'] = ($vars['current']) ? 'current-node' : '';
 
-      $status = $vars['fields']['status']->raw;
-      $vars['status_class'] = ($status == 1) ? 'published' : 'unpublished';
-      $vars['unpublished'] = ($status == 1) ? '' : t('Not Published');
-
-      // determine if accordian for this row should be expanded
-      // (add "in" class to bootstrap accordian)
-      $vars['in'] = '';
-      if ((strlen(trim(strip_tags($vars['fields']['timestamp']->content))) > 0) || $vars['current']) {
-        $vars['in'] = 'in';
+      if (isset($vars['fields']['status'])) {
+        $status = $vars['fields']['status']->raw;
+        $vars['status_class'] = ($status == 1) ? 'published' : 'unpublished';
+        $vars['unpublished'] = ($status == 1) ? '' : t('Not Published');
+        $vars['remove_link'] = ($status == 1)
+          ? l(t('remove'), 'node/' . $vars['fields']['nid']->raw . '/remove')
+          : l(t('publish'), 'node/' . $vars['fields']['nid']->raw . '/publish');
       }
-      break;
+    }
 
-    case 'original_post':
-      // determine if the is the specific reply we are looking at
-      $nid = arg(1);
-      $vars['current'] = ($nid == $vars['fields']['nid']->raw);
-      $vars['current_class'] = ($vars['current']) ? 'current-node' : '';
-      break;
+    // variables for specific displays
+    switch ($vars['view']->current_display) {
+      case 'replies':
+        // determine if accordian for this row should be expanded
+        // (add "in" class to bootstrap accordian)
+        $vars['in'] = '';
+        if ((strlen(trim(strip_tags($vars['fields']['timestamp']->content))) > 0) || $vars['current']) {
+          $vars['in'] = 'in';
+        }
+
+        break;
+
+      case 'original_post':
+        break;
+
+      case 'attachments':
+        break;
+    }
   }
 }
 

@@ -40,7 +40,7 @@
       <?php print $timestamp; ?>
     </div>
   </div>
-  <?php if (!empty($body_1)): ?>
+  <?php if (!empty($body_1) || !empty($body) || !empty($field_oa_media)): ?>
     <div class="accordion" id="oa-reply-accordion<?php print $index; ?>">
       <div>
         <div class="accordion-heading">
@@ -51,10 +51,11 @@
         <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
           <div class="accordion-inner">
             <?php print $body; ?>
+            <?php print $field_oa_media; ?>
             <div class="links">
               <a href='#'>reply</a>
               <?php print $edit_node; ?>
-              <?php print $delete_node; ?>
+              <?php print $remove_link; ?>
             </div>
           </div>
         </div>
