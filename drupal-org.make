@@ -95,6 +95,9 @@ projects[twitter_bootstrap_ui][download][revision] = 7dccf08a63d6e2ee301c481a044
 libraries[twitter_bootstrap][download][type] = file
 libraries[twitter_bootstrap][download][url] = http://twitter.github.com/bootstrap/assets/bootstrap.zip
 
+; Include other Open Atrium make files
+includes[oa_media] = "modules/features/oa_media/oa_media.make"
+
 ; Devel
 projects[devel][type] = module
 projects[devel][download][type] = git
