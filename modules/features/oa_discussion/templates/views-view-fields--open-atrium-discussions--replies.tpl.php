@@ -24,7 +24,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class='oa-list well clearfix <?php print $current_class; ?>'>
+<div class='oa-list well clearfix <?php print $current_class; ?> <?php print $status_class; ?>'>
   <div class='pull-right user-badge'>
     <?php print $name; ?>
     <?php print $field_user_picture; ?>
@@ -34,6 +34,9 @@
     <?php print $created; ?>
     <?php print $title; ?>
     <div class='pull-right'>
+      <?php if (!empty($unpublished)): ?>
+        <span class="status"><?php print $unpublished; ?></span>
+      <?php endif; ?>
       <?php print $timestamp; ?>
     </div>
   </div>

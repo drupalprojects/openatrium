@@ -14860,6 +14860,15 @@ html.js input.throbbing {
 .well.current-node {
   border-left: 6px solid #b0eba3; }
 
+/* line 19, ../sass/_node.scss */
+.well.unpublished {
+  background-color: #FFF1F1; }
+
+/* line 22, ../sass/_node.scss */
+.well.unpublished .status {
+  color: red;
+  font-weight: bold; }
+
 /* line 5, ../sass/_user.scss */
 .user-badge {
   border: 1px solid #cccccc;

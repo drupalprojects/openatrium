@@ -16,3 +16,10 @@
 .well.current-node {
   border-left: 6px solid #B0EBA3;
 }
+.well.unpublished {
+  background-color: #FFF1F1;
+}
+.well.unpublished .status {
+  color: red;
+  font-weight: bold;
+}

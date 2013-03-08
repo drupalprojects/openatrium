@@ -72,6 +72,11 @@ function oa_discussion_preprocess_views_view_fields(&$vars) {
       $nid = arg(1);
       $vars['current'] = ($nid == $vars['fields']['nid']->raw);
       $vars['current_class'] = ($vars['current']) ? 'current-node' : '';
+
+      $status = $vars['fields']['status']->raw;
+      $vars['status_class'] = ($status == 1) ? 'published' : 'unpublished';
+      $vars['unpublished'] = ($status == 1) ? '' : t('Not Published');
+
       // determine if accordian for this row should be expanded
       // (add "in" class to bootstrap accordian)
       $vars['in'] = '';
