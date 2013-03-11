@@ -40,13 +40,6 @@ function oa_notifications_theme() {
       ),
       'path' => drupal_get_path('module', 'oa_notifications') . '/templates',
     ),
-    'oa_notifications_modal' => array(
-      'template' => 'oa-notifications-modal',
-      'variables' => array(
-        'title' => t('Default Modal Title'),
-      ),
-      'path' => drupal_get_path('module', 'oa_notifications') . '/templates',
-    ),
     'oa_notifications_details' => array(
       'template' => 'oa-notifications-details',
       'variables' => array(

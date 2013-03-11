@@ -125,7 +125,7 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
   $form['user']['#suffix'] = '</div>';
 
   $details = l(t('Show Details'), 'js/oa_notifications/details/' . $node->nid, array('attributes' => array('data-toggle' => 'modal', 'data-target' => '#oa-notifications-details')));
-  $details .= theme('oa_notifications_modal', array('title' => t('Notification Details')));
+  $details .= theme('oa_styles_modal', array('modal_id' => 'oa-notifications-details', 'title' => t('Notification Details')));
 
   $form['details'] = array(
     '#type' => 'markup',
