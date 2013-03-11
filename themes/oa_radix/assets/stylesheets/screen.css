@@ -2114,7 +2114,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url('../images/glyphicons-halflings.png?1360096772');
+  background-image: url('../images/glyphicons-halflings.png?1362411437');
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px; }
@@ -2134,7 +2134,7 @@ table th[class*="span"],
 .dropdown-menu > .active > a > [class*=" icon-"],
 .dropdown-submenu:hover > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"] {
-  background-image: url('../images/glyphicons-halflings-white.png?1360096772'); }
+  background-image: url('../images/glyphicons-halflings-white.png?1362411437'); }
 
 /* line 48, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_sprites.scss */
 .icon-glass {
@@ -12974,7 +12974,7 @@ select[size] {
 
 /* line 70, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
 html.js input.form-autocomplete {
-  background: url('../images/throbber.gif?1360096772') no-repeat right 8px white !important; }
+  background: url('../images/throbber.gif?1362411437') no-repeat right 8px white !important; }
 
 /* line 73, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
 html.js input.throbbing {
@@ -14684,8 +14684,7 @@ html.js input.throbbing {
   padding-top: 5px; }
   /* line 21, ../sass/_navbar.scss */
   .navbar #oa-user-badge .user-badge {
-    width: 95px;
-    min-width: 0;
+    min-width: 110px;
     padding: 5px;
     margin: 0;
     border-color: black;
@@ -14701,7 +14700,7 @@ html.js input.throbbing {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF333333', endColorstr='#FF222222', GradientType=0);
     border-color: #222222 #222222 black;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); }
-    /* line 28, ../sass/_navbar.scss */
+    /* line 27, ../sass/_navbar.scss */
     .navbar #oa-user-badge .user-badge:hover {
       color: white;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -14715,14 +14714,13 @@ html.js input.throbbing {
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF222222', endColorstr='#FF333333', GradientType=0);
       border-color: #333333 #333333 #0d0d0d;
       border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); }
-    /* line 31, ../sass/_navbar.scss */
+    /* line 30, ../sass/_navbar.scss */
     .navbar #oa-user-badge .user-badge .user-name {
-      width: 60px;
       margin-right: 5px; }
-    /* line 35, ../sass/_navbar.scss */
+    /* line 33, ../sass/_navbar.scss */
     .navbar #oa-user-badge .user-badge img {
       margin: 0; }
-  /* line 39, ../sass/_navbar.scss */
+  /* line 37, ../sass/_navbar.scss */
   .navbar #oa-user-badge .dropdown-menu {
     color: white;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -14736,7 +14734,9 @@ html.js input.throbbing {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF333333', endColorstr='#FF222222', GradientType=0);
     border-color: #222222 #222222 black;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    left: -50%; }
+    float: left;
+    width: 100%;
+    min-width: 110px; }
     /* line 42, ../sass/_navbar.scss */
     .navbar #oa-user-badge .dropdown-menu ul {
       margin: 0; }

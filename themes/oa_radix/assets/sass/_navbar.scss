@@ -19,8 +19,7 @@
     position: relative;
     padding-top: 5px;
     .user-badge {
-      width: 95px;
-      min-width: 0;
+      min-width: 110px;
       padding: 5px;
       margin: 0;
       border-color: $black;
@@ -29,7 +28,6 @@
         @include gradientBar($grayDarker, $grayDark);
       }
       .user-name {
-        width: 60px;
         margin-right: 5px;
       }
       img {
@@ -38,7 +36,9 @@
     }
     .dropdown-menu {
       @include gradientBar($grayDark, $grayDarker);
-      left: -50%;
+      float: left;
+      width: 100%;
+      min-width: 110px;
       ul {
         margin: 0;
         li {
