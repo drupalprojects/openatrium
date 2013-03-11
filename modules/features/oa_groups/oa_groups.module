@@ -514,6 +514,46 @@ function oa_groups_group_sections($gid) {
 }
 
 /**
+ * Return a list of all Organizations
+ *
+ * @return
+ *    An array of Organizations, keyed by the Org nid.
+ */
+function oa_groups_get_all_orgs() {
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid', 'title'))
+      ->condition('n.type', OA_ORG_TYPE)
+      ->addTag('node_access');
+  return $query->execute()->fetchAllAssoc('nid');
+}
+
+/**
+ * Return the users that are the intersection of Org and Group membership.
+ *
+ * @param int $group_id
+ *    The Group ID of the Open Atrium site
+ * @param $org_id
+ *    The Organization ID
+ * @return
+ *    An array of Users keyed by uid
+ */
+function oa_groups_get_org_users_for_group($group_id, $org_id) {
+  $query = db_select('users', 'u');
+  $query->innerJoin('og_membership', 'og1', 'u.uid = og1.etid');
+  $query->innerJoin('og_membership', 'og2', 'u.uid = og2.etid');
+  $query->fields('u', array('uid'))
+      ->condition('og1.entity_type', 'user')
+      ->condition('og1.gid', $group_id)
+      ->condition('og1.group_type', 'node')
+      ->condition('og2.entity_type', 'user')
+      ->condition('og2.gid', $org_id)
+      ->condition('og1.group_type', 'node');
+
+  $results = $query->execute()->fetchAllAssoc('uid');
+  return user_load_multiple(array_keys($results));
+}
+
+/**
  * Implementation of hook_preprocess_views_view_fields()
  * Perform field-level replacement/processing here
  */

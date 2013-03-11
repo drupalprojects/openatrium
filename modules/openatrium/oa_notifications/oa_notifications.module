@@ -75,14 +75,14 @@ function oa_notifications_get_notifications($node) {
 
     if (array_key_exists('organization', $notifications)) {
       foreach (array_keys($notifications['organization']) as $org_id) {
-        $users = oa_notifications_get_org_users_for_group($gid, $org_id);
+        $users = oa_groups_get_org_users_for_group($gid, $org_id);
         $bucket += $users;
       }
     }
 
     if (array_key_exists('team', $notifications)) {
       foreach (array_keys($notifications['team']) as $team_id) {
-        $results = oa_notifications_get_team_members($team_id);
+        $results = oa_teams_get_team_members($team_id);
         $users = user_load_multiple(array_keys($results));
         $bucket += $users;
       }
@@ -102,88 +102,15 @@ function oa_notifications_get_notifications($node) {
  */
 
 /**
- * Get all Organizations
- */
-function oa_notifications_get_orgs() {
-  $query = db_select('node', 'n');
-  $query->fields('n', array('nid', 'title'))
-      ->condition('n.type', OA_ORG_TYPE)
-      ->addTag('node_access');
-  return $query->execute()->fetchAllAssoc('nid');
-}
-
-/**
- * Return the users that are the intersection of Org and Group membership.
- *
- * @param int $group_id
- *    The Group ID of the Open Atrium site
- * @param $org_id
- *    The Organization ID
- * @return
- *    An array of Users keyed by uid
- */
-function oa_notifications_get_org_users_for_group($group_id, $org_id) {
-  $query = db_select('users', 'u');
-  $query->innerJoin('og_membership', 'og1', 'u.uid = og1.etid');
-  $query->innerJoin('og_membership', 'og2', 'u.uid = og2.etid');
-  $query->fields('u', array('uid'))
-      ->condition('og1.entity_type', 'user')
-      ->condition('og1.gid', $group_id)
-      ->condition('og1.group_type', 'node')
-      ->condition('og2.entity_type', 'user')
-      ->condition('og2.gid', $org_id)
-      ->condition('og1.group_type', 'node');
-
-  $results = $query->execute()->fetchAllAssoc('uid');
-  return user_load_multiple(array_keys($results));
-}
-
-/**
- * Get the listing of teams that are in the specified group, or the current
- * group is no group is specified.
- *
- * @param int $gid
- *    The Group ID
- */
-function oa_notifications_get_teams_for_group($gid = NULL) {
-  if (!isset($gid)) {
-    $gid = $_SESSION[OG_SESSION_CONTEXT_ID];
-  }
-  $query = db_select('node', 'n');
-  $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');
-  $query->fields('n', array('nid', 'title'))
-      ->condition('n.type', OA_TEAM_TYPE)
-      ->condition('og.entity_type', 'node')
-      ->condition('og.field_name', OA_GROUP_FIELD)
-      ->condition('og.gid', $gid)
-      ->addTag('node_access');
-  return $query->execute()->fetchAllAssoc('nid');
-}
-
-/**
- * @param $team_id
- * @return mixed
- */
-function oa_notifications_get_team_members($team_id) {
-  $query = db_select('field_data_field_oa_team_users', 'f')
-      ->fields('f', array('field_oa_team_users_target_id'))
-      ->condition('entity_type', 'node')
-      ->condition('entity_id', $team_id)
-      ->condition('deleted', 0);
-  return $query->execute()->fetchAllAssoc('field_oa_team_users_target_id');
-}
-
-/**
  * Get the listing of user with that are in the specified group, or the current
  * group if no group is specified that also have access to the provided node.
- *
- * @TODO: Consider the case where user.name is the not name to be used.
  *
  * @param int $gid
  *    The Group ID
  */
 function oa_notifications_get_users_for_node($node, $gid = NULL) {
   if (!isset($gid)) {
+    // TODO: Consolidate this in a function
     $gid = $_SESSION[OG_SESSION_CONTEXT_ID];
   }
   $query = db_select('users', 'u');
@@ -348,8 +275,7 @@ function oa_notifications_node_delete($node) {
  * @param string $type
  *    The target type (e.g. 'organization', 'team')
  */
-function oa_notifications_delete_for_target($id, $type)
-{
+function oa_notifications_delete_for_target($id, $type) {
   db_delete('oa_notifications')
     ->condition('target_id', $id)
     ->condition('target_type', $type)
@@ -390,7 +316,7 @@ function oa_notifications_form_fields(&$form, &$form_state, $node) {
 
   $notifications = isset($nid) ? oa_notifications_load_multiple($nid) : array();
 
-  $all_orgs = oa_notifications_get_orgs();
+  $all_orgs = oa_groups_get_all_orgs();
   $form['organization'] = array(
     '#type' => 'select',
     '#title' => t('Organizations'),
@@ -399,7 +325,7 @@ function oa_notifications_form_fields(&$form, &$form_state, $node) {
     '#default_value' => array_key_exists('organization', $notifications) ? array_keys($notifications['organization']) : array(),
   );
 
-  $group_teams = oa_notifications_get_teams_for_group();
+  $group_teams = oa_teams_get_teams_for_group();
   $form['team'] = array(
     '#type' => 'select',
     '#title' => t('Teams'),
