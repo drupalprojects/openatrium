@@ -8,3 +8,21 @@ function oa_styles_ctools_plugin_directory($module, $plugin) {
     return 'plugins/' . $plugin;
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function oa_styles_theme() {
+  return array(
+    'oa_styles_modal' => array(
+      'template' => 'oa-styles-modal',
+      'variables' => array(
+        'modal_id' => 'oa-styles-modal',
+        'title' => t('Default Modal Title'),
+        'body' => NULL,
+      ),
+      'path' => drupal_get_path('module', 'oa_styles') . '/templates',
+    ),
+  );
+}
+
