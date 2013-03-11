@@ -108,3 +108,9 @@ projects[devel][subdir] = contrib
 ; Diff
 projects[diff][subdir] = contrib
 projects[diff][version] = 3.2
+
+; Colorbox
+projects[colorbox][subdir] = contrib
+projects[colorbox][version] = 2.3
+projects[media_colorbox][subdir] = contrib
+projects[media_colorbox][version] = 1.0-rc3
