@@ -23,6 +23,7 @@
  *
  * @ingroup views_templates
  */
+drupal_add_js(drupal_get_path('module', 'oa_discussion') . '/js/mark-as-read.js');
 ?>
 <div class='oa-list well clearfix <?php print $current_class; ?> <?php print $status_class; ?>'>
   <div class='pull-right user-badge'>
