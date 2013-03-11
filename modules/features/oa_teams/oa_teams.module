@@ -7,6 +7,42 @@
 include_once 'oa_teams.features.inc';
 
 /**
+ * Get the listing of teams that are in the specified group, or the current
+ * group is no group is specified.
+ *
+ * @param int $gid
+ *    The Group ID
+ */
+function oa_teams_get_teams_for_group($gid = NULL) {
+  if (!isset($gid)) {
+    // TODO: Consolidate this in a function
+    $gid = $_SESSION[OG_SESSION_CONTEXT_ID];
+  }
+  $query = db_select('node', 'n');
+  $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');
+  $query->fields('n', array('nid', 'title'))
+      ->condition('n.type', OA_TEAM_TYPE)
+      ->condition('og.entity_type', 'node')
+      ->condition('og.field_name', OA_GROUP_FIELD)
+      ->condition('og.gid', $gid)
+      ->addTag('node_access');
+  return $query->execute()->fetchAllAssoc('nid');
+}
+
+/**
+ * @param $team_id
+ * @return mixed
+ */
+function oa_teams_get_team_members($team_id) {
+  $query = db_select('field_data_field_oa_team_users', 'f')
+      ->fields('f', array('field_oa_team_users_target_id'))
+      ->condition('entity_type', 'node')
+      ->condition('entity_id', $team_id)
+      ->condition('deleted', 0);
+  return $query->execute()->fetchAllAssoc('field_oa_team_users_target_id');
+}
+
+/**
  * Implements hook_form_alter
  */
 function oa_teams_form_node_form_alter(&$form, &$form_state, $form_id) {
