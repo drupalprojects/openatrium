@@ -10,6 +10,22 @@ function oa_notifications_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
+ * Implements hook_menu().
+ */
+function oa_notifications_menu() {
+  // TODO: What are the proper access conditions here
+  $items['js/oa_notifications/details/%node'] = array(
+    'title' => 'Open Atrium Notification Details',
+    'page callback' => 'oa_notifications_ajax_details',
+    'page arguments' => array(3),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
  * Implements hook_theme().
  */
 function oa_notifications_theme() {
@@ -17,15 +33,69 @@ function oa_notifications_theme() {
     'oa_notifications_view' => array(
       'template' => 'oa-notifications-view',
       'variables' => array(
+        'node' => NULL,
         'organization' => array(),
         'team' => array(),
         'user' => array(),
       ),
       'path' => drupal_get_path('module', 'oa_notifications') . '/templates',
     ),
+    'oa_notifications_modal' => array(
+      'template' => 'oa-notifications-modal',
+      'variables' => array(
+        'title' => t('Default Modal Title'),
+      ),
+      'path' => drupal_get_path('module', 'oa_notifications') . '/templates',
+    ),
+    'oa_notifications_details' => array(
+      'template' => 'oa-notifications-details',
+      'variables' => array(
+        'users' => array(),
+      ),
+      'path' => drupal_get_path('module', 'oa_notifications') . '/templates',
+    ),
   );
 }
 
+/**
+ * Return the resolved list of all users to be notified on a piece of content.
+ *
+ * @param $node
+ *    The node to return notifications
+ * @return
+ *    An array of users keyed by uid
+ */
+function oa_notifications_get_notifications($node) {
+  $bucket = &drupal_static(__FUNCTION__);
+
+  if (!isset($bucket)) {
+    $bucket = array();
+    $gid = $_SESSION[OG_SESSION_CONTEXT_ID];
+    $notifications = oa_notifications_load_multiple($node->nid);
+
+    if (array_key_exists('organization', $notifications)) {
+      foreach (array_keys($notifications['organization']) as $org_id) {
+        $users = oa_notifications_get_org_users_for_group($gid, $org_id);
+        $bucket += $users;
+      }
+    }
+
+    if (array_key_exists('team', $notifications)) {
+      foreach (array_keys($notifications['team']) as $team_id) {
+        $results = oa_notifications_get_team_members($team_id);
+        $users = user_load_multiple(array_keys($results));
+        $bucket += $users;
+      }
+    }
+
+    if (array_key_exists('user', $notifications)) {
+      $users = user_load_multiple(array_keys($notifications['user']));
+      $bucket += $users;
+    }
+  }
+
+  return $bucket;
+}
 
 /**
  * Some utility functions...
@@ -40,6 +110,32 @@ function oa_notifications_get_orgs() {
       ->condition('n.type', OA_ORG_TYPE)
       ->addTag('node_access');
   return $query->execute()->fetchAllAssoc('nid');
+}
+
+/**
+ * Return the users that are the intersection of Org and Group membership.
+ *
+ * @param int $group_id
+ *    The Group ID of the Open Atrium site
+ * @param $org_id
+ *    The Organization ID
+ * @return
+ *    An array of Users keyed by uid
+ */
+function oa_notifications_get_org_users_for_group($group_id, $org_id) {
+  $query = db_select('users', 'u');
+  $query->innerJoin('og_membership', 'og1', 'u.uid = og1.etid');
+  $query->innerJoin('og_membership', 'og2', 'u.uid = og2.etid');
+  $query->fields('u', array('uid'))
+      ->condition('og1.entity_type', 'user')
+      ->condition('og1.gid', $group_id)
+      ->condition('og1.group_type', 'node')
+      ->condition('og2.entity_type', 'user')
+      ->condition('og2.gid', $org_id)
+      ->condition('og1.group_type', 'node');
+
+  $results = $query->execute()->fetchAllAssoc('uid');
+  return user_load_multiple(array_keys($results));
 }
 
 /**
@@ -62,6 +158,19 @@ function oa_notifications_get_teams_for_group($gid = NULL) {
       ->condition('og.gid', $gid)
       ->addTag('node_access');
   return $query->execute()->fetchAllAssoc('nid');
+}
+
+/**
+ * @param $team_id
+ * @return mixed
+ */
+function oa_notifications_get_team_members($team_id) {
+  $query = db_select('field_data_field_oa_team_users', 'f')
+      ->fields('f', array('field_oa_team_users_target_id'))
+      ->condition('entity_type', 'node')
+      ->condition('entity_id', $team_id)
+      ->condition('deleted', 0);
+  return $query->execute()->fetchAllAssoc('field_oa_team_users_target_id');
 }
 
 /**
@@ -328,4 +437,25 @@ function oa_notifications_form_node_form_alter(&$form, &$form_state, $form_id) {
     );
     oa_notifications_form_fields($form['oa_notifications'], $form_state, $form['#node']);
   }
+}
+
+/**
+ * Return the listing of users to be notified for the provided Node.
+ *
+ * @param $node
+ */
+function oa_notifications_ajax_details($node) {
+  $bucket = oa_notifications_get_notifications($node);
+
+  $render = array();
+  foreach ($bucket as $uid => $user) {
+    if (node_access('view', $node, $user)) {
+      $render[$uid] = array(
+        'name' => $user->realname,
+        'mail' => $user->mail,
+      );
+    }
+  }
+
+  echo theme('oa_notifications_details', array('users' => $render));
 }

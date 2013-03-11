@@ -42,7 +42,10 @@ function oa_notifications_pane_render($subtype, $conf, $args, $context) {
  *    A render array of the notification configuration
  */
 function oa_notifications_render_view($node) {
-  $render = array('#theme' => "oa_notifications_view");
+  $render = array(
+    '#theme' => "oa_notifications_view",
+    '#node' => $node,
+  );
   $notifications = oa_notifications_load_multiple($node->nid);
 
   if (array_key_exists('organization', $notifications)) {
@@ -120,6 +123,16 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
   );
   $form['user']['#prefix'] = '<div id="user-div">';
   $form['user']['#suffix'] = '</div>';
+
+  $details = l(t('Show Details'), 'js/oa_notifications/details/' . $node->nid, array('attributes' => array('data-toggle' => 'modal', 'data-target' => '#oa-notifications-details')));
+  $details .= theme('oa_notifications_modal', array('title' => t('Notification Details')));
+
+  $form['details'] = array(
+    '#type' => 'markup',
+    '#markup' => $details,
+    '#prefix' => '<div>',
+    '#suffix' => '</div>',
+  );
 
   return $form;
 }

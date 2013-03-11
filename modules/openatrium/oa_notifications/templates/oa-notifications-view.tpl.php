@@ -36,4 +36,8 @@
       <?php endforeach; ?>
     </div>
   <?php endif; ?>
+  <div class="notification-group">
+    <?php print l(t('Show Details'), 'js/oa_notifications/details/' . $node->nid, array('attributes' => array('data-toggle' => 'modal', 'data-target' => '#oa-notifications-details'))); ?>
+    <?php print theme('oa_notifications_modal', array('title' => t('Notification Details'))); ?>
+  </div>
 </div>
