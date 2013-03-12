@@ -179,22 +179,30 @@ function oa_dashboard_preprocess_oa_user_badge(&$vars) {
     $user = user_load($user->uid);
     $vars['user'] = $user;
     $vars['name'] = empty($user->realname) ? $user->name : $user->realname;
-    
-    if (!empty($user->field_user_picture)) {
-      $picture = $user->field_user_picture[LANGUAGE_NONE][0];
-      $image = array(
-        'style_name' => 'oa_small_thumbnail',
-        'path' => $picture['uri'],
-        'width' => $picture['width'],
-        'height' => $picture['height'],
-        'alt' => t('Your profile picture'),
-      );
-      $vars['picture'] = theme('image_style', $image);
-    }
+    $vars['picture'] = oa_dashboard_render_user_picture($user);
   
     //Build out links
     $vars['links']['dashboard'] = l(t('Dashboard'), 'user');
     $vars['links']['edit_profile'] = l(t('Edit profile'), 'user/' . $user->uid . '/edit');
     $vars['links']['log_out'] = l(t('Log out'), 'user/logout');
   }
+}
+
+
+/**
+ * Builds a user thumbnail picture from user entity.
+ */
+function oa_dashboard_render_user_picture($user, $image_style = 'oa_small_thumbnail') {
+  if (!empty($user->field_user_picture)) {
+    $picture = $user->field_user_picture[LANGUAGE_NONE][0];
+    $image = array(
+      'style_name' => $image_style,
+      'path' => $picture['uri'],
+      'width' => $picture['width'],
+      'height' => $picture['height'],
+      'alt' => t('Your profile picture'),
+    );
+    return theme('image_style', $image);
+  }
+  return '';
 }

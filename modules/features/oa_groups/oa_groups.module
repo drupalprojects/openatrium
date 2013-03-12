@@ -5,6 +5,7 @@
  */
 
 include_once 'oa_groups.features.inc';
+include_once 'oa_groups.theme.inc';
 
 /**
  * Name of default OpenAtrium Group type.
@@ -34,6 +35,15 @@ define('OA_GROUP_FIELD', 'og_group_ref');
  * The access realm of group member.
  */
 define('OA_ACCESS_REALM', 'oa_access');
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */ 
+function oa_groups_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+}
 
 /**
  * Determine if a user is a member of a team
@@ -525,6 +535,22 @@ function oa_groups_get_all_orgs() {
       ->condition('n.type', OA_ORG_TYPE)
       ->addTag('node_access');
   return $query->execute()->fetchAllAssoc('nid');
+}
+
+
+/**
+ * Returns the users that are in a group.
+ */
+function oa_groups_get_users_for_group($group_id) {
+  $query = db_select('users', 'u');
+  $query->innerJoin('og_membership', 'og', 'u.uid = og.etid');
+  $query->fields('u', array('uid'))
+    ->condition('og.entity_type', 'user')
+    ->condition('og.gid', $group_id);
+    //->condition('og.group_type', 'node');
+  
+  $results = $query->execute()->fetchAllAssoc('uid');
+  return user_load_multiple(array_keys($results));
 }
 
 /**
