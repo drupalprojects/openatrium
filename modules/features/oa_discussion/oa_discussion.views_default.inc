@@ -179,9 +179,9 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['arguments']['entity_id']['id'] = 'entity_id';
   $handler->display->display_options['arguments']['entity_id']['table'] = 'field_data_oa_parent';
   $handler->display->display_options['arguments']['entity_id']['field'] = 'entity_id';
-  $handler->display->display_options['arguments']['entity_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['entity_id']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['entity_id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['entity_id']['default_argument_options']['index'] = '3';
+  $handler->display->display_options['arguments']['entity_id']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['entity_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['entity_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['entity_id']['summary_options']['items_per_page'] = '25';
