@@ -5,3 +5,32 @@
  */
 
 include_once 'oa_panopoly_users.features.inc';
+
+
+/**
+ * Provide information for rendering a user.
+ */
+function oa_panopoly_user_build_user_details($user, $image_style = 'oa_small_thumbnail') {
+  $details = array();
+  $details['user'] = $user;
+  $details['realname'] = empty($user->realname) ? $user->name : $user->realname;
+  $details['name'] = $user->name;
+  
+  if (!empty($user->field_user_picture)) {
+    $picture = $user->field_user_picture[LANGUAGE_NONE][0];
+    $image = array(
+      'style_name' => $image_style,
+      'path' => $picture['uri'],
+      'width' => $picture['width'],
+      'height' => $picture['height'],
+      'alt' => t('Your profile picture'),
+    );
+    $details['picture'] = theme('image_style', $image);
+  }
+
+  //Build out links
+  $details['links']['dashboard'] = 'user';
+  $details['links']['edit_profile'] = 'user/' . $user->uid . '/edit';
+  $details['links']['logout'] = 'user/logout';
+  return $details;
+}
