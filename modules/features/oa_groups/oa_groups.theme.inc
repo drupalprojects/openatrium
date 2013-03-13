@@ -9,6 +9,7 @@
  * Implements hook_theme()
  */
 function oa_groups_theme() {
+  $path = drupal_get_path('module', 'oa_groups') . '/templates';
   return array(
     'oa_groups_members_widget' => array(
       'template'  => 'oa-groups-members-widget',
@@ -16,7 +17,15 @@ function oa_groups_theme() {
         'public' => NULL,
         'links'  => array(),
       ),
-      'path' => drupal_get_path('module', 'oa_groups') . '/templates',
+      'path' => $path,
+    ),
+    'oa_groups_summary' => array(
+      'template'  => 'oa-groups-summary',
+      'arguments' => array(
+        'public' => NULL,
+        'links'  => array(),
+      ),
+      'path' => $path,
     ),
   );
 }

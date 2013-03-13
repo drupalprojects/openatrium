@@ -14,7 +14,7 @@
  */
 ?>
 
-<div class='clearfix well owners'>
+<div class='clearfix well well-small owners'>
   <h5>Group owners</h3>
   <?php foreach ($owners as $owner): ?>
     <div class='pull-left user-badge'>
@@ -24,7 +24,7 @@
   <?php endforeach; ?>
 </div>
 
-<div class='clearfix well teams'>
+<div class='clearfix well well-small teams'>
   <h5>Teams</h3>
   <?php foreach ($teams as $team): ?>
     <div class='pull-left team'>
@@ -33,7 +33,7 @@
   <?php endforeach; ?>
 </div>
 
-<div class='clearfix members'>
+<div class='clearfix well well-small members'>
   <h5>Members</h3>
   <?php foreach ($members as $member): ?>
     <div class='pull-left user-badge'>

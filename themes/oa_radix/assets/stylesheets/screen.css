@@ -14810,6 +14810,47 @@ html.js input.throbbing {
 .pane-oa-widgets-content-visibility .visibility {
   text-transform: uppercase; }
 
+/* line 66, ../sass/_panel.scss */
+.pane-oa-widgets-user-profile .user-picture {
+  width: 20%;
+  margin-right: 5%; }
+/* line 70, ../sass/_panel.scss */
+.pane-oa-widgets-user-profile .user-info {
+  text-align: center;
+  width: 75%; }
+  /* line 77, ../sass/_panel.scss */
+  .pane-oa-widgets-user-profile .user-info .user-name,
+  .pane-oa-widgets-user-profile .user-info .user-role {
+    font-size: 11.9px; }
+/* line 81, ../sass/_panel.scss */
+.pane-oa-widgets-user-profile .links {
+  text-align: right; }
+  /* line 83, ../sass/_panel.scss */
+  .pane-oa-widgets-user-profile .links a {
+    font-size: 10.5px;
+    border-right: 1px solid #555555;
+    padding-right: 5px; }
+  /* line 88, ../sass/_panel.scss */
+  .pane-oa-widgets-user-profile .links a:last-child {
+    border: none;
+    margin: 0;
+    padding: 0; }
+
+/* line 100, ../sass/_panel.scss */
+.pane-oa-groups-summary .group-links .favorite {
+  float: left; }
+/* line 103, ../sass/_panel.scss */
+.pane-oa-groups-summary .group-links .edit {
+  float: right; }
+
+/* line 112, ../sass/_panel.scss */
+.pane-oa-groups-members-widget .team,
+.pane-oa-groups-members-widget .user-badge {
+  width: 100%;
+  min-width: 0;
+  max-width: 152px;
+  margin: 0 10px 10px 0; }
+
 /* line 7, ../sass/_form.scss */
 #oa-discussion-reply-form {
   position: relative; }

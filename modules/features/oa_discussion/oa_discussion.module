@@ -33,10 +33,10 @@ function oa_discussion_menu() {
     'page arguments' => array(1),
     'access arguments' => array('create oa discussion post content'),
   );
-  $items['ajax/mark-read/%'] = array(
+  $items['oa_discussion/ajax/mark-read/%'] = array(
     'type' => MENU_CALLBACK,
     'page callback' => 'oa_discussion_mark_as_read',
-    'page arguments' => array(2),
+    'page arguments' => array(3),
     'access callback' => TRUE,
   );
 
@@ -164,10 +164,15 @@ function oa_discussion_oa_messages_type_alter(&$message_type, $context) {
 
 /**
  * Menu callback for ajax/mark-read/%. Marks the node as read by the user.
+ *
+ * @param string $nids - node IDs, formatted like 212,143,592 etc.
  */
 function oa_discussion_mark_as_read($nids) {
   $nids = explode(',', $nids);
   foreach ($nids as $nid) {
-    node_tag_new(node_load($nid));
+    $node = node_load($nid);
+    if ($node) {
+      node_tag_new($node);
+    }
   }
 }

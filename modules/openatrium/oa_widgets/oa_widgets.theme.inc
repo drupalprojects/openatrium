@@ -18,5 +18,13 @@ function oa_widgets_theme() {
       ),
       'path' => drupal_get_path('module', 'oa_widgets') . '/templates',
     ),
+    'oa_widgets_user_profile' => array(
+      'template'  => 'oa-widgets-user-profile',
+      'arguments' => array(
+        'public' => NULL,
+        'links'  => array(),
+      ),
+      'path' => drupal_get_path('module', 'oa_widgets') . '/templates',
+    ),
   );
 }

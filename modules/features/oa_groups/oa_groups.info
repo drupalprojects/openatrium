@@ -33,6 +33,7 @@ features[field][] = node-oa_organization-group_access
 features[field][] = node-oa_organization-group_group
 features[field][] = user-user-og_user_node
 features[filter][] = full_html
+features[image][] = oa_medium_thumbnail
 features[image][] = oa_small_thumbnail
 features[node][] = oa_group
 features[node][] = oa_organization

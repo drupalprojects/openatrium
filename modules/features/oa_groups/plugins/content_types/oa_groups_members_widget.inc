@@ -12,9 +12,6 @@ $plugin = array(
   'edit form' => 'oa_groups_members_widget_edit_form',
   'render callback' => 'oa_groups_members_widget_render',
   'required context' => new ctools_context_required(t('Node'), 'node'),
-  'defaults' => array(
-    'display_type' => WIDGET_TITLE_AND_PICTURE,
-  ),
 );
 
 
@@ -33,14 +30,17 @@ function oa_groups_members_widget_render($subtype, $conf, $args, $context = NULL
   $teams = oa_teams_get_teams_for_group($group->nid);
   $teams = node_load_multiple(array_keys($teams));
   $members = oa_groups_get_users_for_group($group->nid);
-  $roles = array();
+  uasort($members, '_oa_groups_sort_user_by_name');
   $owners = array();
+  
   foreach ($members as $member) {
-    $roles[$member->uid] = og_get_user_roles('node', $group->nid, $member->uid);
-    if (in_array(OG_ADMINISTRATOR_ROLE, $roles[$member->uid])) {
-      $owners[] = $member;
+    $roles = og_get_user_roles('node', $group->nid, $member->uid);
+    if (in_array(OG_ADMINISTRATOR_ROLE, $roles) || $member->uid == $group->uid) {
+      $owners[$member->uid] = $member;
     }
   }
+  
+  $members = array_slice($members, 0, 4);
   
   $vars = array();
   $items = array(
@@ -50,7 +50,7 @@ function oa_groups_members_widget_render($subtype, $conf, $args, $context = NULL
   );
   foreach ($items as $key => $entities) {
     foreach ($entities as $id => $entity) {
-      $vars[$key][$id] = oa_groups_entity_build_display($entity, $id, $roles[$id]);
+      $vars[$key][$id] = oa_groups_entity_build_display($entity, $id);
     }
   }
   
@@ -59,9 +59,19 @@ function oa_groups_members_widget_render($subtype, $conf, $args, $context = NULL
 }
 
 /**
+ * Sort function to sort users by name.
+ */
+function _oa_groups_sort_user_by_name($u1, $u2) {
+  // Get last name for sorting.
+  $name1 = $u1->realname ? array_pop(explode(' ', $u1->realname)) : $u1->name;
+  $name2 = $u2->realname ? array_pop(explode(' ', $u2->realname)) : $u2->name;
+  return strcasecmp($name1, $name2);
+}
+
+/**
  * Convert known entities in to a simple array of title and picture.
  */
-function oa_groups_entity_build_display($entity, $id, $roles) {
+function oa_groups_entity_build_display($entity, $id) {
   $type = isset($entity->nid) ? 'node' : 'user';
   $title = ($type == 'user') ?
     (empty($entity->realname) ? $entity->name : $entity->realname) :
@@ -82,28 +92,5 @@ function oa_groups_entity_build_display($entity, $id, $roles) {
  * Edit form for the widget.
  */
 function oa_groups_members_widget_edit_form($form, &$form_state) {
-  $conf = $form_state['conf'];
-  $form['display_type'] = array(
-    '#type' => 'select',
-    '#title' => t('Display mode'),
-    '#options' => array(
-      WIDGET_TITLE_AND_PICTURE => t('Title and picture'),
-      WIDGET_TITLE_ONLY => t('Title only'),
-      WIDGET_PICTURE_ONLY => t('Picture only'),
-    ),
-    '#default_value' => empty($conf['display_type']) ? WIDGET_TITLE_AND_PICTURE : $form_state['conf']['display_type'],
-  );
-
   return $form;
-}
-
-/**
- * Submit handler for edit form. Save the custom form fields we added.
- */
-function oa_groups_members_widget_edit_form_submit($form, &$form_state) {
-  foreach (array_keys($form_state['plugin']['defaults']) as $key) {
-    if (isset($form_state['values'][$key])) {
-      $form_state['conf'][$key] = $form_state['values'][$key];
-    }
-  }
 }

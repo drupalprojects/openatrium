@@ -60,3 +60,59 @@
     text-transform: uppercase;
   }
 }
+
+// User profile
+.pane-oa-widgets-user-profile {
+  .user-picture {
+    width: 20%;
+    margin-right: 5%;
+  }
+  .user-info {
+    .user-realname a {
+      
+    }
+    text-align: center;
+    width: 75%;
+    .user-name,
+    .user-role {
+      font-size: $fontSizeSmall;
+    }
+  }
+  .links {
+    text-align: right;
+    a {
+      font-size: $fontSizeMini;
+      border-right: 1px solid #555;
+      padding-right: 5px;
+    }
+    a:last-child {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+
+// Group summary
+.pane-oa-groups-summary {
+  .group-links {
+    .favorite {
+      float: left;
+    }
+    .edit {
+      float: right;
+    }
+  }
+}
+
+// Group members
+.pane-oa-groups-members-widget {
+  .team,
+  .user-badge {
+    width: 100%;
+    min-width: 0;
+    max-width: 152px;
+    margin: 0 10px 10px 0;
+  }
+}
