@@ -17,12 +17,12 @@ function oa_favorites_flag_default_flags() {
     'types' => array(
       0 => 'oa_group',
     ),
-    'flag_short' => 'Mark as Favorite',
-    'flag_long' => 'Unmark Group as Favorite',
-    'flag_message' => 'Favorite Group',
-    'unflag_short' => 'Unmark as Favorite',
+    'flag_short' => 'Favorite',
+    'flag_long' => 'Mark Group as Favorite',
+    'flag_message' => 'Favorited!',
+    'unflag_short' => 'Remove Favorite',
     'unflag_long' => 'Unmark Group as Favorite',
-    'unflag_message' => '',
+    'unflag_message' => 'Unfavorited!',
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'roles' => array(

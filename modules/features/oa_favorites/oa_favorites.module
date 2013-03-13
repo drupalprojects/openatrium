@@ -6,6 +6,13 @@
 
 include_once 'oa_favorites.features.inc';
 
+// Machine name for the favorite group flag.
+define('FAVORITE_GROUP', 'favorite_group');
+
+
+/**
+ * Get a user's favorited groups.
+ */
 function oa_favorites_get_groups($account = NULL) {
   global $user;
   $uid = isset($account) ? $account->uid : $user->uid;

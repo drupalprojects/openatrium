@@ -14836,6 +14836,13 @@ html.js input.throbbing {
     margin: 0;
     padding: 0; }
 
+/* line 100, ../sass/_panel.scss */
+.pane-oa-groups-summary .group-links .favorite {
+  float: left; }
+/* line 103, ../sass/_panel.scss */
+.pane-oa-groups-summary .group-links .edit {
+  float: right; }
+
 /* line 7, ../sass/_form.scss */
 #oa-discussion-reply-form {
   position: relative; }
