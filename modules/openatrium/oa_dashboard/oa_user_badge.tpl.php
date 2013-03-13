@@ -16,7 +16,7 @@
   <div class="dropdown oa-dropdown btn-group">
     <div class="user-badge dropdown-toggle btn clearfix" id="user-badge-dropdown" data-toggle="dropdown">
       <div class="pull-left user-name">
-        <?php print $name; ?>
+        <?php print $realname; ?>
       </div>
       <div class="pull-right user-picture">
         <?php print $picture; ?>
