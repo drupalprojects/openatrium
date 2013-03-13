@@ -12,8 +12,7 @@
       var READ_THRESHOLD = 100;  // # of px required beyond the top of a comment to consider it read.
       
       var newComments = $('.view-display-id-replies .oa-list').has('.new-marker .marker');
-      var contentBottom = $('#block-system-main').offset()['top'] +
-                          $('.pane-open-atrium-discussions-original-post').height() +
+      var contentBottom = $('.pane-open-atrium-discussions-replies').offset()['top'] +
                           $('.pane-open-atrium-discussions-replies').height();
       var comments = new Array();
       var read = new Array();
@@ -68,7 +67,7 @@
       // AJAX request to mark comments as read in the database.
       function commitAsRead() {
         if (read.length > 0) {
-          $.ajax('/ajax/mark-read/' + read.join(','));
+          $.ajax('/oa_discussion/ajax/mark-read/' + read.join(','));
           read = Array();
         }
       }
