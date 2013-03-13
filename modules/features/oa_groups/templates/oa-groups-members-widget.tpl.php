@@ -41,4 +41,5 @@
       <?php print $member['title']; ?>
     </div>
   <?php endforeach; ?>
+  <a class="more" href="#">See all members</a>
 </div>
