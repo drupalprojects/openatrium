@@ -32,7 +32,7 @@
   <div class='oa-list-header'>
     <?php print $counter; ?>
   </div>
-  <div class='pull-left'>
+  <div class='pull-left oa-media-list'>
     <?php print $field_oa_media; ?>
   </div>
 </div>

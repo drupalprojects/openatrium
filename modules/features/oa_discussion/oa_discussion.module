@@ -82,6 +82,16 @@ function oa_discussion_publish($node) {
 }
 
 /**
+ * Preprocess the media thumbnail.
+ * Add any additional File Caption
+ */
+function oa_discussion_preprocess_media_thumbnail(&$variables) {
+  if (!empty($variables['element']['#file']->field_file_title[LANGUAGE_NONE][0]['value'])) {
+    $variables['element']['#name'] = $variables['element']['#file']->field_file_title[LANGUAGE_NONE][0]['value'];
+  }
+}
+
+/**
  * Implementation of hook_preprocess_views_view_fields()
  * Perform field-level replacement/processing here
  */

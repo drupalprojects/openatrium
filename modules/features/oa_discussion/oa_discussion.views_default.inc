@@ -430,7 +430,7 @@ function oa_discussion_views_default_views() {
     'fixed_height' => '600',
     'colorbox_gallery' => 'field_page',
     'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'title',
+    'colorbox_caption' => 'none',
     'audio_playlist' => 0,
   );
   $handler->display->display_options['fields']['field_oa_media']['delta_offset'] = '0';
