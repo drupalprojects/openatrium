@@ -39,7 +39,7 @@
               <?php endif; ?>
 
               <?php if ($search_form): ?>
-                <?php print $search_form; ?>
+                <?php // print $search_form; ?>
               <?php endif; ?>
 
                 <?php if ($main_menu): ?>
@@ -57,13 +57,6 @@
 
 <div id="main-wrapper">
   <div id="main" class="container">
-    <div class="row">
-      <?php if ($breadcrumb): ?>
-        <div id="breadcrumb" class="span12 inner visible-desktop">
-          <?php print $breadcrumb; ?>
-        </div>
-      <?php endif; ?>
-    </div>
     <?php if ($messages): ?>
       <div id="messages">
         <?php print $messages; ?>

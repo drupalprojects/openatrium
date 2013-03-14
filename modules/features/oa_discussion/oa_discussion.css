@@ -1,3 +1,15 @@
+.node-type-oa-discussion-post div.tabs {
+  display: none;
+}
+
+.page-node-edit.node-type-oa-discussion-post div.tabs {
+  display: block;
+}
+
+.node-type-oa-discussion-post div.burr-flipped-sidebar {
+  margin-top: 40px;
+}
+
 .view-display-id-replies .accordion-inner {
   overflow: hidden;
   padding-bottom: 0;
@@ -9,4 +21,29 @@
 
 .pane-oa-discussion-reply .tabledrag-toggle-weight-wrapper {
   display: none;
+}
+
+.media-widget .media-item {
+  width: auto;
+}
+
+.media-widget .media-item img {
+  height: auto;
+  width: auto;
+}
+
+.oa-media-list {
+  width: 100%;
+}
+
+.oa-media-list .item-list li {
+  border-bottom: 1px dotted #e3e3e3;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.oa-media-list .item-list li.last {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }

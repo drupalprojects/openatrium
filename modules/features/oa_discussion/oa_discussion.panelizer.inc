@@ -269,7 +269,7 @@ function oa_discussion_panelizer_defaults() {
     $pane->locks = array();
     $display->content['new-7'] = $pane;
     $display->panels['sidebar'][2] = 'new-7';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $panelizer->display = $display;
   $export['node:oa_discussion_post:default'] = $panelizer;
