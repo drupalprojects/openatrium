@@ -27,5 +27,15 @@ function oa_groups_theme() {
       'template'  => 'oa-groups-user-groups',
       'path' => $path,
     ),
+    'views_view_fields__oa_user_groups__full' => array(
+      'template'  => 'views-view-fields--oa-user-groups--full',
+      'base hook' => 'views_view_fields',
+      'preprocess functions' => array(
+        'template_preprocess',
+        'template_preprocess_views_view_fields',
+      ),
+      'arguments' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
+      'path' => $path,
+    ),
   );
 }

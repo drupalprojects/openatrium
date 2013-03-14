@@ -31,3 +31,41 @@
   border-top: 0;
   border-right: 0;
 }
+
+
+// User groups page
+.pane-oa-user-groups-full {
+  .views-row {
+    border: 1px solid #DDD;
+    border-bottom: none;
+  }
+  .views-row-odd {
+    background: $tableBackgroundAccent;
+  }
+  .views-row-first {
+    @include border-top-radius(5px);
+  }
+  .views-row-last {
+    border-bottom: 1px solid #DDD;
+    @include border-bottom-radius(5px);
+  }
+  
+  .group-container {
+    padding: 5px;
+  }
+  .group-details {
+    .picture {
+      margin-right: 20px;
+      height: 120px;
+      width: 120px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  
+  .accordion {
+    padding: 10px;
+    margin: 0;
+  }
+}

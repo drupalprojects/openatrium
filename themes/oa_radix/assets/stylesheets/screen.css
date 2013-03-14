@@ -14961,3 +14961,43 @@ html.js input.throbbing {
 .oa-river .user-badge {
   border-top: 0;
   border-right: 0; }
+
+/* line 38, ../sass/_user.scss */
+.pane-oa-user-groups-full .views-row {
+  border: 1px solid #dddddd;
+  border-bottom: none; }
+/* line 42, ../sass/_user.scss */
+.pane-oa-user-groups-full .views-row-odd {
+  background: #f9f9f9; }
+/* line 45, ../sass/_user.scss */
+.pane-oa-user-groups-full .views-row-first {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px; }
+/* line 48, ../sass/_user.scss */
+.pane-oa-user-groups-full .views-row-last {
+  border-bottom: 1px solid #dddddd;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px; }
+/* line 53, ../sass/_user.scss */
+.pane-oa-user-groups-full .group-container {
+  padding: 5px; }
+/* line 57, ../sass/_user.scss */
+.pane-oa-user-groups-full .group-details .picture {
+  margin-right: 20px;
+  height: 120px;
+  width: 120px; }
+  /* line 61, ../sass/_user.scss */
+  .pane-oa-user-groups-full .group-details .picture img {
+    width: 100%; }
+/* line 67, ../sass/_user.scss */
+.pane-oa-user-groups-full .accordion {
+  padding: 10px;
+  margin: 0; }

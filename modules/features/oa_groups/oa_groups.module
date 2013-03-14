@@ -580,7 +580,7 @@ function oa_groups_get_org_users_for_group($group_id, $org_id) {
 }
 
 /**
- * Implementation of hook_preprocess_views_view_fields()
+ * Implements hook_preprocess_views_view_fields().
  * Perform field-level replacement/processing here
  */
 function oa_groups_preprocess_views_view_fields(&$vars) {
@@ -588,6 +588,26 @@ function oa_groups_preprocess_views_view_fields(&$vars) {
   $vars['display'] = $vars['view']->current_display;
   foreach ($vars['fields'] as $id => $field) {
     $vars[$id] = $field->content;
+  }
+  
+  // View specific alterations.
+  if ($vars['view']->name == 'oa_user_groups' && $vars['view']->current_display == 'full') {
+    oa_groups_preprocess_oa_user_groups_full_view_fields($vars);
+  }
+}
+
+
+/**
+ * Views view fields preprocess function.
+ * Provide the template with the group's sections for display.
+ */
+function oa_groups_preprocess_oa_user_groups_full_view_fields(&$vars) {
+  $group = node_load($vars['row']->node_og_membership_nid);
+  $sections = oa_groups_group_sections($group->nid);
+  $vars['sections'] = array();
+  foreach ($sections as $id => $title) {
+    $vars['sections'][$id]['title'] = $title;
+    $vars['sections'][$id]['href'] = url('node/' . $id);
   }
 }
 
