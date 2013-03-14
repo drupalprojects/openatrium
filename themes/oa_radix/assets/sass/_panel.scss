@@ -116,3 +116,21 @@
     margin: 0 10px 10px 0;
   }
 }
+
+
+// User groups
+.pane-oa-groups-user-groups {
+  .pane-content {
+    position: relative;
+  }
+  .groups-container {
+    float: left;
+    margin-right: 20px;
+  }
+  .group-switcher {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
+}

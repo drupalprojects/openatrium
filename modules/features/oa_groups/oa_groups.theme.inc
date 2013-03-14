@@ -21,10 +21,10 @@ function oa_groups_theme() {
     ),
     'oa_groups_summary' => array(
       'template'  => 'oa-groups-summary',
-      'arguments' => array(
-        'public' => NULL,
-        'links'  => array(),
-      ),
+      'path' => $path,
+    ),
+    'oa_groups_user_groups' => array(
+      'template'  => 'oa-groups-user-groups',
       'path' => $path,
     ),
   );
