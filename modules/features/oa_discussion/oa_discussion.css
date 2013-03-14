@@ -10,3 +10,12 @@
 .pane-oa-discussion-reply .tabledrag-toggle-weight-wrapper {
   display: none;
 }
+
+.media-widget .media-item {
+  width: auto;
+}
+
+.media-widget .media-item img {
+  height: auto;
+  width: auto;
+}
