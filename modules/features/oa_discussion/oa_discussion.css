@@ -1,3 +1,15 @@
+.node-type-oa-discussion-post div.tabs {
+  display: none;
+}
+
+.page-node-edit.node-type-oa-discussion-post div.tabs {
+  display: block;
+}
+
+.node-type-oa-discussion-post div.burr-flipped-sidebar {
+  margin-top: 40px;
+}
+
 .view-display-id-replies .accordion-inner {
   overflow: hidden;
   padding-bottom: 0;

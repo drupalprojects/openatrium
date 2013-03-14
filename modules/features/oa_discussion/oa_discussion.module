@@ -111,7 +111,7 @@ function oa_discussion_preprocess_views_view_fields(&$vars) {
         $vars['status_class'] = ($status == 1) ? 'published' : 'unpublished';
         $vars['unpublished'] = ($status == 1) ? '' : t('Not Published');
         $vars['remove_link'] = ($status == 1)
-          ? l(t('remove'), 'node/' . $vars['fields']['nid']->raw . '/remove')
+          ? l(t('unpublish'), 'node/' . $vars['fields']['nid']->raw . '/remove')
           : l(t('publish'), 'node/' . $vars['fields']['nid']->raw . '/publish');
       }
     }

@@ -35,7 +35,7 @@ function oa_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'colorbox_custom_settings_activate';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['colorbox_custom_settings_activate'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -77,7 +77,7 @@ function oa_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'colorbox_maxheight';
-  $strongarm->value = '98%';
+  $strongarm->value = '95%';
   $export['colorbox_maxheight'] = $strongarm;
 
   $strongarm = new stdClass();
