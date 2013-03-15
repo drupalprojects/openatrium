@@ -46,7 +46,7 @@ function oa_notifications_render_view($node) {
     '#theme' => "oa_notifications_view",
     '#node' => $node,
   );
-  $notifications = oa_notifications_load_multiple($node->nid);
+  $notifications = oa_notifications_load_multiple($node);
 
   if (array_key_exists('organization', $notifications)) {
     $orgs = node_load_multiple(array_keys($notifications['organization']));
@@ -98,6 +98,10 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
   ctools_form_include_file($form_state, drupal_get_path('module', 'oa_notifications') . '/plugins/content_types/oa_notifications_pane.inc');
 
   oa_notifications_form_fields($form, $form_state, $node);
+  $form['source_entity'] = array(
+    '#type' => 'value',
+    '#value' => $node,
+  );
 
   // Add things for direct pane updates
   $form['organization']['#ajax'] = array(

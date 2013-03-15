@@ -618,9 +618,23 @@ function oa_groups_preprocess_oa_user_groups_full_view_fields(&$vars) {
 function oa_groups_get_user_groups($uid) {
   $query = db_select('og_membership', 'og')
     ->fields('og')
-    ->condition('entity_type', 'user', '=')
+    ->condition('entity_type', 'user')
     ->condition('etid', $uid);
   
   $results = $query->execute()->fetchAllAssoc('gid');
   return array_keys($results);
+}
+
+
+/**
+ * Returns the group ID that a node belongs to.
+ */
+function oa_groups_get_node_group($nid) {
+  $query = db_select('og_membership', 'og')
+    ->fields('og')
+    ->condition('entity_type', 'node')
+    ->condition('etid', $nid);
+  
+  $result = $query->execute()->fetchAssoc();
+  return empty($result) ? 0 : $result['gid'];
 }

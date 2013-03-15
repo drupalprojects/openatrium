@@ -86,42 +86,64 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     drupal_alter('oa_messages_create', $wrapper, $context);
 
     $wrapper->save();
+    
+    // Since this can be called on node_update / insert, we
+    entity_get_controller($entity_type)->resetCache(array($entity_wrapper->getIdentifier()));
 
     if ($send && isset($entity) && ($entity_type == 'node')) {
-      $options = array(
-        'rendered fields' => array(
-          'message_notify_email_subject' => 'field_message_rendered_subject',
-          'message_notify_email_body' => 'field_message_rendered_body',
-        ),
-      );
-      message_subscribe_process_message('node', $entity, $message, array('email' => $options));
+      message_subscribe_process_message('node', $entity, $message, array(), oa_messages_build_subscribe_options($entity));
     }
   }
 }
 
 /**
- * Implements hook_node_insert().
+ * Implements hook_mail_alter().
  */
-function oa_messages_node_insert($node) {
-  $types = oa_groups_list_content_types(TRUE);
-  if (!array_key_exists($node->type, $types)) {
-    // only create messages for node types we care about
-    return;
+function oa_messages_mail_alter(&$message) {
+  if ($message['key'] == 'oa_reply') {
+    //$message['headers']['Content-Type'] = 'text/html; charset=UTF-8;';
   }
-  // create message given with node's uid rather than current logged in user
-  // to allow admin to change Authored By at node creation time
-  $message = oa_messages_create('oa_create', $node, 'node', '', NULL, $node->uid);
 }
 
-function oa_messages_node_update($node) {
-  $types = oa_groups_list_content_types(TRUE);
-  if (!array_key_exists($node->type, $types)) {
-    // only create messages for node types we care about
-    return;
+/**
+ * Builds the subscribe options for an entity.
+ */
+function oa_messages_build_subscribe_options($entity) {
+  $options = array();
+  $users = oa_notifications_get_notifications($entity);
+  foreach ($users as $uid => $user) {
+    $options['uids'][$uid] = array(
+      'entity' => $user,
+      'notifiers' => array('email'),
+    );
   }
-  $message = oa_messages_create('oa_update', $node, 'node', t('Changes:'));
+  
+  return $options;
 }
 
+/**
+ * Implements hook_entity_insert().
+ */
+function oa_messages_entity_insert($entity, $type) {
+  $types = oa_groups_list_content_types(TRUE);
+  if ($type == 'node' && array_key_exists($entity->type, $types)) {
+    $message = oa_messages_create('oa_create', $entity, $type, '', NULL, $entity->uid);
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function oa_messages_entity_update($entity, $type) {
+  $types = oa_groups_list_content_types(TRUE);
+  if ($type == 'node' && array_key_exists($entity->type, $types)) {
+    $message = oa_messages_create('oa_update', $entity, $type, t('Changes:'));
+  }
+}
+
+/**
+ * Implements hook_node_delete().
+ */
 function oa_messages_node_delete($node) {
   $types = oa_groups_list_content_types(TRUE);
   if (!array_key_exists($node->type, $types)) {
