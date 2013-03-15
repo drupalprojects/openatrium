@@ -38,8 +38,8 @@ function oa_diff_tokens($type, $tokens, array $data = array(), array $options = 
     foreach ($tokens as $name => $original) {
       $values = explode(':', $name);
       if (!empty($values[0]) && ($values[0] == 'oa-diff')) {
-        $revisons = node_revision_list($node);
-        if (count($revisons) == 1) {
+        $revisions = node_revision_list($node);
+        if (count($revisions) == 1) {
           $replacements[$original] = '';
         }
         else {
@@ -50,12 +50,12 @@ function oa_diff_tokens($type, $tokens, array $data = array(), array $options = 
               $next_vid = $values[2];
             }
             else {
-              $next_vid = _diff_get_next_vid($revisons, $vid);
+              $next_vid = _diff_get_next_vid($revisions, $vid);
             }
           }
           else {
             $next_vid = $node->vid;
-            $vid = _diff_get_previous_vid($revisons, $next_vid);
+            $vid = _diff_get_previous_vid($revisions, $next_vid);
           }
           
           if ($next_vid) {
@@ -69,6 +69,9 @@ function oa_diff_tokens($type, $tokens, array $data = array(), array $options = 
   
             $output = drupal_render_children($build);
             $replacements[$original] = $output;
+          }
+          else {
+            $replacements[$original] = '';
           }
         }
       }
