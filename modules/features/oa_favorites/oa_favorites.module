@@ -35,3 +35,22 @@ function oa_favorites_get_groups($account = NULL) {
   }
   return $items;
 }
+
+/**
+ * Determine whether or not a group is a user's favorite.
+ *
+ * @param integer $uid - User's ID.
+ * @param integer $gid - Node ID of the group.
+ *
+ * @return boolean
+ */
+function oa_favorites_is_favorite_group($uid, $gid) {
+  $query = db_select('flag_content', 'f')
+    ->fields('f')
+    ->condition('content_type', 'node')
+    ->condition('content_id', $gid)
+    ->condition('uid', $uid);
+  
+  $result = $query->execute()->fetch();
+  return empty($result) ? FALSE : TRUE;
+}

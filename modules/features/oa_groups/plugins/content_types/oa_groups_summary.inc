@@ -50,11 +50,11 @@ function oa_groups_summary_render($subtype, $conf, $args, $context = NULL) {
   
   $vars['links'] = array();
   if ($user->uid && module_exists('oa_favorites')) {
+    $favorite = oa_favorites_is_favorite_group($user->uid, $group->nid);
     $vars['links']['favorite'] = theme('flag', array(
       'flag' => flag_get_flag(FAVORITE_GROUP),
-      'action' => 'flag',
+      'action' => $favorite ? 'unflag' : 'flag',
       'content_id' => $group->nid,
-      'link_text' => t('Favorite'),
     ));
   }
   if (node_access('update', $group)) {
