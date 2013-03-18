@@ -1,10 +1,12 @@
-// 
+//
 // Styles for navbar
 // --------------------------------------------------
 .navbar {
   // Brand: website or project name
   // -------------------------
   .brand {
+    margin-left: 0;
+    padding-left: 5px;
     color: $navbarBrandColor;
     text-shadow: 0 1px 0 $navbarBackgroundHighlight;
   }
@@ -22,11 +24,6 @@
       min-width: 110px;
       padding: 5px;
       margin: 0;
-      border-color: $black;
-      @include gradientBar($grayDark, $grayDarker);
-      &:hover {
-        @include gradientBar($grayDarker, $grayDark);
-      }
       .user-name {
         margin-right: 5px;
       }
@@ -35,7 +32,6 @@
       }
     }
     .dropdown-menu {
-      @include gradientBar($grayDark, $grayDarker);
       float: left;
       width: 100%;
       min-width: 110px;
@@ -44,7 +40,6 @@
         li {
           margin: 0;
           a {
-            color: #FFF;
           }
         }
       }
@@ -62,4 +57,8 @@
 	    margin: 0;
 	  }
 	}
+}
+
+.sutro-double-container {
+  margin-bottom: 0;
 }

@@ -2114,7 +2114,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url('../images/glyphicons-halflings.png?1362411437');
+  background-image: url('../images/glyphicons-halflings.png?1360096772');
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px; }
@@ -2134,7 +2134,7 @@ table th[class*="span"],
 .dropdown-menu > .active > a > [class*=" icon-"],
 .dropdown-submenu:hover > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"] {
-  background-image: url('../images/glyphicons-halflings-white.png?1362411437'); }
+  background-image: url('../images/glyphicons-halflings-white.png?1360096772'); }
 
 /* line 48, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_sprites.scss */
 .icon-glass {
@@ -4077,14 +4077,14 @@ input[type="submit"].btn {
   min-height: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #388c32;
-  background-image: -moz-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3e9d38), to(#2e712a));
-  background-image: -webkit-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: -o-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: linear-gradient(to bottom, #3e9d38, #2e712a);
+  background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, white, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
+  background-image: -o-linear-gradient(top, white, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d9937', endColorstr='#2c6d29', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0', GradientType=0);
   border: 1px solid #d4d4d4;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -4119,8 +4119,8 @@ input[type="submit"].btn {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: white;
-  text-shadow: 0 1px 0 #3e9d38; }
+  color: #777777;
+  text-shadow: 0 1px 0 white; }
   /* line 59, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
   .navbar .brand:hover {
     text-decoration: none; }
@@ -4129,21 +4129,21 @@ input[type="submit"].btn {
 .navbar-text {
   margin-bottom: 0;
   line-height: 40px;
-  color: white; }
+  color: #777777; }
 
 /* line 74, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar-link {
-  color: yellow; }
+  color: #777777; }
   /* line 76, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
   .navbar-link:hover {
-    color: yellow; }
+    color: #333333; }
 
 /* line 83, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .divider-vertical {
   height: 40px;
   margin: 0 9px;
-  border-left: 1px solid #2e712a;
-  border-right: 1px solid #3e9d38; }
+  border-left: 1px solid #f2f2f2;
+  border-right: 1px solid white; }
 
 /* line 93, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .btn,
@@ -4297,9 +4297,9 @@ input[type="submit"].btn {
 .navbar .nav > li > a {
   float: none;
   padding: 10px 15px 10px;
-  color: yellow;
+  color: #777777;
   text-decoration: none;
-  text-shadow: 0 1px 0 #3e9d38; }
+  text-shadow: 0 1px 0 white; }
 
 /* line 246, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav .dropdown-toggle .caret {
@@ -4309,14 +4309,14 @@ input[type="submit"].btn {
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   background-color: transparent;
-  color: yellow;
+  color: #333333;
   text-decoration: none; }
 
 /* line 262, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  color: yellow;
+  color: #555555;
   text-decoration: none;
   background-color: #e6e6e6;
   -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
@@ -4332,17 +4332,17 @@ input[type="submit"].btn {
   margin-right: 5px;
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #30792b;
-  background-image: -moz-linear-gradient(top, #378a31, #265e23);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#378a31), to(#265e23));
-  background-image: -webkit-linear-gradient(top, #378a31, #265e23);
-  background-image: -o-linear-gradient(top, #378a31, #265e23);
-  background-image: linear-gradient(to bottom, #378a31, #265e23);
+  background-color: #ededed;
+  background-image: -moz-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: -o-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: linear-gradient(to bottom, #f2f2f2, #e6e6e6);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#358630', endColorstr='#255b22', GradientType=0);
-  border-color: #265e23 #265e23 #10270e;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#e3e3e3', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #265e23;
+  *background-color: #e6e6e6;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
@@ -4351,11 +4351,11 @@ input[type="submit"].btn {
   /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
   .navbar .btn-navbar:hover, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
     color: white;
-    background-color: #265e23;
-    *background-color: #1f4c1c; }
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9; }
   /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
   .navbar .btn-navbar:active, .navbar .btn-navbar.active {
-    background-color: #173915 \9; }
+    background-color: #cccccc \9; }
 
 /* line 280, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .btn-navbar .icon-bar {
@@ -4412,27 +4412,27 @@ input[type="submit"].btn {
 
 /* line 339, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav li.dropdown > a:hover .caret {
-  border-top-color: yellow;
-  border-bottom-color: yellow; }
+  border-top-color: #555555;
+  border-bottom-color: #555555; }
 
 /* line 347, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: #e6e6e6;
-  color: yellow; }
+  color: #555555; }
 
 /* line 351, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
-  border-top-color: yellow;
-  border-bottom-color: yellow; }
+  border-top-color: #777777;
+  border-bottom-color: #777777; }
 
 /* line 357, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
-  border-top-color: yellow;
-  border-bottom-color: yellow; }
+  border-top-color: #555555;
+  border-bottom-color: #555555; }
 
 /* line 364, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .pull-right > li > .dropdown-menu,
@@ -10429,14 +10429,14 @@ input[type="submit"].btn {
   min-height: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #388c32;
-  background-image: -moz-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3e9d38), to(#2e712a));
-  background-image: -webkit-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: -o-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: linear-gradient(to bottom, #3e9d38, #2e712a);
+  background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, white, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
+  background-image: -o-linear-gradient(top, white, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d9937', endColorstr='#2c6d29', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f0f0f0', GradientType=0);
   border: 1px solid #d4d4d4;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -10471,8 +10471,8 @@ input[type="submit"].btn {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: white;
-  text-shadow: 0 1px 0 #3e9d38; }
+  color: #777777;
+  text-shadow: 0 1px 0 white; }
   /* line 59, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
   .navbar .brand:hover {
     text-decoration: none; }
@@ -10481,21 +10481,21 @@ input[type="submit"].btn {
 .navbar-text {
   margin-bottom: 0;
   line-height: 40px;
-  color: white; }
+  color: #777777; }
 
 /* line 74, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar-link {
-  color: yellow; }
+  color: #777777; }
   /* line 76, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
   .navbar-link:hover {
-    color: yellow; }
+    color: #333333; }
 
 /* line 83, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .divider-vertical {
   height: 40px;
   margin: 0 9px;
-  border-left: 1px solid #2e712a;
-  border-right: 1px solid #3e9d38; }
+  border-left: 1px solid #f2f2f2;
+  border-right: 1px solid white; }
 
 /* line 93, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .btn,
@@ -10649,9 +10649,9 @@ input[type="submit"].btn {
 .navbar .nav > li > a {
   float: none;
   padding: 10px 15px 10px;
-  color: yellow;
+  color: #777777;
   text-decoration: none;
-  text-shadow: 0 1px 0 #3e9d38; }
+  text-shadow: 0 1px 0 white; }
 
 /* line 246, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav .dropdown-toggle .caret {
@@ -10661,14 +10661,14 @@ input[type="submit"].btn {
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   background-color: transparent;
-  color: yellow;
+  color: #333333;
   text-decoration: none; }
 
 /* line 262, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  color: yellow;
+  color: #555555;
   text-decoration: none;
   background-color: #e6e6e6;
   -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
@@ -10684,17 +10684,17 @@ input[type="submit"].btn {
   margin-right: 5px;
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #30792b;
-  background-image: -moz-linear-gradient(top, #378a31, #265e23);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#378a31), to(#265e23));
-  background-image: -webkit-linear-gradient(top, #378a31, #265e23);
-  background-image: -o-linear-gradient(top, #378a31, #265e23);
-  background-image: linear-gradient(to bottom, #378a31, #265e23);
+  background-color: #ededed;
+  background-image: -moz-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: -o-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: linear-gradient(to bottom, #f2f2f2, #e6e6e6);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#358630', endColorstr='#255b22', GradientType=0);
-  border-color: #265e23 #265e23 #10270e;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#e3e3e3', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #265e23;
+  *background-color: #e6e6e6;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
@@ -10703,11 +10703,11 @@ input[type="submit"].btn {
   /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
   .navbar .btn-navbar:hover, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
     color: white;
-    background-color: #265e23;
-    *background-color: #1f4c1c; }
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9; }
   /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
   .navbar .btn-navbar:active, .navbar .btn-navbar.active {
-    background-color: #173915 \9; }
+    background-color: #cccccc \9; }
 
 /* line 280, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .btn-navbar .icon-bar {
@@ -10764,27 +10764,27 @@ input[type="submit"].btn {
 
 /* line 339, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav li.dropdown > a:hover .caret {
-  border-top-color: yellow;
-  border-bottom-color: yellow; }
+  border-top-color: #555555;
+  border-bottom-color: #555555; }
 
 /* line 347, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: #e6e6e6;
-  color: yellow; }
+  color: #555555; }
 
 /* line 351, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
-  border-top-color: yellow;
-  border-bottom-color: yellow; }
+  border-top-color: #777777;
+  border-bottom-color: #777777; }
 
 /* line 357, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
-  border-top-color: yellow;
-  border-bottom-color: yellow; }
+  border-top-color: #555555;
+  border-bottom-color: #555555; }
 
 /* line 364, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar .pull-right > li > .dropdown-menu,
@@ -12464,18 +12464,18 @@ ul.links.inline {
     #main-menu > ul.menu > li > a {
       float: none;
       padding: 10px 15px 10px;
-      color: yellow;
+      color: #777777;
       text-decoration: none;
       text-shadow: 0 1px 0 white;
       display: block; }
       /* line 38, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_menu.scss */
       #main-menu > ul.menu > li > a:hover {
-        color: yellow;
+        color: #333333;
         text-decoration: none;
         background-color: transparent; }
       /* line 44, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_menu.scss */
       #main-menu > ul.menu > li > a:focus, #main-menu > ul.menu > li > a.active {
-        color: yellow;
+        color: #555555;
         text-decoration: none;
         background-color: #e6e6e6;
         -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
@@ -12552,7 +12552,7 @@ ul.links.inline {
         content: ''; }
     /* line 110, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_menu.scss */
     #main-menu > ul.menu > li.open > a {
-      color: yellow;
+      color: #333333;
       text-decoration: none;
       background-color: transparent; }
     /* line 115, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_menu.scss */
@@ -12974,7 +12974,7 @@ select[size] {
 
 /* line 70, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
 html.js input.form-autocomplete {
-  background: url('../images/throbber.gif?1362411437') no-repeat right 8px white !important; }
+  background: url('../images/throbber.gif?1360096772') no-repeat right 8px white !important; }
 
 /* line 73, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
 html.js input.throbbing {
@@ -14211,7 +14211,7 @@ html.js input.throbbing {
 
   /* line 62, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav .nav-header {
-    color: white;
+    color: #777777;
     text-shadow: none; }
 
   /* line 68, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
@@ -14219,7 +14219,7 @@ html.js input.throbbing {
   .nav-collapse .dropdown-menu a {
     padding: 9px 15px;
     font-weight: bold;
-    color: yellow;
+    color: #777777;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px; }
@@ -14239,7 +14239,7 @@ html.js input.throbbing {
   /* line 84, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
   .nav-collapse .nav > li > a:hover,
   .nav-collapse .dropdown-menu a:hover {
-    background-color: #2e712a; }
+    background-color: #f2f2f2; }
 
   /* line 88, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
   .navbar-inverse .nav-collapse .nav > li > a,
@@ -14298,8 +14298,8 @@ html.js input.throbbing {
     float: none;
     padding: 10px 15px;
     margin: 10px 0;
-    border-top: 1px solid #2e712a;
-    border-bottom: 1px solid #2e712a;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1); }
@@ -14348,13 +14348,13 @@ html.js input.throbbing {
         display: block;
         padding: 9px 15px;
         font-weight: bold;
-        color: yellow;
+        color: #777777;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px; }
         /* line 21, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_responsive_menu.scss */
         #main-menu > ul.menu li a:hover {
-          color: yellow;
+          color: #333333;
           text-decoration: none;
           background-color: transparent; }
       /* line 28, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_responsive_menu.scss */
@@ -14509,20 +14509,20 @@ html.js input.throbbing {
       display: block !important; } }
 /* line 6, ../sass/_layout.scss */
 .navbar-inner,
-.region-footer {
+.footer-inner {
   min-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
   border: 1px solid #d4d4d4;
-  color: white;
-  background-color: #378b32;
-  background-image: -moz-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3e9d38), to(#2e712a));
-  background-image: -webkit-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: -o-linear-gradient(top, #3e9d38, #2e712a);
-  background-image: linear-gradient(to bottom, #3e9d38, #2e712a);
+  color: black;
+  background-color: #f9f9f9;
+  background-image: -moz-linear-gradient(top, white, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
+  background-image: -o-linear-gradient(top, white, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3E9D38', endColorstr='#FF2E712A', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2', GradientType=0);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -14603,18 +14603,16 @@ html.js input.throbbing {
     text-shadow: 0 1px 0 gray; }
     /* line 12, ../sass/_menu.scss */
     #main-menu > ul.menu > li > a:hover {
-      color: yellow;
       text-decoration: none;
       background-color: transparent; }
-    /* line 17, ../sass/_menu.scss */
+    /* line 16, ../sass/_menu.scss */
     #main-menu > ul.menu > li > a:focus, #main-menu > ul.menu > li > a.active {
-      color: yellow;
       text-decoration: none;
       background-color: transparent;
       -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
       -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
       box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125); }
-  /* line 24, ../sass/_menu.scss */
+  /* line 22, ../sass/_menu.scss */
   #main-menu > ul.menu > li > ul.menu {
     background-color: white;
     border: 1px solid #cccccc;
@@ -14625,10 +14623,10 @@ html.js input.throbbing {
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-    /* line 31, ../sass/_menu.scss */
+    /* line 29, ../sass/_menu.scss */
     #main-menu > ul.menu > li > ul.menu li a {
       color: #333; }
-      /* line 33, ../sass/_menu.scss */
+      /* line 31, ../sass/_menu.scss */
       #main-menu > ul.menu > li > ul.menu li a:focus, #main-menu > ul.menu > li > ul.menu li a:hover {
         color: white;
         text-decoration: none;
@@ -14641,27 +14639,27 @@ html.js input.throbbing {
         background-image: linear-gradient(to bottom, #0088cc, #0077b3);
         background-repeat: repeat-x;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF0088CC', endColorstr='#FF0077B3', GradientType=0); }
-  /* line 43, ../sass/_menu.scss */
+  /* line 41, ../sass/_menu.scss */
   #main-menu > ul.menu > li.open > a {
     color: #555;
     background-color: #E5E5E5; }
 
-/* line 57, ../sass/_menu.scss */
+/* line 55, ../sass/_menu.scss */
 .region-footer {
   background-image: url("../../logo.png");
   background-repeat: no-repeat;
   background-position: 1% center; }
 
-/* line 63, ../sass/_menu.scss */
+/* line 61, ../sass/_menu.scss */
 .region-footer .menu {
   float: right; }
 
-/* line 67, ../sass/_menu.scss */
+/* line 65, ../sass/_menu.scss */
 .region-footer .menu li {
   list-style: none !important;
   float: left; }
 
-/* line 72, ../sass/_menu.scss */
+/* line 70, ../sass/_menu.scss */
 .region-footer .menu li a {
   line-height: 52px;
   color: white;
@@ -14669,95 +14667,59 @@ html.js input.throbbing {
 
 /* line 7, ../sass/_navbar.scss */
 .navbar .brand {
-  color: white;
-  text-shadow: 0 1px 0 #3e9d38; }
-/* line 11, ../sass/_navbar.scss */
+  margin-left: 0;
+  padding-left: 5px;
+  color: #777777;
+  text-shadow: 0 1px 0 white; }
+/* line 13, ../sass/_navbar.scss */
 .navbar .search-form {
   padding-top: 10px;
   margin: 0 20px; }
-  /* line 14, ../sass/_navbar.scss */
+  /* line 16, ../sass/_navbar.scss */
   .navbar .search-form input {
     width: 170px; }
-/* line 18, ../sass/_navbar.scss */
+/* line 20, ../sass/_navbar.scss */
 .navbar #oa-user-badge {
   position: relative;
   padding-top: 5px; }
-  /* line 21, ../sass/_navbar.scss */
+  /* line 23, ../sass/_navbar.scss */
   .navbar #oa-user-badge .user-badge {
     min-width: 110px;
     padding: 5px;
-    margin: 0;
-    border-color: black;
-    color: white;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #2c2c2c;
-    background-image: -moz-linear-gradient(top, #333333, #222222);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
-    background-image: -webkit-linear-gradient(top, #333333, #222222);
-    background-image: -o-linear-gradient(top, #333333, #222222);
-    background-image: linear-gradient(to bottom, #333333, #222222);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF333333', endColorstr='#FF222222', GradientType=0);
-    border-color: #222222 #222222 black;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); }
+    margin: 0; }
     /* line 27, ../sass/_navbar.scss */
-    .navbar #oa-user-badge .user-badge:hover {
-      color: white;
-      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-      background-color: #282828;
-      background-image: -moz-linear-gradient(top, #222222, #333333);
-      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#333333));
-      background-image: -webkit-linear-gradient(top, #222222, #333333);
-      background-image: -o-linear-gradient(top, #222222, #333333);
-      background-image: linear-gradient(to bottom, #222222, #333333);
-      background-repeat: repeat-x;
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF222222', endColorstr='#FF333333', GradientType=0);
-      border-color: #333333 #333333 #0d0d0d;
-      border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); }
-    /* line 30, ../sass/_navbar.scss */
     .navbar #oa-user-badge .user-badge .user-name {
       margin-right: 5px; }
-    /* line 33, ../sass/_navbar.scss */
+    /* line 30, ../sass/_navbar.scss */
     .navbar #oa-user-badge .user-badge img {
       margin: 0; }
-  /* line 37, ../sass/_navbar.scss */
+  /* line 34, ../sass/_navbar.scss */
   .navbar #oa-user-badge .dropdown-menu {
-    color: white;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #2c2c2c;
-    background-image: -moz-linear-gradient(top, #333333, #222222);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
-    background-image: -webkit-linear-gradient(top, #333333, #222222);
-    background-image: -o-linear-gradient(top, #333333, #222222);
-    background-image: linear-gradient(to bottom, #333333, #222222);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF333333', endColorstr='#FF222222', GradientType=0);
-    border-color: #222222 #222222 black;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     float: left;
     width: 100%;
     min-width: 110px; }
-    /* line 42, ../sass/_navbar.scss */
+    /* line 38, ../sass/_navbar.scss */
     .navbar #oa-user-badge .dropdown-menu ul {
       margin: 0; }
-      /* line 44, ../sass/_navbar.scss */
+      /* line 40, ../sass/_navbar.scss */
       .navbar #oa-user-badge .dropdown-menu ul li {
         margin: 0; }
-        /* line 46, ../sass/_navbar.scss */
-        .navbar #oa-user-badge .dropdown-menu ul li a {
-          color: #FFF; }
 
-/* line 55, ../sass/_navbar.scss */
+/* line 50, ../sass/_navbar.scss */
 .oa-dropdown {
   display: inline-block;
   margin: 0 0.25em 0 0.25em;
   vertical-align: middle; }
-  /* line 59, ../sass/_navbar.scss */
+  /* line 54, ../sass/_navbar.scss */
   .oa-dropdown ul {
     margin: 0.5em 0; }
-    /* line 61, ../sass/_navbar.scss */
+    /* line 56, ../sass/_navbar.scss */
     .oa-dropdown ul li {
       margin: 0; }
+
+/* line 62, ../sass/_navbar.scss */
+.sutro-double-container {
+  margin-bottom: 0; }
 
 /* line 6, ../sass/_panel.scss */
 #node-edit .panel-pane.pane-node-field-oa-organization-ref,
@@ -14952,24 +14914,25 @@ html.js input.throbbing {
 /* line 22, ../sass/_user.scss */
 .user-badge.pull-left {
   text-align: left;
-  margin-right: 10px; }
-  /* line 25, ../sass/_user.scss */
+  margin-right: 10px;
+  padding-left: 3px; }
+  /* line 26, ../sass/_user.scss */
   .user-badge.pull-left img {
     margin-right: 8px; }
 
-/* line 30, ../sass/_user.scss */
+/* line 31, ../sass/_user.scss */
 .oa-river .user-badge {
   border-top: 0;
   border-right: 0; }
 
-/* line 38, ../sass/_user.scss */
+/* line 39, ../sass/_user.scss */
 .pane-oa-user-groups-full .views-row {
   border: 1px solid #dddddd;
   border-bottom: none; }
-/* line 42, ../sass/_user.scss */
+/* line 43, ../sass/_user.scss */
 .pane-oa-user-groups-full .views-row-odd {
   background: #f9f9f9; }
-/* line 45, ../sass/_user.scss */
+/* line 46, ../sass/_user.scss */
 .pane-oa-user-groups-full .views-row-first {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
@@ -14977,7 +14940,7 @@ html.js input.throbbing {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px; }
-/* line 48, ../sass/_user.scss */
+/* line 49, ../sass/_user.scss */
 .pane-oa-user-groups-full .views-row-last {
   border-bottom: 1px solid #dddddd;
   -moz-border-radius-bottomleft: 5px;
@@ -14986,18 +14949,18 @@ html.js input.throbbing {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px; }
-/* line 53, ../sass/_user.scss */
+/* line 54, ../sass/_user.scss */
 .pane-oa-user-groups-full .group-container {
   padding: 5px; }
-/* line 57, ../sass/_user.scss */
+/* line 58, ../sass/_user.scss */
 .pane-oa-user-groups-full .group-details .picture {
   margin-right: 20px;
   height: 120px;
   width: 120px; }
-  /* line 61, ../sass/_user.scss */
+  /* line 62, ../sass/_user.scss */
   .pane-oa-user-groups-full .group-details .picture img {
     width: 100%; }
-/* line 67, ../sass/_user.scss */
+/* line 68, ../sass/_user.scss */
 .pane-oa-user-groups-full .accordion {
   padding: 10px;
   margin: 0; }

@@ -12,6 +12,7 @@
  *    'logout' - Logout link.
  */
 ?>
+<?php if (user_is_logged_in()): ?>
 <div id="oa-user-badge" class="pull-right">
   <div class="dropdown oa-dropdown btn-group">
     <div class="user-badge dropdown-toggle btn clearfix" id="user-badge-dropdown" data-toggle="dropdown">
@@ -31,3 +32,8 @@
     </div>
   </div>
 </div>
+<?php else: ?>
+  <div class="pull-right">
+    <a href="<?php print $login; ?>" class="btn"><?php print t('Login'); ?></a>
+  </div>
+<?php endif; ?>

@@ -71,17 +71,19 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   $variables['sections_list'] = '';
 
   // grab list of user's groups and sections
-  $group_options = array(
+  $button_options = array(
     'attributes' => array(
-      'class' => array('dropdown-toggle', 'btn', 'btn-large', 'btn-success'),
+      'class' => array('btn', 'btn-large'),
       )
     );
-  $variables['groups_label'] = l(t('Groups'), 'groups', $group_options);
+  $variables['group_label'] = t('Groups');
+  $variables['group_link'] = l(t('Groups'), 'groups', $button_options);
   if (isset($group_id)) {
     // get name of current group (without fully loading node)
     $title = oa_groups_get_titles(array($group_id));
     if (!empty($title['titles'][0])) {
-      $variables['groups_label'] = l($title['titles'][0], 'node/' . $group_id, $group_options);
+      $variables['group_label'] = $title['titles'][0];
+      $variables['group_link'] = l($title['titles'][0], 'node/' . $group_id, $button_options);
     }
   }
 
@@ -124,11 +126,13 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
   }
 
   $current_section = !empty($_SESSION['oa_section_id']) ? $_SESSION['oa_section_id'] : 0;
-  $section_name = '';
 
-  $variables['sections_label'] = t('Group home');
+  $home_name = t('Group home');
+  $section_name = '';
+  $section_link = '';
   if (isset($group_id)) {
-    $group_link = l(t('Group home'), 'node/' . $group_id);
+    $group_link = l($home_name, 'node/' . $group_id);
+    $section_link = l($home_name, 'node/' . $group_id, $button_options);
     $items = array();
     // grab the titles of the sections for the current group
     $sections = oa_groups_group_sections($group_id);
@@ -138,6 +142,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
         $items[] = l($title, 'node/' . $sid);
         if ($sid == $current_section) {
           $section_name = $title;
+          $section_link = l($title, 'node/' . $sid, $button_options);
         }
       }
       // add the Group home page link and create the ul list
@@ -154,17 +159,21 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
     }
   }
   // Current Section Name from current page name
-  $section = menu_get_object();
-  if (isset($section->type)) {
-    switch ($section->type) {
+  $node = menu_get_object();
+  if (isset($node->type)) {
+    switch ($node->type) {
       case OA_SECTION_TYPE:
-        $section_name = $section->title;
+        $section_name = $node->title;
+        $section_link = l($section_name, 'node/' . $node->nid, $button_options);
         break;
       case OA_GROUP_TYPE:
-        $section_name = $variables['sections_label'];
+        $section_name = $home_name;
+        $section_link = l($section_name, 'node/' . $node->nid, $button_options);
+        break;
     }
   }
-  $variables['sections_label'] = $section_name;
+  $variables['section_label'] = $section_name;
+  $variables['section_link'] = $section_link;
 }
 
 
@@ -173,10 +182,13 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
  */
 function oa_dashboard_preprocess_oa_user_badge(&$vars) {
   global $user;
-  
+
   if ($user->uid) {
     $user = user_load($user->uid);
     $vars = array_merge($vars, oa_panopoly_user_build_user_details($user));
+  }
+  else {
+    $vars['login'] = '/user/login';
   }
 }
 

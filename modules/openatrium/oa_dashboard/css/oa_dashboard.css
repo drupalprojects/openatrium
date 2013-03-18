@@ -43,11 +43,11 @@
 }
 #oa_toolbar a {
 	font-size: 18px;
-	color: white;
+	color: #333;
 }
 
 #oa_toolbar a:hover {
-	color: yellow;
+	color: black;
 }
 
 #oa_toolbar ul li a {
@@ -56,7 +56,7 @@
 	margin: 0;
 }
 #oa_toolbar ul li a:hover {
-	color: yellow;
+	color: white;
 }
 
 #oa_toolbar ul li ul li a {
@@ -76,7 +76,7 @@
 }
 
 #oa_toolbar .caret {
-	border-top-color: white;
+	border-top-color: #333;
 }
 #oa_toolbar .more-link {
 	font-size: 14px;

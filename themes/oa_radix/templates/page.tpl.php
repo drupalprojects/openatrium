@@ -24,29 +24,33 @@
                 <span class="icon-bar"></span>
               </a>
 
-              <?php if ($logo): ?>
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="pull-left brand">
-                   <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
-                </a>
-              <?php endif; ?>
+              <?php if (!empty($oa_toolbar_panel)): ?>
+                <?php print $oa_toolbar_panel; ?>
+              <?php else: ?>
+                <?php if ($logo): ?>
+                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="pull-left brand">
+                     <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
+                  </a>
+                <?php endif; ?>
 
-              <nav id="main-nav" class="pull-left" role="navigation">
-                <?php print render($page['navigation']); ?>
-              </nav>
+                <nav id="main-nav" class="pull-left" role="navigation">
+                  <?php print render($page['navigation']); ?>
+                </nav>
 
-              <?php if ($user_badge): ?>
-                <?php print $user_badge; ?>
-              <?php endif; ?>
+                <?php if ($user_badge): ?>
+                  <?php print $user_badge; ?>
+                <?php endif; ?>
 
-              <?php if ($search_form): ?>
-                <?php // print $search_form; ?>
-              <?php endif; ?>
+                <?php if ($search_form): ?>
+                  <?php // print $search_form; ?>
+                <?php endif; ?>
 
                 <?php if ($main_menu): ?>
                   <nav id="main-menu" class="main-menu" role="navigation">
                     <?php print render($main_menu); ?>
                   </nav> <!-- /#main-menu -->
                 <?php endif; ?>
+              <?php endif; ?>
             </div>
           </div>
         </div> <!-- /#navigation -->
@@ -83,8 +87,12 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <div class="inner">
-          <?php print render($page['footer']); ?>
+        <div class="footer-inner">
+          <?php if (!empty($oa_footer_panel)): ?>
+            <?php print $oa_footer_panel; ?>
+          <?php else: ?>
+            <?php print render($page['footer']); ?>
+          <?php endif; ?>
         </div>
       </div>
     </div>

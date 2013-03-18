@@ -49,6 +49,7 @@ dependencies[] = message_subscribe
 dependencies[] = flag
 dependencies[] = realname
 dependencies[] = features_override
+dependencies[] = panels_mini
 
 ; Organic Groups
 dependencies[] = og
