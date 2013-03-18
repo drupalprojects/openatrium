@@ -15,7 +15,7 @@ function oa_panopoly_user_build_user_details($user, $image_style = 'oa_small_thu
   $details['user'] = $user;
   $details['realname'] = empty($user->realname) ? $user->name : $user->realname;
   $details['name'] = $user->name;
-  
+
   if (!empty($user->field_user_picture)) {
     $picture = $user->field_user_picture[LANGUAGE_NONE][0];
     $image = array(

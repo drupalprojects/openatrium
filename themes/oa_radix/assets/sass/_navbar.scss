@@ -1,4 +1,4 @@
-// 
+//
 // Styles for navbar
 // --------------------------------------------------
 .navbar {
@@ -22,11 +22,6 @@
       min-width: 110px;
       padding: 5px;
       margin: 0;
-      border-color: $black;
-      @include gradientBar($grayDark, $grayDarker);
-      &:hover {
-        @include gradientBar($grayDarker, $grayDark);
-      }
       .user-name {
         margin-right: 5px;
       }
@@ -35,7 +30,6 @@
       }
     }
     .dropdown-menu {
-      @include gradientBar($grayDark, $grayDarker);
       float: left;
       width: 100%;
       min-width: 110px;
@@ -44,7 +38,6 @@
         li {
           margin: 0;
           a {
-            color: #FFF;
           }
         }
       }

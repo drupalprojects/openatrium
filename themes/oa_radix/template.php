@@ -27,7 +27,7 @@ function oa_radix_preprocess_page(&$vars) {
 
   // Add user_badge to header.
   $vars['user_badge'] = '';
-  if (module_exists('oa_dashboard') && user_is_logged_in()) {
+  if (module_exists('oa_dashboard')) {
     $user_badge = module_invoke('oa_dashboard', 'block_view', 'oa_user_badge');
     $vars['user_badge'] = $user_badge['content'];
   }
