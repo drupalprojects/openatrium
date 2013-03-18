@@ -97,15 +97,6 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
 }
 
 /**
- * Implements hook_mail_alter().
- */
-function oa_messages_mail_alter(&$message) {
-  if ($message['key'] == 'oa_reply') {
-    //$message['headers']['Content-Type'] = 'text/html; charset=UTF-8;';
-  }
-}
-
-/**
  * Builds the subscribe options for an entity.
  */
 function oa_messages_build_subscribe_options($entity) {
