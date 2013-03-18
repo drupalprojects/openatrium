@@ -31,4 +31,8 @@ function oa_radix_preprocess_page(&$vars) {
     $user_badge = module_invoke('oa_dashboard', 'block_view', 'oa_user_badge');
     $vars['user_badge'] = $user_badge['content'];
   }
+  $toolbar = panels_mini_block_view('oa_toolbar_panel');
+  $vars['oa_toolbar_panel'] = isset($toolbar) ? $toolbar['content'] : '';
+  $footer = panels_mini_block_view('oa_footer_panel');
+  $vars['oa_footer_panel'] = isset($footer) ? $footer['content'] : '';
 }

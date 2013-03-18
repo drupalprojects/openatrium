@@ -5,6 +5,8 @@
   // Brand: website or project name
   // -------------------------
   .brand {
+    margin-left: 0;
+    padding-left: 5px;
     color: $navbarBrandColor;
     text-shadow: 0 1px 0 $navbarBackgroundHighlight;
   }
@@ -55,4 +57,8 @@
 	    margin: 0;
 	  }
 	}
+}
+
+.sutro-double-container {
+  margin-bottom: 0;
 }
