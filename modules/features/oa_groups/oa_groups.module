@@ -38,11 +38,36 @@ define('OA_ACCESS_REALM', 'oa_access');
 
 /**
  * Implements hook_ctools_plugin_directory().
- */ 
+ */
 function oa_groups_ctools_plugin_directory($owner, $plugin_type) {
   if ($owner == 'ctools' && $plugin_type == 'content_types') {
     return 'plugins/content_types';
   }
+}
+
+/**
+ * Implementation of hook_menu
+ */
+function oa_groups_menu() {
+ // Add an administration section for Open Atrium settings
+  $items['admin/openatrium/settings'] = array(
+    'title' => 'Open Atrium Settings',
+    'description' => 'Configuration related to Open Atrium',
+    'weight' => 0,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('oa_groups_configure_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+
+/**
+ * Configuration Form for Open Atrium
+ */
+function oa_groups_configure_form($form, &$form_state) {
+  // blank for for now.  Other modules can alter this to add stuff
+  $form = array();
+  return system_settings_form($form);
 }
 
 /**
@@ -548,7 +573,7 @@ function oa_groups_get_users_for_group($group_id) {
     ->condition('og.entity_type', 'user')
     ->condition('og.gid', $group_id);
     //->condition('og.group_type', 'node');
-  
+
   $results = $query->execute()->fetchAllAssoc('uid');
   return user_load_multiple(array_keys($results));
 }
@@ -589,7 +614,7 @@ function oa_groups_preprocess_views_view_fields(&$vars) {
   foreach ($vars['fields'] as $id => $field) {
     $vars[$id] = $field->content;
   }
-  
+
   // View specific alterations.
   if ($vars['view']->name == 'oa_user_groups' && $vars['view']->current_display == 'full') {
     oa_groups_preprocess_oa_user_groups_full_view_fields($vars);
@@ -620,7 +645,7 @@ function oa_groups_get_user_groups($uid) {
     ->fields('og')
     ->condition('entity_type', 'user')
     ->condition('etid', $uid);
-  
+
   $results = $query->execute()->fetchAllAssoc('gid');
   return array_keys($results);
 }
@@ -634,7 +659,7 @@ function oa_groups_get_node_group($nid) {
     ->fields('og')
     ->condition('entity_type', 'node')
     ->condition('etid', $nid);
-  
+
   $result = $query->execute()->fetchAssoc();
   return empty($result) ? 0 : $result['gid'];
 }

@@ -78,14 +78,17 @@ function oa_layouts_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pull-right',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-2'] = $pane;
     $display->panels['column3'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-1';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['oa_footer_panel'] = $mini;
 
@@ -100,7 +103,7 @@ function oa_layouts_default_panels_mini() {
   $mini->contexts = array();
   $mini->relationships = array();
   $display = new panels_display();
-  $display->layout = 'sutro_double';
+  $display->layout = 'boxton';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -112,6 +115,7 @@ function oa_layouts_default_panels_mini() {
       'secondcolumn1' => NULL,
       'secondcolumn2' => NULL,
       'footer' => NULL,
+      'contentmain' => NULL,
     ),
   );
   $display->cache = array();
@@ -120,7 +124,7 @@ function oa_layouts_default_panels_mini() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-3';
-    $pane->panel = 'header';
+    $pane->panel = 'contentmain';
     $pane->type = 'page_logo';
     $pane->subtype = 'page_logo';
     $pane->shown = TRUE;
@@ -138,10 +142,10 @@ function oa_layouts_default_panels_mini() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-3'] = $pane;
-    $display->panels['header'][0] = 'new-3';
+    $display->panels['contentmain'][0] = 'new-3';
     $pane = new stdClass();
     $pane->pid = 'new-4';
-    $pane->panel = 'header';
+    $pane->panel = 'contentmain';
     $pane->type = 'page_site_name';
     $pane->subtype = 'page_site_name';
     $pane->shown = TRUE;
@@ -159,31 +163,10 @@ function oa_layouts_default_panels_mini() {
     $pane->position = 1;
     $pane->locks = array();
     $display->content['new-4'] = $pane;
-    $display->panels['header'][1] = 'new-4';
+    $display->panels['contentmain'][1] = 'new-4';
     $pane = new stdClass();
     $pane->pid = 'new-5';
-    $pane->panel = 'header';
-    $pane->type = 'block';
-    $pane->subtype = 'oa_dashboard-oa_user_badge';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['header'][2] = 'new-5';
-    $pane = new stdClass();
-    $pane->pid = 'new-6';
-    $pane->panel = 'middle';
+    $pane->panel = 'contentmain';
     $pane->type = 'block';
     $pane->subtype = 'oa_dashboard-oa_toolbar';
     $pane->shown = TRUE;
@@ -196,14 +179,62 @@ function oa_layouts_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pull-left',
+    );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['contentmain'][2] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'contentmain';
+    $pane->type = 'block';
+    $pane->subtype = 'oa_dashboard-oa_user_badge';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pull-right',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
     $pane->locks = array();
     $display->content['new-6'] = $pane;
-    $display->panels['middle'][0] = 'new-6';
+    $display->panels['contentmain'][3] = 'new-6';
+    $pane = new stdClass();
+    $pane->pid = 'new-7';
+    $pane->panel = 'contentmain';
+    $pane->type = 'page_primary_links';
+    $pane->subtype = 'page_primary_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $display->content['new-7'] = $pane;
+    $display->panels['contentmain'][4] = 'new-7';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-6';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['oa_toolbar_panel'] = $mini;
 

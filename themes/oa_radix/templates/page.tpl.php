@@ -10,23 +10,27 @@
  * @see html.tpl.php
  */
 ?>
-<header id="header" class="header" role="header">
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        <div id="navigation" class="navbar">
-          <div class="navbar-inner">
-            <div class="container clearfix">
-              <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </a>
+<?php if (!empty($oa_toolbar_panel)): ?>
+  <div class="navbar <?php print $oa_toolbar_class; ?> <?php print $oa_toolbar_sticky; ?>">
+    <div class="navbar-inner">
+      <?php print $oa_toolbar_panel; ?>
+    </div>
+  </div>
+<?php else: ?>
+  <header id="header" class="header" role="header">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div id="navigation" class="navbar">
+            <div class="navbar-inner">
+              <div class="container clearfix">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
 
-              <?php if (!empty($oa_toolbar_panel)): ?>
-                <?php print $oa_toolbar_panel; ?>
-              <?php else: ?>
                 <?php if ($logo): ?>
                   <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="pull-left brand">
                      <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
@@ -50,14 +54,14 @@
                     <?php print render($main_menu); ?>
                   </nav> <!-- /#main-menu -->
                 <?php endif; ?>
-              <?php endif; ?>
+              </div>
             </div>
-          </div>
-        </div> <!-- /#navigation -->
+          </div> <!-- /#navigation -->
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+<?php endif; ?>
 
 <div id="main-wrapper">
   <div id="main" class="container">

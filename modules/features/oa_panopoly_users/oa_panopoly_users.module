@@ -6,7 +6,6 @@
 
 include_once 'oa_panopoly_users.features.inc';
 
-
 /**
  * Provide information for rendering a user.
  */
@@ -29,8 +28,9 @@ function oa_panopoly_user_build_user_details($user, $image_style = 'oa_small_thu
   }
 
   //Build out links
-  $details['links']['dashboard'] = 'user';
-  $details['links']['edit_profile'] = 'user/' . $user->uid . '/edit';
-  $details['links']['logout'] = 'user/logout';
+  $details['links']['dashboard'] = url('user');
+  $details['links']['edit_profile'] = url('user/' . $user->uid . '/edit');
+  $details['links']['logout'] = url('user/logout');
   return $details;
 }
+

@@ -4,7 +4,6 @@
 // --------------------------------------------------
 .navbar-inner,
 .footer-inner {
-  min-height: 60px;
   padding-left:  20px;
   padding-right: 20px;
   border: 1px solid $navbarBorder;
@@ -24,9 +23,8 @@
   margin: 0;
 }
 #oa_toolbar {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  min-height: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #main-wrapper {
