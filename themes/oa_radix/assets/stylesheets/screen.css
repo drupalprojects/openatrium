@@ -14721,6 +14721,15 @@ html.js input.throbbing {
 .sutro-double-container {
   margin-bottom: 0; }
 
+/* line 66, ../sass/_navbar.scss */
+.footer .menu li {
+  list-style-type: none;
+  list-style-image: none;
+  float: left; }
+  /* line 70, ../sass/_navbar.scss */
+  .footer .menu li a {
+    color: #333333; }
+
 /* line 6, ../sass/_panel.scss */
 #node-edit .panel-pane.pane-node-field-oa-organization-ref,
 #node-edit .panel-pane.pane-node-field-oa-team-ref,

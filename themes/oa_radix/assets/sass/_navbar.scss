@@ -62,3 +62,12 @@
 .sutro-double-container {
   margin-bottom: 0;
 }
+
+.footer .menu li {
+  list-style-type: none;
+  list-style-image: none;
+  float: left;
+  a {
+    color: $grayDark;
+  }
+}
