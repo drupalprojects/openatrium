@@ -49,9 +49,9 @@ function oa_discussion_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "[[message:field-oa-message-group]] [message:user:name] replied to \\u0022[message:field-oa-node-ref:oa-parent:title]\\u0022",
+          "value" : "[[message:field-oa-message-group]] [message:user:name] replied to [message:field-oa-node-ref:oa-parent:title] [#[message:field-oa-node-ref:oa-parent:nid]]",
           "format" : "plain_text",
-          "safe_value" : "\\u003Cp\\u003E[[message:field-oa-message-group]] [message:user:name] replied to \\u0026quot;[message:field-oa-node-ref:oa-parent:title]\\u0026quot;\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[[message:field-oa-message-group]] [message:user:name] replied to [message:field-oa-node-ref:oa-parent:title] [#[message:field-oa-node-ref:oa-parent:nid]]\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "[message:user:name] replied to \\u003Ca href=\\u0022[message:field-oa-node-ref:oa-parent:url]\\u0022\\u003E[message:field-oa-node-ref:oa-parent:title]\\u003C\\/a\\u003E\\r\\n[message:field-oa-message-text:value] [message:field-oa-node-ref:body]\\r\\n\\u003Ca href=\\u0022[message:field-oa-node-ref:url]\\u0022\\u003EClick here\\u003C\\/a\\u003E to see the discussion.",

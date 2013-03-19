@@ -9,6 +9,10 @@
  */
 function oa_messages_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "feeds" && $api == "feeds_importer_default") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -30,9 +34,9 @@ function oa_messages_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "[message:field-oa-message-group] : [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]",
+          "value" : "[[message:field-oa-message-group]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]",
           "format" : "plain_text",
-          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group] : [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[[message:field-oa-message-group]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u0026nbsp;[message:field-oa-node-ref:body]\\u003C\\/p\\u003E",
