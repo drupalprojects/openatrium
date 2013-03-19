@@ -88,7 +88,8 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
 
     $wrapper->save();
     
-    // Since this can be called on node_update / insert, we
+    // Since this can be called on node_update / insert, we clear the entity
+    // cache so that it gets the values assigned by other modules.
     entity_get_controller($entity_type)->resetCache(array($entity_wrapper->getIdentifier()));
 
     if ($send && isset($entity) && ($entity_type == 'node')) {
