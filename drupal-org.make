@@ -114,3 +114,10 @@ projects[colorbox][subdir] = contrib
 projects[colorbox][version] = 2.3
 projects[media_colorbox][subdir] = contrib
 projects[media_colorbox][version] = 1.0-rc3
+
+; Mailhandler
+projects[mailhandler][subdir] = contrib
+projects[mailhandler][download][type] = git
+projects[mailhandler][download][url] = http://git.drupal.org/project/mailhandler.git
+projects[mailhandler][download][branch] = 7.x-2.x
+projects[mailhandler][download][commit] = c57579b7990dce3a0cf46336c78f2e7c17581723
