@@ -60,6 +60,10 @@ function oa_dashboard_block_info() {
     'info' => t('Open Atrium User Badge'),
     'cache' => DRUPAL_CACHE_PER_USER,
   );
+  $blocks['oa_toolbar_menu_button'] = array(
+    'info' => t('Open Atrium Toolbar Menu Button'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
 
   return $blocks;
 }
@@ -78,6 +82,14 @@ function oa_dashboard_block_view($delta = '') {
     case 'oa_user_badge':
       $block['subject'] = '';
       $block['content'] = theme('oa_user_badge');
+      break;
+    case 'oa_toolbar_menu_button':
+      $block['subject'] = '';
+      $tree = navbar_get_menu_tree();
+      if (!empty($tree)) {
+        $block['content'] = theme('oa_toolbar_menu_button');
+      }
+      break;
   }
 
   return $block;
@@ -93,6 +105,9 @@ function oa_dashboard_theme() {
     ),
     'oa_user_badge' => array(
       'template' => 'oa_user_badge',
+    ),
+    'oa_toolbar_menu_button' => array(
+      'template' => 'oa_toolbar_menu_button',
     ),
   );
 }
@@ -253,4 +268,17 @@ function oa_dashboard_render_user_picture($user, $image_style = 'oa_small_thumbn
     return theme('image_style', $image);
   }
   return '';
+}
+
+
+/**
+ * Preprocess function for the oa_toolbar_menu_button block.
+ */
+function oa_dashboard_preprocess_oa_toolbar_menu_button(&$vars) {
+  drupal_add_js(drupal_get_path('module', 'oa_dashboard') . '/js/toolbar-menu-toggle.js');
+  drupal_add_js(array(
+    'oa_toolbar_sticky' => variable_get('oa_toolbar_sticky', 0),
+  ), array('type' => 'setting'));
+  
+  $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
 }

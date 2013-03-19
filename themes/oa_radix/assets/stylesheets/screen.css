@@ -2114,7 +2114,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url('../images/glyphicons-halflings.png?1360096772');
+  background-image: url('../images/glyphicons-halflings.png?1362411437');
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px; }
@@ -2134,7 +2134,7 @@ table th[class*="span"],
 .dropdown-menu > .active > a > [class*=" icon-"],
 .dropdown-submenu:hover > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"] {
-  background-image: url('../images/glyphicons-halflings-white.png?1360096772'); }
+  background-image: url('../images/glyphicons-halflings-white.png?1362411437'); }
 
 /* line 48, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_sprites.scss */
 .icon-glass {
@@ -4119,7 +4119,7 @@ input[type="submit"].btn {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: #777777;
+  color: #333333;
   text-shadow: 0 1px 0 white; }
   /* line 59, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
   .navbar .brand:hover {
@@ -10471,7 +10471,7 @@ input[type="submit"].btn {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: #777777;
+  color: #333333;
   text-shadow: 0 1px 0 white; }
   /* line 59, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
   .navbar .brand:hover {
@@ -12974,7 +12974,7 @@ select[size] {
 
 /* line 70, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
 html.js input.form-autocomplete {
-  background: url('../images/throbber.gif?1360096772') no-repeat right 8px white !important; }
+  background: url('../images/throbber.gif?1362411437') no-repeat right 8px white !important; }
 
 /* line 73, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
 html.js input.throbbing {
@@ -14542,50 +14542,49 @@ html.js input.throbbing {
 
 /* line 25, ../sass/_layout.scss */
 #oa_toolbar {
-  padding-top: 5px;
-  padding-bottom: 5px; }
+  padding-top: 5px; }
 
-/* line 30, ../sass/_layout.scss */
+/* line 29, ../sass/_layout.scss */
 #main-wrapper {
   min-height: 360px; }
 
-/* line 33, ../sass/_layout.scss */
+/* line 32, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #FAFAFA;
   padding: 0;
   margin-bottom: 5px; }
 
-/* line 38, ../sass/_layout.scss */
+/* line 37, ../sass/_layout.scss */
 .oa-list-header {
   padding: 3px 5px 0 5px; }
 
-/* line 41, ../sass/_layout.scss */
+/* line 40, ../sass/_layout.scss */
 .oa-list .accordion {
   margin-bottom: 0; }
 
-/* line 44, ../sass/_layout.scss */
+/* line 43, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
-  /* line 46, ../sass/_layout.scss */
+  /* line 45, ../sass/_layout.scss */
   .oa-list .accordion-heading .accordion-toggle:hover {
     background-color: #E0EEFF; }
 
-/* line 50, ../sass/_layout.scss */
+/* line 49, ../sass/_layout.scss */
 .oa-list .label {
   color: white; }
-  /* line 52, ../sass/_layout.scss */
+  /* line 51, ../sass/_layout.scss */
   .oa-list .label a {
     color: white; }
 
-/* line 56, ../sass/_layout.scss */
+/* line 55, ../sass/_layout.scss */
 .oa-list-category {
   text-align: right; }
 
-/* line 59, ../sass/_layout.scss */
+/* line 58, ../sass/_layout.scss */
 .oa-list .links {
   float: right;
   margin-right: 5px; }
-  /* line 62, ../sass/_layout.scss */
+  /* line 61, ../sass/_layout.scss */
   .oa-list .links a {
     padding: 0 5px;
     color: #777;
@@ -14663,45 +14662,56 @@ html.js input.throbbing {
   color: white;
   display: block; }
 
-/* line 7, ../sass/_navbar.scss */
+/* line 5, ../sass/_navbar.scss */
+.navbar .navbar-inner {
+  padding: 5px 10px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0; }
+/* line 11, ../sass/_navbar.scss */
 .navbar .brand {
   margin-left: 0;
   padding-left: 5px;
-  color: #777777;
-  text-shadow: 0 1px 0 white; }
-/* line 13, ../sass/_navbar.scss */
+  font-weight: bold;
+  color: black;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+/* line 19, ../sass/_navbar.scss */
 .navbar .icon-home {
   color: white; }
-/* line 16, ../sass/_navbar.scss */
+/* line 22, ../sass/_navbar.scss */
 .navbar .search-form {
   padding-top: 10px;
   margin: 0 20px; }
-  /* line 19, ../sass/_navbar.scss */
+  /* line 25, ../sass/_navbar.scss */
   .navbar .search-form input {
     width: 170px; }
 
-/* line 25, ../sass/_navbar.scss */
+/* line 31, ../sass/_navbar.scss */
 .oa-dropdown {
   display: inline-block;
   margin: 0 0.25em 0 0.25em;
   vertical-align: middle; }
-  /* line 29, ../sass/_navbar.scss */
+  /* line 35, ../sass/_navbar.scss */
   .oa-dropdown ul {
     margin: 0.5em 0; }
-    /* line 31, ../sass/_navbar.scss */
+    /* line 37, ../sass/_navbar.scss */
     .oa-dropdown ul li {
       margin: 0; }
 
-/* line 37, ../sass/_navbar.scss */
+/* line 43, ../sass/_navbar.scss */
 .sutro-double-container {
   margin-bottom: 0; }
 
-/* line 41, ../sass/_navbar.scss */
+/* line 47, ../sass/_navbar.scss */
 .footer .menu li {
   list-style-type: none;
   list-style-image: none;
   float: left; }
-  /* line 45, ../sass/_navbar.scss */
+  /* line 51, ../sass/_navbar.scss */
   .footer .menu li a {
     color: #333333; }
 

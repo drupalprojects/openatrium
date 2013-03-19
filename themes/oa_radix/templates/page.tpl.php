@@ -11,7 +11,7 @@
  */
 ?>
 <?php if (!empty($oa_toolbar_panel)): ?>
-  <div class="navbar <?php print $oa_toolbar_class; ?> <?php print $oa_toolbar_sticky; ?>">
+  <div id="oa-navbar" class="navbar <?php print $oa_toolbar_class; ?> <?php print $oa_toolbar_sticky; ?>">
     <div class="navbar-inner">
       <?php print $oa_toolbar_panel; ?>
     </div>

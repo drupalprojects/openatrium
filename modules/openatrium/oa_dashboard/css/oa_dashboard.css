@@ -1,3 +1,7 @@
+/***********/
+/* Toolbar */
+/***********/
+
 #oa_toolbar {
   list-style: none;
 	font-weight: normal;
@@ -70,6 +74,10 @@
 	font-size: 14px;
 }
 
+/**************/
+/* User badge */
+/**************/
+
 #oa-user-badge {
   position: relative;
   padding: 0;
@@ -85,7 +93,7 @@
 }
 
 .navbar-inverse #oa-user-badge .user-badge {
-  color: #999999;
+  color: #999;
 }
 
 #oa-user-badge .user-badge img {
@@ -104,3 +112,17 @@
   margin: 0;
 }
 
+/***************/
+/* Menu button */
+/***************/
+
+#toolbar-menu-button {
+  margin: 5px 10px;
+  padding: 7px 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.navbar-inverse #toolbar-menu-button {
+  color: #999;
+}
