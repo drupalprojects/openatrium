@@ -1,6 +1,54 @@
 <?php
 
 /**
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
+function oa_dashboard_form_oa_groups_configure_form_alter(&$form, &$form_state, $form_id) {
+
+  $form['oa_toolbar'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Toolbar settings'),
+  );
+
+  // add config settings for toolbar
+  $form['oa_toolbar']['oa_toolbar_style'] = array(
+    '#title' => t('Toolbar Style'),
+    '#type' => 'select',
+    '#required' => TRUE,
+    '#options' => array(
+      '1' => 'Normal (light)',
+      '0' => 'Inverted (dark)',
+    ),
+    '#default_value' => variable_get('oa_toolbar_style', 0),
+    '#description' => t('Select the color/style of the site toolbar.'),
+  );
+
+  $form['oa_toolbar']['oa_toolbar_sticky'] = array(
+    '#title' => t('Toolbar Sticky'),
+    '#type' => 'select',
+    '#required' => TRUE,
+    '#options' => array(
+      '1' => 'Yes',
+      '0' => 'No',
+    ),
+    '#default_value' => variable_get('oa_toolbar_sticky', 1),
+    '#description' => t('Select whether the toolbar sticks to the top of the page.'),
+  );
+
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function oa_dashboard_preprocess_page(&$vars) {
+  $vars['oa_toolbar_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'navbar-inverse';
+  $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
+  $vars['oa_toolbar_sticky'] = variable_get('oa_toolbar_sticky', 1) ? 'navbar-fixed-top' : '';
+}
+
+/**
  * Implements hook_block_info()
  */
 function oa_dashboard_block_info() {
@@ -52,38 +100,33 @@ function oa_dashboard_theme() {
 /**
  * Preprocess function for the oa_toolbar block.
  */
-function oa_dashboard_preprocess_oa_toolbar(&$variables) {
+function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   global $user;
 
   // Separators
-  $variables['oa_toolbar_separator'] = t('&gt;');
-  $variables['home_url'] = url('<front>', array('absolute' => TRUE));
+  $vars['oa_toolbar_separator'] = t('&gt;');
+  $vars['home_url'] = url('<front>', array('absolute' => TRUE));
 
   // Groups
   $group_id = NULL;
   if (isset($_SESSION['oa_group_id'])) {
     $group_id = $_SESSION['oa_group_id'];
   }
-  $variables['groups_label'] = '';
-  $variables['groups_recent'] = '';
-  $variables['groups_favorite'] = '';
-  $variables['sections_label'] = '';
-  $variables['sections_list'] = '';
+  $vars['groups_label'] = '';
+  $vars['groups_recent'] = '';
+  $vars['groups_favorite'] = '';
+  $vars['sections_label'] = '';
+  $vars['sections_list'] = '';
 
   // grab list of user's groups and sections
-  $button_options = array(
-    'attributes' => array(
-      'class' => array('btn', 'btn-large'),
-      )
-    );
-  $variables['group_label'] = t('Groups');
-  $variables['group_link'] = l(t('Groups'), 'groups', $button_options);
+  $vars['group_label'] = t('Groups');
+  $vars['group_url'] = url('groups');
   if (isset($group_id)) {
     // get name of current group (without fully loading node)
     $title = oa_groups_get_titles(array($group_id));
     if (!empty($title['titles'][0])) {
-      $variables['group_label'] = $title['titles'][0];
-      $variables['group_link'] = l($title['titles'][0], 'node/' . $group_id, $button_options);
+      $vars['group_label'] = $title['titles'][0];
+      $vars['group_url'] = url('node/' . $group_id);
     }
   }
 
@@ -106,7 +149,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
         array('attributes' => array('class' => array('more-link')))));
   }
   if (!empty($list)) {
-    $variables['groups_recent'] = theme('item_list', array(
+    $vars['groups_recent'] = theme('item_list', array(
       'items' => $list,
       'title' => t('Active Groups'),
       'type' => 'ul',
@@ -117,7 +160,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
     // get list of favorite groups
     $items = oa_favorites_get_groups($user);
     if (!empty($items['links'])) {
-      $variables['groups_favorite'] = theme('item_list', array(
+      $vars['groups_favorite'] = theme('item_list', array(
         'items' => $items['links'],
         'title' => t('Favorite Groups'),
         'type' => 'ul',
@@ -129,10 +172,10 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
 
   $home_name = t('Group home');
   $section_name = '';
-  $section_link = '';
+  $section_url = '';
   if (isset($group_id)) {
     $group_link = l($home_name, 'node/' . $group_id);
-    $section_link = l($home_name, 'node/' . $group_id, $button_options);
+    $section_url = url('node/' . $group_id);
     $items = array();
     // grab the titles of the sections for the current group
     $sections = oa_groups_group_sections($group_id);
@@ -142,7 +185,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
         $items[] = l($title, 'node/' . $sid);
         if ($sid == $current_section) {
           $section_name = $title;
-          $section_link = l($title, 'node/' . $sid, $button_options);
+          $section_url = url('node/' . $sid);
         }
       }
       // add the Group home page link and create the ul list
@@ -152,7 +195,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
       $items[] = $group_link;
     }
     if (!empty($items)) {
-      $variables['sections_list'] = theme('item_list', array(
+      $vars['sections_list'] = theme('item_list', array(
         'items' => $items,
         'type' => 'ul',
       ));
@@ -164,16 +207,17 @@ function oa_dashboard_preprocess_oa_toolbar(&$variables) {
     switch ($node->type) {
       case OA_SECTION_TYPE:
         $section_name = $node->title;
-        $section_link = l($section_name, 'node/' . $node->nid, $button_options);
+        $section_url = url('node/' . $node->nid);
         break;
       case OA_GROUP_TYPE:
         $section_name = $home_name;
-        $section_link = l($section_name, 'node/' . $node->nid, $button_options);
+        $section_url = url('node/' . $node->nid);
         break;
     }
   }
-  $variables['section_label'] = $section_name;
-  $variables['section_link'] = $section_link;
+  $vars['section_label'] = $section_name;
+  $vars['section_url'] = $section_url;
+  $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
 }
 
 
@@ -188,10 +232,10 @@ function oa_dashboard_preprocess_oa_user_badge(&$vars) {
     $vars = array_merge($vars, oa_panopoly_user_build_user_details($user));
   }
   else {
-    $vars['login'] = '/user/login';
+    $vars['login'] = url('user/login');
   }
+  $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
 }
-
 
 /**
  * Builds a user thumbnail picture from user entity.

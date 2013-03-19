@@ -10,39 +10,14 @@
     color: $navbarBrandColor;
     text-shadow: 0 1px 0 $navbarBackgroundHighlight;
   }
+  .icon-home {
+    color: $white;
+  }
   .search-form {
     padding-top: 10px;
     margin: 0 20px;
     input {
       width: 170px;
-    }
-  }
-  #oa-user-badge {
-    position: relative;
-    padding-top: 5px;
-    .user-badge {
-      min-width: 110px;
-      padding: 5px;
-      margin: 0;
-      .user-name {
-        margin-right: 5px;
-      }
-      img {
-        margin: 0;
-      }
-    }
-    .dropdown-menu {
-      float: left;
-      width: 100%;
-      min-width: 110px;
-      ul {
-        margin: 0;
-        li {
-          margin: 0;
-          a {
-          }
-        }
-      }
     }
   }
 }

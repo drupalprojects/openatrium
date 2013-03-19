@@ -15,9 +15,7 @@
 
 <div class="group-details clearfix">
   <?php if ($picture): ?>
-  <div class="picture">
     <?php print $picture; ?>
-  </div>
   <?php endif ?>
   <div class="description">
     <?php print $description; ?>

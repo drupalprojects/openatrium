@@ -1,7 +1,6 @@
 #oa_toolbar {
   list-style: none;
 	font-weight: normal;
-	font-size: 18px;
 	position: relative;
 }
 
@@ -13,21 +12,15 @@
 	margin: 0;
 }
 
-#oa_toolbar .oa-toolbar-separator {
-	display: inline-block;
-	padding: 0 0.25em;
-	vertical-align: middle;
-}
-#oa_toolbar ul .dropdown-column {
+#oa_toolbar ul.dropdown-menu .dropdown-column {
 	float: left;
 	margin: 0.5em;
 	padding: 0;
-	background-color: #EEE;
-	border: 1px solid #CCC;
 }
-#oa_toolbar ul h3 {
+#oa_toolbar ul.dropdown-menu h3 {
 	color: white;
-	font-size: 18px;
+	font-size: 14px;
+	line-height: 30px;
 	margin: 0;
 	padding: 0 1em;
 	background-color: #333
@@ -41,26 +34,22 @@
 	padding: 0 0;
 	margin: 0;
 }
-#oa_toolbar a {
-	font-size: 18px;
-	color: #333;
+
+#oa_toolbar li.dropdown {
+	margin-left: 10px;
 }
 
-#oa_toolbar a:hover {
-	color: black;
+#oa_toolbar li > a {
+	float: left;
+	padding: 10px 0px 10px 10px;
 }
 
 #oa_toolbar ul li a {
-	color: black;
 	padding: 0 0.5em;
 	margin: 0;
 }
-#oa_toolbar ul li a:hover {
-	color: white;
-}
 
 #oa_toolbar ul li ul li a {
-	color: black;
 	padding: 0.25em 1em;
 	margin: 0;
 }
@@ -76,8 +65,42 @@
 }
 
 #oa_toolbar .caret {
-	border-top-color: #333;
 }
 #oa_toolbar .more-link {
 	font-size: 14px;
 }
+
+#oa-user-badge {
+  position: relative;
+  padding: 0;
+}
+
+/* override the normal .user-badge styles to let toolbar set colors */
+#oa-user-badge .user-badge {
+  min-width: 110px;
+  padding: 3px;
+  margin: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbar-inverse #oa-user-badge .user-badge {
+  color: #999999;
+}
+
+#oa-user-badge .user-badge img {
+  margin: 0;
+}
+
+#oa-user-badge .dropdown-menu {
+  float: left;
+  width: 100%;
+  min-width: 110px;
+}
+#oa-user-badge .dropdown-menu ul {
+  margin: 0;
+}
+#oa-user-badge .dropdown-menu ul li {
+  margin: 0;
+}
+

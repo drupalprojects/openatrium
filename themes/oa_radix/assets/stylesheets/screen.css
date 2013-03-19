@@ -14510,7 +14510,6 @@ html.js input.throbbing {
 /* line 6, ../sass/_layout.scss */
 .navbar-inner,
 .footer-inner {
-  min-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
   border: 1px solid #d4d4d4;
@@ -14531,63 +14530,62 @@ html.js input.throbbing {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   display: block; }
 
-/* line 18, ../sass/_layout.scss */
+/* line 17, ../sass/_layout.scss */
 #logo img {
   vertical-align: middle; }
 
-/* line 21, ../sass/_layout.scss */
+/* line 20, ../sass/_layout.scss */
 #site-name {
   display: inline-block;
   padding: 10px 0.5em;
   margin: 0; }
 
-/* line 26, ../sass/_layout.scss */
+/* line 25, ../sass/_layout.scss */
 #oa_toolbar {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  min-height: 20px; }
+  padding-top: 5px;
+  padding-bottom: 5px; }
 
-/* line 32, ../sass/_layout.scss */
+/* line 30, ../sass/_layout.scss */
 #main-wrapper {
   min-height: 360px; }
 
-/* line 35, ../sass/_layout.scss */
+/* line 33, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #FAFAFA;
   padding: 0;
   margin-bottom: 5px; }
 
-/* line 40, ../sass/_layout.scss */
+/* line 38, ../sass/_layout.scss */
 .oa-list-header {
   padding: 3px 5px 0 5px; }
 
-/* line 43, ../sass/_layout.scss */
+/* line 41, ../sass/_layout.scss */
 .oa-list .accordion {
   margin-bottom: 0; }
 
-/* line 46, ../sass/_layout.scss */
+/* line 44, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
-  /* line 48, ../sass/_layout.scss */
+  /* line 46, ../sass/_layout.scss */
   .oa-list .accordion-heading .accordion-toggle:hover {
     background-color: #E0EEFF; }
 
-/* line 52, ../sass/_layout.scss */
+/* line 50, ../sass/_layout.scss */
 .oa-list .label {
   color: white; }
-  /* line 54, ../sass/_layout.scss */
+  /* line 52, ../sass/_layout.scss */
   .oa-list .label a {
     color: white; }
 
-/* line 58, ../sass/_layout.scss */
+/* line 56, ../sass/_layout.scss */
 .oa-list-category {
   text-align: right; }
 
-/* line 61, ../sass/_layout.scss */
+/* line 59, ../sass/_layout.scss */
 .oa-list .links {
   float: right;
   margin-right: 5px; }
-  /* line 64, ../sass/_layout.scss */
+  /* line 62, ../sass/_layout.scss */
   .oa-list .links a {
     padding: 0 5px;
     color: #777;
@@ -14672,61 +14670,38 @@ html.js input.throbbing {
   color: #777777;
   text-shadow: 0 1px 0 white; }
 /* line 13, ../sass/_navbar.scss */
+.navbar .icon-home {
+  color: white; }
+/* line 16, ../sass/_navbar.scss */
 .navbar .search-form {
   padding-top: 10px;
   margin: 0 20px; }
-  /* line 16, ../sass/_navbar.scss */
+  /* line 19, ../sass/_navbar.scss */
   .navbar .search-form input {
     width: 170px; }
-/* line 20, ../sass/_navbar.scss */
-.navbar #oa-user-badge {
-  position: relative;
-  padding-top: 5px; }
-  /* line 23, ../sass/_navbar.scss */
-  .navbar #oa-user-badge .user-badge {
-    min-width: 110px;
-    padding: 5px;
-    margin: 0; }
-    /* line 27, ../sass/_navbar.scss */
-    .navbar #oa-user-badge .user-badge .user-name {
-      margin-right: 5px; }
-    /* line 30, ../sass/_navbar.scss */
-    .navbar #oa-user-badge .user-badge img {
-      margin: 0; }
-  /* line 34, ../sass/_navbar.scss */
-  .navbar #oa-user-badge .dropdown-menu {
-    float: left;
-    width: 100%;
-    min-width: 110px; }
-    /* line 38, ../sass/_navbar.scss */
-    .navbar #oa-user-badge .dropdown-menu ul {
-      margin: 0; }
-      /* line 40, ../sass/_navbar.scss */
-      .navbar #oa-user-badge .dropdown-menu ul li {
-        margin: 0; }
 
-/* line 50, ../sass/_navbar.scss */
+/* line 25, ../sass/_navbar.scss */
 .oa-dropdown {
   display: inline-block;
   margin: 0 0.25em 0 0.25em;
   vertical-align: middle; }
-  /* line 54, ../sass/_navbar.scss */
+  /* line 29, ../sass/_navbar.scss */
   .oa-dropdown ul {
     margin: 0.5em 0; }
-    /* line 56, ../sass/_navbar.scss */
+    /* line 31, ../sass/_navbar.scss */
     .oa-dropdown ul li {
       margin: 0; }
 
-/* line 62, ../sass/_navbar.scss */
+/* line 37, ../sass/_navbar.scss */
 .sutro-double-container {
   margin-bottom: 0; }
 
-/* line 66, ../sass/_navbar.scss */
+/* line 41, ../sass/_navbar.scss */
 .footer .menu li {
   list-style-type: none;
   list-style-image: none;
   float: left; }
-  /* line 70, ../sass/_navbar.scss */
+  /* line 45, ../sass/_navbar.scss */
   .footer .menu li a {
     color: #333333; }
 
