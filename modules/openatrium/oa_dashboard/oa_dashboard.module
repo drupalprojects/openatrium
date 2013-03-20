@@ -85,9 +85,11 @@ function oa_dashboard_block_view($delta = '') {
       break;
     case 'oa_toolbar_menu_button':
       $block['subject'] = '';
-      $tree = navbar_get_menu_tree();
-      if (!empty($tree)) {
-        $block['content'] = theme('oa_toolbar_menu_button');
+      if (module_exists('navbar')) {
+        $tree = navbar_get_menu_tree();
+        if (!empty($tree)) {
+          $block['content'] = theme('oa_toolbar_menu_button');
+        }
       }
       break;
   }
