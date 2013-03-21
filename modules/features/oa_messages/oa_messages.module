@@ -4,8 +4,12 @@
  * Code for the Open Atrium Messages feature.
  */
 
+include_once 'oa_messages.admin.inc';
 include_once 'oa_messages.features.inc';
 include_once 'oa_messages.feeds.inc';
+
+define('EMAIL_TYPE_PLAIN', 0);
+define('EMAIL_TYPE_HTML', 1);
 
 /**
  * Helper function to create a specific message type

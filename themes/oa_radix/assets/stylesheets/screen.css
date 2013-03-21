@@ -14853,6 +14853,14 @@ html.js input.throbbing {
     bottom: 2px;
     right: 0; }
 
+/* line 42, ../sass/_form.scss */
+.checkbox-table .center {
+  text-align: center; }
+/* line 46, ../sass/_form.scss */
+.checkbox-table .form-type-checkbox,
+.checkbox-table .group-label {
+  margin: 0.4em 0; }
+
 /* line 5, ../sass/_node.scss */
 .oa-body {
   padding: 0 10px;
