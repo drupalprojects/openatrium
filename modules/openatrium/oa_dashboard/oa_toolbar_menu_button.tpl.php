@@ -8,5 +8,5 @@
 ?>
 
 <div id="toolbar-menu-button" class="toggle-tray btn <?php print $oa_toolbar_btn_class; ?>">
-  <span>Menu</span>
+  <span><?php print t('Menu'); ?></span>
 </div>

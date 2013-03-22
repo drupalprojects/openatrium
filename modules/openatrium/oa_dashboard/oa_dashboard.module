@@ -192,6 +192,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   $section_url = '';
   if (isset($group_id)) {
     $group_link = l($home_name, 'node/' . $group_id);
+    $section_name = $home_name;
     $section_url = url('node/' . $group_id);
     $items = array();
     // grab the titles of the sections for the current group
@@ -232,6 +233,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
         break;
     }
   }
+
   $vars['section_label'] = $section_name;
   $vars['section_url'] = $section_url;
   $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
@@ -281,6 +283,6 @@ function oa_dashboard_preprocess_oa_toolbar_menu_button(&$vars) {
   drupal_add_js(array(
     'oa_toolbar_sticky' => variable_get('oa_toolbar_sticky', 0),
   ), array('type' => 'setting'));
-  
+
   $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
 }
