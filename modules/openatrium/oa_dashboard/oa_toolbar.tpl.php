@@ -1,6 +1,8 @@
-<ul id="oa_toolbar" class="nav">
+<ul id="oa_toolbar">
   <?php if (!empty($group_label)): ?>
-    <li><a href="<?php print $home_url; ?>"><i class="icon-home"></i></a></li>
+    <li class="btn-group">
+      <a href="<?php print $home_url; ?>"><i class="icon-home"></i></a>
+    </li>
     <li class="dropdown btn-group">
       <a href="<?php print $group_url; ?>" class="btn <?php print $oa_toolbar_btn_class; ?>"><?php print $group_label; ?></a>
       <a class="dropdown-toggle btn <?php print $oa_toolbar_btn_class; ?>" id="group-dropdown" data-toggle="dropdown" href="#"><b class="caret"></b></a>

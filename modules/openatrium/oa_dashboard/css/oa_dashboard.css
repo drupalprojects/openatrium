@@ -8,6 +8,19 @@
 	position: relative;
 }
 
+.navbar-inverse #oa_toolbar .btn.btn-inverse {
+  color: #BBB;
+}
+
+.navbar-inverse #oa_toolbar .caret {
+  border-top-color: #BBB;
+  border-bottom-color: #BBB;
+}
+
+.navbar-inverse #oa_toolbar .icon-home {
+  color: #BBB;
+}
+
 #oa_toolbar .btn {
 	padding: 0.5em 1em;
 	margin: 0 0;
@@ -26,50 +39,35 @@
 	font-size: 14px;
 	line-height: 30px;
 	margin: 0;
-	padding: 0 1em;
+	padding: 0 20px;
 	background-color: #333
 }
 
-#oa_toolbar ul {
+#oa_toolbar {
 	padding: 0;
 	margin: 0;
 }
-#oa_toolbar ul li {
-	padding: 0 0;
-	margin: 0;
+
+#oa_toolbar li ul li {
+  margin: 0;
 }
 
-#oa_toolbar li.dropdown {
-	margin-left: 10px;
+#oa_toolbar li ul li ul {
+  margin: 0;
 }
 
-#oa_toolbar li > a {
-	float: left;
-	padding: 10px 0px 10px 10px;
-}
-
-#oa_toolbar ul li a {
-	padding: 0 0.5em;
-	margin: 0;
-}
-
-#oa_toolbar ul li ul li a {
-	padding: 0.25em 1em;
-	margin: 0;
-}
-#oa_toolbar ul li a.active {
+#oa_toolbar li a.active {
 	font-style: italic;
 }
 
 #oa_toolbar .icon-home {
 	font-size: 24px;
 	vertical-align: baseline;
-	padding: 0;
+	padding: 0 0 0 0;
 	margin: 0;
+  line-height: 0px;
 }
 
-#oa_toolbar .caret {
-}
 #oa_toolbar .more-link {
 	font-size: 14px;
 }
@@ -93,7 +91,7 @@
 }
 
 .navbar-inverse #oa-user-badge .user-badge {
-  color: #999;
+  color: #BBB;
 }
 
 #oa-user-badge .user-badge img {
@@ -117,9 +115,11 @@
 /***************/
 
 #toolbar-menu-button {
-  margin: 5px 10px;
-  padding: 7px 15px;
+  margin-top: 5px;
+  margin-right: 10px;
+  padding: 0.5em 1em;
   font-size: 12px;
+  line-height: 22px;
   text-transform: uppercase;
 }
 
