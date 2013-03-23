@@ -250,7 +250,7 @@ function oa_dashboard_preprocess_oa_user_badge(&$vars) {
 
   if ($user->uid) {
     $user = user_load($user->uid);
-    $vars = array_merge($vars, oa_panopoly_user_build_user_details($user));
+    $vars = array_merge($vars, oa_panopoly_users_build_user_details($user));
   }
   else {
     $vars['login'] = url('user/login');
