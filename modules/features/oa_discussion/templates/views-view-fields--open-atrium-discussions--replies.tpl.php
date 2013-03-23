@@ -39,13 +39,16 @@
       <?php print $created; ?>
     </div>
   </div>
-  <?php if (!empty($body_1) || !empty($body) || !empty($field_oa_media)): ?>
+  <?php if (!empty($title) || !empty($body) || !empty($field_oa_media)): ?>
     <div class="accordion" id="oa-reply-accordion<?php print $index; ?>">
       <div>
         <div class="accordion-heading">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
-            <i class="icon-plus" vertical-align="middle"></i>&nbsp;<?php print $body_1; ?>...
+          <a class="accordion-toggle toggle-left" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
+           +
           </a>
+          <h5 class="accordion-toggle" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
+            <?php print $title; ?>
+          </h5>
         </div>
         <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
           <div class="accordion-inner">

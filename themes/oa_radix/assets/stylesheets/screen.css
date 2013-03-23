@@ -14643,81 +14643,120 @@ html.js input.throbbing {
   display: block; }
 
 /* line 17, ../sass/_layout.scss */
-h4.pane-title {
+.label {
+  font-weight: normal; }
+  /* line 19, ../sass/_layout.scss */
+  .label a {
+    font-weight: normal; }
+
+/* line 24, ../sass/_layout.scss */
+.well h3.pane-title {
   font-size: 20px;
   line-height: 32px;
   color: #333; }
 
-/* line 23, ../sass/_layout.scss */
+/* line 30, ../sass/_layout.scss */
 .well .panel-separator {
   margin: 1em -19px;
   border-top: 1px solid #e3e3e3; }
 
-/* line 29, ../sass/_layout.scss */
+/* line 36, ../sass/_layout.scss */
 .content .bryant-flipped-sidebar-inner,
 .content .burr-flipped-sidebar-inner {
   padding-top: 0; }
 
-/* line 33, ../sass/_layout.scss */
+/* line 40, ../sass/_layout.scss */
+.view-oa-recent-activity .view-content h3 {
+  font-size: 20px;
+  line-height: 32px;
+  color: #333; }
+
+/* line 46, ../sass/_layout.scss */
 #logo img {
   vertical-align: middle; }
 
-/* line 36, ../sass/_layout.scss */
+/* line 49, ../sass/_layout.scss */
 #site-name {
   display: inline-block;
   padding: 10px 0.5em;
   margin: 0; }
 
-/* line 41, ../sass/_layout.scss */
+/* line 54, ../sass/_layout.scss */
 #oa_toolbar {
   padding-top: 5px; }
 
-/* line 45, ../sass/_layout.scss */
+/* line 58, ../sass/_layout.scss */
 #main-wrapper {
   min-height: 360px; }
 
-/* line 48, ../sass/_layout.scss */
+/* line 61, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #FAFAFA;
   padding: 0;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  position: relative; }
 
-/* line 53, ../sass/_layout.scss */
+/* line 67, ../sass/_layout.scss */
 .oa-list-metadata {
   float: right;
   text-align: right; }
 
-/* line 57, ../sass/_layout.scss */
+/* line 71, ../sass/_layout.scss */
 .oa-list-header {
   padding: 3px 5px 0 5px; }
 
-/* line 60, ../sass/_layout.scss */
+/* line 74, ../sass/_layout.scss */
 .oa-list .accordion {
   margin-bottom: 0; }
+  /* line 76, ../sass/_layout.scss */
+  .oa-list .accordion h5 {
+    padding: 0 5px;
+    margin: 0; }
 
-/* line 63, ../sass/_layout.scss */
+/* line 81, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
-  /* line 65, ../sass/_layout.scss */
+  /* line 83, ../sass/_layout.scss */
   .oa-list .accordion-heading .accordion-toggle:hover {
     background-color: #E0EEFF; }
 
-/* line 69, ../sass/_layout.scss */
+/* line 87, ../sass/_layout.scss */
+.oa-list .accordion-heading .accordion-toggle.toggle-left {
+  position: absolute;
+  width: 11px;
+  font-size: 18px;
+  padding: 3px 5px;
+  top: -1px;
+  left: -21px;
+  border: 1px solid #e3e3e3;
+  background-color: #fafafa;
+  border-right: 0;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px; }
+  /* line 99, ../sass/_layout.scss */
+  .oa-list .accordion-heading .accordion-toggle.toggle-left:hover {
+    background-color: #E0EEFF; }
+
+/* line 104, ../sass/_layout.scss */
 .oa-list .label {
   color: white; }
-  /* line 71, ../sass/_layout.scss */
+  /* line 106, ../sass/_layout.scss */
   .oa-list .label a {
     color: white; }
 
-/* line 75, ../sass/_layout.scss */
+/* line 110, ../sass/_layout.scss */
 .oa-list-category {
   text-align: right; }
 
-/* line 78, ../sass/_layout.scss */
+/* line 113, ../sass/_layout.scss */
 .oa-list .links {
   float: right;
   margin-right: 5px; }
-  /* line 81, ../sass/_layout.scss */
+  /* line 116, ../sass/_layout.scss */
   .oa-list .links a {
     padding: 0 5px;
     color: #777;
@@ -14998,42 +15037,64 @@ div.tabs li.active a {
     background-color: #0044cc;
     background-image: none; }
 
-/* line 40, ../sass/_form.scss */
+/* line 39, ../sass/_form.scss */
+.panel-pane {
+  position: relative; }
+
+/* line 43, ../sass/_form.scss */
+.views-exposed-form .well {
+  padding: 0 1em; }
+
+/* line 47, ../sass/_form.scss */
+.views-exposed-form .filter-btn {
+  position: absolute;
+  top: 10px;
+  right: 0; }
+
+/* line 53, ../sass/_form.scss */
+.view-filters form {
+  margin: 0; }
+
+/* line 57, ../sass/_form.scss */
+.views-exposed-widget.views-submit-button {
+  padding-right: 5px; }
+
+/* line 62, ../sass/_form.scss */
 #oa-discussion-reply-form {
   position: relative; }
-  /* line 42, ../sass/_form.scss */
+  /* line 64, ../sass/_form.scss */
   #oa-discussion-reply-form .form-item {
     margin: 0; }
-  /* line 45, ../sass/_form.scss */
+  /* line 67, ../sass/_form.scss */
   #oa-discussion-reply-form input#edit-subject {
     width: 75%; }
-  /* line 48, ../sass/_form.scss */
+  /* line 70, ../sass/_form.scss */
   #oa-discussion-reply-form .field-name-field-oa-discussion-media {
     position: relative; }
-    /* line 50, ../sass/_form.scss */
+    /* line 72, ../sass/_form.scss */
     #oa-discussion-reply-form .field-name-field-oa-discussion-media .tabledrag-toggle-weight-wrapper {
       position: absolute;
       top: 0;
       right: 0;
       margin: 10px; }
-    /* line 57, ../sass/_form.scss */
+    /* line 79, ../sass/_form.scss */
     #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item img {
       display: block;
       margin: auto;
       width: auto; }
-    /* line 62, ../sass/_form.scss */
+    /* line 84, ../sass/_form.scss */
     #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item .file a {
       display: none; }
-  /* line 67, ../sass/_form.scss */
+  /* line 89, ../sass/_form.scss */
   #oa-discussion-reply-form #edit-submit {
     position: absolute;
     bottom: 2px;
     right: 0; }
 
-/* line 75, ../sass/_form.scss */
+/* line 97, ../sass/_form.scss */
 .checkbox-table .center {
   text-align: center; }
-/* line 79, ../sass/_form.scss */
+/* line 101, ../sass/_form.scss */
 .checkbox-table .form-type-checkbox,
 .checkbox-table .group-label {
   margin: 0.4em 0; }
@@ -15055,18 +15116,19 @@ div.tabs li.active a {
 
 /* line 17, ../sass/_node.scss */
 .well.current-node {
-  border-left: 6px solid #b0eba3; }
+  border-left: 6px solid #b0eba3;
+  margin-left: -6px; }
 
-/* line 20, ../sass/_node.scss */
+/* line 21, ../sass/_node.scss */
 .oa-list.unpublished {
   background-color: #FFF1F1; }
 
-/* line 23, ../sass/_node.scss */
+/* line 24, ../sass/_node.scss */
 .oa-list.unpublished .status {
   color: red;
   font-weight: bold; }
 
-/* line 31, ../sass/_node.scss */
+/* line 32, ../sass/_node.scss */
 .pane-oa-groups-members-widget h5 {
   margin-top: 0; }
 

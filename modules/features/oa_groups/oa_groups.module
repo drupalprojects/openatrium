@@ -614,7 +614,6 @@ function oa_groups_preprocess_views_view_fields(&$vars) {
   foreach ($vars['fields'] as $id => $field) {
     $vars[$id] = $field->content;
   }
-
   // View specific alterations.
   if ($vars['view']->name == 'oa_user_groups' && $vars['view']->current_display == 'full') {
     oa_groups_preprocess_oa_user_groups_full_view_fields($vars);

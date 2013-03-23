@@ -58,7 +58,7 @@ function oa_layouts_panelizer_defaults() {
     $pane->configuration = array(
       'image_size' => 'quarter',
       'context' => 'panelizer',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -328,7 +328,7 @@ function oa_layouts_panelizer_defaults() {
     $pane->configuration = array(
       'image_size' => 'quarter',
       'context' => 'panelizer',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();

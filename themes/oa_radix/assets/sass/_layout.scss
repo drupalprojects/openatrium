@@ -14,10 +14,17 @@
   display: block;
 }
 
-h4.pane-title {
-    font-size: 20px;
-    line-height: 32px;
-    color: #333;
+.label {
+  font-weight: normal;
+  a {
+    font-weight: normal;
+  }
+}
+
+.well h3.pane-title {
+  font-size: 20px;
+  line-height: 32px;
+  color: #333;
 }
 
 .well .panel-separator {
@@ -28,6 +35,12 @@ h4.pane-title {
 .content .bryant-flipped-sidebar-inner,
 .content .burr-flipped-sidebar-inner {
   padding-top: 0;
+}
+
+.view-oa-recent-activity .view-content h3 {
+  font-size: 20px;
+  line-height: 32px;
+  color: #333;
 }
 
 #logo img {
@@ -49,6 +62,7 @@ h4.pane-title {
   background-color: #FAFAFA;
   padding: 0;
   margin-bottom: 5px;
+  position: relative;
 }
 .oa-list-metadata {
   float: right;
@@ -59,6 +73,10 @@ h4.pane-title {
 }
 .oa-list .accordion {
   margin-bottom: 0;
+  h5 {
+    padding: 0 5px;
+    margin: 0;
+  }
 }
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px;
@@ -66,6 +84,23 @@ h4.pane-title {
     background-color: #E0EEFF;
   }
 }
+.oa-list .accordion-heading .accordion-toggle.toggle-left {
+  position: absolute;
+  width: 11px;
+  font-size: 18px;
+  padding: 3px 5px;
+  top: -1px;
+  left: -21px;
+  border: 1px solid #e3e3e3;
+  background-color: #fafafa;
+  border-right: 0;
+  @include border-bottom-left-radius(5px);
+  @include border-top-left-radius(5px);
+  &:hover {
+    background-color: #E0EEFF;
+  }
+}
+
 .oa-list .label {
   color: white;
   a {

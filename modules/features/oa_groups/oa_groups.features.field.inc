@@ -778,7 +778,7 @@ function oa_groups_field_default_fields() {
         'module' => 'og',
         'settings' => array(),
         'type' => 'og_complex',
-        'weight' => 7,
+        'weight' => '7',
       ),
     ),
   );

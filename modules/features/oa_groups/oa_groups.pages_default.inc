@@ -16,7 +16,21 @@ function oa_groups_default_page_manager_pages() {
   $page->admin_title = 'Group Members';
   $page->admin_description = '';
   $page->path = 'node/%node/members';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'oa_group' => 'oa_group',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array(
     'type' => 'tab',
     'title' => 'Members',
@@ -60,18 +74,7 @@ function oa_groups_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'entity_bundle:node',
-          'settings' => array(
-            'type' => array(
-              'oa_group' => 'oa_group',
-            ),
-          ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
       'logic' => 'and',
     ),
   );
@@ -125,7 +128,10 @@ function oa_groups_default_page_manager_pages() {
   $page->admin_title = 'User groups';
   $page->admin_description = '';
   $page->path = 'user/%user/groups';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'tab',
     'title' => 'Groups',

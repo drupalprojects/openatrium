@@ -36,6 +36,28 @@
   }
 }
 
+.panel-pane {
+  position: relative;
+}
+
+.views-exposed-form .well {
+  padding: 0 1em;
+}
+
+.views-exposed-form .filter-btn {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.view-filters form {
+  margin: 0;
+}
+
+.views-exposed-widget.views-submit-button {
+  padding-right: 5px;
+}
+
 // Discussion quick reply
 #oa-discussion-reply-form {
   position: relative;
