@@ -38,6 +38,9 @@ function oa_discussion_panelizer_defaults() {
       'sidebar' => NULL,
       'contentmain' => NULL,
     ),
+    'sidebar' => array(
+      'style' => '0',
+    ),
   );
   $display->cache = array();
   $display->title = '%node:title';
@@ -57,7 +60,7 @@ function oa_discussion_panelizer_defaults() {
         0 => 'panelizer',
       ),
       'view_mode' => 'teaser',
-      'widget_title' => NULL,
+      'widget_title' => '',
       'items_per_page' => NULL,
       'exposed' => array(
         'sort_by' => NULL,
@@ -71,6 +74,8 @@ function oa_discussion_panelizer_defaults() {
       'path' => NULL,
       'view_settings' => 'fields',
       'header_type' => 'none',
+      'override_title' => '',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -197,10 +202,8 @@ function oa_discussion_panelizer_defaults() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => array(
-        'well_modifier' => '',
-      ),
-      'style' => 'oa_styles_well',
+      'style' => 'default',
+      'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
@@ -218,10 +221,8 @@ function oa_discussion_panelizer_defaults() {
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
-      'settings' => array(
-        'well_modifier' => 'well-small',
-      ),
-      'style' => 'oa_styles_well',
+      'style' => 'default',
+      'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
@@ -258,10 +259,8 @@ function oa_discussion_panelizer_defaults() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => array(
-        'well_modifier' => '',
-      ),
-      'style' => 'oa_styles_well',
+      'style' => 'default',
+      'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();

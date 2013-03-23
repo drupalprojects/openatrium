@@ -14,6 +14,22 @@
   display: block;
 }
 
+h4.pane-title {
+    font-size: 20px;
+    line-height: 32px;
+    color: #333;
+}
+
+.well .panel-separator {
+  margin: 1em -19px;
+  border-top: 1px solid #e3e3e3;
+}
+
+.content .bryant-flipped-sidebar-inner,
+.content .burr-flipped-sidebar-inner {
+  padding-top: 0;
+}
+
 #logo img {
   vertical-align: middle;
 }
@@ -33,6 +49,10 @@
   background-color: #FAFAFA;
   padding: 0;
   margin-bottom: 5px;
+}
+.oa-list-metadata {
+  float: right;
+  text-align: right;
 }
 .oa-list-header {
   padding: 3px 5px 0 5px;

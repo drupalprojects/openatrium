@@ -120,6 +120,8 @@ function oa_dashboard_theme() {
 function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   global $user;
 
+  drupal_add_js(drupal_get_path('module', 'oa_dashboard') . '/js/oa-dashboard.js');
+
   // Separators
   $vars['oa_toolbar_separator'] = t('&gt;');
   $vars['home_url'] = url('<front>', array('absolute' => TRUE));

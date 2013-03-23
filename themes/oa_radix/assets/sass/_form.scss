@@ -3,6 +3,39 @@
 // Styles for Forms
 // --------------------------------------------------
 
+.form-actions {
+  border: 0;
+  padding: 0;
+}
+
+.form-item {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#node-edit .burr-flipped-sidebar .panel-pane {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+  @include box-shadow(none);
+}
+
+#node-edit .container-inline-date .form-item-date-time, #node-edit .container-inline-date .form-item-date-date {
+  padding-bottom: 0.5em;
+}
+
+#node-edit .form-actions input {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  @extend .btn-primary;
+  &:hover {
+    color: white;
+    background-color: #0044cc;
+    background-image: none;
+  }
+}
+
 // Discussion quick reply
 #oa-discussion-reply-form {
   position: relative;

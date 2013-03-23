@@ -28,6 +28,19 @@
   }
 }
 
+div.tabs {
+  @extend .navbar;
+  @extend .navbar-inner;
+  ul.tabs {
+    @extend .nav;
+    border-bottom: 0;
+  }
+  li.active a {
+    @include border-radius(0);
+    border-bottom: 0;
+  }
+}
+
 .oa-dropdown {
   display: inline-block;
 	margin: 0 0.25em 0 0.25em;

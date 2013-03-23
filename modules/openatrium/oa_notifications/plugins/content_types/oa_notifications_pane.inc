@@ -8,6 +8,7 @@ $plugin = array(
   'description' => t('Displays the list of Organizations, Teams and Users that will be notified of a change to an Entity.'),
   'single' => TRUE,
   'category' => array(t('Open Atrium'), -9),
+  'edit form' => 'oa_notifications_settings_form',
   'render callback' => 'oa_notifications_pane_render',
   'required context' => new ctools_context_required(t('Node'), 'node'),
   //'all contexts' => TRUE,
@@ -19,7 +20,10 @@ $plugin = array(
  * @see ctools_plugin_examples for more advanced info
  */
 function oa_notifications_pane_render($subtype, $conf, $args, $context) {
-  $node = isset($context->data) ? $context->data : NULL;
+  if (!isset($context->data)) {
+    return;
+  }
+  $node = $context->data;
 
   $has_edit = node_access('update', $node);
   $output = $has_edit
@@ -79,6 +83,24 @@ function oa_notifications_render_view($node) {
   });', 'inline');
 
   return $render;
+}
+
+/**
+ * Empty config form
+ */
+function oa_notifications_settings_form($form, &$form_state) {
+  return $form;
+}
+
+/**
+ * Saves changes to the widget.
+ */
+function oa_notifications_settings_form_submit($form, &$form_state) {
+  foreach (array_keys($form_state['values']) as $key) {
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+    }
+  }
 }
 
 /**

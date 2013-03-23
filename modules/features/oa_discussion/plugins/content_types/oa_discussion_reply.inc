@@ -1,11 +1,11 @@
 <?php
 
 $plugin = array(
-  'title' => t('Reply button'),
+  'title' => t('Reply form'),
   'description' => t('Reply to current content.'),
   'single' => TRUE,
   'category' => array(t('Open Atrium'), -9),
-  'edit form' => 'oa_discussion_reply_edit_form',
+  'edit form' => 'oa_discussion_reply_settings_form',
   'render callback' => 'oa_discussion_reply_render',
   'required context' => new ctools_context_required(t('Node'), 'node'),
 );
@@ -34,14 +34,14 @@ function oa_discussion_reply_render($subtype, $conf, $args, $context = NULL) {
 /**
  * Empty config form
  */
-function oa_discussion_reply_edit_form($form, &$form_state) {
+function oa_discussion_reply_settings_form($form, &$form_state) {
   return $form;
 }
 
 /**
  * Saves changes to the widget.
  */
-function oa_discussion_reply_edit_form_submit($form, &$form_state) {
+function oa_discussion_reply_settings_form_submit($form, &$form_state) {
   foreach (array_keys($form_state['values']) as $key) {
     if (isset($form_state['values'][$key])) {
       $form_state['conf'][$key] = $form_state['values'][$key];
