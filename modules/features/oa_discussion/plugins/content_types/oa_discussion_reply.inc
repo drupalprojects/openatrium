@@ -68,6 +68,7 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
   $form['#node'] = $node;
   $form['#parent_id'] = $parent_id;
 
+/*
   $form['oa_reply']['subject'] = array(
     '#type' => 'textfield',
     '#default_value' => '',
@@ -75,6 +76,7 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
       'placeholder' => t('Optional Subject'),
     ),
   );
+  */
 
   $form['oa_reply']['body'] = array(
     '#type' => 'text_format',
@@ -133,7 +135,7 @@ function oa_discussion_reply_form_submit($form, &$form_state) {
     }
 
     // create a new reply node
-    $wrapper = oa_groups_create_node('oa_discussion_post', $title, $node);
+    $wrapper = oa_core_create_node('oa_discussion_post', $title, $node);
     $wrapper->oa_parent = $parent_id;
     $wrapper->body->set(array('value' => $body['value'], 'format' => $body['format']));
     foreach ($media as $delta => $file) {

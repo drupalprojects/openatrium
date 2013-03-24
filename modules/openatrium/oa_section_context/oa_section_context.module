@@ -21,7 +21,7 @@ function oa_section_context_init() {
   }
 
   if ($node->type == 'oa_section') {
-    // get group id directly from group nodes
+    // get section id directly from section nodes
     $_SESSION[OA_SESSION_SECTION] = $node->nid;
   }
   elseif (isset($entity->{OA_SECTION_FIELD})) {

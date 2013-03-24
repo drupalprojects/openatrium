@@ -1,5 +1,5 @@
 name = Open Atrium Favorites
-description = Favorite Groups
+description = Favorite Space
 core = 7.x
 package = Open Atrium
 php = 5.2.4
@@ -7,5 +7,5 @@ version = 7.x-2.0
 project = oa_favorites
 dependencies[] = flag
 features[features_api][] = api:1
-features[flag][] = favorite_group
+features[flag][] = favorite_space
 project path = profiles/openatrium/modules/features

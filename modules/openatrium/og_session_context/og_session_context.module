@@ -1,8 +1,8 @@
 <?php
 /**
- * Session variable to store group ID
+ * Session variable to store space ID
  */
-define('OG_SESSION_CONTEXT_ID', 'oa_group_id');
+define('OG_SESSION_CONTEXT_ID', 'oa_space_id');
 
 /**
  * Implements hook_og_context.negotiation_info()
@@ -23,7 +23,7 @@ function og_session_context_og_context_negotiation_info() {
 }
 
 /**
- * Callback to pass the og context value based on the last group or group
+ * Callback to pass the og context value based on the last space or space
  *   content page visited.
  */
 function og_session_context_og_context_handler_sessions() {
@@ -40,7 +40,7 @@ function og_session_context_og_context_handler_sessions() {
 /**
  * Determines the og context value for og_session_context_og_context_handler_sessions
  *   by looking the entity's node value or the og_group_ref field value on
- *   group and group content page.
+ *   space and space content page.
  */
 function _og_session_context_set_context() {
   $menu = menu_get_object();
@@ -55,11 +55,11 @@ function _og_session_context_set_context() {
   }
 
   if (og_is_group('node', $node)) {
-    // get group id directly from group nodes
+    // get space id directly from space nodes
     $_SESSION[OG_SESSION_CONTEXT_ID] = $nid;
   }
   elseif (isset($node->{OG_AUDIENCE_FIELD}[LANGUAGE_NONE][0]['target_id'])) {
-    // otherwise get group id from group field reference
+    // otherwise get space id from space field reference
     $_SESSION[OG_SESSION_CONTEXT_ID] = $node->{OG_AUDIENCE_FIELD}[LANGUAGE_NONE][0]['target_id'];
   }
 }

@@ -33,7 +33,7 @@
   <?php endif; ?>
   <div class='oa-list-category pull-right'>
     <?php if ($display == 'user_activity'): ?>
-      <?php print $field_oa_message_group; ?><br \>
+      <?php print $field_oa_message_space; ?><br \>
     <?php endif; ?>
     <?php if ($display != 'section_activity'): ?>
       <?php print $field_oa_message_section; ?>

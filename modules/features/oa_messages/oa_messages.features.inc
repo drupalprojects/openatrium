@@ -34,9 +34,9 @@ function oa_messages_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "[[message:field-oa-message-group]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]",
+          "value" : "[[message:field-oa-message-space]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]",
           "format" : "plain_text",
-          "safe_value" : "\\u003Cp\\u003E[[message:field-oa-message-group]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[[message:field-oa-message-space]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u0026nbsp;[message:field-oa-node-ref:body]\\u003C\\/p\\u003E",
@@ -110,19 +110,19 @@ function oa_messages_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "[message:field-oa-message-group:title] : @{message:user:name} updated Group",
+          "value" : "[message:field-oa-message-space:title] : @{message:user:name} updated Space",
           "format" : "plain_text",
-          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group:title] : @{message:user:name} updated Group\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-space:title] : @{message:user:name} updated Space\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "[message:field-oa-message-group:title] : [message:field-oa-message-text:value]",
+          "value" : "[message:field-oa-message-space:title] : [message:field-oa-message-text:value]",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:field-oa-message-group:title] : [message:field-oa-message-text:value] \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E [message:field-oa-message-space:title] : [message:field-oa-message-text:value] \\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Group : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-group:nid]\\u0022\\u003E[message:field-oa-message-group:title]\\u003C\\/a\\u003E",
+          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Space : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-space:nid]\\u0022\\u003E[message:field-oa-message-space:title]\\u003C\\/a\\u003E",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Group : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-group:nid]\\u0022\\u003E[message:field-oa-message-group:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Space : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-space:nid]\\u0022\\u003E[message:field-oa-message-space:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
         }
       ]
     }
@@ -138,9 +138,9 @@ function oa_messages_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "[message:field-oa-message-group] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]",
+          "value" : "[message:field-oa-message-space] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]",
           "format" : "plain_text",
-          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-space] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u0026nbsp;[message:field-oa-node-ref:log]\\u003C\\/p\\u003E\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E",

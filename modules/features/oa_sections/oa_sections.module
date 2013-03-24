@@ -7,9 +7,9 @@
 include_once 'oa_sections.features.inc';
 
 /**
- * Name of default OpenAtrium Organization field in Section.
+ * Name of default OpenAtrium Group field in Section.
  */
-define('OA_ORG_FIELD', 'field_oa_organization_ref');
+define('OA_GROUP_FIELD', 'field_oa_group_ref');
 /**
  * Name of default OpenAtrium Team field in Section.
  */

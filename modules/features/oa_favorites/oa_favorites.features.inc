@@ -9,19 +9,19 @@
  */
 function oa_favorites_flag_default_flags() {
   $flags = array();
-  // Exported flag: "Favorite Group".
-  $flags['favorite_group'] = array(
+  // Exported flag: "Favorite Space".
+  $flags['favorite_space'] = array(
     'content_type' => 'node',
-    'title' => 'Favorite Group',
+    'title' => 'Favorite Space',
     'global' => '0',
     'types' => array(
-      0 => 'oa_group',
+      0 => 'oa_space',
     ),
     'flag_short' => 'Favorite',
-    'flag_long' => 'Mark Group as Favorite',
+    'flag_long' => 'Mark Space as Favorite',
     'flag_message' => 'Favorited!',
     'unflag_short' => 'Remove Favorite',
-    'unflag_long' => 'Unmark Group as Favorite',
+    'unflag_long' => 'Unmark Space as Favorite',
     'unflag_message' => 'Unfavorited!',
     'unflag_denied_text' => '',
     'link_type' => 'toggle',

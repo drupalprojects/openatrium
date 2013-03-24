@@ -15,7 +15,7 @@ function oa_discussion_theme() {
       'preprocess functions' => array(
         'template_preprocess',
         'template_preprocess_views_view_fields',
-        'oa_groups_preprocess_views_view_fields',
+        'oa_core_preprocess_views_view_fields',
       ),
       'arguments' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
       'path' => drupal_get_path('module', 'oa_discussion') . '/templates',
@@ -26,7 +26,7 @@ function oa_discussion_theme() {
       'preprocess functions' => array(
         'template_preprocess',
         'template_preprocess_views_view_fields',
-        'oa_groups_preprocess_views_view_fields',
+        'oa_core_preprocess_views_view_fields',
       ),
       'arguments' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
       'path' => drupal_get_path('module', 'oa_discussion') . '/templates',
@@ -37,7 +37,7 @@ function oa_discussion_theme() {
       'preprocess functions' => array(
         'template_preprocess',
         'template_preprocess_views_view_fields',
-        'oa_groups_preprocess_views_view_fields',
+        'oa_core_preprocess_views_view_fields',
       ),
       'arguments' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
       'path' => drupal_get_path('module', 'oa_discussion') . '/templates',

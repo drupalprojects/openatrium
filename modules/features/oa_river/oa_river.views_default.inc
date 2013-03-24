@@ -12,7 +12,7 @@ function oa_river_views_default_views() {
 
   $view = new view();
   $view->name = 'oa_recent_activity';
-  $view->description = 'Recent activity within a group or user';
+  $view->description = 'Recent activity within a space or user';
   $view->tag = 'OA';
   $view->base_table = 'message';
   $view->human_name = 'Open Atrium Recent Activity';
@@ -104,16 +104,16 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'field_oa_node_ref_target_id';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Message: Group */
-  $handler->display->display_options['fields']['field_oa_message_group']['id'] = 'field_oa_message_group';
-  $handler->display->display_options['fields']['field_oa_message_group']['table'] = 'field_data_field_oa_message_group';
-  $handler->display->display_options['fields']['field_oa_message_group']['field'] = 'field_oa_message_group';
-  $handler->display->display_options['fields']['field_oa_message_group']['label'] = '';
-  $handler->display->display_options['fields']['field_oa_message_group']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_oa_message_group']['element_class'] = 'label';
-  $handler->display->display_options['fields']['field_oa_message_group']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_oa_message_group']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_oa_message_group']['settings'] = array(
+  /* Field: Message: Space */
+  $handler->display->display_options['fields']['field_oa_message_space']['id'] = 'field_oa_message_space';
+  $handler->display->display_options['fields']['field_oa_message_space']['table'] = 'field_data_field_oa_message_space';
+  $handler->display->display_options['fields']['field_oa_message_space']['field'] = 'field_oa_message_space';
+  $handler->display->display_options['fields']['field_oa_message_space']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_message_space']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_oa_message_space']['element_class'] = 'label';
+  $handler->display->display_options['fields']['field_oa_message_space']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_message_space']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_message_space']['settings'] = array(
     'link' => 1,
   );
   /* Field: Message: Section */
@@ -224,27 +224,27 @@ function oa_river_views_default_views() {
   $handler->display->display_options['sorts']['mid']['table'] = 'message';
   $handler->display->display_options['sorts']['mid']['field'] = 'mid';
   $handler->display->display_options['sorts']['mid']['order'] = 'DESC';
-  /* Contextual filter: Message: Group (field_oa_message_group) */
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['id'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['table'] = 'field_data_field_oa_message_group';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['field'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['default_argument_type'] = 'og_context';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Message: Group (field_oa_message_group) */
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['id'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['table'] = 'field_data_field_oa_message_group';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['field'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['operator_id'] = 'field_oa_message_group_target_id_op';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['label'] = 'Group';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['operator'] = 'field_oa_message_group_target_id_op';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['identifier'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['remember_roles'] = array(
+  /* Contextual filter: Message: Space (field_oa_message_space) */
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['id'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['table'] = 'field_data_field_oa_message_space';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['field'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Message: Space (field_oa_message_space) */
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['id'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['table'] = 'field_data_field_oa_message_space';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['field'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['operator_id'] = 'field_oa_message_space_target_id_op';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['label'] = 'Space';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['operator'] = 'field_oa_message_space_target_id_op';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['identifier'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -309,9 +309,9 @@ function oa_river_views_default_views() {
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_dependent'] = 0;
 
-  /* Display: Group Activity */
-  $handler = $view->new_display('panel_pane', 'Group Activity', 'group_activity');
-  $handler->display->display_options['display_description'] = 'Recent activity within a group';
+  /* Display: Space Activity */
+  $handler = $view->new_display('panel_pane', 'Space Activity', 'space_activity');
+  $handler->display->display_options['display_description'] = 'Recent activity within a space';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -386,13 +386,13 @@ function oa_river_views_default_views() {
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
-    'field_oa_message_group_target_id' => array(
+    'field_oa_message_space_target_id' => array(
       'type' => 'context',
       'context' => 'entity:node.nid',
       'context_optional' => 1,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Message: Group (field_oa_message_group)',
+      'label' => 'Message: Space (field_oa_message_space)',
     ),
   );
 
@@ -413,18 +413,18 @@ function oa_river_views_default_views() {
   $handler->display->display_options['arguments']['user']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Message: Group (field_oa_message_group) */
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['id'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['table'] = 'field_data_field_oa_message_group';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['field'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['operator_id'] = 'field_oa_message_group_target_id_op';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['label'] = 'Group';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['operator'] = 'field_oa_message_group_target_id_op';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['identifier'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_oa_message_group_target_id']['expose']['remember_roles'] = array(
+  /* Filter criterion: Message: Space (field_oa_message_space) */
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['id'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['table'] = 'field_data_field_oa_message_space';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['field'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['operator_id'] = 'field_oa_message_space_target_id_op';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['label'] = 'Space';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['operator'] = 'field_oa_message_space_target_id_op';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['identifier'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_oa_message_space_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -499,15 +499,15 @@ function oa_river_views_default_views() {
   $handler->display->display_options['arguments']['field_oa_message_section_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_oa_message_section_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_oa_message_section_target_id']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Message: Group (field_oa_message_group) */
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['id'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['table'] = 'field_data_field_oa_message_group';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['field'] = 'field_oa_message_group_target_id';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['default_argument_type'] = 'og_context';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_oa_message_group_target_id']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Message: Space (field_oa_message_space) */
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['id'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['table'] = 'field_data_field_oa_message_space';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['field'] = 'field_oa_message_space_target_id';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_oa_message_space_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -554,13 +554,13 @@ function oa_river_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
-    'field_oa_message_group_target_id' => array(
+    'field_oa_message_space_target_id' => array(
       'type' => 'context',
       'context' => 'entity:node.group_group',
       'context_optional' => 1,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Message: Group (field_oa_message_group)',
+      'label' => 'Message: Space (field_oa_message_space)',
     ),
     'field_oa_message_section_target_id' => array(
       'type' => 'context',

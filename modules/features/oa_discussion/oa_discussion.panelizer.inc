@@ -415,12 +415,11 @@ function oa_discussion_panelizer_defaults() {
       'oa_widgets_types' => array(
         'oa_discussion_post' => 'oa_discussion_post',
         'oa_pages_page' => 'oa_pages_page',
+        'oa_space' => 0,
         'oa_group' => 0,
-        'oa_organization' => 0,
         'oa_section' => 0,
         'oa_team' => 0,
         'panopoly_page' => 0,
-        'group_article' => 0,
       ),
       'oa_widgets_use_all' => TRUE,
       'return' => 'Finish',
@@ -472,7 +471,7 @@ function oa_discussion_panelizer_defaults() {
     $pane->pid = 'new-13';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_oa_organization_ref';
+    $pane->subtype = 'node:field_oa_group_ref';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

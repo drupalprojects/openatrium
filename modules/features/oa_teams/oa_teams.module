@@ -7,13 +7,13 @@
 include_once 'oa_teams.features.inc';
 
 /**
- * Get the listing of teams that are in the specified group, or the current
- * group is no group is specified.
+ * Get the listing of teams that are in the specified space, or the current
+ * space is no space is specified.
  *
  * @param int $gid
- *    The Group ID
+ *    The space ID
  */
-function oa_teams_get_teams_for_group($gid = NULL) {
+function oa_teams_get_teams_for_space($gid = NULL) {
   if (!isset($gid)) {
     // TODO: Consolidate this in a function
     $gid = $_SESSION[OG_SESSION_CONTEXT_ID];
@@ -23,7 +23,7 @@ function oa_teams_get_teams_for_group($gid = NULL) {
   $query->fields('n', array('nid', 'title'))
       ->condition('n.type', OA_TEAM_TYPE)
       ->condition('og.entity_type', 'node')
-      ->condition('og.field_name', OA_GROUP_FIELD)
+      ->condition('og.field_name', OA_SPACE_FIELD)
       ->condition('og.gid', $gid)
       ->addTag('node_access');
   return $query->execute()->fetchAllAssoc('nid');

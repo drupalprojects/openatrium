@@ -25,15 +25,15 @@ function oa_widgets_content_visibility_render($subtype, $conf, $args, $context =
   $discussion_node = $context->data;
   $section_reference_field = field_get_items('node', $discussion_node, OA_SECTION_FIELD);
   $section_node = node_load($section_reference_field[0]['target_id']);
-  $vars['public'] = oa_groups_section_is_public($section_node);
-  
+  $vars['public'] = oa_core_section_is_public($section_node);
+
   if (!$vars['public']) {
-    $group_reference_field = field_get_items('node', $discussion_node, OA_GROUP_FIELD);
-    $group_node = node_load($group_reference_field[0]['target_id']);
-    
-    $vars['accessors']['organizations'] = array(
-      'links' => oa_widgets_build_visibility_links('node', $section_node, OA_ORG_FIELD),
-      'label' => t('Organizations:'),
+    $space_reference_field = field_get_items('node', $discussion_node, OA_SPACE_FIELD);
+    $space_node = node_load($space_reference_field[0]['target_id']);
+
+    $vars['accessors']['group'] = array(
+      'links' => oa_widgets_build_visibility_links('node', $section_node, OA_GROUP_FIELD),
+      'label' => t('Groups:'),
     );
     $vars['accessors']['teams'] = array(
       'links' => oa_widgets_build_visibility_links('node', $section_node, OA_TEAM_FIELD),
@@ -43,16 +43,16 @@ function oa_widgets_content_visibility_render($subtype, $conf, $args, $context =
       'links' => oa_widgets_build_visibility_links('user', $section_node, OA_USER_FIELD),
       'label' => t('Users:'),
     );
-    $vars['accessors']['group'] = array(
-      'links' => array(l($group_node->title, 'node/' . $group_node->nid)),
-      'label' => t('Group:'),
+    $vars['accessors']['space'] = array(
+      'links' => array(l($space_node->title, 'node/' . $space_node->nid)),
+      'label' => t('Space:'),
     );
     $vars['accessors']['section'] = array(
       'links' => array(l($section_node->title, 'node/' . $section_node->nid)),
       'label' => t('Section:'),
     );
   }
-  
+
   $block->content = theme('oa_widgets_content_visibility', $vars);
   return $block;
 }

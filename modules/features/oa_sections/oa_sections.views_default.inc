@@ -12,7 +12,7 @@ function oa_sections_views_default_views() {
 
   $view = new view();
   $view->name = 'open_atrium_section_pages';
-  $view->description = 'Show all content (nodes) of a group.';
+  $view->description = 'Show all content (nodes) of a space.';
   $view->tag = 'OA';
   $view->base_table = 'node';
   $view->human_name = 'Open Atrium Section Pages';
@@ -40,7 +40,7 @@ function oa_sections_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['content'] = 'There is no content in this group.';
+  $handler->display->display_options['empty']['area']['content'] = 'There is no content in this space.';
   /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
@@ -85,9 +85,9 @@ function oa_sections_views_default_views() {
     'oa_section' => 'oa_section',
   );
 
-  /* Display: Section Pages within Groups */
-  $handler = $view->new_display('panel_pane', 'Section Pages within Groups', 'section_pages_within_groups');
-  $handler->display->display_options['display_description'] = 'Displays section pages within groups';
+  /* Display: Section Pages within Spaces */
+  $handler = $view->new_display('panel_pane', 'Section Pages within Spaces', 'section_pages_within_spaces');
+  $handler->display->display_options['display_description'] = 'Displays section pages within spaces';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';

@@ -115,6 +115,10 @@ projects[colorbox][version] = 2.3
 projects[media_colorbox][subdir] = contrib
 projects[media_colorbox][version] = 1.0-rc3
 
+; Job Scheduler
+projects[job_schedule][subdir] = contrib
+projects[job_schedule][version] = 7.x-2.0-alpha3
+
 ; Feeds
 projects[feeds][subdir] = contrib
 projects[feeds][version] = 2.0-alpha7

@@ -46,7 +46,7 @@ function oa_widgets_add_content_render($subtype, $conf, $args, $context = NULL) 
 function oa_widgets_add_content_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
 
-  $nodes = oa_groups_list_content_types();
+  $nodes = oa_core_list_content_types();
 
   $options = array();
   foreach ($nodes as $node) {

@@ -5,7 +5,7 @@
 
 $plugin = array(
   'title' => t('Notifications'),
-  'description' => t('Displays the list of Organizations, Teams and Users that will be notified of a change to an Entity.'),
+  'description' => t('Displays the list of Groups, Teams and Users that will be notified of a change to an Entity.'),
   'single' => TRUE,
   'category' => array(t('Open Atrium'), -9),
   'edit form' => 'oa_notifications_settings_form',
@@ -52,10 +52,10 @@ function oa_notifications_render_view($node) {
   );
   $notifications = oa_notifications_load_multiple($node);
 
-  if (array_key_exists('organization', $notifications)) {
-    $orgs = node_load_multiple(array_keys($notifications['organization']));
-    foreach ($orgs as $org) {
-      $render['#organization'][$org->nid] = $org->title;
+  if (array_key_exists('group', $notifications)) {
+    $groups = node_load_multiple(array_keys($notifications['group']));
+    foreach ($groups as $group) {
+      $render['#group'][$group->nid] = $group->title;
     }
   }
 
@@ -126,13 +126,13 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
   );
 
   // Add things for direct pane updates
-  $form['organization']['#ajax'] = array(
+  $form['group']['#ajax'] = array(
     'callback' => 'oa_notifications_ajax_callback',
-    'wrapper' => 'organization-div',
+    'wrapper' => 'group-div',
     'method' => 'replace',
   );
-  $form['organization']['#prefix'] = '<div id="organization-div">';
-  $form['organization']['#suffix'] = '</div>';
+  $form['group']['#prefix'] = '<div id="group-div">';
+  $form['group']['#suffix'] = '</div>';
 
   $form['team']['#ajax'] = array(
     'callback' => 'oa_notifications_ajax_callback',

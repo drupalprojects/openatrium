@@ -10,14 +10,14 @@
 function oa_messages_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'message-oa_create-field_oa_message_group'.
-  $fields['message-oa_create-field_oa_message_group'] = array(
+  // Exported field: 'message-oa_create-field_oa_message_space'.
+  $fields['message-oa_create-field_oa_message_space'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_oa_message_group',
+      'field_name' => 'field_oa_message_space',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -45,7 +45,7 @@ function oa_messages_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'oa_group' => 'oa_group',
+            'oa_space' => 'oa_space',
           ),
         ),
         'target_type' => 'node',
@@ -100,8 +100,8 @@ function oa_messages_field_default_fields() {
         ),
       ),
       'entity_type' => 'message',
-      'field_name' => 'field_oa_message_group',
-      'label' => 'Group',
+      'field_name' => 'field_oa_message_space',
+      'label' => 'Space',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -624,14 +624,14 @@ function oa_messages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'message-oa_delete-field_oa_message_group'.
-  $fields['message-oa_delete-field_oa_message_group'] = array(
+  // Exported field: 'message-oa_delete-field_oa_message_space'.
+  $fields['message-oa_delete-field_oa_message_space'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_oa_message_group',
+      'field_name' => 'field_oa_message_space',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -659,7 +659,7 @@ function oa_messages_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'oa_group' => 'oa_group',
+            'oa_space' => 'oa_space',
           ),
         ),
         'target_type' => 'node',
@@ -714,8 +714,8 @@ function oa_messages_field_default_fields() {
         ),
       ),
       'entity_type' => 'message',
-      'field_name' => 'field_oa_message_group',
-      'label' => 'Group',
+      'field_name' => 'field_oa_message_space',
+      'label' => 'Space',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -843,14 +843,14 @@ function oa_messages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'message-oa_member-field_oa_message_group'.
-  $fields['message-oa_member-field_oa_message_group'] = array(
+  // Exported field: 'message-oa_member-field_oa_message_space'.
+  $fields['message-oa_member-field_oa_message_space'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_oa_message_group',
+      'field_name' => 'field_oa_message_space',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -878,7 +878,7 @@ function oa_messages_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'oa_group' => 'oa_group',
+            'oa_space' => 'oa_space',
           ),
         ),
         'target_type' => 'node',
@@ -933,8 +933,8 @@ function oa_messages_field_default_fields() {
         ),
       ),
       'entity_type' => 'message',
-      'field_name' => 'field_oa_message_group',
-      'label' => 'Group',
+      'field_name' => 'field_oa_message_space',
+      'label' => 'Space',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1157,14 +1157,14 @@ function oa_messages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'message-oa_update-field_oa_message_group'.
-  $fields['message-oa_update-field_oa_message_group'] = array(
+  // Exported field: 'message-oa_update-field_oa_message_space'.
+  $fields['message-oa_update-field_oa_message_space'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_oa_message_group',
+      'field_name' => 'field_oa_message_space',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -1192,7 +1192,7 @@ function oa_messages_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'oa_group' => 'oa_group',
+            'oa_space' => 'oa_space',
           ),
         ),
         'target_type' => 'node',
@@ -1247,8 +1247,8 @@ function oa_messages_field_default_fields() {
         ),
       ),
       'entity_type' => 'message',
-      'field_name' => 'field_oa_message_group',
-      'label' => 'Group',
+      'field_name' => 'field_oa_message_space',
+      'label' => 'Space',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1582,7 +1582,7 @@ function oa_messages_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Custom Text');
-  t('Group');
+  t('Space');
   t('Node');
   t('Section');
   t('Summary');

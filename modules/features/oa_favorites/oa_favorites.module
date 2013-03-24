@@ -6,26 +6,26 @@
 
 include_once 'oa_favorites.features.inc';
 
-// Machine name for the favorite group flag.
-define('FAVORITE_GROUP', 'favorite_group');
+// Machine name for the favorite space flag.
+define('FAVORITE_SPACE', 'favorite_space');
 
 
 /**
- * Get a user's favorited groups.
+ * Get a user's favorited spaces.
  */
-function oa_favorites_get_groups($account = NULL) {
+function oa_favorites_get_spaces($account = NULL) {
   global $user;
   $uid = isset($account) ? $account->uid : $user->uid;
 
   $items = array('ids' => array(), 'titles' => array(), 'links' => array());
-  if ($flag = flag_get_flag('favorite_group')) {
+  if ($flag = flag_get_flag('favorite_space')) {
     $query = db_select('node', 'n');
     $query->join('flag_content', 'f', 'n.nid = f.content_id');
     $query
       ->fields('n', array('nid', 'title'))
       ->condition('f.uid', $account->uid)
       ->condition('f.fid', $flag->fid)
-      ->condition('type', 'oa_group');
+      ->condition('type', 'oa_space');
     $result = $query->execute();
     while ($row = $result->fetchAssoc()) {
       $items['ids'][]    = $row['nid'];
@@ -37,20 +37,20 @@ function oa_favorites_get_groups($account = NULL) {
 }
 
 /**
- * Determine whether or not a group is a user's favorite.
+ * Determine whether or not a space is a user's favorite.
  *
  * @param integer $uid - User's ID.
- * @param integer $gid - Node ID of the group.
+ * @param integer $gid - Node ID of the space.
  *
  * @return boolean
  */
-function oa_favorites_is_favorite_group($uid, $gid) {
+function oa_favorites_is_favorite_space($uid, $gid) {
   $query = db_select('flag_content', 'f')
     ->fields('f')
     ->condition('content_type', 'node')
     ->condition('content_id', $gid)
     ->condition('uid', $uid);
-  
+
   $result = $query->execute()->fetch();
   return empty($result) ? FALSE : TRUE;
 }

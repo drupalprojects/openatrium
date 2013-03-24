@@ -20,14 +20,14 @@ function oa_sections_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Group',
+    'label' => 'Space',
     'weight' => '10',
     'children' => array(
       0 => 'og_group_ref',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Group',
+      'label' => 'Space',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => '',

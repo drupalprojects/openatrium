@@ -1,7 +1,7 @@
 // Page
 // Styles for panels
 // --------------------------------------------------
-#node-edit .panel-pane.pane-node-field-oa-organization-ref,
+#node-edit .panel-pane.pane-node-field-oa-group-ref,
 #node-edit .panel-pane.pane-node-field-oa-team-ref,
 #node-edit .panel-pane.pane-node-field-oa-user-ref {
   padding: 1px 10px;
@@ -12,7 +12,7 @@
   box-shadow: none;
 }
 
-#node-edit .panel-pane.pane-node-field-oa-organization-ref {
+#node-edit .panel-pane.pane-node-field-oa-group-ref {
   padding-top: 10px;
   margin-bottom: 0;
   border-bottom: 0;
@@ -69,7 +69,7 @@
   }
   .user-info {
     .user-realname a {
-      
+
     }
     text-align: center;
     width: 75%;
@@ -94,9 +94,9 @@
 }
 
 
-// Group summary
-.pane-oa-groups-summary {
-  .group-links {
+// Space summary
+.pane-oa-core-summary {
+  .space-links {
     .favorite {
       float: left;
     }
@@ -106,8 +106,8 @@
   }
 }
 
-// Group members
-.pane-oa-groups-members-widget {
+// Space members
+.pane-oa-core-members-widget {
   .team,
   .user-badge {
     width: 100%;
@@ -118,16 +118,16 @@
 }
 
 
-// User groups
-.pane-oa-groups-user-groups {
+// User spaces
+.pane-oa-core-user-spaces {
   .pane-content {
     position: relative;
   }
-  .groups-container {
+  .spaces-container {
     float: left;
     margin-right: 20px;
   }
-  .group-switcher {
+  .space-switcher {
     position: absolute;
     top: 0;
     right: 0;

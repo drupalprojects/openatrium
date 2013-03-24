@@ -411,7 +411,7 @@ function oa_pages_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'oa_group' => 'oa_group',
+            'oa_space' => 'oa_space',
           ),
         ),
         'handler_submit' => 'Change handler',

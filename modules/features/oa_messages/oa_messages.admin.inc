@@ -16,13 +16,13 @@ function oa_messages_oa_user_settings_form_alter(&$form, $form_state, $user) {
     '#tree' => TRUE,
   );
   $defaults = $user->data['oa_messages'];
-  
+
   $form['oa_messages']['message_types'] = oa_messages_build_message_types_table($user, $defaults);
-  
+
   $header = array(
-    'group' => t('Group'),
+    'space' => t('Space'),
   );
-  
+
   $form['oa_messages']['email_type'] = array(
     '#type' => 'radios',
     '#title' => t('Email type'),
@@ -36,23 +36,23 @@ function oa_messages_oa_user_settings_form_alter(&$form, $form_state, $user) {
 }
 
 /**
- * Build a table of notification types per group, much like
+ * Build a table of notification types per space, much like
  * the permissions table.
  */
 function oa_messages_build_message_types_table($user, $defaults = array()) {
-  $groups = node_load_multiple(oa_groups_get_user_groups($user->uid));
+  $spaces = node_load_multiple(oa_core_get_user_spaces($user->uid));
   $message_types = message_type_load();
   $table = array(
     '#prefix' => '<table class="table table-bordered table-striped table-hover checkbox-table">',
     '#suffix' => '</table>',
     '#tree' => TRUE,
   );
-  
+
   $table['header'] = array(
     '#prefix' => '<thead><tr>',
-    'group' => array(
+    'space' => array(
       '#prefix' => '<th>',
-      '#markup' => t('Group'),
+      '#markup' => t('Space'),
       '#suffix' => '</th>',
     ),
     '#suffix' => '</tr></thead>',
@@ -64,30 +64,30 @@ function oa_messages_build_message_types_table($user, $defaults = array()) {
       '#suffix' => '</th>',
     );
   }
-  
+
   $table['rows'] = array();
-  foreach ($groups as $group) {
-    $table[$group->nid] = array(
+  foreach ($spaces as $space) {
+    $table[$space->nid] = array(
       '#prefix' => '<tr>',
-      'group' => array(
+      'space' => array(
         '#prefix' => '<td>',
-        '#markup' => $group->title,
+        '#markup' => $space->title,
         '#suffix' => '</td>',
       ),
       '#suffix' => '</tr>',
     );
     foreach ($message_types as $message_type) {
-      $table[$group->nid][$message_type->name] = array(
+      $table[$space->nid][$message_type->name] = array(
         '#prefix' => '<td class="center">',
         '#type' => 'checkbox',
-        '#default_value' => isset($defaults['message_types'][$group->nid][$message_type->name]) ?
-          $defaults['message_types'][$group->nid][$message_type->name] :
+        '#default_value' => isset($defaults['message_types'][$space->nid][$message_type->name]) ?
+          $defaults['message_types'][$space->nid][$message_type->name] :
           TRUE,
         '#suffix' => '</td>',
       );
     }
   }
-  
+
   return $table;
 }
 

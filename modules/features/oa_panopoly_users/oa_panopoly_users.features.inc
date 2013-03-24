@@ -105,7 +105,7 @@ function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
           'pid' => 'new-4',
           'panel' => 'sidebar',
           'type' => 'views_panes',
-          'subtype' => 'open_atrium_groups-groups',
+          'subtype' => 'open_atrium_spaces-spaces',
           'shown' => TRUE,
           'access' => array(),
           'configuration' => array(

@@ -13,7 +13,7 @@ define('EMAIL_TYPE_HTML', 1);
 
 /**
  * Helper function to create a specific message type
- * Fills in the wrapper fields for group and section
+ * Fills in the wrapper fields for space and section
  * @param  string $message_type machine name of message
  * @param int     $entity entity or entity_id of entity being referenced
  * @param string  $entity_type type of entity being referenced
@@ -67,8 +67,8 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
 
     // Save reference to the node in the node reference field.
     $wrapper = entity_metadata_wrapper('message', $message);
-    if (isset($entity_wrapper->{OA_GROUP_FIELD}) && isset($wrapper->field_oa_message_group)) {
-      $wrapper->field_oa_message_group = $entity_wrapper->{OA_GROUP_FIELD}->value();
+    if (isset($entity_wrapper->{OA_SPACE_FIELD}) && isset($wrapper->field_oa_message_space)) {
+      $wrapper->field_oa_message_space = $entity_wrapper->{OA_SPACE_FIELD}->value();
     }
     if (isset($entity_wrapper->{OA_SECTION_FIELD}) && isset($wrapper->field_oa_message_section)) {
       $wrapper->field_oa_message_section = $entity_wrapper->{OA_SECTION_FIELD}->value();
@@ -89,12 +89,13 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     );
 
     drupal_alter('oa_messages_create', $wrapper, $context);
-
     $wrapper->save();
-    
-    // Since this can be called on node_update / insert, we clear the entity
-    // cache so that it gets the values assigned by other modules.
-    entity_get_controller($entity_type)->resetCache(array($entity_wrapper->getIdentifier()));
+
+    if (!empty($entity_type)) {
+      // Since this can be called on node_update / insert, we clear the entity
+      // cache so that it gets the values assigned by other modules.
+      entity_get_controller($entity_type)->resetCache(array($entity_wrapper->getIdentifier()));
+    }
 
     if ($send && isset($entity) && ($entity_type == 'node')) {
       message_subscribe_process_message('node', $entity, $message, array(), oa_messages_build_subscribe_options($entity));
@@ -114,7 +115,7 @@ function oa_messages_build_subscribe_options($entity) {
       'notifiers' => array('email'),
     );
   }
-  
+
   return $options;
 }
 
@@ -122,7 +123,7 @@ function oa_messages_build_subscribe_options($entity) {
  * Implements hook_entity_insert().
  */
 function oa_messages_entity_insert($entity, $type) {
-  $types = oa_groups_list_content_types(TRUE);
+  $types = oa_core_list_content_types(TRUE);
   if ($type == 'node' && array_key_exists($entity->type, $types)) {
     $message = oa_messages_create('oa_create', $entity, $type, '', NULL, $entity->uid);
   }
@@ -132,7 +133,7 @@ function oa_messages_entity_insert($entity, $type) {
  * Implements hook_entity_update().
  */
 function oa_messages_entity_update($entity, $type) {
-  $types = oa_groups_list_content_types(TRUE);
+  $types = oa_core_list_content_types(TRUE);
   if ($type == 'node' && array_key_exists($entity->type, $types)) {
     $message = oa_messages_create('oa_update', $entity, $type, t('Changes:'));
   }
@@ -142,7 +143,7 @@ function oa_messages_entity_update($entity, $type) {
  * Implements hook_node_delete().
  */
 function oa_messages_node_delete($node) {
-  $types = oa_groups_list_content_types(TRUE);
+  $types = oa_core_list_content_types(TRUE);
   if (!array_key_exists($node->type, $types)) {
     // only create messages for node types we care about
     return;
@@ -154,13 +155,13 @@ function oa_messages_node_delete($node) {
  * Helper function to handle OG Membership messages
  */
 function oa_messages_og_membership_prepare($og_membership, $action, $add_type = TRUE) {
-  $group = node_load($og_membership->gid);
+  $space = node_load($og_membership->gid);
   $user = user_load($og_membership->etid);
   $realname = !empty($user->realname) ? $user->realname :$user->name;
   $text = l($realname, '/user/' . $user->uid) . ' ' . $action;
-  if ($add_type && isset($group->type)) {
+  if ($add_type && isset($space->type)) {
     $info = entity_get_info('node');
-    $text .= $info['bundles'][$group->type]['label'];
+    $text .= $info['bundles'][$space->type]['label'];
   }
   $message = oa_messages_create('oa_member', NULL, '', $text, $og_membership->gid);
   return $message;
@@ -238,7 +239,7 @@ function oa_messages_oa_messages_create_alter(&$wrapper, $context) {
       break;
 
     case 'oa_member':
-      $wrapper->field_oa_message_group = $context['arguments'];
+      $wrapper->field_oa_message_space = $context['arguments'];
       break;
   }
 }

@@ -1,8 +1,7 @@
 name = Open Atrium Widgets
-description = A collection of widgets for use with group pages
+description = A collection of widgets for Open Atrium
 core = 7.x
-files[] = oa_group_widgets.module
 
 dependencies[] = ctools
-dependencies[] = oa_groups
+dependencies[] = oa_core
 dependencies[] = oa_sections

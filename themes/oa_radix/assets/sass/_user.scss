@@ -34,8 +34,8 @@
 }
 
 
-// User groups page
-.pane-oa-user-groups-full {
+// User spaces page
+.pane-oa-user-spaces-full {
   .views-row {
     border: 1px solid #DDD;
     border-bottom: none;
@@ -51,10 +51,10 @@
     @include border-bottom-radius(5px);
   }
 
-  .group-container {
+  .space-container {
     padding: 5px;
   }
-  .group-details {
+  .space-details {
     .picture {
       margin-right: 20px;
       height: 120px;

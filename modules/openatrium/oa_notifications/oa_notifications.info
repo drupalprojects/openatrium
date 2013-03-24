@@ -4,5 +4,5 @@ package = Open Atrium
 core = 7.x
 
 dependencies[] = ctools
-dependencies[] = oa_groups
+dependencies[] = oa_core
 

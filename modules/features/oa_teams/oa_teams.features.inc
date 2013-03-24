@@ -33,7 +33,7 @@ function oa_teams_node_info() {
     'oa_team' => array(
       'name' => t('Team'),
       'base' => 'node_content',
-      'description' => t('An ad-hoc collection of users within a Group'),
+      'description' => t('An ad-hoc collection of users within a Space'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
