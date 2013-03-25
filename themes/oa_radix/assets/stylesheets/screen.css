@@ -14689,38 +14689,46 @@ html.js input.throbbing {
 #main-wrapper {
   min-height: 360px; }
 
-/* line 61, ../sass/_layout.scss */
+/* line 62, ../sass/_layout.scss */
+.oa-bottom-right {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  text-align: right; }
+
+/* line 69, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #FAFAFA;
   padding: 0;
   margin-bottom: 5px;
   position: relative; }
 
-/* line 67, ../sass/_layout.scss */
+/* line 75, ../sass/_layout.scss */
 .oa-list-metadata {
   float: right;
   text-align: right; }
 
-/* line 71, ../sass/_layout.scss */
+/* line 79, ../sass/_layout.scss */
 .oa-list-header {
   padding: 3px 5px 0 5px; }
 
-/* line 74, ../sass/_layout.scss */
+/* line 82, ../sass/_layout.scss */
 .oa-list .accordion {
-  margin-bottom: 0; }
-  /* line 76, ../sass/_layout.scss */
+  margin-bottom: 0;
+  position: relative; }
+  /* line 85, ../sass/_layout.scss */
   .oa-list .accordion h5 {
     padding: 0 5px;
     margin: 0; }
 
-/* line 81, ../sass/_layout.scss */
+/* line 90, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
-  /* line 83, ../sass/_layout.scss */
+  /* line 92, ../sass/_layout.scss */
   .oa-list .accordion-heading .accordion-toggle:hover {
     background-color: #E0EEFF; }
 
-/* line 87, ../sass/_layout.scss */
+/* line 96, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle.toggle-left {
   position: absolute;
   width: 11px;
@@ -14737,26 +14745,26 @@ html.js input.throbbing {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   border-top-left-radius: 5px; }
-  /* line 99, ../sass/_layout.scss */
+  /* line 108, ../sass/_layout.scss */
   .oa-list .accordion-heading .accordion-toggle.toggle-left:hover {
     background-color: #E0EEFF; }
 
-/* line 104, ../sass/_layout.scss */
+/* line 113, ../sass/_layout.scss */
 .oa-list .label {
   color: white; }
-  /* line 106, ../sass/_layout.scss */
+  /* line 115, ../sass/_layout.scss */
   .oa-list .label a {
     color: white; }
 
-/* line 110, ../sass/_layout.scss */
+/* line 119, ../sass/_layout.scss */
 .oa-list-category {
   text-align: right; }
 
-/* line 113, ../sass/_layout.scss */
+/* line 122, ../sass/_layout.scss */
 .oa-list .links {
   float: right;
   margin-right: 5px; }
-  /* line 116, ../sass/_layout.scss */
+  /* line 125, ../sass/_layout.scss */
   .oa-list .links a {
     padding: 0 5px;
     color: #777;
@@ -14898,7 +14906,7 @@ div.tabs li.active a {
     color: #333333; }
 
 /* line 6, ../sass/_panel.scss */
-#node-edit .panel-pane.pane-node-field-oa-organization-ref,
+#node-edit .panel-pane.pane-node-field-oa-group-ref,
 #node-edit .panel-pane.pane-node-field-oa-team-ref,
 #node-edit .panel-pane.pane-node-field-oa-user-ref {
   padding: 1px 10px;
@@ -14909,7 +14917,7 @@ div.tabs li.active a {
   box-shadow: none; }
 
 /* line 15, ../sass/_panel.scss */
-#node-edit .panel-pane.pane-node-field-oa-organization-ref {
+#node-edit .panel-pane.pane-node-field-oa-group-ref {
   padding-top: 10px;
   margin-bottom: 0;
   border-bottom: 0; }
@@ -14975,29 +14983,29 @@ div.tabs li.active a {
     padding: 0; }
 
 /* line 100, ../sass/_panel.scss */
-.pane-oa-groups-summary .group-links .favorite {
+.pane-oa-core-summary .space-links .favorite {
   float: left; }
 /* line 103, ../sass/_panel.scss */
-.pane-oa-groups-summary .group-links .edit {
+.pane-oa-core-summary .space-links .edit {
   float: right; }
 
 /* line 112, ../sass/_panel.scss */
-.pane-oa-groups-members-widget .team,
-.pane-oa-groups-members-widget .user-badge {
+.pane-oa-core-members-widget .team,
+.pane-oa-core-members-widget .user-badge {
   width: 100%;
   min-width: 0;
   max-width: 152px;
   margin: 0 10px 10px 0; }
 
 /* line 123, ../sass/_panel.scss */
-.pane-oa-groups-user-groups .pane-content {
+.pane-oa-core-user-spaces .pane-content {
   position: relative; }
 /* line 126, ../sass/_panel.scss */
-.pane-oa-groups-user-groups .groups-container {
+.pane-oa-core-user-spaces .spaces-container {
   float: left;
   margin-right: 20px; }
 /* line 130, ../sass/_panel.scss */
-.pane-oa-groups-user-groups .group-switcher {
+.pane-oa-core-user-spaces .space-switcher {
   position: absolute;
   top: 0;
   right: 0;
@@ -15096,7 +15104,7 @@ div.tabs li.active a {
   text-align: center; }
 /* line 101, ../sass/_form.scss */
 .checkbox-table .form-type-checkbox,
-.checkbox-table .group-label {
+.checkbox-table .space-label {
   margin: 0.4em 0; }
 
 /* line 5, ../sass/_node.scss */
@@ -15114,22 +15122,22 @@ div.tabs li.active a {
   color: #555;
   line-height: 16px; }
 
-/* line 17, ../sass/_node.scss */
+/* line 18, ../sass/_node.scss */
 .well.current-node {
   border-left: 6px solid #b0eba3;
   margin-left: -6px; }
 
-/* line 21, ../sass/_node.scss */
+/* line 22, ../sass/_node.scss */
 .oa-list.unpublished {
   background-color: #FFF1F1; }
 
-/* line 24, ../sass/_node.scss */
+/* line 25, ../sass/_node.scss */
 .oa-list.unpublished .status {
   color: red;
   font-weight: bold; }
 
-/* line 32, ../sass/_node.scss */
-.pane-oa-groups-members-widget h5 {
+/* line 33, ../sass/_node.scss */
+.pane-oa-core-members-widget h5 {
   margin-top: 0; }
 
 /* line 5, ../sass/_user.scss */
@@ -15168,14 +15176,14 @@ div.tabs li.active a {
   border-right: 0; }
 
 /* line 39, ../sass/_user.scss */
-.pane-oa-user-groups-full .views-row {
+.pane-oa-user-spaces-full .views-row {
   border: 1px solid #dddddd;
   border-bottom: none; }
 /* line 43, ../sass/_user.scss */
-.pane-oa-user-groups-full .views-row-odd {
+.pane-oa-user-spaces-full .views-row-odd {
   background: #f9f9f9; }
 /* line 46, ../sass/_user.scss */
-.pane-oa-user-groups-full .views-row-first {
+.pane-oa-user-spaces-full .views-row-first {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   border-top-left-radius: 5px;
@@ -15183,7 +15191,7 @@ div.tabs li.active a {
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px; }
 /* line 49, ../sass/_user.scss */
-.pane-oa-user-groups-full .views-row-last {
+.pane-oa-user-spaces-full .views-row-last {
   border-bottom: 1px solid #dddddd;
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -15192,17 +15200,17 @@ div.tabs li.active a {
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px; }
 /* line 54, ../sass/_user.scss */
-.pane-oa-user-groups-full .group-container {
+.pane-oa-user-spaces-full .space-container {
   padding: 5px; }
 /* line 58, ../sass/_user.scss */
-.pane-oa-user-groups-full .group-details .picture {
+.pane-oa-user-spaces-full .space-details .picture {
   margin-right: 20px;
   height: 120px;
   width: 120px; }
   /* line 62, ../sass/_user.scss */
-  .pane-oa-user-groups-full .group-details .picture img {
+  .pane-oa-user-spaces-full .space-details .picture img {
     width: 100%; }
 /* line 68, ../sass/_user.scss */
-.pane-oa-user-groups-full .accordion {
+.pane-oa-user-spaces-full .accordion {
   padding: 10px;
   margin: 0; }

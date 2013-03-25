@@ -24,10 +24,9 @@
  * @ingroup views_templates
  */
 ?>
-<div class='oa-list well clearfix'>
+<div class='oa-list oa-river well clearfix'>
   <?php if ($display != 'user_activity'): ?>
-    <div class='pull-right user-badge'>
-      <?php print $name; ?>
+    <div class='pull-left'>
       <?php print $field_user_picture; ?>
     </div>
   <?php endif; ?>
@@ -38,6 +37,9 @@
     <?php if ($display != 'section_activity'): ?>
       <?php print $field_oa_message_section; ?>
     <?php endif; ?>
+    <div class='oa-description'>
+      <?php print $timestamp; ?>
+    </div>
   </div>
   <?php if (strlen(trim(strip_tags($rendered_entity))) > 0): ?>
     <div class='oa-list-header'>
@@ -50,7 +52,7 @@
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#oa-river-accordion<?php print $index; ?>" href="#oa-river-body<?php print $index; ?>">
             <i class="icon-plus" vertical-align="middle"></i>&nbsp;
             <?php print $field_oa_message_text; ?>
-            <?php print $rendered_entity_1; ?>...
+            <?php print $rendered_entity_1; ?>
           </a>
         </div>
         <div id="oa-river-body<?php print $index; ?>" class="accordion-body collapse">

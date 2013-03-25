@@ -1,0 +1,9 @@
+.oa-river .pull-right {
+  padding-right: 3px;
+}
+.oa-river .pull-left {
+  padding: 2px 5px 0 2px;
+}
+.oa-river .pull-right .oa-description {
+  padding-top: 3px;
+}

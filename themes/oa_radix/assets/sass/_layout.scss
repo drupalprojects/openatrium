@@ -58,6 +58,14 @@
 #main-wrapper {
   min-height: 360px;
 }
+
+.oa-bottom-right {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  text-align: right;
+}
+
 .oa-list.well {
   background-color: #FAFAFA;
   padding: 0;
@@ -73,6 +81,7 @@
 }
 .oa-list .accordion {
   margin-bottom: 0;
+  position: relative;
   h5 {
     padding: 0 5px;
     margin: 0;
