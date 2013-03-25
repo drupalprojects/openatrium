@@ -25,7 +25,9 @@ $plugin = array(
  * Render callback for a single region.
  */
 function theme_oa_styles_well_style_render_region($vars) {
-  $output = implode('<div class="panel-separator"></div>', $vars['panes']);
+  $sep = '<div class="panel-separator"></div>';
+  // add separator to end also because panels ipe js removes the last one
+  $output = implode($sep, $vars['panes']) . $sep;
 
   // Then wrap it in a well
   return theme('oa_styles_well_box', array('content' => $output, 'settings' => $vars['settings']));
