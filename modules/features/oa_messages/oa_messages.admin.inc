@@ -17,7 +17,7 @@ function oa_messages_oa_user_settings_form_alter(&$form, $form_state, $user) {
   );
   $defaults = $user->data['oa_messages'];
   
-  $form['oa_messages']['message_types'] = oa_messages_build_message_types_table($user, $defaults);
+  $form['oa_messages']['message_notifications'] = oa_messages_build_message_notifications_table($user, $defaults);
   
   $form['oa_messages']['email_type'] = array(
     '#type' => 'radios',
@@ -38,11 +38,11 @@ function oa_messages_oa_user_settings_form_alter(&$form, $form_state, $user) {
  * Build a table of notification types per group, much like
  * the permissions table.
  */
-function oa_messages_build_message_types_table($user, $defaults = array()) {
+function oa_messages_build_message_notifications_table($user, $defaults = array()) {
   $groups = node_load_multiple(oa_groups_get_user_groups($user->uid));
   $message_types = message_type_load();
   
-  // Split them out by module.
+  // Split them out in to tabs per module.
   $message_types_modules = array();
   foreach ($message_types as $type) {
     $module = $type->module ? $type->module : 'Custom';
@@ -90,9 +90,8 @@ function oa_messages_build_message_types_table($user, $defaults = array()) {
       );
     }
     
-    $table['rows'] = array();
     foreach ($groups as $group) {
-      $table['rows'][$group->nid] = array(
+      $table[$group->nid] = array(
         '#prefix' => '<tr>',
         'group' => array(
           '#prefix' => '<td class="group-label">',
@@ -104,16 +103,16 @@ function oa_messages_build_message_types_table($user, $defaults = array()) {
       
       $notifiers = oa_message_notifiers();
       foreach ($message_types as $message_type) {
-        $table['rows'][$group->nid][$message_type->name] = array(
+        $table[$group->nid][$message_type->name] = array(
           '#prefix' => '<td class="center">',
           '#suffix' => '</td>',
         );
         foreach ($notifiers as $notifier) {
-          $value = isset($defaults['message_types'][$group->nid][$message_type->name][$notifier]) ?
-            $defaults['message_types'][$group->nid][$message_type->name][$notifier] :
+          $value = isset($defaults['message_notifications'][$group->nid][$message_type->name][$notifier]) ?
+            $defaults['message_notifications'][$group->nid][$message_type->name][$notifier] :
             TRUE;
 
-          $table['rows'][$group->nid][$message_type->name][$notifier] = array(
+          $table[$group->nid][$message_type->name][$notifier] = array(
             '#type' => 'checkbox',
             '#default_value' => $value,
             '#field_prefix' => '<span class="label">' . $notifier . '</span>',
@@ -132,5 +131,21 @@ function oa_messages_build_message_types_table($user, $defaults = array()) {
  * Implements hook_oa_user_settings_form_submit().
  */
 function oa_messages_oa_user_settings_form_submit($form_state, $user) {
-  return array('oa_messages' => $form_state['values']['oa_messages']);
+  // Flatten out message notification settings as they're keyed by the module
+  // that provided the message type for organizational purposes only.
+  $message_notifications = array();
+  foreach ($form_state['values']['oa_messages']['message_notifications']['tables'] as $groups) {
+    foreach ($groups as $group_id => $settings) {
+      $settings = isset($message_notifications[$group_id]) ? 
+        array_merge($message_notifications[$group_id], $settings) : 
+        $settings;
+      $message_notifications[$group_id] = $settings;
+    }
+  }
+  
+  
+  return array('oa_messages' => array(
+    'message_notifications' => $message_notifications,
+    'email_type' => $form_state['values']['oa_messages']['email_type'],
+  ));
 }

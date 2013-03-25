@@ -97,25 +97,46 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     entity_get_controller($entity_type)->resetCache(array($entity_wrapper->getIdentifier()));
 
     if ($send && isset($entity) && ($entity_type == 'node')) {
-      message_subscribe_process_message('node', $entity, $message, array(), oa_messages_build_subscribe_options($entity));
+      message_subscribe_process_message('node', $entity, $message, array(), oa_messages_build_subscribe_options($entity, $message));
     }
   }
 }
 
 /**
- * Builds the subscribe options for an entity.
+ * Builds the subscribe options for an entity, based on the message.
  */
-function oa_messages_build_subscribe_options($entity) {
+function oa_messages_build_subscribe_options($entity, $message) {
   $options = array();
   $users = oa_notifications_get_notifications($entity);
   foreach ($users as $uid => $user) {
+    // Disable certain notifiers based on preferences.
+    $notifiers = oa_messages_determine_user_notifiers($user, $entity, $message);
+    
     $options['uids'][$uid] = array(
       'entity' => $user,
-      'notifiers' => oa_message_notifiers(),
+      'notifiers' => $notifiers,
     );
   }
   
   return $options;
+}
+
+/**
+ * Determine's a users's notifiers based on message type and message content.
+ */
+function oa_messages_determine_user_notifiers($user, $entity, $message) {
+  $notifiers = oa_message_notifiers();
+  $settings = $user->data['oa_messages']['message_notifications'];
+  $group_id = $entity->og_group_ref[LANGUAGE_NONE][0]['target_id'];
+  $allowed_notifiers = array();
+  
+  foreach ($notifiers as $notifier) {
+    if ($settings[$group_id][$message->type][$notifier]) {
+      $allowed_notifiers[] = $notifier;
+    }
+  }
+  
+  return $allowed_notifiers;
 }
 
 /**
