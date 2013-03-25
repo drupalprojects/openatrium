@@ -6,6 +6,11 @@
   margin-top: 0;
 }
 
+.oa-discussion-parent .oa-description {
+  clear: right;
+  padding-top: 5px;
+}
+
 .node-type-oa-discussion-post div.tabs {
   display: none;
 }
