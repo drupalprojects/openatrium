@@ -357,7 +357,8 @@ function oa_notifications_form_node_form_alter(&$form, &$form_state, $form_id) {
       '#type' => 'fieldset',
       '#title' => t('Notifications'),
       '#collapsible' => TRUE,
-      '#collapsed' => FALSE,
+      '#collapsed' => (in_array($form['#node']->type, array(OA_GROUP_TYPE, OA_SECTION_TYPE))) ? TRUE : FALSE,
+      '#weight' => 9,
       '#tree' => TRUE,
     );
     oa_notifications_form_fields($form['oa_notifications'], $form_state, $form['#node']);
