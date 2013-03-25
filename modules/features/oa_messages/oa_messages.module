@@ -111,11 +111,21 @@ function oa_messages_build_subscribe_options($entity) {
   foreach ($users as $uid => $user) {
     $options['uids'][$uid] = array(
       'entity' => $user,
-      'notifiers' => array('email'),
+      'notifiers' => oa_message_notifiers(),
     );
   }
   
   return $options;
+}
+
+/**
+ * Returns a list of notifiers that are used for sending messages. Modules can
+ * add notifiers by invoking hook_oa_message_notifiers_alter().
+ */
+function oa_message_notifiers() {
+  $notifiers = array('email');
+  drupal_alter('oa_message_notifiers', $notifiers);
+  return $notifiers;
 }
 
 /**
