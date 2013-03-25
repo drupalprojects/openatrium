@@ -14642,93 +14642,109 @@ html.js input.throbbing {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   display: block; }
 
-/* line 17, ../sass/_layout.scss */
+/* line 18, ../sass/_layout.scss */
+#navbar div#panels-ipe-control-container {
+  background-color: transparent;
+  position: fixed;
+  top: 52px;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  z-index: 999;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+  /* line 27, ../sass/_layout.scss */
+  #navbar div#panels-ipe-control-container a {
+    font-weight: normal; }
+
+/* line 32, ../sass/_layout.scss */
 .label {
   font-weight: normal; }
-  /* line 19, ../sass/_layout.scss */
+  /* line 34, ../sass/_layout.scss */
   .label a {
     font-weight: normal; }
 
-/* line 24, ../sass/_layout.scss */
+/* line 39, ../sass/_layout.scss */
 .well h3.pane-title {
   font-size: 20px;
   line-height: 32px;
   color: #333; }
 
-/* line 30, ../sass/_layout.scss */
+/* line 45, ../sass/_layout.scss */
 .well .panel-separator {
   margin: 1em -19px;
   border-top: 1px solid #e3e3e3; }
 
-/* line 36, ../sass/_layout.scss */
+/* line 51, ../sass/_layout.scss */
 .content .bryant-flipped-sidebar-inner,
 .content .burr-flipped-sidebar-inner {
   padding-top: 0; }
 
-/* line 40, ../sass/_layout.scss */
+/* line 55, ../sass/_layout.scss */
 .view-oa-recent-activity .view-content h3 {
   font-size: 20px;
   line-height: 32px;
   color: #333; }
 
-/* line 46, ../sass/_layout.scss */
+/* line 61, ../sass/_layout.scss */
 #logo img {
   vertical-align: middle; }
 
-/* line 49, ../sass/_layout.scss */
+/* line 64, ../sass/_layout.scss */
 #site-name {
   display: inline-block;
   padding: 10px 0.5em;
   margin: 0; }
 
-/* line 54, ../sass/_layout.scss */
+/* line 69, ../sass/_layout.scss */
 #oa_toolbar {
   padding-top: 5px; }
 
-/* line 58, ../sass/_layout.scss */
+/* line 73, ../sass/_layout.scss */
 #main-wrapper {
   min-height: 360px; }
 
-/* line 62, ../sass/_layout.scss */
+/* line 77, ../sass/_layout.scss */
 .oa-bottom-right {
   position: absolute;
   right: 3px;
   bottom: 3px;
   text-align: right; }
 
-/* line 69, ../sass/_layout.scss */
+/* line 84, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #FAFAFA;
   padding: 0;
   margin-bottom: 5px;
   position: relative; }
 
-/* line 75, ../sass/_layout.scss */
+/* line 90, ../sass/_layout.scss */
 .oa-list-metadata {
   float: right;
   text-align: right; }
 
-/* line 79, ../sass/_layout.scss */
+/* line 94, ../sass/_layout.scss */
 .oa-list-header {
   padding: 3px 5px 0 5px; }
 
-/* line 82, ../sass/_layout.scss */
+/* line 97, ../sass/_layout.scss */
 .oa-list .accordion {
   margin-bottom: 0;
   position: relative; }
-  /* line 85, ../sass/_layout.scss */
+  /* line 100, ../sass/_layout.scss */
   .oa-list .accordion h5 {
     padding: 0 5px;
     margin: 0; }
 
-/* line 90, ../sass/_layout.scss */
+/* line 105, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
-  /* line 92, ../sass/_layout.scss */
+  /* line 107, ../sass/_layout.scss */
   .oa-list .accordion-heading .accordion-toggle:hover {
     background-color: #E0EEFF; }
 
-/* line 96, ../sass/_layout.scss */
+/* line 111, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle.toggle-left {
   position: absolute;
   width: 11px;
@@ -14745,26 +14761,26 @@ html.js input.throbbing {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   border-top-left-radius: 5px; }
-  /* line 108, ../sass/_layout.scss */
+  /* line 123, ../sass/_layout.scss */
   .oa-list .accordion-heading .accordion-toggle.toggle-left:hover {
     background-color: #E0EEFF; }
 
-/* line 113, ../sass/_layout.scss */
+/* line 128, ../sass/_layout.scss */
 .oa-list .label {
   color: white; }
-  /* line 115, ../sass/_layout.scss */
+  /* line 130, ../sass/_layout.scss */
   .oa-list .label a {
     color: white; }
 
-/* line 119, ../sass/_layout.scss */
+/* line 134, ../sass/_layout.scss */
 .oa-list-category {
   text-align: right; }
 
-/* line 122, ../sass/_layout.scss */
+/* line 137, ../sass/_layout.scss */
 .oa-list .links {
   float: right;
   margin-right: 5px; }
-  /* line 125, ../sass/_layout.scss */
+  /* line 140, ../sass/_layout.scss */
   .oa-list .links a {
     padding: 0 5px;
     color: #777;
