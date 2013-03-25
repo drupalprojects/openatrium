@@ -8,6 +8,7 @@ project = oa_river
 dependencies[] = panels
 dependencies[] = views
 dependencies[] = views_content
+stylesheets[all][] = oa_river.css
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
 features[views_view][] = oa_recent_activity

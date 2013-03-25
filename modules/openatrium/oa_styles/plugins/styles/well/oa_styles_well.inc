@@ -9,6 +9,7 @@ $plugin = array(
   'title' => t('Bootstrap Well'),
   'description' => t('Renders the panes within a Bootstrap Well'),
   'render pane' => 'oa_styles_well_style_render_pane',
+  'render region' => 'oa_styles_well_style_render_region',
   'pane settings form' => 'oa_styles_well_style_settings_form',
   'hook theme' => array(
     'oa_styles_well_box' => array(
@@ -19,6 +20,18 @@ $plugin = array(
   ),
 );
 
+
+/**
+ * Render callback for a single region.
+ */
+function theme_oa_styles_well_style_render_region($vars) {
+  $sep = '<div class="panel-separator"></div>';
+  // add separator to end also because panels ipe js removes the last one
+  $output = implode($sep, $vars['panes']) . $sep;
+
+  // Then wrap it in a well
+  return theme('oa_styles_well_box', array('content' => $output, 'settings' => $vars['settings']));
+}
 
 /**
  * Render callback for a single pane.

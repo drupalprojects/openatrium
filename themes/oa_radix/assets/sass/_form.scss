@@ -3,6 +3,61 @@
 // Styles for Forms
 // --------------------------------------------------
 
+.form-actions {
+  border: 0;
+  padding: 0;
+}
+
+.form-item {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#node-edit .burr-flipped-sidebar .panel-pane {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+  @include box-shadow(none);
+}
+
+#node-edit .container-inline-date .form-item-date-time, #node-edit .container-inline-date .form-item-date-date {
+  padding-bottom: 0.5em;
+}
+
+#node-edit .form-actions input {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  @extend .btn-primary;
+  &:hover {
+    color: white;
+    background-color: #0044cc;
+    background-image: none;
+  }
+}
+
+.panel-pane {
+  position: relative;
+}
+
+.views-exposed-form .well {
+  padding: 0 1em;
+}
+
+.views-exposed-form .filter-btn {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.view-filters form {
+  margin: 0;
+}
+
+.views-exposed-widget.views-submit-button {
+  padding-right: 5px;
+}
+
 // Discussion quick reply
 #oa-discussion-reply-form {
   position: relative;
@@ -43,7 +98,7 @@
     text-align: center;
   }
   .form-type-checkbox,
-  .group-label {
+  .space-label {
     margin: 0.4em 0;
   }
 }

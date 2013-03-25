@@ -25,18 +25,18 @@ function oa_messages_default_message_type() {
   $items = array();
   $items['oa_create'] = entity_import('message_type', '{
     "name" : "oa_create",
-    "description" : "Open Atrium Create Content",
+    "description" : "Create Content",
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
-    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" } },
+    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }, "token options" : { "clear" : 1 } },
     "language" : "en",
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "[[message:field-oa-message-group]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]",
+          "value" : "[[message:field-oa-message-space]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]",
           "format" : "plain_text",
-          "safe_value" : "\\u003Cp\\u003E[[message:field-oa-message-group]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[[message:field-oa-message-space]] [message:user:name] created new [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title] [#[message:field-oa-node-ref:nid]]\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u0026nbsp;[message:field-oa-node-ref:body]\\u003C\\/p\\u003E",
@@ -44,9 +44,9 @@ function oa_messages_default_message_type() {
           "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u00a0[message:field-oa-node-ref:body]\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E created new [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E",
+          "value" : "\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E created new [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:title]\\u003C\\/a\\u003E",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E created new [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E created new [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "[message:field-oa-message-text:value] [message:field-oa-node-ref:body]",
@@ -63,11 +63,11 @@ function oa_messages_default_message_type() {
   }');
   $items['oa_delete'] = entity_import('message_type', '{
     "name" : "oa_delete",
-    "description" : "Open Atrium Delete Content",
+    "description" : "Delete Content",
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
-    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" } },
+    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }, "token options" : { "clear" : 1 } },
     "language" : "en",
     "arguments" : null,
     "message_text" : { "und" : [
@@ -82,9 +82,9 @@ function oa_messages_default_message_type() {
           "safe_value" : "\\u003Cp\\u003E @{message:user:name} deleted [message:field-deleted-title] \\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted: [message:field-deleted-title]",
+          "value" : "[\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted: [message:field-deleted-title]",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted: [message:field-deleted-title] \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E [\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted: [message:field-deleted-title] \\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "[message:field-deleted-summary:value]",
@@ -105,42 +105,42 @@ function oa_messages_default_message_type() {
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
-    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" } },
+    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }, "token options" : { "clear" : 1 } },
     "language" : "en",
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "[message:field-oa-message-group:title] : @{message:user:name} updated Group",
+          "value" : "[message:field-oa-message-space:title] : @{message:user:name} updated Space",
           "format" : "plain_text",
-          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group:title] : @{message:user:name} updated Group\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-space:title] : @{message:user:name} updated Space\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "[message:field-oa-message-group:title] : [message:field-oa-message-text:value]",
+          "value" : "[message:field-oa-message-space:title] : [message:field-oa-message-text:value]",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:field-oa-message-group:title] : [message:field-oa-message-text:value] \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E [message:field-oa-message-space:title] : [message:field-oa-message-text:value] \\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Group : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-group:nid]\\u0022\\u003E[message:field-oa-message-group:title]\\u003C\\/a\\u003E",
+          "value" : "\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Space : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-space:nid]\\u0022\\u003E[message:field-oa-message-space:title]\\u003C\\/a\\u003E",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Group : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-group:nid]\\u0022\\u003E[message:field-oa-message-group:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated Space : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-space:nid]\\u0022\\u003E[message:field-oa-message-space:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
         }
       ]
     }
   }');
   $items['oa_update'] = entity_import('message_type', '{
     "name" : "oa_update",
-    "description" : "Open Atrium Update Content",
+    "description" : "Update Content",
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
-    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" } },
+    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }, "token options" : { "clear" : 1 } },
     "language" : "en",
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "[message:field-oa-message-group] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]",
+          "value" : "[message:field-oa-message-space] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]",
           "format" : "plain_text",
-          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-group] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-space] : [message:user:name] updated [message:field-oa-node-ref:content-type] : [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u0026nbsp;[message:field-oa-node-ref:log]\\u003C\\/p\\u003E\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E",
@@ -148,9 +148,9 @@ function oa_messages_default_message_type() {
           "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u00a0[message:field-oa-node-ref:log]\\u003C\\/p\\u003E\\n\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "[message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated [message:field-oa-node-ref:content-type] : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:title]\\u003C\\/a\\u003E",
+          "value" : "\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:title]\\u003C\\/a\\u003E",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:timestamp:panopoly_time] \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated [message:field-oa-node-ref:content-type] : \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated [message:field-oa-node-ref:content-type]: \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "@{message:field-oa-node-ref:log}",

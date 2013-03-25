@@ -89,14 +89,14 @@ function oa_sections_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-oa_section-field_oa_organization_ref'.
-  $fields['node-oa_section-field_oa_organization_ref'] = array(
+  // Exported field: 'node-oa_section-field_oa_group_ref'.
+  $fields['node-oa_section-field_oa_group_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_oa_organization_ref',
+      'field_name' => 'field_oa_group_ref',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -124,7 +124,7 @@ function oa_sections_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'oa_organization' => 'oa_organization',
+            'oa_group' => 'oa_group',
           ),
         ),
         'target_type' => 'node',
@@ -136,7 +136,7 @@ function oa_sections_field_default_fields() {
       'bundle' => 'oa_section',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Leave empty for public access, otherwise select Organizations that can view this Section.',
+      'description' => 'Leave empty for public access, otherwise select Groups that can view this Section.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -161,8 +161,8 @@ function oa_sections_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_oa_organization_ref',
-      'label' => 'Organizations',
+      'field_name' => 'field_oa_group_ref',
+      'label' => 'Groups',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -332,7 +332,7 @@ function oa_sections_field_default_fields() {
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => '0',
-      'description' => 'Leave empty for public access, otherwise select Group Members that can view this Section.',
+      'description' => 'Leave empty for public access, otherwise select Space Members that can view this Section.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -485,7 +485,7 @@ function oa_sections_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'oa_group' => 'oa_group',
+            'oa_space' => 'oa_space',
           ),
         ),
         'handler_submit' => 'Change handler',
@@ -524,7 +524,7 @@ function oa_sections_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'og_group_ref',
-      'label' => 'Groups ID',
+      'label' => 'Space ID',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -569,11 +569,11 @@ function oa_sections_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Determines order of Section in lists.  Higher value moves the section later in the list.  Lower value moves section earlier in the list.');
-  t('Groups ID');
-  t('Leave empty for public access, otherwise select Group Members that can view this Section.');
-  t('Leave empty for public access, otherwise select Organizations that can view this Section.');
+  t('Groups');
+  t('Leave empty for public access, otherwise select Groups that can view this Section.');
+  t('Leave empty for public access, otherwise select Space Members that can view this Section.');
   t('Leave empty for public access, otherwise select Teams that can view this Section.');
-  t('Organizations');
+  t('Space ID');
   t('Teams');
   t('Users');
   t('Weight');

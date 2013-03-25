@@ -16,9 +16,9 @@ function oa_messages_oa_user_settings_form_alter(&$form, $form_state, $user) {
     '#tree' => TRUE,
   );
   $defaults = $user->data['oa_messages'];
-  
+
   $form['oa_messages']['message_notifications'] = oa_messages_build_message_notifications_table($user, $defaults);
-  
+
   $form['oa_messages']['email_type'] = array(
     '#type' => 'radios',
     '#title' => t('Email type'),
@@ -35,11 +35,11 @@ function oa_messages_oa_user_settings_form_alter(&$form, $form_state, $user) {
 }
 
 /**
- * Build a table of notification types per group, much like
+ * Build a table of notification types per space, much like
  * the permissions table.
  */
 function oa_messages_build_message_notifications_table($user, $defaults = array()) {
-  $groups = node_load_multiple(oa_groups_get_user_groups($user->uid));
+  $spaces = node_load_multiple(oa_core_get_user_spaces($user->uid));
   $message_types = message_type_load();
   
   // Split them out in to tabs per module.
@@ -59,7 +59,7 @@ function oa_messages_build_message_notifications_table($user, $defaults = array(
       '#suffix' => '</div>',
     ),
   );
-  
+
   foreach ($message_types_modules as $module => $message_types) {
     $module_info = system_get_info('module', $module);
     $module_name = $module_info ? $module_info['name'] : $module;
@@ -68,7 +68,7 @@ function oa_messages_build_message_notifications_table($user, $defaults = array(
       '#markup' => $module_name,
       '#suffix' => '</a></li>',
     );
-    
+
     $table = array(
       '#prefix' => '<div id="message-settings-' . $module . '" class="tab-pane"><table class="table table-bordered table-striped table-hover checkbox-table">',
       '#suffix' => '</table></div>',
@@ -89,30 +89,30 @@ function oa_messages_build_message_notifications_table($user, $defaults = array(
         '#suffix' => '</th>',
       );
     }
-    
-    foreach ($groups as $group) {
-      $table[$group->nid] = array(
+
+    foreach ($spaces as $space) {
+      $table[$space->nid] = array(
         '#prefix' => '<tr>',
         'group' => array(
-          '#prefix' => '<td class="group-label">',
-          '#markup' => $group->title,
+          '#prefix' => '<td class="space-label">',
+          '#markup' => $space->title,
           '#suffix' => '</td>',
         ),
         '#suffix' => '</tr>',
       );
-      
+
       $notifiers = oa_message_notifiers();
       foreach ($message_types as $message_type) {
-        $table[$group->nid][$message_type->name] = array(
+        $table[$space->nid][$message_type->name] = array(
           '#prefix' => '<td class="center">',
           '#suffix' => '</td>',
         );
         foreach ($notifiers as $notifier) {
-          $value = isset($defaults['message_notifications'][$group->nid][$message_type->name][$notifier]) ?
-            $defaults['message_notifications'][$group->nid][$message_type->name][$notifier] :
+          $value = isset($defaults['message_notifications'][$space->nid][$message_type->name][$notifier]) ?
+            $defaults['message_notifications'][$space->nid][$message_type->name][$notifier] :
             TRUE;
 
-          $table[$group->nid][$message_type->name][$notifier] = array(
+          $table[$space->nid][$message_type->name][$notifier] = array(
             '#type' => 'checkbox',
             '#default_value' => $value,
             '#field_prefix' => '<span class="label">' . $notifier . '</span>',
@@ -120,10 +120,10 @@ function oa_messages_build_message_notifications_table($user, $defaults = array(
         }
       }
     }
-    
+
     $form['tables'][$module] = $table;
   }
-  
+
   return $form;
 }
 
@@ -134,12 +134,12 @@ function oa_messages_oa_user_settings_form_submit($form_state, $user) {
   // Flatten out message notification settings as they're keyed by the module
   // that provided the message type for organizational purposes only.
   $message_notifications = array();
-  foreach ($form_state['values']['oa_messages']['message_notifications']['tables'] as $groups) {
-    foreach ($groups as $group_id => $settings) {
-      $settings = isset($message_notifications[$group_id]) ? 
-        array_merge($message_notifications[$group_id], $settings) : 
+  foreach ($form_state['values']['oa_messages']['message_notifications']['tables'] as $spaces) {
+    foreach ($spaces as $space_id => $settings) {
+      $settings = isset($message_notifications[$space_id]) ? 
+        array_merge($message_notifications[$space_id], $settings) : 
         $settings;
-      $message_notifications[$group_id] = $settings;
+      $message_notifications[$space_id] = $settings;
     }
   }
   

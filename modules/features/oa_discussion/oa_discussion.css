@@ -1,5 +1,21 @@
+.oa-discussion-parent {
+  margin-top: 20px;
+}
+
+.oa-discussion-parent h2 {
+  margin-top: 0;
+}
+
+.oa-discussion-parent .oa-description {
+  clear: right;
+  padding-top: 5px;
+}
+
 .node-type-oa-discussion-post div.tabs {
   display: none;
+}
+
+.oa-discussion-reply h5 {
 }
 
 .page-node-edit.node-type-oa-discussion-post div.tabs {
@@ -7,7 +23,7 @@
 }
 
 .node-type-oa-discussion-post div.burr-flipped-sidebar {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .view-display-id-replies .accordion-inner {

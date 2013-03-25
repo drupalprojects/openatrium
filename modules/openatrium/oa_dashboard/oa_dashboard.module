@@ -5,7 +5,7 @@
  * @param $form_state
  * @param $form_id
  */
-function oa_dashboard_form_oa_groups_configure_form_alter(&$form, &$form_state, $form_id) {
+function oa_dashboard_form_oa_core_configure_form_alter(&$form, &$form_state, $form_id) {
 
   $form['oa_toolbar'] = array(
     '#type' => 'fieldset',
@@ -120,66 +120,68 @@ function oa_dashboard_theme() {
 function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   global $user;
 
+  drupal_add_js(drupal_get_path('module', 'oa_dashboard') . '/js/oa-dashboard.js');
+
   // Separators
   $vars['oa_toolbar_separator'] = t('&gt;');
   $vars['home_url'] = url('<front>', array('absolute' => TRUE));
 
-  // Groups
-  $group_id = NULL;
-  if (isset($_SESSION['oa_group_id'])) {
-    $group_id = $_SESSION['oa_group_id'];
+  // Spaces
+  $space_id = NULL;
+  if (isset($_SESSION['oa_space_id'])) {
+    $space_id = $_SESSION['oa_space_id'];
   }
-  $vars['groups_label'] = '';
-  $vars['groups_recent'] = '';
-  $vars['groups_favorite'] = '';
+  $vars['spaces_label'] = '';
+  $vars['spaces_recent'] = '';
+  $vars['spaces_favorite'] = '';
   $vars['sections_label'] = '';
   $vars['sections_list'] = '';
 
-  // grab list of user's groups and sections
-  $vars['group_label'] = t('Groups');
-  $vars['group_url'] = url('groups');
-  if (isset($group_id)) {
-    // get name of current group (without fully loading node)
-    $title = oa_groups_get_titles(array($group_id));
+  // grab list of user's spaces and sections
+  $vars['space_label'] = t('Spaces');
+  $vars['space_url'] = url('spaces');
+  if (isset($space_id)) {
+    // get name of current space (without fully loading node)
+    $title = oa_core_get_titles(array($space_id));
     if (!empty($title['titles'][0])) {
-      $vars['group_label'] = $title['titles'][0];
-      $vars['group_url'] = url('node/' . $group_id);
+      $vars['space_label'] = $title['titles'][0];
+      $vars['space_url'] = url('node/' . $space_id);
     }
   }
 
-  // get names of groups
+  // get names of spaces
   if ($user->uid == 0) {
     // og_get_entity_groups doesn't return anything for anonymous users
-    // so return list of all public groups
-    $groups = oa_get_public_groups();
+    // so return list of all public spaces
+    $spaces = oa_core_get_public_spaces();
   }
   else {
-    $groups = og_get_entity_groups('user', $user);
+    $spaces = og_get_entity_groups('user', $user);
   }
-  if (empty($groups['node'])) {
+  if (empty($spaces['node'])) {
     $list = array();
   }
   else {
-    $items = oa_groups_get_titles($groups['node'], OA_GROUP_TYPE);
-    $list = oa_groups_truncate_list($items['links'], 10,
-      l(t('All groups...'), 'groups',
+    $items = oa_core_get_titles($spaces['node'], OA_SPACE_TYPE);
+    $list = oa_core_truncate_list($items['links'], 10,
+      l(t('All spaces...'), 'spaces',
         array('attributes' => array('class' => array('more-link')))));
   }
   if (!empty($list)) {
-    $vars['groups_recent'] = theme('item_list', array(
+    $vars['spaces_recent'] = theme('item_list', array(
       'items' => $list,
-      'title' => t('Active Groups'),
+      'title' => t('Active Spaces'),
       'type' => 'ul',
     ));
   }
 
   if (module_exists('oa_favorites')) {
-    // get list of favorite groups
-    $items = oa_favorites_get_groups($user);
+    // get list of favorite spaces
+    $items = oa_favorites_get_spaces($user);
     if (!empty($items['links'])) {
-      $vars['groups_favorite'] = theme('item_list', array(
+      $vars['spaces_favorite'] = theme('item_list', array(
         'items' => $items['links'],
-        'title' => t('Favorite Groups'),
+        'title' => t('Favorite Spaces'),
         'type' => 'ul',
       ));
     }
@@ -187,16 +189,16 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
 
   $current_section = !empty($_SESSION['oa_section_id']) ? $_SESSION['oa_section_id'] : 0;
 
-  $home_name = t('Group home');
+  $home_name = t('Space home');
   $section_name = '';
   $section_url = '';
-  if (isset($group_id)) {
-    $group_link = l($home_name, 'node/' . $group_id);
+  if (isset($space_id)) {
+    $space_link = l($home_name, 'node/' . $space_id);
     $section_name = $home_name;
-    $section_url = url('node/' . $group_id);
+    $section_url = url('node/' . $space_id);
     $items = array();
-    // grab the titles of the sections for the current group
-    $sections = oa_groups_group_sections($group_id);
+    // grab the titles of the sections for the current space
+    $sections = oa_core_space_sections($space_id);
     if (!empty($sections)) {
       // check for match with current section id
       foreach ($sections as $sid => $title) {
@@ -206,11 +208,11 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
           $section_url = url('node/' . $sid);
         }
       }
-      // add the Group home page link and create the ul list
-      array_unshift($items, $group_link);
+      // add the Space home page link and create the ul list
+      array_unshift($items, $space_link);
     }
     else {
-      $items[] = $group_link;
+      $items[] = $space_link;
     }
     if (!empty($items)) {
       $vars['sections_list'] = theme('item_list', array(
@@ -227,7 +229,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
         $section_name = $node->title;
         $section_url = url('node/' . $node->nid);
         break;
-      case OA_GROUP_TYPE:
+      case OA_SPACE_TYPE:
         $section_name = $home_name;
         $section_url = url('node/' . $node->nid);
         break;

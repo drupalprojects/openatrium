@@ -28,6 +28,38 @@
   }
 }
 
+// Move the Panels IPE buttons from bottom to the top
+#navbar div#panels-ipe-control-container {
+  background-color: transparent;
+  position: fixed;
+  top: 52px;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  z-index: 999;
+  @include box-shadow(none);
+  a {
+    font-weight: normal;
+  }
+}
+
+body.panels-ipe {
+  margin-bottom: 0px !important
+}
+
+div.tabs {
+  @extend .navbar;
+  @extend .navbar-inner;
+  ul.tabs {
+    @extend .nav;
+    border-bottom: 0;
+  }
+  li.active a {
+    @include border-radius(0);
+    border-bottom: 0;
+  }
+}
+
 .oa-dropdown {
   display: inline-block;
 	margin: 0 0.25em 0 0.25em;

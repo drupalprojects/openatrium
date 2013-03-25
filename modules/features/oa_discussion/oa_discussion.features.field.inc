@@ -10,116 +10,6 @@
 function oa_discussion_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'message-oa_reply-field_oa_message_group'.
-  $fields['message-oa_reply-field_oa_message_group'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_oa_message_group',
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'target_id' => array(
-          0 => 'target_id',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'entityreference',
-      'settings' => array(
-        'handler' => 'base',
-        'handler_settings' => array(
-          'behaviors' => array(
-            'views-select-list' => array(
-              'status' => 1,
-            ),
-          ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'oa_group' => 'oa_group',
-          ),
-        ),
-        'target_type' => 'node',
-      ),
-      'translatable' => '0',
-      'type' => 'entityreference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'oa_reply',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 0,
-        ),
-        'message_notify_email_body' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '0',
-        ),
-        'message_notify_email_subject' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '0',
-        ),
-        'oa_river_accordian' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '0',
-        ),
-        'oa_river_body' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '0',
-        ),
-        'oa_river_header' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '0',
-        ),
-      ),
-      'entity_type' => 'message',
-      'field_name' => 'field_oa_message_group',
-      'label' => 'Group',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'entityreference',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => '60',
-        ),
-        'type' => 'entityreference_autocomplete',
-        'weight' => '2',
-      ),
-    ),
-  );
-
   // Exported field: 'message-oa_reply-field_oa_message_section'.
   $fields['message-oa_reply-field_oa_message_section'] = array(
     'field_config' => array(
@@ -225,6 +115,116 @@ function oa_discussion_field_default_fields() {
         ),
         'type' => 'entityreference_autocomplete',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'message-oa_reply-field_oa_message_space'.
+  $fields['message-oa_reply-field_oa_message_space'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_oa_message_space',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 1,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'oa_space' => 'oa_space',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'oa_reply',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 0,
+        ),
+        'message_notify_email_body' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'message_notify_email_subject' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'oa_river_accordian' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'oa_river_body' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'oa_river_header' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+      ),
+      'entity_type' => 'message',
+      'field_name' => 'field_oa_message_space',
+      'label' => 'Space',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '2',
       ),
     ),
   );
@@ -831,7 +831,7 @@ function oa_discussion_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'oa_group' => 'oa_group',
+            'oa_space' => 'oa_space',
           ),
         ),
         'handler_submit' => 'Change handler',
@@ -912,12 +912,12 @@ function oa_discussion_field_default_fields() {
   t('Attachments');
   t('Body');
   t('Custom Text');
-  t('Group');
   t('Groups audience');
   t('Node');
   t('OpenAtrium Section');
   t('Parent');
   t('Section');
+  t('Space');
 
   return $fields;
 }

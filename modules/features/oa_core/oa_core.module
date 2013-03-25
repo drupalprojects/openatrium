@@ -1,0 +1,175 @@
+<?php
+/**
+ * @file
+ * Code for the OpenAtrium Core feature.
+ */
+
+include_once 'oa_core.features.inc';
+include_once 'includes/oa_core.util.inc';
+include_once 'includes/oa_core.access.inc';
+include_once 'includes/oa_core.theme.inc';
+
+/**
+ * Name of default OpenAtrium Space type.
+ */
+define('OA_SPACE_TYPE', 'oa_space');
+/**
+ * Name of OpenAtrium Section content type.
+ */
+define('OA_SECTION_TYPE', 'oa_section');
+/**
+ * Name of OpenAtrium Group content type.
+ */
+define('OA_GROUP_TYPE', 'oa_group');
+/**
+ * Name of OpenAtrium Team content type.
+ */
+define('OA_TEAM_TYPE', 'oa_team');
+/**
+ * Name of default OpenAtrium Section field (for Organic Groups Fields UI).
+ */
+define('OA_SECTION_FIELD', 'oa_section_ref');
+/**
+ * Name of default OpenAtrium Group field (for Organic Groups Fields UI).
+ */
+define('OA_SPACE_FIELD', 'og_group_ref');
+/**
+ * The access realm of space member.
+ */
+define('OA_ACCESS_REALM', 'oa_access');
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function oa_core_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+}
+
+/**
+ * Implementation of hook_menu
+ */
+function oa_core_menu() {
+ // Add an administration section for Open Atrium settings
+  $items['admin/openatrium/settings'] = array(
+    'title' => 'Open Atrium Settings',
+    'description' => 'Configuration related to Open Atrium',
+    'weight' => 0,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('oa_core_configure_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+
+/**
+ * Configuration Form for Open Atrium
+ */
+function oa_core_configure_form($form, &$form_state) {
+  // blank for for now.  Other modules can alter this to add stuff
+  $form = array();
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_og_fields_info().
+ */
+function oa_core_og_fields_info() {
+  $items[OA_SECTION_FIELD] = array(
+    'no ui' => TRUE,
+    'type' => array('group content'),
+    'description' => t('Determine to which Open Atrium section this space content is assigned to.'),
+    'field' => array(
+      'field_name' => OA_SECTION_FIELD,
+      'type' => 'entityreference',
+      'cardinality' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            OA_SECTION_TYPE => OA_SECTION_TYPE,
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'instance' => array(
+      'label' => t('Open Atrium Section'),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'options',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => 60,
+        ),
+        'type' => 'options_select',
+        'weight' => '7',
+      ),
+    ),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_form_alter
+ */
+function oa_core_form_node_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+
+  // we are in an edit form
+  // autofill empty group audience field
+  if (isset($form[OA_SPACE_FIELD]) && empty($form[OA_SPACE_FIELD][LANGUAGE_NONE][0]['default']['#default_value'])) {
+    if (!empty($_SESSION['og_context']['gid'])) {
+      $form[OA_SPACE_FIELD][LANGUAGE_NONE][0]['default']['#default_value'] = $_SESSION['og_context']['gid'];
+    }
+  }
+
+  // modify label on Panelizer layout field
+  if (isset($form['panelizer'])) {
+    $form['panelizer']['page_manager']['name']['#title'] = t('Select Layout');
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_fields().
+ * Perform field-level replacement/processing here
+ */
+function oa_core_preprocess_views_view_fields(&$vars) {
+  $vars['index'] = $vars['view']->row_index;
+  $vars['display'] = $vars['view']->current_display;
+  foreach ($vars['fields'] as $id => $field) {
+    $vars[$id] = $field->content;
+  }
+  // View specific alterations.
+  if ($vars['view']->name == 'oa_user_spaces' && $vars['view']->current_display == 'full') {
+    oa_core_preprocess_oa_user_spaces_full_view_fields($vars);
+  }
+}
+
+/**
+ * Views view fields preprocess function.
+ * Provide the template with the space's sections for display.
+ */
+function oa_core_preprocess_oa_user_spaces_full_view_fields(&$vars) {
+  $space = node_load($vars['row']->node_og_membership_nid);
+  $sections = oa_core_space_sections($space->nid);
+  $vars['sections'] = array();
+  foreach ($sections as $id => $title) {
+    $vars['sections'][$id]['title'] = $title;
+    $vars['sections'][$id]['href'] = url('node/' . $id);
+  }
+}

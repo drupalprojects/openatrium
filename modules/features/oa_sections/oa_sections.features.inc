@@ -37,7 +37,7 @@ function oa_sections_node_info() {
     'oa_section' => array(
       'name' => t('Section Page'),
       'base' => 'node_content',
-      'description' => t('A landing page and collection of content within a Group.'),
+      'description' => t('A landing page and collection of content within a Space.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

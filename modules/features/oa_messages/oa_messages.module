@@ -97,7 +97,8 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     entity_get_controller($entity_type)->resetCache(array($entity_wrapper->getIdentifier()));
 
     if ($send && isset($entity) && ($entity_type == 'node')) {
-      message_subscribe_process_message('node', $entity, $message, array(), oa_messages_build_subscribe_options($entity, $message));
+      $subscribe_options = oa_messages_build_subscribe_options($entity, $message);
+      message_subscribe_process_message('node', $entity, $message, array(), $subscribe_options);
     }
   }
 }
@@ -124,14 +125,18 @@ function oa_messages_build_subscribe_options($entity, $message) {
 /**
  * Determine's a users's notifiers based on message type and message content.
  */
-function oa_messages_determine_user_notifiers($user, $entity, $message) {
-  $notifiers = oa_message_notifiers();
+function oa_messages_determine_user_notifiers($user, $entity, $message, $notifiers = array()) {
+  if (empty($notifiers)) {
+    $notifiers = oa_message_notifiers();
+  }
+  
   $settings = $user->data['oa_messages']['message_notifications'];
-  $group_id = $entity->og_group_ref[LANGUAGE_NONE][0]['target_id'];
+  $space_id = $entity->og_group_ref[LANGUAGE_NONE][0]['target_id'];
   $allowed_notifiers = array();
   
   foreach ($notifiers as $notifier) {
-    if ($settings[$group_id][$message->type][$notifier]) {
+    // If unset, assume it should send.
+    if ($settings[$space_id][$message->type][$notifier] || !isset($settings[$space_id][$message->type][$notifier])) {
       $allowed_notifiers[] = $notifier;
     }
   }
@@ -153,7 +158,7 @@ function oa_message_notifiers() {
  * Implements hook_entity_insert().
  */
 function oa_messages_entity_insert($entity, $type) {
-  $types = oa_groups_list_content_types(TRUE);
+  $types = oa_core_list_content_types(TRUE);
   if ($type == 'node' && array_key_exists($entity->type, $types)) {
     $message = oa_messages_create('oa_create', $entity, $type, '', NULL, $entity->uid);
   }
@@ -163,7 +168,7 @@ function oa_messages_entity_insert($entity, $type) {
  * Implements hook_entity_update().
  */
 function oa_messages_entity_update($entity, $type) {
-  $types = oa_groups_list_content_types(TRUE);
+  $types = oa_core_list_content_types(TRUE);
   if ($type == 'node' && array_key_exists($entity->type, $types)) {
     $message = oa_messages_create('oa_update', $entity, $type, t('Changes:'));
   }
@@ -173,7 +178,7 @@ function oa_messages_entity_update($entity, $type) {
  * Implements hook_node_delete().
  */
 function oa_messages_node_delete($node) {
-  $types = oa_groups_list_content_types(TRUE);
+  $types = oa_core_list_content_types(TRUE);
   if (!array_key_exists($node->type, $types)) {
     // only create messages for node types we care about
     return;

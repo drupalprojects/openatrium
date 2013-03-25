@@ -136,7 +136,7 @@ function oa_teams_field_default_fields() {
       'bundle' => 'oa_team',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the members of the group that are a member of this team.',
+      'description' => 'Select the members of the space that are a member of this team.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -183,7 +183,7 @@ function oa_teams_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Description');
   t('Members');
-  t('Select the members of the group that are a member of this team.');
+  t('Select the members of the space that are a member of this team.');
 
   return $fields;
 }

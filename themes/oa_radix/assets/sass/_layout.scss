@@ -2,8 +2,7 @@
 // Layout
 // Styles for main layout
 // --------------------------------------------------
-.navbar-inner,
-.footer-inner {
+.navbar-inner {
   padding-left:  20px;
   padding-right: 20px;
   border: 1px solid $navbarBorder;
@@ -12,6 +11,35 @@
   @include border-radius(4px);
   @include box-shadow(0 1px 4px rgba(0,0,0,.065));
   display: block;
+}
+
+.label {
+  font-weight: normal;
+  a {
+    font-weight: normal;
+  }
+}
+
+.well h3.pane-title {
+  font-size: 20px;
+  line-height: 32px;
+  color: #333;
+}
+
+.well .panel-separator {
+  margin: 1em -19px;
+  border-top: 1px solid #e3e3e3;
+}
+
+.content .bryant-flipped-sidebar-inner,
+.content .burr-flipped-sidebar-inner {
+  padding-top: 0;
+}
+
+.view-oa-recent-activity .view-content h3 {
+  font-size: 20px;
+  line-height: 32px;
+  color: #333;
 }
 
 #logo img {
@@ -29,16 +57,42 @@
 #main-wrapper {
   min-height: 360px;
 }
+
+.oa-bottom-right {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  text-align: right;
+}
+
+#footer {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #CCC;
+  background-color: #555;
+  border-top: 1px solid #e5e5e5;
+}
+
 .oa-list.well {
   background-color: #FAFAFA;
   padding: 0;
   margin-bottom: 5px;
+  position: relative;
+}
+.oa-list-metadata {
+  float: right;
+  text-align: right;
 }
 .oa-list-header {
   padding: 3px 5px 0 5px;
 }
 .oa-list .accordion {
   margin-bottom: 0;
+  position: relative;
+  h5 {
+    padding: 0 5px;
+    margin: 0;
+  }
 }
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px;
@@ -46,6 +100,23 @@
     background-color: #E0EEFF;
   }
 }
+.oa-list .accordion-heading .accordion-toggle.toggle-left {
+  position: absolute;
+  width: 11px;
+  font-size: 18px;
+  padding: 3px 5px;
+  top: -1px;
+  left: -21px;
+  border: 1px solid #e3e3e3;
+  background-color: #fafafa;
+  border-right: 0;
+  @include border-bottom-left-radius(5px);
+  @include border-top-left-radius(5px);
+  &:hover {
+    background-color: #E0EEFF;
+  }
+}
+
 .oa-list .label {
   color: white;
   a {

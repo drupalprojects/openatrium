@@ -62,7 +62,7 @@ function oa_messages_feeds_importer_default() {
             'unique' => FALSE,
           ),
           4 => array(
-            'source' => 'contextual_group_id',
+            'source' => 'contextual_space_id',
             'target' => 'og_group_ref',
             'unique' => FALSE,
           ),

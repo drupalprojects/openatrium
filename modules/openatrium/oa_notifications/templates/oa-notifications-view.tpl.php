@@ -1,11 +1,11 @@
 <div class="notifications">
-  <?php if (empty($organization) && empty($organization) && empty($organization)): ?>
+  <?php if (empty($group) && empty($team) && empty($user)): ?>
     <div><?php print t('There are no notifications configured for this content'); ?></div>
   <?php endif; ?>
-  <?php if (!empty($organization)): ?>
+  <?php if (!empty($group)): ?>
     <div class="notification-group">
-      <h5><?php print t('Organizations'); ?></h5>
-      <?php foreach ($organization as $id => $o): ?>
+      <h5><?php print t('Groups'); ?></h5>
+      <?php foreach ($group as $id => $o): ?>
         <?php print l($o, 'node/' . $id, array('attributes' => array('class' => array('label', 'label-info')))); ?>
       <?php endforeach; ?>
     </div>

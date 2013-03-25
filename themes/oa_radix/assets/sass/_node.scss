@@ -12,21 +12,24 @@
 .oa-description {
   font-size: 12px;
   color: #555;
+  line-height: 16px;
 }
+
 .well.current-node {
   border-left: 6px solid #B0EBA3;
+  margin-left: -6px;
 }
-.well.unpublished {
+.oa-list.unpublished {
   background-color: #FFF1F1;
 }
-.well.unpublished .status {
+.oa-list.unpublished .status {
   color: red;
   font-weight: bold;
 }
 
 
-// Groups
+// Spaces
 
-.pane-oa-groups-members-widget h5 {
+.pane-oa-core-members-widget h5 {
   margin-top: 0;
 }

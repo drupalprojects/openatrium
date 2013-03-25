@@ -4,4 +4,4 @@ package = Open Atrium
 core = 7.x
 php = 5.1
 
-dependencies[] = oa_groups
+dependencies[] = oa_core

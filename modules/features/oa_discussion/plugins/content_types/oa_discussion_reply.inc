@@ -1,11 +1,11 @@
 <?php
 
 $plugin = array(
-  'title' => t('Reply button'),
+  'title' => t('Reply form'),
   'description' => t('Reply to current content.'),
   'single' => TRUE,
   'category' => array(t('Open Atrium'), -9),
-  'edit form' => 'oa_discussion_reply_edit_form',
+  'edit form' => 'oa_discussion_reply_settings_form',
   'render callback' => 'oa_discussion_reply_render',
   'required context' => new ctools_context_required(t('Node'), 'node'),
 );
@@ -34,14 +34,14 @@ function oa_discussion_reply_render($subtype, $conf, $args, $context = NULL) {
 /**
  * Empty config form
  */
-function oa_discussion_reply_edit_form($form, &$form_state) {
+function oa_discussion_reply_settings_form($form, &$form_state) {
   return $form;
 }
 
 /**
  * Saves changes to the widget.
  */
-function oa_discussion_reply_edit_form_submit($form, &$form_state) {
+function oa_discussion_reply_settings_form_submit($form, &$form_state) {
   foreach (array_keys($form_state['values']) as $key) {
     if (isset($form_state['values'][$key])) {
       $form_state['conf'][$key] = $form_state['values'][$key];
@@ -68,6 +68,7 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
   $form['#node'] = $node;
   $form['#parent_id'] = $parent_id;
 
+/*
   $form['oa_reply']['subject'] = array(
     '#type' => 'textfield',
     '#default_value' => '',
@@ -75,6 +76,7 @@ function oa_discussion_reply_form($form, &$form_state, $node) {
       'placeholder' => t('Optional Subject'),
     ),
   );
+  */
 
   $form['oa_reply']['body'] = array(
     '#type' => 'text_format',
@@ -133,7 +135,7 @@ function oa_discussion_reply_form_submit($form, &$form_state) {
     }
 
     // create a new reply node
-    $wrapper = oa_groups_create_node('oa_discussion_post', $title, $node);
+    $wrapper = oa_core_create_node('oa_discussion_post', $title, $node);
     $wrapper->oa_parent = $parent_id;
     $wrapper->body->set(array('value' => $body['value'], 'format' => $body['format']));
     foreach ($media as $delta => $file) {

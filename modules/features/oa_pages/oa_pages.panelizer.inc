@@ -20,7 +20,7 @@ function oa_pages_panelizer_defaults() {
   $panelizer->no_blocks = FALSE;
   $panelizer->css_id = '';
   $panelizer->css = '';
-  $panelizer->pipeline = 'standard';
+  $panelizer->pipeline = 'ipe';
   $panelizer->contexts = array();
   $panelizer->relationships = array();
   $panelizer->access = array();
@@ -30,13 +30,16 @@ function oa_pages_panelizer_defaults() {
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
   $display = new panels_display();
-  $display->layout = 'burr_flipped';
+  $display->layout = 'bryant_flipped_flipped';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'sidebar' => NULL,
       'contentmain' => NULL,
+    ),
+    'sidebar' => array(
+      'style' => 'oa_styles_well',
     ),
   );
   $display->cache = array();
@@ -99,18 +102,20 @@ function oa_pages_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'sidebar';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:og_group_ref';
+    $pane->type = 'oa_widgets_content_visibility';
+    $pane->subtype = 'oa_widgets_content_visibility';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'above',
-      'formatter' => 'og_list_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
       'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-cqXUeb_lypvRKjeDx_KkYwuF5n8REra0FgZxs2_Se4Q',
+      'form_token' => 'BzH8uxEwTjsQGuqkcXBIlcjCxMTFGGufXWz-7ckhC2M',
+      'form_id' => 'oa_widgets_content_visibility_edit_form',
+      'op' => 'Finish',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -125,35 +130,20 @@ function oa_pages_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-4';
     $pane->panel = 'sidebar';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:oa_section_ref';
+    $pane->type = 'oa_notifications_pane';
+    $pane->subtype = 'oa_notifications_pane';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'entityreference_label',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'link' => 1,
-      ),
-      'context' => array(),
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'context' => 'panelizer',
       'override_title' => 0,
       'override_title_text' => '',
-      'view_mode' => NULL,
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
-      'exposed' => array(
-        'sort_by' => NULL,
-        'sort_order' => NULL,
-      ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'more_link' => NULL,
-      'path' => NULL,
+      'form_build_id' => 'form-3NIbvrDDbnBEDBCWdHee6-awEh7L5ZbG7mgNZoUi1oQ',
+      'form_token' => 'onNhiaTsfaMU_9t_nTimqeJSJZzyEjVwN50x8mW1-T0',
+      'form_id' => 'oa_notifications_settings_form',
+      'op' => 'Finish',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -169,17 +159,24 @@ function oa_pages_panelizer_defaults() {
     $pane->pid = 'new-5';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:oa_parent';
+    $pane->subtype = 'node:field_oa_media';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
-      'formatter' => 'entityreference_label',
-      'delta_limit' => 0,
+      'formatter' => 'media_colorbox',
+      'delta_limit' => '0',
       'delta_offset' => '0',
-      'delta_reversed' => FALSE,
+      'delta_reversed' => 0,
       'formatter_settings' => array(
-        'link' => 1,
+        'file_view_mode' => 'preview',
+        'colorbox_view_mode' => 'colorbox',
+        'fixed_width' => '',
+        'fixed_height' => '',
+        'colorbox_gallery' => 'page',
+        'colorbox_gallery_custom' => '',
+        'colorbox_caption' => 'title',
+        'audio_playlist' => 0,
       ),
       'context' => array(),
       'override_title' => 0,
@@ -209,7 +206,7 @@ function oa_pages_panelizer_defaults() {
     $display->content['new-5'] = $pane;
     $display->panels['sidebar'][2] = 'new-5';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-3';
+  $display->title_pane = '0';
   $panelizer->display = $display;
   $export['node:oa_pages_page:default'] = $panelizer;
 

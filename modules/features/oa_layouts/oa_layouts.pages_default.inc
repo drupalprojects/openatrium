@@ -129,7 +129,7 @@ function oa_layouts_default_page_manager_handlers() {
     $pane->pid = 'new-4';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_form_field';
-    $pane->subtype = 'node:field_oa_organization_ref';
+    $pane->subtype = 'node:field_oa_group_ref';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -365,7 +365,7 @@ function oa_layouts_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Group Edit Page',
+    'title' => 'Space Edit Page',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => 'node-edit',
@@ -378,7 +378,7 @@ function oa_layouts_default_page_manager_handlers() {
           'name' => 'node_type',
           'settings' => array(
             'type' => array(
-              'oa_group' => 'oa_group',
+              'oa_space' => 'oa_space',
             ),
           ),
           'context' => 'argument_node_edit_1',

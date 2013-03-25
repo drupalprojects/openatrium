@@ -24,42 +24,42 @@
  * @ingroup views_templates
  */
 ?>
-<div class='oa-list well clearfix <?php print $current_class; ?> <?php print $status_class; ?> <?php print $nid_class; ?>'>
+<div class='oa-list oa-discussion-reply well clearfix <?php print $current_class; ?> <?php print $status_class; ?> <?php print $nid_class; ?>'>
   <div class='pull-right user-badge'>
     <?php print $name; ?>
     <?php print $field_user_picture; ?>
   </div>
-  <div class='oa-list-header'>
-    <?php print $counter; ?>
-    <?php print $created; ?>
-    <?php print $title; ?>
-    <div class='pull-right'>
-      <?php if (!empty($unpublished)): ?>
-        <span class="status"><?php print $unpublished; ?></span>
-      <?php endif; ?>
-      <?php print $timestamp; ?>
-    </div>
-  </div>
-  <?php if (!empty($body_1) || !empty($body) || !empty($field_oa_media)): ?>
-    <div class="accordion" id="oa-reply-accordion<?php print $index; ?>">
-      <div>
-        <div class="accordion-heading">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
-            <i class="icon-plus" vertical-align="middle"></i>&nbsp;<?php print $body_1; ?>...
-          </a>
+  <div class="accordion" id="oa-reply-accordion<?php print $index; ?>">
+    <div class="accordion-heading">
+      <div class="accordion-toggle" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
+        <div class='oa-list-header oa-description '>
+          <?php print $counter; ?>
+          <div class='pull-right'>
+            <?php if (!empty($unpublished)): ?>
+              <span class="status"><?php print $unpublished; ?></span>
+            <?php endif; ?>
+            <?php print $timestamp; ?>
+            <?php print $created; ?>
+          </div>
         </div>
-        <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
-          <div class="accordion-inner">
-            <?php print $body; ?>
-            <?php print $field_oa_media; ?>
-            <div class="links">
-              <a href='#'>reply</a>
-              <?php print $edit_node; ?>
-              <?php print $remove_link; ?>
-            </div>
+        <a class="accordion-toggle toggle-left" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
+         +
+        </a>
+        <h5>
+          <?php print empty($body_1) ? $title : $body_1; ?>
+        </h5>
+      </div>
+      <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
+        <div class="accordion-inner">
+          <?php print $body; ?>
+          <?php print $field_oa_media; ?>
+          <div class="links">
+            <a href='#'>reply</a>
+            <?php print $edit_node; ?>
+            <?php print $remove_link; ?>
           </div>
         </div>
       </div>
     </div>
-  <?php endif; ?>
+  </div>
 </div>

@@ -16,9 +16,9 @@
       });
       $tabs.find('a:first').tab('show');
       
-      // Add check / uncheck all buttons to groups / messages.
-      var $groupLabels = $form.find('.group-label');
-      $groupLabels.each(function() {
+      // Add check / uncheck all buttons to spaces / messages.
+      var $spaceLabels = $form.find('.space-label');
+      $spaceLabels.each(function() {
         var $checkboxes = $(this).parent().find('input[type="checkbox"]');
         addCheckUncheckAllButtons($(this), $checkboxes);
       });

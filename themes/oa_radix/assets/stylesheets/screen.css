@@ -2127,7 +2127,11 @@ table th[class*="span"],
 .nav-list > .active > a > [class^="icon-"],
 .nav-list > .active > a > [class*=" icon-"],
 .navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse div.tabs ul.tabs > .active > a > [class^="icon-"],
+div.tabs .navbar-inverse ul.tabs > .active > a > [class^="icon-"],
 .navbar-inverse .nav > .active > a > [class*=" icon-"],
+.navbar-inverse div.tabs ul.tabs > .active > a > [class*=" icon-"],
+div.tabs .navbar-inverse ul.tabs > .active > a > [class*=" icon-"],
 .dropdown-menu > li > a:hover > [class^="icon-"],
 .dropdown-menu > li > a:hover > [class*=" icon-"],
 .dropdown-menu > .active > a > [class^="icon-"],
@@ -3136,7 +3140,7 @@ input[type="button"].btn-block {
   width: 100%; }
 
 /* line 141, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary.active,
+.btn-primary.active, #node-edit .form-actions input.active,
 .btn-warning.active,
 .btn-danger.active,
 .btn-success.active,
@@ -3150,7 +3154,7 @@ input[type="button"].btn-block {
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25); }
 
 /* line 152, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary {
+.btn-primary, #node-edit .form-actions input {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #006ecc;
@@ -3167,12 +3171,12 @@ input[type="button"].btn-block {
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
   /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+  .btn-primary:hover, #node-edit .form-actions input:hover, .btn-primary:active, #node-edit .form-actions input:active, .btn-primary.active, #node-edit .form-actions input.active, .btn-primary.disabled, #node-edit .form-actions input.disabled, .btn-primary[disabled], #node-edit .form-actions input[disabled] {
     color: white;
     background-color: #0044cc;
     *background-color: #003bb3; }
   /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .btn-primary:active, .btn-primary.active {
+  .btn-primary:active, #node-edit .form-actions input:active, .btn-primary.active, #node-edit .form-actions input.active {
     background-color: #003399 \9; }
 
 /* line 156, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
@@ -3510,7 +3514,7 @@ input[type="submit"].btn {
 .btn-group.open .btn.dropdown-toggle {
   background-color: #e6e6e6; }
 /* line 140, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn-primary.dropdown-toggle {
+.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
   background-color: #0044cc; }
 /* line 143, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
 .btn-group.open .btn-warning.dropdown-toggle {
@@ -3550,7 +3554,7 @@ input[type="submit"].btn {
   border-bottom-width: 5px; }
 
 /* line 191, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-primary .caret,
+.btn-primary .caret, #node-edit .form-actions input .caret,
 .btn-warning .caret,
 .btn-danger .caret,
 .btn-info .caret,
@@ -3677,26 +3681,26 @@ input[type="submit"].btn {
   margin-top: 5px; }
 
 /* line 9, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav {
+.nav, div.tabs ul.tabs {
   margin-left: 0;
   margin-bottom: 20px;
   list-style: none; }
 
 /* line 16, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > li > a {
+.nav > li > a, div.tabs ul.tabs > li > a {
   display: block; }
 
 /* line 19, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > li > a:hover {
+.nav > li > a:hover, div.tabs ul.tabs > li > a:hover {
   text-decoration: none;
   background-color: #eeeeee; }
 
 /* line 26, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > li > a > img {
+.nav > li > a > img, div.tabs ul.tabs > li > a > img {
   max-width: none; }
 
 /* line 31, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > .pull-right {
+.nav > .pull-right, div.tabs ul.tabs > .pull-right {
   float: right; }
 
 /* line 36, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
@@ -3711,7 +3715,7 @@ input[type="submit"].btn {
   text-transform: uppercase; }
 
 /* line 47, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav li + .nav-header {
+.nav li + .nav-header, div.tabs ul.tabs li + .nav-header {
   margin-top: 9px; }
 
 /* line 56, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
@@ -3891,13 +3895,13 @@ input[type="submit"].btn {
   border-radius: 6px; }
 
 /* line 214, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav .dropdown-toggle .caret {
+.nav .dropdown-toggle .caret, div.tabs ul.tabs .dropdown-toggle .caret {
   border-top-color: #0088cc;
   border-bottom-color: #0088cc;
   margin-top: 6px; }
 
 /* line 219, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav .dropdown-toggle:hover .caret {
+.nav .dropdown-toggle:hover .caret, div.tabs ul.tabs .dropdown-toggle:hover .caret {
   border-top-color: #005580;
   border-bottom-color: #005580; }
 
@@ -3907,7 +3911,7 @@ input[type="submit"].btn {
   margin-top: 8px; }
 
 /* line 230, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav .active .dropdown-toggle .caret {
+.nav .active .dropdown-toggle .caret, div.tabs ul.tabs .active .dropdown-toggle .caret {
   border-top-color: #fff;
   border-bottom-color: #fff; }
 
@@ -3917,21 +3921,24 @@ input[type="submit"].btn {
   border-bottom-color: #555555; }
 
 /* line 241, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > .dropdown.active > a:hover {
+.nav > .dropdown.active > a:hover, div.tabs ul.tabs > .dropdown.active > a:hover {
   cursor: pointer; }
 
 /* line 249, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
 .nav-tabs .open .dropdown-toggle,
 .nav-pills .open .dropdown-toggle,
-.nav > li.dropdown.open.active > a:hover {
+.nav > li.dropdown.open.active > a:hover,
+div.tabs ul.tabs > li.dropdown.open.active > a:hover {
   color: white;
   background-color: #999999;
   border-color: #999999; }
 
 /* line 256, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav li.dropdown.open .caret,
+.nav li.dropdown.open .caret, div.tabs ul.tabs li.dropdown.open .caret,
 .nav li.dropdown.open.active .caret,
-.nav li.dropdown.open a:hover .caret {
+div.tabs ul.tabs li.dropdown.open.active .caret,
+.nav li.dropdown.open a:hover .caret,
+div.tabs ul.tabs li.dropdown.open a:hover .caret {
   border-top-color: white;
   border-bottom-color: white;
   opacity: 0.01;
@@ -4056,24 +4063,24 @@ input[type="submit"].btn {
   *border-left-color: white; }
 
 /* line 383, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > .disabled > a {
+.nav > .disabled > a, div.tabs ul.tabs > .disabled > a {
   color: #999999; }
 
 /* line 387, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > .disabled > a:hover {
+.nav > .disabled > a:hover, div.tabs ul.tabs > .disabled > a:hover {
   text-decoration: none;
   background-color: transparent;
   cursor: default; }
 
 /* line 10, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar {
+.navbar, div.tabs {
   overflow: visible;
   margin-bottom: 20px;
   *position: relative;
   *z-index: 2; }
 
 /* line 21, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inner {
+.navbar-inner, div.tabs {
   min-height: 40px;
   padding-left: 20px;
   padding-right: 20px;
@@ -4094,16 +4101,16 @@ input[type="submit"].btn {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   *zoom: 1; }
   /* line 15, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .navbar-inner:before, .navbar-inner:after {
+  .navbar-inner:before, div.tabs:before, .navbar-inner:after, div.tabs:after {
     display: table;
     content: "";
     line-height: 0; }
   /* line 22, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .navbar-inner:after {
+  .navbar-inner:after, div.tabs:after {
     clear: both; }
 
 /* line 36, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .container {
+.navbar .container, div.tabs .container {
   width: auto; }
 
 /* line 41, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -4112,7 +4119,7 @@ input[type="submit"].btn {
   overflow: visible; }
 
 /* line 49, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .brand {
+.navbar .brand, div.tabs .brand {
   float: left;
   display: block;
   padding: 10px 20px 10px;
@@ -4122,7 +4129,7 @@ input[type="submit"].btn {
   color: #333333;
   text-shadow: 0 1px 0 white; }
   /* line 59, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar .brand:hover {
+  .navbar .brand:hover, div.tabs .brand:hover {
     text-decoration: none; }
 
 /* line 66, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -4139,21 +4146,24 @@ input[type="submit"].btn {
     color: #333333; }
 
 /* line 83, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .divider-vertical {
+.navbar .divider-vertical, div.tabs .divider-vertical {
   height: 40px;
   margin: 0 9px;
   border-left: 1px solid #f2f2f2;
   border-right: 1px solid white; }
 
 /* line 93, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn,
-.navbar .btn-group {
+.navbar .btn, div.tabs .btn,
+.navbar .btn-group,
+div.tabs .btn-group {
   margin-top: 5px; }
 
 /* line 98, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-group .btn,
+.navbar .btn-group .btn, div.tabs .btn-group .btn,
 .navbar .input-prepend .btn,
-.navbar .input-append .btn {
+div.tabs .input-prepend .btn,
+.navbar .input-append .btn,
+div.tabs .input-append .btn {
   margin-top: 0; }
 
 /* line 104, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -4218,7 +4228,7 @@ input[type="submit"].btn {
   position: static;
   margin-bottom: 0; }
   /* line 157, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar-static-top .navbar-inner {
+  .navbar-static-top .navbar-inner, .navbar-static-top div.tabs {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0; }
@@ -4233,17 +4243,19 @@ input[type="submit"].btn {
   margin-bottom: 0; }
 
 /* line 177, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-top .navbar-inner,
-.navbar-static-top .navbar-inner {
+.navbar-fixed-top .navbar-inner, .navbar-fixed-top div.tabs,
+.navbar-static-top .navbar-inner,
+.navbar-static-top div.tabs {
   border-width: 0 0 1px; }
 
 /* line 180, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-bottom .navbar-inner {
+.navbar-fixed-bottom .navbar-inner, .navbar-fixed-bottom div.tabs {
   border-width: 1px 0 0; }
 
 /* line 184, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-top .navbar-inner,
-.navbar-fixed-bottom .navbar-inner {
+.navbar-fixed-top .navbar-inner, .navbar-fixed-top div.tabs,
+.navbar-fixed-bottom .navbar-inner,
+.navbar-fixed-bottom div.tabs {
   padding-left: 0;
   padding-right: 0;
   -webkit-border-radius: 0;
@@ -4261,8 +4273,9 @@ input[type="submit"].btn {
   top: 0; }
 
 /* line 204, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-top .navbar-inner,
-.navbar-static-top .navbar-inner {
+.navbar-fixed-top .navbar-inner, .navbar-fixed-top div.tabs,
+.navbar-static-top .navbar-inner,
+.navbar-static-top div.tabs {
   -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1); }
@@ -4271,13 +4284,13 @@ input[type="submit"].btn {
 .navbar-fixed-bottom {
   bottom: 0; }
   /* line 212, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar-fixed-bottom .navbar-inner {
+  .navbar-fixed-bottom .navbar-inner, .navbar-fixed-bottom div.tabs {
     -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1); }
 
 /* line 222, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav {
+.navbar .nav, div.tabs .nav, div.tabs ul.tabs {
   position: relative;
   left: 0;
   display: block;
@@ -4285,16 +4298,16 @@ input[type="submit"].btn {
   margin: 0 10px 0 0; }
 
 /* line 229, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav.pull-right {
+.navbar .nav.pull-right, div.tabs .nav.pull-right, div.tabs ul.pull-right.tabs {
   float: right;
   margin-right: 0; }
 
 /* line 233, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li {
+.navbar .nav > li, div.tabs .nav > li, div.tabs ul.tabs > li {
   float: left; }
 
 /* line 238, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li > a {
+.navbar .nav > li > a, div.tabs .nav > li > a, div.tabs ul.tabs > li > a {
   float: none;
   padding: 10px 15px 10px;
   color: #777777;
@@ -4302,20 +4315,26 @@ input[type="submit"].btn {
   text-shadow: 0 1px 0 white; }
 
 /* line 246, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav .dropdown-toggle .caret {
+.navbar .nav .dropdown-toggle .caret, div.tabs .nav .dropdown-toggle .caret, div.tabs ul.tabs .dropdown-toggle .caret {
   margin-top: 8px; }
 
 /* line 253, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover {
+.navbar .nav > li > a:focus, div.tabs .nav > li > a:focus, div.tabs ul.tabs > li > a:focus,
+.navbar .nav > li > a:hover,
+div.tabs .nav > li > a:hover,
+div.tabs ul.tabs > li > a:hover {
   background-color: transparent;
   color: #333333;
   text-decoration: none; }
 
 /* line 262, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > .active > a,
+.navbar .nav > .active > a, div.tabs .nav > .active > a, div.tabs ul.tabs > .active > a,
 .navbar .nav > .active > a:hover,
-.navbar .nav > .active > a:focus {
+div.tabs .nav > .active > a:hover,
+div.tabs ul.tabs > .active > a:hover,
+.navbar .nav > .active > a:focus,
+div.tabs .nav > .active > a:focus,
+div.tabs ul.tabs > .active > a:focus {
   color: #555555;
   text-decoration: none;
   background-color: #e6e6e6;
@@ -4324,7 +4343,7 @@ input[type="submit"].btn {
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125); }
 
 /* line 271, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-navbar {
+.navbar .btn-navbar, div.tabs .btn-navbar {
   display: none;
   float: right;
   padding: 7px 10px;
@@ -4349,16 +4368,16 @@ input[type="submit"].btn {
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075); }
   /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .navbar .btn-navbar:hover, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
+  .navbar .btn-navbar:hover, div.tabs .btn-navbar:hover, .navbar .btn-navbar:active, div.tabs .btn-navbar:active, .navbar .btn-navbar.active, div.tabs .btn-navbar.active, .navbar .btn-navbar.disabled, div.tabs .btn-navbar.disabled, .navbar .btn-navbar[disabled], div.tabs .btn-navbar[disabled] {
     color: white;
     background-color: #e6e6e6;
     *background-color: #d9d9d9; }
   /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .navbar .btn-navbar:active, .navbar .btn-navbar.active {
+  .navbar .btn-navbar:active, div.tabs .btn-navbar:active, .navbar .btn-navbar.active, div.tabs .btn-navbar.active {
     background-color: #cccccc \9; }
 
 /* line 280, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-navbar .icon-bar {
+.navbar .btn-navbar .icon-bar, div.tabs .btn-navbar .icon-bar {
   display: block;
   width: 18px;
   height: 2px;
@@ -4375,7 +4394,7 @@ input[type="submit"].btn {
   margin-top: 3px; }
 
 /* line 299, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li > .dropdown-menu:before {
+.navbar .nav > li > .dropdown-menu:before, div.tabs .nav > li > .dropdown-menu:before, div.tabs ul.tabs > li > .dropdown-menu:before {
   content: '';
   display: inline-block;
   border-left: 7px solid transparent;
@@ -4386,7 +4405,7 @@ input[type="submit"].btn {
   top: -7px;
   left: 9px; }
 /* line 310, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li > .dropdown-menu:after {
+.navbar .nav > li > .dropdown-menu:after, div.tabs .nav > li > .dropdown-menu:after, div.tabs ul.tabs > li > .dropdown-menu:after {
   content: '';
   display: inline-block;
   border-left: 6px solid transparent;
@@ -4397,61 +4416,77 @@ input[type="submit"].btn {
   left: 10px; }
 
 /* line 323, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-bottom .nav > li > .dropdown-menu:before {
+.navbar-fixed-bottom .nav > li > .dropdown-menu:before, .navbar-fixed-bottom div.tabs ul.tabs > li > .dropdown-menu:before, div.tabs .navbar-fixed-bottom ul.tabs > li > .dropdown-menu:before {
   border-top: 7px solid #cccccc;
   border-top-color: rgba(0, 0, 0, 0.2);
   border-bottom: 0;
   bottom: -7px;
   top: auto; }
 /* line 330, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-bottom .nav > li > .dropdown-menu:after {
+.navbar-fixed-bottom .nav > li > .dropdown-menu:after, .navbar-fixed-bottom div.tabs ul.tabs > li > .dropdown-menu:after, div.tabs .navbar-fixed-bottom ul.tabs > li > .dropdown-menu:after {
   border-top: 6px solid white;
   border-bottom: 0;
   bottom: -6px;
   top: auto; }
 
 /* line 339, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav li.dropdown > a:hover .caret {
+.navbar .nav li.dropdown > a:hover .caret, div.tabs .nav li.dropdown > a:hover .caret, div.tabs ul.tabs li.dropdown > a:hover .caret {
   border-top-color: #555555;
   border-bottom-color: #555555; }
 
 /* line 347, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.open > .dropdown-toggle, div.tabs .nav li.dropdown.open > .dropdown-toggle, div.tabs ul.tabs li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+div.tabs .nav li.dropdown.active > .dropdown-toggle,
+div.tabs ul.tabs li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle,
+div.tabs .nav li.dropdown.open.active > .dropdown-toggle,
+div.tabs ul.tabs li.dropdown.open.active > .dropdown-toggle {
   background-color: #e6e6e6;
   color: #555555; }
 
 /* line 351, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav li.dropdown > .dropdown-toggle .caret {
+.navbar .nav li.dropdown > .dropdown-toggle .caret, div.tabs .nav li.dropdown > .dropdown-toggle .caret, div.tabs ul.tabs li.dropdown > .dropdown-toggle .caret {
   border-top-color: #777777;
   border-bottom-color: #777777; }
 
 /* line 357, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav li.dropdown.open > .dropdown-toggle .caret,
+.navbar .nav li.dropdown.open > .dropdown-toggle .caret, div.tabs .nav li.dropdown.open > .dropdown-toggle .caret, div.tabs ul.tabs li.dropdown.open > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
+div.tabs .nav li.dropdown.active > .dropdown-toggle .caret,
+div.tabs ul.tabs li.dropdown.active > .dropdown-toggle .caret,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle .caret,
+div.tabs .nav li.dropdown.open.active > .dropdown-toggle .caret,
+div.tabs ul.tabs li.dropdown.open.active > .dropdown-toggle .caret {
   border-top-color: #555555;
   border-bottom-color: #555555; }
 
 /* line 364, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .pull-right > li > .dropdown-menu,
-.navbar .nav > li > .dropdown-menu.pull-right {
+.navbar .pull-right > li > .dropdown-menu, div.tabs .pull-right > li > .dropdown-menu,
+.navbar .nav > li > .dropdown-menu.pull-right,
+div.tabs .nav > li > .dropdown-menu.pull-right,
+div.tabs ul.tabs > li > .dropdown-menu.pull-right {
   left: auto;
   right: 0; }
   /* line 367, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar .pull-right > li > .dropdown-menu:before,
-  .navbar .nav > li > .dropdown-menu.pull-right:before {
+  .navbar .pull-right > li > .dropdown-menu:before, div.tabs .pull-right > li > .dropdown-menu:before,
+  .navbar .nav > li > .dropdown-menu.pull-right:before,
+  div.tabs .nav > li > .dropdown-menu.pull-right:before,
+  div.tabs ul.tabs > li > .dropdown-menu.pull-right:before {
     left: auto;
     right: 12px; }
   /* line 371, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar .pull-right > li > .dropdown-menu:after,
-  .navbar .nav > li > .dropdown-menu.pull-right:after {
+  .navbar .pull-right > li > .dropdown-menu:after, div.tabs .pull-right > li > .dropdown-menu:after,
+  .navbar .nav > li > .dropdown-menu.pull-right:after,
+  div.tabs .nav > li > .dropdown-menu.pull-right:after,
+  div.tabs ul.tabs > li > .dropdown-menu.pull-right:after {
     left: auto;
     right: 13px; }
   /* line 375, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar .pull-right > li > .dropdown-menu .dropdown-menu,
-  .navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
+  .navbar .pull-right > li > .dropdown-menu .dropdown-menu, div.tabs .pull-right > li > .dropdown-menu .dropdown-menu,
+  .navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu,
+  div.tabs .nav > li > .dropdown-menu.pull-right .dropdown-menu,
+  div.tabs ul.tabs > li > .dropdown-menu.pull-right .dropdown-menu {
     left: auto;
     right: 100%;
     margin-left: 0;
@@ -4461,7 +4496,7 @@ input[type="submit"].btn {
     border-radius: 6px 0 6px 6px; }
 
 /* line 390, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .navbar-inner {
+.navbar-inverse .navbar-inner, .navbar-inverse div.tabs {
   background-color: #1b1b1b;
   background-image: -moz-linear-gradient(top, #222222, #111111);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
@@ -4473,12 +4508,16 @@ input[type="submit"].btn {
   border-color: #252525; }
 /* line 396, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar-inverse .brand,
-.navbar-inverse .nav > li > a {
+.navbar-inverse .nav > li > a,
+.navbar-inverse div.tabs ul.tabs > li > a,
+div.tabs .navbar-inverse ul.tabs > li > a {
   color: #999999;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
   /* line 399, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
   .navbar-inverse .brand:hover,
-  .navbar-inverse .nav > li > a:hover {
+  .navbar-inverse .nav > li > a:hover,
+  .navbar-inverse div.tabs ul.tabs > li > a:hover,
+  div.tabs .navbar-inverse ul.tabs > li > a:hover {
     color: white; }
 /* line 404, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar-inverse .brand {
@@ -4487,14 +4526,20 @@ input[type="submit"].btn {
 .navbar-inverse .navbar-text {
   color: #999999; }
 /* line 413, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav > li > a:focus,
-.navbar-inverse .nav > li > a:hover {
+.navbar-inverse .nav > li > a:focus, .navbar-inverse div.tabs ul.tabs > li > a:focus, div.tabs .navbar-inverse ul.tabs > li > a:focus,
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse div.tabs ul.tabs > li > a:hover,
+div.tabs .navbar-inverse ul.tabs > li > a:hover {
   background-color: transparent;
   color: white; }
 /* line 420, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav .active > a,
+.navbar-inverse .nav .active > a, .navbar-inverse div.tabs ul.tabs .active > a, div.tabs .navbar-inverse ul.tabs .active > a,
 .navbar-inverse .nav .active > a:hover,
-.navbar-inverse .nav .active > a:focus {
+.navbar-inverse div.tabs ul.tabs .active > a:hover,
+div.tabs .navbar-inverse ul.tabs .active > a:hover,
+.navbar-inverse .nav .active > a:focus,
+.navbar-inverse div.tabs ul.tabs .active > a:focus,
+div.tabs .navbar-inverse ul.tabs .active > a:focus {
   color: white;
   background-color: #111111; }
 /* line 426, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -4508,23 +4553,31 @@ input[type="submit"].btn {
   border-left-color: #111111;
   border-right-color: #222222; }
 /* line 442, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse div.tabs ul.tabs li.dropdown.open > .dropdown-toggle, div.tabs .navbar-inverse ul.tabs li.dropdown.open > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
-.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+.navbar-inverse div.tabs ul.tabs li.dropdown.active > .dropdown-toggle,
+div.tabs .navbar-inverse ul.tabs li.dropdown.active > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle,
+.navbar-inverse div.tabs ul.tabs li.dropdown.open.active > .dropdown-toggle,
+div.tabs .navbar-inverse ul.tabs li.dropdown.open.active > .dropdown-toggle {
   background-color: #111111;
   color: white; }
 /* line 446, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav li.dropdown > a:hover .caret {
+.navbar-inverse .nav li.dropdown > a:hover .caret, .navbar-inverse div.tabs ul.tabs li.dropdown > a:hover .caret, div.tabs .navbar-inverse ul.tabs li.dropdown > a:hover .caret {
   border-top-color: white;
   border-bottom-color: white; }
 /* line 450, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
+.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret, .navbar-inverse div.tabs ul.tabs li.dropdown > .dropdown-toggle .caret, div.tabs .navbar-inverse ul.tabs li.dropdown > .dropdown-toggle .caret {
   border-top-color: #999999;
   border-bottom-color: #999999; }
 /* line 456, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret, .navbar-inverse div.tabs ul.tabs li.dropdown.open > .dropdown-toggle .caret, div.tabs .navbar-inverse ul.tabs li.dropdown.open > .dropdown-toggle .caret,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle .caret,
-.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle .caret {
+.navbar-inverse div.tabs ul.tabs li.dropdown.active > .dropdown-toggle .caret,
+div.tabs .navbar-inverse ul.tabs li.dropdown.active > .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle .caret,
+.navbar-inverse div.tabs ul.tabs li.dropdown.open.active > .dropdown-toggle .caret,
+div.tabs .navbar-inverse ul.tabs li.dropdown.open.active > .dropdown-toggle .caret {
   border-top-color: white;
   border-bottom-color: white; }
 /* line 463, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -7807,7 +7860,11 @@ table th[class*="span"],
 .nav-list > .active > a > [class^="icon-"],
 .nav-list > .active > a > [class*=" icon-"],
 .navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse div.tabs ul.tabs > .active > a > [class^="icon-"],
+div.tabs .navbar-inverse ul.tabs > .active > a > [class^="icon-"],
 .navbar-inverse .nav > .active > a > [class*=" icon-"],
+.navbar-inverse div.tabs ul.tabs > .active > a > [class*=" icon-"],
+div.tabs .navbar-inverse ul.tabs > .active > a > [class*=" icon-"],
 .dropdown-menu > li > a:hover > [class^="icon-"],
 .dropdown-menu > li > a:hover > [class*=" icon-"],
 .dropdown-menu > .active > a > [class^="icon-"],
@@ -7837,19 +7894,22 @@ a [class*=" icon-"] {
 
 /* line 103, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
 .btn [class^="icon-"],
-.btn [class*=" icon-"], .nav [class^="icon-"],
-.nav [class*=" icon-"] {
+.btn [class*=" icon-"], .nav [class^="icon-"], div.tabs ul.tabs [class^="icon-"],
+.nav [class*=" icon-"],
+div.tabs ul.tabs [class*=" icon-"] {
   display: inline;
   /* keeps button heights with and without icons the same */ }
   /* line 106, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
   .btn [class^="icon-"].icon-large,
-  .btn [class*=" icon-"].icon-large, .nav [class^="icon-"].icon-large,
-  .nav [class*=" icon-"].icon-large {
+  .btn [class*=" icon-"].icon-large, .nav [class^="icon-"].icon-large, div.tabs ul.tabs [class^="icon-"].icon-large,
+  .nav [class*=" icon-"].icon-large,
+  div.tabs ul.tabs [class*=" icon-"].icon-large {
     line-height: .9em; }
   /* line 107, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
   .btn [class^="icon-"].icon-spin,
-  .btn [class*=" icon-"].icon-spin, .nav [class^="icon-"].icon-spin,
-  .nav [class*=" icon-"].icon-spin {
+  .btn [class*=" icon-"].icon-spin, .nav [class^="icon-"].icon-spin, div.tabs ul.tabs [class^="icon-"].icon-spin,
+  .nav [class*=" icon-"].icon-spin,
+  div.tabs ul.tabs [class*=" icon-"].icon-spin {
     display: inline-block; }
 
 /* line 113, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
@@ -7867,15 +7927,17 @@ a [class*=" icon-"] {
 
 /* line 121, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
 li [class^="icon-"],
-li [class*=" icon-"], .nav li [class^="icon-"],
-.nav li [class*=" icon-"] {
+li [class*=" icon-"], .nav li [class^="icon-"], div.tabs ul.tabs li [class^="icon-"],
+.nav li [class*=" icon-"],
+div.tabs ul.tabs li [class*=" icon-"] {
   display: inline-block;
   width: 1.25em;
   text-align: center; }
   /* line 125, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
   li [class^="icon-"].icon-large,
-  li [class*=" icon-"].icon-large, .nav li [class^="icon-"].icon-large,
-  .nav li [class*=" icon-"].icon-large {
+  li [class*=" icon-"].icon-large, .nav li [class^="icon-"].icon-large, div.tabs ul.tabs li [class^="icon-"].icon-large,
+  .nav li [class*=" icon-"].icon-large,
+  div.tabs ul.tabs li [class*=" icon-"].icon-large {
     /* increased font size for icon-large */
     width: 1.5625em; }
 
@@ -9488,7 +9550,7 @@ input[type="button"].btn-block {
   width: 100%; }
 
 /* line 141, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary.active,
+.btn-primary.active, #node-edit .form-actions input.active,
 .btn-warning.active,
 .btn-danger.active,
 .btn-success.active,
@@ -9502,7 +9564,7 @@ input[type="button"].btn-block {
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25); }
 
 /* line 152, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary {
+.btn-primary, #node-edit .form-actions input {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #006ecc;
@@ -9519,12 +9581,12 @@ input[type="button"].btn-block {
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
   /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+  .btn-primary:hover, #node-edit .form-actions input:hover, .btn-primary:active, #node-edit .form-actions input:active, .btn-primary.active, #node-edit .form-actions input.active, .btn-primary.disabled, #node-edit .form-actions input.disabled, .btn-primary[disabled], #node-edit .form-actions input[disabled] {
     color: white;
     background-color: #0044cc;
     *background-color: #003bb3; }
   /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .btn-primary:active, .btn-primary.active {
+  .btn-primary:active, #node-edit .form-actions input:active, .btn-primary.active, #node-edit .form-actions input.active {
     background-color: #003399 \9; }
 
 /* line 156, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
@@ -9862,7 +9924,7 @@ input[type="submit"].btn {
 .btn-group.open .btn.dropdown-toggle {
   background-color: #e6e6e6; }
 /* line 140, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn-primary.dropdown-toggle {
+.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
   background-color: #0044cc; }
 /* line 143, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
 .btn-group.open .btn-warning.dropdown-toggle {
@@ -9902,7 +9964,7 @@ input[type="submit"].btn {
   border-bottom-width: 5px; }
 
 /* line 191, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-primary .caret,
+.btn-primary .caret, #node-edit .form-actions input .caret,
 .btn-warning .caret,
 .btn-danger .caret,
 .btn-info .caret,
@@ -10029,26 +10091,26 @@ input[type="submit"].btn {
   margin-top: 5px; }
 
 /* line 9, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav {
+.nav, div.tabs ul.tabs {
   margin-left: 0;
   margin-bottom: 20px;
   list-style: none; }
 
 /* line 16, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > li > a {
+.nav > li > a, div.tabs ul.tabs > li > a {
   display: block; }
 
 /* line 19, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > li > a:hover {
+.nav > li > a:hover, div.tabs ul.tabs > li > a:hover {
   text-decoration: none;
   background-color: #eeeeee; }
 
 /* line 26, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > li > a > img {
+.nav > li > a > img, div.tabs ul.tabs > li > a > img {
   max-width: none; }
 
 /* line 31, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > .pull-right {
+.nav > .pull-right, div.tabs ul.tabs > .pull-right {
   float: right; }
 
 /* line 36, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
@@ -10063,7 +10125,7 @@ input[type="submit"].btn {
   text-transform: uppercase; }
 
 /* line 47, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav li + .nav-header {
+.nav li + .nav-header, div.tabs ul.tabs li + .nav-header {
   margin-top: 9px; }
 
 /* line 56, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
@@ -10243,13 +10305,13 @@ input[type="submit"].btn {
   border-radius: 6px; }
 
 /* line 214, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav .dropdown-toggle .caret {
+.nav .dropdown-toggle .caret, div.tabs ul.tabs .dropdown-toggle .caret {
   border-top-color: #0088cc;
   border-bottom-color: #0088cc;
   margin-top: 6px; }
 
 /* line 219, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav .dropdown-toggle:hover .caret {
+.nav .dropdown-toggle:hover .caret, div.tabs ul.tabs .dropdown-toggle:hover .caret {
   border-top-color: #005580;
   border-bottom-color: #005580; }
 
@@ -10259,7 +10321,7 @@ input[type="submit"].btn {
   margin-top: 8px; }
 
 /* line 230, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav .active .dropdown-toggle .caret {
+.nav .active .dropdown-toggle .caret, div.tabs ul.tabs .active .dropdown-toggle .caret {
   border-top-color: #fff;
   border-bottom-color: #fff; }
 
@@ -10269,21 +10331,24 @@ input[type="submit"].btn {
   border-bottom-color: #555555; }
 
 /* line 241, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > .dropdown.active > a:hover {
+.nav > .dropdown.active > a:hover, div.tabs ul.tabs > .dropdown.active > a:hover {
   cursor: pointer; }
 
 /* line 249, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
 .nav-tabs .open .dropdown-toggle,
 .nav-pills .open .dropdown-toggle,
-.nav > li.dropdown.open.active > a:hover {
+.nav > li.dropdown.open.active > a:hover,
+div.tabs ul.tabs > li.dropdown.open.active > a:hover {
   color: white;
   background-color: #999999;
   border-color: #999999; }
 
 /* line 256, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav li.dropdown.open .caret,
+.nav li.dropdown.open .caret, div.tabs ul.tabs li.dropdown.open .caret,
 .nav li.dropdown.open.active .caret,
-.nav li.dropdown.open a:hover .caret {
+div.tabs ul.tabs li.dropdown.open.active .caret,
+.nav li.dropdown.open a:hover .caret,
+div.tabs ul.tabs li.dropdown.open a:hover .caret {
   border-top-color: white;
   border-bottom-color: white;
   opacity: 0.01;
@@ -10408,24 +10473,24 @@ input[type="submit"].btn {
   *border-left-color: white; }
 
 /* line 383, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > .disabled > a {
+.nav > .disabled > a, div.tabs ul.tabs > .disabled > a {
   color: #999999; }
 
 /* line 387, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navs.scss */
-.nav > .disabled > a:hover {
+.nav > .disabled > a:hover, div.tabs ul.tabs > .disabled > a:hover {
   text-decoration: none;
   background-color: transparent;
   cursor: default; }
 
 /* line 10, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar {
+.navbar, div.tabs {
   overflow: visible;
   margin-bottom: 20px;
   *position: relative;
   *z-index: 2; }
 
 /* line 21, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inner {
+.navbar-inner, div.tabs {
   min-height: 40px;
   padding-left: 20px;
   padding-right: 20px;
@@ -10446,16 +10511,16 @@ input[type="submit"].btn {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   *zoom: 1; }
   /* line 15, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .navbar-inner:before, .navbar-inner:after {
+  .navbar-inner:before, div.tabs:before, .navbar-inner:after, div.tabs:after {
     display: table;
     content: "";
     line-height: 0; }
   /* line 22, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .navbar-inner:after {
+  .navbar-inner:after, div.tabs:after {
     clear: both; }
 
 /* line 36, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .container {
+.navbar .container, div.tabs .container {
   width: auto; }
 
 /* line 41, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -10464,7 +10529,7 @@ input[type="submit"].btn {
   overflow: visible; }
 
 /* line 49, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .brand {
+.navbar .brand, div.tabs .brand {
   float: left;
   display: block;
   padding: 10px 20px 10px;
@@ -10474,7 +10539,7 @@ input[type="submit"].btn {
   color: #333333;
   text-shadow: 0 1px 0 white; }
   /* line 59, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar .brand:hover {
+  .navbar .brand:hover, div.tabs .brand:hover {
     text-decoration: none; }
 
 /* line 66, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -10491,21 +10556,24 @@ input[type="submit"].btn {
     color: #333333; }
 
 /* line 83, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .divider-vertical {
+.navbar .divider-vertical, div.tabs .divider-vertical {
   height: 40px;
   margin: 0 9px;
   border-left: 1px solid #f2f2f2;
   border-right: 1px solid white; }
 
 /* line 93, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn,
-.navbar .btn-group {
+.navbar .btn, div.tabs .btn,
+.navbar .btn-group,
+div.tabs .btn-group {
   margin-top: 5px; }
 
 /* line 98, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-group .btn,
+.navbar .btn-group .btn, div.tabs .btn-group .btn,
 .navbar .input-prepend .btn,
-.navbar .input-append .btn {
+div.tabs .input-prepend .btn,
+.navbar .input-append .btn,
+div.tabs .input-append .btn {
   margin-top: 0; }
 
 /* line 104, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -10570,7 +10638,7 @@ input[type="submit"].btn {
   position: static;
   margin-bottom: 0; }
   /* line 157, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar-static-top .navbar-inner {
+  .navbar-static-top .navbar-inner, .navbar-static-top div.tabs {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0; }
@@ -10585,17 +10653,19 @@ input[type="submit"].btn {
   margin-bottom: 0; }
 
 /* line 177, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-top .navbar-inner,
-.navbar-static-top .navbar-inner {
+.navbar-fixed-top .navbar-inner, .navbar-fixed-top div.tabs,
+.navbar-static-top .navbar-inner,
+.navbar-static-top div.tabs {
   border-width: 0 0 1px; }
 
 /* line 180, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-bottom .navbar-inner {
+.navbar-fixed-bottom .navbar-inner, .navbar-fixed-bottom div.tabs {
   border-width: 1px 0 0; }
 
 /* line 184, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-top .navbar-inner,
-.navbar-fixed-bottom .navbar-inner {
+.navbar-fixed-top .navbar-inner, .navbar-fixed-top div.tabs,
+.navbar-fixed-bottom .navbar-inner,
+.navbar-fixed-bottom div.tabs {
   padding-left: 0;
   padding-right: 0;
   -webkit-border-radius: 0;
@@ -10613,8 +10683,9 @@ input[type="submit"].btn {
   top: 0; }
 
 /* line 204, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-top .navbar-inner,
-.navbar-static-top .navbar-inner {
+.navbar-fixed-top .navbar-inner, .navbar-fixed-top div.tabs,
+.navbar-static-top .navbar-inner,
+.navbar-static-top div.tabs {
   -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1); }
@@ -10623,13 +10694,13 @@ input[type="submit"].btn {
 .navbar-fixed-bottom {
   bottom: 0; }
   /* line 212, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar-fixed-bottom .navbar-inner {
+  .navbar-fixed-bottom .navbar-inner, .navbar-fixed-bottom div.tabs {
     -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1); }
 
 /* line 222, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav {
+.navbar .nav, div.tabs .nav, div.tabs ul.tabs {
   position: relative;
   left: 0;
   display: block;
@@ -10637,16 +10708,16 @@ input[type="submit"].btn {
   margin: 0 10px 0 0; }
 
 /* line 229, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav.pull-right {
+.navbar .nav.pull-right, div.tabs .nav.pull-right, div.tabs ul.pull-right.tabs {
   float: right;
   margin-right: 0; }
 
 /* line 233, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li {
+.navbar .nav > li, div.tabs .nav > li, div.tabs ul.tabs > li {
   float: left; }
 
 /* line 238, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li > a {
+.navbar .nav > li > a, div.tabs .nav > li > a, div.tabs ul.tabs > li > a {
   float: none;
   padding: 10px 15px 10px;
   color: #777777;
@@ -10654,20 +10725,26 @@ input[type="submit"].btn {
   text-shadow: 0 1px 0 white; }
 
 /* line 246, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav .dropdown-toggle .caret {
+.navbar .nav .dropdown-toggle .caret, div.tabs .nav .dropdown-toggle .caret, div.tabs ul.tabs .dropdown-toggle .caret {
   margin-top: 8px; }
 
 /* line 253, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover {
+.navbar .nav > li > a:focus, div.tabs .nav > li > a:focus, div.tabs ul.tabs > li > a:focus,
+.navbar .nav > li > a:hover,
+div.tabs .nav > li > a:hover,
+div.tabs ul.tabs > li > a:hover {
   background-color: transparent;
   color: #333333;
   text-decoration: none; }
 
 /* line 262, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > .active > a,
+.navbar .nav > .active > a, div.tabs .nav > .active > a, div.tabs ul.tabs > .active > a,
 .navbar .nav > .active > a:hover,
-.navbar .nav > .active > a:focus {
+div.tabs .nav > .active > a:hover,
+div.tabs ul.tabs > .active > a:hover,
+.navbar .nav > .active > a:focus,
+div.tabs .nav > .active > a:focus,
+div.tabs ul.tabs > .active > a:focus {
   color: #555555;
   text-decoration: none;
   background-color: #e6e6e6;
@@ -10676,7 +10753,7 @@ input[type="submit"].btn {
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125); }
 
 /* line 271, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-navbar {
+.navbar .btn-navbar, div.tabs .btn-navbar {
   display: none;
   float: right;
   padding: 7px 10px;
@@ -10701,16 +10778,16 @@ input[type="submit"].btn {
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075); }
   /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .navbar .btn-navbar:hover, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
+  .navbar .btn-navbar:hover, div.tabs .btn-navbar:hover, .navbar .btn-navbar:active, div.tabs .btn-navbar:active, .navbar .btn-navbar.active, div.tabs .btn-navbar.active, .navbar .btn-navbar.disabled, div.tabs .btn-navbar.disabled, .navbar .btn-navbar[disabled], div.tabs .btn-navbar[disabled] {
     color: white;
     background-color: #e6e6e6;
     *background-color: #d9d9d9; }
   /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-  .navbar .btn-navbar:active, .navbar .btn-navbar.active {
+  .navbar .btn-navbar:active, div.tabs .btn-navbar:active, .navbar .btn-navbar.active, div.tabs .btn-navbar.active {
     background-color: #cccccc \9; }
 
 /* line 280, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-navbar .icon-bar {
+.navbar .btn-navbar .icon-bar, div.tabs .btn-navbar .icon-bar {
   display: block;
   width: 18px;
   height: 2px;
@@ -10727,7 +10804,7 @@ input[type="submit"].btn {
   margin-top: 3px; }
 
 /* line 299, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li > .dropdown-menu:before {
+.navbar .nav > li > .dropdown-menu:before, div.tabs .nav > li > .dropdown-menu:before, div.tabs ul.tabs > li > .dropdown-menu:before {
   content: '';
   display: inline-block;
   border-left: 7px solid transparent;
@@ -10738,7 +10815,7 @@ input[type="submit"].btn {
   top: -7px;
   left: 9px; }
 /* line 310, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav > li > .dropdown-menu:after {
+.navbar .nav > li > .dropdown-menu:after, div.tabs .nav > li > .dropdown-menu:after, div.tabs ul.tabs > li > .dropdown-menu:after {
   content: '';
   display: inline-block;
   border-left: 6px solid transparent;
@@ -10749,61 +10826,77 @@ input[type="submit"].btn {
   left: 10px; }
 
 /* line 323, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-bottom .nav > li > .dropdown-menu:before {
+.navbar-fixed-bottom .nav > li > .dropdown-menu:before, .navbar-fixed-bottom div.tabs ul.tabs > li > .dropdown-menu:before, div.tabs .navbar-fixed-bottom ul.tabs > li > .dropdown-menu:before {
   border-top: 7px solid #cccccc;
   border-top-color: rgba(0, 0, 0, 0.2);
   border-bottom: 0;
   bottom: -7px;
   top: auto; }
 /* line 330, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-fixed-bottom .nav > li > .dropdown-menu:after {
+.navbar-fixed-bottom .nav > li > .dropdown-menu:after, .navbar-fixed-bottom div.tabs ul.tabs > li > .dropdown-menu:after, div.tabs .navbar-fixed-bottom ul.tabs > li > .dropdown-menu:after {
   border-top: 6px solid white;
   border-bottom: 0;
   bottom: -6px;
   top: auto; }
 
 /* line 339, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav li.dropdown > a:hover .caret {
+.navbar .nav li.dropdown > a:hover .caret, div.tabs .nav li.dropdown > a:hover .caret, div.tabs ul.tabs li.dropdown > a:hover .caret {
   border-top-color: #555555;
   border-bottom-color: #555555; }
 
 /* line 347, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.open > .dropdown-toggle, div.tabs .nav li.dropdown.open > .dropdown-toggle, div.tabs ul.tabs li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+div.tabs .nav li.dropdown.active > .dropdown-toggle,
+div.tabs ul.tabs li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle,
+div.tabs .nav li.dropdown.open.active > .dropdown-toggle,
+div.tabs ul.tabs li.dropdown.open.active > .dropdown-toggle {
   background-color: #e6e6e6;
   color: #555555; }
 
 /* line 351, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav li.dropdown > .dropdown-toggle .caret {
+.navbar .nav li.dropdown > .dropdown-toggle .caret, div.tabs .nav li.dropdown > .dropdown-toggle .caret, div.tabs ul.tabs li.dropdown > .dropdown-toggle .caret {
   border-top-color: #777777;
   border-bottom-color: #777777; }
 
 /* line 357, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .nav li.dropdown.open > .dropdown-toggle .caret,
+.navbar .nav li.dropdown.open > .dropdown-toggle .caret, div.tabs .nav li.dropdown.open > .dropdown-toggle .caret, div.tabs ul.tabs li.dropdown.open > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
+div.tabs .nav li.dropdown.active > .dropdown-toggle .caret,
+div.tabs ul.tabs li.dropdown.active > .dropdown-toggle .caret,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle .caret,
+div.tabs .nav li.dropdown.open.active > .dropdown-toggle .caret,
+div.tabs ul.tabs li.dropdown.open.active > .dropdown-toggle .caret {
   border-top-color: #555555;
   border-bottom-color: #555555; }
 
 /* line 364, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .pull-right > li > .dropdown-menu,
-.navbar .nav > li > .dropdown-menu.pull-right {
+.navbar .pull-right > li > .dropdown-menu, div.tabs .pull-right > li > .dropdown-menu,
+.navbar .nav > li > .dropdown-menu.pull-right,
+div.tabs .nav > li > .dropdown-menu.pull-right,
+div.tabs ul.tabs > li > .dropdown-menu.pull-right {
   left: auto;
   right: 0; }
   /* line 367, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar .pull-right > li > .dropdown-menu:before,
-  .navbar .nav > li > .dropdown-menu.pull-right:before {
+  .navbar .pull-right > li > .dropdown-menu:before, div.tabs .pull-right > li > .dropdown-menu:before,
+  .navbar .nav > li > .dropdown-menu.pull-right:before,
+  div.tabs .nav > li > .dropdown-menu.pull-right:before,
+  div.tabs ul.tabs > li > .dropdown-menu.pull-right:before {
     left: auto;
     right: 12px; }
   /* line 371, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar .pull-right > li > .dropdown-menu:after,
-  .navbar .nav > li > .dropdown-menu.pull-right:after {
+  .navbar .pull-right > li > .dropdown-menu:after, div.tabs .pull-right > li > .dropdown-menu:after,
+  .navbar .nav > li > .dropdown-menu.pull-right:after,
+  div.tabs .nav > li > .dropdown-menu.pull-right:after,
+  div.tabs ul.tabs > li > .dropdown-menu.pull-right:after {
     left: auto;
     right: 13px; }
   /* line 375, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-  .navbar .pull-right > li > .dropdown-menu .dropdown-menu,
-  .navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
+  .navbar .pull-right > li > .dropdown-menu .dropdown-menu, div.tabs .pull-right > li > .dropdown-menu .dropdown-menu,
+  .navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu,
+  div.tabs .nav > li > .dropdown-menu.pull-right .dropdown-menu,
+  div.tabs ul.tabs > li > .dropdown-menu.pull-right .dropdown-menu {
     left: auto;
     right: 100%;
     margin-left: 0;
@@ -10813,7 +10906,7 @@ input[type="submit"].btn {
     border-radius: 6px 0 6px 6px; }
 
 /* line 390, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .navbar-inner {
+.navbar-inverse .navbar-inner, .navbar-inverse div.tabs {
   background-color: #1b1b1b;
   background-image: -moz-linear-gradient(top, #222222, #111111);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
@@ -10825,12 +10918,16 @@ input[type="submit"].btn {
   border-color: #252525; }
 /* line 396, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar-inverse .brand,
-.navbar-inverse .nav > li > a {
+.navbar-inverse .nav > li > a,
+.navbar-inverse div.tabs ul.tabs > li > a,
+div.tabs .navbar-inverse ul.tabs > li > a {
   color: #999999;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
   /* line 399, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
   .navbar-inverse .brand:hover,
-  .navbar-inverse .nav > li > a:hover {
+  .navbar-inverse .nav > li > a:hover,
+  .navbar-inverse div.tabs ul.tabs > li > a:hover,
+  div.tabs .navbar-inverse ul.tabs > li > a:hover {
     color: white; }
 /* line 404, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar-inverse .brand {
@@ -10839,14 +10936,20 @@ input[type="submit"].btn {
 .navbar-inverse .navbar-text {
   color: #999999; }
 /* line 413, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav > li > a:focus,
-.navbar-inverse .nav > li > a:hover {
+.navbar-inverse .nav > li > a:focus, .navbar-inverse div.tabs ul.tabs > li > a:focus, div.tabs .navbar-inverse ul.tabs > li > a:focus,
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse div.tabs ul.tabs > li > a:hover,
+div.tabs .navbar-inverse ul.tabs > li > a:hover {
   background-color: transparent;
   color: white; }
 /* line 420, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav .active > a,
+.navbar-inverse .nav .active > a, .navbar-inverse div.tabs ul.tabs .active > a, div.tabs .navbar-inverse ul.tabs .active > a,
 .navbar-inverse .nav .active > a:hover,
-.navbar-inverse .nav .active > a:focus {
+.navbar-inverse div.tabs ul.tabs .active > a:hover,
+div.tabs .navbar-inverse ul.tabs .active > a:hover,
+.navbar-inverse .nav .active > a:focus,
+.navbar-inverse div.tabs ul.tabs .active > a:focus,
+div.tabs .navbar-inverse ul.tabs .active > a:focus {
   color: white;
   background-color: #111111; }
 /* line 426, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -10860,23 +10963,31 @@ input[type="submit"].btn {
   border-left-color: #111111;
   border-right-color: #222222; }
 /* line 442, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse div.tabs ul.tabs li.dropdown.open > .dropdown-toggle, div.tabs .navbar-inverse ul.tabs li.dropdown.open > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
-.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+.navbar-inverse div.tabs ul.tabs li.dropdown.active > .dropdown-toggle,
+div.tabs .navbar-inverse ul.tabs li.dropdown.active > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle,
+.navbar-inverse div.tabs ul.tabs li.dropdown.open.active > .dropdown-toggle,
+div.tabs .navbar-inverse ul.tabs li.dropdown.open.active > .dropdown-toggle {
   background-color: #111111;
   color: white; }
 /* line 446, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav li.dropdown > a:hover .caret {
+.navbar-inverse .nav li.dropdown > a:hover .caret, .navbar-inverse div.tabs ul.tabs li.dropdown > a:hover .caret, div.tabs .navbar-inverse ul.tabs li.dropdown > a:hover .caret {
   border-top-color: white;
   border-bottom-color: white; }
 /* line 450, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
+.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret, .navbar-inverse div.tabs ul.tabs li.dropdown > .dropdown-toggle .caret, div.tabs .navbar-inverse ul.tabs li.dropdown > .dropdown-toggle .caret {
   border-top-color: #999999;
   border-bottom-color: #999999; }
 /* line 456, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret, .navbar-inverse div.tabs ul.tabs li.dropdown.open > .dropdown-toggle .caret, div.tabs .navbar-inverse ul.tabs li.dropdown.open > .dropdown-toggle .caret,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle .caret,
-.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle .caret {
+.navbar-inverse div.tabs ul.tabs li.dropdown.active > .dropdown-toggle .caret,
+div.tabs .navbar-inverse ul.tabs li.dropdown.active > .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle .caret,
+.navbar-inverse div.tabs ul.tabs li.dropdown.open.active > .dropdown-toggle .caret,
+div.tabs .navbar-inverse ul.tabs li.dropdown.open.active > .dropdown-toggle .caret {
   border-top-color: white;
   border-bottom-color: white; }
 /* line 463, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
@@ -12439,10 +12550,10 @@ ul.links.inline {
   margin: 0; }
 
 /* line 8, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_menu.scss */
-.navbar .btn-navbar-search {
+.navbar .btn-navbar-search, div.tabs .btn-navbar-search {
   padding: 4px 11px 3px; }
   /* line 10, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_menu.scss */
-  .navbar .btn-navbar-search span {
+  .navbar .btn-navbar-search span, div.tabs .btn-navbar-search span {
     line-height: 1.1em; }
 
 /* line 19, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_menu.scss */
@@ -13057,10 +13168,10 @@ html.js input.throbbing {
       margin-left: 0; }
 
 /* line 134, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
-.navbar .search-form .container-inline {
+.navbar .search-form .container-inline, div.tabs .search-form .container-inline {
   padding-top: 0; }
 /* line 138, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
-.navbar .search-form input.form-submit {
+.navbar .search-form input.form-submit, div.tabs .search-form input.form-submit {
   display: none; }
 
 /* line 147, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
@@ -14173,17 +14284,18 @@ html.js input.throbbing {
     margin-top: 20px; }
 
   /* line 28, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .navbar-fixed-top .navbar-inner,
-  .navbar-fixed-bottom .navbar-inner {
+  .navbar-fixed-top .navbar-inner, .navbar-fixed-top div.tabs,
+  .navbar-fixed-bottom .navbar-inner,
+  .navbar-fixed-bottom div.tabs {
     padding: 5px; }
 
   /* line 31, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .navbar .container {
+  .navbar .container, div.tabs .container {
     width: auto;
     padding: 0; }
 
   /* line 36, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .navbar .brand {
+  .navbar .brand, div.tabs .brand {
     padding-left: 10px;
     padding-right: 10px;
     margin: 0 0 0 -5px; }
@@ -14193,29 +14305,29 @@ html.js input.throbbing {
     clear: both; }
 
   /* line 49, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav {
+  .nav-collapse .nav, .nav-collapse div.tabs ul.tabs, div.tabs .nav-collapse ul.tabs {
     float: none;
     margin: 0 0 10px; }
 
   /* line 53, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li {
+  .nav-collapse .nav > li, .nav-collapse div.tabs ul.tabs > li, div.tabs .nav-collapse ul.tabs > li {
     float: none; }
 
   /* line 56, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li > a {
+  .nav-collapse .nav > li > a, .nav-collapse div.tabs ul.tabs > li > a, div.tabs .nav-collapse ul.tabs > li > a {
     margin-bottom: 2px; }
 
   /* line 59, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > .divider-vertical {
+  .nav-collapse .nav > .divider-vertical, .nav-collapse div.tabs ul.tabs > .divider-vertical, div.tabs .nav-collapse ul.tabs > .divider-vertical {
     display: none; }
 
   /* line 62, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav .nav-header {
+  .nav-collapse .nav .nav-header, .nav-collapse div.tabs ul.tabs .nav-header, div.tabs .nav-collapse ul.tabs .nav-header {
     color: #777777;
     text-shadow: none; }
 
   /* line 68, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li > a,
+  .nav-collapse .nav > li > a, .nav-collapse div.tabs ul.tabs > li > a, div.tabs .nav-collapse ul.tabs > li > a,
   .nav-collapse .dropdown-menu a {
     padding: 9px 15px;
     font-weight: bold;
@@ -14237,17 +14349,17 @@ html.js input.throbbing {
     margin-bottom: 2px; }
 
   /* line 84, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li > a:hover,
+  .nav-collapse .nav > li > a:hover, .nav-collapse div.tabs ul.tabs > li > a:hover, div.tabs .nav-collapse ul.tabs > li > a:hover,
   .nav-collapse .dropdown-menu a:hover {
     background-color: #f2f2f2; }
 
   /* line 88, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .navbar-inverse .nav-collapse .nav > li > a,
+  .navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse div.tabs ul.tabs > li > a, div.tabs .navbar-inverse .nav-collapse ul.tabs > li > a,
   .navbar-inverse .nav-collapse .dropdown-menu a {
     color: #999999; }
 
   /* line 92, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .navbar-inverse .nav-collapse .nav > li > a:hover,
+  .navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse div.tabs ul.tabs > li > a:hover, div.tabs .navbar-inverse .nav-collapse ul.tabs > li > a:hover,
   .navbar-inverse .nav-collapse .dropdown-menu a:hover {
     background-color: #111111; }
 
@@ -14289,7 +14401,7 @@ html.js input.throbbing {
     display: none; }
 
   /* line 128, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li > .dropdown-menu:before, .nav-collapse .nav > li > .dropdown-menu:after {
+  .nav-collapse .nav > li > .dropdown-menu:before, .nav-collapse div.tabs ul.tabs > li > .dropdown-menu:before, div.tabs .nav-collapse ul.tabs > li > .dropdown-menu:before, .nav-collapse .nav > li > .dropdown-menu:after, .nav-collapse div.tabs ul.tabs > li > .dropdown-menu:after, div.tabs .nav-collapse ul.tabs > li > .dropdown-menu:after {
     display: none; }
 
   /* line 134, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
@@ -14311,7 +14423,7 @@ html.js input.throbbing {
     border-bottom-color: #111111; }
 
   /* line 148, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .navbar .nav-collapse .nav.pull-right {
+  .navbar .nav-collapse .nav.pull-right, div.tabs .nav-collapse .nav.pull-right, .navbar .nav-collapse div.tabs ul.pull-right.tabs, div.tabs .nav-collapse ul.pull-right.tabs {
     float: none;
     margin-left: 0; }
 
@@ -14322,11 +14434,11 @@ html.js input.throbbing {
     height: 0; }
 
   /* line 159, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .navbar .btn-navbar {
+  .navbar .btn-navbar, div.tabs .btn-navbar {
     display: block; }
 
   /* line 165, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .navbar-static .navbar-inner {
+  .navbar-static .navbar-inner, .navbar-static div.tabs {
     padding-left: 10px;
     padding-right: 10px; } }
 @media (min-width: 980px) {
@@ -14427,7 +14539,7 @@ html.js input.throbbing {
     margin-top: -5px; } }
 @media (max-width: 979px) {
   /* line 58, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_responsive_form.scss */
-  .navbar .search-form {
+  .navbar .search-form, div.tabs .search-form {
     border: 0 !important;
     padding: 5px 0 10px;
     margin: 0;
@@ -14435,17 +14547,17 @@ html.js input.throbbing {
     -moz-box-shadow: none;
     box-shadow: none; }
     /* line 63, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_responsive_form.scss */
-    .navbar .search-form .container-inline {
+    .navbar .search-form .container-inline, div.tabs .search-form .container-inline {
       padding-top: 0;
       margin: 0;
       display: block;
       width: 100%; }
       /* line 68, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_responsive_form.scss */
-      .navbar .search-form .container-inline .form-item {
+      .navbar .search-form .container-inline .form-item, div.tabs .search-form .container-inline .form-item {
         width: 100%;
         display: block; }
     /* line 73, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_responsive_form.scss */
-    .navbar .search-form input {
+    .navbar .search-form input, div.tabs .search-form input {
       margin: 0 auto;
       display: block;
       width: 85%; } }
@@ -14507,9 +14619,8 @@ html.js input.throbbing {
     /* line 91, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_responsive_navbar.scss */
     .menu-tray-open .navbar-bar a.toggle-tray {
       display: block !important; } }
-/* line 6, ../sass/_layout.scss */
-.navbar-inner,
-.footer-inner {
+/* line 5, ../sass/_layout.scss */
+.navbar-inner, div.tabs {
   padding-left: 20px;
   padding-right: 20px;
   border: 1px solid #d4d4d4;
@@ -14530,61 +14641,137 @@ html.js input.throbbing {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   display: block; }
 
-/* line 17, ../sass/_layout.scss */
+/* line 16, ../sass/_layout.scss */
+.label {
+  font-weight: normal; }
+  /* line 18, ../sass/_layout.scss */
+  .label a {
+    font-weight: normal; }
+
+/* line 23, ../sass/_layout.scss */
+.well h3.pane-title {
+  font-size: 20px;
+  line-height: 32px;
+  color: #333; }
+
+/* line 29, ../sass/_layout.scss */
+.well .panel-separator {
+  margin: 1em -19px;
+  border-top: 1px solid #e3e3e3; }
+
+/* line 35, ../sass/_layout.scss */
+.content .bryant-flipped-sidebar-inner,
+.content .burr-flipped-sidebar-inner {
+  padding-top: 0; }
+
+/* line 39, ../sass/_layout.scss */
+.view-oa-recent-activity .view-content h3 {
+  font-size: 20px;
+  line-height: 32px;
+  color: #333; }
+
+/* line 45, ../sass/_layout.scss */
 #logo img {
   vertical-align: middle; }
 
-/* line 20, ../sass/_layout.scss */
+/* line 48, ../sass/_layout.scss */
 #site-name {
   display: inline-block;
   padding: 10px 0.5em;
   margin: 0; }
 
-/* line 25, ../sass/_layout.scss */
+/* line 53, ../sass/_layout.scss */
 #oa_toolbar {
   padding-top: 5px; }
 
-/* line 29, ../sass/_layout.scss */
+/* line 57, ../sass/_layout.scss */
 #main-wrapper {
   min-height: 360px; }
 
-/* line 32, ../sass/_layout.scss */
+/* line 61, ../sass/_layout.scss */
+.oa-bottom-right {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  text-align: right; }
+
+/* line 68, ../sass/_layout.scss */
+#footer {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #CCC;
+  background-color: #555;
+  border-top: 1px solid #e5e5e5; }
+
+/* line 76, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #FAFAFA;
   padding: 0;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  position: relative; }
 
-/* line 37, ../sass/_layout.scss */
+/* line 82, ../sass/_layout.scss */
+.oa-list-metadata {
+  float: right;
+  text-align: right; }
+
+/* line 86, ../sass/_layout.scss */
 .oa-list-header {
   padding: 3px 5px 0 5px; }
 
-/* line 40, ../sass/_layout.scss */
+/* line 89, ../sass/_layout.scss */
 .oa-list .accordion {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  position: relative; }
+  /* line 92, ../sass/_layout.scss */
+  .oa-list .accordion h5 {
+    padding: 0 5px;
+    margin: 0; }
 
-/* line 43, ../sass/_layout.scss */
+/* line 97, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px; }
-  /* line 45, ../sass/_layout.scss */
+  /* line 99, ../sass/_layout.scss */
   .oa-list .accordion-heading .accordion-toggle:hover {
     background-color: #E0EEFF; }
 
-/* line 49, ../sass/_layout.scss */
+/* line 103, ../sass/_layout.scss */
+.oa-list .accordion-heading .accordion-toggle.toggle-left {
+  position: absolute;
+  width: 11px;
+  font-size: 18px;
+  padding: 3px 5px;
+  top: -1px;
+  left: -21px;
+  border: 1px solid #e3e3e3;
+  background-color: #fafafa;
+  border-right: 0;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px; }
+  /* line 115, ../sass/_layout.scss */
+  .oa-list .accordion-heading .accordion-toggle.toggle-left:hover {
+    background-color: #E0EEFF; }
+
+/* line 120, ../sass/_layout.scss */
 .oa-list .label {
   color: white; }
-  /* line 51, ../sass/_layout.scss */
+  /* line 122, ../sass/_layout.scss */
   .oa-list .label a {
     color: white; }
 
-/* line 55, ../sass/_layout.scss */
+/* line 126, ../sass/_layout.scss */
 .oa-list-category {
   text-align: right; }
 
-/* line 58, ../sass/_layout.scss */
+/* line 129, ../sass/_layout.scss */
 .oa-list .links {
   float: right;
   margin-right: 5px; }
-  /* line 61, ../sass/_layout.scss */
+  /* line 132, ../sass/_layout.scss */
   .oa-list .links a {
     padding: 0 5px;
     color: #777;
@@ -14663,13 +14850,13 @@ html.js input.throbbing {
   display: block; }
 
 /* line 5, ../sass/_navbar.scss */
-.navbar .navbar-inner {
+.navbar .navbar-inner, div.tabs .navbar-inner, .navbar div.tabs, div.tabs div.tabs {
   padding: 5px 10px;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0; }
 /* line 11, ../sass/_navbar.scss */
-.navbar .brand {
+.navbar .brand, div.tabs .brand {
   margin-left: 0;
   padding-left: 5px;
   font-weight: bold;
@@ -14680,43 +14867,73 @@ html.js input.throbbing {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear; }
 /* line 19, ../sass/_navbar.scss */
-.navbar .icon-home {
+.navbar .icon-home, div.tabs .icon-home {
   color: white; }
 /* line 22, ../sass/_navbar.scss */
-.navbar .search-form {
+.navbar .search-form, div.tabs .search-form {
   padding-top: 10px;
   margin: 0 20px; }
   /* line 25, ../sass/_navbar.scss */
-  .navbar .search-form input {
+  .navbar .search-form input, div.tabs .search-form input {
     width: 170px; }
 
-/* line 31, ../sass/_navbar.scss */
+/* line 32, ../sass/_navbar.scss */
+#navbar div#panels-ipe-control-container {
+  background-color: transparent;
+  position: fixed;
+  top: 52px;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  z-index: 999;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+  /* line 41, ../sass/_navbar.scss */
+  #navbar div#panels-ipe-control-container a {
+    font-weight: normal; }
+
+/* line 46, ../sass/_navbar.scss */
+body.panels-ipe {
+  margin-bottom: 0px !important; }
+
+/* line 53, ../sass/_navbar.scss */
+div.tabs ul.tabs {
+  border-bottom: 0; }
+/* line 57, ../sass/_navbar.scss */
+div.tabs li.active a {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border-bottom: 0; }
+
+/* line 63, ../sass/_navbar.scss */
 .oa-dropdown {
   display: inline-block;
   margin: 0 0.25em 0 0.25em;
   vertical-align: middle; }
-  /* line 35, ../sass/_navbar.scss */
+  /* line 67, ../sass/_navbar.scss */
   .oa-dropdown ul {
     margin: 0.5em 0; }
-    /* line 37, ../sass/_navbar.scss */
+    /* line 69, ../sass/_navbar.scss */
     .oa-dropdown ul li {
       margin: 0; }
 
-/* line 43, ../sass/_navbar.scss */
+/* line 75, ../sass/_navbar.scss */
 .sutro-double-container {
   margin-bottom: 0; }
 
-/* line 47, ../sass/_navbar.scss */
+/* line 79, ../sass/_navbar.scss */
 .footer .menu li {
   list-style-type: none;
   list-style-image: none;
   float: left; }
-  /* line 51, ../sass/_navbar.scss */
+  /* line 83, ../sass/_navbar.scss */
   .footer .menu li a {
     color: #333333; }
 
 /* line 6, ../sass/_panel.scss */
-#node-edit .panel-pane.pane-node-field-oa-organization-ref,
+#node-edit .panel-pane.pane-node-field-oa-group-ref,
 #node-edit .panel-pane.pane-node-field-oa-team-ref,
 #node-edit .panel-pane.pane-node-field-oa-user-ref {
   padding: 1px 10px;
@@ -14727,7 +14944,7 @@ html.js input.throbbing {
   box-shadow: none; }
 
 /* line 15, ../sass/_panel.scss */
-#node-edit .panel-pane.pane-node-field-oa-organization-ref {
+#node-edit .panel-pane.pane-node-field-oa-group-ref {
   padding-top: 10px;
   margin-bottom: 0;
   border-bottom: 0; }
@@ -14793,72 +15010,128 @@ html.js input.throbbing {
     padding: 0; }
 
 /* line 100, ../sass/_panel.scss */
-.pane-oa-groups-summary .group-links .favorite {
+.pane-oa-core-summary .space-links .favorite {
   float: left; }
 /* line 103, ../sass/_panel.scss */
-.pane-oa-groups-summary .group-links .edit {
+.pane-oa-core-summary .space-links .edit {
   float: right; }
 
 /* line 112, ../sass/_panel.scss */
-.pane-oa-groups-members-widget .team,
-.pane-oa-groups-members-widget .user-badge {
+.pane-oa-core-members-widget .team,
+.pane-oa-core-members-widget .user-badge {
   width: 100%;
   min-width: 0;
   max-width: 152px;
   margin: 0 10px 10px 0; }
 
 /* line 123, ../sass/_panel.scss */
-.pane-oa-groups-user-groups .pane-content {
+.pane-oa-core-user-spaces .pane-content {
   position: relative; }
 /* line 126, ../sass/_panel.scss */
-.pane-oa-groups-user-groups .groups-container {
+.pane-oa-core-user-spaces .spaces-container {
   float: left;
   margin-right: 20px; }
 /* line 130, ../sass/_panel.scss */
-.pane-oa-groups-user-groups .group-switcher {
+.pane-oa-core-user-spaces .space-switcher {
   position: absolute;
   top: 0;
   right: 0;
   margin: 10px; }
 
-/* line 7, ../sass/_form.scss */
+/* line 6, ../sass/_form.scss */
+.form-actions {
+  border: 0;
+  padding: 0; }
+
+/* line 11, ../sass/_form.scss */
+.form-item {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+/* line 16, ../sass/_form.scss */
+#node-edit .burr-flipped-sidebar .panel-pane {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+
+/* line 23, ../sass/_form.scss */
+#node-edit .container-inline-date .form-item-date-time, #node-edit .container-inline-date .form-item-date-date {
+  padding-bottom: 0.5em; }
+
+/* line 27, ../sass/_form.scss */
+#node-edit .form-actions input {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+  /* line 32, ../sass/_form.scss */
+  #node-edit .form-actions input:hover {
+    color: white;
+    background-color: #0044cc;
+    background-image: none; }
+
+/* line 39, ../sass/_form.scss */
+.panel-pane {
+  position: relative; }
+
+/* line 43, ../sass/_form.scss */
+.views-exposed-form .well {
+  padding: 0 1em; }
+
+/* line 47, ../sass/_form.scss */
+.views-exposed-form .filter-btn {
+  position: absolute;
+  top: 10px;
+  right: 0; }
+
+/* line 53, ../sass/_form.scss */
+.view-filters form {
+  margin: 0; }
+
+/* line 57, ../sass/_form.scss */
+.views-exposed-widget.views-submit-button {
+  padding-right: 5px; }
+
+/* line 62, ../sass/_form.scss */
 #oa-discussion-reply-form {
   position: relative; }
-  /* line 9, ../sass/_form.scss */
+  /* line 64, ../sass/_form.scss */
   #oa-discussion-reply-form .form-item {
     margin: 0; }
-  /* line 12, ../sass/_form.scss */
+  /* line 67, ../sass/_form.scss */
   #oa-discussion-reply-form input#edit-subject {
     width: 75%; }
-  /* line 15, ../sass/_form.scss */
+  /* line 70, ../sass/_form.scss */
   #oa-discussion-reply-form .field-name-field-oa-discussion-media {
     position: relative; }
-    /* line 17, ../sass/_form.scss */
+    /* line 72, ../sass/_form.scss */
     #oa-discussion-reply-form .field-name-field-oa-discussion-media .tabledrag-toggle-weight-wrapper {
       position: absolute;
       top: 0;
       right: 0;
       margin: 10px; }
-    /* line 24, ../sass/_form.scss */
+    /* line 79, ../sass/_form.scss */
     #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item img {
       display: block;
       margin: auto;
       width: auto; }
-    /* line 29, ../sass/_form.scss */
+    /* line 84, ../sass/_form.scss */
     #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item .file a {
       display: none; }
-  /* line 34, ../sass/_form.scss */
+  /* line 89, ../sass/_form.scss */
   #oa-discussion-reply-form #edit-submit {
     position: absolute;
     bottom: 2px;
     right: 0; }
 
-/* line 42, ../sass/_form.scss */
+/* line 97, ../sass/_form.scss */
 .checkbox-table .center {
   text-align: center; }
-/* line 46, ../sass/_form.scss */
+/* line 101, ../sass/_form.scss */
 .checkbox-table .form-type-checkbox,
-.checkbox-table .group-label {
+.checkbox-table .space-label {
   margin: 0.4em 0; }
 
 /* line 5, ../sass/_node.scss */
@@ -14873,23 +15146,25 @@ html.js input.throbbing {
 /* line 12, ../sass/_node.scss */
 .oa-description {
   font-size: 12px;
-  color: #555; }
+  color: #555;
+  line-height: 16px; }
 
-/* line 16, ../sass/_node.scss */
+/* line 18, ../sass/_node.scss */
 .well.current-node {
-  border-left: 6px solid #b0eba3; }
-
-/* line 19, ../sass/_node.scss */
-.well.unpublished {
-  background-color: #FFF1F1; }
+  border-left: 6px solid #b0eba3;
+  margin-left: -6px; }
 
 /* line 22, ../sass/_node.scss */
-.well.unpublished .status {
+.oa-list.unpublished {
+  background-color: #FFF1F1; }
+
+/* line 25, ../sass/_node.scss */
+.oa-list.unpublished .status {
   color: red;
   font-weight: bold; }
 
-/* line 30, ../sass/_node.scss */
-.pane-oa-groups-members-widget h5 {
+/* line 33, ../sass/_node.scss */
+.pane-oa-core-members-widget h5 {
   margin-top: 0; }
 
 /* line 5, ../sass/_user.scss */
@@ -14906,11 +15181,11 @@ html.js input.throbbing {
     vertical-align: middle; }
 
 /* line 15, ../sass/_user.scss */
-.user-badge.pull-right {
+.user-badge.pull-right, .user-badge.badge-right {
   text-align: right;
   margin-left: 10px; }
   /* line 18, ../sass/_user.scss */
-  .user-badge.pull-right img {
+  .user-badge.pull-right img, .user-badge.badge-right img {
     margin-left: 8px; }
 
 /* line 22, ../sass/_user.scss */
@@ -14928,14 +15203,14 @@ html.js input.throbbing {
   border-right: 0; }
 
 /* line 39, ../sass/_user.scss */
-.pane-oa-user-groups-full .views-row {
+.pane-oa-user-spaces-full .views-row {
   border: 1px solid #dddddd;
   border-bottom: none; }
 /* line 43, ../sass/_user.scss */
-.pane-oa-user-groups-full .views-row-odd {
+.pane-oa-user-spaces-full .views-row-odd {
   background: #f9f9f9; }
 /* line 46, ../sass/_user.scss */
-.pane-oa-user-groups-full .views-row-first {
+.pane-oa-user-spaces-full .views-row-first {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   border-top-left-radius: 5px;
@@ -14943,7 +15218,7 @@ html.js input.throbbing {
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px; }
 /* line 49, ../sass/_user.scss */
-.pane-oa-user-groups-full .views-row-last {
+.pane-oa-user-spaces-full .views-row-last {
   border-bottom: 1px solid #dddddd;
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -14952,17 +15227,17 @@ html.js input.throbbing {
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px; }
 /* line 54, ../sass/_user.scss */
-.pane-oa-user-groups-full .group-container {
+.pane-oa-user-spaces-full .space-container {
   padding: 5px; }
 /* line 58, ../sass/_user.scss */
-.pane-oa-user-groups-full .group-details .picture {
+.pane-oa-user-spaces-full .space-details .picture {
   margin-right: 20px;
   height: 120px;
   width: 120px; }
   /* line 62, ../sass/_user.scss */
-  .pane-oa-user-groups-full .group-details .picture img {
+  .pane-oa-user-spaces-full .space-details .picture img {
     width: 100%; }
 /* line 68, ../sass/_user.scss */
-.pane-oa-user-groups-full .accordion {
+.pane-oa-user-spaces-full .accordion {
   padding: 10px;
   margin: 0; }

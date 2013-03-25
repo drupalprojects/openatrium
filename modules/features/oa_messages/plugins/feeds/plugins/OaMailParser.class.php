@@ -18,7 +18,7 @@ class OaMailParser extends MailhandlerParser {
     $defaults['filter_email'] = TRUE;
     return $defaults;
   }
-  
+
   /**
    * Build configuration form.
    */
@@ -44,16 +44,16 @@ class OaMailParser extends MailhandlerParser {
    */
   public function parse(FeedsSource $source, FeedsFetcherResult $fetcher_result) {
     $result = parent::parse($source, $fetcher_result);
-    
+
     foreach ($result->items as &$item) {
       // Parse the subject for a contextual nid
       $contextual_nid = $this->getContextualNidFromSubject($item['subject']);
       if ($contextual_nid) {
         $context = node_load($contextual_nid);
         $item['contextual_nid'] = $context->nid;
-        $group = array_shift(field_get_items('node', $context, 'og_group_ref'));
-        if ($group) {
-          $item['contextual_group_id'] = $group['target_id'];
+        $space = array_shift(field_get_items('node', $context, 'og_group_ref'));
+        if ($space) {
+          $item['contextual_space_id'] = $space['target_id'];
         }
         $section = array_shift(field_get_items('node', $context, 'oa_section_ref'));
         if ($section) {
@@ -63,16 +63,16 @@ class OaMailParser extends MailhandlerParser {
       elseif ($this->config['require_contextual_nid']) {
         $item = array();
       }
-      
+
       // Filter the email
       if ($this->config['filter_email'] && isset($item['body_text'])) {
         $item['body_text'] = $this->filterEmailBody($item['body_text']);
       }
     }
-    
+
     return $result;
   }
-  
+
   private function getContextualNidFromSubject($subject) {
     preg_match('/\[#([0-9]*)\]/', $subject, $matches);
     return isset($matches[1]) ? $matches[1] : 0;
@@ -87,9 +87,9 @@ class OaMailParser extends MailhandlerParser {
       'name' => t('Contextual node ID'),
       'description' => t('Contextual node ID parsed from the subject, in the form of [#nid].'),
     );
-    $sources['contextual_group_id'] = array(
-      'name' => t('Contextual node group ID'),
-      'description' => t('The group the contextual node belongs to, if available.'),
+    $sources['contextual_space_id'] = array(
+      'name' => t('Contextual node space ID'),
+      'description' => t('The space the contextual node belongs to, if available.'),
     );
     $sources['contextual_section_id'] = array(
       'name' => t('Contextual node section ID'),
@@ -97,8 +97,8 @@ class OaMailParser extends MailhandlerParser {
     );
     return $sources;
   }
-  
-  
+
+
   /**
    * Filter things like signatures, message threads out of email body. Taken
    * from Mail Comment module.
@@ -117,12 +117,12 @@ class OaMailParser extends MailhandlerParser {
       "[_]*\nFrom:", // Yahoo + Outlook web
       "From:.*Sent:.*To:.*Subject:", // Fallback
     );
-    
+
     $expression = '/('. implode('|', $delimiters) .')/';
     if (preg_match($expression, $body, $matches, PREG_OFFSET_CAPTURE)) {
       $body = trim(drupal_substr($body, 0, $matches[0][1]));
     }
-    
+
     return $body;
   }
 }
