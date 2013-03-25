@@ -4,7 +4,6 @@
  * Code for Theme functions for OpenAtrium spaces
  */
 
-
 /**
  * Implements hook_theme()
  */
