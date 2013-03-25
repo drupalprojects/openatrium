@@ -64,6 +64,7 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
 
   if (!empty($message_type)) {
     $message = message_create($message_type, array('uid' => $uid, 'timestamp' => time()));
+    message_set_property_values($message, 'data', 'token replace', TRUE);
 
     // Save reference to the node in the node reference field.
     $wrapper = entity_metadata_wrapper('message', $message);
