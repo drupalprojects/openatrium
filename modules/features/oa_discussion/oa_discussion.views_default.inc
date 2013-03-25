@@ -69,7 +69,8 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['oa_date'] = '0';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -108,12 +109,14 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['body_1']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body_1']['field'] = 'body';
   $handler->display->display_options['fields']['body_1']['label'] = '';
+  $handler->display->display_options['fields']['body_1']['alter']['max_length'] = '80';
   $handler->display->display_options['fields']['body_1']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_1']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body_1']['element_type'] = '0';
   $handler->display->display_options['fields']['body_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body_1']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['body_1']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body_1']['settings'] = array(
     'trim_length' => '80',
   );
@@ -256,7 +259,8 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['oa_date'] = '0';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -286,7 +290,6 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );

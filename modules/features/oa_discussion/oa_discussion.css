@@ -10,6 +10,9 @@
   display: none;
 }
 
+.oa-discussion-reply h5 {
+}
+
 .page-node-edit.node-type-oa-discussion-post div.tabs {
   display: block;
 }
