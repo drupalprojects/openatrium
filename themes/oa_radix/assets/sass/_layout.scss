@@ -2,8 +2,7 @@
 // Layout
 // Styles for main layout
 // --------------------------------------------------
-.navbar-inner,
-.footer-inner {
+.navbar-inner {
   padding-left:  20px;
   padding-right: 20px;
   border: 1px solid $navbarBorder;
@@ -12,21 +11,6 @@
   @include border-radius(4px);
   @include box-shadow(0 1px 4px rgba(0,0,0,.065));
   display: block;
-}
-
-// Move the Panels IPE buttons from bottom to the top
-#navbar div#panels-ipe-control-container {
-  background-color: transparent;
-  position: fixed;
-  top: 52px;
-  right: 0;
-  bottom: auto;
-  width: auto;
-  z-index: 999;
-  @include box-shadow(none);
-  a {
-    font-weight: normal;
-  }
 }
 
 .label {
@@ -79,6 +63,14 @@
   right: 3px;
   bottom: 3px;
   text-align: right;
+}
+
+#footer {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #CCC;
+  background-color: #555;
+  border-top: 1px solid #e5e5e5;
 }
 
 .oa-list.well {
