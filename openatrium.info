@@ -93,6 +93,9 @@ dependencies[] = oa_permissions
 dependencies[] = oa_discussion
 dependencies[] = oa_pages
 
+; Open Atrium 2.0 Optional
+dependencies[] = oa_home
+
 ; Development Modules - Temporary
 dependencies[] = devel
 dependencies[] = diff
