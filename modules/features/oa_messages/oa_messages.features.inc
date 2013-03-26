@@ -25,7 +25,7 @@ function oa_messages_default_message_type() {
   $items = array();
   $items['oa_create'] = entity_import('message_type', '{
     "name" : "oa_create",
-    "description" : "Open Atrium Create Content",
+    "description" : "Create Content",
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
@@ -63,7 +63,7 @@ function oa_messages_default_message_type() {
   }');
   $items['oa_delete'] = entity_import('message_type', '{
     "name" : "oa_delete",
-    "description" : "Open Atrium Delete Content",
+    "description" : "Delete Content",
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
@@ -129,7 +129,7 @@ function oa_messages_default_message_type() {
   }');
   $items['oa_update'] = entity_import('message_type', '{
     "name" : "oa_update",
-    "description" : "Open Atrium Update Content",
+    "description" : "Update Content",
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
