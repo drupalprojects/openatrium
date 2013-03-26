@@ -138,6 +138,16 @@ function oa_core_views_default_views() {
       ),
     ),
     2 => array(
+      'title' => 'Inactive',
+      'operator' => 'in',
+      'value' => array(
+        2 => '2',
+        3 => '3',
+        'all' => 0,
+        1 => 0,
+      ),
+    ),
+    3 => array(
       'title' => 'Any',
       'operator' => 'in',
       'value' => array(
