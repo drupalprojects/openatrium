@@ -26,12 +26,16 @@
     print $q;
   ?>
 <?php endif; ?>
-<?php drupal_add_js(drupal_get_path('module', 'ctools') . '/js/collapsible-div.js'); ?>
-<div class="views-exposed-form ctools-collapsible-container ctools-collapsed">
-  <div class="ctools-collapsible-handle filter-btn">
-    <div class="btn"><?php print t('Filter'); ?>&nbsp;<b class="caret"></b></div>
-  </div>
-  <div class="views-exposed-widgets well ctools-collapsible-content clearfix">
+<?php if ($collapsed_filter): ?>
+  <?php drupal_add_js(drupal_get_path('module', 'ctools') . '/js/collapsible-div.js'); ?>
+<?php endif ?>
+<div class="views-exposed-form <?php if ($collapsed_filter) {print 'ctools-collapsible-container ctools-collapsed';} ?>">
+  <?php if ($collapsed_filter): ?>
+    <div class="ctools-collapsible-handle filter-btn">
+      <div class="btn"><?php print t('Filter'); ?>&nbsp;<b class="caret"></b></div>
+    </div>
+  <?php endif; ?>
+  <div class="views-exposed-widgets clearfix <?php if ($collapsed_filter) {print 'well ctools-collapsible-content';} ?>">
     <?php foreach ($widgets as $id => $widget): ?>
       <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?>">
         <?php if (!empty($widget->label)): ?>

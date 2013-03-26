@@ -5,6 +5,7 @@ package = Open Atrium
 php = 5.2.4
 version = 7.x-2.0
 project = oa_river
+dependencies[] = oa_core
 dependencies[] = panels
 dependencies[] = views
 dependencies[] = views_content

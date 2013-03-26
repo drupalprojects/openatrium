@@ -13,7 +13,7 @@ function oa_core_views_default_views() {
   $view = new view();
   $view->name = 'oa_user_spaces';
   $view->description = 'Show spaces of a user.';
-  $view->tag = 'og';
+  $view->tag = 'OA';
   $view->base_table = 'og_membership';
   $view->human_name = 'Open Atrium User Spaces';
   $view->core = 7;
@@ -28,7 +28,8 @@ function oa_core_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'oa_form';
+  $handler->display->display_options['exposed_form']['options']['collapsed_filter'] = 0;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -111,8 +112,44 @@ function oa_core_views_default_views() {
   $handler->display->display_options['filters']['entity_type']['table'] = 'og_membership';
   $handler->display->display_options['filters']['entity_type']['field'] = 'entity_type';
   $handler->display->display_options['filters']['entity_type']['value'] = 'user';
+  /* Filter criterion: OG membership: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['label'] = 'State';
+  $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
+  $handler->display->display_options['filters']['state']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['state']['group_info']['label'] = 'State';
+  $handler->display->display_options['filters']['state']['group_info']['identifier'] = 'state';
+  $handler->display->display_options['filters']['state']['group_info']['optional'] = FALSE;
+  $handler->display->display_options['filters']['state']['group_info']['default_group'] = '1';
+  $handler->display->display_options['filters']['state']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Active',
+      'operator' => 'in',
+      'value' => array(
+        1 => '1',
+        'all' => 0,
+        2 => 0,
+        3 => 0,
+      ),
+    ),
+    2 => array(
+      'title' => 'Any',
+      'operator' => 'in',
+      'value' => array(
+        1 => '1',
+        2 => '2',
+        3 => '3',
+        'all' => 0,
+      ),
+    ),
+  );
 
-  /* Display: User Groups Full */
+  /* Display: User Spaces Full */
   $handler = $view->new_display('panel_pane', 'User Spaces Full', 'full');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['argument_input'] = array(

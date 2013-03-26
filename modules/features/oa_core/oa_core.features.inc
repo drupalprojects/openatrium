@@ -87,18 +87,18 @@ function oa_core_image_default_styles() {
  */
 function oa_core_node_info() {
   $items = array(
-    'oa_space' => array(
-      'name' => t('Space'),
-      'base' => 'node_content',
-      'description' => t('A collection of content and users (members)'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'oa_group' => array(
       'name' => t('Group'),
       'base' => 'node_content',
       'description' => t('A collection of users that exists across all spaces.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'oa_space' => array(
+      'name' => t('Space'),
+      'base' => 'node_content',
+      'description' => t('A collection of content and users (members)'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
