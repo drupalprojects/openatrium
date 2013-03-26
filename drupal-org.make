@@ -68,6 +68,7 @@ projects[rules][version] = 2.2
 ; Message
 projects[message][subdir] = contrib
 projects[message][version] = 1.7
+projects[message][patch][] = http://drupal.org/files/message-install-creates-error-1404838-10.patch
 
 ; Message Notify
 projects[message_notify][subdir] = contrib
@@ -97,8 +98,10 @@ projects[twitter_bootstrap_ui][subdir] = contrib
 projects[twitter_bootstrap_ui][download][type] = git
 projects[twitter_bootstrap_ui][download][url] = http://git.drupal.org/project/twitter_bootstrap_ui.git
 projects[twitter_bootstrap_ui][download][branch] = 7.x-2.x
-projects[twitter_bootstrap_ui][patch][] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-2.patch
-projects[twitter_bootstrap_ui][download][revision] = 7dccf08a63d6e2ee301c481a044a3a1a58f4e912
+projects[twitter_bootstrap_ui][patch][] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-5.patch
+; tie to previous commit before the (2.x) was added to libraries
+; since that doesn't work when module is patched in inherited profile
+projects[twitter_bootstrap_ui][download][revision] = 0328b6ff027287fe7e62b058fc4dea12362956f5
 
 libraries[twitter_bootstrap][download][type] = file
 libraries[twitter_bootstrap][download][url] = http://twitter.github.com/bootstrap/assets/bootstrap.zip
