@@ -8,6 +8,11 @@
   
   Drupal.behaviors.commitAsRead = {
     attach: function(context, settings) {
+      // Ensure replies exist before we start.
+      if ($('.pane-open-atrium-discussions-replies').length === 0) {
+        return;
+      }
+    
       var IDLE_TIME = 2000; // Milliseconds until considered "idle".
       var READ_THRESHOLD = 100;  // # of px required beyond the top of a comment to consider it read.
       

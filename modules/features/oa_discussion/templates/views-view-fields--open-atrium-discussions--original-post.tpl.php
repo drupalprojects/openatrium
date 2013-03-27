@@ -23,7 +23,6 @@
  *
  * @ingroup views_templates
  */
-drupal_add_js(drupal_get_path('module', 'oa_discussion') . '/js/mark-as-read.js');
 ?>
 <div class='oa-list oa-discussion-parent clearfix <?php print $current_class; ?> <?php print $status_class; ?>'>
   <div class='oa-list-metadata'>

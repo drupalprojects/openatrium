@@ -151,6 +151,12 @@ function oa_discussion_views_pre_render(&$view) {
       }
     }
   }
+  
+  // Attach JS to replies
+  if ($view->name == 'open_atrium_discussions' && $view->current_display == 'replies') {
+    drupal_add_js(drupal_get_path('module', 'oa_discussion') . '/js/mark-as-read.js');
+    drupal_add_js(drupal_get_path('module', 'oa_discussion') . '/js/toggle-reply-visibility.js');
+  }
 }
 
 /**

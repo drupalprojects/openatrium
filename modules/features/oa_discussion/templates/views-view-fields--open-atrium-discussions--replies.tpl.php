@@ -29,9 +29,9 @@
     <?php print $name; ?>
     <?php print $field_user_picture; ?>
   </div>
-  <div class="accordion" id="oa-reply-accordion<?php print $index; ?>">
+  <div class="accordion" id="oa-reply-accordion-<?php print $index; ?>">
     <div class="accordion-heading">
-      <div class="accordion-toggle" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
+      <div class="accordion-toggle" data-toggle="collapse" data-parent="#oa-reply-accordion-<?php print $index; ?>" href="#oa-reply-body-<?php print $index; ?>">
         <div class='oa-list-header oa-description '>
           <?php print $counter; ?>
           <div class='pull-right'>
@@ -42,14 +42,14 @@
             <?php print $created; ?>
           </div>
         </div>
-        <a class="accordion-toggle toggle-left" data-toggle="collapse" data-parent="#oa-reply-accordion<?php print $index; ?>" href="#oa-reply-body<?php print $index; ?>">
+        <a class="accordion-toggle toggle-left" data-toggle="collapse" data-parent="#oa-reply-accordion-<?php print $index; ?>" href="#oa-reply-body-<?php print $index; ?>">
          +
         </a>
         <h5>
           <?php print empty($body_1) ? $title : $body_1; ?>
         </h5>
       </div>
-      <div id="oa-reply-body<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
+      <div id="oa-reply-body-<?php print $index; ?>" class="accordion-body collapse <?php print $in; ?>">
         <div class="accordion-inner">
           <?php print $body; ?>
           <?php print $field_oa_media; ?>
