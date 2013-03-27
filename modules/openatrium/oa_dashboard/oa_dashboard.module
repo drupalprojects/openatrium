@@ -283,7 +283,7 @@ function oa_dashboard_render_user_picture($user, $image_style = 'oa_small_thumbn
 function oa_dashboard_preprocess_oa_toolbar_menu_button(&$vars) {
   drupal_add_js(drupal_get_path('module', 'oa_dashboard') . '/js/toolbar-menu-toggle.js');
   drupal_add_js(array(
-    'oa_toolbar_sticky' => variable_get('oa_toolbar_sticky', 0),
+    'oa_toolbar_sticky' => variable_get('oa_toolbar_sticky', 1),
   ), array('type' => 'setting'));
 
   $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
