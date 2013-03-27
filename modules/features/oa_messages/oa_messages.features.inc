@@ -29,7 +29,10 @@ function oa_messages_default_message_type() {
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
-    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }, "token options" : { "clear" : 1 } },
+    "data" : {
+      "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" },
+      "token options" : { "clear" : 1 }
+    },
     "language" : "en",
     "arguments" : null,
     "message_text" : { "und" : [
@@ -67,7 +70,10 @@ function oa_messages_default_message_type() {
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
-    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }, "token options" : { "clear" : 1 } },
+    "data" : {
+      "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" },
+      "token options" : { "clear" : 1 }
+    },
     "language" : "en",
     "arguments" : null,
     "message_text" : { "und" : [
@@ -105,14 +111,17 @@ function oa_messages_default_message_type() {
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
-    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }, "token options" : { "clear" : 1 } },
+    "data" : {
+      "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" },
+      "token options" : { "clear" : 1 }
+    },
     "language" : "en",
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "[message:field-oa-message-space:title] : @{message:user:name} updated Space",
+          "value" : "[message:field-oa-message-space:title] : @{message:user:name} updated SpaceX",
           "format" : "plain_text",
-          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-space:title] : @{message:user:name} updated Space\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-space:title] : @{message:user:name} updated SpaceX\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "[message:field-oa-message-space:title] : [message:field-oa-message-text:value]",
@@ -133,7 +142,10 @@ function oa_messages_default_message_type() {
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
-    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }, "token options" : { "clear" : 1 } },
+    "data" : {
+      "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" },
+      "token options" : { "clear" : 1 }
+    },
     "language" : "en",
     "arguments" : null,
     "message_text" : { "und" : [

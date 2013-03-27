@@ -65,6 +65,13 @@
 
 <div id="main-wrapper">
   <div id="main" class="container">
+    <?php if ($breadcrumb && (arg(0) == 'admin')): ?>
+      <div id="breadcrumb" class="visible-desktop">
+        <div class="container">
+          <?php print $breadcrumb; ?>
+        </div>
+      </div>
+    <?php endif; ?>
     <?php if ($messages): ?>
       <div id="messages">
         <?php print $messages; ?>
