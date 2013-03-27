@@ -44,7 +44,10 @@ function oa_discussion_default_message_type() {
     "argument_keys" : [],
     "argument" : [],
     "category" : "message_type",
-    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }, "token options" : { "clear" : 1 } },
+    "data" : {
+      "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" },
+      "token options" : { "clear" : 1 }
+    },
     "language" : "",
     "arguments" : null,
     "message_text" : { "und" : [
