@@ -135,3 +135,33 @@
     font-size: 0.9em;
   }
 }
+
+/* Tabs */
+div.tabs {
+  padding-left: 0;
+  padding-right: 0;
+  .tabs.primary {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .tabs.secondary {
+    color: #555;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    border-top: 1px solid #BBB;
+    li a {
+      padding: 13px 15px;
+      margin: 0;
+    }
+    li.active {
+      border-bottom: 1px solid #D4D4D4;
+      a {
+        @include box-shadow(none);
+        color: #222;
+      }
+    }
+    li:first-child {
+      margin-left: 20px;
+    }
+  }
+}
