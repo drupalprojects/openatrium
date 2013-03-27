@@ -9,6 +9,7 @@ dependencies[] = oa_core
 dependencies[] = panels
 dependencies[] = views
 dependencies[] = views_content
+dependencies[] = views_load_more
 stylesheets[all][] = oa_river.css
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1

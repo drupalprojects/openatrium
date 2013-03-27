@@ -140,3 +140,10 @@ projects[mailhandler][download][type] = git
 projects[mailhandler][download][url] = http://git.drupal.org/project/mailhandler.git
 projects[mailhandler][download][branch] = 7.x-2.x
 projects[mailhandler][download][commit] = c57579b7990dce3a0cf46336c78f2e7c17581723
+
+; Views Load More
+projects[views_load_more][subdir] = contrib
+projects[views_load_more][download][type] = git
+projects[views_load_more][download][url] = http://git.drupal.org/project/views_load_more.git
+projects[views_load_more][download][branch] = 7.x-1.x
+projects[views_load_more][download][commit] = a92b1f610fcf8ee85c064020d865ab849d0c86e6
