@@ -15,22 +15,12 @@ function oa_panopoly_users_ctools_plugin_api() {
 }
 
 /**
- * Implements hook_field_default_fields_alter().
- */
-function oa_panopoly_users_field_default_fields_alter(&$data) {
-  if (isset($data['user-user-field_user_picture'])) {
-    $data['user-user-field_user_picture']['field_instance']['settings']['min_resolution'] = '150x150'; /* WAS: '300x200' */
-    $data['user-user-field_user_picture']['field_instance']['widget']['weight'] = '4'; /* WAS: '3' */
-  }
-}
-
-/**
  * Implements hook_panelizer_defaults_override_alter().
  */
 function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
   if (isset($data['user:user:default'])) {
     $data['user:user:default']->display->content['new-1']->configuration['delta_limit'] = 0; /* WAS: '' */
-    $data['user:user:default']->display->content['new-1']->configuration['delta_offset'] = '0'; /* WAS: '' */
+    $data['user:user:default']->display->content['new-1']->configuration['delta_offset'] = 0; /* WAS: '' */
     $data['user:user:default']->display->content['new-1']->configuration['delta_reversed'] = FALSE; /* WAS: '' */
     $data['user:user:default']->display->content['new-1']->configuration['exposed'] = array(
       'sort_by' => NULL,
@@ -69,7 +59,7 @@ function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
             'label' => 'hidden',
             'formatter' => 'image',
             'delta_limit' => 0,
-            'delta_offset' => '0',
+            'delta_offset' => 0,
             'delta_reversed' => FALSE,
             'formatter_settings' => array(
               'image_style' => 'panopoly_image_full',

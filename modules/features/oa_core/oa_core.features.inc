@@ -49,10 +49,10 @@ function oa_core_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '50',
-          'height' => '50',
+          'width' => 50,
+          'height' => 50,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -71,10 +71,10 @@ function oa_core_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '30',
-          'height' => '30',
+          'width' => 30,
+          'height' => 30,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
