@@ -49,6 +49,7 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     'owners' => $owners,
   );
   foreach ($items as $key => $entities) {
+    $vars[$key] = array();
     foreach ($entities as $id => $entity) {
       $vars[$key][$id] = oa_core_entity_build_display($entity, $id);
     }
