@@ -41,7 +41,7 @@ $has_sections = empty($sections) ? FALSE : TRUE;
     <div class="pull-left picture">
       <?php print $field_featured_image; ?>
     </div>
-    <div class="pull-left details">
+    <div class="details">
       <div class="title">
         <h5><?php print $title; ?></h5>
       </div>
