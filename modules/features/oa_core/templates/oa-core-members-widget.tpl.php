@@ -14,6 +14,7 @@
  */
 ?>
 
+<?php if (!empty($owners)): ?>
 <div class='clearfix well well-small owners'>
   <h5>Space owners</h5>
   <?php foreach ($owners as $owner): ?>
@@ -23,7 +24,9 @@
     </div>
   <?php endforeach; ?>
 </div>
+<?php endif; ?>
 
+<?php if (!empty($teams)): ?>
 <div class='clearfix well well-small teams'>
   <h5>Teams</h3>
   <?php foreach ($teams as $team): ?>
@@ -32,7 +35,9 @@
     </div>
   <?php endforeach; ?>
 </div>
+<?php endif; ?>
 
+<?php if (!empty($members)): ?>
 <div class='clearfix well well-small members'>
   <h5>Members</h3>
   <?php foreach ($members as $member): ?>
@@ -45,3 +50,4 @@
     <a href="#">See all members</a>
   </div>
 </div>
+<?php endif; ?>

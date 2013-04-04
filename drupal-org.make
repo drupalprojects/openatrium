@@ -9,12 +9,8 @@ projects[panopoly][download][branch] = 7.x-1.x
 
 ; **** Panopoly Overrides ****
 ; Update Features to latest version
-projects[features][type] = module
 projects[features][subdir] = contrib
-projects[features][download][type] = git
-projects[features][download][url] = http://git.drupal.org/project/features.git
-projects[features][download][branch] = 7.x-2.x
-projects[features][download][revision] = f77f1d87e930adb1ac3cd49fe390996a6d8130ff
+projects[features][version] = 2.0-beta2
 
 ; Update Panelizer to latest with features override patch
 projects[panelizer][type] = module

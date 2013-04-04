@@ -47,7 +47,7 @@ function oa_sections_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
       ),
       'display' => array(),

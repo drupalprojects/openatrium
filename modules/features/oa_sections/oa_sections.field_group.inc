@@ -21,7 +21,7 @@ function oa_sections_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Space',
-    'weight' => '10',
+    'weight' => '7',
     'children' => array(
       0 => 'og_group_ref',
     ),

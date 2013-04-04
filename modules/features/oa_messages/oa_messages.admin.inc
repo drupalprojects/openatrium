@@ -11,8 +11,9 @@
 function oa_messages_oa_user_settings_form_alter(&$form, $form_state, $user) {
   $form['oa_messages'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Messages'),
-    '#collapsible' => FALSE,
+    '#title' => t('Notifications'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
     '#tree' => TRUE,
   );
   $defaults = $user->data['oa_messages'];
@@ -29,7 +30,7 @@ function oa_messages_oa_user_settings_form_alter(&$form, $form_state, $user) {
     ),
     '#default_value' => isset($defaults['email_type']) ? $defaults['email_type'] : EMAIL_TYPE_HTML,
   );
-  
+
   $form['#attached']['js'][] = drupal_get_path('module', 'oa_messages') . '/js/oa-messages-settings.js';
   $form['#attached']['css'][] = drupal_get_path('module', 'oa_messages') . '/css/oa-messages-settings.css';
 }
@@ -41,14 +42,14 @@ function oa_messages_oa_user_settings_form_alter(&$form, $form_state, $user) {
 function oa_messages_build_message_notifications_table($user, $defaults = array()) {
   $spaces = node_load_multiple(oa_core_get_user_spaces($user->uid));
   $message_types = message_type_load();
-  
+
   // Split them out in to tabs per module.
   $message_types_modules = array();
   foreach ($message_types as $type) {
     $module = $type->module ? $type->module : 'Custom';
     $message_types_modules[$module][] = $type;
   }
-  
+
   $form = array(
     'tabs' => array(
       '#prefix' => '<ul id="messages-tabs" class="nav nav-tabs">',
@@ -136,14 +137,14 @@ function oa_messages_oa_user_settings_form_submit($form_state, $user) {
   $message_notifications = array();
   foreach ($form_state['values']['oa_messages']['message_notifications']['tables'] as $spaces) {
     foreach ($spaces as $space_id => $settings) {
-      $settings = isset($message_notifications[$space_id]) ? 
-        array_merge($message_notifications[$space_id], $settings) : 
+      $settings = isset($message_notifications[$space_id]) ?
+        array_merge($message_notifications[$space_id], $settings) :
         $settings;
       $message_notifications[$space_id] = $settings;
     }
   }
-  
-  
+
+
   return array('oa_messages' => array(
     'message_notifications' => $message_notifications,
     'email_type' => $form_state['values']['oa_messages']['email_type'],
