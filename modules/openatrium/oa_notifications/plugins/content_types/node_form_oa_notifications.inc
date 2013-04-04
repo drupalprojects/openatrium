@@ -28,11 +28,15 @@ function oa_notifications_node_form_notifications_render($subtype, $conf, $panel
 
   if (isset($context->form)) {
     if (isset($context->form['oa_notifications'])) {
-      $block->content['oa_notifications'] = $context->form['oa_notifications'];
-      unset($block->content['oa_notifications']['#pre_render']);
-      unset($block->content['oa_notifications']['#theme_wrappers']);
-      $block->content['oa_notifications']['#type'] = '';
-
+      $form = $context->form['oa_notifications'];
+      
+      // Unset fieldset's theming.
+      unset($form['#pre_render']);
+      unset($form['#theme_wrappers']);
+      $form['#type'] = '';
+      
+      $block->content['oa_notifications'] = $form;
+      
       // Set access to false on the original rather than removing so that
       // vertical tabs doesn't clone it. I think this is due to references.
       $context->form['oa_notifications']['#access'] = FALSE;

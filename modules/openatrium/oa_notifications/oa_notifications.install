@@ -48,6 +48,80 @@ function oa_notifications_schema() {
       'target_type_id' => array('target_type', 'target_id'),
     ),
   );
+  
+  $schema['oa_notifications_override'] = array(
+    'description' => 'Keeps track of which nodes are overriding default notifications.',
+    'fields' => array(
+      'entity_type' => array(
+        'description' => 'The entity type of the object, i.e. "node"',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'entity_id' => array(
+        'description' => 'The ID of the object that is, or is not, overriding default notifications.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'override' => array(
+        'description' => 'Whether or not the source object is overriding its default notifications.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'unique keys' => array(
+        'entity' => array(
+          'entity_type',
+          'entity_id',
+        )
+      ),
+    ),
+  );
 
   return $schema;
+}
+
+/**
+ * Create the oa_notifications_override table.
+ */
+function oa_notifications_update_7001() {
+  $schema = oa_notifications_schema();
+  db_create_table('oa_notifications_override', array(
+    'description' => 'Keeps track of which nodes are overriding default notifications.',
+    'fields' => array(
+      'entity_type' => array(
+        'description' => 'The entity type of the object, i.e. "node"',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'entity_id' => array(
+        'description' => 'The ID of the object that is, or is not, overriding default notifications.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'override' => array(
+        'description' => 'Whether or not the source object is overriding its default notifications.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'unique keys' => array(
+      'entity' => array(
+        'entity_type',
+        'entity_id',
+      )
+    ),
+  ));
 }
