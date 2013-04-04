@@ -91,10 +91,12 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     drupal_alter('oa_messages_create', $wrapper, $context);
 
     $wrapper->save();
-    
-    // Since this can be called on node_update / insert, we clear the entity
-    // cache so that it gets the values assigned by other modules.
-    entity_get_controller($entity_type)->resetCache(array($entity_wrapper->getIdentifier()));
+
+    if (!empty($entity_type)) {
+      // Since this can be called on node_update / insert, we clear the entity
+      // cache so that it gets the values assigned by other modules.
+      entity_get_controller($entity_type)->resetCache(array($entity_wrapper->getIdentifier()));
+    }
 
     if ($send && isset($entity) && ($entity_type == 'node')) {
       $subscribe_options = oa_messages_build_subscribe_options($entity, $message);
@@ -112,13 +114,13 @@ function oa_messages_build_subscribe_options($entity, $message) {
   foreach ($users as $uid => $user) {
     // Disable certain notifiers based on preferences.
     $notifiers = oa_messages_determine_user_notifiers($user, $entity, $message);
-    
+
     $options['uids'][$uid] = array(
       'entity' => $user,
       'notifiers' => $notifiers,
     );
   }
-  
+
   return $options;
 }
 
@@ -129,18 +131,18 @@ function oa_messages_determine_user_notifiers($user, $entity, $message, $notifie
   if (empty($notifiers)) {
     $notifiers = oa_message_notifiers();
   }
-  
+
   $settings = $user->data['oa_messages']['message_notifications'];
   $space_id = $entity->og_group_ref[LANGUAGE_NONE][0]['target_id'];
   $allowed_notifiers = array();
-  
+
   foreach ($notifiers as $notifier) {
     // If unset, assume it should send.
     if ($settings[$space_id][$message->type][$notifier] || !isset($settings[$space_id][$message->type][$notifier])) {
       $allowed_notifiers[] = $notifier;
     }
   }
-  
+
   return $allowed_notifiers;
 }
 
@@ -274,7 +276,7 @@ function oa_messages_oa_messages_create_alter(&$wrapper, $context) {
       break;
 
     case 'oa_member':
-      $wrapper->field_oa_message_group = $context['arguments'];
+      $wrapper->field_oa_message_space = $context['arguments'];
       break;
   }
 }

@@ -32,20 +32,23 @@ function oa_core_summary_render($subtype, $conf, $args, $context = NULL) {
   $vars['description'] = $body['value'];
 
   $vars['picture'] = '';
-  $picture = array_shift(field_get_items('node', $space, 'field_featured_image'));
-  if ($picture) {
-    $vars['picture'] = theme('image_style', array(
-      'style_name' => 'panopoly_image_' . $conf['image_size'],
-      'path' => $picture['uri'],
-      'width' => $picture['width'],
-      'height' => $picture['height'],
-      'alt' => $picture['alt'],
-      'attributes' => array(
-        'class' => array(
-          'img-polaroid',
+  $picture = field_get_items('node', $space, 'field_featured_image');
+  if (!empty($picture)) {
+    $picture = array_shift($picture);
+    if ($picture) {
+      $vars['picture'] = theme('image_style', array(
+        'style_name' => 'panopoly_image_' . $conf['image_size'],
+        'path' => $picture['uri'],
+        'width' => $picture['width'],
+        'height' => $picture['height'],
+        'alt' => $picture['alt'],
+        'attributes' => array(
+          'class' => array(
+            'img-polaroid',
+          ),
         ),
-      ),
-    ));
+      ));
+    }
   }
 
   $vars['links'] = array();
