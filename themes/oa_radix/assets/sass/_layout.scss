@@ -100,13 +100,14 @@
     background-color: #E0EEFF;
   }
 }
-.oa-list .accordion-heading .accordion-toggle.toggle-left {
+.oa-list .oa-pullout-left {
   position: absolute;
-  width: 11px;
-  font-size: 18px;
+  width: 20px;
+  font-size: 14px;
+  text-align: center;
   padding: 3px 5px;
   top: -1px;
-  left: -21px;
+  left: -30px;
   border: 1px solid #e3e3e3;
   background-color: #fafafa;
   border-right: 0;

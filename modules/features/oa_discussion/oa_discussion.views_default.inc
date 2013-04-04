@@ -61,6 +61,7 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['counter']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['counter']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['counter']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['counter']['alter']['link_class'] = 'oa-pullout-left';
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '0';
   /* Field: Content: Post date */

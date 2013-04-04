@@ -31,9 +31,9 @@
   </div>
   <div class="accordion" id="oa-reply-accordion-<?php print $index; ?>">
     <div class="accordion-heading">
+      <?php print $counter; ?>
       <div class="accordion-toggle" data-toggle="collapse" data-parent="#oa-reply-accordion-<?php print $index; ?>" href="#oa-reply-body-<?php print $index; ?>">
         <div class='oa-list-header oa-description '>
-          <?php print $counter; ?>
           <div class='pull-right'>
             <?php if (!empty($unpublished)): ?>
               <span class="status"><?php print $unpublished; ?></span>
@@ -42,9 +42,6 @@
             <?php print $created; ?>
           </div>
         </div>
-        <a class="accordion-toggle toggle-left" data-toggle="collapse" data-parent="#oa-reply-accordion-<?php print $index; ?>" href="#oa-reply-body-<?php print $index; ?>">
-         +
-        </a>
         <h5>
           <?php print empty($body_1) ? $title : $body_1; ?>
         </h5>

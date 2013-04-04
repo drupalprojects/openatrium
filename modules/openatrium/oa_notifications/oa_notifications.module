@@ -247,7 +247,8 @@ function oa_notifications_is_notification_type($node) {
   // @TODO: Implement this as configurable. For now, add
   // notifications to any group-content type, and groups themselves.
   $types = oa_core_list_content_types(TRUE);
-  $types['oa_space'] = TRUE;
+  $types[OA_SPACE_TYPE] = TRUE;  // default notifications on spaces
+  unset($types[OA_TEAM_TYPE]); // no notifications on teams
   return (array_key_exists($node->type, $types));
 }
 
@@ -318,7 +319,7 @@ function oa_notifications_form_fields(&$form, &$form_state, $node) {
     '#type' => 'value',
     '#value' => $node
   );
-  
+
   $default = array(
     'group' => array(),
     'team' => array(),
@@ -437,7 +438,7 @@ function oa_notifications_get_default_notifications($section_id = 0, $space_id =
 
   $section = node_load($section_id);
   if ($section) {
-    $override = is_null($override) ? 
+    $override = is_null($override) ?
       oa_notifications_is_overriding('node', $section_id) :
       $override;
     if ($override) {
