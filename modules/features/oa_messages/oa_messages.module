@@ -90,13 +90,13 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
 
     drupal_alter('oa_messages_create', $wrapper, $context);
 
-    $wrapper->save();
-
     if (!empty($entity_type)) {
       // Since this can be called on node_update / insert, we clear the entity
       // cache so that it gets the values assigned by other modules.
       entity_get_controller($entity_type)->resetCache(array($entity_wrapper->getIdentifier()));
     }
+
+    $wrapper->save();
 
     if ($send && isset($entity) && ($entity_type == 'node')) {
       $subscribe_options = oa_messages_build_subscribe_options($entity, $message);
@@ -172,7 +172,7 @@ function oa_messages_entity_insert($entity, $type) {
 function oa_messages_entity_update($entity, $type) {
   $types = oa_core_list_content_types(TRUE);
   if ($type == 'node' && array_key_exists($entity->type, $types)) {
-    $message = oa_messages_create('oa_update', $entity, $type, t('Changes:'));
+    $message = oa_messages_create('oa_update', $entity, $type);
   }
 }
 
