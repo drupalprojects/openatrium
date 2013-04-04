@@ -136,6 +136,7 @@ projects[mailhandler][download][type] = git
 projects[mailhandler][download][url] = http://git.drupal.org/project/mailhandler.git
 projects[mailhandler][download][branch] = 7.x-2.x
 projects[mailhandler][download][commit] = c57579b7990dce3a0cf46336c78f2e7c17581723
+projects[mailhandler][patch][] = http://drupal.org/files/mailhandler-version-requirement-1961780-1.patch
 
 ; Views Load More
 projects[views_load_more][subdir] = contrib
