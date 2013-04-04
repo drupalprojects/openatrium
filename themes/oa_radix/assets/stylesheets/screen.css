@@ -15200,7 +15200,7 @@ div.tabs li.active a {
   font-weight: bold; }
 
 /* line 31, ../sass/_node.scss */
-.field-name-body ul, .field-name-body ol, .mceContentBody ul, .mceContentBody ol {
+.field-content ul, .field-content ol, .mceContentBody ul, .mceContentBody ol {
   list-style-type: disc; }
 
 /* line 39, ../sass/_node.scss */
