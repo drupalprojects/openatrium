@@ -15199,7 +15199,11 @@ div.tabs li.active a {
   color: red;
   font-weight: bold; }
 
-/* line 33, ../sass/_node.scss */
+/* line 30, ../sass/_node.scss */
+.field-name-body ul, .field-name-body ol {
+  list-style-type: disc; }
+
+/* line 38, ../sass/_node.scss */
 .pane-oa-core-members-widget h5 {
   margin-top: 0; }
 
