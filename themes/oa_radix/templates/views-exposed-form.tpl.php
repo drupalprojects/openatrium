@@ -35,7 +35,7 @@
       <div class="btn"><?php print t('Filter'); ?>&nbsp;<b class="caret"></b></div>
     </div>
   <?php endif; ?>
-  <div class="views-exposed-widgets clearfix <?php if ($collapsed_filter) {print 'well ctools-collapsible-content';} ?>">
+  <div class="views-exposed-widgets clearfix <?php if (!empty($collapsed_filter)) {print 'well ctools-collapsible-content';} ?>">
     <?php foreach ($widgets as $id => $widget): ?>
       <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?>">
         <?php if (!empty($widget->label)): ?>
