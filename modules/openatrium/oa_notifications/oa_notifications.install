@@ -74,12 +74,12 @@ function oa_notifications_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
-      'unique keys' => array(
-        'entity' => array(
-          'entity_type',
-          'entity_id',
-        )
-      ),
+    ),
+    'unique keys' => array(
+      'entity' => array(
+        'entity_type',
+        'entity_id',
+      )
     ),
   );
 
@@ -90,7 +90,6 @@ function oa_notifications_schema() {
  * Create the oa_notifications_override table.
  */
 function oa_notifications_update_7001() {
-  $schema = oa_notifications_schema();
   db_create_table('oa_notifications_override', array(
     'description' => 'Keeps track of which nodes are overriding default notifications.',
     'fields' => array(
