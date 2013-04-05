@@ -478,6 +478,139 @@ function oa_discussion_views_default_views() {
       'label' => 'Open Atrium: Parent ID (Content)',
     ),
   );
+
+  /* Display: Discussion Topics */
+  $handler = $view->new_display('panel_pane', 'Discussion Topics', 'discussion_topics');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Topics';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['id'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['field'] = 'reverse_oa_parent_node';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body_1']['id'] = 'body_1';
+  $handler->display->display_options['fields']['body_1']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_1']['field'] = 'body';
+  $handler->display->display_options['fields']['body_1']['label'] = '';
+  $handler->display->display_options['fields']['body_1']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['body_1']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_1']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['body_1']['element_type'] = '0';
+  $handler->display->display_options['fields']['body_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body_1']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['body_1']['settings'] = array(
+    'trim_length' => '80',
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['nid_1']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid_1']['label'] = 'Replies';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Parent */
+  $handler->display->display_options['fields']['oa_parent']['id'] = 'oa_parent';
+  $handler->display->display_options['fields']['oa_parent']['table'] = 'field_data_oa_parent';
+  $handler->display->display_options['fields']['oa_parent']['field'] = 'oa_parent';
+  $handler->display->display_options['fields']['oa_parent']['element_type'] = '0';
+  $handler->display->display_options['fields']['oa_parent']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['oa_parent']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['oa_parent']['group_column'] = 'entity_id';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['changed']['group_type'] = 'max';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'oa_date';
+  $handler->display->display_options['fields']['changed']['oa_date'] = '0';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed_1']['id'] = 'changed_1';
+  $handler->display->display_options['fields']['changed_1']['table'] = 'node';
+  $handler->display->display_options['fields']['changed_1']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed_1']['label'] = 'Node Updated date';
+  $handler->display->display_options['fields']['changed_1']['date_format'] = 'oa_date';
+  $handler->display->display_options['fields']['changed_1']['oa_date'] = '0';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'oa_small_thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_user_picture']['group_column'] = 'entity_id';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Nid */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  /* Sort criterion: Content: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['sorts']['changed']['group_type'] = 'max';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'oa_discussion_post' => 'oa_discussion_post',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $export['open_atrium_discussions'] = $view;
 
   return $export;
