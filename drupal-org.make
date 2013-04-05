@@ -118,7 +118,10 @@ projects[diff][version] = 3.2
 
 ; Colorbox
 projects[colorbox][subdir] = contrib
-projects[colorbox][version] = 2.3
+;projects[colorbox][version] = 2.3
+projects[colorbox][download][url] = http://git.drupal.org/project/colorbox.git
+projects[colorbox][download][branch] = 7.x-2.x
+projects[colorbox][download][revision] = 509c2634bad0a76c9a5e7e3a1f588a36a6a97095
 projects[media_colorbox][subdir] = contrib
 projects[media_colorbox][version] = 1.0-rc3
 
