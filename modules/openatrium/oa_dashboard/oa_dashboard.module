@@ -188,7 +188,6 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   }
 
   $current_section = !empty($_SESSION['oa_section_id']) ? $_SESSION['oa_section_id'] : 0;
-
   $home_name = t('Space home');
   $section_name = '';
   $section_url = '';
