@@ -24,3 +24,10 @@ function oa_styles_theme() {
   );
 }
 
+/**
+ * Implements hook_preprocess_flag().
+ */
+function oa_styles_preprocess_flag(&$vars) {
+  $vars['flag_classes_array'][] = 'btn';
+  $vars['flag_classes'] = implode(' ', $vars['flag_classes_array']);
+}

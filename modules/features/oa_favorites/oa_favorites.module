@@ -54,3 +54,19 @@ function oa_favorites_is_favorite_space($uid, $gid) {
   $result = $query->execute()->fetch();
   return empty($result) ? FALSE : TRUE;
 }
+
+
+/**
+ * Implements hook_preprocess_flag().
+ */
+function oa_favorites_preprocess_flag(&$vars) {
+  if ($vars['flag']->name == 'favorite_space') {
+    if ($vars['status'] == 'unflagged') {
+      $vars['link_text'] = '<i class="icon-star-empty"></i> ' . $vars['link_text'];
+    }
+    else {
+      $vars['link_text'] = '<i class="icon-star"></i> ' . $vars['link_text'];
+    }
+  }
+}
+

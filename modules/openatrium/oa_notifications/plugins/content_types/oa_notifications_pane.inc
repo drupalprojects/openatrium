@@ -11,7 +11,6 @@ $plugin = array(
   'edit form' => 'oa_notifications_settings_form',
   'render callback' => 'oa_notifications_pane_render',
   'required context' => new ctools_context_required(t('Node'), 'node'),
-  //'all contexts' => TRUE,
 );
 
 /**
@@ -77,6 +76,9 @@ function oa_notifications_render_view($node) {
     }
   }
 
+  $render['#subscribe'] = oa_notifications_subscribe_button($node);
+  $render['#show_details'] = oa_notifications_show_details_button($node);
+
   // Attach the bootstrap tooltip in case there is an access denied user.
   drupal_add_js('jQuery(document).ready(function () {
     jQuery("span.label-important").tooltip();
@@ -84,6 +86,7 @@ function oa_notifications_render_view($node) {
 
   return $render;
 }
+
 
 /**
  * Empty config form
@@ -126,41 +129,70 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
   );
 
   // Add things for direct pane updates
-  $form['group']['#ajax'] = array(
+  $form['notifications']['group']['#ajax'] = array(
     'callback' => 'oa_notifications_ajax_callback',
     'wrapper' => 'group-div',
     'method' => 'replace',
   );
-  $form['group']['#prefix'] = '<div id="group-div">';
-  $form['group']['#suffix'] = '</div>';
+  $form['notifications']['group']['#prefix'] = '<div id="group-div">';
+  $form['notifications']['notifications']['group']['#suffix'] = '</div>';
 
-  $form['team']['#ajax'] = array(
+  $form['notifications']['team']['#ajax'] = array(
     'callback' => 'oa_notifications_ajax_callback',
     'wrapper' => 'team-div',
     'method' => 'replace',
   );
-  $form['team']['#prefix'] = '<div id="team-div">';
-  $form['team']['#suffix'] = '</div>';
+  $form['notifications']['team']['#prefix'] = '<div id="team-div">';
+  $form['notifications']['team']['#suffix'] = '</div>';
 
-  $form['user']['#ajax'] = array(
+  $form['notifications']['user']['#ajax'] = array(
     'callback' => 'oa_notifications_ajax_callback',
     'wrapper' => 'user-div',
     'method' => 'replace',
   );
-  $form['user']['#prefix'] = '<div id="user-div">';
-  $form['user']['#suffix'] = '</div>';
+  $form['notifications']['user']['#prefix'] = '<div id="user-div">';
+  $form['notifications']['user']['#suffix'] = '</div>';
 
-  $details = l(t('Show Details'), 'js/oa_notifications/details/' . $node->nid, array('attributes' => array('data-toggle' => 'modal', 'data-target' => '#oa-notifications-details')));
-  $details .= theme('oa_styles_modal', array('modal_id' => 'oa-notifications-details', 'title' => t('Notification Details')));
-
-  $form['details'] = array(
-    '#type' => 'markup',
-    '#markup' => $details,
-    '#prefix' => '<div>',
-    '#suffix' => '</div>',
-  );
+  $form['subscribe'] = oa_notifications_subscribe_button($node);
+  $form['details'] = oa_notifications_show_details_button($node);
 
   return $form;
+}
+
+/**
+ * Builds a Flags powered subscribe button. Only if user isn't on notifications.
+ */
+function oa_notifications_subscribe_button($node) {
+  global $user;
+  $users = oa_notifications_get_notifications($node);
+
+  if (!isset($users[$user->uid])) {
+    return array(
+      '#type' => 'markup',
+      '#markup' => flag_create_link('subscribe_section_content', $node->nid),
+    );
+  }
+
+  return array();
+}
+
+/**
+ * Builds the show details button.
+ */
+function oa_notifications_show_details_button($node) {
+  $details = l(t('Show Details'), 'js/oa_notifications/details/' . $node->nid, array(
+    'attributes' => array(
+      'class' => array('btn'),
+      'data-toggle' => 'modal',
+      'data-target' => '#oa-notifications-details',
+    )
+  ));
+  $details .= theme('oa_styles_modal', array('modal_id' => 'oa-notifications-details', 'title' => t('Notification Details')));
+
+  return array(
+    '#type' => 'markup',
+    '#markup' => $details,
+  );
 }
 
 /**

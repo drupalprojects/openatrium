@@ -77,6 +77,7 @@ projects[message_subscribe][version] = 1.0-alpha3
 ; Flag
 projects[flag][subdir] = contrib
 projects[flag][version] = 2.0
+projects[flag][patch][] = http://drupal.org/files/flag-all-bundles-7.x-2.x-471212-13.patch
 
 ; RealName
 projects[realname][subdir] = contrib
