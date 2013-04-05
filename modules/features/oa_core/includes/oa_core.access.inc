@@ -203,3 +203,28 @@ function oa_core_node_update($node) {
     }
   }
 }
+
+/**
+ * Implements hook_file_entity_access
+ * Check permissions of private files based upon the node they are attached to
+ */
+function oa_core_file_entity_access($op, $file, $account) {
+  if (is_object($file) && in_array($op, array('view', 'download'))) {
+    $scheme = file_uri_scheme($file->uri);
+    $wrapper = file_entity_get_stream_wrapper($scheme);
+    if (!empty($wrapper['private'])) {
+      $query = db_select('node', 'n');
+      $query->join('field_data_field_oa_media', 'f', "n.nid = f.entity_id AND f.entity_type = 'node'");
+      $nodes = $query
+        ->fields('n', array('nid'))
+        ->condition('f.field_oa_media_fid', $file->fid)
+        ->addTag('node_access')
+        ->execute()
+        ->fetchCol(0);
+      if (!empty($nodes)) {
+        return FILE_ENTITY_ACCESS_ALLOW;
+      }
+    }
+  }
+  return FILE_ENTITY_ACCESS_IGNORE;
+}
