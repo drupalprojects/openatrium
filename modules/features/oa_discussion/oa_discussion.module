@@ -66,7 +66,6 @@ function oa_discussion_views_data() {
     'title' => t('Parent ID'),
     'real field' => 'oa_parent_target_id',
     'field' => array(
-      'title' => t('Parent ID'),
       'help' => t('Parent nid, or self nid if no parent'),
       'handler' => 'views_handler_field_oa_parent_id',
     ),
@@ -81,20 +80,33 @@ function oa_discussion_views_data() {
     ),
   );
 
+  $data['node']['last_date'] = array(
+    'title' => t('Last updated date (child/parent)'),
+    'help' => t('Child updated date, or parent updated date'),
+    'real field' => 'changed',
+    'field' => array(
+      'handler' => 'views_handler_field_oa_last_date',
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort_date',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_date',
+    ),
+  );
+
   $data['history']['timestamp_new'] = array(
-    'title' => t('Timestamp (new)'),
+    'title' => t('New Post'),
     'real field' => 'timestamp',
     'field' => array(
-      'title' => t('New Post'),
       'help' => t('Is this post new? (0/1)'),
       'handler' => 'views_handler_field_oa_new_post',
     ),
   );
   $data['history']['timestamp_updated'] = array(
-    'title' => t('Timestamp (updated)'),
+    'title' => t('Updated Post'),
     'real field' => 'timestamp',
     'field' => array(
-      'title' => t('Updated Post'),
       'help' => t('Is this post updated? (0/1)'),
       'handler' => 'views_handler_field_oa_updated_post',
     ),

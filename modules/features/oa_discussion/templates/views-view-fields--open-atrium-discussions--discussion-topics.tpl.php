@@ -31,10 +31,13 @@
   </div>
   <div class='oa-list-header oa-description '>
     <div class='pull-right'>
-      <?php print $parent_id_1 . " " . format_plural($parent_id_1, t('reply'), t('replies')); ?>
+      <?php print $nid_2 . " " . format_plural($nid_2, t('reply'), t('replies')); ?>
       <?php if (!empty($timestamp_new)) { print $timestamp_new . t(' new'); } ?>
       <?php if (!empty($timestamp_updated)) { print $timestamp_updated . t(' updated'); } ?>
-      <?php print t(" Last update: ") . l($changed, 'node/'.$nid); ?>
+      <?php
+        $last_post = (!empty($nid_3)) ? $nid_3 : $nid;
+        print t(" Last update: ") . l($last_date, 'node/'.$last_post);
+      ?>
     </div>
   </div>
   <h5>

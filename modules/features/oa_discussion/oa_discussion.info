@@ -62,6 +62,7 @@ features[views_view][] = open_atrium_discussions
 files[] = views/views_handler_argument_oa_parent_id.inc
 files[] = views/views_handler_field_oa_parent_id.inc
 files[] = views/views_handler_relationship_oa_parent_id.inc
+files[] = views/views_handler_field_oa_last_date.inc
 files[] = views/views_handler_field_oa_new_post.inc
 files[] = views/views_handler_field_oa_updated_post.inc
 project path = profiles/openatrium/modules/features

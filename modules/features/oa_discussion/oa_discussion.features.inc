@@ -64,17 +64,17 @@ function oa_discussion_default_message_type() {
         {
           "value" : "\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E replied to \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:oa-parent:title]\\u003C\\/a\\u003E",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E \\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E replied to \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:oa-parent:title]\\u003C\\/a\\u003E \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E replied to \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E[message:field-oa-node-ref:oa-parent:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "[message:field-oa-message-text:value] [message:field-oa-node-ref:title]",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:field-oa-message-text:value] [message:field-oa-node-ref:title] \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-text:value] [message:field-oa-node-ref:title]\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "[message:field-oa-node-ref:body]",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E [message:field-oa-node-ref:body] \\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E[message:field-oa-node-ref:body]\\u003C\\/p\\u003E\\n"
         }
       ]
     }
