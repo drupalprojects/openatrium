@@ -109,11 +109,11 @@ function oa_sections_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'og',
       'settings' => array(
         'apply_chosen' => 0,
       ),
-      'type' => 'options_select',
+      'type' => 'og_complex',
       'weight' => 4,
     ),
   );
@@ -322,9 +322,6 @@ function oa_sections_field_default_field_instances() {
             'widget_type' => 'options_select',
           ),
           'status' => TRUE,
-        ),
-        'prepopulate' => array(
-          'status' => 0,
         ),
       ),
       'user_register_form' => FALSE,
