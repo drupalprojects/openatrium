@@ -154,6 +154,9 @@ function oa_core_preprocess_views_view_fields(&$vars) {
   $vars['display'] = $vars['view']->current_display;
   foreach ($vars['fields'] as $id => $field) {
     $vars[$id] = $field->content;
+    if ($id == 'timestamp') {
+      $vars[$id.'_raw'] = $field->raw;
+    }
   }
   // View specific alterations.
   if ($vars['view']->name == 'oa_user_spaces' && $vars['view']->current_display == 'full') {

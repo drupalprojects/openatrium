@@ -366,28 +366,22 @@ function oa_discussion_panelizer_defaults() {
     $pane->pid = 'new-10';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_content-panel_pane_2';
+    $pane->subtype = 'open_atrium_discussions-discussion_topics';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'items_per_page' => '10',
       'exposed' => array(
-        'type' => array(
-          'oa_discussion_post' => 'oa_discussion_post',
-        ),
-        'widget_title' => 'Recent Discussions',
-        'use_pager' => 1,
-        'pager_id' => '0',
+        'type' => 'oa_discussion_post',
         'sort_by' => NULL,
         'sort_order' => NULL,
       ),
       'context' => array(
+        0 => 'panelizer',
         1 => 'panelizer',
       ),
-      'override_title' => '',
-      'override_title_text' => '',
       'view_mode' => 'teaser',
-      'widget_title' => 'Recent Discussions',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
       'use_pager' => NULL,
       'pager_id' => NULL,
       'offset' => NULL,

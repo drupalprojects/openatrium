@@ -52,6 +52,7 @@ function oa_discussion_views_data() {
   $data['field_data_oa_parent'] = array(
     'table' => array(
       'group' => t('Open Atrium'),
+      'entity type' => 'node',
     )
   );
   // Adds our field in the "Filters" section of Views
@@ -59,6 +60,44 @@ function oa_discussion_views_data() {
     'title' => 'Parent ID (Content)',
     'help' => 'Filter on the parent node id.',
     'handler' => 'views_handler_argument_oa_parent_id',
+  );
+  $parameters = array('@entity' => t('Content'), '!field_name' => 'parent_id');
+  $data['field_data_oa_parent']['parent_id'] = array(
+    'title' => t('Parent ID'),
+    'real field' => 'oa_parent_target_id',
+    'field' => array(
+      'title' => t('Parent ID'),
+      'help' => t('Parent nid, or self nid if no parent'),
+      'handler' => 'views_handler_field_oa_parent_id',
+    ),
+    'relationship' => array(
+      'handler' => 'views_handler_relationship_oa_parent_id',
+      'base' => 'node',
+      'base field' => 'nid',
+      'label' => t('@entity entity referenced from !field_name', $parameters),
+      'group' => t('Entity Reference'),
+      'title' => t('Parent'),
+      'help' => t('A bridge to the @entity entity that is referenced via !field_name', $parameters),
+    ),
+  );
+
+  $data['history']['timestamp_new'] = array(
+    'title' => t('Timestamp (new)'),
+    'real field' => 'timestamp',
+    'field' => array(
+      'title' => t('New Post'),
+      'help' => t('Is this post new? (0/1)'),
+      'handler' => 'views_handler_field_oa_new_post',
+    ),
+  );
+  $data['history']['timestamp_updated'] = array(
+    'title' => t('Timestamp (updated)'),
+    'real field' => 'timestamp',
+    'field' => array(
+      'title' => t('Updated Post'),
+      'help' => t('Is this post updated? (0/1)'),
+      'handler' => 'views_handler_field_oa_updated_post',
+    ),
   );
   return $data;
 }
@@ -151,7 +190,7 @@ function oa_discussion_views_pre_render(&$view) {
       }
     }
   }
-  
+
   // Attach JS to replies
   if ($view->name == 'open_atrium_discussions' && $view->current_display == 'replies') {
     drupal_add_js(drupal_get_path('module', 'oa_discussion') . '/js/mark-as-read.js');
