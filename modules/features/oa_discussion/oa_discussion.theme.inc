@@ -8,7 +8,8 @@
  * Implements hook_theme()
  */
 function oa_discussion_theme() {
-  $displays = array('replies', 'original_post', 'attachments', 'discussion_topics');
+  $displays = array('replies', 'original_post', 'attachments', 'discussion_topics',
+    'discussion_user', 'discussion_user_reply');
   $theme = array();
   foreach ($displays as $display) {
     $key = 'views_view_fields__open_atrium_discussions__' . $display;

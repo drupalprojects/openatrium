@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * oa_panopoly_users.strongarm.inc
+ * oa_users.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function oa_panopoly_users_strongarm() {
+function oa_users_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

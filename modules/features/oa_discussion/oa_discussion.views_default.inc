@@ -479,237 +479,6 @@ function oa_discussion_views_default_views() {
     ),
   );
 
-  /* Display: Discussion Topics (old) */
-  $handler = $view->new_display('panel_pane', 'Discussion Topics (old)', 'discussion_topics_old');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Topics';
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'changed_1',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'counter' => 'counter',
-    'field_oa_media' => 'field_oa_media',
-  );
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Parent */
-  $handler->display->display_options['relationships']['parent_id']['id'] = 'parent_id';
-  $handler->display->display_options['relationships']['parent_id']['table'] = 'field_data_oa_parent';
-  $handler->display->display_options['relationships']['parent_id']['field'] = 'parent_id';
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid_1']['id'] = 'uid_1';
-  $handler->display->display_options['relationships']['uid_1']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid_1']['field'] = 'uid';
-  $handler->display->display_options['relationships']['uid_1']['relationship'] = 'parent_id';
-  /* Relationship: OG membership: OG membership from Node */
-  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
-  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Open Atrium: Parent ID */
-  $handler->display->display_options['fields']['parent_id']['id'] = 'parent_id';
-  $handler->display->display_options['fields']['parent_id']['table'] = 'field_data_oa_parent';
-  $handler->display->display_options['fields']['parent_id']['field'] = 'parent_id';
-  $handler->display->display_options['fields']['parent_id']['label'] = '';
-  $handler->display->display_options['fields']['parent_id']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'parent_id';
-  $handler->display->display_options['fields']['title']['group_type'] = 'min';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['element_type'] = '0';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Last Post (nid) */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'max';
-  $handler->display->display_options['fields']['nid']['ui_name'] = 'Last Post (nid)';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['element_type'] = '0';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
-  /* Field: Open Atrium: Parent ID */
-  $handler->display->display_options['fields']['parent_id_1']['id'] = 'parent_id_1';
-  $handler->display->display_options['fields']['parent_id_1']['table'] = 'field_data_oa_parent';
-  $handler->display->display_options['fields']['parent_id_1']['field'] = 'parent_id';
-  $handler->display->display_options['fields']['parent_id_1']['group_type'] = 'count';
-  $handler->display->display_options['fields']['parent_id_1']['label'] = '';
-  $handler->display->display_options['fields']['parent_id_1']['element_type'] = '0';
-  $handler->display->display_options['fields']['parent_id_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['parent_id_1']['element_default_classes'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid_1';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['element_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'uid_1';
-  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'oa_small_thumbnail',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_user_picture']['group_column'] = 'entity_id';
-  /* Field: Content: New Post */
-  $handler->display->display_options['fields']['timestamp_new']['id'] = 'timestamp_new';
-  $handler->display->display_options['fields']['timestamp_new']['table'] = 'history';
-  $handler->display->display_options['fields']['timestamp_new']['field'] = 'timestamp_new';
-  $handler->display->display_options['fields']['timestamp_new']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['timestamp_new']['label'] = '';
-  $handler->display->display_options['fields']['timestamp_new']['element_type'] = '0';
-  $handler->display->display_options['fields']['timestamp_new']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['timestamp_new']['element_default_classes'] = FALSE;
-  /* Field: Content: Updated Post */
-  $handler->display->display_options['fields']['timestamp_updated']['id'] = 'timestamp_updated';
-  $handler->display->display_options['fields']['timestamp_updated']['table'] = 'history';
-  $handler->display->display_options['fields']['timestamp_updated']['field'] = 'timestamp_updated';
-  $handler->display->display_options['fields']['timestamp_updated']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['timestamp_updated']['label'] = '';
-  $handler->display->display_options['fields']['timestamp_updated']['element_type'] = '0';
-  $handler->display->display_options['fields']['timestamp_updated']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['timestamp_updated']['element_default_classes'] = FALSE;
-  /* Field: Content: Updated date */
-  $handler->display->display_options['fields']['changed']['id'] = 'changed';
-  $handler->display->display_options['fields']['changed']['table'] = 'node';
-  $handler->display->display_options['fields']['changed']['field'] = 'changed';
-  $handler->display->display_options['fields']['changed']['group_type'] = 'max';
-  $handler->display->display_options['fields']['changed']['label'] = '';
-  $handler->display->display_options['fields']['changed']['element_type'] = '0';
-  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['changed']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['changed']['date_format'] = 'oa_date';
-  $handler->display->display_options['fields']['changed']['oa_date'] = '0';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
-  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
-  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid_1']['relationship'] = 'parent_id';
-  $handler->display->display_options['fields']['nid_1']['group_type'] = 'max';
-  $handler->display->display_options['fields']['nid_1']['label'] = '';
-  $handler->display->display_options['fields']['nid_1']['element_type'] = '0';
-  $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid_1']['element_default_classes'] = FALSE;
-  /* Field: Content: Updated date */
-  $handler->display->display_options['fields']['changed_1']['id'] = 'changed_1';
-  $handler->display->display_options['fields']['changed_1']['table'] = 'node';
-  $handler->display->display_options['fields']['changed_1']['field'] = 'changed';
-  $handler->display->display_options['fields']['changed_1']['group_type'] = 'max';
-  $handler->display->display_options['fields']['changed_1']['label'] = '';
-  $handler->display->display_options['fields']['changed_1']['element_type'] = '0';
-  $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['changed_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['changed_1']['date_format'] = 'oa_date';
-  $handler->display->display_options['fields']['changed_1']['oa_date'] = 'oa_date';
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Updated date */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['group_type'] = 'max';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: OG membership: Group ID */
-  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
-  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
-  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
-  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
-  $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
-  $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
-  $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
-  $handler->display->display_options['arguments']['oa_section_ref_target_id']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['oa_section_ref_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['oa_section_ref_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['oa_section_ref_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['relationship'] = 'parent_id';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'oa_discussion_post' => 'oa_discussion_post',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
-  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-  );
-  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 0;
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
-  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
-  $handler->display->display_options['allow']['fields_override'] = 0;
-  $handler->display->display_options['argument_input'] = array(
-    'gid' => array(
-      'type' => 'none',
-      'context' => 'entity:node.og_group_ref',
-      'context_optional' => 1,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'OG membership: Group ID',
-    ),
-    'oa_section_ref_target_id' => array(
-      'type' => 'context',
-      'context' => 'entity:node.nid',
-      'context_optional' => 1,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: OpenAtrium Section (oa_section_ref)',
-    ),
-  );
-
   /* Display: Discussion Topics */
   $handler = $view->new_display('panel_pane', 'Discussion Topics', 'discussion_topics');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -919,6 +688,8 @@ function oa_discussion_views_default_views() {
     3 => 0,
     4 => 0,
   );
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -944,6 +715,501 @@ function oa_discussion_views_default_views() {
       'panel' => '0',
       'fixed' => '',
       'label' => 'Content: OpenAtrium Section (oa_section_ref)',
+    ),
+  );
+
+  /* Display: User Topics */
+  $handler = $view->new_display('panel_pane', 'User Topics', 'discussion_user');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Your Topics';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'last_date_1',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'counter' => 'counter',
+    'field_oa_media' => 'field_oa_media',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['oa_parent_target_id']['id'] = 'oa_parent_target_id';
+  $handler->display->display_options['relationships']['oa_parent_target_id']['table'] = 'field_data_oa_parent';
+  $handler->display->display_options['relationships']['oa_parent_target_id']['field'] = 'oa_parent_target_id';
+  $handler->display->display_options['relationships']['oa_parent_target_id']['label'] = 'Parent';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['id'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['field'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['label'] = 'Replies';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: OG membership: Group Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['relationships']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
+  $handler->display->display_options['relationships']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_type'] = '0';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Reply Count */
+  $handler->display->display_options['fields']['nid_2']['id'] = 'nid_2';
+  $handler->display->display_options['fields']['nid_2']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_2']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_2']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['nid_2']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid_2']['ui_name'] = 'Reply Count';
+  $handler->display->display_options['fields']['nid_2']['label'] = '';
+  $handler->display->display_options['fields']['nid_2']['element_type'] = '0';
+  $handler->display->display_options['fields']['nid_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid_2']['element_default_classes'] = FALSE;
+  /* Field: Content: New Post */
+  $handler->display->display_options['fields']['timestamp_new']['id'] = 'timestamp_new';
+  $handler->display->display_options['fields']['timestamp_new']['table'] = 'history';
+  $handler->display->display_options['fields']['timestamp_new']['field'] = 'timestamp_new';
+  $handler->display->display_options['fields']['timestamp_new']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['timestamp_new']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['timestamp_new']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_new']['element_type'] = '0';
+  $handler->display->display_options['fields']['timestamp_new']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_new']['element_default_classes'] = FALSE;
+  /* Field: Content: Updated Post */
+  $handler->display->display_options['fields']['timestamp_updated']['id'] = 'timestamp_updated';
+  $handler->display->display_options['fields']['timestamp_updated']['table'] = 'history';
+  $handler->display->display_options['fields']['timestamp_updated']['field'] = 'timestamp_updated';
+  $handler->display->display_options['fields']['timestamp_updated']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['timestamp_updated']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['timestamp_updated']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_updated']['element_type'] = '0';
+  $handler->display->display_options['fields']['timestamp_updated']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_updated']['element_default_classes'] = FALSE;
+  /* Field: Last Reply */
+  $handler->display->display_options['fields']['nid_3']['id'] = 'nid_3';
+  $handler->display->display_options['fields']['nid_3']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_3']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_3']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['nid_3']['group_type'] = 'max';
+  $handler->display->display_options['fields']['nid_3']['ui_name'] = 'Last Reply';
+  $handler->display->display_options['fields']['nid_3']['label'] = '';
+  $handler->display->display_options['fields']['nid_3']['element_type'] = '0';
+  $handler->display->display_options['fields']['nid_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid_3']['element_default_classes'] = FALSE;
+  /* Field: Content: Last updated date (child/parent) */
+  $handler->display->display_options['fields']['last_date']['id'] = 'last_date';
+  $handler->display->display_options['fields']['last_date']['table'] = 'node';
+  $handler->display->display_options['fields']['last_date']['field'] = 'last_date';
+  $handler->display->display_options['fields']['last_date']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['last_date']['group_type'] = 'max';
+  $handler->display->display_options['fields']['last_date']['label'] = '';
+  $handler->display->display_options['fields']['last_date']['element_type'] = '0';
+  $handler->display->display_options['fields']['last_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['last_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['last_date']['date_format'] = 'oa_date';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'oa_small_thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_user_picture']['group_column'] = 'entity_id';
+  /* Field: Content: Last updated date (child/parent) */
+  $handler->display->display_options['fields']['last_date_1']['id'] = 'last_date_1';
+  $handler->display->display_options['fields']['last_date_1']['table'] = 'node';
+  $handler->display->display_options['fields']['last_date_1']['field'] = 'last_date';
+  $handler->display->display_options['fields']['last_date_1']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['last_date_1']['group_type'] = 'max';
+  $handler->display->display_options['fields']['last_date_1']['label'] = '';
+  $handler->display->display_options['fields']['last_date_1']['element_type'] = '0';
+  $handler->display->display_options['fields']['last_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['last_date_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['last_date_1']['date_format'] = 'oa_date';
+  $handler->display->display_options['fields']['last_date_1']['oa_date'] = 'oa_date';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['element_type'] = 'span';
+  $handler->display->display_options['fields']['title_1']['element_class'] = 'label';
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
+  $handler->display->display_options['fields']['title_2']['table'] = 'node';
+  $handler->display->display_options['fields']['title_2']['field'] = 'title';
+  $handler->display->display_options['fields']['title_2']['relationship'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['fields']['title_2']['label'] = '';
+  $handler->display->display_options['fields']['title_2']['element_type'] = 'span';
+  $handler->display->display_options['fields']['title_2']['element_class'] = 'label';
+  $handler->display->display_options['fields']['title_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Last updated date (child/parent) */
+  $handler->display->display_options['sorts']['last_date']['id'] = 'last_date';
+  $handler->display->display_options['sorts']['last_date']['table'] = 'node';
+  $handler->display->display_options['sorts']['last_date']['field'] = 'last_date';
+  $handler->display->display_options['sorts']['last_date']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['sorts']['last_date']['group_type'] = 'max';
+  $handler->display->display_options['sorts']['last_date']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['filters']['nid_1']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_1']['relationship'] = 'oa_parent_target_id';
+  $handler->display->display_options['filters']['nid_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['nid_1']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'oa_discussion_post' => 'oa_discussion_post',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'context',
+      'context' => 'entity:user.uid',
+      'context_optional' => 1,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Author uid',
+    ),
+  );
+
+  /* Display: User Reply Topics */
+  $handler = $view->new_display('panel_pane', 'User Reply Topics', 'discussion_user_reply');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Your Reply Topics';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'last_date_1',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'counter' => 'counter',
+    'field_oa_media' => 'field_oa_media',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['oa_parent_target_id']['id'] = 'oa_parent_target_id';
+  $handler->display->display_options['relationships']['oa_parent_target_id']['table'] = 'field_data_oa_parent';
+  $handler->display->display_options['relationships']['oa_parent_target_id']['field'] = 'oa_parent_target_id';
+  $handler->display->display_options['relationships']['oa_parent_target_id']['label'] = 'Parent';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['id'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['field'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['relationships']['reverse_oa_parent_node']['label'] = 'Replies';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: OG membership: Group Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['relationships']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
+  $handler->display->display_options['relationships']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_type'] = '0';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Reply Count */
+  $handler->display->display_options['fields']['nid_2']['id'] = 'nid_2';
+  $handler->display->display_options['fields']['nid_2']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_2']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_2']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['nid_2']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid_2']['ui_name'] = 'Reply Count';
+  $handler->display->display_options['fields']['nid_2']['label'] = '';
+  $handler->display->display_options['fields']['nid_2']['element_type'] = '0';
+  $handler->display->display_options['fields']['nid_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid_2']['element_default_classes'] = FALSE;
+  /* Field: Content: New Post */
+  $handler->display->display_options['fields']['timestamp_new']['id'] = 'timestamp_new';
+  $handler->display->display_options['fields']['timestamp_new']['table'] = 'history';
+  $handler->display->display_options['fields']['timestamp_new']['field'] = 'timestamp_new';
+  $handler->display->display_options['fields']['timestamp_new']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['timestamp_new']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['timestamp_new']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_new']['element_type'] = '0';
+  $handler->display->display_options['fields']['timestamp_new']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_new']['element_default_classes'] = FALSE;
+  /* Field: Content: Updated Post */
+  $handler->display->display_options['fields']['timestamp_updated']['id'] = 'timestamp_updated';
+  $handler->display->display_options['fields']['timestamp_updated']['table'] = 'history';
+  $handler->display->display_options['fields']['timestamp_updated']['field'] = 'timestamp_updated';
+  $handler->display->display_options['fields']['timestamp_updated']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['timestamp_updated']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['timestamp_updated']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_updated']['element_type'] = '0';
+  $handler->display->display_options['fields']['timestamp_updated']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_updated']['element_default_classes'] = FALSE;
+  /* Field: Last Reply */
+  $handler->display->display_options['fields']['nid_3']['id'] = 'nid_3';
+  $handler->display->display_options['fields']['nid_3']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_3']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_3']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['nid_3']['group_type'] = 'max';
+  $handler->display->display_options['fields']['nid_3']['ui_name'] = 'Last Reply';
+  $handler->display->display_options['fields']['nid_3']['label'] = '';
+  $handler->display->display_options['fields']['nid_3']['element_type'] = '0';
+  $handler->display->display_options['fields']['nid_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid_3']['element_default_classes'] = FALSE;
+  /* Field: Content: Last updated date (child/parent) */
+  $handler->display->display_options['fields']['last_date']['id'] = 'last_date';
+  $handler->display->display_options['fields']['last_date']['table'] = 'node';
+  $handler->display->display_options['fields']['last_date']['field'] = 'last_date';
+  $handler->display->display_options['fields']['last_date']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['last_date']['group_type'] = 'max';
+  $handler->display->display_options['fields']['last_date']['label'] = '';
+  $handler->display->display_options['fields']['last_date']['element_type'] = '0';
+  $handler->display->display_options['fields']['last_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['last_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['last_date']['date_format'] = 'oa_date';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'oa_small_thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_user_picture']['group_column'] = 'entity_id';
+  /* Field: Content: Last updated date (child/parent) */
+  $handler->display->display_options['fields']['last_date_1']['id'] = 'last_date_1';
+  $handler->display->display_options['fields']['last_date_1']['table'] = 'node';
+  $handler->display->display_options['fields']['last_date_1']['field'] = 'last_date';
+  $handler->display->display_options['fields']['last_date_1']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['fields']['last_date_1']['group_type'] = 'max';
+  $handler->display->display_options['fields']['last_date_1']['label'] = '';
+  $handler->display->display_options['fields']['last_date_1']['element_type'] = '0';
+  $handler->display->display_options['fields']['last_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['last_date_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['last_date_1']['date_format'] = 'oa_date';
+  $handler->display->display_options['fields']['last_date_1']['oa_date'] = 'oa_date';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['element_type'] = 'span';
+  $handler->display->display_options['fields']['title_1']['element_class'] = 'label';
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
+  $handler->display->display_options['fields']['title_2']['table'] = 'node';
+  $handler->display->display_options['fields']['title_2']['field'] = 'title';
+  $handler->display->display_options['fields']['title_2']['relationship'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['fields']['title_2']['label'] = '';
+  $handler->display->display_options['fields']['title_2']['element_type'] = 'span';
+  $handler->display->display_options['fields']['title_2']['element_class'] = 'label';
+  $handler->display->display_options['fields']['title_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Last updated date (child/parent) */
+  $handler->display->display_options['sorts']['last_date']['id'] = 'last_date';
+  $handler->display->display_options['sorts']['last_date']['table'] = 'node';
+  $handler->display->display_options['sorts']['last_date']['field'] = 'last_date';
+  $handler->display->display_options['sorts']['last_date']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['sorts']['last_date']['group_type'] = 'max';
+  $handler->display->display_options['sorts']['last_date']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['relationship'] = 'reverse_oa_parent_node';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['filters']['nid_1']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_1']['relationship'] = 'oa_parent_target_id';
+  $handler->display->display_options['filters']['nid_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['nid_1']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'oa_discussion_post' => 'oa_discussion_post',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'context',
+      'context' => 'entity:user.uid',
+      'context_optional' => 1,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Author uid',
     ),
   );
   $export['open_atrium_discussions'] = $view;
