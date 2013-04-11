@@ -88,9 +88,9 @@ function oa_messages_default_message_type() {
           "safe_value" : "\\u003Cp\\u003E@{message:user:name} deleted [message:field-deleted-title]\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted: [message:field-deleted-title]",
+          "value" : "\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted \\u003Cstrong\\u003E[message:field-deleted-title]\\u003C\\/strong\\u003E",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted: [message:field-deleted-title]\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E deleted \\u003Cstrong\\u003E[message:field-deleted-title]\\u003C\\/strong\\u003E\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "[message:field-deleted-summary:value]",
@@ -160,9 +160,9 @@ function oa_messages_default_message_type() {
           "safe_value" : "\\u003Cp\\u003E[message:field-oa-message-text:value]\\u00a0[message:field-oa-node-ref:oa-log]\\u003C\\/p\\u003E\\n\\u003Cp\\u003E[message:field-oa-node-ref:oa-diff:@{message:field-oa-node-ref:vid}]\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022 class=\\u0022oa-userlink\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E in \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-section:nid]\\u0022\\u003E[message:field-oa-message-section:title]\\u003C\\/a\\u003E",
+          "value" : "\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022 class=\\u0022oa-userlink\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E",
           "format" : "panopoly_html_text",
-          "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E in \\u003Ca href=\\u0022\\/node\\/[message:field-oa-message-section:nid]\\u0022\\u003E[message:field-oa-message-section:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022\\/user\\/[message:user:uid]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E updated \\u003Ca href=\\u0022\\/node\\/[message:field-oa-node-ref:nid]\\u0022\\u003E\\u003Cstrong\\u003E[message:field-oa-node-ref:title]\\u003C\\/strong\\u003E\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         },
         {
           "value" : "@{message:field-oa-node-ref:log}",

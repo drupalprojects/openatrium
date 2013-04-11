@@ -32,7 +32,7 @@
   <?php endif; ?>
   <div class='oa-list-category pull-right'>
     <?php if ($display == 'user_activity'): ?>
-      <?php print $field_oa_message_space; ?><br \>
+      <?php print $field_oa_message_space; ?>
     <?php endif; ?>
   </div>
   <div class='oa-list-header pull-right oa-description'>
@@ -41,6 +41,9 @@
   <?php if (strlen(trim(strip_tags($rendered_entity))) > 0): ?>
     <div class='oa-list-header'>
       <?php print $rendered_entity; ?>
+      <?php if (!empty($field_oa_message_section)): ?>
+        <?php print t(' in ') . $field_oa_message_section; ?>
+      <?php endif; ?>
     </div>
     <?php if (strlen(trim(strip_tags($rendered_entity_2))) > 0): ?>
     <div class="accordion" id="oa-river-accordion<?php print $index; ?>">
