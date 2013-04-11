@@ -24,7 +24,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class='oa-list well clearfix attachments'>
+<div class='oa-media-list clearfix attachments'>
   <div class='pull-right user-badge'>
     <?php print $name; ?>
     <?php print $field_user_picture; ?>
@@ -32,7 +32,7 @@
   <div class='oa-list-header'>
     <?php print $counter; ?>
   </div>
-  <div class='pull-left oa-media-list'>
+  <div class='pull-left'>
     <?php print $field_oa_media; ?>
   </div>
 </div>

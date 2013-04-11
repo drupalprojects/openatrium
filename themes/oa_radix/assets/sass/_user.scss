@@ -4,27 +4,35 @@
 // --------------------------------------------------
 .user-badge {
   border: 1px solid #CCC;
-  background-color: #EEE;
-  padding: 3px 3px 3px 8px;
+  padding: 3px 3px 3px 5px;
   min-width: 160px;
+  z-index: 99;
+  position: relative;
+  @include gradient-vertical($navbarBackgroundHighlight, $navbarBackground);
   @include border-radius(4px);
   img {
     vertical-align: middle;
   }
-}
-.user-badge.pull-right, .user-badge.badge-right {
-  text-align: right;
-  margin-left: 10px;
-  img {
-    margin-left: 8px;
+  &.pull-right, &.badge-right {
+    text-align: right;
+    margin-left: 10px;
+    img {
+      margin-left: 5px;
+    }
   }
-}
-.user-badge.pull-left {
-  text-align: left;
-  margin-right: 10px;
-  padding-left: 3px;
-  img {
-    margin-right: 8px;
+  &.pull-left {
+    text-align: left;
+    margin-right: 10px;
+    padding-left: 3px;
+    img {
+      margin-right: 5px;
+    }
+  }
+  &.no-border {
+    padding: 4px 3px 4px 8px;
+    border: 0;
+    min-width: inherit;
+    background: transparent;
   }
 }
 

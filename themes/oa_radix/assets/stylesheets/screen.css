@@ -14824,8 +14824,8 @@ ul.group-content {
   font-size: 14px;
   text-align: center;
   padding: 3px 5px;
-  top: -1px;
-  left: -30px;
+  top: -6px;
+  left: -35px;
   border: 1px solid #e3e3e3;
   background-color: #fafafa;
   border-right: 0;
@@ -15281,56 +15281,74 @@ div.tabs li.active a {
   margin-left: -6px; }
 
 /* line 24, ../sass/_node.scss */
-.field-content ul, .field-content ol, .mceContentBody ul, .mceContentBody ol {
-  list-style-type: disc; }
+.oa-list ul, .field-content ul, .mceContentBody ul {
+  list-style-type: disc;
+  margin: 0 0 10px 25px; }
+/* line 28, ../sass/_node.scss */
+.oa-list ol, .field-content ol, .mceContentBody ol {
+  list-style-type: decimal;
+  margin: 0 0 10px 25px; }
 
-/* line 32, ../sass/_node.scss */
+/* line 36, ../sass/_node.scss */
 .pane-oa-core-members-widget h5 {
   margin-top: 0; }
 
 /* line 5, ../sass/_user.scss */
 .user-badge {
   border: 1px solid #cccccc;
-  background-color: #EEE;
-  padding: 3px 3px 3px 8px;
+  padding: 3px 3px 3px 5px;
   min-width: 160px;
+  z-index: 99;
+  position: relative;
+  background-color: #f9f9f9;
+  background-image: -moz-linear-gradient(top, white, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
+  background-image: -o-linear-gradient(top, white, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2', GradientType=0);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px; }
-  /* line 11, ../sass/_user.scss */
+  /* line 13, ../sass/_user.scss */
   .user-badge img {
     vertical-align: middle; }
+  /* line 16, ../sass/_user.scss */
+  .user-badge.pull-right, .user-badge.badge-right {
+    text-align: right;
+    margin-left: 10px; }
+    /* line 19, ../sass/_user.scss */
+    .user-badge.pull-right img, .user-badge.badge-right img {
+      margin-left: 5px; }
+  /* line 23, ../sass/_user.scss */
+  .user-badge.pull-left {
+    text-align: left;
+    margin-right: 10px;
+    padding-left: 3px; }
+    /* line 27, ../sass/_user.scss */
+    .user-badge.pull-left img {
+      margin-right: 5px; }
+  /* line 31, ../sass/_user.scss */
+  .user-badge.no-border {
+    padding: 4px 3px 4px 8px;
+    border: 0;
+    min-width: inherit;
+    background: transparent; }
 
-/* line 15, ../sass/_user.scss */
-.user-badge.pull-right, .user-badge.badge-right {
-  text-align: right;
-  margin-left: 10px; }
-  /* line 18, ../sass/_user.scss */
-  .user-badge.pull-right img, .user-badge.badge-right img {
-    margin-left: 8px; }
-
-/* line 22, ../sass/_user.scss */
-.user-badge.pull-left {
-  text-align: left;
-  margin-right: 10px;
-  padding-left: 3px; }
-  /* line 26, ../sass/_user.scss */
-  .user-badge.pull-left img {
-    margin-right: 8px; }
-
-/* line 31, ../sass/_user.scss */
+/* line 39, ../sass/_user.scss */
 .oa-river .user-badge {
   border-top: 0;
   border-right: 0; }
 
-/* line 39, ../sass/_user.scss */
+/* line 47, ../sass/_user.scss */
 .pane-oa-user-spaces-full .views-row {
   border: 1px solid #dddddd;
   border-bottom: none; }
-/* line 43, ../sass/_user.scss */
+/* line 51, ../sass/_user.scss */
 .pane-oa-user-spaces-full .views-row-odd {
   background: #f9f9f9; }
-/* line 46, ../sass/_user.scss */
+/* line 54, ../sass/_user.scss */
 .pane-oa-user-spaces-full .views-row-first {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
@@ -15338,7 +15356,7 @@ div.tabs li.active a {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px; }
-/* line 49, ../sass/_user.scss */
+/* line 57, ../sass/_user.scss */
 .pane-oa-user-spaces-full .views-row-last {
   border-bottom: 1px solid #dddddd;
   -moz-border-radius-bottomleft: 5px;
@@ -15347,18 +15365,18 @@ div.tabs li.active a {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px; }
-/* line 54, ../sass/_user.scss */
+/* line 62, ../sass/_user.scss */
 .pane-oa-user-spaces-full .space-container {
   padding: 5px; }
-/* line 58, ../sass/_user.scss */
+/* line 66, ../sass/_user.scss */
 .pane-oa-user-spaces-full .space-details .picture {
   margin-right: 20px;
   height: 120px;
   width: 120px; }
-  /* line 62, ../sass/_user.scss */
+  /* line 70, ../sass/_user.scss */
   .pane-oa-user-spaces-full .space-details .picture img {
     width: 100%; }
-/* line 68, ../sass/_user.scss */
+/* line 76, ../sass/_user.scss */
 .pane-oa-user-spaces-full .accordion {
   padding: 10px;
   margin: 0; }
