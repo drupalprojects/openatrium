@@ -14,7 +14,9 @@
 }
 
 #node-edit .burr-flipped-sidebar .panel-pane {
-  margin-bottom: -1px;
+  border: 0;
+  border-bottom: 1px solid #e3e3e3;
+  margin-bottom: 0;
   padding: 0;
   background: transparent;
   @include box-shadow(none);
@@ -25,15 +27,18 @@
   padding-bottom: 0.5em;
 }
 
-#node-edit .form-actions input {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  @extend .btn-primary;
-  &:hover {
-    color: white;
-    background-color: #0044cc;
-    background-image: none;
+#node-edit .form-actions {
+  background: transparent;
+  input {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    @extend .btn-primary;
+    &:hover {
+      color: white;
+      background-color: #0044cc;
+      background-image: none;
+    }
   }
 }
 
