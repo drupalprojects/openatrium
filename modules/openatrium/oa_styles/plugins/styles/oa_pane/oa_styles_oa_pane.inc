@@ -25,7 +25,7 @@ $plugin = array(
  * Render callback for a single region.
  */
 function theme_oa_styles_oa_pane_style_render_region($vars) {
-  $sep = '<div class="oa-pane panel-separator"></div>';
+  $sep = '<div class="panel-separator"></div>';
   // add separator to end also because panels ipe js removes the last one
   $output = implode($sep, $vars['panes']) . $sep;
 
