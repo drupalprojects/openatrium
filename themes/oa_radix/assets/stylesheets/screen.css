@@ -15300,6 +15300,36 @@ div.tabs li.active a {
   min-width: 160px;
   z-index: 99;
   position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+  /* line 12, ../sass/_user.scss */
+  .user-badge img {
+    vertical-align: middle; }
+  /* line 15, ../sass/_user.scss */
+  .user-badge.pull-right, .user-badge.badge-right {
+    text-align: right;
+    margin-left: 10px; }
+    /* line 18, ../sass/_user.scss */
+    .user-badge.pull-right img, .user-badge.badge-right img {
+      margin-left: 5px; }
+  /* line 22, ../sass/_user.scss */
+  .user-badge.pull-left {
+    text-align: left;
+    margin-right: 10px;
+    padding-left: 3px; }
+    /* line 26, ../sass/_user.scss */
+    .user-badge.pull-left img {
+      margin-right: 5px; }
+  /* line 30, ../sass/_user.scss */
+  .user-badge.no-border {
+    padding: 4px 3px 4px 8px;
+    border: 0;
+    min-width: inherit;
+    background: transparent; }
+
+/* line 37, ../sass/_user.scss */
+.content .user-badge {
   background-color: #f9f9f9;
   background-image: -moz-linear-gradient(top, white, #f2f2f2);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
@@ -15307,48 +15337,21 @@ div.tabs li.active a {
   background-image: -o-linear-gradient(top, white, #f2f2f2);
   background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2', GradientType=0);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px; }
-  /* line 13, ../sass/_user.scss */
-  .user-badge img {
-    vertical-align: middle; }
-  /* line 16, ../sass/_user.scss */
-  .user-badge.pull-right, .user-badge.badge-right {
-    text-align: right;
-    margin-left: 10px; }
-    /* line 19, ../sass/_user.scss */
-    .user-badge.pull-right img, .user-badge.badge-right img {
-      margin-left: 5px; }
-  /* line 23, ../sass/_user.scss */
-  .user-badge.pull-left {
-    text-align: left;
-    margin-right: 10px;
-    padding-left: 3px; }
-    /* line 27, ../sass/_user.scss */
-    .user-badge.pull-left img {
-      margin-right: 5px; }
-  /* line 31, ../sass/_user.scss */
-  .user-badge.no-border {
-    padding: 4px 3px 4px 8px;
-    border: 0;
-    min-width: inherit;
-    background: transparent; }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2', GradientType=0); }
 
-/* line 39, ../sass/_user.scss */
+/* line 41, ../sass/_user.scss */
 .oa-river .user-badge {
   border-top: 0;
   border-right: 0; }
 
-/* line 47, ../sass/_user.scss */
+/* line 49, ../sass/_user.scss */
 .pane-oa-user-spaces-full .views-row {
   border: 1px solid #dddddd;
   border-bottom: none; }
-/* line 51, ../sass/_user.scss */
+/* line 53, ../sass/_user.scss */
 .pane-oa-user-spaces-full .views-row-odd {
   background: #f9f9f9; }
-/* line 54, ../sass/_user.scss */
+/* line 56, ../sass/_user.scss */
 .pane-oa-user-spaces-full .views-row-first {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
@@ -15356,7 +15359,7 @@ div.tabs li.active a {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px; }
-/* line 57, ../sass/_user.scss */
+/* line 59, ../sass/_user.scss */
 .pane-oa-user-spaces-full .views-row-last {
   border-bottom: 1px solid #dddddd;
   -moz-border-radius-bottomleft: 5px;
@@ -15365,18 +15368,18 @@ div.tabs li.active a {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px; }
-/* line 62, ../sass/_user.scss */
+/* line 64, ../sass/_user.scss */
 .pane-oa-user-spaces-full .space-container {
   padding: 5px; }
-/* line 66, ../sass/_user.scss */
+/* line 68, ../sass/_user.scss */
 .pane-oa-user-spaces-full .space-details .picture {
   margin-right: 20px;
   height: 120px;
   width: 120px; }
-  /* line 70, ../sass/_user.scss */
+  /* line 72, ../sass/_user.scss */
   .pane-oa-user-spaces-full .space-details .picture img {
     width: 100%; }
-/* line 76, ../sass/_user.scss */
+/* line 78, ../sass/_user.scss */
 .pane-oa-user-spaces-full .accordion {
   padding: 10px;
   margin: 0; }

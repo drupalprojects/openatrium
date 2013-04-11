@@ -41,7 +41,7 @@
   <?php if (strlen(trim(strip_tags($rendered_entity))) > 0): ?>
     <div class='oa-list-header'>
       <?php print $rendered_entity; ?>
-      <?php if (!empty($field_oa_message_section)): ?>
+      <?php if (($display != 'section_activity') && !empty($field_oa_message_section)): ?>
         <?php print t(' in ') . $field_oa_message_section; ?>
       <?php endif; ?>
     </div>
