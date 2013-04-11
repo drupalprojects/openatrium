@@ -109,11 +109,9 @@ function oa_sections_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'og',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'og_complex',
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 4,
     ),
   );
