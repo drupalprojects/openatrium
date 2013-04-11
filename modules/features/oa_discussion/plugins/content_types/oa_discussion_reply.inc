@@ -115,7 +115,7 @@ function oa_discussion_reply_form_submit($form, &$form_state) {
     // Supply title from body
     elseif (!empty($body['value'])) {
       $alter = array(
-        'max_length' => 40,
+        'max_length' => 80,
         'word_boundary' => TRUE,
         'ellipsis' => TRUE,
         'html' => TRUE,

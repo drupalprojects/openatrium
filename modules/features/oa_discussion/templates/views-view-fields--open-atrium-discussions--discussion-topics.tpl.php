@@ -25,22 +25,22 @@
  */
 ?>
 <div class='oa-list oa-discussion-topic well clearfix <?php print $current_class; ?> <?php print $nid_class; ?>'>
-  <div class='pull-right user-badge'>
-    <?php print $name; ?>
+  <div class='pull-left'>
     <?php print $field_user_picture; ?>
   </div>
-  <div class='oa-list-header oa-description '>
-    <div class='pull-right'>
-      <?php print $nid_2 . " " . format_plural($nid_2, t('reply'), t('replies')); ?>
-      <?php if (!empty($timestamp_new)) { print $timestamp_new . t(' new'); } ?>
-      <?php if (!empty($timestamp_updated)) { print $timestamp_updated . t(' updated'); } ?>
-      <?php
-        $last_post = (!empty($nid_3)) ? $nid_3 : $nid;
-        print t(" Last update: ") . l($last_date, 'node/'.$last_post);
-      ?>
-    </div>
+  <div class='oa-list-header oa-description pull-right'>
+    <?php print $nid_2 . " " . format_plural($nid_2, t('reply'), t('replies')); ?>
+    <?php if (!empty($timestamp_new)) { print $timestamp_new . t(' new'); } ?>
+    <?php if (!empty($timestamp_updated)) { print $timestamp_updated . t(' updated'); } ?>
+    <?php
+      $last_post = (!empty($nid_3)) ? $nid_3 : $nid;
+      print t(" Last update: ") . l($last_date, 'node/'.$last_post);
+    ?>
   </div>
-  <h5>
-    <?php print $title; ?>
-  </h5>
+  <div class='oa-list-header'>
+    <?php print $name . t(' posted '); ?>
+    <h5>
+      <?php print $title; ?>
+    </h5>
+  </div>
 </div>

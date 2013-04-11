@@ -265,7 +265,7 @@ function oa_layouts_panelizer_defaults() {
       'contentmain' => NULL,
     ),
     'sidebar' => array(
-      'style' => 'oa_styles_well',
+      'style' => 'oa_styles_oa_pane',
     ),
   );
   $display->cache = array();
@@ -464,7 +464,7 @@ function oa_layouts_panelizer_defaults() {
       'sidebar' => NULL,
     ),
     'sidebar' => array(
-      'style' => 'oa_styles_well',
+      'style' => 'oa_styles_oa_pane',
     ),
   );
   $display->cache = array();
@@ -524,6 +524,7 @@ function oa_layouts_panelizer_defaults() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'oa_styles_oa_pane',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -626,7 +627,7 @@ function oa_layouts_panelizer_defaults() {
       'more_link' => 0,
       'use_pager' => 1,
       'pager_id' => '0',
-      'items_per_page' => '10',
+      'items_per_page' => '20',
       'fields_override' => array(
         'title' => 1,
       ),
@@ -733,7 +734,7 @@ function oa_layouts_panelizer_defaults() {
       'style' => 'oa_styles_well',
     ),
     'sidebar' => array(
-      'style' => 'oa_styles_well',
+      'style' => 'oa_styles_oa_pane',
     ),
   );
   $display->cache = array();
@@ -880,7 +881,7 @@ function oa_layouts_panelizer_defaults() {
       'more_link' => 0,
       'use_pager' => 1,
       'pager_id' => '0',
-      'items_per_page' => '10',
+      'items_per_page' => '20',
       'fields_override' => array(
         'title' => 1,
       ),

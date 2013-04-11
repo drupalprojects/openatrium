@@ -14,10 +14,11 @@
 }
 
 #node-edit .burr-flipped-sidebar .panel-pane {
-  border: 0;
-  margin-bottom: 0;
+  margin-bottom: -1px;
   padding: 0;
+  background: transparent;
   @include box-shadow(none);
+  @include border-radius(0);
 }
 
 #node-edit .container-inline-date .form-item-date-time, #node-edit .container-inline-date .form-item-date-date {
@@ -47,7 +48,7 @@
 .views-exposed-form .filter-btn {
   position: absolute;
   top: 10px;
-  right: 0;
+  right: 10px;
 }
 
 .view-filters form {

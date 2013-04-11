@@ -36,8 +36,8 @@
       ?>
       <br \><?php print $title_1; ?> <?php print $title_2; ?>
     </div>
+    <h5>
+      <?php print $title; ?>
+    </h5>
   </div>
-  <h5>
-    <?php print $title; ?>
-  </h5>
 </div>

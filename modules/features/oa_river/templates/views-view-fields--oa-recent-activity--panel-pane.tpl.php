@@ -34,12 +34,9 @@
     <?php if ($display == 'user_activity'): ?>
       <?php print $field_oa_message_space; ?><br \>
     <?php endif; ?>
-    <?php if ($display != 'section_activity'): ?>
-      <?php print $field_oa_message_section; ?>
-    <?php endif; ?>
-    <div class='oa-description'>
-      <?php print $timestamp; ?>
-    </div>
+  </div>
+  <div class='oa-list-header pull-right oa-description'>
+    <?php print $timestamp; ?>
   </div>
   <?php if (strlen(trim(strip_tags($rendered_entity))) > 0): ?>
     <div class='oa-list-header'>
@@ -63,13 +60,13 @@
       </div>
     </div>
     <?php else: ?>
-      <div class='oa-list-header'>
+      <div>
         <?php print $field_oa_message_text; ?>
         <?php print $rendered_entity_1; ?>
       </div>
     <?php endif; ?>
   <?php else: ?>
-    <div class='oa-list-header'>
+    <div>
       <?php print $field_oa_message_text; ?>
     </div>
   <?php endif; ?>
