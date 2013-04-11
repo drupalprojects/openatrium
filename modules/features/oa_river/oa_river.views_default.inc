@@ -124,8 +124,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['field_oa_message_section']['table'] = 'field_data_field_oa_message_section';
   $handler->display->display_options['fields']['field_oa_message_section']['field'] = 'field_oa_message_section';
   $handler->display->display_options['fields']['field_oa_message_section']['label'] = '';
-  $handler->display->display_options['fields']['field_oa_message_section']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_oa_message_section']['element_class'] = 'label';
+  $handler->display->display_options['fields']['field_oa_message_section']['element_type'] = '0';
   $handler->display->display_options['fields']['field_oa_message_section']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_oa_message_section']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_oa_message_section']['settings'] = array(
