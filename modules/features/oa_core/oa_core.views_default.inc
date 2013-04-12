@@ -203,6 +203,10 @@ function oa_core_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['oa_parent_target_id']['id'] = 'oa_parent_target_id';
+  $handler->display->display_options['relationships']['oa_parent_target_id']['table'] = 'field_data_oa_parent';
+  $handler->display->display_options['relationships']['oa_parent_target_id']['field'] = 'oa_parent_target_id';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -250,6 +254,12 @@ function oa_core_views_default_views() {
     3 => 0,
     4 => 0,
   );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['relationship'] = 'oa_parent_target_id';
+  $handler->display->display_options['filters']['nid']['operator'] = 'empty';
 
   /* Display: Recent Space Content */
   $handler = $view->new_display('panel_pane', 'Recent Space Content', 'panel_pane_1');

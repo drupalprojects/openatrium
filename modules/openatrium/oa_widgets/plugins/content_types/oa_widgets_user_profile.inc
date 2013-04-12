@@ -16,14 +16,14 @@ $plugin = array(
 function oa_widgets_user_profile_render($subtype, $conf, $args, $context = NULL) {
   $block = new stdClass();
   $block->title = '';
-  
+
   $vars = array();
   oa_dashboard_preprocess_oa_user_badge($vars);
-  
+
   global $user;
   if ($user->uid) {
     $user = user_load($user->uid);
-    $vars = oa_panopoly_users_build_user_details($user, 'oa_medium_thumbnail');
+    $vars = oa_users_build_user_details($user, 'oa_medium_thumbnail');
     $block->content = theme('oa_widgets_user_profile', $vars);
   }
   return $block;

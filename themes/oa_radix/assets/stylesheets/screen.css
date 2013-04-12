@@ -15281,11 +15281,11 @@ div.tabs li.active a {
   margin-left: -6px; }
 
 /* line 24, ../sass/_node.scss */
-.oa-list ul, .field-content ul, .mceContentBody ul {
+.oa-list ul, .field .field-item ul, .field-content ul, .mceContentBody ul {
   list-style-type: disc;
   margin: 0 0 10px 25px; }
 /* line 28, ../sass/_node.scss */
-.oa-list ol, .field-content ol, .mceContentBody ol {
+.oa-list ol, .field .field-item ol, .field-content ol, .mceContentBody ol {
   list-style-type: decimal;
   margin: 0 0 10px 25px; }
 
