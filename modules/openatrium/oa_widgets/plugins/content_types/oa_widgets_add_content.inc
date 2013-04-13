@@ -19,13 +19,15 @@ $plugin = array(
  * See ctools_plugin_examples for more advanced info
  */
 function oa_widgets_add_content_render($subtype, $conf, $args, $context = NULL) {
+  global $user;
+
   $nodes = $conf['oa_widgets_types'];
 
   $links = array();
-  foreach ($nodes as $node) {
-    $node = node_type_load($node);
-    if (is_object($node) && user_access('create ' . $node->type . ' content')) {
-      $links[] = '<li>' . l($node->name, 'node/add/' . str_replace('_', '-', $node->type)) . '</li>';
+  foreach ($nodes as $node_type) {
+    $node = node_type_load($node_type);
+    if (is_object($node) && node_access('create', $node_type)) {
+      $links[] = '<li>' . l($node->name, 'node/add/' . str_replace('_', '-', $node_type)) . '</li>';
     }
   }
   $output = '<ul>' . implode($links) . '</ul>';
