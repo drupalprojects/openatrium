@@ -55,7 +55,7 @@ function oa_discussion_views_data() {
       'entity type' => 'node',
     )
   );
-  // Adds our field in the "Filters" section of Views
+  // Adds our field in the "Contextual Filters" section of Views
   $data['field_data_oa_parent']['entity_id']['argument'] = array(
     'title' => 'Parent ID (Content)',
     'help' => 'Filter on the parent node id.',

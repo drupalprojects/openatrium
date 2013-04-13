@@ -192,21 +192,21 @@ function oa_core_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Recent Content';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['oa_parent_target_id']['id'] = 'oa_parent_target_id';
-  $handler->display->display_options['relationships']['oa_parent_target_id']['table'] = 'field_data_oa_parent';
-  $handler->display->display_options['relationships']['oa_parent_target_id']['field'] = 'oa_parent_target_id';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -254,12 +254,10 @@ function oa_core_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid']['id'] = 'nid';
-  $handler->display->display_options['filters']['nid']['table'] = 'node';
-  $handler->display->display_options['filters']['nid']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid']['relationship'] = 'oa_parent_target_id';
-  $handler->display->display_options['filters']['nid']['operator'] = 'empty';
+  /* Filter criterion: Open Atrium: Is Parent */
+  $handler->display->display_options['filters']['is_parent']['id'] = 'is_parent';
+  $handler->display->display_options['filters']['is_parent']['table'] = 'field_data_oa_parent';
+  $handler->display->display_options['filters']['is_parent']['field'] = 'is_parent';
 
   /* Display: Recent Space Content */
   $handler = $view->new_display('panel_pane', 'Recent Space Content', 'panel_pane_1');
@@ -306,7 +304,6 @@ function oa_core_views_default_views() {
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
-  $handler->display->display_options['arguments']['oa_section_ref_target_id']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['summary']['format'] = 'default_summary';
@@ -324,9 +321,9 @@ function oa_core_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
   $handler->display->display_options['argument_input'] = array(
     'gid' => array(
-      'type' => 'none',
+      'type' => 'context',
       'context' => 'entity:node.group-group',
-      'context_optional' => 0,
+      'context_optional' => 1,
       'panel' => '0',
       'fixed' => '31',
       'label' => 'OG membership: Group ID',

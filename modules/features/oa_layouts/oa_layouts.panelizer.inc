@@ -530,16 +530,17 @@ function oa_layouts_panelizer_defaults() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'items_per_page' => '10',
+      'items_per_page' => '20',
       'exposed' => array(
         'type' => array(),
         'widget_title' => '',
-        'use_pager' => 1,
-        'pager_id' => '0',
+        'use_pager' => 0,
+        'pager_id' => '',
         'sort_by' => NULL,
         'sort_order' => NULL,
       ),
       'context' => array(
+        0 => 'panelizer',
         1 => 'panelizer',
       ),
       'override_title' => '',
