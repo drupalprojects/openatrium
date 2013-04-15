@@ -16,6 +16,6 @@ function oa_core_install_load_profile(&$install_state) {
   }
 
   // Include any dependencies that we might have missed...
-  require_once(drupal_get_path('module', 'oa_core') . '/oa_core.profile.inc');
+  require_once(drupal_get_path('module', 'panopoly_core') . '/panopoly_core.profile.inc');
   panopoly_core_install_load_profile($install_state);
 }
