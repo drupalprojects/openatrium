@@ -53,6 +53,7 @@ function oa_users_build_user_details($user, $image_style = 'oa_small_thumbnail')
   $details['user'] = $user;
   $details['realname'] = empty($user->realname) ? $user->name : $user->realname;
   $details['name'] = $user->name;
+  $details['picture'] = '';
 
   if (!empty($user->field_user_picture)) {
     $picture = $user->field_user_picture[LANGUAGE_NONE][0];
