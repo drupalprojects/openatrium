@@ -1,0 +1,15 @@
+<?php
+/**
+ * @file
+ * Code for the oa Config feature Install hooks.
+ */
+
+/**
+ * Implements hook_install
+ */
+function oa_config_install() {
+  $path = variable_get('file_private_path', '');
+  if (!empty($path) && !is_dir($path)) {
+    mkdir($path, 0, true);
+  }
+}
