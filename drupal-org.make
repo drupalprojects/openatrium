@@ -76,11 +76,11 @@ projects[message][patch][] = http://drupal.org/files/message-install-creates-err
 
 ; Message Notify
 projects[message_notify][subdir] = contrib
-projects[message_notify][version] = 2.3
+projects[message_notify][version] = 2.4
 
 ; Message Subscribe
 projects[message_subscribe][subdir] = contrib
-projects[message_subscribe][version] = 1.0-alpha3
+projects[message_subscribe][version] = 1.0-alpha4
 
 ; Flag
 projects[flag][subdir] = contrib
