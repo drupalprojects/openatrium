@@ -31,6 +31,7 @@ features[field_instance][] = node-oa_pages_page-body
 features[field_instance][] = node-oa_pages_page-field_oa_media
 features[field_instance][] = node-oa_pages_page-oa_section_ref
 features[field_instance][] = node-oa_pages_page-og_group_ref
+features[field_instance][] = node-oa_pages_page-og_vocabulary
 features[node][] = oa_pages_page
 features[page_manager_handlers][] = node_edit_panel_context_6
 features[panelizer_defaults][] = node:oa_pages_page:default
