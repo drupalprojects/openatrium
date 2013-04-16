@@ -163,17 +163,10 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
  * Builds a Flags powered subscribe button. Only if user isn't on notifications.
  */
 function oa_notifications_subscribe_button($node) {
-  global $user;
-  $users = oa_notifications_get_notifications($node);
-
-  if (!isset($users[$user->uid])) {
-    return array(
-      '#type' => 'markup',
-      '#markup' => flag_create_link('subscribe_section_content', $node->nid),
-    );
-  }
-
-  return array();
+  return array(
+    '#type' => 'markup',
+    '#markup' => flag_create_link('subscribe_section_content', $node->nid),
+  );
 }
 
 /**
