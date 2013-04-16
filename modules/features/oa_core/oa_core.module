@@ -194,3 +194,27 @@ function oa_core_preprocess_oa_user_spaces_full_view_fields(&$vars) {
     $vars['sections'][$id]['href'] = url('node/' . $id);
   }
 }
+
+/**
+ * Replace "group" term in OG with "space"
+ */
+function oa_core_replace_group(&$field) {
+  if (isset($field)) {
+    $field = str_replace(t('group'), t('space'), $field);
+    $field = str_replace(t('Group'), t('Space'), $field);
+  }
+}
+
+/**
+ * Implements hook_field_attach_view_alter
+ */
+function oa_core_field_attach_view_alter(&$output, $context) {
+  if ($context['entity_type'] == 'node') {
+    if (!empty($output['group_group'][0]['#title'])) {
+      oa_core_replace_group($output['group_group'][0]['#title']);
+    }
+    if (!empty($output['group_group'][0]['#markup'])) {
+      oa_core_replace_group($output['group_group'][0]['#markup']);
+    }
+  }
+}
