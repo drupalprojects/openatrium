@@ -140,13 +140,20 @@ function oa_core_create_node($bundle, $title = '', $context = NULL) {
  *   'links' is a list of node links
  *   'ids' is a list of the node ids
  */
-function oa_core_get_titles($ids = array(), $type = '') {
+function oa_core_get_titles($ids = array(), $type = '', $sort_field = NULL) {
   $items = array('titles' => array(), 'links' => array(), 'ids' => array());
   if (!empty($ids)) {
     $query = db_select('node', 'n');
+    if (!empty($sort_field)) {
+      $query->leftJoin('field_data_' . $sort_field, 's',
+        "n.nid = s.entity_id AND s.entity_type = 'node'");
+    }
     $query
       ->fields('n', array('nid', 'title'))
       ->condition('n.nid', $ids, 'IN');
+    if (!empty($sort_field)) {
+      $query->orderBy('s.' . $sort_field . '_value');
+    }
     if (!empty($type)) {
       $query->condition('n.type', $type);
     }
@@ -199,12 +206,15 @@ function oa_core_get_public_spaces() {
 function oa_core_space_sections($gid) {
   $query = db_select('node', 'n');
   $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');
+  $query->leftJoin('field_data_field_oa_section_weight', 'w',
+        "n.nid = w.entity_id AND w.entity_type = 'node'");
   $query
     ->fields('n', array('nid', 'title'))
     ->condition('n.type', OA_SECTION_TYPE)
     ->condition('og.entity_type', 'node')
     ->condition('og.field_name', OA_SPACE_FIELD)
     ->condition('og.gid', $gid)
+    ->orderBy('w.field_oa_section_weight_value')
     ->addTag('node_access');
   $result = $query->execute();
   return $result->fetchAllKeyed(0, 1);
