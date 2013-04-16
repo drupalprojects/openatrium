@@ -301,6 +301,15 @@ function oa_messages_theme() {
     ),
   );
 }
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function oa_messages_theme_registry_alter(&$theme_reg) {
+  $theme_reg['htmlmail']['path'] = drupal_get_path('module', 'oa_messages') . '/templates';
+  $theme_reg['htmlmail']['theme path'] = $theme_reg['htmlmail']['path'];
+}
+
 /**
  * Theme function for showing who is added and removed from team
  * @param  $vars['old_users'] the old value of field_oa_team_users
