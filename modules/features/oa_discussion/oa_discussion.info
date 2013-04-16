@@ -44,6 +44,7 @@ features[field_instance][] = node-oa_discussion_post-field_oa_media
 features[field_instance][] = node-oa_discussion_post-oa_parent
 features[field_instance][] = node-oa_discussion_post-oa_section_ref
 features[field_instance][] = node-oa_discussion_post-og_group_ref
+features[field_instance][] = node-oa_discussion_post-og_vocabulary
 features[message_type][] = oa_reply
 features[node][] = oa_discussion_post
 features[page_manager_handlers][] = node_edit_panel_context_5

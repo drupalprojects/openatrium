@@ -51,7 +51,6 @@
           <?php print $body; ?>
           <?php print $field_oa_media; ?>
           <div class="links">
-            <a href='#'>reply</a>
             <?php print $edit_node; ?>
             <?php print $remove_link; ?>
           </div>
