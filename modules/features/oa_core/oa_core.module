@@ -206,7 +206,7 @@ function oa_core_replace_group(&$field) {
 }
 
 /**
- * Implements hook_ctools_render_alter
+ * Implements hook_field_attach_view_alter
  */
 function oa_core_field_attach_view_alter(&$output, $context) {
   if ($context['entity_type'] == 'node') {
