@@ -8,10 +8,6 @@ projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
 projects[panopoly][download][branch] = 7.x-1.x
 
 ; **** Panopoly Overrides ****
-; Update Features to latest version
-projects[features][subdir] = contrib
-projects[features][version] = 2.0-beta2
-
 ; Update Panels to fix issue with custom region styles
 projects[panels][version] = 3.x-dev
 projects[panels][subdir] = contrib
@@ -46,10 +42,6 @@ projects[entityreference][download][url] = http://git.drupal.org/project/entityr
 projects[entityreference][download][branch] = 7.x-1.x
 projects[entityreference][download][revision] = 1c176daef3e7483389cbebeb34784b3af6521f7f
 
-; Navbar (Overridden from Panopoly)
-projects[navbar][subdir] = contrib
-projects[navbar][version] = 1.0-alpha3
-projects[navbar][patch][] = http://drupal.org/files/navbar_has_mismatching_closing_tag_1875254_1.patch
 ;
 ; **** end of overrides ****
 
