@@ -12,6 +12,14 @@ projects[panopoly][download][branch] = 7.x-1.x
 projects[features][subdir] = contrib
 projects[features][version] = 2.0-beta2
 
+; Update Panels to fix issue with custom region styles
+projects[panels][version] = 3.x-dev
+projects[panels][subdir] = contrib
+projects[panels][download][type] = git
+projects[panels][download][revision] = a915408
+projects[panels][download][branch] = 7.x-3.x
+projects[panels][patch][] = http://drupal.org/files/1838544-panels_ipe_region_style_0.patch
+
 ; Update Panelizer to latest with features override patch
 projects[panelizer][type] = module
 projects[panelizer][subdir] = contrib
