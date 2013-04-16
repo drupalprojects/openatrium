@@ -99,14 +99,16 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     $wrapper->save();
 
     if ($send && isset($entity) && ($entity_type == 'node')) {
+      // @TODO: Add html settings to notify options.
       $subscribe_options = oa_messages_build_subscribe_options($entity, $message);
       message_subscribe_process_message('node', $entity, $message, array(), $subscribe_options);
     }
   }
 }
 
+
 /**
- * Builds the subscribe options for an entity, based on the message.
+ * Builds the subscribe options for a message.
  */
 function oa_messages_build_subscribe_options($entity, $message) {
   $options = array();
@@ -114,7 +116,6 @@ function oa_messages_build_subscribe_options($entity, $message) {
   foreach ($users as $uid => $user) {
     // Disable certain notifiers based on preferences.
     $notifiers = oa_messages_determine_user_notifiers($user, $entity, $message);
-
     $options['uids'][$uid] = array(
       'entity' => $user,
       'notifiers' => $notifiers,
@@ -151,7 +152,7 @@ function oa_messages_determine_user_notifiers($user, $entity, $message, $notifie
  * add notifiers by invoking hook_oa_message_notifiers_alter().
  */
 function oa_message_notifiers() {
-  $notifiers = array('email');
+  $notifiers = array('oa_email');
   drupal_alter('oa_message_notifiers', $notifiers);
   return $notifiers;
 }
@@ -350,4 +351,15 @@ function theme_oa_team_update($vars) {
  */
 function oa_messages_ctools_plugin_directory($owner, $plugin_type) {
   return 'plugins/' . $owner . '/' . $plugin_type;
+}
+
+
+/**
+ * Implements hook_preprocess_htmlemail().
+ */
+function oa_messages_preprocess_htmlmail(&$vars) {
+  // Get the message entity, and user the message is related to.
+  $vars['message'] = !empty($vars['params']['message_entity']) ? $vars['params']['message_entity'] : array();
+  $vars['to_user'] = !empty($vars['message']) ? $vars['message']->user : FALSE;
+  $vars['to_user_details'] = !empty($vars['to_user']) ? oa_users_build_user_details($vars['to_user']) : array();
 }

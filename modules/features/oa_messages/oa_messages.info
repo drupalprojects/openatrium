@@ -53,6 +53,4 @@ features[variable][] = field_bundle_settings_message__oa_create
 features[variable][] = field_bundle_settings_message__oa_delete
 features[variable][] = field_bundle_settings_message__oa_member
 features[variable][] = field_bundle_settings_message__oa_update
-files[] = plugins/feeds/OaMailParser.inc
-files[] = plugins/feeds/OaMailParser.class.php
 project path = profiles/openatrium/modules/features
