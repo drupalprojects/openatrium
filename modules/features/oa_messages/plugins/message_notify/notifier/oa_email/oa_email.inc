@@ -45,7 +45,6 @@ class OaEmail extends MessageNotifierEmail {
     $output['message_notify_email_subject'] = strip_tags($output['message_notify_email_subject']);
 
     // Allow for overriding the 'from' of the message.
-    dpm($options);
     $from = isset($options['from']) ? $options['from'] : NULL;
 
     // Pass the message entity along to hook_drupal_mail().

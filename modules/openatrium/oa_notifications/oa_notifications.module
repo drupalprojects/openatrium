@@ -88,6 +88,12 @@ function oa_notifications_get_notifications($node) {
       $users = user_load_multiple(array_keys($notifications['user']));
       $bucket += $users;
     }
+
+    // Also grab users who flagged the content.
+    $bucket += flag_get_content_flags('node', $node->nid, 'subscribe_section_content');
+
+    // Allow modules to alter users.
+    drupal_alter('notifications_users', $bucket, $node);
   }
 
   return $bucket;

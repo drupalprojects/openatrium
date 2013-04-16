@@ -211,6 +211,15 @@ function oa_discussion_views_pre_render(&$view) {
 }
 
 /**
+ * Implements hook_panels_pane_content_alter().
+ */
+function oa_discussion_panels_pane_content_alter(&$content, $pane, $args, $context) {
+  if ($pane->type == 'oa_notifications_pane') {
+    oa_discussion_alter_notifications_pane($content, $pane, $args, $context);
+  }
+}
+
+/**
  * Implements hook_oa_messages_type_alter
  * Override the oa_create message for discussion replies
  */
@@ -280,6 +289,38 @@ function oa_discussion_mark_as_read($nids) {
     $node = node_load($nid);
     if ($node) {
       node_tag_new($node);
+    }
+  }
+}
+
+/**
+ * Change the subscribe flag for the notifications pane to use parent post id.
+ */
+function oa_discussion_alter_notifications_pane(&$content, $pane, $args, $context) {
+  $node = $context['panelizer']->data;
+  if ($node->type == 'oa_discussion_post' && isset($content->content['#subscribe'])) {
+    $parent_id = empty($node->oa_parent) ? FALSE : $node->oa_parent[LANGUAGE_NONE][0]['target_id'];
+    if ($parent_id) {
+      $content->content['#subscribe'] = array(
+        '#type' => 'markup',
+        '#markup' => flag_create_link('subscribe_section_content', $parent_id),
+      );
+    }
+  }
+}
+
+
+/**
+ * Implements hook_notifications_users_alter().
+ */
+function oa_discussion_notifications_users_alter(&$users, $node) {
+  // Add the parent's flagged subscribers, if available.
+  if ($node->type == 'oa_discussion_post' && !empty($node->oa_parent)) {
+    $parent_id = $node->oa_parent[LANGUAGE_NONE][0]['target_id'];
+    $subscribers = flag_get_content_flags('node', $parent_id, 'subscribe_section_content');
+    foreach ($subscribers as $subscriber) {
+      $user = user_load($subscriber->uid);
+      $users[$user->uid] = $user;
     }
   }
 }
