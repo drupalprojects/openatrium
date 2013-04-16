@@ -9,19 +9,18 @@ $plugin = array(
     'to' => FALSE,
     'from' => FALSE,
   ),
+  // A notifier must define its own view modes.
+  // Those view modes are later going to be rendered and sent.
+  'view_modes' => array(
+    'message_notify_email_subject' => array('label' => t('Notify - Email subject')),
+    'message_notify_email_body' => array('label' => t('Notify - Email body')),
+  ),
 );
 
 /**
  * Email notifier.
  */
 class OaEmail extends MessageNotifierEmail {
-
-  /**
-   * Add Message notify view mode.
-   */
-  public static function viewModes() {
-    return parent::viewModes();
-  }
 
   /**
    * Override parent deliver() function.
