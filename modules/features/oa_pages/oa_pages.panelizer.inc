@@ -39,7 +39,7 @@ function oa_pages_panelizer_defaults() {
       'contentmain' => NULL,
     ),
     'sidebar' => array(
-      'style' => 'oa_styles_well',
+      'style' => 'oa_styles_oa_pane',
     ),
   );
   $display->cache = array();

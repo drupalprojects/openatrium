@@ -116,48 +116,6 @@ function oa_layouts_default_panels_mini() {
     $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'contentmain';
-    $pane->type = 'page_logo';
-    $pane->subtype = 'page_logo';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'pull-left',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['contentmain'][1] = 'new-3';
-    $pane = new stdClass();
-    $pane->pid = 'new-4';
-    $pane->panel = 'contentmain';
-    $pane->type = 'page_site_name';
-    $pane->subtype = 'page_site_name';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'pull-left brand',
-    );
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['contentmain'][2] = 'new-4';
-    $pane = new stdClass();
-    $pane->pid = 'new-5';
-    $pane->panel = 'contentmain';
     $pane->type = 'block';
     $pane->subtype = 'oa_dashboard-oa_toolbar';
     $pane->shown = TRUE;
@@ -175,12 +133,12 @@ function oa_layouts_default_panels_mini() {
       'css_class' => 'pull-left',
     );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['contentmain'][3] = 'new-5';
+    $display->content['new-3'] = $pane;
+    $display->panels['contentmain'][1] = 'new-3';
     $pane = new stdClass();
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-4';
     $pane->panel = 'contentmain';
     $pane->type = 'block';
     $pane->subtype = 'oa_dashboard-oa_user_badge';
@@ -199,10 +157,10 @@ function oa_layouts_default_panels_mini() {
       'css_class' => 'pull-right',
     );
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['contentmain'][4] = 'new-6';
+    $display->content['new-4'] = $pane;
+    $display->panels['contentmain'][2] = 'new-4';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $mini->display = $display;

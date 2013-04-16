@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="burr-flipped-sidebar burr-flipped-content-region panel-panel">
-      <div class="burr-flipped-sidebar-inner well burr-flipped-content-region-inner panel-panel-inner">
+      <div class="burr-flipped-sidebar-inner oa-pane burr-flipped-content-region-inner panel-panel-inner">
         <?php print $content['sidebar']; ?>
       </div>
     </div>

@@ -15,24 +15,30 @@
 
 #node-edit .burr-flipped-sidebar .panel-pane {
   border: 0;
+  border-bottom: 1px solid #e3e3e3;
   margin-bottom: 0;
   padding: 0;
+  background: transparent;
   @include box-shadow(none);
+  @include border-radius(0);
 }
 
 #node-edit .container-inline-date .form-item-date-time, #node-edit .container-inline-date .form-item-date-date {
   padding-bottom: 0.5em;
 }
 
-#node-edit .form-actions input {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  @extend .btn-primary;
-  &:hover {
-    color: white;
-    background-color: #0044cc;
-    background-image: none;
+#node-edit .form-actions {
+  background: transparent;
+  input {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    @extend .btn-primary;
+    &:hover {
+      color: white;
+      background-color: #0044cc;
+      background-image: none;
+    }
   }
 }
 
@@ -47,7 +53,7 @@
 .views-exposed-form .filter-btn {
   position: absolute;
   top: 10px;
-  right: 0;
+  right: 10px;
 }
 
 .view-filters form {

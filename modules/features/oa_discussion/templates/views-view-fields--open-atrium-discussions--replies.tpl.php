@@ -25,7 +25,7 @@
  */
 ?>
 <div class='oa-list oa-discussion-reply well clearfix <?php print $current_class; ?> <?php print $status_class; ?> <?php print $nid_class; ?>'>
-  <div class='pull-right user-badge'>
+  <div class='pull-right user-badge no-border'>
     <?php print $name; ?>
     <?php print $field_user_picture; ?>
   </div>

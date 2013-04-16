@@ -110,9 +110,7 @@ function oa_sections_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 4,
     ),
@@ -322,9 +320,6 @@ function oa_sections_field_default_field_instances() {
             'widget_type' => 'options_select',
           ),
           'status' => TRUE,
-        ),
-        'prepopulate' => array(
-          'status' => 0,
         ),
       ),
       'user_register_form' => FALSE,

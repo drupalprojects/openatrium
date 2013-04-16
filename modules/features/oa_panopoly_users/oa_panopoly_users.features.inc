@@ -38,18 +38,57 @@ function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
     $data['user:user:default']->display->content['new-1']->configuration['path'] = NULL; /* WAS: '' */
     $data['user:user:default']->display->content['new-1']->configuration['use_pager'] = NULL; /* WAS: '' */
     $data['user:user:default']->display->content['new-1']->configuration['widget_title'] = NULL; /* WAS: '' */
-    $data['user:user:default']->display->content['new-1']->panel = 'contentmain'; /* WAS: 'column1' */
+    $data['user:user:default']->display->content['new-1']->panel = 'contentheader'; /* WAS: 'column1' */
     $data['user:user:default']->display->content['new-1']->subtype = 'user:field_user_about'; /* WAS: 'user_profile' */
     $data['user:user:default']->display->content['new-1']->type = 'entity_field'; /* WAS: 'user_profile' */
+    $data['user:user:default']->display->content['new-2']->configuration['context']['0'] = 'panelizer'; /* WAS: 'p' */
+    $data['user:user:default']->display->content['new-2']->configuration['exposed']['type'] = 'oa_discussion_post'; /* WAS: '' */
     $data['user:user:default']->display->content['new-2']->configuration['header_type'] = 'none'; /* WAS: '' */
     $data['user:user:default']->display->content['new-2']->configuration['view_mode'] = 'teaser'; /* WAS: '' */
     $data['user:user:default']->display->content['new-2']->configuration['view_settings'] = 'fields'; /* WAS: '' */
-    $data['user:user:default']->display->content['new-2']->panel = 'contentmain'; /* WAS: 'column2' */
+    $data['user:user:default']->display->content['new-2']->panel = 'contentheader'; /* WAS: 'column2' */
     $data['user:user:default']->display->content['new-2']->position = 1; /* WAS: 0 */
-    $data['user:user:default']->display->content['new-2']->subtype = 'oa_recent_activity-user_activity'; /* WAS: 'user:field_user_picture' */
+    $data['user:user:default']->display->content['new-2']->subtype = 'open_atrium_discussions-discussion_user'; /* WAS: 'user:field_user_picture' */
     $data['user:user:default']->display->content['new-2']->type = 'views_panes'; /* WAS: 'entity_field' */
     $data['user:user:default']->display->content['new-3'] = (object) array(
           'pid' => 'new-3',
+          'panel' => 'contentheader',
+          'type' => 'views_panes',
+          'subtype' => 'open_atrium_discussions-discussion_user_reply',
+          'shown' => TRUE,
+          'access' => array(),
+          'configuration' => array(
+            'exposed' => array(
+              'type' => 'oa_discussion_post',
+              'sort_by' => NULL,
+              'sort_order' => NULL,
+            ),
+            'view_mode' => 'teaser',
+            'widget_title' => NULL,
+            'items_per_page' => NULL,
+            'use_pager' => NULL,
+            'pager_id' => NULL,
+            'offset' => NULL,
+            'link_to_view' => NULL,
+            'more_link' => NULL,
+            'path' => NULL,
+            'view_settings' => 'fields',
+            'header_type' => 'none',
+            'context' => array(
+              0 => 'panelizer',
+            ),
+          ),
+          'cache' => array(),
+          'style' => array(
+            'settings' => NULL,
+          ),
+          'css' => array(),
+          'extras' => array(),
+          'position' => 2,
+          'locks' => array(),
+        ); /* WAS: '' */
+    $data['user:user:default']->display->content['new-4'] = (object) array(
+          'pid' => 'new-4',
           'panel' => 'sidebar',
           'type' => 'entity_field',
           'subtype' => 'user:field_user_picture',
@@ -91,8 +130,8 @@ function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
           'position' => 0,
           'locks' => array(),
         ); /* WAS: '' */
-    $data['user:user:default']->display->content['new-4'] = (object) array(
-          'pid' => 'new-4',
+    $data['user:user:default']->display->content['new-5'] = (object) array(
+          'pid' => 'new-5',
           'panel' => 'sidebar',
           'type' => 'views_panes',
           'subtype' => 'open_atrium_spaces-spaces',
@@ -127,16 +166,20 @@ function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
           'position' => 1,
           'locks' => array(),
         ); /* WAS: '' */
-    $data['user:user:default']->display->layout = 'burr_flipped'; /* WAS: 'phelan' */
-    $data['user:user:default']->display->panels['contentmain'] = array(
+    $data['user:user:default']->display->layout = 'selby_flipped'; /* WAS: 'phelan' */
+    $data['user:user:default']->display->panel_settings['style_settings']['contentcolumn1'] = NULL; /* WAS: '' */
+    $data['user:user:default']->display->panel_settings['style_settings']['contentcolumn2'] = NULL; /* WAS: '' */
+    $data['user:user:default']->display->panel_settings['style_settings']['contentfooter'] = NULL; /* WAS: '' */
+    $data['user:user:default']->display->panel_settings['style_settings']['contentheader'] = NULL; /* WAS: '' */
+    $data['user:user:default']->display->panels['contentheader'] = array(
       0 => 'new-1',
       1 => 'new-2',
+      2 => 'new-3',
     ); /* WAS: '' */
     $data['user:user:default']->display->panels['sidebar'] = array(
-      0 => 'new-3',
-      1 => 'new-4',
+      0 => 'new-4',
+      1 => 'new-5',
     ); /* WAS: '' */
-    unset($data['user:user:default']->display->content['new-2']->configuration['context']);
     unset($data['user:user:default']->display->content['new-2']->configuration['delta_limit']);
     unset($data['user:user:default']->display->content['new-2']->configuration['delta_offset']);
     unset($data['user:user:default']->display->content['new-2']->configuration['delta_reversed']);

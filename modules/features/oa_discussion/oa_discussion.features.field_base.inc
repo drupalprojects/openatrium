@@ -43,7 +43,9 @@ function oa_discussion_field_default_field_bases() {
         'sort' => array(
           'type' => 'none',
         ),
-        'target_bundles' => array(),
+        'target_bundles' => array(
+          'oa_discussion_post' => 'oa_discussion_post',
+        ),
       ),
       'target_type' => 'node',
     ),

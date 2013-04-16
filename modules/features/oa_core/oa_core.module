@@ -65,6 +65,23 @@ function oa_core_menu() {
 }
 
 /**
+ * Implements hook_views_data().
+ */
+function oa_core_views_data() {
+  $data = array();
+
+  $data['field_data_oa_parent']['is_parent'] = array(
+    'title' => t('Is Parent'),
+    'help' => t('Content is a parent'),
+    'filter' => array(
+      'handler' => 'views_handler_filter_is_parent',
+    ),
+  );
+
+  return $data;
+}
+
+/**
  * Configuration Form for Open Atrium
  */
 function oa_core_configure_form($form, &$form_state) {
@@ -154,6 +171,9 @@ function oa_core_preprocess_views_view_fields(&$vars) {
   $vars['display'] = $vars['view']->current_display;
   foreach ($vars['fields'] as $id => $field) {
     $vars[$id] = $field->content;
+    if ($id == 'timestamp') {
+      $vars[$id.'_raw'] = $field->raw;
+    }
   }
   // View specific alterations.
   if ($vars['view']->name == 'oa_user_spaces' && $vars['view']->current_display == 'full') {

@@ -6,7 +6,7 @@
  */
 
 /**
- * Basic filter for OpenAtrium section access
+ * Contextural filter for OpenAtrium Parent ID
  */
 class views_handler_argument_oa_parent_id extends views_handler_argument_numeric {
   var $no_operator = TRUE;

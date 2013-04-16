@@ -30,6 +30,14 @@ projects[file_entity][download][branch] = 7.x-2.x
 projects[file_entity][download][revision] = e1fa3e05a8f849e54cddd703a9dc1b6e8f7c55de
 projects[file_entity][patch][] = http://drupal.org/files/1420812-file_download-41.patch
 
+; Entityreference to work with Devel Generate
+projects[entityreference][type] = module
+projects[entityreference][subdir] = contrib
+projects[entityreference][download][type] = git
+projects[entityreference][download][url] = http://git.drupal.org/project/entityreference.git
+projects[entityreference][download][branch] = 7.x-1.x
+projects[entityreference][download][revision] = 1c176daef3e7483389cbebeb34784b3af6521f7f
+
 ; Navbar (Overridden from Panopoly)
 projects[navbar][subdir] = contrib
 projects[navbar][version] = 1.0-alpha3
@@ -68,11 +76,11 @@ projects[message][patch][] = http://drupal.org/files/message-install-creates-err
 
 ; Message Notify
 projects[message_notify][subdir] = contrib
-projects[message_notify][version] = 2.3
+projects[message_notify][version] = 2.4
 
 ; Message Subscribe
 projects[message_subscribe][subdir] = contrib
-projects[message_subscribe][version] = 1.0-alpha3
+projects[message_subscribe][version] = 1.0-alpha4
 
 ; Flag
 projects[flag][subdir] = contrib
@@ -119,7 +127,10 @@ projects[diff][version] = 3.2
 
 ; Colorbox
 projects[colorbox][subdir] = contrib
-projects[colorbox][version] = 2.3
+;projects[colorbox][version] = 2.3
+projects[colorbox][download][url] = http://git.drupal.org/project/colorbox.git
+projects[colorbox][download][branch] = 7.x-2.x
+projects[colorbox][download][revision] = 509c2634bad0a76c9a5e7e3a1f588a36a6a97095
 projects[media_colorbox][subdir] = contrib
 projects[media_colorbox][version] = 1.0-rc3
 

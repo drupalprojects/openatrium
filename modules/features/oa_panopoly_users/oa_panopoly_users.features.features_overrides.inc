@@ -31,13 +31,14 @@ function oa_panopoly_users_features_override_default_overrides() {
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|configuration|path"] = NULL;
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|configuration|use_pager"] = NULL;
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|configuration|widget_title"] = NULL;
-  $overrides["panelizer_defaults.user:user:default.display|content|new-1|panel"] = 'contentmain';
+  $overrides["panelizer_defaults.user:user:default.display|content|new-1|panel"] = 'contentheader';
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|subtype"] = 'user:field_user_about';
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|type"] = 'entity_field';
-  $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|context"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|context|0"] = 'panelizer';
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|delta_limit"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|delta_offset"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|delta_reversed"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|exposed|type"] = 'oa_discussion_post';
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|formatter"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|formatter_settings"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|header_type"] = 'none';
@@ -46,12 +47,49 @@ function oa_panopoly_users_features_override_default_overrides() {
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|override_title_text"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|view_mode"] = 'teaser';
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|view_settings"] = 'fields';
-  $overrides["panelizer_defaults.user:user:default.display|content|new-2|panel"] = 'contentmain';
+  $overrides["panelizer_defaults.user:user:default.display|content|new-2|panel"] = 'contentheader';
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|position"] = 1;
-  $overrides["panelizer_defaults.user:user:default.display|content|new-2|subtype"] = 'oa_recent_activity-user_activity';
+  $overrides["panelizer_defaults.user:user:default.display|content|new-2|subtype"] = 'open_atrium_discussions-discussion_user';
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|type"] = 'views_panes';
   $overrides["panelizer_defaults.user:user:default.display|content|new-3"] = (object) array(
       'pid' => 'new-3',
+      'panel' => 'contentheader',
+      'type' => 'views_panes',
+      'subtype' => 'open_atrium_discussions-discussion_user_reply',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'exposed' => array(
+          'type' => 'oa_discussion_post',
+          'sort_by' => NULL,
+          'sort_order' => NULL,
+        ),
+        'view_mode' => 'teaser',
+        'widget_title' => NULL,
+        'items_per_page' => NULL,
+        'use_pager' => NULL,
+        'pager_id' => NULL,
+        'offset' => NULL,
+        'link_to_view' => NULL,
+        'more_link' => NULL,
+        'path' => NULL,
+        'view_settings' => 'fields',
+        'header_type' => 'none',
+        'context' => array(
+          0 => 'panelizer',
+        ),
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 2,
+      'locks' => array(),
+    );
+  $overrides["panelizer_defaults.user:user:default.display|content|new-4"] = (object) array(
+      'pid' => 'new-4',
       'panel' => 'sidebar',
       'type' => 'entity_field',
       'subtype' => 'user:field_user_picture',
@@ -93,8 +131,8 @@ function oa_panopoly_users_features_override_default_overrides() {
       'position' => 0,
       'locks' => array(),
     );
-  $overrides["panelizer_defaults.user:user:default.display|content|new-4"] = (object) array(
-      'pid' => 'new-4',
+  $overrides["panelizer_defaults.user:user:default.display|content|new-5"] = (object) array(
+      'pid' => 'new-5',
       'panel' => 'sidebar',
       'type' => 'views_panes',
       'subtype' => 'open_atrium_spaces-spaces',
@@ -129,16 +167,21 @@ function oa_panopoly_users_features_override_default_overrides() {
       'position' => 1,
       'locks' => array(),
     );
-  $overrides["panelizer_defaults.user:user:default.display|layout"] = 'burr_flipped';
+  $overrides["panelizer_defaults.user:user:default.display|layout"] = 'selby_flipped';
+  $overrides["panelizer_defaults.user:user:default.display|panel_settings|style_settings|contentcolumn1"] = NULL;
+  $overrides["panelizer_defaults.user:user:default.display|panel_settings|style_settings|contentcolumn2"] = NULL;
+  $overrides["panelizer_defaults.user:user:default.display|panel_settings|style_settings|contentfooter"] = NULL;
+  $overrides["panelizer_defaults.user:user:default.display|panel_settings|style_settings|contentheader"] = NULL;
   $overrides["panelizer_defaults.user:user:default.display|panels|column1"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.user:user:default.display|panels|column2"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.user:user:default.display|panels|contentmain"] = array(
+  $overrides["panelizer_defaults.user:user:default.display|panels|contentheader"] = array(
     0 => 'new-1',
     1 => 'new-2',
+    2 => 'new-3',
   );
   $overrides["panelizer_defaults.user:user:default.display|panels|sidebar"] = array(
-    0 => 'new-3',
-    1 => 'new-4',
+    0 => 'new-4',
+    1 => 'new-5',
   );
 
  return $overrides;

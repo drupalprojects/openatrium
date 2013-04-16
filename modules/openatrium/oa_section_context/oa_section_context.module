@@ -24,10 +24,10 @@ function oa_section_context_init() {
     // get section id directly from section nodes
     $_SESSION[OA_SESSION_SECTION] = $node->nid;
   }
-  elseif (isset($entity->{OA_SECTION_FIELD})) {
+  elseif (isset($node->{OA_SECTION_FIELD})) {
     // otherwise get section id from any section field reference
-    if (isset($entity->{OA_SECTION_FIELD}[LANGUAGE_NONE][0]['target_id'])) {
-      $_SESSION[OA_SESSION_SECTION] = $node->og_group_ref[LANGUAGE_NONE][0]['target_id'];
+    if (isset($node->{OA_SECTION_FIELD}[LANGUAGE_NONE][0]['target_id'])) {
+      $_SESSION[OA_SESSION_SECTION] = $node->{OA_SECTION_FIELD}[LANGUAGE_NONE][0]['target_id'];
     }
     else {
       // clear this when there is a section field but it doesn't have any value

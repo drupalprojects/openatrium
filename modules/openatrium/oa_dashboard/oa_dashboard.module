@@ -188,7 +188,6 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   }
 
   $current_section = !empty($_SESSION['oa_section_id']) ? $_SESSION['oa_section_id'] : 0;
-
   $home_name = t('Space home');
   $section_name = '';
   $section_url = '';
@@ -250,7 +249,9 @@ function oa_dashboard_preprocess_oa_user_badge(&$vars) {
 
   if ($user->uid) {
     $user = user_load($user->uid);
-    $vars = array_merge($vars, oa_panopoly_users_build_user_details($user));
+    if (module_exists('oa_users')) {
+      $vars = array_merge($vars, oa_users_build_user_details($user));
+    }
   }
   else {
     $vars['login'] = url('user/login');
