@@ -1,3 +1,15 @@
+<?php
+/**
+ * Displays read-only list of notifications.
+ *
+ * $group - Groups to notify.
+ * $team - Teams to notify.
+ * $user - Users to notify.
+ * $subscribe - Render array for subscribe button, if available.
+ * $show_details - Render array for show details button / modal.
+ */
+?>
+
 <div class="notifications">
   <?php if (empty($group) && empty($team) && empty($user)): ?>
     <div><?php print t('There are no notifications configured for this content'); ?></div>
@@ -36,8 +48,10 @@
       <?php endforeach; ?>
     </div>
   <?php endif; ?>
-  <div class="notification-group">
-    <?php print l(t('Show Details'), 'js/oa_notifications/details/' . $node->nid, array('attributes' => array('data-toggle' => 'modal', 'data-target' => '#oa-notifications-details'))); ?>
-    <?php print theme('oa_styles_modal', array('modal_id' => 'oa-notifications-details', 'title' => t('Notification Details'))); ?>
-  </div>
+  <?php if (!empty($subscribe)): ?>
+    <?php print render($subscribe); ?>
+  <?php endif; ?>
+  <?php if (!empty($show_details)): ?>
+    <?php print render($show_details); ?>
+  <?php endif; ?>
 </div>

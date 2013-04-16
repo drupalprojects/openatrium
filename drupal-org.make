@@ -89,6 +89,8 @@ projects[message_subscribe][version] = 1.0-alpha4
 ; Flag
 projects[flag][subdir] = contrib
 projects[flag][version] = 2.0
+projects[flag][patch][] = http://drupal.org/files/flag-all-bundles-7.x-2.x-471212-13.patch
+projects[flag][patch][] = http://drupal.org/files/1351124-21.7x2x.patch
 
 ; RealName
 projects[realname][subdir] = contrib
@@ -159,3 +161,11 @@ projects[views_load_more][download][type] = git
 projects[views_load_more][download][url] = http://git.drupal.org/project/views_load_more.git
 projects[views_load_more][download][branch] = 7.x-1.x
 projects[views_load_more][download][commit] = a92b1f610fcf8ee85c064020d865ab849d0c86e6
+
+; Mail System
+projects[mailsystem][subdir] = contrib
+projects[mailsystem][version] = 2.34
+
+; HTML Mail
+projects[htmlmail][subdir] = contrib
+projects[htmlmail][version] = 2.65
