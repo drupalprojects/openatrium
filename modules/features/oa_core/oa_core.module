@@ -65,6 +65,15 @@ function oa_core_menu() {
 }
 
 /**
+ * Implements hook_menu_alter
+ */
+function oa_core_menu_alter(&$items) {
+  if (!empty($items['node/%/group'])) {
+    $items['node/%/group']['title'] = 'Config';
+  }
+}
+
+/**
  * Implements hook_views_data().
  */
 function oa_core_views_data() {
