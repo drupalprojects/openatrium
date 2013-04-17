@@ -14,8 +14,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['add media from remote sources'] = array(
     'name' => 'add media from remote sources',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'media_internet',
   );
@@ -38,8 +38,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['administer panelizer node oa_space content'] = array(
     'name' => 'administer panelizer node oa_space content',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panelizer',
   );
@@ -48,8 +48,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['administer panelizer node oa_space layout'] = array(
     'name' => 'administer panelizer node oa_space layout',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panelizer',
   );
@@ -58,8 +58,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['administer panels styles'] = array(
     'name' => 'administer panels styles',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panels',
   );
@@ -68,8 +68,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['change layouts in place editing'] = array(
     'name' => 'change layouts in place editing',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panels',
   );
@@ -78,8 +78,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['create fieldable basic_file'] = array(
     'name' => 'create fieldable basic_file',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -88,8 +88,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['create fieldable image'] = array(
     'name' => 'create fieldable image',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -98,8 +98,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['create fieldable map'] = array(
     'name' => 'create fieldable map',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -108,8 +108,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['create fieldable quick_links'] = array(
     'name' => 'create fieldable quick_links',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -118,8 +118,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['create fieldable spotlight'] = array(
     'name' => 'create fieldable spotlight',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -128,8 +128,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['create fieldable table'] = array(
     'name' => 'create fieldable table',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -138,8 +138,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['create fieldable text'] = array(
     'name' => 'create fieldable text',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -148,8 +148,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['create fieldable video'] = array(
     'name' => 'create fieldable video',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -158,8 +158,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['create files'] = array(
     'name' => 'create files',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -168,8 +168,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete any files'] = array(
     'name' => 'delete any files',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -178,8 +178,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete fieldable basic_file'] = array(
     'name' => 'delete fieldable basic_file',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -188,8 +188,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete fieldable image'] = array(
     'name' => 'delete fieldable image',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -198,8 +198,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete fieldable map'] = array(
     'name' => 'delete fieldable map',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -208,8 +208,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete fieldable quick_links'] = array(
     'name' => 'delete fieldable quick_links',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -218,8 +218,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete fieldable spotlight'] = array(
     'name' => 'delete fieldable spotlight',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -228,8 +228,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete fieldable table'] = array(
     'name' => 'delete fieldable table',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -238,8 +238,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete fieldable text'] = array(
     'name' => 'delete fieldable text',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -248,8 +248,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete fieldable video'] = array(
     'name' => 'delete fieldable video',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -258,8 +258,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['delete own files'] = array(
     'name' => 'delete own files',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -268,7 +268,7 @@ function oa_permissions_user_default_permissions() {
   $permissions['download any files'] = array(
     'name' => 'download any files',
     'roles' => array(
-      'site admin' => 'site admin',
+      'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -277,7 +277,7 @@ function oa_permissions_user_default_permissions() {
   $permissions['download own files'] = array(
     'name' => 'download own files',
     'roles' => array(
-      'site admin' => 'site admin',
+      'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -286,8 +286,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit any files'] = array(
     'name' => 'edit any files',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -296,8 +296,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit fieldable basic_file'] = array(
     'name' => 'edit fieldable basic_file',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -306,8 +306,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit fieldable image'] = array(
     'name' => 'edit fieldable image',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -316,8 +316,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit fieldable map'] = array(
     'name' => 'edit fieldable map',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -326,8 +326,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit fieldable quick_links'] = array(
     'name' => 'edit fieldable quick_links',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -336,8 +336,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit fieldable spotlight'] = array(
     'name' => 'edit fieldable spotlight',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -346,8 +346,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit fieldable table'] = array(
     'name' => 'edit fieldable table',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -356,8 +356,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit fieldable text'] = array(
     'name' => 'edit fieldable text',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -366,8 +366,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit fieldable video'] = array(
     'name' => 'edit fieldable video',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'fieldable_panels_panes',
   );
@@ -376,8 +376,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit own files'] = array(
     'name' => 'edit own files',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -386,7 +386,7 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit own oa_group content'] = array(
     'name' => 'edit own oa_group content',
     'roles' => array(
-      'site admin' => 'site admin',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -395,8 +395,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['edit own oa_space content'] = array(
     'name' => 'edit own oa_space content',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -405,8 +405,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['save draft'] = array(
     'name' => 'save draft',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'save_draft',
   );
@@ -415,8 +415,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['use panels in place editing'] = array(
     'name' => 'use panels in place editing',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panels',
   );
@@ -425,8 +425,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['use text format panopoly_html_text'] = array(
     'name' => 'use text format panopoly_html_text',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'filter',
   );
@@ -435,9 +435,9 @@ function oa_permissions_user_default_permissions() {
   $permissions['use text format panopoly_wysiwyg_text'] = array(
     'name' => 'use text format panopoly_wysiwyg_text',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'editor' => 'editor',
     ),
     'module' => 'filter',
   );
@@ -446,9 +446,9 @@ function oa_permissions_user_default_permissions() {
   $permissions['view files'] = array(
     'name' => 'view files',
     'roles' => array(
+      'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-      'site admin' => 'site admin',
     ),
     'module' => 'file_entity',
   );
@@ -457,8 +457,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['view own files'] = array(
     'name' => 'view own files',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -467,8 +467,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['view own private files'] = array(
     'name' => 'view own private files',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -477,8 +477,8 @@ function oa_permissions_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
-      'site admin' => 'site admin',
-      'space admin' => 'space admin',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -487,9 +487,9 @@ function oa_permissions_user_default_permissions() {
   $permissions['view private files'] = array(
     'name' => 'view private files',
     'roles' => array(
+      'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-      'site admin' => 'site admin',
     ),
     'module' => 'file_entity',
   );

@@ -68,6 +68,4 @@ features[user_permission][] = view own files
 features[user_permission][] = view own private files
 features[user_permission][] = view own unpublished content
 features[user_permission][] = view private files
-features[user_role][] = site admin
-features[user_role][] = space admin
 project path = profiles/openatrium/modules/features
