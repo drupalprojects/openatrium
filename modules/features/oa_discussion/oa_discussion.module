@@ -315,7 +315,7 @@ function oa_discussion_alter_notifications_pane(&$content, $pane, $args, $contex
  */
 function oa_discussion_notifications_users_alter(&$users, $node) {
   // Add the parent's flagged subscribers, if available.
-  if ($node->type == 'oa_discussion_post' && !empty($node->oa_parent)) {
+  if ($node->type == 'oa_discussion_post' && !empty($node->oa_parent[LANGUAGE_NONE][0]['target_id'])) {
     $parent_id = $node->oa_parent[LANGUAGE_NONE][0]['target_id'];
     $subscribers = flag_get_content_flags('node', $parent_id, 'subscribe_section_content');
     foreach ($subscribers as $subscriber) {

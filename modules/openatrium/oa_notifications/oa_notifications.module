@@ -90,7 +90,10 @@ function oa_notifications_get_notifications($node) {
     }
 
     // Also grab users who flagged the content.
-    $bucket += flag_get_content_flags('node', $node->nid, 'subscribe_section_content');
+    $users = flag_get_content_flags('node', $node->nid, 'subscribe_section_content');
+    if (!empty($users) && is_array($users)) {
+      $bucket += $users;
+    }
 
     // Allow modules to alter users.
     drupal_alter('notifications_users', $bucket, $node);
