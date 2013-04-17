@@ -29,6 +29,8 @@ function oa_river_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'oa_form';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['collapsed_filter'] = 1;
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
@@ -397,6 +399,7 @@ function oa_river_views_default_views() {
       'label' => 'Message: Space (field_oa_message_space)',
     ),
   );
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: User Activity */
   $handler = $view->new_display('panel_pane', 'User Activity', 'user_activity');

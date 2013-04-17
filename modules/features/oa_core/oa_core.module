@@ -152,7 +152,7 @@ function oa_core_og_fields_info() {
 }
 
 /**
- * Implements hook_form_alter
+ * Implements hook_form_alter for node edit forms
  */
 function oa_core_form_node_form_alter(&$form, &$form_state, $form_id) {
   global $user;
@@ -168,6 +168,17 @@ function oa_core_form_node_form_alter(&$form, &$form_state, $form_id) {
   // modify label on Panelizer layout field
   if (isset($form['panelizer'])) {
     $form['panelizer']['page_manager']['name']['#title'] = t('Select Layout');
+  }
+}
+
+/**
+ * Implements hook_views_pre_build().
+ */
+function oa_core_views_pre_build(&$view) {
+  if ($view->name == 'oa_recent_activity') {
+    // Set the override path to the current page. This will redirect the back view to
+    // the current page when submitted in case AJAX fails.
+    $view->override_path = $_GET['q'];
   }
 }
 
