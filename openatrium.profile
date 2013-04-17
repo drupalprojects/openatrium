@@ -16,7 +16,7 @@ function openatrium_install_tasks(&$install_state) {
 
   // Add the Panopoly app selection to the installation process
   require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
-  $tasks = $tasks + apps_profile_install_tasks($install_state, array('machine name' => 'openatrium', 'default apps' => array('openatrium_demo')));
+  $tasks = $tasks + apps_profile_install_tasks($install_state, array('machine name' => 'openatrium', 'default apps' => array()));
 
   return $tasks;
 }
