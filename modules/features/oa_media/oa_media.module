@@ -71,12 +71,12 @@ function oa_media_media_colorbox($variables) {
   if ($file_id != NULL) {
     $file = file_load($file_id);
     $fview = file_view($file, $settings['file_view_mode'], $variables['langcode']);
-    if ($file->type == 'image'){
+    if ($file->type == 'image') {
       $variables['path'] = file_create_url($file->uri);
     }
     $text = drupal_render($fview);
   }
-  elseif(isset($variables['item'])) {
+  elseif (isset($variables['item'])) {
     $text = drupal_render($variables['item']);
   }
   //strip anchor tags as rendered output will be wrapped by another anchor tag

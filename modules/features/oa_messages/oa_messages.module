@@ -219,7 +219,7 @@ function oa_messages_og_membership_prepare($og_membership, $action, $add_type = 
  */
 function oa_messages_og_membership_insert($og_membership) {
   if ($og_membership->entity_type == 'user') {
-    oa_messages_og_membership_prepare( $og_membership, t('added to '));
+    oa_messages_og_membership_prepare($og_membership, t('added to') . ' ');
   }
 }
 
@@ -242,7 +242,7 @@ function oa_messages_og_membership_update($og_membership) {
  */
 function oa_messages_og_membership_delete($og_membership) {
   if ($og_membership->entity_type == 'user') {
-    oa_messages_og_membership_prepare($og_membership, t('removed from '));
+    oa_messages_og_membership_prepare($og_membership, t('removed from') . ' ');
   }
 }
 
@@ -260,7 +260,7 @@ function oa_messages_oa_messages_create_alter(&$wrapper, $context) {
       }
       if (isset($wrapper->field_deleted_summary)) {
         $body_value = field_view_field($context['entity_type'], $context['entity'], 'body', array(
-            'label'=>'hidden',
+            'label' => 'hidden',
             'type' => 'text_summary_or_trimmed',
           ));
         $wrapper->field_deleted_summary->set(array('value' => render($body_value)));
@@ -348,7 +348,7 @@ function theme_oa_team_update($vars) {
     $add_links[] = l($users[$uid]->realname, 'users/' . $uid);
   }
   if (!empty($add_links)) {
-    $output .= t('Added ') . implode(', ', $add_links) . '. ';
+    $output .= t('Added') . ' ' . implode(', ', $add_links) . '. ';
   }
 
   // determine who was removed
@@ -358,7 +358,7 @@ function theme_oa_team_update($vars) {
     $remove_links[] = l($users[$uid]->realname, 'users/' . $uid);
   }
   if (!empty($remove_links)) {
-    $output .= t('Removed ') . implode(', ', $remove_links) . '. ';
+    $output .= t('Removed') . ' ' . implode(', ', $remove_links) . '. ';
   }
 
   return $output;

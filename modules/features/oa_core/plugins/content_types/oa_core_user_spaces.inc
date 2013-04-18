@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Defines the space summary panels pane.
+ */
+
 define('FEATURED_NONE', 0);
 define('FEATURED_FAVORITES', 1);
 define('FEATURED_MOST_RECENT', 2);

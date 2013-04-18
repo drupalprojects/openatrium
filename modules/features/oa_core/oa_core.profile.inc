@@ -12,7 +12,7 @@ function oa_core_install_load_profile(&$install_state) {
   // ensure the private file path exists
   $path = 'sites/default/files/private';  // set in oa_config feature
   if (!empty($path) && !is_dir($path)) {
-    mkdir($path, 0775, true);
+    mkdir($path, 0775, TRUE);
   }
 
   // Include any dependencies that we might have missed...

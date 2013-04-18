@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Tests the public interface of the oa_core_section_is_public function
+ */
+
 class oa_core_AccessWebTest extends oa_coreBaseWebTest {
   static function getInfo() {
     return array(
@@ -35,7 +41,7 @@ class oa_core_AccessWebTest extends oa_coreBaseWebTest {
     );
     print_r($group);
     return $group;
-    if($node = node_save($group)) {
+    if ($node = node_save($group)) {
       return $node;
     }
   }

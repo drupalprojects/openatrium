@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Tests the public interface of the oa_core_section_access function.
+ */
+
 class oa_core_section_accessUnitTest extends oa_coreBaseUnitTest {
   static function getInfo() {
     return array(
@@ -30,7 +36,9 @@ class oa_core_section_accessUnitTest extends oa_coreBaseUnitTest {
         'field_oa_team_ref_target_id' => NULL,
         'field_oa_user_ref_target_id' => NULL,
       ),
-      'spaces' => array('node'=> array(10)),
+      'spaces' => array(
+        'node' => array(10),
+      ),
       'account' => array(),
     );
     $this->assertEqual(

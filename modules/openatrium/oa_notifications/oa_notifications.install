@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Provides functions that run on (un)install and update for oa_notifications.
+ */
+
+/**
  * Implements hook_schema().
  */
 function oa_notifications_schema() {

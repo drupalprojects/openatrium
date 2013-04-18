@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Provides hook implementations and functionality for oa_styles.
+ */
+
+/**
  * Implements hook_ctools_plugin_directory
  */
 function oa_styles_ctools_plugin_directory($module, $plugin) {

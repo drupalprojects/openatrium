@@ -192,7 +192,7 @@ function oa_core_preprocess_views_view_fields(&$vars) {
   foreach ($vars['fields'] as $id => $field) {
     $vars[$id] = $field->content;
     if ($id == 'timestamp') {
-      $vars[$id.'_raw'] = $field->raw;
+      $vars[$id . '_raw'] = $field->raw;
     }
   }
   // View specific alterations.

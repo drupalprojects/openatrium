@@ -1,11 +1,16 @@
 <?php
 
 /**
+ * @file
+ * Provides views-specific functionality to oa_date.
+ */
+
+/**
  * Implements hook_views_handlers().
  */
 function oa_date_views_handlers() {
   return array(
-    'info' => array('path' => drupal_get_path('module', 'oa_date') .'/views'),
+    'info' => array('path' => drupal_get_path('module', 'oa_date') . '/views'),
     'handlers' => array(
       'oa_date_handler_field_date' => array('parent' => 'views_handler_field_date'),
     ),

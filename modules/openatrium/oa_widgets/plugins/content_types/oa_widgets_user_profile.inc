@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Provides a panels pane that shows user information.
+ */
+
 $plugin = array(
   'title' => t('User Profile'),
   'description' => t('A small panel containing a user\'s name, picture, and links to user functionality.'),

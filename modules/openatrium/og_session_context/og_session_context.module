@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Provides hook implementations and functionality for og_session_context.
+ */
+
 /**
  * Session variable to store space ID
  */

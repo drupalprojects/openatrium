@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Tests the public interface of the oa_core_section_is_public function.
+ */
+
 class oa_core_section_is_publicUnitTest extends oa_coreBaseUnitTest {
   static function getInfo() {
     return array(

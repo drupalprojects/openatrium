@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @file
+ * Provides a message notifier that extends the default's email capabilities
+ * with some Open Atrium specific additions.
+ */
+
 $plugin = array(
   'title' => t('OA Email'),
   'description' => t('Send Message via email, with OpenAtrium enchancements.'),

@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Provides a base unit test class.
+ */
+
 abstract class oa_coreBaseWebTest extends DrupalWebTestCase {
   /**
    * One using of this function is to enable the module used for testing, any dependencies

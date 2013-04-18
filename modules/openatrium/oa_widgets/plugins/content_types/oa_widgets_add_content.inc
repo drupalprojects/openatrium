@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Provides a panel pane that displays add content links.
+ */
+
 $plugin = array(
   'title' => t('Add content types'),
   'description' => t('List of content types in a widget.'),

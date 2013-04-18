@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Provides a panels pane that shows the content's visibility.
+ */
+
 $plugin = array(
   'title' => t('Content Visibility'),
   'description' => t('Show content visibility.'),

@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * @file
  * Custom date handler for Views
  * Code came from the http://drupal.org/project/reldate module
  */
@@ -24,7 +25,7 @@ class oa_date_handler_field_date extends views_handler_field_date {
       '#title' => t('Custom formats'),
       '#type' => 'select',
       '#options' => array(
-        FALSE => '< '. t('Custom format') .' >',
+        FALSE => '< ' . t('Custom format') . ' >',
         'oa_date' => t('Relative date'),
       ),
       '#default_value' => $this->options['oa_date'],

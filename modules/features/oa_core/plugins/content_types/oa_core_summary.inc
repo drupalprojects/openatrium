@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Defines the space summary panels pane.
+ */
+
 $plugin = array(
   'title' => t('Space summary'),
   'description' => t('Provides a summary of a space, including the picture, description, and useful links.'),

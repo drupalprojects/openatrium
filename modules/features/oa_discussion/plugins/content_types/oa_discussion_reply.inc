@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Provides the reply form pane.
+ */
+
 $plugin = array(
   'title' => t('Reply form'),
   'description' => t('Reply to current content.'),

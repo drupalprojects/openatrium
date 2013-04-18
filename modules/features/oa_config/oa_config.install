@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Provides update and install hooks for oa_config.
+ */
+
+/**
  * Implements hook_install().
  */
 function oa_config_install() {

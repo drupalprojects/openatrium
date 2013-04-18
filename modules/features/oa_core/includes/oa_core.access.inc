@@ -117,13 +117,13 @@ function oa_core_node_access_records($node) {
     // don't change access for unpublished nodes
     // keep normal Drupal access (should be set for only Own access)
   }
-  else if ($node->type == OA_SECTION_TYPE) {
+  elseif ($node->type == OA_SECTION_TYPE) {
     if (!oa_core_section_is_public($node)) {
       $sids[] = $node->nid;
     }
   }
   // Look for the default section reference
-  else if (!empty($node->{OA_SECTION_FIELD})) {
+  elseif (!empty($node->{OA_SECTION_FIELD})) {
     foreach ($node->{OA_SECTION_FIELD}[LANGUAGE_NONE] as $entity_ref) {
       $section = node_load($entity_ref['target_id']);
       if (!oa_core_section_is_public($section)) {
@@ -136,7 +136,7 @@ function oa_core_node_access_records($node) {
   }
 
   foreach ($sids as $sid) {
-    $grants[] = array (
+    $grants[] = array(
       'realm' => OA_ACCESS_REALM,
       'gid' => $sid,
       'grant_view' => 1,

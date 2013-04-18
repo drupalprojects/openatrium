@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Defines the space members panels pane.
+ */
+
 define('WIDGET_TITLE_AND_PICTURE', 0);
 define('WIDGET_TITLE_ONLY', 1);
 define('WIDGET_PICTURES_ONLY', 2);
