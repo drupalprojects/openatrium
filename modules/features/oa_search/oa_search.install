@@ -4,3 +4,22 @@
  * @file
  * Provides install and update hooks for oa_search.
  */
+
+
+/**
+ * Enable search layout pages, disable panopoly search pages. Delete index, recreate.
+ */
+function oa_search_update_7001() {
+  // Add pages
+  $pages = array(
+    'search-node' => FALSE,
+    'page-panopoly_search' => TRUE,
+  );
+  foreach ($pages as $page_name => $disable) {
+    $page = page_manager_cache_load($page_name);
+    if ($function = ctools_plugin_get_function($page->subtask, 'enable callback')) {
+      $function($page, $disable);
+    }
+  }
+  menu_rebuild();
+}
