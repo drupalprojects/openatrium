@@ -11,7 +11,7 @@
         var type = $form.find('input:checked').val();
         var action = '/search' + '/' + (type === 'users' ? 'user' : 'node') + '/' + term;
 
-        $form.attr('action', action);
+        $form.attr('action', determineSearchPath(term, type, settings.oa_search.space));
       });
 
       $dropdown.click(function(e) {
@@ -19,5 +19,14 @@
       });
     }
   };
+
+  function determineSearchPath(term, type, space) {
+    var path = '/search' + '/' + (type === 'users' ? 'user' : 'node') + '/' + term;
+    if (type === 'this_space') {
+      // %3A instead of : because of some weird double encoding on the backend.
+      path += '?f[0]=' + encodeURIComponent('og_group_ref%3Atitle:' + space);
+    }
+    return path;
+  }
 
 })(jQuery);
