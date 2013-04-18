@@ -15025,42 +15025,46 @@ div.tabs.main-tabs {
   #navbar div#panels-ipe-control-container a {
     font-weight: normal; }
 
-/* line 68, ../sass/_navbar.scss */
+@media screen and (max-width: 980px) {
+  /* line 68, ../sass/_navbar.scss */
+  #navbar div#panels-ipe-control-container {
+    position: absolute; } }
+/* line 74, ../sass/_navbar.scss */
 body.panels-ipe {
   margin-bottom: 0px !important; }
 
-/* line 75, ../sass/_navbar.scss */
+/* line 81, ../sass/_navbar.scss */
 div.tabs ul.tabs {
   border-bottom: 0; }
-/* line 79, ../sass/_navbar.scss */
+/* line 85, ../sass/_navbar.scss */
 div.tabs li.active a {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
   border-bottom: 0; }
 
-/* line 85, ../sass/_navbar.scss */
+/* line 91, ../sass/_navbar.scss */
 .oa-dropdown {
   display: inline-block;
   margin: 0 0.25em 0 0.25em;
   vertical-align: middle; }
-  /* line 89, ../sass/_navbar.scss */
+  /* line 95, ../sass/_navbar.scss */
   .oa-dropdown ul {
     margin: 0.5em 0; }
-    /* line 91, ../sass/_navbar.scss */
+    /* line 97, ../sass/_navbar.scss */
     .oa-dropdown ul li {
       margin: 0; }
 
-/* line 97, ../sass/_navbar.scss */
+/* line 103, ../sass/_navbar.scss */
 .sutro-double-container {
   margin-bottom: 0; }
 
-/* line 101, ../sass/_navbar.scss */
+/* line 107, ../sass/_navbar.scss */
 .footer .menu li {
   list-style-type: none;
   list-style-image: none;
   float: left; }
-  /* line 105, ../sass/_navbar.scss */
+  /* line 111, ../sass/_navbar.scss */
   .footer .menu li a {
     color: #333333; }
 

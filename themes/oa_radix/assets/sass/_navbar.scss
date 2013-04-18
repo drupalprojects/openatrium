@@ -64,6 +64,12 @@
     font-weight: normal;
   }
 }
+@media screen and (max-width: $tabletBreakpoint) {
+  #navbar div#panels-ipe-control-container {
+    position: absolute;
+  }
+}
+
 
 body.panels-ipe {
   margin-bottom: 0px !important

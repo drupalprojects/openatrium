@@ -275,6 +275,9 @@ $popoverArrowOuterColor:  rgba(0,0,0,.25) !default;
 // GRID
 // --------------------------------------------------
 
+$desktopBreakpoint:       1200px;
+$tabletBreakpoint:        980px;
+$mobileBreakpoint:        768px;
 
 // Default 940px grid
 // -------------------------
@@ -292,6 +295,7 @@ $gridRowWidth1200:        ($gridColumns * $gridColumnWidth1200) + ($gridGutterWi
 $gridColumnWidth768:      42px !default;
 $gridGutterWidth768:      20px !default;
 $gridRowWidth768:         ($gridColumns * $gridColumnWidth768) + ($gridGutterWidth768 * ($gridColumns - 1)) !default;
+
 
 
 // Fluid grid
