@@ -7,7 +7,7 @@
 
 
 /**
- * Enable search layout pages, disable panopoly search pages. Delete index, recreate.
+ * Enable search layout pages, disable panopoly search pages.
  */
 function oa_search_update_7001() {
   // Add pages
@@ -22,4 +22,29 @@ function oa_search_update_7001() {
     }
   }
   menu_rebuild();
+}
+
+
+/**
+ * Re-build the panopoly search index.
+ */
+function oa_search_update_7002() {
+  $server_row = db_select('search_api_server', 'sas')
+    ->fields('sas')
+    ->condition('machine_name', 'database_server')
+    ->execute()
+    ->fetch();
+  $server = entity_load('search_api_server', array($server_row->id));
+
+  $index_row = db_select('search_api_index', 'sai')
+    ->fields('sai')
+    ->condition('machine_name', 'database_node_index')
+    ->execute()
+    ->fetch();
+  $index = entity_load('search_api_index', array($index_row->id));
+  if ($index && $server) {
+    $server = array_shift($server);
+    $index = array_shift($index);
+    $server->addIndex($index);
+  }
 }
