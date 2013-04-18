@@ -31,7 +31,7 @@ function oa_search_theme() {
     'oa_sidebar_search' => array(
       'template' => 'oa-sidebar-search',
       'variables' => array(
-        'preview' => TRUE,
+        'options' => array(),
       ),
       'path' => drupal_get_path('module', 'oa_search') . '/templates',
     ),
@@ -43,14 +43,30 @@ function oa_search_theme() {
  */
 function oa_search_preprocess_oa_toolbar_search(&$vars) {
   $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
+  oa_search_add_js();
+}
+
+/**
+ * Implements hook_preprocess_oa_sidebar_search().
+ */
+function oa_search_preprocess_oa_sidebar_search(&$vars) {
+  oa_search_add_js();
+}
+
+/**
+ * Adds variables and js to search panes.
+ */
+function oa_search_add_js() {
   $space_title = '';
   if (!empty($_SESSION['oa_space_id'])) {
     $space = node_load($_SESSION['oa_space_id']);
     $space_title = $space->title;
   }
+
   drupal_add_js(array(
     'oa_search' => array(
       'space' => $space_title,
     ),
   ), 'setting');
+  drupal_add_js(drupal_get_path('module', 'oa_search') . '/js/oa_search.js');
 }

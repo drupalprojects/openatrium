@@ -14,6 +14,9 @@
         if ($navbar.css('position') === 'static') {
           $('body').css('padding-top', '0');
         }
+        else if (settings.oa_toolbar_sticky === 1) {
+          $('body').css('padding-top', $navbar.height());
+        }
       });
       $(window).resize();
     }

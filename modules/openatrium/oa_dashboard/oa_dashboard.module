@@ -125,6 +125,9 @@ function oa_dashboard_theme() {
 function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   global $user;
 
+  drupal_add_js(array(
+    'oa_toolbar_sticky' => variable_get('oa_toolbar_sticky', 1),
+  ), array('type' => 'setting'));
   drupal_add_js(drupal_get_path('module', 'oa_dashboard') . '/js/oa-dashboard.js');
 
   // Separators

@@ -15178,6 +15178,26 @@ div.tabs li.active a {
   right: 0;
   margin: 10px; }
 
+/* line 141, ../sass/_panel.scss */
+.pane-oa-sidebar-search form {
+  margin: 0; }
+/* line 144, ../sass/_panel.scss */
+.pane-oa-sidebar-search .input-append {
+  box-sizing: border-box; }
+/* line 147, ../sass/_panel.scss */
+.pane-oa-sidebar-search .search-text {
+  height: 32px;
+  width: 80%;
+  box-sizing: border-box; }
+/* line 152, ../sass/_panel.scss */
+.pane-oa-sidebar-search .submit {
+  padding: 5px 0;
+  width: 20%;
+  box-sizing: border-box; }
+/* line 157, ../sass/_panel.scss */
+.pane-oa-sidebar-search .options {
+  margin: 10px 0 0; }
+
 /* line 6, ../sass/_form.scss */
 .form-actions {
   border: 0;

@@ -25,6 +25,9 @@
             // Use attr for !important to override radix.
             $tray.attr('style', 'top: ' + $navbar.height() + 'px !important');
           }
+          else {
+            $tray.attr('style', 'top: 0 !important');
+          }
         });
       }
     }
