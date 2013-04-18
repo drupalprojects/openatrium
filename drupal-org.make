@@ -169,3 +169,8 @@ projects[mailsystem][version] = 2.34
 ; HTML Mail
 projects[htmlmail][subdir] = contrib
 projects[htmlmail][version] = 2.65
+
+; Date Facets
+projects[date_facets][subdir] = contrib
+projects[date_facets][version] = 1.0-beta1
+projects[date_facets][patch][] = http://drupal.org/files/date_facets-search-api-support-1834998-40.patch

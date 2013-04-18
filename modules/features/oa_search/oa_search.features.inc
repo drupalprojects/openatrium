@@ -23,6 +23,7 @@ function oa_search_ctools_plugin_api() {
  */
 function oa_search_default_search_api_index_alter(&$data) {
   if (isset($data['database_node_index'])) {
+    $data['database_node_index']->options['fields']['created']['type'] = 'date'; /* WAS: 'integer' */
     $data['database_node_index']->options['fields']['oa_section_ref:title'] = array(
       'type' => 'string',
     ); /* WAS: '' */
@@ -37,6 +38,7 @@ function oa_search_default_search_api_index_alter(&$data) {
  */
 function oa_search_default_search_api_server_alter(&$data) {
   if (isset($data['database_server'])) {
+    $data['database_server']->options['indexes']['database_node_index']['created']['type'] = 'date'; /* WAS: 'integer' */
     $data['database_server']->options['indexes']['database_node_index']['oa_section_ref:title'] = array(
       'table' => 'search_api_db_database_node_index_oa_section_ref_title',
       'type' => 'string',
