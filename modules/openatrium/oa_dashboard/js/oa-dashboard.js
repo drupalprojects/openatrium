@@ -11,10 +11,11 @@
       var $navbar = $('#oa-navbar');
 
       $(window).resize(function() {
-        if ($navbar.css('position') == 'static') {
+        if ($navbar.css('position') === 'static') {
           $('body').css('padding-top', '0');
         }
       });
+      $(window).resize();
     }
   }
 
