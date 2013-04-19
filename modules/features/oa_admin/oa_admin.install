@@ -5,7 +5,7 @@
 function oa_admin_install() {
   // grab list of views that are already disabled
   $views_status = variable_get('views_defaults', array());
-  $views_status['system_1'] = TRUE;
+  $views_status['admin_views_node'] = TRUE;
   variable_set('views_defaults', $views_status);
 
   // empty cache now
