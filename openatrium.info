@@ -88,6 +88,7 @@ dependencies[] = oa_panopoly_users
 dependencies[] = oa_styles
 dependencies[] = oa_media
 dependencies[] = oa_permissions
+dependencies[] = oa_admin
 dependencies[] = oa_search
 
 ; Open Atrium 2.0 Plugins
