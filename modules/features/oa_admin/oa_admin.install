@@ -2,7 +2,7 @@
 /**
  * Disable default Content view
  */
-function oa_admin_update_7001() {
+function oa_admin_install() {
   // grab list of views that are already disabled
   $views_status = variable_get('views_defaults', array());
   $views_status['system_1'] = TRUE;
