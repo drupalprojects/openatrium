@@ -18,6 +18,7 @@ dependencies[] = node
 dependencies[] = panelizer
 dependencies[] = panels
 dependencies[] = save_draft
+dependencies[] = panopoly_wysiwyg
 features[features_api][] = api:1
 features[user_permission][] = add media from remote sources
 features[user_permission][] = administer panelizer node oa_section content
