@@ -7,9 +7,23 @@
 
 
 /**
+ * Implements hook_install().
+ */
+function oa_search_install() {
+  oa_search_enable_pages();
+}
+
+/**
  * Enable search layout pages, disable panopoly search pages.
  */
 function oa_search_update_7001() {
+  oa_search_enable_pages();
+}
+
+/**
+ * @see oa_search_update_7001().
+ */
+function oa_search_enable_pages() {
   // Add pages
   $pages = array(
     'search-node' => FALSE,
