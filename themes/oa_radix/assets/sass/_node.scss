@@ -68,6 +68,7 @@
 .field.field-type-image .field-item {
   border: 0;
   @include box-shadow(none);
+  margin-bottom: 0;
 }
 
 // Spaces

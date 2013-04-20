@@ -18077,9 +18077,10 @@ div.tabs li.active a {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  margin-bottom: 0;
 }
 
-/* line 75, ../sass/_node.scss */
+/* line 76, ../sass/_node.scss */
 .pane-oa-core-members-widget h5 {
   margin-top: 0;
 }
