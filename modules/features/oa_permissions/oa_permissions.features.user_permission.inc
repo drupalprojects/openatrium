@@ -23,14 +23,20 @@ function oa_permissions_user_default_permissions() {
   // Exported permission: administer panelizer node oa_section content.
   $permissions['administer panelizer node oa_section content'] = array(
     'name' => 'administer panelizer node oa_section content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: administer panelizer node oa_section layout.
   $permissions['administer panelizer node oa_section layout'] = array(
     'name' => 'administer panelizer node oa_section layout',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'panelizer',
   );
 
