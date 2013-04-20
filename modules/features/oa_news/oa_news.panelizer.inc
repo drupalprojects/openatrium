@@ -185,6 +185,36 @@ function oa_news_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-5';
     $pane->panel = 'sidebar';
+    $pane->type = 'og_menu_single_menu';
+    $pane->subtype = 'og_menu_single_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'parent' => 0,
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'og_menu_single_depth' => '0',
+      'og_menu_single_parent' => 'auto',
+      'form_build_id' => 'form-zNqqG-P2k7f5nB-MsR7kMvOjufwD5l5SBvW7-TqQoQ0',
+      'form_token' => 'UzJG_y4NiC-PmQnUegNcr3aM7-vMnWV9mccSTyYUvUA',
+      'form_id' => 'og_menu_single_menu_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['sidebar'][1] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_add_content';
     $pane->subtype = 'oa_widgets_add_content';
     $pane->shown = TRUE;
@@ -215,10 +245,10 @@ function oa_news_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['sidebar'][1] = 'new-5';
+    $display->content['new-6'] = $pane;
+    $display->panels['sidebar'][2] = 'new-6';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
