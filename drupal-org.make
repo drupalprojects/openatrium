@@ -42,6 +42,13 @@ projects[entityreference][download][url] = http://git.drupal.org/project/entityr
 projects[entityreference][download][branch] = 7.x-1.x
 projects[entityreference][download][revision] = 1c176daef3e7483389cbebeb34784b3af6521f7f
 
+; Private file system fix
+projects[media_youtube][version] = 2.x-dev
+projects[media_youtube][subdir] = contrib
+projects[media_youtube][download][type] = git
+projects[media_youtube][download][revision] = c53660cde8c7d223f62ea41bc1ce0391c15ed006
+projects[media_youtube][download][branch] = 7.x-2.x
+
 ;
 ; **** end of overrides ****
 
