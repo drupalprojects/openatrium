@@ -37,6 +37,7 @@ dependencies[] = date_popup_authored
 ; Open Atrium required modules
 ;
 dependencies[] = entity
+dependencies[] = panelizer
 dependencies[] = libraries
 dependencies[] = rules
 dependencies[] = rules_admin
