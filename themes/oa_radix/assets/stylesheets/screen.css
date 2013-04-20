@@ -17612,35 +17612,39 @@ div.tabs.main-tabs .tabs.secondary li:first-child {
 div.tabs .toolbar-search .btn-group {
   margin: 0;
 }
-/* line 29, ../sass/_navbar.scss */
+/* line 28, ../sass/_navbar.scss */
+.navbar .toolbar-search .input-append, div.tabs .toolbar-search .input-append {
+  margin: 0;
+}
+/* line 32, ../sass/_navbar.scss */
 .navbar .toolbar-search .dropdown-menu, div.tabs .toolbar-search .dropdown-menu {
   margin: 5px;
 }
-/* line 31, ../sass/_navbar.scss */
+/* line 34, ../sass/_navbar.scss */
 .navbar .toolbar-search .dropdown-menu .radio, div.tabs .toolbar-search .dropdown-menu .radio {
   margin: 0;
 }
-/* line 33, ../sass/_navbar.scss */
+/* line 36, ../sass/_navbar.scss */
 .navbar .toolbar-search .dropdown-menu .radio input[type="radio"], div.tabs .toolbar-search .dropdown-menu .radio input[type="radio"] {
   margin-top: 3px;
   margin-left: -17px;
 }
-/* line 38, ../sass/_navbar.scss */
+/* line 41, ../sass/_navbar.scss */
 .navbar .toolbar-search .dropdown-menu li, div.tabs .toolbar-search .dropdown-menu li {
   padding: 2px;
 }
-/* line 41, ../sass/_navbar.scss */
+/* line 44, ../sass/_navbar.scss */
 .navbar .toolbar-search .dropdown-menu li:hover, div.tabs .toolbar-search .dropdown-menu li:hover {
   background: #0081C2;
   color: #FFF;
 }
 
-/* line 49, ../sass/_navbar.scss */
+/* line 52, ../sass/_navbar.scss */
 #navbar div.devel-querylog div.cell-5 {
   padding: 1em 0.5em !important;
 }
 
-/* line 54, ../sass/_navbar.scss */
+/* line 57, ../sass/_navbar.scss */
 div#panels-ipe-control-container {
   background-color: transparent;
   position: fixed;
@@ -17653,27 +17657,27 @@ div#panels-ipe-control-container {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 63, ../sass/_navbar.scss */
+/* line 66, ../sass/_navbar.scss */
 div#panels-ipe-control-container a {
   font-weight: normal;
 }
 
 @media screen and (max-width: 980px) {
-  /* line 68, ../sass/_navbar.scss */
+  /* line 71, ../sass/_navbar.scss */
   div#panels-ipe-control-container {
     position: absolute;
   }
 }
-/* line 74, ../sass/_navbar.scss */
+/* line 77, ../sass/_navbar.scss */
 body.panels-ipe {
   margin-bottom: 0px !important;
 }
 
-/* line 81, ../sass/_navbar.scss */
+/* line 84, ../sass/_navbar.scss */
 div.tabs ul.tabs {
   border-bottom: 0;
 }
-/* line 85, ../sass/_navbar.scss */
+/* line 88, ../sass/_navbar.scss */
 div.tabs li.active a {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -17681,33 +17685,33 @@ div.tabs li.active a {
   border-bottom: 0;
 }
 
-/* line 91, ../sass/_navbar.scss */
+/* line 94, ../sass/_navbar.scss */
 .oa-dropdown {
   display: inline-block;
   margin: 0 0.25em 0 0.25em;
   vertical-align: middle;
 }
-/* line 95, ../sass/_navbar.scss */
+/* line 98, ../sass/_navbar.scss */
 .oa-dropdown ul {
   margin: 0.5em 0;
 }
-/* line 97, ../sass/_navbar.scss */
+/* line 100, ../sass/_navbar.scss */
 .oa-dropdown ul li {
   margin: 0;
 }
 
-/* line 103, ../sass/_navbar.scss */
+/* line 106, ../sass/_navbar.scss */
 .sutro-double-container {
   margin-bottom: 0;
 }
 
-/* line 107, ../sass/_navbar.scss */
+/* line 110, ../sass/_navbar.scss */
 .footer .menu li {
   list-style-type: none;
   list-style-image: none;
   float: left;
 }
-/* line 111, ../sass/_navbar.scss */
+/* line 114, ../sass/_navbar.scss */
 .footer .menu li a {
   color: #333333;
 }
