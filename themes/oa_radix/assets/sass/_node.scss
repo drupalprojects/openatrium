@@ -65,6 +65,11 @@
   }
 }
 
+.field.field-type-image .field-item {
+  border: 0;
+  @include box-shadow(none);
+}
+
 // Spaces
 
 .pane-oa-core-members-widget h5 {

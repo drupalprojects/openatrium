@@ -18071,7 +18071,15 @@ div.tabs li.active a {
   margin-bottom: 5px;
 }
 
-/* line 70, ../sass/_node.scss */
+/* line 68, ../sass/_node.scss */
+.field.field-type-image .field-item {
+  border: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 75, ../sass/_node.scss */
 .pane-oa-core-members-widget h5 {
   margin-top: 0;
 }
