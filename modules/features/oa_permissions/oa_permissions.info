@@ -7,6 +7,7 @@ version = 7.x-2.0
 project = oa_permissions
 dependencies[] = oa_core
 dependencies[] = oa_sections
+dependencies[] = oa_layouts
 dependencies[] = caption_filter
 dependencies[] = ctools
 dependencies[] = features
