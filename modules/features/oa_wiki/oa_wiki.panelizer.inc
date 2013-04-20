@@ -1,22 +1,22 @@
 <?php
 /**
  * @file
- * oa_pages.panelizer.inc
+ * oa_wiki.panelizer.inc
  */
 
 /**
  * Implements hook_panelizer_defaults().
  */
-function oa_pages_panelizer_defaults() {
+function oa_wiki_panelizer_defaults() {
   $export = array();
 
   $panelizer = new stdClass();
   $panelizer->disabled = FALSE; /* Edit this to true to make a default panelizer disabled initially */
   $panelizer->api_version = 1;
-  $panelizer->name = 'node:oa_pages_page:default';
+  $panelizer->name = 'node:oa_wiki_page:default';
   $panelizer->title = 'Default';
   $panelizer->panelizer_type = 'node';
-  $panelizer->panelizer_key = 'oa_pages_page';
+  $panelizer->panelizer_key = 'oa_wiki_page';
   $panelizer->no_blocks = FALSE;
   $panelizer->css_id = '';
   $panelizer->css = '';
@@ -242,7 +242,7 @@ function oa_pages_panelizer_defaults() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
-  $export['node:oa_pages_page:default'] = $panelizer;
+  $export['node:oa_wiki_page:default'] = $panelizer;
 
   return $export;
 }

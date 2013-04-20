@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * oa_pages.pages_default.inc
+ * oa_wiki.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function oa_pages_default_page_manager_handlers() {
+function oa_wiki_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
@@ -19,7 +19,7 @@ function oa_pages_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -26;
   $handler->conf = array(
-    'title' => 'Document Edit Page',
+    'title' => 'Wiki Edit Page',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => 'node-edit',
@@ -49,7 +49,7 @@ function oa_pages_default_page_manager_handlers() {
           'name' => 'node_type',
           'settings' => array(
             'type' => array(
-              'oa_pages_page' => 'oa_pages_page',
+              'oa_wiki_page' => 'oa_wiki_page',
             ),
           ),
           'context' => 'argument_node_edit_1',
@@ -58,6 +58,8 @@ function oa_pages_default_page_manager_handlers() {
       ),
       'logic' => 'and',
     ),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
   );
   $display = new panels_display();
   $display->layout = 'burr_flipped';

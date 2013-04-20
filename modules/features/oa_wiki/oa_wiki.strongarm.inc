@@ -1,19 +1,19 @@
 <?php
 /**
  * @file
- * oa_pages.strongarm.inc
+ * oa_wiki.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function oa_pages_strongarm() {
+function oa_wiki_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__oa_pages_page';
+  $strongarm->name = 'field_bundle_settings_node__oa_wiki_page';
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
@@ -53,66 +53,66 @@ function oa_pages_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__oa_pages_page'] = $strongarm;
+  $export['field_bundle_settings_node__oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_oa_pages_page';
+  $strongarm->name = 'language_content_type_oa_wiki_page';
   $strongarm->value = '0';
-  $export['language_content_type_oa_pages_page'] = $strongarm;
+  $export['language_content_type_oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_oa_pages_page';
+  $strongarm->name = 'menu_options_oa_wiki_page';
   $strongarm->value = array(
     0 => 'main-menu',
   );
-  $export['menu_options_oa_pages_page'] = $strongarm;
+  $export['menu_options_oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_oa_pages_page';
+  $strongarm->name = 'menu_parent_oa_wiki_page';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_oa_pages_page'] = $strongarm;
+  $export['menu_parent_oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_oa_pages_page';
+  $strongarm->name = 'node_options_oa_wiki_page';
   $strongarm->value = array(
     0 => 'status',
     1 => 'revision',
   );
-  $export['node_options_oa_pages_page'] = $strongarm;
+  $export['node_options_oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_oa_pages_page';
+  $strongarm->name = 'node_preview_oa_wiki_page';
   $strongarm->value = '1';
-  $export['node_preview_oa_pages_page'] = $strongarm;
+  $export['node_preview_oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_oa_pages_page';
+  $strongarm->name = 'node_submitted_oa_wiki_page';
   $strongarm->value = 1;
-  $export['node_submitted_oa_pages_page'] = $strongarm;
+  $export['node_submitted_oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'og_menu_enable_oa_pages_page';
+  $strongarm->name = 'og_menu_enable_oa_wiki_page';
   $strongarm->value = 1;
-  $export['og_menu_enable_oa_pages_page'] = $strongarm;
+  $export['og_menu_enable_oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'panelizer_defaults_node_oa_pages_page';
+  $strongarm->name = 'panelizer_defaults_node_oa_wiki_page';
   $strongarm->value = array(
     'status' => 1,
     'view modes' => array(
@@ -138,12 +138,12 @@ function oa_pages_strongarm() {
       ),
     ),
   );
-  $export['panelizer_defaults_node_oa_pages_page'] = $strongarm;
+  $export['panelizer_defaults_node_oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'panelizer_node:oa_pages_page_default';
+  $strongarm->name = 'panelizer_node:oa_wiki_page_default';
   $strongarm->value = array(
     'custom' => 'custom',
     'entity_form_field' => 'entity_form_field',
@@ -158,7 +158,7 @@ function oa_pages_strongarm() {
     'views_panes' => 'views_panes',
     'other' => 'other',
   );
-  $export['panelizer_node:oa_pages_page_default'] = $strongarm;
+  $export['panelizer_node:oa_wiki_page_default'] = $strongarm;
 
   return $export;
 }

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the OpenAtrium Documents feature.
- */
-
-include_once 'oa_pages.features.inc';
