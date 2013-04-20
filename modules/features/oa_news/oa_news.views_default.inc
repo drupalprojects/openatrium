@@ -138,9 +138,16 @@ function oa_news_views_default_views() {
   $handler->display->display_options['fields']['field_oa_media']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_oa_media']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_oa_media']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_oa_media']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_oa_media']['type'] = 'media_colorbox';
   $handler->display->display_options['fields']['field_oa_media']['settings'] = array(
     'file_view_mode' => 'preview',
+    'colorbox_view_mode' => 'default',
+    'fixed_width' => '',
+    'fixed_height' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'title',
+    'audio_playlist' => 0,
   );
   $handler->display->display_options['fields']['field_oa_media']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_oa_media']['delta_offset'] = '0';
