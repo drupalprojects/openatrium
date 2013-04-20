@@ -82,6 +82,7 @@ dependencies[] = oa_teams
 dependencies[] = oa_sections
 dependencies[] = oa_messages
 dependencies[] = oa_layouts
+dependencies[] = oa_news
 dependencies[] = oa_favorites
 dependencies[] = oa_river
 dependencies[] = oa_users

@@ -17,7 +17,6 @@ features[page_manager_handlers][] = node_edit_panel_context_2
 features[page_manager_handlers][] = node_edit_panel_context_4
 features[panelizer_defaults][] = node:oa_group:default
 features[panelizer_defaults][] = node:oa_section:default
-features[panelizer_defaults][] = node:oa_section:oa_section_news
 features[panelizer_defaults][] = node:oa_space:default
 features[panelizer_defaults][] = node:oa_space:space_description
 features[panels_mini][] = oa_footer_panel
