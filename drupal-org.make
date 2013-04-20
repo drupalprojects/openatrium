@@ -71,14 +71,6 @@ projects[features_override][version] = 2.0-beta2
 projects[og][subdir] = contrib
 projects[og][version] = 2.1
 
-; Organic Groups Menu
-projects[og_menu][type] = module
-projects[og_menu][subdir] = contrib
-projects[og_menu][download][type] = git
-projects[og_menu][download][url] = http://git.drupal.org/project/og_menu.git
-projects[og_menu][download][branch] = 7.x-3.x
-projects[og_menu][patch][] = http://drupal.org/files/og_menu-js-10515420-11.patch
-
 ; Organic Groups Vocabulary
 projects[og_vocab][subdir] = contrib
 projects[og_vocab][version] = 1.1

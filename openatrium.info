@@ -61,7 +61,6 @@ dependencies[] = og_access
 dependencies[] = og_context
 dependencies[] = og_register
 dependencies[] = og_ui
-;dependencies[] = og_menu
 
 ; Libraries
 dependencies[] = twitter_bootstrap_ui
@@ -74,6 +73,7 @@ dependencies[] = oa_dashboard
 dependencies[] = oa_notifications
 dependencies[] = og_session_context
 dependencies[] = oa_section_context
+dependencies[] = og_menu_single
 
 ; Open Atrium 2.0 Features
 dependencies[] = oa_config
