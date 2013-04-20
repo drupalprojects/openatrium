@@ -46,15 +46,15 @@ projects[entityreference][download][revision] = 1c176daef3e7483389cbebeb34784b3a
 ; **** end of overrides ****
 
 ; Parent Theme
-;projects[radix][version] = 2.0-alpha3
-;projects[radix][patch][] = http://drupal.org/files/radix-template-1907666-2.patch
+projects[radix][version] = 2.0-alpha3
+projects[radix][patch][] = http://drupal.org/files/radix-template-1907666-2.patch
 
 ; Parent Theme
-projects[radix][download][type] = git
-projects[radix][download][url] = http://git.drupal.org/project/radix.git
-projects[radix][download][branch] = 7.x-2.x
-projects[radix][download][revision] = fbcbc725ba78792efc4fe2aee78d37b1cc567fc6
-projects[radix][patch][] = http://drupal.org/files/radix_button_parent-1975516.patch
+;projects[radix][download][type] = git
+;projects[radix][download][url] = http://git.drupal.org/project/radix.git
+;projects[radix][download][branch] = 7.x-2.x
+;projects[radix][download][revision] = fbcbc725ba78792efc4fe2aee78d37b1cc567fc6
+;projects[radix][patch][] = http://drupal.org/files/radix_button_parent-1975516.patch
 
 ; Features Override
 projects[features_override][subdir] = contrib
