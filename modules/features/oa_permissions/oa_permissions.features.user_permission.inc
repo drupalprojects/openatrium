@@ -20,46 +20,6 @@ function oa_permissions_user_default_permissions() {
     'module' => 'media_internet',
   );
 
-  // Exported permission: administer panelizer node oa_section content.
-  $permissions['administer panelizer node oa_section content'] = array(
-    'name' => 'administer panelizer node oa_section content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'panelizer',
-  );
-
-  // Exported permission: administer panelizer node oa_section layout.
-  $permissions['administer panelizer node oa_section layout'] = array(
-    'name' => 'administer panelizer node oa_section layout',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'panelizer',
-  );
-
-  // Exported permission: administer panelizer node oa_space content.
-  $permissions['administer panelizer node oa_space content'] = array(
-    'name' => 'administer panelizer node oa_space content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'panelizer',
-  );
-
-  // Exported permission: administer panelizer node oa_space layout.
-  $permissions['administer panelizer node oa_space layout'] = array(
-    'name' => 'administer panelizer node oa_space layout',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'panelizer',
-  );
-
   // Exported permission: administer panels styles.
   $permissions['administer panels styles'] = array(
     'name' => 'administer panels styles',
