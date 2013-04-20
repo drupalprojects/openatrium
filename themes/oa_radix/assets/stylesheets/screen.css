@@ -17604,7 +17604,7 @@ div.tabs.main-tabs .tabs.secondary li:first-child {
 }
 /* line 22, ../sass/_navbar.scss */
 .navbar .toolbar-search, div.tabs .toolbar-search {
-  margin: 10px;
+  margin: 10px 10px 0 0;
 }
 /* line 25, ../sass/_navbar.scss */
 .navbar .toolbar-search form, div.tabs .toolbar-search form,
