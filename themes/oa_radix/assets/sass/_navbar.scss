@@ -51,10 +51,10 @@
 }
 
 // Move the Panels IPE buttons from bottom to the top
-#navbar div#panels-ipe-control-container {
+div#panels-ipe-control-container {
   background-color: transparent;
   position: fixed;
-  top: 60px;
+  top: 50px;
   right: 0;
   bottom: auto;
   width: auto;
@@ -65,7 +65,7 @@
   }
 }
 @media screen and (max-width: $tabletBreakpoint) {
-  #navbar div#panels-ipe-control-container {
+  div#panels-ipe-control-container {
     position: absolute;
   }
 }
