@@ -7,7 +7,7 @@
 
 
 // Name of the menu the links are stored in.
-define('OG_MENU_SINGLE_MENU_NAME', 'og_menu_single');
+define('OG_MENU_SINGLE_MENU_NAME', 'og-menu-single');
 
 /**
  * Implements hook_node_prepare().
