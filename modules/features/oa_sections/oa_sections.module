@@ -57,7 +57,7 @@ function _oa_sections_is_parent($item, $mlid) {
     return TRUE;
   }
   foreach ($item['below'] as $child_item) {
-    if (_ahrq_page_elements_is_parent($child_item, $mlid)) {
+    if (_oa_sections_is_parent($child_item, $mlid)) {
       return TRUE;
     }
   }
