@@ -127,8 +127,8 @@ function oa_wiki_strongarm() {
         'choice' => 0,
       ),
       'teaser' => array(
-        'status' => 1,
-        'default' => 1,
+        'status' => 0,
+        'default' => 0,
         'choice' => 0,
       ),
       'featured' => array(

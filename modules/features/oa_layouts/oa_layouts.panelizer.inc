@@ -401,9 +401,9 @@ function oa_layouts_panelizer_defaults() {
     $pane->configuration = array(
       'oa_widgets_types' => array(
         'oa_discussion_post' => 'oa_discussion_post',
-        'oa_pages_page' => 'oa_pages_page',
-        'oa_space' => 0,
+        'oa_wiki_page' => 'oa_wiki_page',
         'oa_group' => 0,
+        'oa_space' => 0,
         'oa_section' => 0,
         'oa_team' => 0,
         'panopoly_page' => 0,
@@ -413,8 +413,8 @@ function oa_layouts_panelizer_defaults() {
       'cancel' => 'Cancel',
       'override_title' => 0,
       'override_title_text' => '',
-      'form_build_id' => 'form-GmGjqaj6uN8Gd1Y9_p1_Mrhzdxri10zUfORVp-ISzBo',
-      'form_token' => 'xDRyA2ZlrWbx2Q9zke81MDb3gj0cIZzC3Cj7dG2G3Dc',
+      'form_build_id' => 'form-Ot_sZK7mVUsstWmmXYzNNtANFsQ2daOpMIQS7SUl-Ds',
+      'form_token' => 'isC-J5K3dQfeMpsBqZG_34ROSt8JFxt7s9-jtqd79pI',
       'form_id' => 'oa_widgets_add_content_edit_form',
       'op' => 'Finish',
     );
