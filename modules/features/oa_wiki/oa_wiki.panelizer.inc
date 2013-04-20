@@ -38,7 +38,7 @@ function oa_wiki_panelizer_defaults() {
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
   $display = new panels_display();
-  $display->layout = 'bryant_flipped_flipped';
+  $display->layout = 'burr_flipped';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -164,6 +164,36 @@ function oa_wiki_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-5';
     $pane->panel = 'sidebar';
+    $pane->type = 'og_menu_single_menu';
+    $pane->subtype = 'og_menu_single_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'parent' => 0,
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'og_menu_single_depth' => '0',
+      'og_menu_single_parent' => '0',
+      'form_build_id' => 'form-BlucixDG_A2ytJto3v6xMilt1BjEQbnkKNI3U9INJgc',
+      'form_token' => 'UzJG_y4NiC-PmQnUegNcr3aM7-vMnWV9mccSTyYUvUA',
+      'form_id' => 'og_menu_single_menu_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['sidebar'][1] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'sidebar';
     $pane->type = 'oa_notifications_pane';
     $pane->subtype = 'oa_notifications_pane';
     $pane->shown = TRUE;
@@ -185,12 +215,12 @@ function oa_wiki_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['sidebar'][1] = 'new-5';
+    $display->content['new-6'] = $pane;
+    $display->panels['sidebar'][2] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-7';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_oa_media';
@@ -235,10 +265,10 @@ function oa_wiki_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['sidebar'][2] = 'new-6';
+    $display->content['new-7'] = $pane;
+    $display->panels['sidebar'][3] = 'new-7';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
