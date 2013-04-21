@@ -105,6 +105,9 @@ function oa_core_default_page_manager_pages() {
       'context' => 'argument_entity_id:node_1',
       'override_title' => 0,
       'override_title_text' => '',
+      'hide_owner' => 0,
+      'hide_teams' => 0,
+      'show_number' => '0',
     );
     $pane->cache = array();
     $pane->style = array(

@@ -28,7 +28,7 @@
 
 <?php if (!empty($teams)): ?>
 <div class='clearfix well well-small teams'>
-  <h5>Teams</h3>
+  <h5>Teams</h5>
   <?php foreach ($teams as $team): ?>
     <div class='pull-left team'>
       <?php print $team['title']; ?>
@@ -38,10 +38,9 @@
 <?php endif; ?>
 
 <?php if (!empty($members)): ?>
-<div class='clearfix well well-small members'>
-  <h5>Members</h3>
+<div class='clearfix members'>
   <?php foreach ($members as $member): ?>
-    <div class='pull-left user-badge'>
+    <div class='oa-member-list user-badge no-border pull-left'>
       <?php print $member['picture']; ?>
       <?php print $member['title']; ?>
     </div>
