@@ -60,6 +60,19 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     }
   }
 
+  if (!isset($conf['show_number']) || ($conf['show_number'] != '0')) {
+    $vars['see_all_link'] = l('See all members', 'node/' . $space->nid . '/members');
+  }
+  else {
+    $vars['see_all_link'] = '';
+  }
+
+  if (!empty($conf['hide_owner'])) {
+    unset($vars['owners']);
+  }
+  if (!empty($conf['hide_teams'])) {
+    unset($vars['teams']);
+  }
   $block->content = theme('oa_core_members_widget', $vars);
   return $block;
 }
@@ -98,5 +111,31 @@ function oa_core_entity_build_display($entity, $id) {
  * Edit form for the widget.
  */
 function oa_core_members_widget_edit_form($form, &$form_state) {
+  $conf = $form_state['conf'];
+
+  $form['hide_owner'] = array(
+    '#title' => t('Hide space owner'),
+    '#type' => 'checkbox',
+    '#default_value' => isset($conf['hide_owner']) ? $conf['hide_owner'] : FALSE,
+  );
+  $form['hide_teams'] = array(
+    '#title' => t('Hide teams'),
+    '#type' => 'checkbox',
+    '#default_value' => isset($conf['hide_teams']) ? $conf['hide_teams'] : FALSE,
+  );
+  $form['show_number'] = array(
+    '#title' => t('Number of members to show'),
+    '#type' => 'textfield',
+    '#default_value' => isset($conf['show_number']) ? $conf['show_number'] : '10',
+    '#description' => 'Enter zero to show all members.'
+  );
+
   return $form;
 }
+
+function oa_core_members_widget_edit_form_submit($form, &$form_state) {
+  $form_state['conf']['hide_owner'] = $form_state['values']['hide_owner'];
+  $form_state['conf']['hide_teams'] = $form_state['values']['hide_teams'];
+  $form_state['conf']['show_number'] = $form_state['values']['show_number'];
+}
+

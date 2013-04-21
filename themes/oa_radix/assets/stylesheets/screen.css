@@ -1898,9 +1898,13 @@ select:focus:invalid:focus {
 /* line 466, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on,
 .input-append .btn,
+.input-append #modal-content #edit-cancel,
+#modal-content .input-append #edit-cancel,
 .input-append .btn-group > .dropdown-toggle,
 .input-prepend .add-on,
 .input-prepend .btn,
+.input-prepend #modal-content #edit-cancel,
+#modal-content .input-prepend #edit-cancel,
 .input-prepend .btn-group > .dropdown-toggle {
   vertical-align: top;
   -webkit-border-radius: 0;
@@ -1916,12 +1920,16 @@ select:focus:invalid:focus {
 
 /* line 478, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend .add-on,
-.input-prepend .btn {
+.input-prepend .btn,
+.input-prepend #modal-content #edit-cancel,
+#modal-content .input-prepend #edit-cancel {
   margin-right: -1px;
 }
 /* line 482, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend .add-on:first-child,
-.input-prepend .btn:first-child {
+.input-prepend .btn:first-child,
+.input-prepend #modal-content #edit-cancel:first-child,
+#modal-content .input-prepend #edit-cancel:first-child {
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
@@ -1936,9 +1944,13 @@ select:focus:invalid:focus {
   border-radius: 4px 0 0 4px;
 }
 /* line 493, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.input-append input + .btn-group .btn:last-child,
+.input-append input + .btn-group .btn:last-child, .input-append input + .btn-group #modal-content #edit-cancel:last-child, #modal-content .input-append input + .btn-group #edit-cancel:last-child,
 .input-append select + .btn-group .btn:last-child,
-.input-append .uneditable-input + .btn-group .btn:last-child {
+.input-append select + .btn-group #modal-content #edit-cancel:last-child,
+#modal-content .input-append select + .btn-group #edit-cancel:last-child,
+.input-append .uneditable-input + .btn-group .btn:last-child,
+.input-append .uneditable-input + .btn-group #modal-content #edit-cancel:last-child,
+#modal-content .input-append .uneditable-input + .btn-group #edit-cancel:last-child {
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
@@ -1946,12 +1958,16 @@ select:focus:invalid:focus {
 /* line 499, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on,
 .input-append .btn,
+.input-append #modal-content #edit-cancel,
+#modal-content .input-append #edit-cancel,
 .input-append .btn-group {
   margin-left: -1px;
 }
 /* line 504, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on:last-child,
 .input-append .btn:last-child,
+.input-append #modal-content #edit-cancel:last-child,
+#modal-content .input-append #edit-cancel:last-child,
 .input-append .btn-group:last-child > .dropdown-toggle {
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
@@ -1967,16 +1983,22 @@ select:focus:invalid:focus {
   border-radius: 0;
 }
 /* line 515, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.input-prepend.input-append input + .btn-group .btn,
+.input-prepend.input-append input + .btn-group .btn, .input-prepend.input-append input + .btn-group #modal-content #edit-cancel, #modal-content .input-prepend.input-append input + .btn-group #edit-cancel,
 .input-prepend.input-append select + .btn-group .btn,
-.input-prepend.input-append .uneditable-input + .btn-group .btn {
+.input-prepend.input-append select + .btn-group #modal-content #edit-cancel,
+#modal-content .input-prepend.input-append select + .btn-group #edit-cancel,
+.input-prepend.input-append .uneditable-input + .btn-group .btn,
+.input-prepend.input-append .uneditable-input + .btn-group #modal-content #edit-cancel,
+#modal-content .input-prepend.input-append .uneditable-input + .btn-group #edit-cancel {
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
 }
 /* line 520, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend.input-append .add-on:first-child,
-.input-prepend.input-append .btn:first-child {
+.input-prepend.input-append .btn:first-child,
+.input-prepend.input-append #modal-content #edit-cancel:first-child,
+#modal-content .input-prepend.input-append #edit-cancel:first-child {
   margin-right: -1px;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
@@ -1984,7 +2006,9 @@ select:focus:invalid:focus {
 }
 /* line 525, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend.input-append .add-on:last-child,
-.input-prepend.input-append .btn:last-child {
+.input-prepend.input-append .btn:last-child,
+.input-prepend.input-append #modal-content #edit-cancel:last-child,
+#modal-content .input-prepend.input-append #edit-cancel:last-child {
   margin-left: -1px;
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
@@ -2025,7 +2049,7 @@ input.search-query {
 }
 
 /* line 557, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.form-search .input-append .btn {
+.form-search .input-append .btn, .form-search .input-append #modal-content #edit-cancel, #modal-content .form-search .input-append #edit-cancel {
   -webkit-border-radius: 0 14px 14px 0;
   -moz-border-radius: 0 14px 14px 0;
   border-radius: 0 14px 14px 0;
@@ -2039,7 +2063,7 @@ input.search-query {
 }
 
 /* line 563, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.form-search .input-prepend .btn {
+.form-search .input-prepend .btn, .form-search .input-prepend #modal-content #edit-cancel, #modal-content .form-search .input-prepend #edit-cancel {
   -webkit-border-radius: 14px 0 0 14px;
   -moz-border-radius: 14px 0 0 14px;
   border-radius: 14px 0 0 14px;
@@ -3539,7 +3563,7 @@ button.close {
 }
 
 /* line 13, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn {
+.btn, #modal-content #edit-cancel {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -3577,21 +3601,21 @@ button.close {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
+.btn:hover, #modal-content #edit-cancel:hover, .btn:active, #modal-content #edit-cancel:active, .btn.active, #modal-content .active#edit-cancel, .btn.disabled, #modal-content .disabled#edit-cancel, .btn[disabled], #modal-content [disabled]#edit-cancel {
   color: #333333;
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
 /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:active, .btn.active {
+.btn:active, #modal-content #edit-cancel:active, .btn.active, #modal-content .active#edit-cancel {
   background-color: #cccccc \9;
 }
 /* line 61, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:first-child {
+.btn:first-child, #modal-content #edit-cancel:first-child {
   *margin-left: 0;
 }
 /* line 32, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn:hover {
+.btn:hover, #modal-content #edit-cancel:hover {
   color: #333333;
   text-decoration: none;
   background-position: 0 -15px;
@@ -3601,13 +3625,13 @@ button.close {
   transition: background-position 0.1s linear;
 }
 /* line 43, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn:focus {
+.btn:focus, #modal-content #edit-cancel:focus {
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 49, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn.active, .btn:active {
+.btn.active, #modal-content .active#edit-cancel, .btn:active, #modal-content #edit-cancel:active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -3615,7 +3639,7 @@ button.close {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 57, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn.disabled, .btn[disabled] {
+.btn.disabled, #modal-content .disabled#edit-cancel, .btn[disabled], #modal-content [disabled]#edit-cancel {
   cursor: default;
   background-image: none;
   opacity: 0.65;
@@ -3694,7 +3718,7 @@ input[type="button"].btn-block {
 }
 
 /* line 141, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary.active, #node-edit .form-actions input.active,
+.btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active,
 .btn-warning.active,
 .btn-danger.active,
 .btn-success.active,
@@ -3704,13 +3728,13 @@ input[type="button"].btn-block {
 }
 
 /* line 147, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn {
+.btn, #modal-content #edit-cancel {
   border-color: #c5c5c5;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
 }
 
 /* line 152, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary, #node-edit .form-actions input {
+.btn-primary, #modal-content .form-submit, #node-edit .form-actions input {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #006ecc;
@@ -3728,13 +3752,13 @@ input[type="button"].btn-block {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn-primary:hover, #node-edit .form-actions input:hover, .btn-primary:active, #node-edit .form-actions input:active, .btn-primary.active, #node-edit .form-actions input.active, .btn-primary.disabled, #node-edit .form-actions input.disabled, .btn-primary[disabled], #node-edit .form-actions input[disabled] {
+.btn-primary:hover, #modal-content .form-submit:hover, #node-edit .form-actions input:hover, .btn-primary:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active, .btn-primary.disabled, #modal-content .disabled.form-submit, #node-edit .form-actions input.disabled, .btn-primary[disabled], #modal-content [disabled].form-submit, #node-edit .form-actions input[disabled] {
   color: white;
   background-color: #0044cc;
   *background-color: #003bb3;
 }
 /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn-primary:active, #node-edit .form-actions input:active, .btn-primary.active, #node-edit .form-actions input.active {
+.btn-primary:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active {
   background-color: #003399 \9;
 }
 
@@ -3884,32 +3908,37 @@ input[type="button"].btn-block {
 }
 
 /* line 181, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn,
-input[type="submit"].btn {
+button.btn, #modal-content button#edit-cancel,
+input[type="submit"].btn,
+#modal-content input[type="submit"]#edit-cancel {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
 /* line 184, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn::-moz-focus-inner,
-input[type="submit"].btn::-moz-focus-inner {
+button.btn::-moz-focus-inner, #modal-content button#edit-cancel::-moz-focus-inner,
+input[type="submit"].btn::-moz-focus-inner,
+#modal-content input[type="submit"]#edit-cancel::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 /* line 193, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-large,
-input[type="submit"].btn.btn-large {
+button.btn.btn-large, #modal-content button.btn-large#edit-cancel,
+input[type="submit"].btn.btn-large,
+#modal-content input[type="submit"].btn-large#edit-cancel {
   *padding-top: 7px;
   *padding-bottom: 7px;
 }
 /* line 197, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-small,
-input[type="submit"].btn.btn-small {
+button.btn.btn-small, #modal-content button.btn-small#edit-cancel,
+input[type="submit"].btn.btn-small,
+#modal-content input[type="submit"].btn-small#edit-cancel {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
 /* line 201, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-mini,
-input[type="submit"].btn.btn-mini {
+button.btn.btn-mini, #modal-content button.btn-mini#edit-cancel,
+input[type="submit"].btn.btn-mini,
+#modal-content input[type="submit"].btn-mini#edit-cancel {
   *padding-top: 1px;
   *padding-bottom: 1px;
 }
@@ -3976,14 +4005,16 @@ input[type="submit"].btn.btn-mini {
   margin-bottom: 10px;
 }
 /* line 29, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-toolbar > .btn + .btn,
+.btn-toolbar > .btn + .btn, #modal-content .btn-toolbar > #edit-cancel + .btn, #modal-content .btn-toolbar > .btn + #edit-cancel, #modal-content .btn-toolbar > #edit-cancel + #edit-cancel,
 .btn-toolbar > .btn-group + .btn,
-.btn-toolbar > .btn + .btn-group {
+#modal-content .btn-toolbar > .btn-group + #edit-cancel,
+.btn-toolbar > .btn + .btn-group,
+#modal-content .btn-toolbar > #edit-cancel + .btn-group {
   margin-left: 5px;
 }
 
 /* line 35, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn {
+.btn-group > .btn, #modal-content .btn-group > #edit-cancel {
   position: relative;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -3991,12 +4022,12 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 39, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn + .btn {
+.btn-group > .btn + .btn, #modal-content .btn-group > #edit-cancel + .btn, #modal-content .btn-group > .btn + #edit-cancel, #modal-content .btn-group > #edit-cancel + #edit-cancel {
   margin-left: -1px;
 }
 
 /* line 44, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn,
+.btn-group > .btn, #modal-content .btn-group > #edit-cancel,
 .btn-group > .dropdown-menu,
 .btn-group > .popover {
   font-size: 14px;
@@ -4018,7 +4049,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 60, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, #modal-content .btn-group > #edit-cancel:first-child {
   margin-left: 0;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topleft: 4px;
@@ -4029,7 +4060,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 67, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child,
+.btn-group > .btn:last-child, #modal-content .btn-group > #edit-cancel:last-child,
 .btn-group > .dropdown-toggle {
   -webkit-border-top-right-radius: 4px;
   -moz-border-radius-topright: 4px;
@@ -4040,7 +4071,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 72, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn.large:first-child {
+.btn-group > .btn.large:first-child, #modal-content .btn-group > .large#edit-cancel:first-child {
   margin-left: 0;
   -webkit-border-top-left-radius: 6px;
   -moz-border-radius-topleft: 6px;
@@ -4051,7 +4082,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 78, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn.large:last-child,
+.btn-group > .btn.large:last-child, #modal-content .btn-group > .large#edit-cancel:last-child,
 .btn-group > .large.dropdown-toggle {
   -webkit-border-top-right-radius: 6px;
   -moz-border-radius-topright: 6px;
@@ -4062,10 +4093,13 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 87, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:hover,
+.btn-group > .btn:hover, #modal-content .btn-group > #edit-cancel:hover,
 .btn-group > .btn:focus,
+#modal-content .btn-group > #edit-cancel:focus,
 .btn-group > .btn:active,
-.btn-group > .btn.active {
+#modal-content .btn-group > #edit-cancel:active,
+.btn-group > .btn.active,
+#modal-content .btn-group > .active#edit-cancel {
   z-index: 2;
 }
 
@@ -4076,7 +4110,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 103, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, #modal-content .btn-group > #edit-cancel + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
   -webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -4116,11 +4150,11 @@ input[type="submit"].btn.btn-mini {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 137, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn.dropdown-toggle {
+.btn-group.open .btn.dropdown-toggle, .btn-group.open #modal-content .dropdown-toggle#edit-cancel, #modal-content .btn-group.open .dropdown-toggle#edit-cancel {
   background-color: #e6e6e6;
 }
 /* line 140, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
+.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #modal-content .dropdown-toggle.form-submit, #modal-content .btn-group.open .dropdown-toggle.form-submit, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
   background-color: #0044cc;
 }
 /* line 143, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
@@ -4145,7 +4179,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 162, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn .caret {
+.btn .caret, #modal-content #edit-cancel .caret {
   margin-top: 8px;
   margin-left: 0;
 }
@@ -4170,7 +4204,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 191, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-primary .caret, #node-edit .form-actions input .caret,
+.btn-primary .caret, #modal-content .form-submit .caret, #node-edit .form-actions input .caret,
 .btn-warning .caret,
 .btn-danger .caret,
 .btn-info .caret,
@@ -4188,7 +4222,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 206, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn {
+.btn-group-vertical > .btn, #modal-content .btn-group-vertical > #edit-cancel {
   display: block;
   float: none;
   max-width: 100%;
@@ -4198,20 +4232,20 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 212, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn {
+.btn-group-vertical > .btn + .btn, #modal-content .btn-group-vertical > #edit-cancel + .btn, #modal-content .btn-group-vertical > .btn + #edit-cancel, #modal-content .btn-group-vertical > #edit-cancel + #edit-cancel {
   margin-left: 0;
   margin-top: -1px;
 }
 
 /* line 216, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child {
+.btn-group-vertical > .btn:first-child, #modal-content .btn-group-vertical > #edit-cancel:first-child {
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
 }
 
 /* line 219, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child {
+.btn-group-vertical > .btn:last-child, #modal-content .btn-group-vertical > #edit-cancel:last-child {
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
@@ -4871,18 +4905,26 @@ div.tabs ul.tabs li.dropdown.open a:hover .caret {
 }
 
 /* line 93, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn, div.tabs .btn,
+.navbar .btn, div.tabs .btn, .navbar #modal-content #edit-cancel, #modal-content .navbar #edit-cancel, div.tabs #modal-content #edit-cancel, #modal-content div.tabs #edit-cancel,
 .navbar .btn-group,
 div.tabs .btn-group {
   margin-top: 5px;
 }
 
 /* line 98, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-group .btn, div.tabs .btn-group .btn,
+.navbar .btn-group .btn, div.tabs .btn-group .btn, .navbar .btn-group #modal-content #edit-cancel, #modal-content .navbar .btn-group #edit-cancel, div.tabs .btn-group #modal-content #edit-cancel, #modal-content div.tabs .btn-group #edit-cancel,
 .navbar .input-prepend .btn,
 div.tabs .input-prepend .btn,
+.navbar .input-prepend #modal-content #edit-cancel,
+#modal-content .navbar .input-prepend #edit-cancel,
+div.tabs .input-prepend #modal-content #edit-cancel,
+#modal-content div.tabs .input-prepend #edit-cancel,
 .navbar .input-append .btn,
-div.tabs .input-append .btn {
+div.tabs .input-append .btn,
+.navbar .input-append #modal-content #edit-cancel,
+#modal-content .navbar .input-append #edit-cancel,
+div.tabs .input-append #modal-content #edit-cancel,
+#modal-content div.tabs .input-append #edit-cancel {
   margin-top: 0;
 }
 
@@ -4911,7 +4953,9 @@ div.tabs .input-append .btn {
 /* line 115, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar-form input,
 .navbar-form select,
-.navbar-form .btn {
+.navbar-form .btn,
+.navbar-form #modal-content #edit-cancel,
+#modal-content .navbar-form #edit-cancel {
   display: inline-block;
   margin-bottom: 0;
 }
@@ -5786,12 +5830,12 @@ div.tabs .navbar-inverse ul.tabs li.dropdown.open.active > .dropdown-toggle .car
   clear: both;
 }
 /* line 83, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
-.modal-footer .btn + .btn {
+.modal-footer .btn + .btn, .modal-footer #modal-content #edit-cancel + .btn, #modal-content .modal-footer #edit-cancel + .btn, .modal-footer #modal-content .btn + #edit-cancel, #modal-content .modal-footer .btn + #edit-cancel, .modal-footer #modal-content #edit-cancel + #edit-cancel, #modal-content .modal-footer #edit-cancel + #edit-cancel {
   margin-left: 5px;
   margin-bottom: 0;
 }
 /* line 88, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
-.modal-footer .btn-group .btn + .btn {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #modal-content #edit-cancel + .btn, #modal-content .modal-footer .btn-group #edit-cancel + .btn, .modal-footer .btn-group #modal-content .btn + #edit-cancel, #modal-content .modal-footer .btn-group .btn + #edit-cancel, .modal-footer .btn-group #modal-content #edit-cancel + #edit-cancel, #modal-content .modal-footer .btn-group #edit-cancel + #edit-cancel {
   margin-left: -1px;
 }
 /* line 92, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
@@ -6243,8 +6287,9 @@ a.label:hover, .oa-news .oa-news-tags a:hover, a.badge:hover {
 }
 
 /* line 69, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_labels-badges.scss */
-.btn .label, .btn .oa-news .oa-news-tags a, .oa-news .oa-news-tags .btn a,
-.btn .badge {
+.btn .label, #modal-content #edit-cancel .label, .btn .oa-news .oa-news-tags a, .oa-news .oa-news-tags .btn a, #modal-content #edit-cancel .oa-news .oa-news-tags a, .oa-news .oa-news-tags #modal-content #edit-cancel a,
+.btn .badge,
+#modal-content #edit-cancel .badge {
   position: relative;
   top: -1px;
 }
@@ -8549,9 +8594,13 @@ select:focus:invalid:focus {
 /* line 466, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on,
 .input-append .btn,
+.input-append #modal-content #edit-cancel,
+#modal-content .input-append #edit-cancel,
 .input-append .btn-group > .dropdown-toggle,
 .input-prepend .add-on,
 .input-prepend .btn,
+.input-prepend #modal-content #edit-cancel,
+#modal-content .input-prepend #edit-cancel,
 .input-prepend .btn-group > .dropdown-toggle {
   vertical-align: top;
   -webkit-border-radius: 0;
@@ -8567,12 +8616,16 @@ select:focus:invalid:focus {
 
 /* line 478, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend .add-on,
-.input-prepend .btn {
+.input-prepend .btn,
+.input-prepend #modal-content #edit-cancel,
+#modal-content .input-prepend #edit-cancel {
   margin-right: -1px;
 }
 /* line 482, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend .add-on:first-child,
-.input-prepend .btn:first-child {
+.input-prepend .btn:first-child,
+.input-prepend #modal-content #edit-cancel:first-child,
+#modal-content .input-prepend #edit-cancel:first-child {
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
@@ -8587,9 +8640,13 @@ select:focus:invalid:focus {
   border-radius: 4px 0 0 4px;
 }
 /* line 493, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.input-append input + .btn-group .btn:last-child,
+.input-append input + .btn-group .btn:last-child, .input-append input + .btn-group #modal-content #edit-cancel:last-child, #modal-content .input-append input + .btn-group #edit-cancel:last-child,
 .input-append select + .btn-group .btn:last-child,
-.input-append .uneditable-input + .btn-group .btn:last-child {
+.input-append select + .btn-group #modal-content #edit-cancel:last-child,
+#modal-content .input-append select + .btn-group #edit-cancel:last-child,
+.input-append .uneditable-input + .btn-group .btn:last-child,
+.input-append .uneditable-input + .btn-group #modal-content #edit-cancel:last-child,
+#modal-content .input-append .uneditable-input + .btn-group #edit-cancel:last-child {
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
@@ -8597,12 +8654,16 @@ select:focus:invalid:focus {
 /* line 499, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on,
 .input-append .btn,
+.input-append #modal-content #edit-cancel,
+#modal-content .input-append #edit-cancel,
 .input-append .btn-group {
   margin-left: -1px;
 }
 /* line 504, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on:last-child,
 .input-append .btn:last-child,
+.input-append #modal-content #edit-cancel:last-child,
+#modal-content .input-append #edit-cancel:last-child,
 .input-append .btn-group:last-child > .dropdown-toggle {
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
@@ -8618,16 +8679,22 @@ select:focus:invalid:focus {
   border-radius: 0;
 }
 /* line 515, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.input-prepend.input-append input + .btn-group .btn,
+.input-prepend.input-append input + .btn-group .btn, .input-prepend.input-append input + .btn-group #modal-content #edit-cancel, #modal-content .input-prepend.input-append input + .btn-group #edit-cancel,
 .input-prepend.input-append select + .btn-group .btn,
-.input-prepend.input-append .uneditable-input + .btn-group .btn {
+.input-prepend.input-append select + .btn-group #modal-content #edit-cancel,
+#modal-content .input-prepend.input-append select + .btn-group #edit-cancel,
+.input-prepend.input-append .uneditable-input + .btn-group .btn,
+.input-prepend.input-append .uneditable-input + .btn-group #modal-content #edit-cancel,
+#modal-content .input-prepend.input-append .uneditable-input + .btn-group #edit-cancel {
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
 }
 /* line 520, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend.input-append .add-on:first-child,
-.input-prepend.input-append .btn:first-child {
+.input-prepend.input-append .btn:first-child,
+.input-prepend.input-append #modal-content #edit-cancel:first-child,
+#modal-content .input-prepend.input-append #edit-cancel:first-child {
   margin-right: -1px;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
@@ -8635,7 +8702,9 @@ select:focus:invalid:focus {
 }
 /* line 525, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend.input-append .add-on:last-child,
-.input-prepend.input-append .btn:last-child {
+.input-prepend.input-append .btn:last-child,
+.input-prepend.input-append #modal-content #edit-cancel:last-child,
+#modal-content .input-prepend.input-append #edit-cancel:last-child {
   margin-left: -1px;
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
@@ -8676,7 +8745,7 @@ input.search-query {
 }
 
 /* line 557, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.form-search .input-append .btn {
+.form-search .input-append .btn, .form-search .input-append #modal-content #edit-cancel, #modal-content .form-search .input-append #edit-cancel {
   -webkit-border-radius: 0 14px 14px 0;
   -moz-border-radius: 0 14px 14px 0;
   border-radius: 0 14px 14px 0;
@@ -8690,7 +8759,7 @@ input.search-query {
 }
 
 /* line 563, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.form-search .input-prepend .btn {
+.form-search .input-prepend .btn, .form-search .input-prepend #modal-content #edit-cancel, #modal-content .form-search .input-prepend #edit-cancel {
   -webkit-border-radius: 14px 0 0 14px;
   -moz-border-radius: 14px 0 0 14px;
   border-radius: 14px 0 0 14px;
@@ -9209,23 +9278,26 @@ a [class*=" icon-"] {
 }
 
 /* line 103, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"],
-.btn [class*=" icon-"], .nav [class^="icon-"], div.tabs ul.tabs [class^="icon-"],
+.btn [class^="icon-"], #modal-content #edit-cancel [class^="icon-"],
+.btn [class*=" icon-"],
+#modal-content #edit-cancel [class*=" icon-"], .nav [class^="icon-"], div.tabs ul.tabs [class^="icon-"],
 .nav [class*=" icon-"],
 div.tabs ul.tabs [class*=" icon-"] {
   display: inline;
   /* keeps button heights with and without icons the same */
 }
 /* line 106, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"].icon-large,
-.btn [class*=" icon-"].icon-large, .nav [class^="icon-"].icon-large, div.tabs ul.tabs [class^="icon-"].icon-large,
+.btn [class^="icon-"].icon-large, #modal-content #edit-cancel [class^="icon-"].icon-large,
+.btn [class*=" icon-"].icon-large,
+#modal-content #edit-cancel [class*=" icon-"].icon-large, .nav [class^="icon-"].icon-large, div.tabs ul.tabs [class^="icon-"].icon-large,
 .nav [class*=" icon-"].icon-large,
 div.tabs ul.tabs [class*=" icon-"].icon-large {
   line-height: .9em;
 }
 /* line 107, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"].icon-spin,
-.btn [class*=" icon-"].icon-spin, .nav [class^="icon-"].icon-spin, div.tabs ul.tabs [class^="icon-"].icon-spin,
+.btn [class^="icon-"].icon-spin, #modal-content #edit-cancel [class^="icon-"].icon-spin,
+.btn [class*=" icon-"].icon-spin,
+#modal-content #edit-cancel [class*=" icon-"].icon-spin, .nav [class^="icon-"].icon-spin, div.tabs ul.tabs [class^="icon-"].icon-spin,
 .nav [class*=" icon-"].icon-spin,
 div.tabs ul.tabs [class*=" icon-"].icon-spin {
   display: inline-block;
@@ -9347,43 +9419,53 @@ ul.icons li [class*=" icon-"] {
 }
 
 /* line 203, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"].pull-left.icon-2x, .btn [class^="icon-"].pull-right.icon-2x,
+.btn [class^="icon-"].pull-left.icon-2x, #modal-content #edit-cancel [class^="icon-"].pull-left.icon-2x, .btn [class^="icon-"].pull-right.icon-2x, #modal-content #edit-cancel [class^="icon-"].pull-right.icon-2x,
 .btn [class*=" icon-"].pull-left.icon-2x,
-.btn [class*=" icon-"].pull-right.icon-2x {
+#modal-content #edit-cancel [class*=" icon-"].pull-left.icon-2x,
+.btn [class*=" icon-"].pull-right.icon-2x,
+#modal-content #edit-cancel [class*=" icon-"].pull-right.icon-2x {
   margin-top: .18em;
 }
 /* line 205, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"].icon-spin.icon-large,
-.btn [class*=" icon-"].icon-spin.icon-large {
+.btn [class^="icon-"].icon-spin.icon-large, #modal-content #edit-cancel [class^="icon-"].icon-spin.icon-large,
+.btn [class*=" icon-"].icon-spin.icon-large,
+#modal-content #edit-cancel [class*=" icon-"].icon-spin.icon-large {
   line-height: .8em;
 }
 
 /* line 213, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-small [class^="icon-"].pull-left.icon-2x, .btn.btn-small [class^="icon-"].pull-right.icon-2x,
+.btn.btn-small [class^="icon-"].pull-left.icon-2x, #modal-content .btn-small#edit-cancel [class^="icon-"].pull-left.icon-2x, .btn.btn-small [class^="icon-"].pull-right.icon-2x, #modal-content .btn-small#edit-cancel [class^="icon-"].pull-right.icon-2x,
 .btn.btn-small [class*=" icon-"].pull-left.icon-2x,
-.btn.btn-small [class*=" icon-"].pull-right.icon-2x {
+#modal-content .btn-small#edit-cancel [class*=" icon-"].pull-left.icon-2x,
+.btn.btn-small [class*=" icon-"].pull-right.icon-2x,
+#modal-content .btn-small#edit-cancel [class*=" icon-"].pull-right.icon-2x {
   margin-top: .25em;
 }
 
 /* line 220, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-large [class^="icon-"],
-.btn.btn-large [class*=" icon-"] {
+.btn.btn-large [class^="icon-"], #modal-content .btn-large#edit-cancel [class^="icon-"],
+.btn.btn-large [class*=" icon-"],
+#modal-content .btn-large#edit-cancel [class*=" icon-"] {
   margin-top: 0;
 }
 /* line 223, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-large [class^="icon-"].pull-left.icon-2x, .btn.btn-large [class^="icon-"].pull-right.icon-2x,
+.btn.btn-large [class^="icon-"].pull-left.icon-2x, #modal-content .btn-large#edit-cancel [class^="icon-"].pull-left.icon-2x, .btn.btn-large [class^="icon-"].pull-right.icon-2x, #modal-content .btn-large#edit-cancel [class^="icon-"].pull-right.icon-2x,
 .btn.btn-large [class*=" icon-"].pull-left.icon-2x,
-.btn.btn-large [class*=" icon-"].pull-right.icon-2x {
+#modal-content .btn-large#edit-cancel [class*=" icon-"].pull-left.icon-2x,
+.btn.btn-large [class*=" icon-"].pull-right.icon-2x,
+#modal-content .btn-large#edit-cancel [class*=" icon-"].pull-right.icon-2x {
   margin-top: .05em;
 }
 /* line 225, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-large [class^="icon-"].pull-left.icon-2x,
-.btn.btn-large [class*=" icon-"].pull-left.icon-2x {
+.btn.btn-large [class^="icon-"].pull-left.icon-2x, #modal-content .btn-large#edit-cancel [class^="icon-"].pull-left.icon-2x,
+.btn.btn-large [class*=" icon-"].pull-left.icon-2x,
+#modal-content .btn-large#edit-cancel [class*=" icon-"].pull-left.icon-2x {
   margin-right: .2em;
 }
 /* line 226, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-large [class^="icon-"].pull-right.icon-2x,
-.btn.btn-large [class*=" icon-"].pull-right.icon-2x {
+.btn.btn-large [class^="icon-"].pull-right.icon-2x, #modal-content .btn-large#edit-cancel [class^="icon-"].pull-right.icon-2x,
+.btn.btn-large [class*=" icon-"].pull-right.icon-2x,
+#modal-content .btn-large#edit-cancel [class*=" icon-"].pull-right.icon-2x {
   margin-left: .2em;
 }
 
@@ -9463,7 +9545,7 @@ ul.icons li [class*=" icon-"] {
   }
 
   /* line 262, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-  .btn .icon-spin {
+  .btn .icon-spin, #modal-content #edit-cancel .icon-spin {
     height: auto;
   }
 
@@ -9473,7 +9555,7 @@ ul.icons li [class*=" icon-"] {
   }
 
   /* line 264, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-  .btn .icon-spin.icon-large {
+  .btn .icon-spin.icon-large, #modal-content #edit-cancel .icon-spin.icon-large {
     height: .75em;
   }
 }
@@ -11065,7 +11147,7 @@ button.close {
 }
 
 /* line 13, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn {
+.btn, #modal-content #edit-cancel {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -11103,21 +11185,21 @@ button.close {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
+.btn:hover, #modal-content #edit-cancel:hover, .btn:active, #modal-content #edit-cancel:active, .btn.active, #modal-content .active#edit-cancel, .btn.disabled, #modal-content .disabled#edit-cancel, .btn[disabled], #modal-content [disabled]#edit-cancel {
   color: #333333;
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
 /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:active, .btn.active {
+.btn:active, #modal-content #edit-cancel:active, .btn.active, #modal-content .active#edit-cancel {
   background-color: #cccccc \9;
 }
 /* line 61, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:first-child {
+.btn:first-child, #modal-content #edit-cancel:first-child {
   *margin-left: 0;
 }
 /* line 32, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn:hover {
+.btn:hover, #modal-content #edit-cancel:hover {
   color: #333333;
   text-decoration: none;
   background-position: 0 -15px;
@@ -11127,13 +11209,13 @@ button.close {
   transition: background-position 0.1s linear;
 }
 /* line 43, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn:focus {
+.btn:focus, #modal-content #edit-cancel:focus {
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 49, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn.active, .btn:active {
+.btn.active, #modal-content .active#edit-cancel, .btn:active, #modal-content #edit-cancel:active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -11141,7 +11223,7 @@ button.close {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 57, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn.disabled, .btn[disabled] {
+.btn.disabled, #modal-content .disabled#edit-cancel, .btn[disabled], #modal-content [disabled]#edit-cancel {
   cursor: default;
   background-image: none;
   opacity: 0.65;
@@ -11220,7 +11302,7 @@ input[type="button"].btn-block {
 }
 
 /* line 141, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary.active, #node-edit .form-actions input.active,
+.btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active,
 .btn-warning.active,
 .btn-danger.active,
 .btn-success.active,
@@ -11230,13 +11312,13 @@ input[type="button"].btn-block {
 }
 
 /* line 147, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn {
+.btn, #modal-content #edit-cancel {
   border-color: #c5c5c5;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
 }
 
 /* line 152, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary, #node-edit .form-actions input {
+.btn-primary, #modal-content .form-submit, #node-edit .form-actions input {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #006ecc;
@@ -11254,13 +11336,13 @@ input[type="button"].btn-block {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn-primary:hover, #node-edit .form-actions input:hover, .btn-primary:active, #node-edit .form-actions input:active, .btn-primary.active, #node-edit .form-actions input.active, .btn-primary.disabled, #node-edit .form-actions input.disabled, .btn-primary[disabled], #node-edit .form-actions input[disabled] {
+.btn-primary:hover, #modal-content .form-submit:hover, #node-edit .form-actions input:hover, .btn-primary:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active, .btn-primary.disabled, #modal-content .disabled.form-submit, #node-edit .form-actions input.disabled, .btn-primary[disabled], #modal-content [disabled].form-submit, #node-edit .form-actions input[disabled] {
   color: white;
   background-color: #0044cc;
   *background-color: #003bb3;
 }
 /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn-primary:active, #node-edit .form-actions input:active, .btn-primary.active, #node-edit .form-actions input.active {
+.btn-primary:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active {
   background-color: #003399 \9;
 }
 
@@ -11410,32 +11492,37 @@ input[type="button"].btn-block {
 }
 
 /* line 181, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn,
-input[type="submit"].btn {
+button.btn, #modal-content button#edit-cancel,
+input[type="submit"].btn,
+#modal-content input[type="submit"]#edit-cancel {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
 /* line 184, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn::-moz-focus-inner,
-input[type="submit"].btn::-moz-focus-inner {
+button.btn::-moz-focus-inner, #modal-content button#edit-cancel::-moz-focus-inner,
+input[type="submit"].btn::-moz-focus-inner,
+#modal-content input[type="submit"]#edit-cancel::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 /* line 193, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-large,
-input[type="submit"].btn.btn-large {
+button.btn.btn-large, #modal-content button.btn-large#edit-cancel,
+input[type="submit"].btn.btn-large,
+#modal-content input[type="submit"].btn-large#edit-cancel {
   *padding-top: 7px;
   *padding-bottom: 7px;
 }
 /* line 197, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-small,
-input[type="submit"].btn.btn-small {
+button.btn.btn-small, #modal-content button.btn-small#edit-cancel,
+input[type="submit"].btn.btn-small,
+#modal-content input[type="submit"].btn-small#edit-cancel {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
 /* line 201, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-mini,
-input[type="submit"].btn.btn-mini {
+button.btn.btn-mini, #modal-content button.btn-mini#edit-cancel,
+input[type="submit"].btn.btn-mini,
+#modal-content input[type="submit"].btn-mini#edit-cancel {
   *padding-top: 1px;
   *padding-bottom: 1px;
 }
@@ -11502,14 +11589,16 @@ input[type="submit"].btn.btn-mini {
   margin-bottom: 10px;
 }
 /* line 29, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-toolbar > .btn + .btn,
+.btn-toolbar > .btn + .btn, #modal-content .btn-toolbar > #edit-cancel + .btn, #modal-content .btn-toolbar > .btn + #edit-cancel, #modal-content .btn-toolbar > #edit-cancel + #edit-cancel,
 .btn-toolbar > .btn-group + .btn,
-.btn-toolbar > .btn + .btn-group {
+#modal-content .btn-toolbar > .btn-group + #edit-cancel,
+.btn-toolbar > .btn + .btn-group,
+#modal-content .btn-toolbar > #edit-cancel + .btn-group {
   margin-left: 5px;
 }
 
 /* line 35, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn {
+.btn-group > .btn, #modal-content .btn-group > #edit-cancel {
   position: relative;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -11517,12 +11606,12 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 39, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn + .btn {
+.btn-group > .btn + .btn, #modal-content .btn-group > #edit-cancel + .btn, #modal-content .btn-group > .btn + #edit-cancel, #modal-content .btn-group > #edit-cancel + #edit-cancel {
   margin-left: -1px;
 }
 
 /* line 44, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn,
+.btn-group > .btn, #modal-content .btn-group > #edit-cancel,
 .btn-group > .dropdown-menu,
 .btn-group > .popover {
   font-size: 14px;
@@ -11544,7 +11633,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 60, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, #modal-content .btn-group > #edit-cancel:first-child {
   margin-left: 0;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topleft: 4px;
@@ -11555,7 +11644,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 67, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child,
+.btn-group > .btn:last-child, #modal-content .btn-group > #edit-cancel:last-child,
 .btn-group > .dropdown-toggle {
   -webkit-border-top-right-radius: 4px;
   -moz-border-radius-topright: 4px;
@@ -11566,7 +11655,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 72, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn.large:first-child {
+.btn-group > .btn.large:first-child, #modal-content .btn-group > .large#edit-cancel:first-child {
   margin-left: 0;
   -webkit-border-top-left-radius: 6px;
   -moz-border-radius-topleft: 6px;
@@ -11577,7 +11666,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 78, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn.large:last-child,
+.btn-group > .btn.large:last-child, #modal-content .btn-group > .large#edit-cancel:last-child,
 .btn-group > .large.dropdown-toggle {
   -webkit-border-top-right-radius: 6px;
   -moz-border-radius-topright: 6px;
@@ -11588,10 +11677,13 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 87, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:hover,
+.btn-group > .btn:hover, #modal-content .btn-group > #edit-cancel:hover,
 .btn-group > .btn:focus,
+#modal-content .btn-group > #edit-cancel:focus,
 .btn-group > .btn:active,
-.btn-group > .btn.active {
+#modal-content .btn-group > #edit-cancel:active,
+.btn-group > .btn.active,
+#modal-content .btn-group > .active#edit-cancel {
   z-index: 2;
 }
 
@@ -11602,7 +11694,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 103, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, #modal-content .btn-group > #edit-cancel + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
   -webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -11642,11 +11734,11 @@ input[type="submit"].btn.btn-mini {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 137, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn.dropdown-toggle {
+.btn-group.open .btn.dropdown-toggle, .btn-group.open #modal-content .dropdown-toggle#edit-cancel, #modal-content .btn-group.open .dropdown-toggle#edit-cancel {
   background-color: #e6e6e6;
 }
 /* line 140, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
+.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #modal-content .dropdown-toggle.form-submit, #modal-content .btn-group.open .dropdown-toggle.form-submit, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
   background-color: #0044cc;
 }
 /* line 143, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
@@ -11671,7 +11763,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 162, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn .caret {
+.btn .caret, #modal-content #edit-cancel .caret {
   margin-top: 8px;
   margin-left: 0;
 }
@@ -11696,7 +11788,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 191, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-primary .caret, #node-edit .form-actions input .caret,
+.btn-primary .caret, #modal-content .form-submit .caret, #node-edit .form-actions input .caret,
 .btn-warning .caret,
 .btn-danger .caret,
 .btn-info .caret,
@@ -11714,7 +11806,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 206, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn {
+.btn-group-vertical > .btn, #modal-content .btn-group-vertical > #edit-cancel {
   display: block;
   float: none;
   max-width: 100%;
@@ -11724,20 +11816,20 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 212, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn {
+.btn-group-vertical > .btn + .btn, #modal-content .btn-group-vertical > #edit-cancel + .btn, #modal-content .btn-group-vertical > .btn + #edit-cancel, #modal-content .btn-group-vertical > #edit-cancel + #edit-cancel {
   margin-left: 0;
   margin-top: -1px;
 }
 
 /* line 216, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child {
+.btn-group-vertical > .btn:first-child, #modal-content .btn-group-vertical > #edit-cancel:first-child {
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
 }
 
 /* line 219, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child {
+.btn-group-vertical > .btn:last-child, #modal-content .btn-group-vertical > #edit-cancel:last-child {
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
@@ -12397,18 +12489,26 @@ div.tabs ul.tabs li.dropdown.open a:hover .caret {
 }
 
 /* line 93, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn, div.tabs .btn,
+.navbar .btn, div.tabs .btn, .navbar #modal-content #edit-cancel, #modal-content .navbar #edit-cancel, div.tabs #modal-content #edit-cancel, #modal-content div.tabs #edit-cancel,
 .navbar .btn-group,
 div.tabs .btn-group {
   margin-top: 5px;
 }
 
 /* line 98, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-group .btn, div.tabs .btn-group .btn,
+.navbar .btn-group .btn, div.tabs .btn-group .btn, .navbar .btn-group #modal-content #edit-cancel, #modal-content .navbar .btn-group #edit-cancel, div.tabs .btn-group #modal-content #edit-cancel, #modal-content div.tabs .btn-group #edit-cancel,
 .navbar .input-prepend .btn,
 div.tabs .input-prepend .btn,
+.navbar .input-prepend #modal-content #edit-cancel,
+#modal-content .navbar .input-prepend #edit-cancel,
+div.tabs .input-prepend #modal-content #edit-cancel,
+#modal-content div.tabs .input-prepend #edit-cancel,
 .navbar .input-append .btn,
-div.tabs .input-append .btn {
+div.tabs .input-append .btn,
+.navbar .input-append #modal-content #edit-cancel,
+#modal-content .navbar .input-append #edit-cancel,
+div.tabs .input-append #modal-content #edit-cancel,
+#modal-content div.tabs .input-append #edit-cancel {
   margin-top: 0;
 }
 
@@ -12437,7 +12537,9 @@ div.tabs .input-append .btn {
 /* line 115, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
 .navbar-form input,
 .navbar-form select,
-.navbar-form .btn {
+.navbar-form .btn,
+.navbar-form #modal-content #edit-cancel,
+#modal-content .navbar-form #edit-cancel {
   display: inline-block;
   margin-bottom: 0;
 }
@@ -13312,12 +13414,12 @@ div.tabs .navbar-inverse ul.tabs li.dropdown.open.active > .dropdown-toggle .car
   clear: both;
 }
 /* line 83, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
-.modal-footer .btn + .btn {
+.modal-footer .btn + .btn, .modal-footer #modal-content #edit-cancel + .btn, #modal-content .modal-footer #edit-cancel + .btn, .modal-footer #modal-content .btn + #edit-cancel, #modal-content .modal-footer .btn + #edit-cancel, .modal-footer #modal-content #edit-cancel + #edit-cancel, #modal-content .modal-footer #edit-cancel + #edit-cancel {
   margin-left: 5px;
   margin-bottom: 0;
 }
 /* line 88, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
-.modal-footer .btn-group .btn + .btn {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #modal-content #edit-cancel + .btn, #modal-content .modal-footer .btn-group #edit-cancel + .btn, .modal-footer .btn-group #modal-content .btn + #edit-cancel, #modal-content .modal-footer .btn-group .btn + #edit-cancel, .modal-footer .btn-group #modal-content #edit-cancel + #edit-cancel, #modal-content .modal-footer .btn-group #edit-cancel + #edit-cancel {
   margin-left: -1px;
 }
 /* line 92, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
@@ -13724,8 +13826,9 @@ a.label:hover, .oa-news .oa-news-tags a:hover, a.badge:hover {
 }
 
 /* line 69, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_labels-badges.scss */
-.btn .label, .btn .oa-news .oa-news-tags a, .oa-news .oa-news-tags .btn a,
-.btn .badge {
+.btn .label, #modal-content #edit-cancel .label, .btn .oa-news .oa-news-tags a, .oa-news .oa-news-tags .btn a, #modal-content #edit-cancel .oa-news .oa-news-tags a, .oa-news .oa-news-tags #modal-content #edit-cancel a,
+.btn .badge,
+#modal-content #edit-cancel .badge {
   position: relative;
   top: -1px;
 }
@@ -15183,7 +15286,7 @@ form fieldset legend {
   font-size: 18px;
 }
 /* line 16, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
-form .form-actions .btn {
+form .form-actions .btn, form .form-actions #modal-content #edit-cancel, #modal-content form .form-actions #edit-cancel {
   margin-right: 10px;
 }
 /* line 21, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
@@ -16839,7 +16942,7 @@ html.js input.throbbing {
   }
 
   /* line 75, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .btn {
+  .nav-collapse .btn, .nav-collapse #modal-content #edit-cancel, #modal-content .nav-collapse #edit-cancel {
     padding: 4px 10px 4px;
     font-weight: normal;
     -webkit-border-radius: 4px;
@@ -17035,7 +17138,7 @@ html.js input.throbbing {
 }
 @media (max-width: 767px) {
   /* line 7, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_responsive_form.scss */
-  form .btn {
+  form .btn, form #modal-content #edit-cancel, #modal-content form #edit-cancel {
     width: 100%;
     display: block;
     clear: both;
@@ -17179,6 +17282,21 @@ html.js input.throbbing {
   }
 }
 /* line 5, ../sass/_layout.scss */
+.clear-both {
+  clear: both;
+}
+
+/* line 8, ../sass/_layout.scss */
+.clear-left {
+  clear: left;
+}
+
+/* line 11, ../sass/_layout.scss */
+.clear-right {
+  clear: right;
+}
+
+/* line 14, ../sass/_layout.scss */
 .navbar-inner, div.tabs {
   padding-left: 20px;
   padding-right: 20px;
@@ -17201,21 +17319,21 @@ html.js input.throbbing {
   display: block;
 }
 
-/* line 16, ../sass/_layout.scss */
+/* line 25, ../sass/_layout.scss */
 .label, .oa-news .oa-news-tags a {
   font-weight: normal;
 }
-/* line 18, ../sass/_layout.scss */
+/* line 27, ../sass/_layout.scss */
 .label a, .oa-news .oa-news-tags a a {
   font-weight: normal;
 }
 
-/* line 23, ../sass/_layout.scss */
+/* line 32, ../sass/_layout.scss */
 .content .panel-pane {
   padding-bottom: 15px;
 }
 
-/* line 26, ../sass/_layout.scss */
+/* line 35, ../sass/_layout.scss */
 .oa-pane {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -17223,7 +17341,7 @@ html.js input.throbbing {
   border: 1px solid #e3e3e3;
   border-bottom: 0;
 }
-/* line 30, ../sass/_layout.scss */
+/* line 39, ../sass/_layout.scss */
 .oa-pane .panel-pane {
   padding: 0;
   border: 0;
@@ -17231,12 +17349,12 @@ html.js input.throbbing {
   margin-bottom: 0;
   padding-bottom: 15px;
 }
-/* line 37, ../sass/_layout.scss */
+/* line 46, ../sass/_layout.scss */
 .oa-pane.inner-pane .panel-pane {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 41, ../sass/_layout.scss */
+/* line 50, ../sass/_layout.scss */
 .oa-pane .pane-title {
   background-color: whitesmoke;
   background-image: -moz-linear-gradient(top, white, #e6e6e6);
@@ -17252,36 +17370,36 @@ html.js input.throbbing {
   padding: 10px 15px;
   color: #333;
 }
-/* line 51, ../sass/_layout.scss */
+/* line 60, ../sass/_layout.scss */
 .oa-pane .pane-content {
   padding: 15px 15px 0 15px;
 }
-/* line 53, ../sass/_layout.scss */
+/* line 62, ../sass/_layout.scss */
 .oa-pane .pane-content .oa-list {
   margin-left: -16px;
   margin-right: -16px;
 }
-/* line 58, ../sass/_layout.scss */
+/* line 67, ../sass/_layout.scss */
 .oa-pane .oa-list {
   margin-left: -1px;
   margin-right: -1px;
 }
-/* line 62, ../sass/_layout.scss */
+/* line 71, ../sass/_layout.scss */
 .oa-pane .pager {
   margin-top: 15px;
 }
 
-/* line 68, ../sass/_layout.scss */
+/* line 77, ../sass/_layout.scss */
 .content .bryant-flipped-sidebar-inner,
 .content .burr-flipped-sidebar-inner {
   padding-top: 0;
 }
 
-/* line 72, ../sass/_layout.scss */
+/* line 81, ../sass/_layout.scss */
 .group-header {
   margin-top: 20px;
 }
-/* line 74, ../sass/_layout.scss */
+/* line 83, ../sass/_layout.scss */
 .group-header h3 {
   font-size: 20px;
   line-height: 32px;
@@ -17290,34 +17408,34 @@ html.js input.throbbing {
   text-transform: uppercase;
 }
 
-/* line 82, ../sass/_layout.scss */
+/* line 91, ../sass/_layout.scss */
 ul.group-content {
   margin: 0;
 }
 
-/* line 86, ../sass/_layout.scss */
+/* line 95, ../sass/_layout.scss */
 #logo img {
   vertical-align: middle;
 }
 
-/* line 89, ../sass/_layout.scss */
+/* line 98, ../sass/_layout.scss */
 #site-name {
   display: inline-block;
   padding: 10px 0.5em;
   margin: 0;
 }
 
-/* line 94, ../sass/_layout.scss */
+/* line 103, ../sass/_layout.scss */
 #oa_toolbar {
   padding-top: 5px;
 }
 
-/* line 98, ../sass/_layout.scss */
+/* line 107, ../sass/_layout.scss */
 #main-wrapper {
   min-height: 360px;
 }
 
-/* line 102, ../sass/_layout.scss */
+/* line 111, ../sass/_layout.scss */
 .oa-bottom-right {
   position: absolute;
   right: 3px;
@@ -17325,7 +17443,7 @@ ul.group-content {
   text-align: right;
 }
 
-/* line 109, ../sass/_layout.scss */
+/* line 118, ../sass/_layout.scss */
 #footer {
   font-size: 12px;
   line-height: 1.5;
@@ -17334,7 +17452,7 @@ ul.group-content {
   border-top: 1px solid #e5e5e5;
 }
 
-/* line 118, ../sass/_layout.scss */
+/* line 127, ../sass/_layout.scss */
 .oa-list.well {
   background-color: #fbfbfb;
   background-image: -moz-linear-gradient(top, white, #f7f7f7);
@@ -17354,65 +17472,65 @@ ul.group-content {
   margin-bottom: -1px;
   position: relative;
 }
-/* line 126, ../sass/_layout.scss */
+/* line 135, ../sass/_layout.scss */
 .oa-list .label, .oa-list .oa-news .oa-news-tags a, .oa-news .oa-news-tags .oa-list a {
   color: white;
 }
-/* line 128, ../sass/_layout.scss */
+/* line 137, ../sass/_layout.scss */
 .oa-list .label a, .oa-list .oa-news .oa-news-tags a a, .oa-news .oa-news-tags .oa-list a a {
   color: white;
 }
-/* line 132, ../sass/_layout.scss */
+/* line 141, ../sass/_layout.scss */
 .oa-list .links {
   float: right;
   margin-right: 5px;
 }
-/* line 135, ../sass/_layout.scss */
+/* line 144, ../sass/_layout.scss */
 .oa-list .links a {
   padding: 0 5px;
   color: #777;
   font-size: 0.9em;
 }
-/* line 141, ../sass/_layout.scss */
+/* line 150, ../sass/_layout.scss */
 .oa-list h5 {
   display: inline;
 }
-/* line 144, ../sass/_layout.scss */
+/* line 153, ../sass/_layout.scss */
 .oa-list .pull-left img {
   padding-right: 5px;
 }
-/* line 147, ../sass/_layout.scss */
+/* line 156, ../sass/_layout.scss */
 .oa-list .pull-right img {
   padding-left: 5px;
 }
-/* line 150, ../sass/_layout.scss */
+/* line 159, ../sass/_layout.scss */
 .oa-list .accordion {
   margin-bottom: 0;
   position: relative;
 }
-/* line 153, ../sass/_layout.scss */
+/* line 162, ../sass/_layout.scss */
 .oa-list .accordion h5 {
   padding: 0 5px;
   margin: 0;
 }
-/* line 158, ../sass/_layout.scss */
+/* line 167, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle {
   padding: 3px 5px;
 }
-/* line 160, ../sass/_layout.scss */
+/* line 169, ../sass/_layout.scss */
 .oa-list .accordion-heading .accordion-toggle:hover {
   background-color: #E0EEFF;
 }
-/* line 164, ../sass/_layout.scss */
+/* line 173, ../sass/_layout.scss */
 .oa-list.unpublished {
   background-color: #FFF1F1;
 }
-/* line 167, ../sass/_layout.scss */
+/* line 176, ../sass/_layout.scss */
 .oa-list.unpublished .status {
   color: red;
   font-weight: bold;
 }
-/* line 171, ../sass/_layout.scss */
+/* line 180, ../sass/_layout.scss */
 .oa-list .oa-pullout-left {
   position: absolute;
   width: 20px;
@@ -17431,66 +17549,66 @@ ul.group-content {
   -webkit-border-top-left-radius: 5px;
   border-top-left-radius: 5px;
 }
-/* line 184, ../sass/_layout.scss */
+/* line 193, ../sass/_layout.scss */
 .oa-list .oa-pullout-left:hover {
   background-color: #E0EEFF;
 }
 
-/* line 189, ../sass/_layout.scss */
+/* line 198, ../sass/_layout.scss */
 .oa-list-metadata {
   float: right;
   text-align: right;
 }
 
-/* line 193, ../sass/_layout.scss */
+/* line 202, ../sass/_layout.scss */
 .oa-list-header {
   padding: 6px 5px 0 5px;
 }
-/* line 195, ../sass/_layout.scss */
+/* line 204, ../sass/_layout.scss */
 .oa-list-header.oa-description {
   line-height: 20px;
 }
 
-/* line 199, ../sass/_layout.scss */
+/* line 208, ../sass/_layout.scss */
 .oa-list-category {
   text-align: right;
 }
 
 /* Tabs */
-/* line 204, ../sass/_layout.scss */
+/* line 213, ../sass/_layout.scss */
 div.tabs.main-tabs {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 207, ../sass/_layout.scss */
+/* line 216, ../sass/_layout.scss */
 div.tabs.main-tabs .tabs.primary {
   padding-left: 20px;
   padding-right: 20px;
 }
-/* line 211, ../sass/_layout.scss */
+/* line 220, ../sass/_layout.scss */
 div.tabs.main-tabs .tabs.secondary {
   color: #555;
   text-decoration: none;
   background-color: #E6E6E6;
   border-top: 1px solid #bbbbbb;
 }
-/* line 216, ../sass/_layout.scss */
+/* line 225, ../sass/_layout.scss */
 div.tabs.main-tabs .tabs.secondary li a {
   padding: 13px 15px;
   margin: 0;
 }
-/* line 220, ../sass/_layout.scss */
+/* line 229, ../sass/_layout.scss */
 div.tabs.main-tabs .tabs.secondary li.active {
   border-bottom: 1px solid #d4d4d4;
 }
-/* line 222, ../sass/_layout.scss */
+/* line 231, ../sass/_layout.scss */
 div.tabs.main-tabs .tabs.secondary li.active a {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
   color: #222;
 }
-/* line 227, ../sass/_layout.scss */
+/* line 236, ../sass/_layout.scss */
 div.tabs.main-tabs .tabs.secondary li:first-child {
   margin-left: 20px;
 }
@@ -17886,7 +18004,25 @@ div.tabs li.active a {
   margin-bottom: 0.5em;
 }
 
-/* line 16, ../sass/_form.scss */
+/* line 17, ../sass/_form.scss */
+#modal-content .form-item {
+  clear: both;
+}
+/* line 20, ../sass/_form.scss */
+#modal-content .form-submit {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+/* line 26, ../sass/_form.scss */
+#modal-content .form-submit:hover {
+  color: white;
+  background-color: #0044cc;
+  background-image: none;
+}
+
+/* line 37, ../sass/_form.scss */
 #node-edit .burr-flipped-sidebar .panel-pane {
   border: 0;
   border-bottom: 1px solid #e3e3e3;
@@ -17901,100 +18037,100 @@ div.tabs li.active a {
   border-radius: 0;
 }
 
-/* line 26, ../sass/_form.scss */
+/* line 47, ../sass/_form.scss */
 #node-edit .container-inline-date .form-item-date-time, #node-edit .container-inline-date .form-item-date-date {
   padding-bottom: 0.5em;
 }
 
-/* line 30, ../sass/_form.scss */
+/* line 51, ../sass/_form.scss */
 #node-edit .form-actions {
   background: transparent;
 }
-/* line 32, ../sass/_form.scss */
+/* line 53, ../sass/_form.scss */
 #node-edit .form-actions input {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 37, ../sass/_form.scss */
+/* line 58, ../sass/_form.scss */
 #node-edit .form-actions input:hover {
   color: white;
   background-color: #0044cc;
   background-image: none;
 }
 
-/* line 45, ../sass/_form.scss */
+/* line 66, ../sass/_form.scss */
 .panel-pane {
   position: relative;
 }
 
-/* line 49, ../sass/_form.scss */
+/* line 70, ../sass/_form.scss */
 .views-exposed-form .well {
   padding: 0 1em;
 }
 
-/* line 53, ../sass/_form.scss */
+/* line 74, ../sass/_form.scss */
 .views-exposed-form .filter-btn {
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-/* line 59, ../sass/_form.scss */
+/* line 80, ../sass/_form.scss */
 .view-filters form {
   margin: 0;
 }
 
-/* line 63, ../sass/_form.scss */
+/* line 84, ../sass/_form.scss */
 .views-exposed-widget.views-submit-button {
   padding-right: 5px;
 }
 
-/* line 68, ../sass/_form.scss */
+/* line 89, ../sass/_form.scss */
 #oa-discussion-reply-form {
   position: relative;
 }
-/* line 70, ../sass/_form.scss */
+/* line 91, ../sass/_form.scss */
 #oa-discussion-reply-form .form-item {
   margin: 0;
 }
-/* line 73, ../sass/_form.scss */
+/* line 94, ../sass/_form.scss */
 #oa-discussion-reply-form input#edit-subject {
   width: 75%;
 }
-/* line 76, ../sass/_form.scss */
+/* line 97, ../sass/_form.scss */
 #oa-discussion-reply-form .field-name-field-oa-discussion-media {
   position: relative;
 }
-/* line 78, ../sass/_form.scss */
+/* line 99, ../sass/_form.scss */
 #oa-discussion-reply-form .field-name-field-oa-discussion-media .tabledrag-toggle-weight-wrapper {
   position: absolute;
   top: 0;
   right: 0;
   margin: 10px;
 }
-/* line 85, ../sass/_form.scss */
+/* line 106, ../sass/_form.scss */
 #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item img {
   display: block;
   margin: auto;
   width: auto;
 }
-/* line 90, ../sass/_form.scss */
+/* line 111, ../sass/_form.scss */
 #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item .file a {
   display: none;
 }
-/* line 95, ../sass/_form.scss */
+/* line 116, ../sass/_form.scss */
 #oa-discussion-reply-form #edit-submit {
   position: absolute;
   bottom: 2px;
   right: 0;
 }
 
-/* line 103, ../sass/_form.scss */
+/* line 124, ../sass/_form.scss */
 .checkbox-table .center {
   text-align: center;
 }
-/* line 107, ../sass/_form.scss */
+/* line 128, ../sass/_form.scss */
 .checkbox-table .form-type-checkbox,
 .checkbox-table .space-label {
   margin: 0.4em 0;

@@ -13,6 +13,27 @@
   margin-bottom: 0.5em;
 }
 
+#modal-content {
+  .form-item {
+    clear: both;
+  }
+  .form-submit {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    @extend .btn-primary;
+    &:hover {
+      color: white;
+      background-color: #0044cc;
+      background-image: none;
+    }
+  }
+  #edit-cancel {
+    @extend .btn;
+  }
+}
+
 #node-edit .burr-flipped-sidebar .panel-pane {
   border: 0;
   border-bottom: 1px solid #e3e3e3;

@@ -46,8 +46,8 @@
       <?php print $member['title']; ?>
     </div>
   <?php endforeach; ?>
-  <div class="clearfix more">
-    <a href="#">See all members</a>
+  <div class="clear-both more">
+    <?php print $see_all_link; ?>
   </div>
 </div>
 <?php endif; ?>

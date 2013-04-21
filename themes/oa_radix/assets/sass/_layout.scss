@@ -2,6 +2,15 @@
 // Layout
 // Styles for main layout
 // --------------------------------------------------
+.clear-both {
+  clear: both;
+}
+.clear-left {
+  clear: left;
+}
+.clear-right {
+  clear: right;
+}
 .navbar-inner {
   padding-left:  20px;
   padding-right: 20px;

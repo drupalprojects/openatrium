@@ -94,12 +94,12 @@ function oa_home_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'oa_widgets_types' => array(
+        'oa_group' => 'oa_group',
         'oa_space' => 'oa_space',
-        'oa_group' => 0,
         'oa_discussion_post' => 0,
-        'oa_pages_page' => 0,
         'oa_section' => 0,
         'oa_team' => 0,
+        'oa_wiki_page' => 0,
         'panopoly_page' => 0,
       ),
       'oa_widgets_use_all' => TRUE,
@@ -107,8 +107,8 @@ function oa_home_default_page_manager_pages() {
       'cancel' => 'Cancel',
       'override_title' => 0,
       'override_title_text' => '',
-      'form_build_id' => 'form-euA-h99A5sANWHTJKs-G2KWwEnsNwnOtd1Gy-YPN6d8',
-      'form_token' => 'Vgww_gZEwLjRAGYsusDqxDzzCKlklX9ZKBzEmquBKgI',
+      'form_build_id' => 'form-QFFNmDqUK--TH9mGG5ZjxKCyOaV6E4xohgLJZJcHj3s',
+      'form_token' => 'isC-J5K3dQfeMpsBqZG_34ROSt8JFxt7s9-jtqd79pI',
       'form_id' => 'oa_widgets_add_content_edit_form',
       'op' => 'Finish',
     );
