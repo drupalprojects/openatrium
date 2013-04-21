@@ -43,23 +43,15 @@ function oa_widgets_content_visibility_render($subtype, $conf, $args, $context =
 
     $vars['accessors']['group'] = array(
       'links' => oa_widgets_build_visibility_links('node', $section_node, OA_GROUP_FIELD),
-      'label' => t('Groups:'),
+      'label' => t('Groups'),
     );
     $vars['accessors']['teams'] = array(
       'links' => oa_widgets_build_visibility_links('node', $section_node, OA_TEAM_FIELD),
-      'label' => t('Teams:'),
+      'label' => t('Teams'),
     );
     $vars['accessors']['users'] = array(
       'links' => oa_widgets_build_visibility_links('user', $section_node, OA_USER_FIELD),
-      'label' => t('Users:'),
-    );
-    $vars['accessors']['space'] = array(
-      'links' => array(l($space_node->title, 'node/' . $space_node->nid)),
-      'label' => t('Space:'),
-    );
-    $vars['accessors']['section'] = array(
-      'links' => array(l($section_node->title, 'node/' . $section_node->nid)),
-      'label' => t('Section:'),
+      'label' => t('Additional Users'),
     );
   }
 

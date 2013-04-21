@@ -13,13 +13,22 @@
 ?>
 
 <?php if ($public): ?>
-  <p class="visibility public">Public</p>
+  <div class="oa-visibility-public"><?php print t('Public'); ?></div>
 <?php else: ?>
-  <p class="visibility private">Private</p>
+  <div class="oa-visibility-private">
+    <i class="icon-lock"></i> <?php print t('Private'); ?>
+  </div>
+  <p><em><?php print t('Only members of these can see this page'); ?></em></p>
   <?php foreach ($accessors as $class => $accessor): ?>
-    <p class="<?php print $class ?>">
-      <?php print $accessor['label']; ?>
-      <?php print implode(', ', $accessor['links']); ?>
-    </p>
+    <?php if (!empty($accessor['links'])): ?>
+      <div class="oa-visibility-<?php print $class ?>">
+        <div class='oa-visibility-header'>
+          <?php print $accessor['label']; ?>
+        </div>
+        <div class='oa-visibility-list'>
+          <?php print implode(', ', $accessor['links']); ?>
+        </div>
+      </div>
+    <?php endif; ?>
   <?php endforeach ?>
 <?php endif ?>
