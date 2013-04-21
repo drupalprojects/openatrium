@@ -5,18 +5,19 @@
  * Defines the space members panels pane.
  */
 
-define('WIDGET_TITLE_AND_PICTURE', 0);
-define('WIDGET_TITLE_ONLY', 1);
-define('WIDGET_PICTURES_ONLY', 2);
-
 $plugin = array(
-  'title' => t('Space Members'),
-  'description' => t("Provide information about a Space's members and teams, and quick links to add to it."),
+  'title' => t('Members'),
+  'description' => t("Show the owners, teams, and members of a Space"),
   'single' => TRUE,
-  'category' => array(t('Open Atrium'), -9),
+  'category' => t('Open Atrium'),
   'edit form' => 'oa_core_members_widget_edit_form',
   'render callback' => 'oa_core_members_widget_render',
   'required context' => new ctools_context_required(t('Node'), 'node'),
+  'defaults' => array(
+    'hide_owner' => FALSE,
+    'hide_teams' => FALSE,
+    'show_number' => 10,
+  ),
 );
 
 
@@ -29,7 +30,7 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   }
 
   $block = new stdClass();
-  $block->title = 'Space Members';
+  $block->title = 'Members';
 
   $space = $context->data;
   $teams = oa_teams_get_teams_for_space($space->nid);
@@ -134,8 +135,10 @@ function oa_core_members_widget_edit_form($form, &$form_state) {
 }
 
 function oa_core_members_widget_edit_form_submit($form, &$form_state) {
-  $form_state['conf']['hide_owner'] = $form_state['values']['hide_owner'];
-  $form_state['conf']['hide_teams'] = $form_state['values']['hide_teams'];
-  $form_state['conf']['show_number'] = $form_state['values']['show_number'];
+  foreach (array_keys($form_state['plugin']['defaults']) as $key) {
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+    }
+  }
 }
 
