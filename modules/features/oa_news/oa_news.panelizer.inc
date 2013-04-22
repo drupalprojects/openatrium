@@ -196,8 +196,8 @@ function oa_news_panelizer_defaults() {
       'override_title' => 0,
       'override_title_text' => '',
       'og_menu_single_depth' => '0',
-      'og_menu_single_parent' => '0',
-      'form_build_id' => 'form-u7fOeadJIgop_KqwODhnIzia01pHqq16rAoWleI3v94',
+      'og_menu_single_parent' => 'auto',
+      'form_build_id' => 'form-bhnyYlkUSImncJZjV6YeeBrnwQs2Xw6_LdSk4fVC3wk',
       'form_token' => 'UzJG_y4NiC-PmQnUegNcr3aM7-vMnWV9mccSTyYUvUA',
       'form_id' => 'og_menu_single_menu_edit_form',
       'op' => 'Finish',
@@ -221,10 +221,10 @@ function oa_news_panelizer_defaults() {
     $pane->access = array();
     $pane->configuration = array(
       'oa_widgets_types' => array(
-        'oa_discussion_post' => 'oa_discussion_post',
         'oa_wiki_page' => 'oa_wiki_page',
         'oa_group' => 0,
         'oa_space' => 0,
+        'oa_discussion_post' => 0,
         'oa_section' => 0,
         'oa_team' => 0,
         'panopoly_page' => 0,
@@ -232,12 +232,14 @@ function oa_news_panelizer_defaults() {
       'oa_widgets_use_all' => TRUE,
       'return' => 'Finish',
       'cancel' => 'Cancel',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
-      'form_build_id' => 'form--fNWbaPcW1RrDnNcUIgbbO-RIUoeXN0aexikzuHpqEU',
+      'form_build_id' => 'form-QGtCoCvfryVlELxN8824rIowT00IJX8qolPR2bWGbhw',
       'form_token' => 'isC-J5K3dQfeMpsBqZG_34ROSt8JFxt7s9-jtqd79pI',
       'form_id' => 'oa_widgets_add_content_edit_form',
       'op' => 'Finish',
+      'button_class' => 'btn',
+      'title_prefix' => 'Add ',
     );
     $pane->cache = array();
     $pane->style = array(
