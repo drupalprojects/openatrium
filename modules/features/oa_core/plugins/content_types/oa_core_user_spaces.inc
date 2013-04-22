@@ -109,6 +109,9 @@ function oa_core_build_space_display($spaces, $conf) {
   $vars = array();
   usort($spaces, 'oa_core_sort_node_by_title');
   foreach ($spaces as $space) {
+    if ($space->type != 'oa_space') {
+      continue;
+    }
     $vars[$space->nid]['title'] = $space->title;
 
     $alter = array(

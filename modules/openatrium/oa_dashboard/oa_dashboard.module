@@ -171,14 +171,15 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   }
   else {
     $items = oa_core_get_titles($spaces['node'], OA_SPACE_TYPE);
-    $list = oa_core_truncate_list($items['links'], 10,
+    $list = oa_core_truncate_list($items['links'], 15,
       l(t('All spaces...'), 'spaces',
-        array('attributes' => array('class' => array('more-link')))));
+        array('attributes' => array('class' => array('more-link')))),
+      TRUE);
   }
   if (!empty($list)) {
     $vars['spaces_recent'] = theme('item_list', array(
       'items' => $list,
-      'title' => t('Active Spaces'),
+      'title' => t('Subscribed Spaces'),
       'type' => 'ul',
     ));
   }

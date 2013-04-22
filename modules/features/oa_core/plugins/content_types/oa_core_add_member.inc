@@ -6,7 +6,7 @@
  */
 
 $plugin = array(
-  'title' => t('Add Member'),
+  'title' => t('Add Space Member'),
   'description' => t('Allows members to be added to the space.'),
   'single' => TRUE,
   'category' => t('Open Atrium'),

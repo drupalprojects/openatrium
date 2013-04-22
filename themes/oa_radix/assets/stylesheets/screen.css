@@ -18375,41 +18375,42 @@ div.tabs li.active a {
 }
 
 /* line 85, ../sass/_user.scss */
-.pane-oa-core-members-widget h5 {
+.pane-oa-core-members-widget h5, .pane-oa-teams-members h5 {
   margin-top: 0;
 }
 /* line 88, ../sass/_user.scss */
-.pane-oa-core-members-widget .btn-group {
+.pane-oa-core-members-widget .btn-group, .pane-oa-teams-members .btn-group {
   margin: 0 5px 10px 0;
   min-width: 160px;
 }
 /* line 93, ../sass/_user.scss */
 .pane-oa-core-members-widget .team,
-.pane-oa-core-members-widget .user-badge {
+.pane-oa-core-members-widget .user-badge, .pane-oa-teams-members .team,
+.pane-oa-teams-members .user-badge {
   margin: 0 5px 10px 0;
   border: 1px solid transparent;
 }
 /* line 97, ../sass/_user.scss */
-.pane-oa-core-members-widget .dropdown-toggle.user-badge {
+.pane-oa-core-members-widget .dropdown-toggle.user-badge, .pane-oa-teams-members .dropdown-toggle.user-badge {
   margin: 0;
   border: 1px solid transparent;
 }
 /* line 100, ../sass/_user.scss */
-.pane-oa-core-members-widget .dropdown-toggle.user-badge i {
+.pane-oa-core-members-widget .dropdown-toggle.user-badge i, .pane-oa-teams-members .dropdown-toggle.user-badge i {
   position: absolute;
   top: 10px;
   right: 10px;
   display: none;
 }
 /* line 106, ../sass/_user.scss */
-.pane-oa-core-members-widget .dropdown-toggle.user-badge:hover {
+.pane-oa-core-members-widget .dropdown-toggle.user-badge:hover, .pane-oa-teams-members .dropdown-toggle.user-badge:hover {
   border: 1px solid #777777;
 }
 /* line 108, ../sass/_user.scss */
-.pane-oa-core-members-widget .dropdown-toggle.user-badge:hover i {
+.pane-oa-core-members-widget .dropdown-toggle.user-badge:hover i, .pane-oa-teams-members .dropdown-toggle.user-badge:hover i {
   display: block;
 }
 /* line 113, ../sass/_user.scss */
-.pane-oa-core-members-widget .member-dropdown {
+.pane-oa-core-members-widget .member-dropdown, .pane-oa-teams-members .member-dropdown {
   position: relative;
 }

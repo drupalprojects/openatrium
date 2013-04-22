@@ -6,7 +6,7 @@
  */
 
 $plugin = array(
-  'title' => t('Members'),
+  'title' => t('Space Members'),
   'description' => t("Show the owners, teams, and members of a Space"),
   'single' => TRUE,
   'category' => t('Open Atrium'),

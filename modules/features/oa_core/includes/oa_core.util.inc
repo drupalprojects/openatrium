@@ -172,11 +172,12 @@ function oa_core_get_titles($ids = array(), $type = '', $sort_field = NULL) {
  * @param  array $list      array to be truncated
  * @param  int $count     number of items desired
  * @param  string $more_link optional "More" link added to end of array
+ * @param  boolean $always_link TRUE to always display more link
  * @return array            new list of items
  */
-function oa_core_truncate_list($list, $count, $more_link = '') {
+function oa_core_truncate_list($list, $count, $more_link = '', $always_link = FALSE) {
   $new_list = array_slice($list, 0, $count);
-  if (!empty($more_link) && (count($list) != count($new_list))) {
+  if (!empty($more_link) && ($always_link ||(count($list) != count($new_list)))) {
     $new_list[] = $more_link;
   }
   return $new_list;
