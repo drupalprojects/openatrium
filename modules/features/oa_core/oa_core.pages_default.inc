@@ -360,29 +360,25 @@ function oa_core_default_page_manager_pages() {
     $pane = new stdClass();
     $pane->pid = 'new-5';
     $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'oa_user_spaces-full';
+    $pane->type = 'oa_core_user_spaces';
+    $pane->subtype = 'oa_core_user_spaces';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:user_1',
+      'tabs' => array(
+        'Favorite' => 'Favorite',
+        'Subscribed' => 'Subscribed',
+        'All' => 'All',
       ),
-      'view_mode' => 'teaser',
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
-      'exposed' => array(
-        'sort_by' => NULL,
-        'sort_order' => NULL,
-      ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'more_link' => NULL,
-      'path' => NULL,
-      'view_settings' => 'fields',
-      'header_type' => 'none',
+      'image_size' => 'square',
+      'show_description' => 1,
+      'show_sections' => 1,
+      'show_links' => 1,
+      'link_class' => 'btn',
+      'num_per_page' => '15',
+      'context' => 'argument_entity_id:user_1',
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
