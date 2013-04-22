@@ -5,16 +5,6 @@
  */
 
 /**
- * Implements hook_ctools_plugin_api().
- */
-function oa_panopoly_users_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "strongarm" && $api == "strongarm") {
-    return array("version" => "1");
-  }
-}
-
-/**
  * Implements hook_panelizer_defaults_override_alter().
  */
 function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
@@ -133,29 +123,15 @@ function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
     $data['user:user:default']->display->content['new-5'] = (object) array(
           'pid' => 'new-5',
           'panel' => 'sidebar',
-          'type' => 'views_panes',
-          'subtype' => 'open_atrium_spaces-spaces',
+          'type' => 'oa_core_user_spaces',
+          'subtype' => 'oa_core_user_spaces',
           'shown' => TRUE,
           'access' => array(),
           'configuration' => array(
-            'context' => array(
-              0 => 'panelizer',
-            ),
-            'view_mode' => 'teaser',
-            'widget_title' => NULL,
-            'items_per_page' => NULL,
-            'exposed' => array(
-              'sort_by' => NULL,
-              'sort_order' => NULL,
-            ),
-            'use_pager' => NULL,
-            'pager_id' => NULL,
-            'offset' => NULL,
-            'link_to_view' => NULL,
-            'more_link' => NULL,
-            'path' => NULL,
-            'view_settings' => 'fields',
-            'header_type' => 'none',
+            'featured_spaces' => 1,
+            'context' => 'panelizer',
+            'override_title' => 0,
+            'override_title_text' => '',
           ),
           'cache' => array(),
           'style' => array(

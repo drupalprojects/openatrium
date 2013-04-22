@@ -11,8 +11,8 @@ define('FEATURED_MOST_RECENT', 2);
 define('FEATURED_ACTIVITY', 3);
 
 $plugin = array(
-  'title' => t('Space summary'),
-  'description' => t('Provides a summary of a space, including the picture, description, and useful links.'),
+  'title' => t('User Spaces'),
+  'description' => t('Provides a list of spaces for a user.'),
   'single' => TRUE,
   'category' => array(t('Open Atrium'), -9),
   'edit form' => 'oa_core_user_spaces_edit_form',
@@ -41,7 +41,7 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
   $vars['featured_spaces_title'] = $featured_spaces['title'];
 
   $block = new stdClass();
-  $block->title = t('My Spaces');
+  $block->title = t('Your Spaces');
   $block->content = theme('oa_core_user_spaces', $vars);
   return $block;
 }
