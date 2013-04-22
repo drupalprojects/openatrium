@@ -15,6 +15,7 @@ regions[footer]       = Footer
 
 ; CSS - General
 stylesheets[all][]     = assets/stylesheets/screen.css
+stylesheets[all][]     = assets/stylesheets/font-awesome.min.css
 stylesheets[print][]   = assets/stylesheets/print.css
 
 ; CSS - Conditional

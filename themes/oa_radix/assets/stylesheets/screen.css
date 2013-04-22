@@ -17941,25 +17941,16 @@ div.tabs li.active a {
   float: right;
 }
 
-/* line 112, ../sass/_panel.scss */
-.pane-oa-core-members-widget .team,
-.pane-oa-core-members-widget .user-badge {
-  width: 100%;
-  min-width: 0;
-  max-width: 152px;
-  margin: 0 10px 10px 0;
-}
-
-/* line 123, ../sass/_panel.scss */
+/* line 111, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .pane-content {
   position: relative;
 }
-/* line 126, ../sass/_panel.scss */
+/* line 114, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .spaces-container {
   float: left;
   margin-right: 20px;
 }
-/* line 130, ../sass/_panel.scss */
+/* line 118, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .space-switcher {
   position: absolute;
   top: 0;
@@ -17967,32 +17958,32 @@ div.tabs li.active a {
   margin: 10px;
 }
 
-/* line 141, ../sass/_panel.scss */
+/* line 129, ../sass/_panel.scss */
 .pane-oa-sidebar-search form {
   margin: 0;
 }
-/* line 144, ../sass/_panel.scss */
+/* line 132, ../sass/_panel.scss */
 .pane-oa-sidebar-search .input-append {
   box-sizing: border-box;
 }
-/* line 147, ../sass/_panel.scss */
+/* line 135, ../sass/_panel.scss */
 .pane-oa-sidebar-search .search-text {
   height: 32px;
   width: 80%;
   box-sizing: border-box;
 }
-/* line 152, ../sass/_panel.scss */
+/* line 140, ../sass/_panel.scss */
 .pane-oa-sidebar-search .submit {
   padding: 5px 0;
   width: 20%;
   box-sizing: border-box;
 }
-/* line 157, ../sass/_panel.scss */
+/* line 145, ../sass/_panel.scss */
 .pane-oa-sidebar-search .options {
   margin: 10px 0 0;
 }
 
-/* line 164, ../sass/_panel.scss */
+/* line 152, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-private {
   font-size: 16px;
   text-align: center;
@@ -18001,14 +17992,14 @@ div.tabs li.active a {
   border: 2px solid #b85652;
   padding: 5px;
 }
-/* line 171, ../sass/_panel.scss */
+/* line 159, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-private i {
   font-size: 24px;
   padding-right: 10px;
   line-height: 5px;
   color: #B33D3E;
 }
-/* line 178, ../sass/_panel.scss */
+/* line 166, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-header {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -18017,7 +18008,7 @@ div.tabs li.active a {
   margin: 15px 0 5px 0;
   padding: 3px 10px;
 }
-/* line 184, ../sass/_panel.scss */
+/* line 172, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-public {
   font-size: 16px;
   text-align: center;
@@ -18026,7 +18017,7 @@ div.tabs li.active a {
   border: 1px solid #bdff99;
   padding: 5px;
 }
-/* line 192, ../sass/_panel.scss */
+/* line 180, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-list {
   padding: 0 10px;
 }
@@ -18255,11 +18246,6 @@ div.tabs li.active a {
   margin-bottom: 0;
 }
 
-/* line 76, ../sass/_node.scss */
-.pane-oa-core-members-widget h5 {
-  margin-top: 0;
-}
-
 /* line 5, ../sass/_user.scss */
 .user-badge {
   border: 1px solid #cccccc;
@@ -18366,4 +18352,44 @@ div.tabs li.active a {
 .pane-oa-user-spaces-full .accordion {
   padding: 10px;
   margin: 0;
+}
+
+/* line 85, ../sass/_user.scss */
+.pane-oa-core-members-widget h5 {
+  margin-top: 0;
+}
+/* line 88, ../sass/_user.scss */
+.pane-oa-core-members-widget .btn-group {
+  margin: 0 5px 10px 0;
+  min-width: 160px;
+}
+/* line 93, ../sass/_user.scss */
+.pane-oa-core-members-widget .team,
+.pane-oa-core-members-widget .user-badge {
+  margin: 0 5px 10px 0;
+  border: 1px solid transparent;
+}
+/* line 97, ../sass/_user.scss */
+.pane-oa-core-members-widget .dropdown-toggle.user-badge {
+  margin: 0;
+  border: 1px solid transparent;
+}
+/* line 100, ../sass/_user.scss */
+.pane-oa-core-members-widget .dropdown-toggle.user-badge i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+/* line 106, ../sass/_user.scss */
+.pane-oa-core-members-widget .dropdown-toggle.user-badge:hover {
+  border: 1px solid #777777;
+}
+/* line 108, ../sass/_user.scss */
+.pane-oa-core-members-widget .dropdown-toggle.user-badge:hover i {
+  display: block;
+}
+/* line 113, ../sass/_user.scss */
+.pane-oa-core-members-widget .member-dropdown {
+  position: relative;
 }

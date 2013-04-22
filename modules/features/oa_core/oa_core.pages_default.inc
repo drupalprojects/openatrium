@@ -89,6 +89,9 @@ function oa_core_default_page_manager_pages() {
       'sidebar' => NULL,
       'contentmain' => NULL,
     ),
+    'sidebar' => array(
+      'style' => 'oa_styles_oa_pane',
+    ),
   );
   $display->cache = array();
   $display->title = '%node:title';
@@ -119,6 +122,24 @@ function oa_core_default_page_manager_pages() {
     $pane->locks = array();
     $display->content['new-1'] = $pane;
     $display->panels['contentmain'][0] = 'new-1';
+    $pane = new stdClass();
+    $pane->pid = 'new-2';
+    $pane->panel = 'sidebar';
+    $pane->type = 'oa_core_add_member';
+    $pane->subtype = 'oa_core_add_member';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-2'] = $pane;
+    $display->panels['sidebar'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1';
   $handler->conf['display'] = $display;
@@ -198,7 +219,7 @@ function oa_core_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-2';
+    $pane->pid = 'new-3';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'oa_user_spaces-full';
@@ -232,8 +253,8 @@ function oa_core_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['contentmain'][0] = 'new-2';
+    $display->content['new-3'] = $pane;
+    $display->panels['contentmain'][0] = 'new-3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

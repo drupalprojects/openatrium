@@ -135,7 +135,7 @@ function oa_notifications_edit_form($form, &$form_state, $node) {
     'method' => 'replace',
   );
   $form['notifications']['group']['#prefix'] = '<div id="group-div">';
-  $form['notifications']['notifications']['group']['#suffix'] = '</div>';
+  $form['notifications']['group']['#suffix'] = '</div>';
 
   $form['notifications']['team']['#ajax'] = array(
     'callback' => 'oa_notifications_ajax_callback',

@@ -25,6 +25,8 @@ $plugin = array(
  * Main render function for oa_core_members_widget.
  */
 function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) {
+  global $user;
+
   if (!isset($context->data)) {
     return;
   }
@@ -39,16 +41,27 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   uasort($members, '_oa_core_sort_user_by_name');
   $owners = array();
 
+  $is_owner = FALSE;
   foreach ($members as $member) {
     $roles = og_get_user_roles('node', $space->nid, $member->uid);
     if (in_array(OG_ADMINISTRATOR_ROLE, $roles) || $member->uid == $space->uid) {
       $owners[$member->uid] = $member;
+      if ($member->uid == $user->uid) {
+        $is_owner = TRUE;
+      }
     }
   }
 
-  $members = array_slice($members, 0, 4);
-
   $vars = array();
+
+  if (!isset($conf['show_number']) || ($conf['show_number'] != '0')) {
+    $vars['see_all_link'] = l('See all members', 'node/' . $space->nid . '/members');
+    $members = array_slice($members, 0, $conf['show_number']-1);
+  }
+  else {
+    $vars['see_all_link'] = '';
+  }
+
   $items = array(
     'teams' => $teams,
     'members' => $members,
@@ -61,13 +74,17 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     }
   }
 
-  if (!isset($conf['show_number']) || ($conf['show_number'] != '0')) {
-    $vars['see_all_link'] = l('See all members', 'node/' . $space->nid . '/members');
+  $vars['links']['dashboard'] = 'user/';
+  if ($is_owner) {
+    $vars['links']['remove'] = 'group/node/' . $space->nid. '/remove/';
+    $vars['links']['add-admin'] = 'group/node/' . $space->nid. '/add-admin/';
+    $vars['links']['remove-admin'] = 'group/node/' . $space->nid. '/remove-admin/';
   }
   else {
-    $vars['see_all_link'] = '';
+    $vars['links']['remove'] = '';
+    $vars['links']['add-admin'] = '';
+    $vars['links']['remove-admin'] = '';
   }
-
   if (!empty($conf['hide_owner'])) {
     unset($vars['owners']);
   }
@@ -97,6 +114,7 @@ function oa_core_entity_build_display($entity, $id) {
     (empty($entity->realname) ? $entity->name : $entity->realname) :
     $entity->title;
   $display['title'] = l($title, $type . '/' . $id);
+  $display['uid'] = $id;
 
   if ($type == 'user') {
     $display['picture'] = oa_dashboard_render_user_picture($entity);

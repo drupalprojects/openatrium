@@ -61,6 +61,30 @@ function oa_core_menu() {
     'page arguments' => array('oa_core_configure_form'),
     'access arguments' => array('administer site configuration'),
   );
+  $items['group/%/%/remove/%'] = array(
+    'title' => 'Remove member',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'oa_core_remove_member',
+    'page arguments' => array(1, 2, 4),
+    'access callback' => 'og_ui_user_access_group',
+    'access arguments' => array('manage members', 1, 2),
+  );
+  $items['group/%/%/add-admin/%'] = array(
+    'title' => 'Add Admin',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'oa_core_add_admin',
+    'page arguments' => array(1, 2, 4),
+    'access callback' => 'og_ui_user_access_group',
+    'access arguments' => array('manage members', 1, 2),
+  );
+  $items['group/%/%/remove-admin/%'] = array(
+    'title' => 'Add Admin',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'oa_core_remove_admin',
+    'page arguments' => array(1, 2, 4),
+    'access callback' => 'og_ui_user_access_group',
+    'access arguments' => array('manage members', 1, 2),
+  );
   return $items;
 }
 
@@ -237,4 +261,67 @@ function oa_core_field_attach_view_alter(&$output, $context) {
       oa_core_replace_group($output['group_group'][0]['#markup']);
     }
   }
+}
+
+/**
+ * Menu callback to remove user from group
+ * @param  $group_type
+ * @param  $gid
+ * @param  $uid
+ */
+function oa_core_remove_member($group_type, $gid, $uid) {
+  $account = user_load($uid);
+  $group = entity_load_single($group_type, $gid);
+  $label = entity_label($group_type, $group);
+  og_ungroup('node', $group->nid, 'user', $account);
+
+  drupal_set_message(t('%user has been removed from the space %title.', array('%user' => format_username($account), '%title' => $label)));
+  drupal_goto('node/' . $gid . '/members');
+  return;
+}
+
+/**
+ * Menu callback to make user an admin
+ * @param  $group_type
+ * @param  $gid
+ * @param  $uid
+ */
+function oa_core_add_admin($group_type, $gid, $uid) {
+  $account = user_load($uid);
+  $group = entity_load_single($group_type, $gid);
+  $label = entity_label($group_type, $group);
+
+  $og_roles = og_roles($group_type, $group->type, $gid, FALSE, FALSE);
+  $rid = array_search(OG_ADMINISTRATOR_ROLE, $og_roles);
+  if ($rid > 0) {
+    og_role_grant($group_type, $gid, $uid, $rid);
+    og_invalidate_cache();
+
+    drupal_set_message(t('%user has been added as an Admin to the space %title.', array('%user' => format_username($account), '%title' => $label)));
+  }
+  drupal_goto('node/' . $gid . '/members');
+  return;
+}
+
+/**
+ * Menu callback to remove user as admin
+ * @param  $group_type
+ * @param  $gid
+ * @param  $uid
+ */
+function oa_core_remove_admin($group_type, $gid, $uid) {
+  $account = user_load($uid);
+  $group = entity_load_single($group_type, $gid);
+  $label = entity_label($group_type, $group);
+
+  $og_roles = og_roles($group_type, $group->type, $gid, FALSE, FALSE);
+  $rid = array_search(OG_ADMINISTRATOR_ROLE, $og_roles);
+  if ($rid > 0) {
+    og_role_revoke($group_type, $gid, $uid, $rid);
+    og_invalidate_cache();
+
+    drupal_set_message(t('%user has been removed as Admin of space %title.', array('%user' => format_username($account), '%title' => $label)));
+  }
+  drupal_goto('node/' . $gid . '/members');
+  return;
 }

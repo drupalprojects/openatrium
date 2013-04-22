@@ -80,3 +80,37 @@
     margin: 0;
   }
 }
+
+.pane-oa-core-members-widget {
+  h5 {
+    margin-top: 0;
+  }
+  .btn-group {
+    margin: 0 5px 10px 0;
+    min-width: 160px;
+  }
+  .team,
+  .user-badge {
+    margin: 0 5px 10px 0;
+    border: 1px solid transparent;
+  }
+  .dropdown-toggle.user-badge {
+    margin: 0;
+    border: 1px solid transparent;
+    i {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: none;
+    }
+    &:hover {
+      border: 1px solid #777;
+      i {
+        display: block;
+      }
+    }
+  }
+  .member-dropdown {
+    position: relative;
+  }
+}
