@@ -219,24 +219,6 @@ function oa_core_preprocess_views_view_fields(&$vars) {
       $vars[$id . '_raw'] = $field->raw;
     }
   }
-  // View specific alterations.
-  if ($vars['view']->name == 'oa_user_spaces' && $vars['view']->current_display == 'full') {
-    oa_core_preprocess_oa_user_spaces_full_view_fields($vars);
-  }
-}
-
-/**
- * Views view fields preprocess function.
- * Provide the template with the space's sections for display.
- */
-function oa_core_preprocess_oa_user_spaces_full_view_fields(&$vars) {
-  $space = node_load($vars['row']->node_og_membership_nid);
-  $sections = oa_core_space_sections($space->nid);
-  $vars['sections'] = array();
-  foreach ($sections as $id => $title) {
-    $vars['sections'][$id]['title'] = $title;
-    $vars['sections'][$id]['href'] = url('node/' . $id);
-  }
 }
 
 /**

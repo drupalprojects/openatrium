@@ -143,6 +143,14 @@ function oa_panopoly_users_features_override_default_overrides() {
         'context' => 'panelizer',
         'override_title' => 0,
         'override_title_text' => '',
+        'image_size' => 'none',
+        'show_description' => 0,
+        'show_sections' => 0,
+        'tabs' => array(
+          'Favorite' => 'Favorite',
+          'Active' => 'Active',
+          'All' => 0,
+        ),
       ),
       'cache' => array(),
       'style' => array(

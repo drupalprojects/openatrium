@@ -5,10 +5,9 @@
  * Defines the space summary panels pane.
  */
 
-define('FEATURED_NONE', 0);
-define('FEATURED_FAVORITES', 1);
-define('FEATURED_MOST_RECENT', 2);
-define('FEATURED_ACTIVITY', 3);
+define('SPACE_TAB_FAVORITE', 'Favorite');
+define('SPACE_TAB_ACTIVE', 'Active');
+define('SPACE_TAB_ALL', 'All');
 
 $plugin = array(
   'title' => t('User Spaces'),
@@ -19,7 +18,11 @@ $plugin = array(
   'render callback' => 'oa_core_user_spaces_render',
   'required context' => new ctools_context_required(t('User'), 'user'),
   'defaults' => array(
-    'featured_spaces' => FEATURED_FAVORITES,
+    'tabs' => array(SPACE_TAB_FAVORITE, SPACE_TAB_ACTIVE, SPACE_TAB_ALL),
+    'image_size' => 'square',
+    'show_description' => TRUE,
+    'show_sections' => TRUE,
+    'link_class' => 'btn',
   ),
 );
 
@@ -32,58 +35,90 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
     return;
   }
   $user = $context->data;
-  $spaces = node_load_multiple(oa_core_get_user_spaces($user->uid));
   $vars = array();
-  $vars['spaces'] = oa_core_build_display($spaces);
 
-  $featured_spaces = oa_core_build_featured_spaces($user, $conf['featured_spaces']);
-  $vars['featured_spaces'] = $featured_spaces['spaces'];
-  $vars['featured_spaces_title'] = $featured_spaces['title'];
+  $spaces = oa_core_get_user_spaces($user->uid);
+  $spaces = node_load_multiple($spaces);
+  $active_spaces = oa_core_build_space_display($spaces, $conf);
+
+  $spaces = oa_favorites_get_spaces($user);
+  $spaces = node_load_multiple($spaces['ids']);
+  $featured_spaces = oa_core_build_space_display($spaces, $conf);
+
+  $vars['space_groups'] = array();
+  if ($conf['tabs'][SPACE_TAB_FAVORITE] && !empty($featured_spaces)) {
+    $vars['space_groups'][t(SPACE_TAB_FAVORITE)] = $featured_spaces;
+  }
+  if ($conf['tabs'][SPACE_TAB_ACTIVE] && !empty($active_spaces)) {
+    $vars['space_groups'][t(SPACE_TAB_ACTIVE)] = $active_spaces;
+  }
+  if ($conf['tabs'][SPACE_TAB_ALL]) {
+    $vars['space_groups'][t(SPACE_TAB_ALL)] = $active_spaces;
+  }
+
+  $vars['title_tag'] = ($conf['show_description']) ? 'h4' : 'div';
 
   $block = new stdClass();
-  $block->title = t('Your Spaces');
+  if (count($vars['space_groups']) == 1) {
+    $block->title = key($vars['space_groups']) . t(' Spaces');
+  }
+  else {
+    $block->title = t('Spaces');
+  }
   $block->content = theme('oa_core_user_spaces', $vars);
   return $block;
 }
 
 
 /**
- * Build the list of featured spaces based on the settings.
- */
-function oa_core_build_featured_spaces($user, $option) {
-  $spaces = array();
-  $title = '';
-  if ($option == FEATURED_NONE) {
-    return array('', $title);
-  }
-  elseif ($option == FEATURED_FAVORITES) {
-    $title = t('Favorites');
-    $spaces = oa_favorites_get_spaces($user);
-    $spaces = node_load_multiple($spaces['ids']);
-  }
-
-  return array(
-    'title' => $title,
-    'spaces' => oa_core_build_display($spaces, FALSE),
-  );
-}
-
-
-/**
  * Builds display variables for spaces. Optionally sections as well.
  */
-function oa_core_build_display($spaces, $build_sections = TRUE) {
+function oa_core_build_space_display($spaces, $conf) {
   $vars = array();
   usort($spaces, 'oa_core_sort_node_by_title');
   foreach ($spaces as $space) {
     $vars[$space->nid]['title'] = $space->title;
+
+    $alter = array(
+      'max_length' => 60,
+      'word_boundary' => TRUE,
+      'ellipsis' => TRUE,
+      'html' => TRUE,
+    );
     $vars[$space->nid]['href'] = url('node/' . $space->nid);
+    $vars[$space->nid]['body'] = '';
     $vars[$space->nid]['sections'] = array();
-    if ($build_sections) {
+
+    $vars[$space->nid]['links'] = oa_core_user_spaces_get_links($space, $conf);
+
+    if ($conf['show_description']) {
+      $body = field_get_items('node', $space, 'body');
+      if (!empty($body[0]['summary'])) {
+        $vars[$space->nid]['body'] = $body[0]['summary'];
+      }
+      else {
+        $vars[$space->nid]['body'] = views_trim_text($alter, $body[0]['value']);
+      }
+    }
+
+    $vars[$space->nid]['picture'] = '';
+    if ($conf['image_size'] != 'none') {
+      $picture = field_get_items('node', $space, 'field_featured_image');
+      if (!empty($picture)) {
+        $picture = array_shift($picture);
+        $vars[$space->nid]['picture'] = theme('image_style', array(
+          'style_name' => 'panopoly_image_' . $conf['image_size'],
+          'path' => $picture['uri'],
+          'width' => $picture['width'],
+          'height' => $picture['height'],
+          'alt' => $picture['alt'],
+        ));
+      }
+    }
+    if ($conf['show_sections']) {
       $sections = oa_core_space_sections($space->nid);
       foreach ($sections as $id => $title) {
-        $vars[$space->nid]['sections'][$id]['title'] = $title;
-        $vars[$space->nid]['sections'][$id]['href'] = url('node/' . $id);
+        $vars[$space->nid]['sections'][$id] = l($title, 'node/' . $id);
       }
     }
   }
@@ -91,6 +126,19 @@ function oa_core_build_display($spaces, $build_sections = TRUE) {
   return $vars;
 }
 
+function oa_core_user_spaces_get_links($space, $conf) {
+  $display = array(
+    'settings' => array('field_name' => OA_SPACE_FIELD),
+    'type' => 'og_group_subscribe',
+  );
+  $links = og_ui_field_formatter_view('node', $space, NULL, NULL, NULL, NULL, $display);
+  if (!empty($conf['link_class'])) {
+    foreach ($links as $key => $link) {
+      $links[$key]['#attributes'] = array('class' => $conf['link_class']);
+    }
+  }
+  return $links;
+}
 
 /**
  * Sort function, sorts nodes by title.
@@ -105,16 +153,45 @@ function oa_core_sort_node_by_title($n1, $n2) {
  */
 function oa_core_user_spaces_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
-  $form['featured_spaces'] = array(
-    '#type' => 'radios',
-    '#title' => t('Featured spaces'),
+  $form['tabs'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Tabs'),
     '#options' => array(
-      FEATURED_NONE => t('None'),
-      FEATURED_FAVORITES => t('Favorites'),
-      FEATURED_MOST_RECENT => t('Most recent'),
-      FEATURED_ACTIVITY => t('Activity'),
+      SPACE_TAB_FAVORITE => t(SPACE_TAB_FAVORITE),
+      SPACE_TAB_ACTIVE => t(SPACE_TAB_ACTIVE),
+      SPACE_TAB_ALL => t(SPACE_TAB_ALL),
     ),
-    '#default_value' => isset($conf['featured_spaces']) ? $conf['featured_spaces'] : FEATURED_FAVORITES,
+    '#default_value' => $conf['tabs'],
+  );
+
+  $form['image_size'] = array(
+    '#type' => 'radios',
+    '#title' => t('Image size'),
+    '#options' => array(
+      'square' => t('Square'),
+      'quarter' => t('Quarter'),
+      'half' => t('Half'),
+      'full' => t('Full'),
+      'none' => t('None'),
+    ),
+    '#default' => $conf['image_size'],
+  );
+
+  $form['link_class'] = array(
+    '#title' => t('CSS Link class'),
+    '#type' => 'textfield',
+    '#default_value' => $conf['link_class'],
+    '#description' => 'Enter css classes for links, such as btn',
+  );
+  $form['show_description'] = array(
+    '#title' => t('Show description'),
+    '#type' => 'checkbox',
+    '#default_value' => $conf['show_description'],
+  );
+  $form['show_sections'] = array(
+    '#title' => t('Show sections'),
+    '#type' => 'checkbox',
+    '#default_value' => $conf['show_sections'],
   );
 
   return $form;

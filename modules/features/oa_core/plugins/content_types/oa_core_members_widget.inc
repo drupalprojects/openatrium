@@ -135,17 +135,17 @@ function oa_core_members_widget_edit_form($form, &$form_state) {
   $form['hide_owner'] = array(
     '#title' => t('Hide space owner'),
     '#type' => 'checkbox',
-    '#default_value' => isset($conf['hide_owner']) ? $conf['hide_owner'] : FALSE,
+    '#default_value' => $conf['hide_owner'],
   );
   $form['hide_teams'] = array(
     '#title' => t('Hide teams'),
     '#type' => 'checkbox',
-    '#default_value' => isset($conf['hide_teams']) ? $conf['hide_teams'] : FALSE,
+    '#default_value' => $conf['hide_teams'],
   );
   $form['show_number'] = array(
     '#title' => t('Number of members to show'),
     '#type' => 'textfield',
-    '#default_value' => isset($conf['show_number']) ? $conf['show_number'] : '10',
+    '#default_value' => $conf['show_number'],
     '#description' => 'Enter zero to show all members.'
   );
 
