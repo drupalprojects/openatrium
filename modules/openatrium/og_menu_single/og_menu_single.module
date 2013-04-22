@@ -228,22 +228,38 @@ function og_menu_single_children_items($plid, $max_depth = NULL) {
   if (!isset($max_depth)) {
     $max_depth = MENU_MAX_DEPTH - 1;
   }
-  return _og_menu_single_children_items($plid, 2, $max_depth + 1);
+  $menu_link = og_menu_single_menu_link_load($plid);
+  return _og_menu_single_children_items($plid, $menu_link['depth'] + 1, $max_depth + 1);
 }
 
 /**
  * Helper function to populate the menu tree without loading the entire tree.
  */
 function _og_menu_single_children_items($plid, $current_depth, $max_depth) {
+  $menu_links = &drupal_static(__FUNCTION__, array());
   $tree = array();
-  $options = array('expanded' => array($plid), 'min_depth' => $current_depth);
-  foreach (menu_build_tree(OG_MENU_SINGLE_MENU_NAME, $options) as $key => $item) {
+  // current depth should always be same for a given plid.
+  if (!isset($menu_links[$plid])) {
+    $menu_links[$plid] = menu_build_tree(OG_MENU_SINGLE_MENU_NAME, array('expanded' => array($plid), 'min_depth' => $current_depth));
+  }
+  foreach ($menu_links[$plid] as $key => $item) {
     $tree[$key] = $item;
     if ($current_depth < $max_depth) {
       $tree[$key]['below'] = _og_menu_single_children_items($item['link']['mlid'], $current_depth+1, $max_depth);
     }
   }
   return $tree;
+}
+
+/**
+ * Cached menu_link_load as may call for same mlid during same page load.
+ */
+function og_menu_single_menu_link_load($mlid) {
+  $menu_links = &drupal_static(__FUNCTION__, array());
+  if (!isset($menu_links[$mlid])) {
+    $menu_links[$mlid] = menu_link_load($mlid);
+  }
+  return $menu_links[$mlid];
 }
 
 
