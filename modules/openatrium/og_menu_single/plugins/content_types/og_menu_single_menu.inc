@@ -19,10 +19,14 @@ $plugin = array(
  */
 function og_menu_single_menu_render($subtype, $conf, $args, $context = NULL) {
   $plid = og_menu_single_get_active_plid();
-  if (!empty($conf['og_menu_single_parent']) && $conf['og_menu_single_parent'] == 'auto') {
-    $result = module_invoke_all('og_menu_single_menu_parent', $conf);
-    $plid = reset($result);
+  if (!empty($conf['og_menu_single_parent'])) {
+    $plid = $conf['og_menu_single_parent'];
+    if ($plid === 'auto') {
+      $result = module_invoke_all('og_menu_single_menu_parent', $conf);
+      $plid = reset($result);
+    }
   }
+
   if ($plid) {
     $tree = og_menu_single_children_items($plid, !empty($conf['og_menu_single_depth']) ? $conf['og_menu_single_depth'] : MENU_MAX_DEPTH);
     if ($tree && ($output = menu_tree_output($tree))) {
@@ -31,7 +35,7 @@ function og_menu_single_menu_render($subtype, $conf, $args, $context = NULL) {
       $block->content =  $output;
       // Don't want to do menu_link_load if overriding title.
       if (empty($conf['override_title'])) {
-        $item = menu_link_load($plid);
+        $item = og_menu_single_menu_link_load($plid);
         $block->title = l($item['link_title'], $item['link_path'], $item['options']);
       }
       return $block;
