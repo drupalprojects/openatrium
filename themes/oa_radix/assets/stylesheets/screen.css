@@ -17900,110 +17900,119 @@ div.tabs li.active a {
   text-transform: uppercase;
 }
 
-/* line 66, ../sass/_panel.scss */
+/* line 65, ../sass/_panel.scss */
+.pane-oa-widgets-add-content ul {
+  margin-left: 0;
+}
+/* line 69, ../sass/_panel.scss */
+.pane-oa-widgets-add-content li a.btn, .pane-oa-widgets-add-content li #modal-content a#edit-cancel, #modal-content .pane-oa-widgets-add-content li a#edit-cancel {
+  margin-bottom: 5px;
+}
+
+/* line 77, ../sass/_panel.scss */
 .pane-oa-widgets-user-profile .user-picture {
   width: 20%;
   margin-right: 5%;
 }
-/* line 70, ../sass/_panel.scss */
+/* line 81, ../sass/_panel.scss */
 .pane-oa-widgets-user-profile .user-info {
   text-align: center;
   width: 75%;
 }
-/* line 77, ../sass/_panel.scss */
+/* line 88, ../sass/_panel.scss */
 .pane-oa-widgets-user-profile .user-info .user-name,
 .pane-oa-widgets-user-profile .user-info .user-role {
   font-size: 11.9px;
 }
-/* line 81, ../sass/_panel.scss */
+/* line 92, ../sass/_panel.scss */
 .pane-oa-widgets-user-profile .links {
   text-align: right;
 }
-/* line 83, ../sass/_panel.scss */
+/* line 94, ../sass/_panel.scss */
 .pane-oa-widgets-user-profile .links a {
   font-size: 10.5px;
   border-right: 1px solid #555555;
   padding-right: 5px;
 }
-/* line 88, ../sass/_panel.scss */
+/* line 99, ../sass/_panel.scss */
 .pane-oa-widgets-user-profile .links a:last-child {
   border: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 100, ../sass/_panel.scss */
+/* line 111, ../sass/_panel.scss */
 .pane-oa-core-summary .space-links .favorite {
   float: left;
 }
-/* line 103, ../sass/_panel.scss */
+/* line 114, ../sass/_panel.scss */
 .pane-oa-core-summary .space-links .edit {
   float: right;
 }
 
-/* line 111, ../sass/_panel.scss */
+/* line 122, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .pane-content {
   position: relative;
 }
-/* line 114, ../sass/_panel.scss */
+/* line 125, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .spaces-container {
   float: left;
   margin-right: 20px;
 }
-/* line 118, ../sass/_panel.scss */
+/* line 129, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .space-switcher {
   position: absolute;
   top: 0;
   right: 0;
   margin: 10px;
 }
-/* line 124, ../sass/_panel.scss */
+/* line 135, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .space {
   border-bottom: 1px solid #d4d4d4;
   padding-bottom: 15px;
   margin-bottom: 5px;
 }
-/* line 128, ../sass/_panel.scss */
+/* line 139, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .space .pull-left img {
   margin-right: 15px;
 }
-/* line 132, ../sass/_panel.scss */
+/* line 143, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .member-sidebar {
   margin-bottom: 15px;
 }
-/* line 134, ../sass/_panel.scss */
+/* line 145, ../sass/_panel.scss */
 .pane-oa-core-user-spaces .member-sidebar .space {
   padding-bottom: 0;
   margin-bottom: 0;
   border-bottom: 0;
 }
 
-/* line 145, ../sass/_panel.scss */
+/* line 156, ../sass/_panel.scss */
 .pane-oa-sidebar-search form {
   margin: 0;
 }
-/* line 148, ../sass/_panel.scss */
+/* line 159, ../sass/_panel.scss */
 .pane-oa-sidebar-search .input-append {
   box-sizing: border-box;
 }
-/* line 151, ../sass/_panel.scss */
+/* line 162, ../sass/_panel.scss */
 .pane-oa-sidebar-search .search-text {
   height: 32px;
   width: 80%;
   box-sizing: border-box;
 }
-/* line 156, ../sass/_panel.scss */
+/* line 167, ../sass/_panel.scss */
 .pane-oa-sidebar-search .submit {
   padding: 5px 0;
   width: 20%;
   box-sizing: border-box;
 }
-/* line 161, ../sass/_panel.scss */
+/* line 172, ../sass/_panel.scss */
 .pane-oa-sidebar-search .options {
   margin: 10px 0 0;
 }
 
-/* line 168, ../sass/_panel.scss */
+/* line 179, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-private {
   font-size: 16px;
   text-align: center;
@@ -18012,14 +18021,14 @@ div.tabs li.active a {
   border: 2px solid #b85652;
   padding: 5px;
 }
-/* line 175, ../sass/_panel.scss */
+/* line 186, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-private i {
   font-size: 24px;
   padding-right: 10px;
   line-height: 5px;
   color: #B33D3E;
 }
-/* line 182, ../sass/_panel.scss */
+/* line 193, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-header {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -18028,7 +18037,7 @@ div.tabs li.active a {
   margin: 15px 0 5px 0;
   padding: 3px 10px;
 }
-/* line 188, ../sass/_panel.scss */
+/* line 199, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-public {
   font-size: 16px;
   text-align: center;
@@ -18037,7 +18046,7 @@ div.tabs li.active a {
   border: 1px solid #bdff99;
   padding: 5px;
 }
-/* line 196, ../sass/_panel.scss */
+/* line 207, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-list {
   padding: 0 10px;
 }

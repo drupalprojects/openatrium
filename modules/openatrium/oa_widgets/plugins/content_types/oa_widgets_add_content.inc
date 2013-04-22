@@ -15,6 +15,8 @@ $plugin = array(
   'defaults' => array(
     'oa_widgets_types' => array(),
     'oa_widgets_use_all' => TRUE,
+    'button_class' => '',
+    'title_prefix' => '',
   ),
 );
 
@@ -28,11 +30,17 @@ function oa_widgets_add_content_render($subtype, $conf, $args, $context = NULL) 
 
   $nodes = $conf['oa_widgets_types'];
 
+  $class = !empty($conf['button_class']) ? $conf['button_class'] : '';
+  $prefix = !empty($conf['title_prefix']) ? $conf['title_prefix'] : '';
   $links = array();
   foreach ($nodes as $node_type) {
     $node = node_type_load($node_type);
     if (is_object($node) && node_access('create', $node_type)) {
-      $links[] = '<li>' . l($node->name, 'node/add/' . str_replace('_', '-', $node_type)) . '</li>';
+      $links[] = '<li>' .
+        l($prefix . $node->name, 'node/add/' . str_replace('_', '-', $node_type) ,
+          array('attributes' => array(
+            'class' => $class)))
+        . '</li>';
     }
   }
   $output = '<ul>' . implode($links) . '</ul>';
@@ -65,6 +73,18 @@ function oa_widgets_add_content_edit_form($form, &$form_state) {
     '#options' => $options,
     '#default_value' => isset($conf['oa_widgets_types']) ? $conf['oa_widgets_types'] : array_values($options),
     '#description' => t('Select which content types you would like to enable for this widget.'),
+  );
+  $form['button_class'] = array(
+    '#title' => t('CSS class for links'),
+    '#type' => 'textfield',
+    '#default_value' => $conf['button_class'],
+    '#description' => 'Enter CSS class for links, such as btn.'
+  );
+  $form['title_prefix'] = array(
+    '#title' => t('Title Prefix'),
+    '#type' => 'textfield',
+    '#default_value' => $conf['title_prefix'],
+    '#description' => 'Enter prefix text for link titles.'
   );
 
   return $form;

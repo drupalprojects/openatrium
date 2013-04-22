@@ -61,7 +61,7 @@ function oa_core_default_page_manager_pages() {
       'contentmain' => NULL,
     ),
     'sidebar' => array(
-      'style' => 'oa_styles_oa_pane',
+      'style' => '0',
     ),
   );
   $display->cache = array();
@@ -122,12 +122,14 @@ function oa_core_default_page_manager_pages() {
       'oa_widgets_use_all' => TRUE,
       'return' => 'Finish',
       'cancel' => 'Cancel',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
-      'form_build_id' => 'form-JNclXqFkTGRW8vjQ4NLRMiuJ9tXSQHmfnINyqY4fTT4',
+      'form_build_id' => 'form-UaJ_DBnYi-FJgcApMWyvh-P4ALkq_-gJO1ftYr0EOzI',
       'form_token' => 'isC-J5K3dQfeMpsBqZG_34ROSt8JFxt7s9-jtqd79pI',
       'form_id' => 'oa_widgets_add_content_edit_form',
       'op' => 'Finish',
+      'button_class' => 'btn btn-primary',
+      'title_prefix' => 'Add ',
     );
     $pane->cache = array();
     $pane->style = array(

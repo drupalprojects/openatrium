@@ -61,6 +61,17 @@
   }
 }
 
+.pane-oa-widgets-add-content {
+  ul {
+    margin-left: 0;
+  }
+  li {
+    a.btn {
+      margin-bottom: 5px;
+    }
+  }
+}
+
 // User profile
 .pane-oa-widgets-user-profile {
   .user-picture {
