@@ -41,13 +41,13 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   uasort($members, '_oa_core_sort_user_by_name');
   $owners = array();
 
-  $is_owner = FALSE;
+  $is_admin = ($user->uid == 1) ? TRUE : FALSE;
   foreach ($members as $member) {
     $roles = og_get_user_roles('node', $space->nid, $member->uid);
     if (in_array(OG_ADMINISTRATOR_ROLE, $roles) || $member->uid == $space->uid) {
       $owners[$member->uid] = $member;
       if ($member->uid == $user->uid) {
-        $is_owner = TRUE;
+        $is_admin = TRUE;
       }
     }
   }
@@ -75,7 +75,7 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   }
 
   $vars['links']['dashboard'] = 'user/';
-  if ($is_owner) {
+  if ($is_admin) {
     $vars['links']['remove'] = 'group/node/' . $space->nid. '/remove/';
     $vars['links']['add-admin'] = 'group/node/' . $space->nid. '/add-admin/';
     $vars['links']['remove-admin'] = 'group/node/' . $space->nid. '/remove-admin/';
