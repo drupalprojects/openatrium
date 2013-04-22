@@ -11,6 +11,139 @@ function oa_core_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'oa_spaces';
+  $page->task = 'page';
+  $page->admin_title = 'Spaces';
+  $page->admin_description = 'Show all spaces on the site';
+  $page->path = 'spaces';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_oa_spaces_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'oa_spaces';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'User',
+        'keyword' => 'user',
+        'name' => 'user',
+        'type' => 'current',
+        'uid' => '',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'bryant_flipped_flipped';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'sidebar' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-1';
+    $pane->panel = 'contentmain';
+    $pane->type = 'oa_core_user_spaces';
+    $pane->subtype = 'oa_core_user_spaces';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'featured_spaces' => '1',
+      'context' => 'context_user_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'image_size' => 'square',
+      'show_sections' => 1,
+      'show_description' => 1,
+      'tabs' => array(
+        'Favorite' => 'Favorite',
+        'Subscribed' => 'Subscribed',
+        'All' => 'All',
+      ),
+      'link_class' => 'btn',
+      'show_links' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-1'] = $pane;
+    $display->panels['contentmain'][0] = 'new-1';
+    $pane = new stdClass();
+    $pane->pid = 'new-2';
+    $pane->panel = 'sidebar';
+    $pane->type = 'oa_widgets_add_content';
+    $pane->subtype = 'oa_widgets_add_content';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'oa_widgets_types' => array(
+        'oa_space' => 'oa_space',
+        'oa_group' => 0,
+        'oa_discussion_post' => 0,
+        'oa_section' => 0,
+        'oa_team' => 0,
+        'oa_wiki_page' => 0,
+        'panopoly_page' => 0,
+      ),
+      'oa_widgets_use_all' => TRUE,
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-JNclXqFkTGRW8vjQ4NLRMiuJ9tXSQHmfnINyqY4fTT4',
+      'form_token' => 'isC-J5K3dQfeMpsBqZG_34ROSt8JFxt7s9-jtqd79pI',
+      'form_id' => 'oa_widgets_add_content_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-2'] = $pane;
+    $display->panels['sidebar'][0] = 'new-2';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-2';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['oa_spaces'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'space_members';
   $page->task = 'page';
   $page->admin_title = 'Space Members';
@@ -98,7 +231,7 @@ function oa_core_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
+    $pane->pid = 'new-3';
     $pane->panel = 'contentmain';
     $pane->type = 'oa_core_members_widget';
     $pane->subtype = 'oa_core_members_widget';
@@ -120,10 +253,10 @@ function oa_core_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['contentmain'][0] = 'new-1';
+    $display->content['new-3'] = $pane;
+    $display->panels['contentmain'][0] = 'new-3';
     $pane = new stdClass();
-    $pane->pid = 'new-2';
+    $pane->pid = 'new-4';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_core_add_member';
     $pane->subtype = 'oa_core_add_member';
@@ -138,10 +271,10 @@ function oa_core_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['sidebar'][0] = 'new-2';
+    $display->content['new-4'] = $pane;
+    $display->panels['sidebar'][0] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = 'new-3';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['space_members'] = $page;
@@ -219,7 +352,7 @@ function oa_core_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-3';
+    $pane->pid = 'new-5';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'oa_user_spaces-full';
@@ -253,8 +386,8 @@ function oa_core_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['contentmain'][0] = 'new-3';
+    $display->content['new-5'] = $pane;
+    $display->panels['contentmain'][0] = 'new-5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

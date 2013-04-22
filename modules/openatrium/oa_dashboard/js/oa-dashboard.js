@@ -10,12 +10,11 @@
       var $button = $('#toolbar-menu-button');
       var $navbar = $('#oa-navbar');
 
-console.log(settings.oa_toolbar_sticky);
       $(window).resize(function() {
-        if ($navbar.css('position') === 'static') {
+        if ($navbar.css('position') == 'static') {
           $('body').css('padding-top', '0');
         }
-        else if (settings.oa_toolbar_sticky === 1) {
+        else if (settings.oa_toolbar_sticky == 1) {
           $('body').css('padding-top', $navbar.height());
         }
       });

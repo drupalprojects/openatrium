@@ -6,7 +6,7 @@
  */
 
 define('SPACE_TAB_FAVORITE', 'Favorite');
-define('SPACE_TAB_ACTIVE', 'Active');
+define('SPACE_TAB_ACTIVE', 'Subscribed');
 define('SPACE_TAB_ALL', 'All');
 
 $plugin = array(
@@ -22,6 +22,7 @@ $plugin = array(
     'image_size' => 'square',
     'show_description' => TRUE,
     'show_sections' => TRUE,
+    'show_links' => TRUE,
     'link_class' => 'btn',
   ),
 );
@@ -36,6 +37,10 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
   }
   $user = $context->data;
   $vars = array();
+
+  $spaces = oa_core_get_public_spaces();
+  $spaces = node_load_multiple($spaces['node']);
+  $all_spaces = oa_core_build_space_display($spaces, $conf);
 
   $spaces = oa_core_get_user_spaces($user->uid);
   $spaces = node_load_multiple($spaces);
@@ -53,7 +58,7 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
     $vars['space_groups'][t(SPACE_TAB_ACTIVE)] = $active_spaces;
   }
   if ($conf['tabs'][SPACE_TAB_ALL]) {
-    $vars['space_groups'][t(SPACE_TAB_ALL)] = $active_spaces;
+    $vars['space_groups'][t(SPACE_TAB_ALL)] = $all_spaces;
   }
 
   $vars['title_tag'] = ($conf['show_description']) ? 'h4' : 'div';
@@ -80,16 +85,19 @@ function oa_core_build_space_display($spaces, $conf) {
     $vars[$space->nid]['title'] = $space->title;
 
     $alter = array(
-      'max_length' => 60,
+      'max_length' => 600,
       'word_boundary' => TRUE,
       'ellipsis' => TRUE,
       'html' => TRUE,
     );
     $vars[$space->nid]['href'] = url('node/' . $space->nid);
     $vars[$space->nid]['body'] = '';
+    $vars[$space->nid]['links'] = '';
     $vars[$space->nid]['sections'] = array();
 
-    $vars[$space->nid]['links'] = oa_core_user_spaces_get_links($space, $conf);
+    if ($conf['show_links']) {
+      $vars[$space->nid]['links'] = oa_core_user_spaces_get_links($space, $conf);
+    }
 
     if ($conf['show_description']) {
       $body = field_get_items('node', $space, 'body');
@@ -128,11 +136,12 @@ function oa_core_build_space_display($spaces, $conf) {
 
 function oa_core_user_spaces_get_links($space, $conf) {
   $display = array(
-    'settings' => array('field_name' => OA_SPACE_FIELD),
+    'settings' => array('field_name' => 'og_user_node'),
     'type' => 'og_group_subscribe',
   );
   $links = og_ui_field_formatter_view('node', $space, NULL, NULL, NULL, NULL, $display);
-  if (!empty($conf['link_class'])) {
+  $vars['links'] = array();
+  if (!empty($links) && !empty($conf['link_class'])) {
     foreach ($links as $key => $link) {
       $links[$key]['#attributes'] = array('class' => $conf['link_class']);
     }
@@ -177,6 +186,11 @@ function oa_core_user_spaces_edit_form($form, &$form_state) {
     '#default' => $conf['image_size'],
   );
 
+  $form['show_links'] = array(
+    '#title' => t('Show links'),
+    '#type' => 'checkbox',
+    '#default_value' => $conf['show_links'],
+  );
   $form['link_class'] = array(
     '#title' => t('CSS Link class'),
     '#type' => 'textfield',

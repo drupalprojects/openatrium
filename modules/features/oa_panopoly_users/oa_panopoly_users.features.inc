@@ -137,9 +137,11 @@ function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
             'show_sections' => 0,
             'tabs' => array(
               'Favorite' => 'Favorite',
-              'Active' => 'Active',
+              'Subscribed' => 'Subscribed',
               'All' => 0,
             ),
+            'link_class' => '',
+            'show_links' => 0,
           ),
           'cache' => array(),
           'style' => array(

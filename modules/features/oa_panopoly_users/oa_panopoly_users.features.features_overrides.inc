@@ -148,9 +148,11 @@ function oa_panopoly_users_features_override_default_overrides() {
         'show_sections' => 0,
         'tabs' => array(
           'Favorite' => 'Favorite',
-          'Active' => 'Active',
+          'Subscribed' => 'Subscribed',
           'All' => 0,
         ),
+        'link_class' => '',
+        'show_links' => 0,
       ),
       'cache' => array(),
       'style' => array(
