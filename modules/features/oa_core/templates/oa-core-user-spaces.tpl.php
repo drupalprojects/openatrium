@@ -14,24 +14,20 @@
  */
 ?>
 
-<div class="oa-spaces tabbable clearfix">
+<div class="oa-spaces tabbable clearfix <?php print $main_class;?>">
   <?php if (count($space_groups) > 1): ?>
     <ul class="nav nav-tabs">
-      <?php $active_class = 'active'; ?>
       <?php foreach ($space_groups as $category => $spaces): ?>
-        <li class='<?php print $active_class;?>'><a href="#<?php print 'tab-'.$category?>" data-toggle="tab">
+        <li class='<?php if ($category == $active) {print 'active';}?>'><a href="#<?php print 'tab-'.$category?>" data-toggle="tab">
           <?php print $category; ?>
-          <?php $active_class = ''; ?>
         </a></li>
       <?php endforeach; ?>
     </ul>
   <?php endif; ?>
   <div class="tab-content">
-    <?php $active_class = 'active'; ?>
     <?php foreach ($space_groups as $category => $spaces): ?>
-      <div class="tab-pane oa-list <?php print $active_class;?>" id="<?php print 'tab-'.$category; ?>">
-        <?php $active_class = ''; ?>
-        <?php foreach ($spaces as $id => $space): ?>
+      <div class="tab-pane <?php if ($category == $active) {print 'active';}?>" id="<?php print 'tab-'.$category; ?>">
+        <?php foreach ($spaces['spaces'] as $id => $space): ?>
           <?php $sections = !empty($space['sections']); ?>
           <div class="space clearfix space-<?php print $id; ?>">
             <a class="title" href="<?php print $space['href']; ?>">
@@ -58,6 +54,9 @@
             <?php endif; ?>
           </div>
         <?php endforeach; ?>
+        <?php if (!empty($spaces['pager'])): ?>
+          <?php print $spaces['pager']; ?>
+        <?php endif; ?>
       </div>
     <?php endforeach; ?>
   </div>

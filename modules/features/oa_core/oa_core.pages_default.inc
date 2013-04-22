@@ -60,6 +60,9 @@ function oa_core_default_page_manager_pages() {
       'sidebar' => NULL,
       'contentmain' => NULL,
     ),
+    'sidebar' => array(
+      'style' => 'oa_styles_oa_pane',
+    ),
   );
   $display->cache = array();
   $display->title = '';
@@ -87,6 +90,7 @@ function oa_core_default_page_manager_pages() {
       ),
       'link_class' => 'btn',
       'show_links' => 1,
+      'num_per_page' => '15',
     );
     $pane->cache = array();
     $pane->style = array(

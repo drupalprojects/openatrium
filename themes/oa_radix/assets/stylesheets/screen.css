@@ -17963,33 +17963,47 @@ div.tabs li.active a {
   padding-bottom: 15px;
   margin-bottom: 5px;
 }
-
+/* line 128, ../sass/_panel.scss */
+.pane-oa-core-user-spaces .space .pull-left img {
+  margin-right: 15px;
+}
+/* line 132, ../sass/_panel.scss */
+.pane-oa-core-user-spaces .member-sidebar {
+  margin-bottom: 15px;
+}
 /* line 134, ../sass/_panel.scss */
+.pane-oa-core-user-spaces .member-sidebar .space {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+/* line 145, ../sass/_panel.scss */
 .pane-oa-sidebar-search form {
   margin: 0;
 }
-/* line 137, ../sass/_panel.scss */
+/* line 148, ../sass/_panel.scss */
 .pane-oa-sidebar-search .input-append {
   box-sizing: border-box;
 }
-/* line 140, ../sass/_panel.scss */
+/* line 151, ../sass/_panel.scss */
 .pane-oa-sidebar-search .search-text {
   height: 32px;
   width: 80%;
   box-sizing: border-box;
 }
-/* line 145, ../sass/_panel.scss */
+/* line 156, ../sass/_panel.scss */
 .pane-oa-sidebar-search .submit {
   padding: 5px 0;
   width: 20%;
   box-sizing: border-box;
 }
-/* line 150, ../sass/_panel.scss */
+/* line 161, ../sass/_panel.scss */
 .pane-oa-sidebar-search .options {
   margin: 10px 0 0;
 }
 
-/* line 157, ../sass/_panel.scss */
+/* line 168, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-private {
   font-size: 16px;
   text-align: center;
@@ -17998,14 +18012,14 @@ div.tabs li.active a {
   border: 2px solid #b85652;
   padding: 5px;
 }
-/* line 164, ../sass/_panel.scss */
+/* line 175, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-private i {
   font-size: 24px;
   padding-right: 10px;
   line-height: 5px;
   color: #B33D3E;
 }
-/* line 171, ../sass/_panel.scss */
+/* line 182, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-header {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -18014,7 +18028,7 @@ div.tabs li.active a {
   margin: 15px 0 5px 0;
   padding: 3px 10px;
 }
-/* line 177, ../sass/_panel.scss */
+/* line 188, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-public {
   font-size: 16px;
   text-align: center;
@@ -18023,7 +18037,7 @@ div.tabs li.active a {
   border: 1px solid #bdff99;
   padding: 5px;
 }
-/* line 185, ../sass/_panel.scss */
+/* line 196, ../sass/_panel.scss */
 .pane-oa-widgets-content-visibility .oa-visibility-list {
   padding: 0 10px;
 }

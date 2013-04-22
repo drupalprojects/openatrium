@@ -24,6 +24,7 @@ $plugin = array(
     'show_sections' => TRUE,
     'show_links' => TRUE,
     'link_class' => 'btn',
+    'num_per_page' => 15,
   ),
 );
 
@@ -50,18 +51,44 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
   $spaces = node_load_multiple($spaces['ids']);
   $featured_spaces = oa_core_build_space_display($spaces, $conf);
 
+  $page = 0;
+  // set our maximum item per page
+  $num_per_page = $conf['num_per_page'];
   $vars['space_groups'] = array();
   if ($conf['tabs'][SPACE_TAB_FAVORITE] && !empty($featured_spaces)) {
-    $vars['space_groups'][t(SPACE_TAB_FAVORITE)] = $featured_spaces;
+    $vars['space_groups'][t(SPACE_TAB_FAVORITE)]['spaces'] = $featured_spaces;
   }
   if ($conf['tabs'][SPACE_TAB_ACTIVE] && !empty($active_spaces)) {
-    $vars['space_groups'][t(SPACE_TAB_ACTIVE)] = $active_spaces;
+    $vars['space_groups'][t(SPACE_TAB_ACTIVE)]['spaces'] = $active_spaces;
+    if (!$conf['tabs'][SPACE_TAB_ALL] && ($num_per_page > 0)) {
+      $active_spaces = array_slice($active_spaces, 0, $num_per_page);
+      $vars['space_groups'][t(SPACE_TAB_ACTIVE)]['pager'] =
+        l('See all', 'spaces', array(
+          'attributes' => array(
+            'class' => $conf['link_class'],
+        )));
+    }
   }
   if ($conf['tabs'][SPACE_TAB_ALL]) {
-    $vars['space_groups'][t(SPACE_TAB_ALL)] = $all_spaces;
-  }
+    // pager_find_page() will return the current page number
+    $page = pager_find_page();
+    // build the offset variable
+    $offset = $num_per_page * $page;
+    // initialize our pager
+    pager_default_initialize(count($all_spaces), $num_per_page);
 
+    $all_spaces = array_slice($all_spaces, $offset, $num_per_page);
+    $vars['space_groups'][t(SPACE_TAB_ALL)]['spaces'] = $all_spaces;
+    $vars['space_groups'][t(SPACE_TAB_ALL)]['pager'] = theme('pager');
+  }
+  if ($page > 0) {
+    $vars['active'] = SPACE_TAB_ALL;
+  }
+  else {
+    $vars['active'] = reset(array_keys($vars['space_groups']));
+  }
   $vars['title_tag'] = ($conf['show_description']) ? 'h4' : 'div';
+  $vars['main_class'] = ($conf['show_description']) ? 'member-full' : 'member-sidebar';
 
   $block = new stdClass();
   if (count($vars['space_groups']) == 1) {
@@ -206,6 +233,12 @@ function oa_core_user_spaces_edit_form($form, &$form_state) {
     '#title' => t('Show sections'),
     '#type' => 'checkbox',
     '#default_value' => $conf['show_sections'],
+  );
+  $form['num_per_page'] = array(
+    '#title' => t('Number per page'),
+    '#type' => 'textfield',
+    '#default_value' => $conf['num_per_page'],
+    '#description' => 'Number per page, zero for all.',
   );
 
   return $form;

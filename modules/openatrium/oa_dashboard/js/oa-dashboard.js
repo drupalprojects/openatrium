@@ -15,7 +15,7 @@
           $('body').css('padding-top', '0');
         }
         else if (settings.oa_toolbar_sticky == 1) {
-          $('body').css('padding-top', $navbar.height());
+          $('body').css('padding-top', $navbar.height() + 10);
         }
       });
       $(window).resize();
