@@ -26,12 +26,26 @@ function oa_core_add_member_render($subtype, $conf, $args, $context = NULL) {
   global $user;
   $space = $context->data;
 
-  $output = drupal_get_form('oa_core_add_member_form', $space);
+  $is_admin = ($user->uid == 1) ? TRUE : FALSE;
+  $members = oa_core_get_users_for_space($space->nid);
+  foreach ($members as $member) {
+    $roles = og_get_user_roles('node', $space->nid, $member->uid);
+    if (in_array(OG_ADMINISTRATOR_ROLE, $roles) || $member->uid == $space->uid) {
+      if ($member->uid == $user->uid) {
+        $is_admin = TRUE;
+      }
+    }
+  }
 
-  $block = new stdClass();
-  $block->title = t('Add Existing User');
-  $block->content = $output;
-  return $block;
+  if ($is_admin) {
+    $output = drupal_get_form('oa_core_add_member_form', $space);
+
+    $block = new stdClass();
+    $block->title = t('Add Existing User');
+    $block->content = $output;
+    return $block;
+  }
+  return;
 }
 
 /**
