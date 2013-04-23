@@ -25,15 +25,12 @@ function oa_core_form_alter(&$form, &$form_state, $form_id) {
 
   // We will execute also after LoginToboggan's function as it replaces the
   // original submit function from user module.
-
   switch ($form_id) {
     case 'user_register_form': // user register page
     case 'user_login': // user login page
       $form['#validate'][] = 'oa_core_login_validate';
       break;
-  }
 
-  switch ($form_id) {
     case 'user_profile_form': // one-time login, password reset
       if (isset($_GET['pass-reset-token'])) {
         // Redirect only from user_pass_reset
@@ -42,6 +39,10 @@ function oa_core_form_alter(&$form, &$form_state, $form_id) {
         $form['#submit'][] = 'oa_core_login_submit';
         break;
       }
+    case 'user_login_block':
+      $form['links']['#markup'] = '<span class="password-reset">' . t('If you forgot your password, ') .
+        l('request a new password.', 'user/password') . '</span>';
+      break;
   }
 }
 

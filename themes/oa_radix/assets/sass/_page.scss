@@ -4,3 +4,61 @@
 #main-wrapper {
   min-height: 600px;
 }
+
+body.oa-anon-home div.region-content {
+  background-image: url('../images/bg-splash.png');
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  min-height: 376px;
+
+  .pane-bundle-text:first-child {
+    margin-top: 220px;
+    width: 40%;
+    max-width: 481px;
+    text-align: center;
+    h3 {
+      font-size: 60px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 120%;
+    }
+  }
+}
+
+body.oa-anon-home div.content {
+  background-image: url('../images/tree-right.png');
+  margin-right: 100px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  min-height: 466px;
+  position: relative;
+  .oa-pane {
+    position: absolute;
+    left: 501px;
+    bottom: 0;
+    width: 40%;
+    .pane-user-login {
+      background-color: white;
+      h3 {
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 26px;
+      }
+      input.form-text {
+        width: 95%;
+      }
+      .form-type-password {
+        margin-bottom: 0;
+        input {
+          margin-bottom: 0;
+        }
+      }
+      .password-reset {
+        font-size: 90%;
+        color: #777;
+      }
+    }
+  }
+}
