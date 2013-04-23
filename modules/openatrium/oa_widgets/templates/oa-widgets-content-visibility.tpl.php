@@ -18,6 +18,7 @@
   <div class="oa-visibility-private">
     <i class="icon-lock"></i> <?php print t('Private'); ?>
   </div>
+  <?php if (!empty($accessors)): ?>
   <p><em><?php print t('Only members of these can see this page'); ?></em></p>
   <?php foreach ($accessors as $class => $accessor): ?>
     <?php if (!empty($accessor['links'])): ?>
@@ -31,4 +32,5 @@
       </div>
     <?php endif; ?>
   <?php endforeach ?>
+  <?php endif; ?>
 <?php endif ?>

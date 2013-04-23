@@ -28,31 +28,38 @@ function oa_widgets_content_visibility_render($subtype, $conf, $args, $context =
   $block->title = 'Content Visibility';
 
   $node = $context->data;
-  if ($node->type == OA_SECTION_TYPE) {
-    $section_node = $node;
+  if ($node->type == OA_SPACE_TYPE || $node->type == OA_GROUP_TYPE) {
+    $visibility = field_get_items('node', $node, 'group_access');
+    $vars['public'] = empty($visibility[0]['value']);
   }
   else {
-    $section_reference_field = field_get_items('node', $node, OA_SECTION_FIELD);
-    $section_node = node_load($section_reference_field[0]['target_id']);
-  }
-  $vars['public'] = oa_core_section_is_public($section_node);
 
-  if (!$vars['public']) {
-    $space_reference_field = field_get_items('node', $section_node, OA_SPACE_FIELD);
-    $space_node = node_load($space_reference_field[0]['target_id']);
+    if ($node->type == OA_SECTION_TYPE) {
+      $section_node = $node;
+    }
+    else {
+      $section_reference_field = field_get_items('node', $node, OA_SECTION_FIELD);
+      $section_node = node_load($section_reference_field[0]['target_id']);
+    }
+    $vars['public'] = oa_core_section_is_public($section_node);
 
-    $vars['accessors']['group'] = array(
-      'links' => oa_widgets_build_visibility_links('node', $section_node, OA_GROUP_FIELD),
-      'label' => t('Groups'),
-    );
-    $vars['accessors']['teams'] = array(
-      'links' => oa_widgets_build_visibility_links('node', $section_node, OA_TEAM_FIELD),
-      'label' => t('Teams'),
-    );
-    $vars['accessors']['users'] = array(
-      'links' => oa_widgets_build_visibility_links('user', $section_node, OA_USER_FIELD),
-      'label' => t('Additional Users'),
-    );
+    if (!$vars['public']) {
+      $space_reference_field = field_get_items('node', $section_node, OA_SPACE_FIELD);
+      $space_node = node_load($space_reference_field[0]['target_id']);
+
+      $vars['accessors']['group'] = array(
+        'links' => oa_widgets_build_visibility_links('node', $section_node, OA_GROUP_FIELD),
+        'label' => t('Groups'),
+      );
+      $vars['accessors']['teams'] = array(
+        'links' => oa_widgets_build_visibility_links('node', $section_node, OA_TEAM_FIELD),
+        'label' => t('Teams'),
+      );
+      $vars['accessors']['users'] = array(
+        'links' => oa_widgets_build_visibility_links('user', $section_node, OA_USER_FIELD),
+        'label' => t('Additional Users'),
+      );
+    }
   }
 
   $block->content = theme('oa_widgets_content_visibility', $vars);
