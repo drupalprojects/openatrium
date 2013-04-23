@@ -197,6 +197,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   }
 
   $current_section = !empty($_SESSION['oa_section_id']) ? $_SESSION['oa_section_id'] : 0;
+
   $home_name = t('Space home');
   $section_name = '';
   $section_url = '';
@@ -239,6 +240,10 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
         break;
       case OA_SPACE_TYPE:
         $section_name = $home_name;
+        $section_url = url('node/' . $node->nid);
+        break;
+      case OA_GROUP_TYPE:
+        $section_name = t('Group home');
         $section_url = url('node/' . $node->nid);
         break;
     }

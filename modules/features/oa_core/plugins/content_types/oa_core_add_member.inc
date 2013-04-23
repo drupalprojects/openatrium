@@ -65,6 +65,7 @@ function oa_core_add_member_form($form, &$form_state, $space) {
   ctools_form_include_file($form_state, drupal_get_path('module', 'oa_core') . '/plugins/content_types/oa_core_add_member.inc');
 
   $form['#space'] = $space;
+  $name = ($space->type == OA_SPACE_TYPE) ? t('space') : t('group');
 
   $form['name'] = array(
     '#type' => 'textfield',
@@ -74,7 +75,7 @@ function oa_core_add_member_form($form, &$form_state, $space) {
 
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Add to space'),
+    '#value' => t('Add to ') . $name,
   );
 
   return $form;

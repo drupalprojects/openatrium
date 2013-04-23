@@ -16,7 +16,7 @@
 
 <?php if (!empty($owners)): ?>
 <div class='clearfix well well-small owners'>
-  <h5>Space owners</h5>
+  <h5><?php print $owner_title?></h5>
   <?php foreach ($owners as $owner): ?>
     <?php if (empty($links['add-admin'])): ?>
       <div class='pull-left user-badge'>
@@ -71,7 +71,7 @@
         <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
           <ul>
             <li><?php print l(t('Dashboard'), $links['dashboard'] . $member['uid']); ?></li>
-            <li><?php print l(t('Remove from space'), $links['remove'] . $member['uid']); ?></li>
+            <li><?php print l(t('Remove from ') . $space_title, $links['remove'] . $member['uid']); ?></li>
             <li><?php print l(t('Add as Admin'), $links['add-admin'] . $member['uid']); ?></li>
           </ul>
         </div>

@@ -62,6 +62,9 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     $vars['see_all_link'] = '';
   }
 
+  $space_title = ($space->type == OA_SPACE_TYPE) ? t('Space') : t('Group');
+  $vars['space_title'] = $space_title;
+  $vars['owner_title'] = $space_title . t(' owners');
   $items = array(
     'teams' => $teams,
     'members' => $members,

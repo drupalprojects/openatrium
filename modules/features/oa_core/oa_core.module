@@ -245,10 +245,12 @@ function oa_core_preprocess_views_view_fields(&$vars) {
 /**
  * Replace "group" term in OG with "space"
  */
-function oa_core_replace_group(&$field) {
+function oa_core_replace_group(&$field, $context) {
   if (isset($field)) {
-    $field = str_replace(t('group'), t('space'), $field);
-    $field = str_replace(t('Group'), t('Space'), $field);
+    if (isset($context['entity']->type) && ($context['entity']->type == OA_SPACE_TYPE)) {
+      $field = str_replace(t('group'), t('space'), $field);
+      $field = str_replace(t('Group'), t('Space'), $field);
+    }
   }
 }
 
@@ -258,29 +260,12 @@ function oa_core_replace_group(&$field) {
 function oa_core_field_attach_view_alter(&$output, $context) {
   if ($context['entity_type'] == 'node') {
     if (!empty($output['group_group'][0]['#title'])) {
-      oa_core_replace_group($output['group_group'][0]['#title']);
+      oa_core_replace_group($output['group_group'][0]['#title'], $context);
     }
     if (!empty($output['group_group'][0]['#markup'])) {
-      oa_core_replace_group($output['group_group'][0]['#markup']);
+      oa_core_replace_group($output['group_group'][0]['#markup'], $context);
     }
   }
-}
-
-/**
- * Menu callback to remove user from group
- * @param  $group_type
- * @param  $gid
- * @param  $uid
- */
-function oa_core_remove_member($group_type, $gid, $uid) {
-  $account = user_load($uid);
-  $group = entity_load_single($group_type, $gid);
-  $label = entity_label($group_type, $group);
-  og_ungroup('node', $group->nid, 'user', $account);
-
-  drupal_set_message(t('%user has been removed from the space %title.', array('%user' => format_username($account), '%title' => $label)));
-  drupal_goto('node/' . $gid . '/members');
-  return;
 }
 
 /**
@@ -301,7 +286,34 @@ function oa_core_add_member($group_type, $gid, $uid, $goto = TRUE) {
 
   drupal_set_message(t('%user has been added to the space %title.', array('%user' => format_username($account), '%title' => $label)));
   if ($goto) {
+    if ($group->type == OA_SPACE_TYPE) {
+      drupal_goto('node/' . $gid . '/members');
+    }
+    else {
+      drupal_goto('node/' . $gid);
+    }
+  }
+  return;
+}
+
+/**
+ * Menu callback to remove user from group
+ * @param  $group_type
+ * @param  $gid
+ * @param  $uid
+ */
+function oa_core_remove_member($group_type, $gid, $uid) {
+  $account = user_load($uid);
+  $group = entity_load_single($group_type, $gid);
+  $label = entity_label($group_type, $group);
+  og_ungroup('node', $group->nid, 'user', $account);
+
+  drupal_set_message(t('%user has been removed from the space %title.', array('%user' => format_username($account), '%title' => $label)));
+  if ($group->type == OA_SPACE_TYPE) {
     drupal_goto('node/' . $gid . '/members');
+  }
+  else {
+    drupal_goto('node/' . $gid);
   }
   return;
 }
@@ -325,7 +337,12 @@ function oa_core_add_admin($group_type, $gid, $uid) {
 
     drupal_set_message(t('%user has been added as an Admin to the space %title.', array('%user' => format_username($account), '%title' => $label)));
   }
-  drupal_goto('node/' . $gid . '/members');
+  if ($group->type == OA_SPACE_TYPE) {
+    drupal_goto('node/' . $gid . '/members');
+  }
+  else {
+    drupal_goto('node/' . $gid);
+  }
   return;
 }
 
@@ -348,6 +365,11 @@ function oa_core_remove_admin($group_type, $gid, $uid) {
 
     drupal_set_message(t('%user has been removed as Admin of space %title.', array('%user' => format_username($account), '%title' => $label)));
   }
-  drupal_goto('node/' . $gid . '/members');
+  if ($group->type == OA_SPACE_TYPE) {
+    drupal_goto('node/' . $gid . '/members');
+  }
+  else {
+    drupal_goto('node/' . $gid);
+  }
   return;
 }

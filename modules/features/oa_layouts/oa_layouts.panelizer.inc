@@ -80,6 +80,9 @@ function oa_layouts_panelizer_defaults() {
       'context' => 'panelizer',
       'override_title' => 0,
       'override_title_text' => '',
+      'hide_owner' => 0,
+      'hide_teams' => 1,
+      'show_number' => '0',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -181,32 +184,6 @@ function oa_layouts_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-5';
     $pane->panel = 'sidebar';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:group_access';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'above',
-      'formatter' => 'list_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'panelizer',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['sidebar'][2] = 'new-5';
-    $pane = new stdClass();
-    $pane->pid = 'new-6';
-    $pane->panel = 'sidebar';
     $pane->type = 'node_links';
     $pane->subtype = 'node_links';
     $pane->shown = TRUE;
@@ -226,6 +203,24 @@ function oa_layouts_panelizer_defaults() {
     $pane->css = array(
       'css_class' => 'link-wrapper',
     );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['sidebar'][2] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'sidebar';
+    $pane->type = 'oa_core_add_member';
+    $pane->subtype = 'oa_core_add_member';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
