@@ -77,29 +77,31 @@ function oa_core_node_grants($account, $op) {
     // loop through each result to determine access to section
     $sections = $result->fetchCol(0);
 
-    // do a big complex query to grab all section access fields
-    // might be a way to merge this with the previous query
-    // but it makes my brain hurt
-    $query = db_select('node', 'n');
-    // we join with the Groups, Teams, Users fields
-    $query->leftJoin('field_data_field_oa_group_ref', 'o', "n.nid = o.entity_id AND o.entity_type = 'node'");
-    $query->leftJoin('field_data_field_oa_team_ref', 't', "n.nid = t.entity_id AND t.entity_type = 'node'");
-    $query->leftJoin('field_data_field_oa_user_ref', 'u', "n.nid = u.entity_id AND u.entity_type = 'node'");
-    $query
-      ->fields('n', array('nid'))
-      ->fields('o', array('field_oa_group_ref_target_id'))
-      ->fields('t', array('field_oa_team_ref_target_id'))
-      ->fields('u', array('field_oa_user_ref_target_id'))
-      ->condition('n.type', OA_SECTION_TYPE)
-      ->condition('n.nid', $sections, 'IN');
-    $result = $query->execute();
+    if (!empty($sections)) {
+      // do a big complex query to grab all section access fields
+      // might be a way to merge this with the previous query
+      // but it makes my brain hurt
+      $query = db_select('node', 'n');
+      // we join with the Groups, Teams, Users fields
+      $query->leftJoin('field_data_field_oa_group_ref', 'o', "n.nid = o.entity_id AND o.entity_type = 'node'");
+      $query->leftJoin('field_data_field_oa_team_ref', 't', "n.nid = t.entity_id AND t.entity_type = 'node'");
+      $query->leftJoin('field_data_field_oa_user_ref', 'u', "n.nid = u.entity_id AND u.entity_type = 'node'");
+      $query
+        ->fields('n', array('nid'))
+        ->fields('o', array('field_oa_group_ref_target_id'))
+        ->fields('t', array('field_oa_team_ref_target_id'))
+        ->fields('u', array('field_oa_user_ref_target_id'))
+        ->condition('n.type', OA_SECTION_TYPE)
+        ->condition('n.nid', $sections, 'IN');
+      $result = $query->execute();
 
-    while ($row = $result->fetchAssoc()) {
-      $sid = $row['nid'];
-      // only check detailed access for non-public sections
-      $access = oa_core_section_access($row, $member_spaces, $account);
-      if (($access == NODE_ACCESS_ALLOW) || ($access == NODE_ACCESS_IGNORE)) {
-        $grants[OA_ACCESS_REALM][] = $sid;
+      while ($row = $result->fetchAssoc()) {
+        $sid = $row['nid'];
+        // only check detailed access for non-public sections
+        $access = oa_core_section_access($row, $member_spaces, $account);
+        if (($access == NODE_ACCESS_ALLOW) || ($access == NODE_ACCESS_IGNORE)) {
+          $grants[OA_ACCESS_REALM][] = $sid;
+        }
       }
     }
   }
