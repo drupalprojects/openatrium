@@ -13,6 +13,42 @@
   margin-bottom: 0.5em;
 }
 
+#media-browser-tabset a.button,
+#media-browser-tabset input.form-submit {
+  @extend .btn;
+}
+#media-browser-tabset input.form-submit {
+  @extend .btn-primary;
+}
+form .btn {
+  width: auto;
+  height: inherit;
+}
+
+// undo media browser button styles from panopoly admin
+#modal-content .form-submit,
+#media-browser-tabset a.button,
+#media-browser-tabset form a.button,
+#media-browser-tabset input.form-submit,
+#media-browser-tabset form input.form-submit,
+#modal-content #edit-cancel {
+  @extend .btn;
+  height: auto;
+  font-weight: normal;
+  display: inline-block;
+  &:hover {
+    color: white;
+    background-color: #0044cc;
+    background-image: none;
+  }
+}
+
+#modal-content .form-submit,
+#media-browser-tabset input.form-submit,
+#media-browser-tabset form input.form-submit {
+  @extend .btn-primary;
+}
+
 #modal-content {
   .form-item {
     clear: both;
@@ -22,16 +58,33 @@
     -moz-box-shadow: none;
     box-shadow: none;
     margin-bottom: 0;
-    @extend .btn-primary;
-    &:hover {
-      color: white;
-      background-color: #0044cc;
-      background-image: none;
-    }
   }
-  #edit-cancel {
-    @extend .btn;
-  }
+}
+#media-tabs-wrapper ul.ui-tabs-nav {
+  margin-bottom: 0;
+}
+#media-tabs-wrapper .ui-tabs .ui-tabs-nav li.ui-state-default {
+
+}
+#media-tabs-wrapper .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+
+}
+#media-browser-tabset .views-exposed-form .views-submit-button {
+  margin-top: 30px;
+}
+#media-browser-tabset .views-exposed-form .views-exposed-widget {
+  margin-right: 0;
+}
+#media-browser-tabset #edit-filename-wrapper {
+  width: 200px;
+}
+#media-browser-tabset form select {
+  width: 100%;
+}
+
+#media-browser-tabset input.form-file,
+#media-browser-tabset span.file {
+  margin-right: 10px;
 }
 
 #node-edit .burr-flipped-sidebar .panel-pane {

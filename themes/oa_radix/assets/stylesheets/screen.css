@@ -1898,11 +1898,23 @@ select:focus:invalid:focus {
 /* line 466, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on,
 .input-append .btn,
+.input-append #media-browser-tabset a.button,
+#media-browser-tabset .input-append a.button,
+.input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-append input.form-submit,
+.input-append #modal-content .form-submit,
+#modal-content .input-append .form-submit,
 .input-append #modal-content #edit-cancel,
 #modal-content .input-append #edit-cancel,
 .input-append .btn-group > .dropdown-toggle,
 .input-prepend .add-on,
 .input-prepend .btn,
+.input-prepend #media-browser-tabset a.button,
+#media-browser-tabset .input-prepend a.button,
+.input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend input.form-submit,
+.input-prepend #modal-content .form-submit,
+#modal-content .input-prepend .form-submit,
 .input-prepend #modal-content #edit-cancel,
 #modal-content .input-prepend #edit-cancel,
 .input-prepend .btn-group > .dropdown-toggle {
@@ -1921,6 +1933,12 @@ select:focus:invalid:focus {
 /* line 478, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend .add-on,
 .input-prepend .btn,
+.input-prepend #media-browser-tabset a.button,
+#media-browser-tabset .input-prepend a.button,
+.input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend input.form-submit,
+.input-prepend #modal-content .form-submit,
+#modal-content .input-prepend .form-submit,
 .input-prepend #modal-content #edit-cancel,
 #modal-content .input-prepend #edit-cancel {
   margin-right: -1px;
@@ -1928,6 +1946,12 @@ select:focus:invalid:focus {
 /* line 482, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend .add-on:first-child,
 .input-prepend .btn:first-child,
+.input-prepend #media-browser-tabset a.button:first-child,
+#media-browser-tabset .input-prepend a.button:first-child,
+.input-prepend #media-browser-tabset input.form-submit:first-child,
+#media-browser-tabset .input-prepend input.form-submit:first-child,
+.input-prepend #modal-content .form-submit:first-child,
+#modal-content .input-prepend .form-submit:first-child,
 .input-prepend #modal-content #edit-cancel:first-child,
 #modal-content .input-prepend #edit-cancel:first-child {
   -webkit-border-radius: 4px 0 0 4px;
@@ -1944,11 +1968,27 @@ select:focus:invalid:focus {
   border-radius: 4px 0 0 4px;
 }
 /* line 493, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.input-append input + .btn-group .btn:last-child, .input-append input + .btn-group #modal-content #edit-cancel:last-child, #modal-content .input-append input + .btn-group #edit-cancel:last-child,
+.input-append input + .btn-group .btn:last-child, .input-append input + .btn-group #media-browser-tabset a.button:last-child, #media-browser-tabset .input-append input + .btn-group a.button:last-child,
+.input-append input + .btn-group #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-append input + .btn-group input.form-submit:last-child, .input-append input + .btn-group #modal-content .form-submit:last-child, #modal-content .input-append input + .btn-group .form-submit:last-child,
+.input-append input + .btn-group #modal-content #edit-cancel:last-child,
+#modal-content .input-append input + .btn-group #edit-cancel:last-child,
 .input-append select + .btn-group .btn:last-child,
+.input-append select + .btn-group #media-browser-tabset a.button:last-child,
+#media-browser-tabset .input-append select + .btn-group a.button:last-child,
+.input-append select + .btn-group #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-append select + .btn-group input.form-submit:last-child,
+.input-append select + .btn-group #modal-content .form-submit:last-child,
+#modal-content .input-append select + .btn-group .form-submit:last-child,
 .input-append select + .btn-group #modal-content #edit-cancel:last-child,
 #modal-content .input-append select + .btn-group #edit-cancel:last-child,
 .input-append .uneditable-input + .btn-group .btn:last-child,
+.input-append .uneditable-input + .btn-group #media-browser-tabset a.button:last-child,
+#media-browser-tabset .input-append .uneditable-input + .btn-group a.button:last-child,
+.input-append .uneditable-input + .btn-group #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-append .uneditable-input + .btn-group input.form-submit:last-child,
+.input-append .uneditable-input + .btn-group #modal-content .form-submit:last-child,
+#modal-content .input-append .uneditable-input + .btn-group .form-submit:last-child,
 .input-append .uneditable-input + .btn-group #modal-content #edit-cancel:last-child,
 #modal-content .input-append .uneditable-input + .btn-group #edit-cancel:last-child {
   -webkit-border-radius: 0 4px 4px 0;
@@ -1958,6 +1998,12 @@ select:focus:invalid:focus {
 /* line 499, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on,
 .input-append .btn,
+.input-append #media-browser-tabset a.button,
+#media-browser-tabset .input-append a.button,
+.input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-append input.form-submit,
+.input-append #modal-content .form-submit,
+#modal-content .input-append .form-submit,
 .input-append #modal-content #edit-cancel,
 #modal-content .input-append #edit-cancel,
 .input-append .btn-group {
@@ -1966,6 +2012,12 @@ select:focus:invalid:focus {
 /* line 504, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on:last-child,
 .input-append .btn:last-child,
+.input-append #media-browser-tabset a.button:last-child,
+#media-browser-tabset .input-append a.button:last-child,
+.input-append #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-append input.form-submit:last-child,
+.input-append #modal-content .form-submit:last-child,
+#modal-content .input-append .form-submit:last-child,
 .input-append #modal-content #edit-cancel:last-child,
 #modal-content .input-append #edit-cancel:last-child,
 .input-append .btn-group:last-child > .dropdown-toggle {
@@ -1983,11 +2035,27 @@ select:focus:invalid:focus {
   border-radius: 0;
 }
 /* line 515, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.input-prepend.input-append input + .btn-group .btn, .input-prepend.input-append input + .btn-group #modal-content #edit-cancel, #modal-content .input-prepend.input-append input + .btn-group #edit-cancel,
+.input-prepend.input-append input + .btn-group .btn, .input-prepend.input-append input + .btn-group #media-browser-tabset a.button, #media-browser-tabset .input-prepend.input-append input + .btn-group a.button,
+.input-prepend.input-append input + .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend.input-append input + .btn-group input.form-submit, .input-prepend.input-append input + .btn-group #modal-content .form-submit, #modal-content .input-prepend.input-append input + .btn-group .form-submit,
+.input-prepend.input-append input + .btn-group #modal-content #edit-cancel,
+#modal-content .input-prepend.input-append input + .btn-group #edit-cancel,
 .input-prepend.input-append select + .btn-group .btn,
+.input-prepend.input-append select + .btn-group #media-browser-tabset a.button,
+#media-browser-tabset .input-prepend.input-append select + .btn-group a.button,
+.input-prepend.input-append select + .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend.input-append select + .btn-group input.form-submit,
+.input-prepend.input-append select + .btn-group #modal-content .form-submit,
+#modal-content .input-prepend.input-append select + .btn-group .form-submit,
 .input-prepend.input-append select + .btn-group #modal-content #edit-cancel,
 #modal-content .input-prepend.input-append select + .btn-group #edit-cancel,
 .input-prepend.input-append .uneditable-input + .btn-group .btn,
+.input-prepend.input-append .uneditable-input + .btn-group #media-browser-tabset a.button,
+#media-browser-tabset .input-prepend.input-append .uneditable-input + .btn-group a.button,
+.input-prepend.input-append .uneditable-input + .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend.input-append .uneditable-input + .btn-group input.form-submit,
+.input-prepend.input-append .uneditable-input + .btn-group #modal-content .form-submit,
+#modal-content .input-prepend.input-append .uneditable-input + .btn-group .form-submit,
 .input-prepend.input-append .uneditable-input + .btn-group #modal-content #edit-cancel,
 #modal-content .input-prepend.input-append .uneditable-input + .btn-group #edit-cancel {
   -webkit-border-radius: 0 4px 4px 0;
@@ -1997,6 +2065,12 @@ select:focus:invalid:focus {
 /* line 520, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend.input-append .add-on:first-child,
 .input-prepend.input-append .btn:first-child,
+.input-prepend.input-append #media-browser-tabset a.button:first-child,
+#media-browser-tabset .input-prepend.input-append a.button:first-child,
+.input-prepend.input-append #media-browser-tabset input.form-submit:first-child,
+#media-browser-tabset .input-prepend.input-append input.form-submit:first-child,
+.input-prepend.input-append #modal-content .form-submit:first-child,
+#modal-content .input-prepend.input-append .form-submit:first-child,
 .input-prepend.input-append #modal-content #edit-cancel:first-child,
 #modal-content .input-prepend.input-append #edit-cancel:first-child {
   margin-right: -1px;
@@ -2007,6 +2081,12 @@ select:focus:invalid:focus {
 /* line 525, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend.input-append .add-on:last-child,
 .input-prepend.input-append .btn:last-child,
+.input-prepend.input-append #media-browser-tabset a.button:last-child,
+#media-browser-tabset .input-prepend.input-append a.button:last-child,
+.input-prepend.input-append #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-prepend.input-append input.form-submit:last-child,
+.input-prepend.input-append #modal-content .form-submit:last-child,
+#modal-content .input-prepend.input-append .form-submit:last-child,
 .input-prepend.input-append #modal-content #edit-cancel:last-child,
 #modal-content .input-prepend.input-append #edit-cancel:last-child {
   margin-left: -1px;
@@ -2049,7 +2129,11 @@ input.search-query {
 }
 
 /* line 557, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.form-search .input-append .btn, .form-search .input-append #modal-content #edit-cancel, #modal-content .form-search .input-append #edit-cancel {
+.form-search .input-append .btn, .form-search .input-append #media-browser-tabset a.button, #media-browser-tabset .form-search .input-append a.button,
+.form-search .input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset .form-search .input-append input.form-submit, .form-search .input-append #modal-content .form-submit, #modal-content .form-search .input-append .form-submit,
+.form-search .input-append #modal-content #edit-cancel,
+#modal-content .form-search .input-append #edit-cancel {
   -webkit-border-radius: 0 14px 14px 0;
   -moz-border-radius: 0 14px 14px 0;
   border-radius: 0 14px 14px 0;
@@ -2063,7 +2147,11 @@ input.search-query {
 }
 
 /* line 563, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.form-search .input-prepend .btn, .form-search .input-prepend #modal-content #edit-cancel, #modal-content .form-search .input-prepend #edit-cancel {
+.form-search .input-prepend .btn, .form-search .input-prepend #media-browser-tabset a.button, #media-browser-tabset .form-search .input-prepend a.button,
+.form-search .input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset .form-search .input-prepend input.form-submit, .form-search .input-prepend #modal-content .form-submit, #modal-content .form-search .input-prepend .form-submit,
+.form-search .input-prepend #modal-content #edit-cancel,
+#modal-content .form-search .input-prepend #edit-cancel {
   -webkit-border-radius: 14px 0 0 14px;
   -moz-border-radius: 14px 0 0 14px;
   border-radius: 14px 0 0 14px;
@@ -3563,7 +3651,11 @@ button.close {
 }
 
 /* line 13, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn, #modal-content #edit-cancel {
+.btn, #media-browser-tabset a.button,
+#media-browser-tabset input.form-submit, #modal-content .form-submit,
+#media-browser-tabset form a.button,
+#media-browser-tabset form input.form-submit,
+#modal-content #edit-cancel {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -3601,21 +3693,39 @@ button.close {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:hover, #modal-content #edit-cancel:hover, .btn:active, #modal-content #edit-cancel:active, .btn.active, #modal-content .active#edit-cancel, .btn.disabled, #modal-content .disabled#edit-cancel, .btn[disabled], #modal-content [disabled]#edit-cancel {
+.btn:hover, #media-browser-tabset a.button:hover,
+#media-browser-tabset input.form-submit:hover, #modal-content .form-submit:hover,
+#modal-content #edit-cancel:hover, .btn:active, #media-browser-tabset a.button:active,
+#media-browser-tabset input.form-submit:active, #modal-content .form-submit:active,
+#modal-content #edit-cancel:active, .btn.active, #media-browser-tabset a.active.button,
+#media-browser-tabset input.active.form-submit, #modal-content .active.form-submit,
+#modal-content .active#edit-cancel, .btn.disabled, #media-browser-tabset a.disabled.button,
+#media-browser-tabset input.disabled.form-submit, #modal-content .disabled.form-submit,
+#modal-content .disabled#edit-cancel, .btn[disabled], #media-browser-tabset a[disabled].button,
+#media-browser-tabset input[disabled].form-submit, #modal-content [disabled].form-submit,
+#modal-content [disabled]#edit-cancel {
   color: #333333;
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
 /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:active, #modal-content #edit-cancel:active, .btn.active, #modal-content .active#edit-cancel {
+.btn:active, #media-browser-tabset a.button:active,
+#media-browser-tabset input.form-submit:active, #modal-content .form-submit:active,
+#modal-content #edit-cancel:active, .btn.active, #media-browser-tabset a.active.button,
+#media-browser-tabset input.active.form-submit, #modal-content .active.form-submit,
+#modal-content .active#edit-cancel {
   background-color: #cccccc \9;
 }
 /* line 61, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:first-child, #modal-content #edit-cancel:first-child {
+.btn:first-child, #media-browser-tabset a.button:first-child,
+#media-browser-tabset input.form-submit:first-child, #modal-content .form-submit:first-child,
+#modal-content #edit-cancel:first-child {
   *margin-left: 0;
 }
 /* line 32, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn:hover, #modal-content #edit-cancel:hover {
+.btn:hover, #media-browser-tabset a.button:hover,
+#media-browser-tabset input.form-submit:hover, #modal-content .form-submit:hover,
+#modal-content #edit-cancel:hover {
   color: #333333;
   text-decoration: none;
   background-position: 0 -15px;
@@ -3625,13 +3735,19 @@ button.close {
   transition: background-position 0.1s linear;
 }
 /* line 43, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn:focus, #modal-content #edit-cancel:focus {
+.btn:focus, #media-browser-tabset a.button:focus,
+#media-browser-tabset input.form-submit:focus, #modal-content .form-submit:focus,
+#modal-content #edit-cancel:focus {
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 49, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn.active, #modal-content .active#edit-cancel, .btn:active, #modal-content #edit-cancel:active {
+.btn.active, #media-browser-tabset a.active.button,
+#media-browser-tabset input.active.form-submit, #modal-content .active.form-submit,
+#modal-content .active#edit-cancel, .btn:active, #media-browser-tabset a.button:active,
+#media-browser-tabset input.form-submit:active, #modal-content .form-submit:active,
+#modal-content #edit-cancel:active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -3639,7 +3755,11 @@ button.close {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 57, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn.disabled, #modal-content .disabled#edit-cancel, .btn[disabled], #modal-content [disabled]#edit-cancel {
+.btn.disabled, #media-browser-tabset a.disabled.button,
+#media-browser-tabset input.disabled.form-submit, #modal-content .disabled.form-submit,
+#modal-content .disabled#edit-cancel, .btn[disabled], #media-browser-tabset a[disabled].button,
+#media-browser-tabset input[disabled].form-submit, #modal-content [disabled].form-submit,
+#modal-content [disabled]#edit-cancel {
   cursor: default;
   background-image: none;
   opacity: 0.65;
@@ -3718,7 +3838,7 @@ input[type="button"].btn-block {
 }
 
 /* line 141, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active,
+.btn-primary.active, #media-browser-tabset input.active.form-submit, #modal-content .active.form-submit, #node-edit .form-actions input.active,
 .btn-warning.active,
 .btn-danger.active,
 .btn-success.active,
@@ -3728,13 +3848,18 @@ input[type="button"].btn-block {
 }
 
 /* line 147, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn, #modal-content #edit-cancel {
+.btn, #media-browser-tabset a.button,
+#media-browser-tabset input.form-submit, #modal-content .form-submit,
+#media-browser-tabset form a.button,
+#media-browser-tabset form input.form-submit,
+#modal-content #edit-cancel {
   border-color: #c5c5c5;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
 }
 
 /* line 152, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary, #modal-content .form-submit, #node-edit .form-actions input {
+.btn-primary, #media-browser-tabset input.form-submit, #modal-content .form-submit,
+#media-browser-tabset form input.form-submit, #node-edit .form-actions input {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #006ecc;
@@ -3752,13 +3877,13 @@ input[type="button"].btn-block {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn-primary:hover, #modal-content .form-submit:hover, #node-edit .form-actions input:hover, .btn-primary:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active, .btn-primary.disabled, #modal-content .disabled.form-submit, #node-edit .form-actions input.disabled, .btn-primary[disabled], #modal-content [disabled].form-submit, #node-edit .form-actions input[disabled] {
+.btn-primary:hover, #media-browser-tabset input.form-submit:hover, #modal-content .form-submit:hover, #node-edit .form-actions input:hover, .btn-primary:active, #media-browser-tabset input.form-submit:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #media-browser-tabset input.active.form-submit, #modal-content .active.form-submit, #node-edit .form-actions input.active, .btn-primary.disabled, #media-browser-tabset input.disabled.form-submit, #modal-content .disabled.form-submit, #node-edit .form-actions input.disabled, .btn-primary[disabled], #media-browser-tabset input[disabled].form-submit, #modal-content [disabled].form-submit, #node-edit .form-actions input[disabled] {
   color: white;
   background-color: #0044cc;
   *background-color: #003bb3;
 }
 /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn-primary:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active {
+.btn-primary:active, #media-browser-tabset input.form-submit:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #media-browser-tabset input.active.form-submit, #modal-content .active.form-submit, #node-edit .form-actions input.active {
   background-color: #003399 \9;
 }
 
@@ -3908,36 +4033,51 @@ input[type="button"].btn-block {
 }
 
 /* line 181, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn, #modal-content button#edit-cancel,
+button.btn, #modal-content button.form-submit,
+#modal-content button#edit-cancel,
 input[type="submit"].btn,
+#media-browser-tabset input[type="submit"].form-submit,
+#modal-content input[type="submit"].form-submit,
 #modal-content input[type="submit"]#edit-cancel {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
 /* line 184, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn::-moz-focus-inner, #modal-content button#edit-cancel::-moz-focus-inner,
+button.btn::-moz-focus-inner, #modal-content button.form-submit::-moz-focus-inner,
+#modal-content button#edit-cancel::-moz-focus-inner,
 input[type="submit"].btn::-moz-focus-inner,
+#media-browser-tabset input[type="submit"].form-submit::-moz-focus-inner,
+#modal-content input[type="submit"].form-submit::-moz-focus-inner,
 #modal-content input[type="submit"]#edit-cancel::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 /* line 193, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-large, #modal-content button.btn-large#edit-cancel,
+button.btn.btn-large, #modal-content button.btn-large.form-submit,
+#modal-content button.btn-large#edit-cancel,
 input[type="submit"].btn.btn-large,
+#media-browser-tabset input[type="submit"].btn-large.form-submit,
+#modal-content input[type="submit"].btn-large.form-submit,
 #modal-content input[type="submit"].btn-large#edit-cancel {
   *padding-top: 7px;
   *padding-bottom: 7px;
 }
 /* line 197, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-small, #modal-content button.btn-small#edit-cancel,
+button.btn.btn-small, #modal-content button.btn-small.form-submit,
+#modal-content button.btn-small#edit-cancel,
 input[type="submit"].btn.btn-small,
+#media-browser-tabset input[type="submit"].btn-small.form-submit,
+#modal-content input[type="submit"].btn-small.form-submit,
 #modal-content input[type="submit"].btn-small#edit-cancel {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
 /* line 201, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-mini, #modal-content button.btn-mini#edit-cancel,
+button.btn.btn-mini, #modal-content button.btn-mini.form-submit,
+#modal-content button.btn-mini#edit-cancel,
 input[type="submit"].btn.btn-mini,
+#media-browser-tabset input[type="submit"].btn-mini.form-submit,
+#modal-content input[type="submit"].btn-mini.form-submit,
 #modal-content input[type="submit"].btn-mini#edit-cancel {
   *padding-top: 1px;
   *padding-bottom: 1px;
@@ -4005,16 +4145,56 @@ input[type="submit"].btn.btn-mini,
   margin-bottom: 10px;
 }
 /* line 29, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-toolbar > .btn + .btn, #modal-content .btn-toolbar > #edit-cancel + .btn, #modal-content .btn-toolbar > .btn + #edit-cancel, #modal-content .btn-toolbar > #edit-cancel + #edit-cancel,
+.btn-toolbar > .btn + .btn, #media-browser-tabset .btn-toolbar > a.button + .btn,
+#media-browser-tabset .btn-toolbar > input.form-submit + .btn, #modal-content .btn-toolbar > .form-submit + .btn,
+#modal-content .btn-toolbar > #edit-cancel + .btn, #media-browser-tabset .btn-toolbar > .btn + a.button, #media-browser-tabset .btn-toolbar > a.button + a.button,
+#media-browser-tabset .btn-toolbar > input.form-submit + a.button, #modal-content #media-browser-tabset .btn-toolbar > .form-submit + a.button, #media-browser-tabset #modal-content .btn-toolbar > .form-submit + a.button,
+#media-browser-tabset form .btn-toolbar > a.button + a.button,
+#media-browser-tabset form .btn-toolbar > input.form-submit + a.button,
+#modal-content #media-browser-tabset .btn-toolbar > #edit-cancel + a.button,
+#media-browser-tabset #modal-content .btn-toolbar > #edit-cancel + a.button,
+#media-browser-tabset .btn-toolbar > .btn + input.form-submit,
+#media-browser-tabset .btn-toolbar > a.button + input.form-submit,
+#media-browser-tabset .btn-toolbar > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-toolbar > .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .btn-toolbar > .form-submit + input.form-submit,
+#media-browser-tabset form .btn-toolbar > a.button + input.form-submit,
+#media-browser-tabset form .btn-toolbar > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-toolbar > #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .btn-toolbar > #edit-cancel + input.form-submit, #modal-content .btn-toolbar > .btn + .form-submit, #media-browser-tabset #modal-content .btn-toolbar > a.button + .form-submit, #modal-content #media-browser-tabset .btn-toolbar > a.button + .form-submit,
+#media-browser-tabset #modal-content .btn-toolbar > input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .btn-toolbar > input.form-submit + .form-submit, #modal-content .btn-toolbar > .form-submit + .form-submit,
+#modal-content .btn-toolbar > #edit-cancel + .form-submit,
+#media-browser-tabset form .btn-toolbar > a.button + a.button,
+#media-browser-tabset form .btn-toolbar > input.form-submit + a.button,
+#media-browser-tabset form .btn-toolbar > input.form-submit + a.button,
+#media-browser-tabset form .btn-toolbar > a.button + input.form-submit,
+#media-browser-tabset form .btn-toolbar > input.form-submit + input.form-submit,
+#media-browser-tabset form .btn-toolbar > a.button + input.form-submit,
+#modal-content .btn-toolbar > .btn + #edit-cancel,
+#media-browser-tabset #modal-content .btn-toolbar > a.button + #edit-cancel,
+#modal-content #media-browser-tabset .btn-toolbar > a.button + #edit-cancel,
+#media-browser-tabset #modal-content .btn-toolbar > input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .btn-toolbar > input.form-submit + #edit-cancel,
+#modal-content .btn-toolbar > .form-submit + #edit-cancel,
+#modal-content .btn-toolbar > #edit-cancel + #edit-cancel,
 .btn-toolbar > .btn-group + .btn,
+#media-browser-tabset .btn-toolbar > .btn-group + a.button,
+#media-browser-tabset .btn-toolbar > .btn-group + input.form-submit,
+#modal-content .btn-toolbar > .btn-group + .form-submit,
 #modal-content .btn-toolbar > .btn-group + #edit-cancel,
 .btn-toolbar > .btn + .btn-group,
+#media-browser-tabset .btn-toolbar > a.button + .btn-group,
+#media-browser-tabset .btn-toolbar > input.form-submit + .btn-group,
+#modal-content .btn-toolbar > .form-submit + .btn-group,
 #modal-content .btn-toolbar > #edit-cancel + .btn-group {
   margin-left: 5px;
 }
 
 /* line 35, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn, #modal-content .btn-group > #edit-cancel {
+.btn-group > .btn, #media-browser-tabset .btn-group > a.button,
+#media-browser-tabset .btn-group > input.form-submit, #modal-content .btn-group > .form-submit,
+#modal-content .btn-group > #edit-cancel {
   position: relative;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -4022,12 +4202,46 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 39, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn + .btn, #modal-content .btn-group > #edit-cancel + .btn, #modal-content .btn-group > .btn + #edit-cancel, #modal-content .btn-group > #edit-cancel + #edit-cancel {
+.btn-group > .btn + .btn, #media-browser-tabset .btn-group > a.button + .btn,
+#media-browser-tabset .btn-group > input.form-submit + .btn, #modal-content .btn-group > .form-submit + .btn,
+#modal-content .btn-group > #edit-cancel + .btn, #media-browser-tabset .btn-group > .btn + a.button, #media-browser-tabset .btn-group > a.button + a.button,
+#media-browser-tabset .btn-group > input.form-submit + a.button, #modal-content #media-browser-tabset .btn-group > .form-submit + a.button, #media-browser-tabset #modal-content .btn-group > .form-submit + a.button,
+#media-browser-tabset form .btn-group > a.button + a.button,
+#media-browser-tabset form .btn-group > input.form-submit + a.button,
+#modal-content #media-browser-tabset .btn-group > #edit-cancel + a.button,
+#media-browser-tabset #modal-content .btn-group > #edit-cancel + a.button,
+#media-browser-tabset .btn-group > .btn + input.form-submit,
+#media-browser-tabset .btn-group > a.button + input.form-submit,
+#media-browser-tabset .btn-group > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-group > .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .btn-group > .form-submit + input.form-submit,
+#media-browser-tabset form .btn-group > a.button + input.form-submit,
+#media-browser-tabset form .btn-group > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-group > #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .btn-group > #edit-cancel + input.form-submit, #modal-content .btn-group > .btn + .form-submit, #media-browser-tabset #modal-content .btn-group > a.button + .form-submit, #modal-content #media-browser-tabset .btn-group > a.button + .form-submit,
+#media-browser-tabset #modal-content .btn-group > input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .btn-group > input.form-submit + .form-submit, #modal-content .btn-group > .form-submit + .form-submit,
+#modal-content .btn-group > #edit-cancel + .form-submit,
+#media-browser-tabset form .btn-group > a.button + a.button,
+#media-browser-tabset form .btn-group > input.form-submit + a.button,
+#media-browser-tabset form .btn-group > input.form-submit + a.button,
+#media-browser-tabset form .btn-group > a.button + input.form-submit,
+#media-browser-tabset form .btn-group > input.form-submit + input.form-submit,
+#media-browser-tabset form .btn-group > a.button + input.form-submit,
+#modal-content .btn-group > .btn + #edit-cancel,
+#media-browser-tabset #modal-content .btn-group > a.button + #edit-cancel,
+#modal-content #media-browser-tabset .btn-group > a.button + #edit-cancel,
+#media-browser-tabset #modal-content .btn-group > input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .btn-group > input.form-submit + #edit-cancel,
+#modal-content .btn-group > .form-submit + #edit-cancel,
+#modal-content .btn-group > #edit-cancel + #edit-cancel {
   margin-left: -1px;
 }
 
 /* line 44, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn, #modal-content .btn-group > #edit-cancel,
+.btn-group > .btn, #media-browser-tabset .btn-group > a.button,
+#media-browser-tabset .btn-group > input.form-submit, #modal-content .btn-group > .form-submit,
+#modal-content .btn-group > #edit-cancel,
 .btn-group > .dropdown-menu,
 .btn-group > .popover {
   font-size: 14px;
@@ -4049,7 +4263,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 60, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child, #modal-content .btn-group > #edit-cancel:first-child {
+.btn-group > .btn:first-child, #media-browser-tabset .btn-group > a.button:first-child,
+#media-browser-tabset .btn-group > input.form-submit:first-child, #modal-content .btn-group > .form-submit:first-child,
+#modal-content .btn-group > #edit-cancel:first-child {
   margin-left: 0;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topleft: 4px;
@@ -4060,7 +4276,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 67, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child, #modal-content .btn-group > #edit-cancel:last-child,
+.btn-group > .btn:last-child, #media-browser-tabset .btn-group > a.button:last-child,
+#media-browser-tabset .btn-group > input.form-submit:last-child, #modal-content .btn-group > .form-submit:last-child,
+#modal-content .btn-group > #edit-cancel:last-child,
 .btn-group > .dropdown-toggle {
   -webkit-border-top-right-radius: 4px;
   -moz-border-radius-topright: 4px;
@@ -4071,7 +4289,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 72, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn.large:first-child, #modal-content .btn-group > .large#edit-cancel:first-child {
+.btn-group > .btn.large:first-child, #media-browser-tabset .btn-group > a.large.button:first-child,
+#media-browser-tabset .btn-group > input.large.form-submit:first-child, #modal-content .btn-group > .large.form-submit:first-child,
+#modal-content .btn-group > .large#edit-cancel:first-child {
   margin-left: 0;
   -webkit-border-top-left-radius: 6px;
   -moz-border-radius-topleft: 6px;
@@ -4082,7 +4302,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 78, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn.large:last-child, #modal-content .btn-group > .large#edit-cancel:last-child,
+.btn-group > .btn.large:last-child, #media-browser-tabset .btn-group > a.large.button:last-child,
+#media-browser-tabset .btn-group > input.large.form-submit:last-child, #modal-content .btn-group > .large.form-submit:last-child,
+#modal-content .btn-group > .large#edit-cancel:last-child,
 .btn-group > .large.dropdown-toggle {
   -webkit-border-top-right-radius: 6px;
   -moz-border-radius-topright: 6px;
@@ -4093,12 +4315,23 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 87, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:hover, #modal-content .btn-group > #edit-cancel:hover,
+.btn-group > .btn:hover, #media-browser-tabset .btn-group > a.button:hover,
+#media-browser-tabset .btn-group > input.form-submit:hover, #modal-content .btn-group > .form-submit:hover,
+#modal-content .btn-group > #edit-cancel:hover,
 .btn-group > .btn:focus,
+#media-browser-tabset .btn-group > a.button:focus,
+#media-browser-tabset .btn-group > input.form-submit:focus,
+#modal-content .btn-group > .form-submit:focus,
 #modal-content .btn-group > #edit-cancel:focus,
 .btn-group > .btn:active,
+#media-browser-tabset .btn-group > a.button:active,
+#media-browser-tabset .btn-group > input.form-submit:active,
+#modal-content .btn-group > .form-submit:active,
 #modal-content .btn-group > #edit-cancel:active,
 .btn-group > .btn.active,
+#media-browser-tabset .btn-group > a.active.button,
+#media-browser-tabset .btn-group > input.active.form-submit,
+#modal-content .btn-group > .active.form-submit,
 #modal-content .btn-group > .active#edit-cancel {
   z-index: 2;
 }
@@ -4110,7 +4343,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 103, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle, #modal-content .btn-group > #edit-cancel + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, #media-browser-tabset .btn-group > a.button + .dropdown-toggle,
+#media-browser-tabset .btn-group > input.form-submit + .dropdown-toggle, #modal-content .btn-group > .form-submit + .dropdown-toggle,
+#modal-content .btn-group > #edit-cancel + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
   -webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -4150,11 +4385,15 @@ input[type="submit"].btn.btn-mini,
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 137, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn.dropdown-toggle, .btn-group.open #modal-content .dropdown-toggle#edit-cancel, #modal-content .btn-group.open .dropdown-toggle#edit-cancel {
+.btn-group.open .btn.dropdown-toggle, .btn-group.open #media-browser-tabset a.dropdown-toggle.button, #media-browser-tabset .btn-group.open a.dropdown-toggle.button,
+.btn-group.open #media-browser-tabset input.dropdown-toggle.form-submit,
+#media-browser-tabset .btn-group.open input.dropdown-toggle.form-submit, .btn-group.open #modal-content .dropdown-toggle.form-submit, #modal-content .btn-group.open .dropdown-toggle.form-submit,
+.btn-group.open #modal-content .dropdown-toggle#edit-cancel,
+#modal-content .btn-group.open .dropdown-toggle#edit-cancel {
   background-color: #e6e6e6;
 }
 /* line 140, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #modal-content .dropdown-toggle.form-submit, #modal-content .btn-group.open .dropdown-toggle.form-submit, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
+.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #media-browser-tabset input.dropdown-toggle.form-submit, #media-browser-tabset .btn-group.open input.dropdown-toggle.form-submit, .btn-group.open #modal-content .dropdown-toggle.form-submit, #modal-content .btn-group.open .dropdown-toggle.form-submit, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
   background-color: #0044cc;
 }
 /* line 143, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
@@ -4179,7 +4418,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 162, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn .caret, #modal-content #edit-cancel .caret {
+.btn .caret, #media-browser-tabset a.button .caret,
+#media-browser-tabset input.form-submit .caret, #modal-content .form-submit .caret,
+#modal-content #edit-cancel .caret {
   margin-top: 8px;
   margin-left: 0;
 }
@@ -4204,7 +4445,7 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 191, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-primary .caret, #modal-content .form-submit .caret, #node-edit .form-actions input .caret,
+.btn-primary .caret, #media-browser-tabset input.form-submit .caret, #modal-content .form-submit .caret, #node-edit .form-actions input .caret,
 .btn-warning .caret,
 .btn-danger .caret,
 .btn-info .caret,
@@ -4222,7 +4463,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 206, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn, #modal-content .btn-group-vertical > #edit-cancel {
+.btn-group-vertical > .btn, #media-browser-tabset .btn-group-vertical > a.button,
+#media-browser-tabset .btn-group-vertical > input.form-submit, #modal-content .btn-group-vertical > .form-submit,
+#modal-content .btn-group-vertical > #edit-cancel {
   display: block;
   float: none;
   max-width: 100%;
@@ -4232,20 +4475,56 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 212, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn, #modal-content .btn-group-vertical > #edit-cancel + .btn, #modal-content .btn-group-vertical > .btn + #edit-cancel, #modal-content .btn-group-vertical > #edit-cancel + #edit-cancel {
+.btn-group-vertical > .btn + .btn, #media-browser-tabset .btn-group-vertical > a.button + .btn,
+#media-browser-tabset .btn-group-vertical > input.form-submit + .btn, #modal-content .btn-group-vertical > .form-submit + .btn,
+#modal-content .btn-group-vertical > #edit-cancel + .btn, #media-browser-tabset .btn-group-vertical > .btn + a.button, #media-browser-tabset .btn-group-vertical > a.button + a.button,
+#media-browser-tabset .btn-group-vertical > input.form-submit + a.button, #modal-content #media-browser-tabset .btn-group-vertical > .form-submit + a.button, #media-browser-tabset #modal-content .btn-group-vertical > .form-submit + a.button,
+#media-browser-tabset form .btn-group-vertical > a.button + a.button,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + a.button,
+#modal-content #media-browser-tabset .btn-group-vertical > #edit-cancel + a.button,
+#media-browser-tabset #modal-content .btn-group-vertical > #edit-cancel + a.button,
+#media-browser-tabset .btn-group-vertical > .btn + input.form-submit,
+#media-browser-tabset .btn-group-vertical > a.button + input.form-submit,
+#media-browser-tabset .btn-group-vertical > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-group-vertical > .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .btn-group-vertical > .form-submit + input.form-submit,
+#media-browser-tabset form .btn-group-vertical > a.button + input.form-submit,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-group-vertical > #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .btn-group-vertical > #edit-cancel + input.form-submit, #modal-content .btn-group-vertical > .btn + .form-submit, #media-browser-tabset #modal-content .btn-group-vertical > a.button + .form-submit, #modal-content #media-browser-tabset .btn-group-vertical > a.button + .form-submit,
+#media-browser-tabset #modal-content .btn-group-vertical > input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .btn-group-vertical > input.form-submit + .form-submit, #modal-content .btn-group-vertical > .form-submit + .form-submit,
+#modal-content .btn-group-vertical > #edit-cancel + .form-submit,
+#media-browser-tabset form .btn-group-vertical > a.button + a.button,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + a.button,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + a.button,
+#media-browser-tabset form .btn-group-vertical > a.button + input.form-submit,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + input.form-submit,
+#media-browser-tabset form .btn-group-vertical > a.button + input.form-submit,
+#modal-content .btn-group-vertical > .btn + #edit-cancel,
+#media-browser-tabset #modal-content .btn-group-vertical > a.button + #edit-cancel,
+#modal-content #media-browser-tabset .btn-group-vertical > a.button + #edit-cancel,
+#media-browser-tabset #modal-content .btn-group-vertical > input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .btn-group-vertical > input.form-submit + #edit-cancel,
+#modal-content .btn-group-vertical > .form-submit + #edit-cancel,
+#modal-content .btn-group-vertical > #edit-cancel + #edit-cancel {
   margin-left: 0;
   margin-top: -1px;
 }
 
 /* line 216, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child, #modal-content .btn-group-vertical > #edit-cancel:first-child {
+.btn-group-vertical > .btn:first-child, #media-browser-tabset .btn-group-vertical > a.button:first-child,
+#media-browser-tabset .btn-group-vertical > input.form-submit:first-child, #modal-content .btn-group-vertical > .form-submit:first-child,
+#modal-content .btn-group-vertical > #edit-cancel:first-child {
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
 }
 
 /* line 219, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child, #modal-content .btn-group-vertical > #edit-cancel:last-child {
+.btn-group-vertical > .btn:last-child, #media-browser-tabset .btn-group-vertical > a.button:last-child,
+#media-browser-tabset .btn-group-vertical > input.form-submit:last-child, #modal-content .btn-group-vertical > .form-submit:last-child,
+#modal-content .btn-group-vertical > #edit-cancel:last-child {
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
@@ -4905,22 +5184,66 @@ div.tabs ul.tabs li.dropdown.open a:hover .caret {
 }
 
 /* line 93, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn, div.tabs .btn, .navbar #modal-content #edit-cancel, #modal-content .navbar #edit-cancel, div.tabs #modal-content #edit-cancel, #modal-content div.tabs #edit-cancel,
+.navbar .btn, div.tabs .btn, .navbar #media-browser-tabset a.button, #media-browser-tabset .navbar a.button, div.tabs #media-browser-tabset a.button, #media-browser-tabset div.tabs a.button,
+.navbar #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar input.form-submit,
+div.tabs #media-browser-tabset input.form-submit,
+#media-browser-tabset div.tabs input.form-submit, .navbar #modal-content .form-submit, #modal-content .navbar .form-submit, div.tabs #modal-content .form-submit, #modal-content div.tabs .form-submit,
+div.tabs #media-browser-tabset form a.button,
+#media-browser-tabset form div.tabs a.button,
+div.tabs #media-browser-tabset form input.form-submit,
+#media-browser-tabset form div.tabs input.form-submit,
+.navbar #modal-content #edit-cancel,
+#modal-content .navbar #edit-cancel,
+div.tabs #modal-content #edit-cancel,
+#modal-content div.tabs #edit-cancel,
 .navbar .btn-group,
 div.tabs .btn-group {
   margin-top: 5px;
 }
 
 /* line 98, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-group .btn, div.tabs .btn-group .btn, .navbar .btn-group #modal-content #edit-cancel, #modal-content .navbar .btn-group #edit-cancel, div.tabs .btn-group #modal-content #edit-cancel, #modal-content div.tabs .btn-group #edit-cancel,
+.navbar .btn-group .btn, div.tabs .btn-group .btn, .navbar .btn-group #media-browser-tabset a.button, #media-browser-tabset .navbar .btn-group a.button, div.tabs .btn-group #media-browser-tabset a.button, #media-browser-tabset div.tabs .btn-group a.button,
+.navbar .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar .btn-group input.form-submit,
+div.tabs .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset div.tabs .btn-group input.form-submit, .navbar .btn-group #modal-content .form-submit, #modal-content .navbar .btn-group .form-submit, div.tabs .btn-group #modal-content .form-submit, #modal-content div.tabs .btn-group .form-submit,
+.navbar .btn-group #modal-content #edit-cancel,
+#modal-content .navbar .btn-group #edit-cancel,
+div.tabs .btn-group #modal-content #edit-cancel,
+#modal-content div.tabs .btn-group #edit-cancel,
 .navbar .input-prepend .btn,
 div.tabs .input-prepend .btn,
+.navbar .input-prepend #media-browser-tabset a.button,
+#media-browser-tabset .navbar .input-prepend a.button,
+div.tabs .input-prepend #media-browser-tabset a.button,
+#media-browser-tabset div.tabs .input-prepend a.button,
+.navbar .input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar .input-prepend input.form-submit,
+div.tabs .input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset div.tabs .input-prepend input.form-submit,
+.navbar .input-prepend #modal-content .form-submit,
+#modal-content .navbar .input-prepend .form-submit,
+div.tabs .input-prepend #modal-content .form-submit,
+#modal-content div.tabs .input-prepend .form-submit,
 .navbar .input-prepend #modal-content #edit-cancel,
 #modal-content .navbar .input-prepend #edit-cancel,
 div.tabs .input-prepend #modal-content #edit-cancel,
 #modal-content div.tabs .input-prepend #edit-cancel,
 .navbar .input-append .btn,
 div.tabs .input-append .btn,
+.navbar .input-append #media-browser-tabset a.button,
+#media-browser-tabset .navbar .input-append a.button,
+div.tabs .input-append #media-browser-tabset a.button,
+#media-browser-tabset div.tabs .input-append a.button,
+.navbar .input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar .input-append input.form-submit,
+div.tabs .input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset div.tabs .input-append input.form-submit,
+.navbar .input-append #modal-content .form-submit,
+#modal-content .navbar .input-append .form-submit,
+div.tabs .input-append #modal-content .form-submit,
+#modal-content div.tabs .input-append .form-submit,
 .navbar .input-append #modal-content #edit-cancel,
 #modal-content .navbar .input-append #edit-cancel,
 div.tabs .input-append #modal-content #edit-cancel,
@@ -4954,6 +5277,12 @@ div.tabs .input-append #modal-content #edit-cancel,
 .navbar-form input,
 .navbar-form select,
 .navbar-form .btn,
+.navbar-form #media-browser-tabset a.button,
+#media-browser-tabset .navbar-form a.button,
+.navbar-form #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar-form input.form-submit,
+.navbar-form #modal-content .form-submit,
+#modal-content .navbar-form .form-submit,
 .navbar-form #modal-content #edit-cancel,
 #modal-content .navbar-form #edit-cancel {
   display: inline-block;
@@ -5830,12 +6159,148 @@ div.tabs .navbar-inverse ul.tabs li.dropdown.open.active > .dropdown-toggle .car
   clear: both;
 }
 /* line 83, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
-.modal-footer .btn + .btn, .modal-footer #modal-content #edit-cancel + .btn, #modal-content .modal-footer #edit-cancel + .btn, .modal-footer #modal-content .btn + #edit-cancel, #modal-content .modal-footer .btn + #edit-cancel, .modal-footer #modal-content #edit-cancel + #edit-cancel, #modal-content .modal-footer #edit-cancel + #edit-cancel {
+.modal-footer .btn + .btn, .modal-footer #media-browser-tabset a.button + .btn, #media-browser-tabset .modal-footer a.button + .btn,
+.modal-footer #media-browser-tabset input.form-submit + .btn,
+#media-browser-tabset .modal-footer input.form-submit + .btn, .modal-footer #modal-content .form-submit + .btn, #modal-content .modal-footer .form-submit + .btn,
+.modal-footer #modal-content #edit-cancel + .btn,
+#modal-content .modal-footer #edit-cancel + .btn, .modal-footer #media-browser-tabset .btn + a.button, #media-browser-tabset .modal-footer .btn + a.button, .modal-footer #media-browser-tabset a.button + a.button, #media-browser-tabset .modal-footer a.button + a.button,
+.modal-footer #media-browser-tabset input.form-submit + a.button,
+#media-browser-tabset .modal-footer input.form-submit + a.button, .modal-footer #modal-content #media-browser-tabset .form-submit + a.button, #media-browser-tabset .modal-footer #modal-content .form-submit + a.button, #modal-content .modal-footer #media-browser-tabset .form-submit + a.button, #media-browser-tabset #modal-content .modal-footer .form-submit + a.button,
+.modal-footer #media-browser-tabset form a.button + a.button,
+#media-browser-tabset form .modal-footer a.button + a.button,
+.modal-footer #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer input.form-submit + a.button,
+.modal-footer #modal-content #media-browser-tabset #edit-cancel + a.button,
+#media-browser-tabset .modal-footer #modal-content #edit-cancel + a.button,
+#modal-content .modal-footer #media-browser-tabset #edit-cancel + a.button,
+#media-browser-tabset #modal-content .modal-footer #edit-cancel + a.button,
+.modal-footer #media-browser-tabset .btn + input.form-submit,
+#media-browser-tabset .modal-footer .btn + input.form-submit,
+.modal-footer #media-browser-tabset a.button + input.form-submit,
+#media-browser-tabset .modal-footer a.button + input.form-submit,
+.modal-footer #media-browser-tabset input.form-submit + input.form-submit,
+#media-browser-tabset .modal-footer input.form-submit + input.form-submit,
+.modal-footer #modal-content #media-browser-tabset .form-submit + input.form-submit,
+#media-browser-tabset .modal-footer #modal-content .form-submit + input.form-submit,
+#modal-content .modal-footer #media-browser-tabset .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .modal-footer .form-submit + input.form-submit,
+.modal-footer #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer a.button + input.form-submit,
+.modal-footer #media-browser-tabset form input.form-submit + input.form-submit,
+#media-browser-tabset form .modal-footer input.form-submit + input.form-submit,
+.modal-footer #modal-content #media-browser-tabset #edit-cancel + input.form-submit,
+#media-browser-tabset .modal-footer #modal-content #edit-cancel + input.form-submit,
+#modal-content .modal-footer #media-browser-tabset #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .modal-footer #edit-cancel + input.form-submit, .modal-footer #modal-content .btn + .form-submit, #modal-content .modal-footer .btn + .form-submit, .modal-footer #media-browser-tabset #modal-content a.button + .form-submit, #modal-content .modal-footer #media-browser-tabset a.button + .form-submit, #media-browser-tabset .modal-footer #modal-content a.button + .form-submit, #modal-content #media-browser-tabset .modal-footer a.button + .form-submit,
+.modal-footer #media-browser-tabset #modal-content input.form-submit + .form-submit,
+#modal-content .modal-footer #media-browser-tabset input.form-submit + .form-submit,
+#media-browser-tabset .modal-footer #modal-content input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .modal-footer input.form-submit + .form-submit, .modal-footer #modal-content .form-submit + .form-submit, #modal-content .modal-footer .form-submit + .form-submit,
+.modal-footer #modal-content #edit-cancel + .form-submit,
+#modal-content .modal-footer #edit-cancel + .form-submit,
+.modal-footer #media-browser-tabset form a.button + a.button,
+#media-browser-tabset .modal-footer form a.button + a.button,
+#media-browser-tabset form .modal-footer a.button + a.button,
+.modal-footer #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset .modal-footer form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer input.form-submit + a.button,
+.modal-footer #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer input.form-submit + a.button,
+.modal-footer #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset .modal-footer form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer a.button + input.form-submit,
+.modal-footer #media-browser-tabset form input.form-submit + input.form-submit,
+#media-browser-tabset .modal-footer form input.form-submit + input.form-submit,
+#media-browser-tabset form .modal-footer input.form-submit + input.form-submit,
+.modal-footer #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer a.button + input.form-submit,
+.modal-footer #modal-content .btn + #edit-cancel,
+#modal-content .modal-footer .btn + #edit-cancel,
+.modal-footer #media-browser-tabset #modal-content a.button + #edit-cancel,
+#modal-content .modal-footer #media-browser-tabset a.button + #edit-cancel,
+#media-browser-tabset .modal-footer #modal-content a.button + #edit-cancel,
+#modal-content #media-browser-tabset .modal-footer a.button + #edit-cancel,
+.modal-footer #media-browser-tabset #modal-content input.form-submit + #edit-cancel,
+#modal-content .modal-footer #media-browser-tabset input.form-submit + #edit-cancel,
+#media-browser-tabset .modal-footer #modal-content input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .modal-footer input.form-submit + #edit-cancel,
+.modal-footer #modal-content .form-submit + #edit-cancel,
+#modal-content .modal-footer .form-submit + #edit-cancel,
+.modal-footer #modal-content #edit-cancel + #edit-cancel,
+#modal-content .modal-footer #edit-cancel + #edit-cancel {
   margin-left: 5px;
   margin-bottom: 0;
 }
 /* line 88, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #modal-content #edit-cancel + .btn, #modal-content .modal-footer .btn-group #edit-cancel + .btn, .modal-footer .btn-group #modal-content .btn + #edit-cancel, #modal-content .modal-footer .btn-group .btn + #edit-cancel, .modal-footer .btn-group #modal-content #edit-cancel + #edit-cancel, #modal-content .modal-footer .btn-group #edit-cancel + #edit-cancel {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #media-browser-tabset a.button + .btn, #media-browser-tabset .modal-footer .btn-group a.button + .btn,
+.modal-footer .btn-group #media-browser-tabset input.form-submit + .btn,
+#media-browser-tabset .modal-footer .btn-group input.form-submit + .btn, .modal-footer .btn-group #modal-content .form-submit + .btn, #modal-content .modal-footer .btn-group .form-submit + .btn,
+.modal-footer .btn-group #modal-content #edit-cancel + .btn,
+#modal-content .modal-footer .btn-group #edit-cancel + .btn, .modal-footer .btn-group #media-browser-tabset .btn + a.button, #media-browser-tabset .modal-footer .btn-group .btn + a.button, .modal-footer .btn-group #media-browser-tabset a.button + a.button, #media-browser-tabset .modal-footer .btn-group a.button + a.button,
+.modal-footer .btn-group #media-browser-tabset input.form-submit + a.button,
+#media-browser-tabset .modal-footer .btn-group input.form-submit + a.button, .modal-footer .btn-group #modal-content #media-browser-tabset .form-submit + a.button, #media-browser-tabset .modal-footer .btn-group #modal-content .form-submit + a.button, #modal-content .modal-footer .btn-group #media-browser-tabset .form-submit + a.button, #media-browser-tabset #modal-content .modal-footer .btn-group .form-submit + a.button,
+.modal-footer .btn-group #media-browser-tabset form a.button + a.button,
+#media-browser-tabset form .modal-footer .btn-group a.button + a.button,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + a.button,
+.modal-footer .btn-group #modal-content #media-browser-tabset #edit-cancel + a.button,
+#media-browser-tabset .modal-footer .btn-group #modal-content #edit-cancel + a.button,
+#modal-content .modal-footer .btn-group #media-browser-tabset #edit-cancel + a.button,
+#media-browser-tabset #modal-content .modal-footer .btn-group #edit-cancel + a.button,
+.modal-footer .btn-group #media-browser-tabset .btn + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group .btn + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset a.button + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group a.button + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset input.form-submit + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group input.form-submit + input.form-submit,
+.modal-footer .btn-group #modal-content #media-browser-tabset .form-submit + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group #modal-content .form-submit + input.form-submit,
+#modal-content .modal-footer .btn-group #media-browser-tabset .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .modal-footer .btn-group .form-submit + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group a.button + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + input.form-submit,
+.modal-footer .btn-group #modal-content #media-browser-tabset #edit-cancel + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group #modal-content #edit-cancel + input.form-submit,
+#modal-content .modal-footer .btn-group #media-browser-tabset #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .modal-footer .btn-group #edit-cancel + input.form-submit, .modal-footer .btn-group #modal-content .btn + .form-submit, #modal-content .modal-footer .btn-group .btn + .form-submit, .modal-footer .btn-group #media-browser-tabset #modal-content a.button + .form-submit, #modal-content .modal-footer .btn-group #media-browser-tabset a.button + .form-submit, #media-browser-tabset .modal-footer .btn-group #modal-content a.button + .form-submit, #modal-content #media-browser-tabset .modal-footer .btn-group a.button + .form-submit,
+.modal-footer .btn-group #media-browser-tabset #modal-content input.form-submit + .form-submit,
+#modal-content .modal-footer .btn-group #media-browser-tabset input.form-submit + .form-submit,
+#media-browser-tabset .modal-footer .btn-group #modal-content input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .modal-footer .btn-group input.form-submit + .form-submit, .modal-footer .btn-group #modal-content .form-submit + .form-submit, #modal-content .modal-footer .btn-group .form-submit + .form-submit,
+.modal-footer .btn-group #modal-content #edit-cancel + .form-submit,
+#modal-content .modal-footer .btn-group #edit-cancel + .form-submit,
+.modal-footer .btn-group #media-browser-tabset form a.button + a.button,
+#media-browser-tabset .modal-footer .btn-group form a.button + a.button,
+#media-browser-tabset form .modal-footer .btn-group a.button + a.button,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset .modal-footer .btn-group form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + a.button,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + a.button,
+.modal-footer .btn-group #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group a.button + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group form input.form-submit + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group a.button + input.form-submit,
+.modal-footer .btn-group #modal-content .btn + #edit-cancel,
+#modal-content .modal-footer .btn-group .btn + #edit-cancel,
+.modal-footer .btn-group #media-browser-tabset #modal-content a.button + #edit-cancel,
+#modal-content .modal-footer .btn-group #media-browser-tabset a.button + #edit-cancel,
+#media-browser-tabset .modal-footer .btn-group #modal-content a.button + #edit-cancel,
+#modal-content #media-browser-tabset .modal-footer .btn-group a.button + #edit-cancel,
+.modal-footer .btn-group #media-browser-tabset #modal-content input.form-submit + #edit-cancel,
+#modal-content .modal-footer .btn-group #media-browser-tabset input.form-submit + #edit-cancel,
+#media-browser-tabset .modal-footer .btn-group #modal-content input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .modal-footer .btn-group input.form-submit + #edit-cancel,
+.modal-footer .btn-group #modal-content .form-submit + #edit-cancel,
+#modal-content .modal-footer .btn-group .form-submit + #edit-cancel,
+.modal-footer .btn-group #modal-content #edit-cancel + #edit-cancel,
+#modal-content .modal-footer .btn-group #edit-cancel + #edit-cancel {
   margin-left: -1px;
 }
 /* line 92, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
@@ -6287,8 +6752,21 @@ a.label:hover, .oa-news .oa-news-tags a:hover, a.badge:hover {
 }
 
 /* line 69, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_labels-badges.scss */
-.btn .label, #modal-content #edit-cancel .label, .btn .oa-news .oa-news-tags a, .oa-news .oa-news-tags .btn a, #modal-content #edit-cancel .oa-news .oa-news-tags a, .oa-news .oa-news-tags #modal-content #edit-cancel a,
+.btn .label, #media-browser-tabset a.button .label,
+#media-browser-tabset input.form-submit .label, #modal-content .form-submit .label,
+#modal-content #edit-cancel .label, .btn .oa-news .oa-news-tags a, .oa-news .oa-news-tags .btn a, #media-browser-tabset a.button .oa-news .oa-news-tags a, .oa-news .oa-news-tags #media-browser-tabset a.button a,
+#media-browser-tabset input.form-submit .oa-news .oa-news-tags a,
+.oa-news .oa-news-tags #media-browser-tabset input.form-submit a, #modal-content .form-submit .oa-news .oa-news-tags a, .oa-news .oa-news-tags #modal-content .form-submit a,
+#media-browser-tabset form a.button .oa-news .oa-news-tags a,
+.oa-news .oa-news-tags #media-browser-tabset form a.button a,
+#media-browser-tabset form input.form-submit .oa-news .oa-news-tags a,
+.oa-news .oa-news-tags #media-browser-tabset form input.form-submit a,
+#modal-content #edit-cancel .oa-news .oa-news-tags a,
+.oa-news .oa-news-tags #modal-content #edit-cancel a,
 .btn .badge,
+#media-browser-tabset a.button .badge,
+#media-browser-tabset input.form-submit .badge,
+#modal-content .form-submit .badge,
 #modal-content #edit-cancel .badge {
   position: relative;
   top: -1px;
@@ -8594,11 +9072,23 @@ select:focus:invalid:focus {
 /* line 466, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on,
 .input-append .btn,
+.input-append #media-browser-tabset a.button,
+#media-browser-tabset .input-append a.button,
+.input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-append input.form-submit,
+.input-append #modal-content .form-submit,
+#modal-content .input-append .form-submit,
 .input-append #modal-content #edit-cancel,
 #modal-content .input-append #edit-cancel,
 .input-append .btn-group > .dropdown-toggle,
 .input-prepend .add-on,
 .input-prepend .btn,
+.input-prepend #media-browser-tabset a.button,
+#media-browser-tabset .input-prepend a.button,
+.input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend input.form-submit,
+.input-prepend #modal-content .form-submit,
+#modal-content .input-prepend .form-submit,
 .input-prepend #modal-content #edit-cancel,
 #modal-content .input-prepend #edit-cancel,
 .input-prepend .btn-group > .dropdown-toggle {
@@ -8617,6 +9107,12 @@ select:focus:invalid:focus {
 /* line 478, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend .add-on,
 .input-prepend .btn,
+.input-prepend #media-browser-tabset a.button,
+#media-browser-tabset .input-prepend a.button,
+.input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend input.form-submit,
+.input-prepend #modal-content .form-submit,
+#modal-content .input-prepend .form-submit,
 .input-prepend #modal-content #edit-cancel,
 #modal-content .input-prepend #edit-cancel {
   margin-right: -1px;
@@ -8624,6 +9120,12 @@ select:focus:invalid:focus {
 /* line 482, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend .add-on:first-child,
 .input-prepend .btn:first-child,
+.input-prepend #media-browser-tabset a.button:first-child,
+#media-browser-tabset .input-prepend a.button:first-child,
+.input-prepend #media-browser-tabset input.form-submit:first-child,
+#media-browser-tabset .input-prepend input.form-submit:first-child,
+.input-prepend #modal-content .form-submit:first-child,
+#modal-content .input-prepend .form-submit:first-child,
 .input-prepend #modal-content #edit-cancel:first-child,
 #modal-content .input-prepend #edit-cancel:first-child {
   -webkit-border-radius: 4px 0 0 4px;
@@ -8640,11 +9142,27 @@ select:focus:invalid:focus {
   border-radius: 4px 0 0 4px;
 }
 /* line 493, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.input-append input + .btn-group .btn:last-child, .input-append input + .btn-group #modal-content #edit-cancel:last-child, #modal-content .input-append input + .btn-group #edit-cancel:last-child,
+.input-append input + .btn-group .btn:last-child, .input-append input + .btn-group #media-browser-tabset a.button:last-child, #media-browser-tabset .input-append input + .btn-group a.button:last-child,
+.input-append input + .btn-group #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-append input + .btn-group input.form-submit:last-child, .input-append input + .btn-group #modal-content .form-submit:last-child, #modal-content .input-append input + .btn-group .form-submit:last-child,
+.input-append input + .btn-group #modal-content #edit-cancel:last-child,
+#modal-content .input-append input + .btn-group #edit-cancel:last-child,
 .input-append select + .btn-group .btn:last-child,
+.input-append select + .btn-group #media-browser-tabset a.button:last-child,
+#media-browser-tabset .input-append select + .btn-group a.button:last-child,
+.input-append select + .btn-group #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-append select + .btn-group input.form-submit:last-child,
+.input-append select + .btn-group #modal-content .form-submit:last-child,
+#modal-content .input-append select + .btn-group .form-submit:last-child,
 .input-append select + .btn-group #modal-content #edit-cancel:last-child,
 #modal-content .input-append select + .btn-group #edit-cancel:last-child,
 .input-append .uneditable-input + .btn-group .btn:last-child,
+.input-append .uneditable-input + .btn-group #media-browser-tabset a.button:last-child,
+#media-browser-tabset .input-append .uneditable-input + .btn-group a.button:last-child,
+.input-append .uneditable-input + .btn-group #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-append .uneditable-input + .btn-group input.form-submit:last-child,
+.input-append .uneditable-input + .btn-group #modal-content .form-submit:last-child,
+#modal-content .input-append .uneditable-input + .btn-group .form-submit:last-child,
 .input-append .uneditable-input + .btn-group #modal-content #edit-cancel:last-child,
 #modal-content .input-append .uneditable-input + .btn-group #edit-cancel:last-child {
   -webkit-border-radius: 0 4px 4px 0;
@@ -8654,6 +9172,12 @@ select:focus:invalid:focus {
 /* line 499, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on,
 .input-append .btn,
+.input-append #media-browser-tabset a.button,
+#media-browser-tabset .input-append a.button,
+.input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-append input.form-submit,
+.input-append #modal-content .form-submit,
+#modal-content .input-append .form-submit,
 .input-append #modal-content #edit-cancel,
 #modal-content .input-append #edit-cancel,
 .input-append .btn-group {
@@ -8662,6 +9186,12 @@ select:focus:invalid:focus {
 /* line 504, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-append .add-on:last-child,
 .input-append .btn:last-child,
+.input-append #media-browser-tabset a.button:last-child,
+#media-browser-tabset .input-append a.button:last-child,
+.input-append #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-append input.form-submit:last-child,
+.input-append #modal-content .form-submit:last-child,
+#modal-content .input-append .form-submit:last-child,
 .input-append #modal-content #edit-cancel:last-child,
 #modal-content .input-append #edit-cancel:last-child,
 .input-append .btn-group:last-child > .dropdown-toggle {
@@ -8679,11 +9209,27 @@ select:focus:invalid:focus {
   border-radius: 0;
 }
 /* line 515, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.input-prepend.input-append input + .btn-group .btn, .input-prepend.input-append input + .btn-group #modal-content #edit-cancel, #modal-content .input-prepend.input-append input + .btn-group #edit-cancel,
+.input-prepend.input-append input + .btn-group .btn, .input-prepend.input-append input + .btn-group #media-browser-tabset a.button, #media-browser-tabset .input-prepend.input-append input + .btn-group a.button,
+.input-prepend.input-append input + .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend.input-append input + .btn-group input.form-submit, .input-prepend.input-append input + .btn-group #modal-content .form-submit, #modal-content .input-prepend.input-append input + .btn-group .form-submit,
+.input-prepend.input-append input + .btn-group #modal-content #edit-cancel,
+#modal-content .input-prepend.input-append input + .btn-group #edit-cancel,
 .input-prepend.input-append select + .btn-group .btn,
+.input-prepend.input-append select + .btn-group #media-browser-tabset a.button,
+#media-browser-tabset .input-prepend.input-append select + .btn-group a.button,
+.input-prepend.input-append select + .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend.input-append select + .btn-group input.form-submit,
+.input-prepend.input-append select + .btn-group #modal-content .form-submit,
+#modal-content .input-prepend.input-append select + .btn-group .form-submit,
 .input-prepend.input-append select + .btn-group #modal-content #edit-cancel,
 #modal-content .input-prepend.input-append select + .btn-group #edit-cancel,
 .input-prepend.input-append .uneditable-input + .btn-group .btn,
+.input-prepend.input-append .uneditable-input + .btn-group #media-browser-tabset a.button,
+#media-browser-tabset .input-prepend.input-append .uneditable-input + .btn-group a.button,
+.input-prepend.input-append .uneditable-input + .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset .input-prepend.input-append .uneditable-input + .btn-group input.form-submit,
+.input-prepend.input-append .uneditable-input + .btn-group #modal-content .form-submit,
+#modal-content .input-prepend.input-append .uneditable-input + .btn-group .form-submit,
 .input-prepend.input-append .uneditable-input + .btn-group #modal-content #edit-cancel,
 #modal-content .input-prepend.input-append .uneditable-input + .btn-group #edit-cancel {
   -webkit-border-radius: 0 4px 4px 0;
@@ -8693,6 +9239,12 @@ select:focus:invalid:focus {
 /* line 520, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend.input-append .add-on:first-child,
 .input-prepend.input-append .btn:first-child,
+.input-prepend.input-append #media-browser-tabset a.button:first-child,
+#media-browser-tabset .input-prepend.input-append a.button:first-child,
+.input-prepend.input-append #media-browser-tabset input.form-submit:first-child,
+#media-browser-tabset .input-prepend.input-append input.form-submit:first-child,
+.input-prepend.input-append #modal-content .form-submit:first-child,
+#modal-content .input-prepend.input-append .form-submit:first-child,
 .input-prepend.input-append #modal-content #edit-cancel:first-child,
 #modal-content .input-prepend.input-append #edit-cancel:first-child {
   margin-right: -1px;
@@ -8703,6 +9255,12 @@ select:focus:invalid:focus {
 /* line 525, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
 .input-prepend.input-append .add-on:last-child,
 .input-prepend.input-append .btn:last-child,
+.input-prepend.input-append #media-browser-tabset a.button:last-child,
+#media-browser-tabset .input-prepend.input-append a.button:last-child,
+.input-prepend.input-append #media-browser-tabset input.form-submit:last-child,
+#media-browser-tabset .input-prepend.input-append input.form-submit:last-child,
+.input-prepend.input-append #modal-content .form-submit:last-child,
+#modal-content .input-prepend.input-append .form-submit:last-child,
 .input-prepend.input-append #modal-content #edit-cancel:last-child,
 #modal-content .input-prepend.input-append #edit-cancel:last-child {
   margin-left: -1px;
@@ -8745,7 +9303,11 @@ input.search-query {
 }
 
 /* line 557, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.form-search .input-append .btn, .form-search .input-append #modal-content #edit-cancel, #modal-content .form-search .input-append #edit-cancel {
+.form-search .input-append .btn, .form-search .input-append #media-browser-tabset a.button, #media-browser-tabset .form-search .input-append a.button,
+.form-search .input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset .form-search .input-append input.form-submit, .form-search .input-append #modal-content .form-submit, #modal-content .form-search .input-append .form-submit,
+.form-search .input-append #modal-content #edit-cancel,
+#modal-content .form-search .input-append #edit-cancel {
   -webkit-border-radius: 0 14px 14px 0;
   -moz-border-radius: 0 14px 14px 0;
   border-radius: 0 14px 14px 0;
@@ -8759,7 +9321,11 @@ input.search-query {
 }
 
 /* line 563, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_forms.scss */
-.form-search .input-prepend .btn, .form-search .input-prepend #modal-content #edit-cancel, #modal-content .form-search .input-prepend #edit-cancel {
+.form-search .input-prepend .btn, .form-search .input-prepend #media-browser-tabset a.button, #media-browser-tabset .form-search .input-prepend a.button,
+.form-search .input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset .form-search .input-prepend input.form-submit, .form-search .input-prepend #modal-content .form-submit, #modal-content .form-search .input-prepend .form-submit,
+.form-search .input-prepend #modal-content #edit-cancel,
+#modal-content .form-search .input-prepend #edit-cancel {
   -webkit-border-radius: 14px 0 0 14px;
   -moz-border-radius: 14px 0 0 14px;
   border-radius: 14px 0 0 14px;
@@ -9278,8 +9844,13 @@ a [class*=" icon-"] {
 }
 
 /* line 103, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"], #modal-content #edit-cancel [class^="icon-"],
+.btn [class^="icon-"], #media-browser-tabset a.button [class^="icon-"],
+#media-browser-tabset input.form-submit [class^="icon-"], #modal-content .form-submit [class^="icon-"],
+#modal-content #edit-cancel [class^="icon-"],
 .btn [class*=" icon-"],
+#media-browser-tabset a.button [class*=" icon-"],
+#media-browser-tabset input.form-submit [class*=" icon-"],
+#modal-content .form-submit [class*=" icon-"],
 #modal-content #edit-cancel [class*=" icon-"], .nav [class^="icon-"], div.tabs ul.tabs [class^="icon-"],
 .nav [class*=" icon-"],
 div.tabs ul.tabs [class*=" icon-"] {
@@ -9287,16 +9858,26 @@ div.tabs ul.tabs [class*=" icon-"] {
   /* keeps button heights with and without icons the same */
 }
 /* line 106, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"].icon-large, #modal-content #edit-cancel [class^="icon-"].icon-large,
+.btn [class^="icon-"].icon-large, #media-browser-tabset a.button [class^="icon-"].icon-large,
+#media-browser-tabset input.form-submit [class^="icon-"].icon-large, #modal-content .form-submit [class^="icon-"].icon-large,
+#modal-content #edit-cancel [class^="icon-"].icon-large,
 .btn [class*=" icon-"].icon-large,
+#media-browser-tabset a.button [class*=" icon-"].icon-large,
+#media-browser-tabset input.form-submit [class*=" icon-"].icon-large,
+#modal-content .form-submit [class*=" icon-"].icon-large,
 #modal-content #edit-cancel [class*=" icon-"].icon-large, .nav [class^="icon-"].icon-large, div.tabs ul.tabs [class^="icon-"].icon-large,
 .nav [class*=" icon-"].icon-large,
 div.tabs ul.tabs [class*=" icon-"].icon-large {
   line-height: .9em;
 }
 /* line 107, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"].icon-spin, #modal-content #edit-cancel [class^="icon-"].icon-spin,
+.btn [class^="icon-"].icon-spin, #media-browser-tabset a.button [class^="icon-"].icon-spin,
+#media-browser-tabset input.form-submit [class^="icon-"].icon-spin, #modal-content .form-submit [class^="icon-"].icon-spin,
+#modal-content #edit-cancel [class^="icon-"].icon-spin,
 .btn [class*=" icon-"].icon-spin,
+#media-browser-tabset a.button [class*=" icon-"].icon-spin,
+#media-browser-tabset input.form-submit [class*=" icon-"].icon-spin,
+#modal-content .form-submit [class*=" icon-"].icon-spin,
 #modal-content #edit-cancel [class*=" icon-"].icon-spin, .nav [class^="icon-"].icon-spin, div.tabs ul.tabs [class^="icon-"].icon-spin,
 .nav [class*=" icon-"].icon-spin,
 div.tabs ul.tabs [class*=" icon-"].icon-spin {
@@ -9419,52 +10000,102 @@ ul.icons li [class*=" icon-"] {
 }
 
 /* line 203, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"].pull-left.icon-2x, #modal-content #edit-cancel [class^="icon-"].pull-left.icon-2x, .btn [class^="icon-"].pull-right.icon-2x, #modal-content #edit-cancel [class^="icon-"].pull-right.icon-2x,
+.btn [class^="icon-"].pull-left.icon-2x, #media-browser-tabset a.button [class^="icon-"].pull-left.icon-2x,
+#media-browser-tabset input.form-submit [class^="icon-"].pull-left.icon-2x, #modal-content .form-submit [class^="icon-"].pull-left.icon-2x,
+#modal-content #edit-cancel [class^="icon-"].pull-left.icon-2x, .btn [class^="icon-"].pull-right.icon-2x, #media-browser-tabset a.button [class^="icon-"].pull-right.icon-2x,
+#media-browser-tabset input.form-submit [class^="icon-"].pull-right.icon-2x, #modal-content .form-submit [class^="icon-"].pull-right.icon-2x,
+#modal-content #edit-cancel [class^="icon-"].pull-right.icon-2x,
 .btn [class*=" icon-"].pull-left.icon-2x,
+#media-browser-tabset a.button [class*=" icon-"].pull-left.icon-2x,
+#media-browser-tabset input.form-submit [class*=" icon-"].pull-left.icon-2x,
+#modal-content .form-submit [class*=" icon-"].pull-left.icon-2x,
 #modal-content #edit-cancel [class*=" icon-"].pull-left.icon-2x,
 .btn [class*=" icon-"].pull-right.icon-2x,
+#media-browser-tabset a.button [class*=" icon-"].pull-right.icon-2x,
+#media-browser-tabset input.form-submit [class*=" icon-"].pull-right.icon-2x,
+#modal-content .form-submit [class*=" icon-"].pull-right.icon-2x,
 #modal-content #edit-cancel [class*=" icon-"].pull-right.icon-2x {
   margin-top: .18em;
 }
 /* line 205, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="icon-"].icon-spin.icon-large, #modal-content #edit-cancel [class^="icon-"].icon-spin.icon-large,
+.btn [class^="icon-"].icon-spin.icon-large, #media-browser-tabset a.button [class^="icon-"].icon-spin.icon-large,
+#media-browser-tabset input.form-submit [class^="icon-"].icon-spin.icon-large, #modal-content .form-submit [class^="icon-"].icon-spin.icon-large,
+#modal-content #edit-cancel [class^="icon-"].icon-spin.icon-large,
 .btn [class*=" icon-"].icon-spin.icon-large,
+#media-browser-tabset a.button [class*=" icon-"].icon-spin.icon-large,
+#media-browser-tabset input.form-submit [class*=" icon-"].icon-spin.icon-large,
+#modal-content .form-submit [class*=" icon-"].icon-spin.icon-large,
 #modal-content #edit-cancel [class*=" icon-"].icon-spin.icon-large {
   line-height: .8em;
 }
 
 /* line 213, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-small [class^="icon-"].pull-left.icon-2x, #modal-content .btn-small#edit-cancel [class^="icon-"].pull-left.icon-2x, .btn.btn-small [class^="icon-"].pull-right.icon-2x, #modal-content .btn-small#edit-cancel [class^="icon-"].pull-right.icon-2x,
+.btn.btn-small [class^="icon-"].pull-left.icon-2x, #media-browser-tabset a.btn-small.button [class^="icon-"].pull-left.icon-2x,
+#media-browser-tabset input.btn-small.form-submit [class^="icon-"].pull-left.icon-2x, #modal-content .btn-small.form-submit [class^="icon-"].pull-left.icon-2x,
+#modal-content .btn-small#edit-cancel [class^="icon-"].pull-left.icon-2x, .btn.btn-small [class^="icon-"].pull-right.icon-2x, #media-browser-tabset a.btn-small.button [class^="icon-"].pull-right.icon-2x,
+#media-browser-tabset input.btn-small.form-submit [class^="icon-"].pull-right.icon-2x, #modal-content .btn-small.form-submit [class^="icon-"].pull-right.icon-2x,
+#modal-content .btn-small#edit-cancel [class^="icon-"].pull-right.icon-2x,
 .btn.btn-small [class*=" icon-"].pull-left.icon-2x,
+#media-browser-tabset a.btn-small.button [class*=" icon-"].pull-left.icon-2x,
+#media-browser-tabset input.btn-small.form-submit [class*=" icon-"].pull-left.icon-2x,
+#modal-content .btn-small.form-submit [class*=" icon-"].pull-left.icon-2x,
 #modal-content .btn-small#edit-cancel [class*=" icon-"].pull-left.icon-2x,
 .btn.btn-small [class*=" icon-"].pull-right.icon-2x,
+#media-browser-tabset a.btn-small.button [class*=" icon-"].pull-right.icon-2x,
+#media-browser-tabset input.btn-small.form-submit [class*=" icon-"].pull-right.icon-2x,
+#modal-content .btn-small.form-submit [class*=" icon-"].pull-right.icon-2x,
 #modal-content .btn-small#edit-cancel [class*=" icon-"].pull-right.icon-2x {
   margin-top: .25em;
 }
 
 /* line 220, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-large [class^="icon-"], #modal-content .btn-large#edit-cancel [class^="icon-"],
+.btn.btn-large [class^="icon-"], #media-browser-tabset a.btn-large.button [class^="icon-"],
+#media-browser-tabset input.btn-large.form-submit [class^="icon-"], #modal-content .btn-large.form-submit [class^="icon-"],
+#modal-content .btn-large#edit-cancel [class^="icon-"],
 .btn.btn-large [class*=" icon-"],
+#media-browser-tabset a.btn-large.button [class*=" icon-"],
+#media-browser-tabset input.btn-large.form-submit [class*=" icon-"],
+#modal-content .btn-large.form-submit [class*=" icon-"],
 #modal-content .btn-large#edit-cancel [class*=" icon-"] {
   margin-top: 0;
 }
 /* line 223, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-large [class^="icon-"].pull-left.icon-2x, #modal-content .btn-large#edit-cancel [class^="icon-"].pull-left.icon-2x, .btn.btn-large [class^="icon-"].pull-right.icon-2x, #modal-content .btn-large#edit-cancel [class^="icon-"].pull-right.icon-2x,
+.btn.btn-large [class^="icon-"].pull-left.icon-2x, #media-browser-tabset a.btn-large.button [class^="icon-"].pull-left.icon-2x,
+#media-browser-tabset input.btn-large.form-submit [class^="icon-"].pull-left.icon-2x, #modal-content .btn-large.form-submit [class^="icon-"].pull-left.icon-2x,
+#modal-content .btn-large#edit-cancel [class^="icon-"].pull-left.icon-2x, .btn.btn-large [class^="icon-"].pull-right.icon-2x, #media-browser-tabset a.btn-large.button [class^="icon-"].pull-right.icon-2x,
+#media-browser-tabset input.btn-large.form-submit [class^="icon-"].pull-right.icon-2x, #modal-content .btn-large.form-submit [class^="icon-"].pull-right.icon-2x,
+#modal-content .btn-large#edit-cancel [class^="icon-"].pull-right.icon-2x,
 .btn.btn-large [class*=" icon-"].pull-left.icon-2x,
+#media-browser-tabset a.btn-large.button [class*=" icon-"].pull-left.icon-2x,
+#media-browser-tabset input.btn-large.form-submit [class*=" icon-"].pull-left.icon-2x,
+#modal-content .btn-large.form-submit [class*=" icon-"].pull-left.icon-2x,
 #modal-content .btn-large#edit-cancel [class*=" icon-"].pull-left.icon-2x,
 .btn.btn-large [class*=" icon-"].pull-right.icon-2x,
+#media-browser-tabset a.btn-large.button [class*=" icon-"].pull-right.icon-2x,
+#media-browser-tabset input.btn-large.form-submit [class*=" icon-"].pull-right.icon-2x,
+#modal-content .btn-large.form-submit [class*=" icon-"].pull-right.icon-2x,
 #modal-content .btn-large#edit-cancel [class*=" icon-"].pull-right.icon-2x {
   margin-top: .05em;
 }
 /* line 225, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-large [class^="icon-"].pull-left.icon-2x, #modal-content .btn-large#edit-cancel [class^="icon-"].pull-left.icon-2x,
+.btn.btn-large [class^="icon-"].pull-left.icon-2x, #media-browser-tabset a.btn-large.button [class^="icon-"].pull-left.icon-2x,
+#media-browser-tabset input.btn-large.form-submit [class^="icon-"].pull-left.icon-2x, #modal-content .btn-large.form-submit [class^="icon-"].pull-left.icon-2x,
+#modal-content .btn-large#edit-cancel [class^="icon-"].pull-left.icon-2x,
 .btn.btn-large [class*=" icon-"].pull-left.icon-2x,
+#media-browser-tabset a.btn-large.button [class*=" icon-"].pull-left.icon-2x,
+#media-browser-tabset input.btn-large.form-submit [class*=" icon-"].pull-left.icon-2x,
+#modal-content .btn-large.form-submit [class*=" icon-"].pull-left.icon-2x,
 #modal-content .btn-large#edit-cancel [class*=" icon-"].pull-left.icon-2x {
   margin-right: .2em;
 }
 /* line 226, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-large [class^="icon-"].pull-right.icon-2x, #modal-content .btn-large#edit-cancel [class^="icon-"].pull-right.icon-2x,
+.btn.btn-large [class^="icon-"].pull-right.icon-2x, #media-browser-tabset a.btn-large.button [class^="icon-"].pull-right.icon-2x,
+#media-browser-tabset input.btn-large.form-submit [class^="icon-"].pull-right.icon-2x, #modal-content .btn-large.form-submit [class^="icon-"].pull-right.icon-2x,
+#modal-content .btn-large#edit-cancel [class^="icon-"].pull-right.icon-2x,
 .btn.btn-large [class*=" icon-"].pull-right.icon-2x,
+#media-browser-tabset a.btn-large.button [class*=" icon-"].pull-right.icon-2x,
+#media-browser-tabset input.btn-large.form-submit [class*=" icon-"].pull-right.icon-2x,
+#modal-content .btn-large.form-submit [class*=" icon-"].pull-right.icon-2x,
 #modal-content .btn-large#edit-cancel [class*=" icon-"].pull-right.icon-2x {
   margin-left: .2em;
 }
@@ -9545,7 +10176,9 @@ ul.icons li [class*=" icon-"] {
   }
 
   /* line 262, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-  .btn .icon-spin, #modal-content #edit-cancel .icon-spin {
+  .btn .icon-spin, #media-browser-tabset a.button .icon-spin,
+  #media-browser-tabset input.form-submit .icon-spin, #modal-content .form-submit .icon-spin,
+  #modal-content #edit-cancel .icon-spin {
     height: auto;
   }
 
@@ -9555,7 +10188,9 @@ ul.icons li [class*=" icon-"] {
   }
 
   /* line 264, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_font-awesome.scss */
-  .btn .icon-spin.icon-large, #modal-content #edit-cancel .icon-spin.icon-large {
+  .btn .icon-spin.icon-large, #media-browser-tabset a.button .icon-spin.icon-large,
+  #media-browser-tabset input.form-submit .icon-spin.icon-large, #modal-content .form-submit .icon-spin.icon-large,
+  #modal-content #edit-cancel .icon-spin.icon-large {
     height: .75em;
   }
 }
@@ -11147,7 +11782,11 @@ button.close {
 }
 
 /* line 13, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn, #modal-content #edit-cancel {
+.btn, #media-browser-tabset a.button,
+#media-browser-tabset input.form-submit, #modal-content .form-submit,
+#media-browser-tabset form a.button,
+#media-browser-tabset form input.form-submit,
+#modal-content #edit-cancel {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -11185,21 +11824,39 @@ button.close {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:hover, #modal-content #edit-cancel:hover, .btn:active, #modal-content #edit-cancel:active, .btn.active, #modal-content .active#edit-cancel, .btn.disabled, #modal-content .disabled#edit-cancel, .btn[disabled], #modal-content [disabled]#edit-cancel {
+.btn:hover, #media-browser-tabset a.button:hover,
+#media-browser-tabset input.form-submit:hover, #modal-content .form-submit:hover,
+#modal-content #edit-cancel:hover, .btn:active, #media-browser-tabset a.button:active,
+#media-browser-tabset input.form-submit:active, #modal-content .form-submit:active,
+#modal-content #edit-cancel:active, .btn.active, #media-browser-tabset a.active.button,
+#media-browser-tabset input.active.form-submit, #modal-content .active.form-submit,
+#modal-content .active#edit-cancel, .btn.disabled, #media-browser-tabset a.disabled.button,
+#media-browser-tabset input.disabled.form-submit, #modal-content .disabled.form-submit,
+#modal-content .disabled#edit-cancel, .btn[disabled], #media-browser-tabset a[disabled].button,
+#media-browser-tabset input[disabled].form-submit, #modal-content [disabled].form-submit,
+#modal-content [disabled]#edit-cancel {
   color: #333333;
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
 /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:active, #modal-content #edit-cancel:active, .btn.active, #modal-content .active#edit-cancel {
+.btn:active, #media-browser-tabset a.button:active,
+#media-browser-tabset input.form-submit:active, #modal-content .form-submit:active,
+#modal-content #edit-cancel:active, .btn.active, #media-browser-tabset a.active.button,
+#media-browser-tabset input.active.form-submit, #modal-content .active.form-submit,
+#modal-content .active#edit-cancel {
   background-color: #cccccc \9;
 }
 /* line 61, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn:first-child, #modal-content #edit-cancel:first-child {
+.btn:first-child, #media-browser-tabset a.button:first-child,
+#media-browser-tabset input.form-submit:first-child, #modal-content .form-submit:first-child,
+#modal-content #edit-cancel:first-child {
   *margin-left: 0;
 }
 /* line 32, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn:hover, #modal-content #edit-cancel:hover {
+.btn:hover, #media-browser-tabset a.button:hover,
+#media-browser-tabset input.form-submit:hover, #modal-content .form-submit:hover,
+#modal-content #edit-cancel:hover {
   color: #333333;
   text-decoration: none;
   background-position: 0 -15px;
@@ -11209,13 +11866,19 @@ button.close {
   transition: background-position 0.1s linear;
 }
 /* line 43, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn:focus, #modal-content #edit-cancel:focus {
+.btn:focus, #media-browser-tabset a.button:focus,
+#media-browser-tabset input.form-submit:focus, #modal-content .form-submit:focus,
+#modal-content #edit-cancel:focus {
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 49, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn.active, #modal-content .active#edit-cancel, .btn:active, #modal-content #edit-cancel:active {
+.btn.active, #media-browser-tabset a.active.button,
+#media-browser-tabset input.active.form-submit, #modal-content .active.form-submit,
+#modal-content .active#edit-cancel, .btn:active, #media-browser-tabset a.button:active,
+#media-browser-tabset input.form-submit:active, #modal-content .form-submit:active,
+#modal-content #edit-cancel:active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -11223,7 +11886,11 @@ button.close {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 57, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn.disabled, #modal-content .disabled#edit-cancel, .btn[disabled], #modal-content [disabled]#edit-cancel {
+.btn.disabled, #media-browser-tabset a.disabled.button,
+#media-browser-tabset input.disabled.form-submit, #modal-content .disabled.form-submit,
+#modal-content .disabled#edit-cancel, .btn[disabled], #media-browser-tabset a[disabled].button,
+#media-browser-tabset input[disabled].form-submit, #modal-content [disabled].form-submit,
+#modal-content [disabled]#edit-cancel {
   cursor: default;
   background-image: none;
   opacity: 0.65;
@@ -11302,7 +11969,7 @@ input[type="button"].btn-block {
 }
 
 /* line 141, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active,
+.btn-primary.active, #media-browser-tabset input.active.form-submit, #modal-content .active.form-submit, #node-edit .form-actions input.active,
 .btn-warning.active,
 .btn-danger.active,
 .btn-success.active,
@@ -11312,13 +11979,18 @@ input[type="button"].btn-block {
 }
 
 /* line 147, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn, #modal-content #edit-cancel {
+.btn, #media-browser-tabset a.button,
+#media-browser-tabset input.form-submit, #modal-content .form-submit,
+#media-browser-tabset form a.button,
+#media-browser-tabset form input.form-submit,
+#modal-content #edit-cancel {
   border-color: #c5c5c5;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
 }
 
 /* line 152, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-.btn-primary, #modal-content .form-submit, #node-edit .form-actions input {
+.btn-primary, #media-browser-tabset input.form-submit, #modal-content .form-submit,
+#media-browser-tabset form input.form-submit, #node-edit .form-actions input {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #006ecc;
@@ -11336,13 +12008,13 @@ input[type="button"].btn-block {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 /* line 489, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn-primary:hover, #modal-content .form-submit:hover, #node-edit .form-actions input:hover, .btn-primary:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active, .btn-primary.disabled, #modal-content .disabled.form-submit, #node-edit .form-actions input.disabled, .btn-primary[disabled], #modal-content [disabled].form-submit, #node-edit .form-actions input[disabled] {
+.btn-primary:hover, #media-browser-tabset input.form-submit:hover, #modal-content .form-submit:hover, #node-edit .form-actions input:hover, .btn-primary:active, #media-browser-tabset input.form-submit:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #media-browser-tabset input.active.form-submit, #modal-content .active.form-submit, #node-edit .form-actions input.active, .btn-primary.disabled, #media-browser-tabset input.disabled.form-submit, #modal-content .disabled.form-submit, #node-edit .form-actions input.disabled, .btn-primary[disabled], #media-browser-tabset input[disabled].form-submit, #modal-content [disabled].form-submit, #node-edit .form-actions input[disabled] {
   color: white;
   background-color: #0044cc;
   *background-color: #003bb3;
 }
 /* line 497, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-.btn-primary:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #modal-content .active.form-submit, #node-edit .form-actions input.active {
+.btn-primary:active, #media-browser-tabset input.form-submit:active, #modal-content .form-submit:active, #node-edit .form-actions input:active, .btn-primary.active, #media-browser-tabset input.active.form-submit, #modal-content .active.form-submit, #node-edit .form-actions input.active {
   background-color: #003399 \9;
 }
 
@@ -11492,36 +12164,51 @@ input[type="button"].btn-block {
 }
 
 /* line 181, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn, #modal-content button#edit-cancel,
+button.btn, #modal-content button.form-submit,
+#modal-content button#edit-cancel,
 input[type="submit"].btn,
+#media-browser-tabset input[type="submit"].form-submit,
+#modal-content input[type="submit"].form-submit,
 #modal-content input[type="submit"]#edit-cancel {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
 /* line 184, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn::-moz-focus-inner, #modal-content button#edit-cancel::-moz-focus-inner,
+button.btn::-moz-focus-inner, #modal-content button.form-submit::-moz-focus-inner,
+#modal-content button#edit-cancel::-moz-focus-inner,
 input[type="submit"].btn::-moz-focus-inner,
+#media-browser-tabset input[type="submit"].form-submit::-moz-focus-inner,
+#modal-content input[type="submit"].form-submit::-moz-focus-inner,
 #modal-content input[type="submit"]#edit-cancel::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 /* line 193, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-large, #modal-content button.btn-large#edit-cancel,
+button.btn.btn-large, #modal-content button.btn-large.form-submit,
+#modal-content button.btn-large#edit-cancel,
 input[type="submit"].btn.btn-large,
+#media-browser-tabset input[type="submit"].btn-large.form-submit,
+#modal-content input[type="submit"].btn-large.form-submit,
 #modal-content input[type="submit"].btn-large#edit-cancel {
   *padding-top: 7px;
   *padding-bottom: 7px;
 }
 /* line 197, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-small, #modal-content button.btn-small#edit-cancel,
+button.btn.btn-small, #modal-content button.btn-small.form-submit,
+#modal-content button.btn-small#edit-cancel,
 input[type="submit"].btn.btn-small,
+#media-browser-tabset input[type="submit"].btn-small.form-submit,
+#modal-content input[type="submit"].btn-small.form-submit,
 #modal-content input[type="submit"].btn-small#edit-cancel {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
 /* line 201, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_buttons.scss */
-button.btn.btn-mini, #modal-content button.btn-mini#edit-cancel,
+button.btn.btn-mini, #modal-content button.btn-mini.form-submit,
+#modal-content button.btn-mini#edit-cancel,
 input[type="submit"].btn.btn-mini,
+#media-browser-tabset input[type="submit"].btn-mini.form-submit,
+#modal-content input[type="submit"].btn-mini.form-submit,
 #modal-content input[type="submit"].btn-mini#edit-cancel {
   *padding-top: 1px;
   *padding-bottom: 1px;
@@ -11589,16 +12276,56 @@ input[type="submit"].btn.btn-mini,
   margin-bottom: 10px;
 }
 /* line 29, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-toolbar > .btn + .btn, #modal-content .btn-toolbar > #edit-cancel + .btn, #modal-content .btn-toolbar > .btn + #edit-cancel, #modal-content .btn-toolbar > #edit-cancel + #edit-cancel,
+.btn-toolbar > .btn + .btn, #media-browser-tabset .btn-toolbar > a.button + .btn,
+#media-browser-tabset .btn-toolbar > input.form-submit + .btn, #modal-content .btn-toolbar > .form-submit + .btn,
+#modal-content .btn-toolbar > #edit-cancel + .btn, #media-browser-tabset .btn-toolbar > .btn + a.button, #media-browser-tabset .btn-toolbar > a.button + a.button,
+#media-browser-tabset .btn-toolbar > input.form-submit + a.button, #modal-content #media-browser-tabset .btn-toolbar > .form-submit + a.button, #media-browser-tabset #modal-content .btn-toolbar > .form-submit + a.button,
+#media-browser-tabset form .btn-toolbar > a.button + a.button,
+#media-browser-tabset form .btn-toolbar > input.form-submit + a.button,
+#modal-content #media-browser-tabset .btn-toolbar > #edit-cancel + a.button,
+#media-browser-tabset #modal-content .btn-toolbar > #edit-cancel + a.button,
+#media-browser-tabset .btn-toolbar > .btn + input.form-submit,
+#media-browser-tabset .btn-toolbar > a.button + input.form-submit,
+#media-browser-tabset .btn-toolbar > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-toolbar > .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .btn-toolbar > .form-submit + input.form-submit,
+#media-browser-tabset form .btn-toolbar > a.button + input.form-submit,
+#media-browser-tabset form .btn-toolbar > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-toolbar > #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .btn-toolbar > #edit-cancel + input.form-submit, #modal-content .btn-toolbar > .btn + .form-submit, #media-browser-tabset #modal-content .btn-toolbar > a.button + .form-submit, #modal-content #media-browser-tabset .btn-toolbar > a.button + .form-submit,
+#media-browser-tabset #modal-content .btn-toolbar > input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .btn-toolbar > input.form-submit + .form-submit, #modal-content .btn-toolbar > .form-submit + .form-submit,
+#modal-content .btn-toolbar > #edit-cancel + .form-submit,
+#media-browser-tabset form .btn-toolbar > a.button + a.button,
+#media-browser-tabset form .btn-toolbar > input.form-submit + a.button,
+#media-browser-tabset form .btn-toolbar > input.form-submit + a.button,
+#media-browser-tabset form .btn-toolbar > a.button + input.form-submit,
+#media-browser-tabset form .btn-toolbar > input.form-submit + input.form-submit,
+#media-browser-tabset form .btn-toolbar > a.button + input.form-submit,
+#modal-content .btn-toolbar > .btn + #edit-cancel,
+#media-browser-tabset #modal-content .btn-toolbar > a.button + #edit-cancel,
+#modal-content #media-browser-tabset .btn-toolbar > a.button + #edit-cancel,
+#media-browser-tabset #modal-content .btn-toolbar > input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .btn-toolbar > input.form-submit + #edit-cancel,
+#modal-content .btn-toolbar > .form-submit + #edit-cancel,
+#modal-content .btn-toolbar > #edit-cancel + #edit-cancel,
 .btn-toolbar > .btn-group + .btn,
+#media-browser-tabset .btn-toolbar > .btn-group + a.button,
+#media-browser-tabset .btn-toolbar > .btn-group + input.form-submit,
+#modal-content .btn-toolbar > .btn-group + .form-submit,
 #modal-content .btn-toolbar > .btn-group + #edit-cancel,
 .btn-toolbar > .btn + .btn-group,
+#media-browser-tabset .btn-toolbar > a.button + .btn-group,
+#media-browser-tabset .btn-toolbar > input.form-submit + .btn-group,
+#modal-content .btn-toolbar > .form-submit + .btn-group,
 #modal-content .btn-toolbar > #edit-cancel + .btn-group {
   margin-left: 5px;
 }
 
 /* line 35, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn, #modal-content .btn-group > #edit-cancel {
+.btn-group > .btn, #media-browser-tabset .btn-group > a.button,
+#media-browser-tabset .btn-group > input.form-submit, #modal-content .btn-group > .form-submit,
+#modal-content .btn-group > #edit-cancel {
   position: relative;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -11606,12 +12333,46 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 39, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn + .btn, #modal-content .btn-group > #edit-cancel + .btn, #modal-content .btn-group > .btn + #edit-cancel, #modal-content .btn-group > #edit-cancel + #edit-cancel {
+.btn-group > .btn + .btn, #media-browser-tabset .btn-group > a.button + .btn,
+#media-browser-tabset .btn-group > input.form-submit + .btn, #modal-content .btn-group > .form-submit + .btn,
+#modal-content .btn-group > #edit-cancel + .btn, #media-browser-tabset .btn-group > .btn + a.button, #media-browser-tabset .btn-group > a.button + a.button,
+#media-browser-tabset .btn-group > input.form-submit + a.button, #modal-content #media-browser-tabset .btn-group > .form-submit + a.button, #media-browser-tabset #modal-content .btn-group > .form-submit + a.button,
+#media-browser-tabset form .btn-group > a.button + a.button,
+#media-browser-tabset form .btn-group > input.form-submit + a.button,
+#modal-content #media-browser-tabset .btn-group > #edit-cancel + a.button,
+#media-browser-tabset #modal-content .btn-group > #edit-cancel + a.button,
+#media-browser-tabset .btn-group > .btn + input.form-submit,
+#media-browser-tabset .btn-group > a.button + input.form-submit,
+#media-browser-tabset .btn-group > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-group > .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .btn-group > .form-submit + input.form-submit,
+#media-browser-tabset form .btn-group > a.button + input.form-submit,
+#media-browser-tabset form .btn-group > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-group > #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .btn-group > #edit-cancel + input.form-submit, #modal-content .btn-group > .btn + .form-submit, #media-browser-tabset #modal-content .btn-group > a.button + .form-submit, #modal-content #media-browser-tabset .btn-group > a.button + .form-submit,
+#media-browser-tabset #modal-content .btn-group > input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .btn-group > input.form-submit + .form-submit, #modal-content .btn-group > .form-submit + .form-submit,
+#modal-content .btn-group > #edit-cancel + .form-submit,
+#media-browser-tabset form .btn-group > a.button + a.button,
+#media-browser-tabset form .btn-group > input.form-submit + a.button,
+#media-browser-tabset form .btn-group > input.form-submit + a.button,
+#media-browser-tabset form .btn-group > a.button + input.form-submit,
+#media-browser-tabset form .btn-group > input.form-submit + input.form-submit,
+#media-browser-tabset form .btn-group > a.button + input.form-submit,
+#modal-content .btn-group > .btn + #edit-cancel,
+#media-browser-tabset #modal-content .btn-group > a.button + #edit-cancel,
+#modal-content #media-browser-tabset .btn-group > a.button + #edit-cancel,
+#media-browser-tabset #modal-content .btn-group > input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .btn-group > input.form-submit + #edit-cancel,
+#modal-content .btn-group > .form-submit + #edit-cancel,
+#modal-content .btn-group > #edit-cancel + #edit-cancel {
   margin-left: -1px;
 }
 
 /* line 44, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn, #modal-content .btn-group > #edit-cancel,
+.btn-group > .btn, #media-browser-tabset .btn-group > a.button,
+#media-browser-tabset .btn-group > input.form-submit, #modal-content .btn-group > .form-submit,
+#modal-content .btn-group > #edit-cancel,
 .btn-group > .dropdown-menu,
 .btn-group > .popover {
   font-size: 14px;
@@ -11633,7 +12394,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 60, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child, #modal-content .btn-group > #edit-cancel:first-child {
+.btn-group > .btn:first-child, #media-browser-tabset .btn-group > a.button:first-child,
+#media-browser-tabset .btn-group > input.form-submit:first-child, #modal-content .btn-group > .form-submit:first-child,
+#modal-content .btn-group > #edit-cancel:first-child {
   margin-left: 0;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topleft: 4px;
@@ -11644,7 +12407,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 67, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child, #modal-content .btn-group > #edit-cancel:last-child,
+.btn-group > .btn:last-child, #media-browser-tabset .btn-group > a.button:last-child,
+#media-browser-tabset .btn-group > input.form-submit:last-child, #modal-content .btn-group > .form-submit:last-child,
+#modal-content .btn-group > #edit-cancel:last-child,
 .btn-group > .dropdown-toggle {
   -webkit-border-top-right-radius: 4px;
   -moz-border-radius-topright: 4px;
@@ -11655,7 +12420,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 72, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn.large:first-child, #modal-content .btn-group > .large#edit-cancel:first-child {
+.btn-group > .btn.large:first-child, #media-browser-tabset .btn-group > a.large.button:first-child,
+#media-browser-tabset .btn-group > input.large.form-submit:first-child, #modal-content .btn-group > .large.form-submit:first-child,
+#modal-content .btn-group > .large#edit-cancel:first-child {
   margin-left: 0;
   -webkit-border-top-left-radius: 6px;
   -moz-border-radius-topleft: 6px;
@@ -11666,7 +12433,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 78, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn.large:last-child, #modal-content .btn-group > .large#edit-cancel:last-child,
+.btn-group > .btn.large:last-child, #media-browser-tabset .btn-group > a.large.button:last-child,
+#media-browser-tabset .btn-group > input.large.form-submit:last-child, #modal-content .btn-group > .large.form-submit:last-child,
+#modal-content .btn-group > .large#edit-cancel:last-child,
 .btn-group > .large.dropdown-toggle {
   -webkit-border-top-right-radius: 6px;
   -moz-border-radius-topright: 6px;
@@ -11677,12 +12446,23 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 87, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn:hover, #modal-content .btn-group > #edit-cancel:hover,
+.btn-group > .btn:hover, #media-browser-tabset .btn-group > a.button:hover,
+#media-browser-tabset .btn-group > input.form-submit:hover, #modal-content .btn-group > .form-submit:hover,
+#modal-content .btn-group > #edit-cancel:hover,
 .btn-group > .btn:focus,
+#media-browser-tabset .btn-group > a.button:focus,
+#media-browser-tabset .btn-group > input.form-submit:focus,
+#modal-content .btn-group > .form-submit:focus,
 #modal-content .btn-group > #edit-cancel:focus,
 .btn-group > .btn:active,
+#media-browser-tabset .btn-group > a.button:active,
+#media-browser-tabset .btn-group > input.form-submit:active,
+#modal-content .btn-group > .form-submit:active,
 #modal-content .btn-group > #edit-cancel:active,
 .btn-group > .btn.active,
+#media-browser-tabset .btn-group > a.active.button,
+#media-browser-tabset .btn-group > input.active.form-submit,
+#modal-content .btn-group > .active.form-submit,
 #modal-content .btn-group > .active#edit-cancel {
   z-index: 2;
 }
@@ -11694,7 +12474,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 103, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle, #modal-content .btn-group > #edit-cancel + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, #media-browser-tabset .btn-group > a.button + .dropdown-toggle,
+#media-browser-tabset .btn-group > input.form-submit + .dropdown-toggle, #modal-content .btn-group > .form-submit + .dropdown-toggle,
+#modal-content .btn-group > #edit-cancel + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
   -webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -11734,11 +12516,15 @@ input[type="submit"].btn.btn-mini,
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 137, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn.dropdown-toggle, .btn-group.open #modal-content .dropdown-toggle#edit-cancel, #modal-content .btn-group.open .dropdown-toggle#edit-cancel {
+.btn-group.open .btn.dropdown-toggle, .btn-group.open #media-browser-tabset a.dropdown-toggle.button, #media-browser-tabset .btn-group.open a.dropdown-toggle.button,
+.btn-group.open #media-browser-tabset input.dropdown-toggle.form-submit,
+#media-browser-tabset .btn-group.open input.dropdown-toggle.form-submit, .btn-group.open #modal-content .dropdown-toggle.form-submit, #modal-content .btn-group.open .dropdown-toggle.form-submit,
+.btn-group.open #modal-content .dropdown-toggle#edit-cancel,
+#modal-content .btn-group.open .dropdown-toggle#edit-cancel {
   background-color: #e6e6e6;
 }
 /* line 140, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #modal-content .dropdown-toggle.form-submit, #modal-content .btn-group.open .dropdown-toggle.form-submit, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
+.btn-group.open .btn-primary.dropdown-toggle, .btn-group.open #media-browser-tabset input.dropdown-toggle.form-submit, #media-browser-tabset .btn-group.open input.dropdown-toggle.form-submit, .btn-group.open #modal-content .dropdown-toggle.form-submit, #modal-content .btn-group.open .dropdown-toggle.form-submit, .btn-group.open #node-edit .form-actions input.dropdown-toggle, #node-edit .form-actions .btn-group.open input.dropdown-toggle {
   background-color: #0044cc;
 }
 /* line 143, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
@@ -11763,7 +12549,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 162, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn .caret, #modal-content #edit-cancel .caret {
+.btn .caret, #media-browser-tabset a.button .caret,
+#media-browser-tabset input.form-submit .caret, #modal-content .form-submit .caret,
+#modal-content #edit-cancel .caret {
   margin-top: 8px;
   margin-left: 0;
 }
@@ -11788,7 +12576,7 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 191, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-primary .caret, #modal-content .form-submit .caret, #node-edit .form-actions input .caret,
+.btn-primary .caret, #media-browser-tabset input.form-submit .caret, #modal-content .form-submit .caret, #node-edit .form-actions input .caret,
 .btn-warning .caret,
 .btn-danger .caret,
 .btn-info .caret,
@@ -11806,7 +12594,9 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 206, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn, #modal-content .btn-group-vertical > #edit-cancel {
+.btn-group-vertical > .btn, #media-browser-tabset .btn-group-vertical > a.button,
+#media-browser-tabset .btn-group-vertical > input.form-submit, #modal-content .btn-group-vertical > .form-submit,
+#modal-content .btn-group-vertical > #edit-cancel {
   display: block;
   float: none;
   max-width: 100%;
@@ -11816,20 +12606,56 @@ input[type="submit"].btn.btn-mini,
 }
 
 /* line 212, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn, #modal-content .btn-group-vertical > #edit-cancel + .btn, #modal-content .btn-group-vertical > .btn + #edit-cancel, #modal-content .btn-group-vertical > #edit-cancel + #edit-cancel {
+.btn-group-vertical > .btn + .btn, #media-browser-tabset .btn-group-vertical > a.button + .btn,
+#media-browser-tabset .btn-group-vertical > input.form-submit + .btn, #modal-content .btn-group-vertical > .form-submit + .btn,
+#modal-content .btn-group-vertical > #edit-cancel + .btn, #media-browser-tabset .btn-group-vertical > .btn + a.button, #media-browser-tabset .btn-group-vertical > a.button + a.button,
+#media-browser-tabset .btn-group-vertical > input.form-submit + a.button, #modal-content #media-browser-tabset .btn-group-vertical > .form-submit + a.button, #media-browser-tabset #modal-content .btn-group-vertical > .form-submit + a.button,
+#media-browser-tabset form .btn-group-vertical > a.button + a.button,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + a.button,
+#modal-content #media-browser-tabset .btn-group-vertical > #edit-cancel + a.button,
+#media-browser-tabset #modal-content .btn-group-vertical > #edit-cancel + a.button,
+#media-browser-tabset .btn-group-vertical > .btn + input.form-submit,
+#media-browser-tabset .btn-group-vertical > a.button + input.form-submit,
+#media-browser-tabset .btn-group-vertical > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-group-vertical > .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .btn-group-vertical > .form-submit + input.form-submit,
+#media-browser-tabset form .btn-group-vertical > a.button + input.form-submit,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + input.form-submit,
+#modal-content #media-browser-tabset .btn-group-vertical > #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .btn-group-vertical > #edit-cancel + input.form-submit, #modal-content .btn-group-vertical > .btn + .form-submit, #media-browser-tabset #modal-content .btn-group-vertical > a.button + .form-submit, #modal-content #media-browser-tabset .btn-group-vertical > a.button + .form-submit,
+#media-browser-tabset #modal-content .btn-group-vertical > input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .btn-group-vertical > input.form-submit + .form-submit, #modal-content .btn-group-vertical > .form-submit + .form-submit,
+#modal-content .btn-group-vertical > #edit-cancel + .form-submit,
+#media-browser-tabset form .btn-group-vertical > a.button + a.button,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + a.button,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + a.button,
+#media-browser-tabset form .btn-group-vertical > a.button + input.form-submit,
+#media-browser-tabset form .btn-group-vertical > input.form-submit + input.form-submit,
+#media-browser-tabset form .btn-group-vertical > a.button + input.form-submit,
+#modal-content .btn-group-vertical > .btn + #edit-cancel,
+#media-browser-tabset #modal-content .btn-group-vertical > a.button + #edit-cancel,
+#modal-content #media-browser-tabset .btn-group-vertical > a.button + #edit-cancel,
+#media-browser-tabset #modal-content .btn-group-vertical > input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .btn-group-vertical > input.form-submit + #edit-cancel,
+#modal-content .btn-group-vertical > .form-submit + #edit-cancel,
+#modal-content .btn-group-vertical > #edit-cancel + #edit-cancel {
   margin-left: 0;
   margin-top: -1px;
 }
 
 /* line 216, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child, #modal-content .btn-group-vertical > #edit-cancel:first-child {
+.btn-group-vertical > .btn:first-child, #media-browser-tabset .btn-group-vertical > a.button:first-child,
+#media-browser-tabset .btn-group-vertical > input.form-submit:first-child, #modal-content .btn-group-vertical > .form-submit:first-child,
+#modal-content .btn-group-vertical > #edit-cancel:first-child {
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
 }
 
 /* line 219, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child, #modal-content .btn-group-vertical > #edit-cancel:last-child {
+.btn-group-vertical > .btn:last-child, #media-browser-tabset .btn-group-vertical > a.button:last-child,
+#media-browser-tabset .btn-group-vertical > input.form-submit:last-child, #modal-content .btn-group-vertical > .form-submit:last-child,
+#modal-content .btn-group-vertical > #edit-cancel:last-child {
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
@@ -12489,22 +13315,66 @@ div.tabs ul.tabs li.dropdown.open a:hover .caret {
 }
 
 /* line 93, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn, div.tabs .btn, .navbar #modal-content #edit-cancel, #modal-content .navbar #edit-cancel, div.tabs #modal-content #edit-cancel, #modal-content div.tabs #edit-cancel,
+.navbar .btn, div.tabs .btn, .navbar #media-browser-tabset a.button, #media-browser-tabset .navbar a.button, div.tabs #media-browser-tabset a.button, #media-browser-tabset div.tabs a.button,
+.navbar #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar input.form-submit,
+div.tabs #media-browser-tabset input.form-submit,
+#media-browser-tabset div.tabs input.form-submit, .navbar #modal-content .form-submit, #modal-content .navbar .form-submit, div.tabs #modal-content .form-submit, #modal-content div.tabs .form-submit,
+div.tabs #media-browser-tabset form a.button,
+#media-browser-tabset form div.tabs a.button,
+div.tabs #media-browser-tabset form input.form-submit,
+#media-browser-tabset form div.tabs input.form-submit,
+.navbar #modal-content #edit-cancel,
+#modal-content .navbar #edit-cancel,
+div.tabs #modal-content #edit-cancel,
+#modal-content div.tabs #edit-cancel,
 .navbar .btn-group,
 div.tabs .btn-group {
   margin-top: 5px;
 }
 
 /* line 98, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_navbar.scss */
-.navbar .btn-group .btn, div.tabs .btn-group .btn, .navbar .btn-group #modal-content #edit-cancel, #modal-content .navbar .btn-group #edit-cancel, div.tabs .btn-group #modal-content #edit-cancel, #modal-content div.tabs .btn-group #edit-cancel,
+.navbar .btn-group .btn, div.tabs .btn-group .btn, .navbar .btn-group #media-browser-tabset a.button, #media-browser-tabset .navbar .btn-group a.button, div.tabs .btn-group #media-browser-tabset a.button, #media-browser-tabset div.tabs .btn-group a.button,
+.navbar .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar .btn-group input.form-submit,
+div.tabs .btn-group #media-browser-tabset input.form-submit,
+#media-browser-tabset div.tabs .btn-group input.form-submit, .navbar .btn-group #modal-content .form-submit, #modal-content .navbar .btn-group .form-submit, div.tabs .btn-group #modal-content .form-submit, #modal-content div.tabs .btn-group .form-submit,
+.navbar .btn-group #modal-content #edit-cancel,
+#modal-content .navbar .btn-group #edit-cancel,
+div.tabs .btn-group #modal-content #edit-cancel,
+#modal-content div.tabs .btn-group #edit-cancel,
 .navbar .input-prepend .btn,
 div.tabs .input-prepend .btn,
+.navbar .input-prepend #media-browser-tabset a.button,
+#media-browser-tabset .navbar .input-prepend a.button,
+div.tabs .input-prepend #media-browser-tabset a.button,
+#media-browser-tabset div.tabs .input-prepend a.button,
+.navbar .input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar .input-prepend input.form-submit,
+div.tabs .input-prepend #media-browser-tabset input.form-submit,
+#media-browser-tabset div.tabs .input-prepend input.form-submit,
+.navbar .input-prepend #modal-content .form-submit,
+#modal-content .navbar .input-prepend .form-submit,
+div.tabs .input-prepend #modal-content .form-submit,
+#modal-content div.tabs .input-prepend .form-submit,
 .navbar .input-prepend #modal-content #edit-cancel,
 #modal-content .navbar .input-prepend #edit-cancel,
 div.tabs .input-prepend #modal-content #edit-cancel,
 #modal-content div.tabs .input-prepend #edit-cancel,
 .navbar .input-append .btn,
 div.tabs .input-append .btn,
+.navbar .input-append #media-browser-tabset a.button,
+#media-browser-tabset .navbar .input-append a.button,
+div.tabs .input-append #media-browser-tabset a.button,
+#media-browser-tabset div.tabs .input-append a.button,
+.navbar .input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar .input-append input.form-submit,
+div.tabs .input-append #media-browser-tabset input.form-submit,
+#media-browser-tabset div.tabs .input-append input.form-submit,
+.navbar .input-append #modal-content .form-submit,
+#modal-content .navbar .input-append .form-submit,
+div.tabs .input-append #modal-content .form-submit,
+#modal-content div.tabs .input-append .form-submit,
 .navbar .input-append #modal-content #edit-cancel,
 #modal-content .navbar .input-append #edit-cancel,
 div.tabs .input-append #modal-content #edit-cancel,
@@ -12538,6 +13408,12 @@ div.tabs .input-append #modal-content #edit-cancel,
 .navbar-form input,
 .navbar-form select,
 .navbar-form .btn,
+.navbar-form #media-browser-tabset a.button,
+#media-browser-tabset .navbar-form a.button,
+.navbar-form #media-browser-tabset input.form-submit,
+#media-browser-tabset .navbar-form input.form-submit,
+.navbar-form #modal-content .form-submit,
+#modal-content .navbar-form .form-submit,
 .navbar-form #modal-content #edit-cancel,
 #modal-content .navbar-form #edit-cancel {
   display: inline-block;
@@ -13414,12 +14290,148 @@ div.tabs .navbar-inverse ul.tabs li.dropdown.open.active > .dropdown-toggle .car
   clear: both;
 }
 /* line 83, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
-.modal-footer .btn + .btn, .modal-footer #modal-content #edit-cancel + .btn, #modal-content .modal-footer #edit-cancel + .btn, .modal-footer #modal-content .btn + #edit-cancel, #modal-content .modal-footer .btn + #edit-cancel, .modal-footer #modal-content #edit-cancel + #edit-cancel, #modal-content .modal-footer #edit-cancel + #edit-cancel {
+.modal-footer .btn + .btn, .modal-footer #media-browser-tabset a.button + .btn, #media-browser-tabset .modal-footer a.button + .btn,
+.modal-footer #media-browser-tabset input.form-submit + .btn,
+#media-browser-tabset .modal-footer input.form-submit + .btn, .modal-footer #modal-content .form-submit + .btn, #modal-content .modal-footer .form-submit + .btn,
+.modal-footer #modal-content #edit-cancel + .btn,
+#modal-content .modal-footer #edit-cancel + .btn, .modal-footer #media-browser-tabset .btn + a.button, #media-browser-tabset .modal-footer .btn + a.button, .modal-footer #media-browser-tabset a.button + a.button, #media-browser-tabset .modal-footer a.button + a.button,
+.modal-footer #media-browser-tabset input.form-submit + a.button,
+#media-browser-tabset .modal-footer input.form-submit + a.button, .modal-footer #modal-content #media-browser-tabset .form-submit + a.button, #media-browser-tabset .modal-footer #modal-content .form-submit + a.button, #modal-content .modal-footer #media-browser-tabset .form-submit + a.button, #media-browser-tabset #modal-content .modal-footer .form-submit + a.button,
+.modal-footer #media-browser-tabset form a.button + a.button,
+#media-browser-tabset form .modal-footer a.button + a.button,
+.modal-footer #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer input.form-submit + a.button,
+.modal-footer #modal-content #media-browser-tabset #edit-cancel + a.button,
+#media-browser-tabset .modal-footer #modal-content #edit-cancel + a.button,
+#modal-content .modal-footer #media-browser-tabset #edit-cancel + a.button,
+#media-browser-tabset #modal-content .modal-footer #edit-cancel + a.button,
+.modal-footer #media-browser-tabset .btn + input.form-submit,
+#media-browser-tabset .modal-footer .btn + input.form-submit,
+.modal-footer #media-browser-tabset a.button + input.form-submit,
+#media-browser-tabset .modal-footer a.button + input.form-submit,
+.modal-footer #media-browser-tabset input.form-submit + input.form-submit,
+#media-browser-tabset .modal-footer input.form-submit + input.form-submit,
+.modal-footer #modal-content #media-browser-tabset .form-submit + input.form-submit,
+#media-browser-tabset .modal-footer #modal-content .form-submit + input.form-submit,
+#modal-content .modal-footer #media-browser-tabset .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .modal-footer .form-submit + input.form-submit,
+.modal-footer #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer a.button + input.form-submit,
+.modal-footer #media-browser-tabset form input.form-submit + input.form-submit,
+#media-browser-tabset form .modal-footer input.form-submit + input.form-submit,
+.modal-footer #modal-content #media-browser-tabset #edit-cancel + input.form-submit,
+#media-browser-tabset .modal-footer #modal-content #edit-cancel + input.form-submit,
+#modal-content .modal-footer #media-browser-tabset #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .modal-footer #edit-cancel + input.form-submit, .modal-footer #modal-content .btn + .form-submit, #modal-content .modal-footer .btn + .form-submit, .modal-footer #media-browser-tabset #modal-content a.button + .form-submit, #modal-content .modal-footer #media-browser-tabset a.button + .form-submit, #media-browser-tabset .modal-footer #modal-content a.button + .form-submit, #modal-content #media-browser-tabset .modal-footer a.button + .form-submit,
+.modal-footer #media-browser-tabset #modal-content input.form-submit + .form-submit,
+#modal-content .modal-footer #media-browser-tabset input.form-submit + .form-submit,
+#media-browser-tabset .modal-footer #modal-content input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .modal-footer input.form-submit + .form-submit, .modal-footer #modal-content .form-submit + .form-submit, #modal-content .modal-footer .form-submit + .form-submit,
+.modal-footer #modal-content #edit-cancel + .form-submit,
+#modal-content .modal-footer #edit-cancel + .form-submit,
+.modal-footer #media-browser-tabset form a.button + a.button,
+#media-browser-tabset .modal-footer form a.button + a.button,
+#media-browser-tabset form .modal-footer a.button + a.button,
+.modal-footer #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset .modal-footer form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer input.form-submit + a.button,
+.modal-footer #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer input.form-submit + a.button,
+.modal-footer #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset .modal-footer form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer a.button + input.form-submit,
+.modal-footer #media-browser-tabset form input.form-submit + input.form-submit,
+#media-browser-tabset .modal-footer form input.form-submit + input.form-submit,
+#media-browser-tabset form .modal-footer input.form-submit + input.form-submit,
+.modal-footer #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer a.button + input.form-submit,
+.modal-footer #modal-content .btn + #edit-cancel,
+#modal-content .modal-footer .btn + #edit-cancel,
+.modal-footer #media-browser-tabset #modal-content a.button + #edit-cancel,
+#modal-content .modal-footer #media-browser-tabset a.button + #edit-cancel,
+#media-browser-tabset .modal-footer #modal-content a.button + #edit-cancel,
+#modal-content #media-browser-tabset .modal-footer a.button + #edit-cancel,
+.modal-footer #media-browser-tabset #modal-content input.form-submit + #edit-cancel,
+#modal-content .modal-footer #media-browser-tabset input.form-submit + #edit-cancel,
+#media-browser-tabset .modal-footer #modal-content input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .modal-footer input.form-submit + #edit-cancel,
+.modal-footer #modal-content .form-submit + #edit-cancel,
+#modal-content .modal-footer .form-submit + #edit-cancel,
+.modal-footer #modal-content #edit-cancel + #edit-cancel,
+#modal-content .modal-footer #edit-cancel + #edit-cancel {
   margin-left: 5px;
   margin-bottom: 0;
 }
 /* line 88, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #modal-content #edit-cancel + .btn, #modal-content .modal-footer .btn-group #edit-cancel + .btn, .modal-footer .btn-group #modal-content .btn + #edit-cancel, #modal-content .modal-footer .btn-group .btn + #edit-cancel, .modal-footer .btn-group #modal-content #edit-cancel + #edit-cancel, #modal-content .modal-footer .btn-group #edit-cancel + #edit-cancel {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #media-browser-tabset a.button + .btn, #media-browser-tabset .modal-footer .btn-group a.button + .btn,
+.modal-footer .btn-group #media-browser-tabset input.form-submit + .btn,
+#media-browser-tabset .modal-footer .btn-group input.form-submit + .btn, .modal-footer .btn-group #modal-content .form-submit + .btn, #modal-content .modal-footer .btn-group .form-submit + .btn,
+.modal-footer .btn-group #modal-content #edit-cancel + .btn,
+#modal-content .modal-footer .btn-group #edit-cancel + .btn, .modal-footer .btn-group #media-browser-tabset .btn + a.button, #media-browser-tabset .modal-footer .btn-group .btn + a.button, .modal-footer .btn-group #media-browser-tabset a.button + a.button, #media-browser-tabset .modal-footer .btn-group a.button + a.button,
+.modal-footer .btn-group #media-browser-tabset input.form-submit + a.button,
+#media-browser-tabset .modal-footer .btn-group input.form-submit + a.button, .modal-footer .btn-group #modal-content #media-browser-tabset .form-submit + a.button, #media-browser-tabset .modal-footer .btn-group #modal-content .form-submit + a.button, #modal-content .modal-footer .btn-group #media-browser-tabset .form-submit + a.button, #media-browser-tabset #modal-content .modal-footer .btn-group .form-submit + a.button,
+.modal-footer .btn-group #media-browser-tabset form a.button + a.button,
+#media-browser-tabset form .modal-footer .btn-group a.button + a.button,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + a.button,
+.modal-footer .btn-group #modal-content #media-browser-tabset #edit-cancel + a.button,
+#media-browser-tabset .modal-footer .btn-group #modal-content #edit-cancel + a.button,
+#modal-content .modal-footer .btn-group #media-browser-tabset #edit-cancel + a.button,
+#media-browser-tabset #modal-content .modal-footer .btn-group #edit-cancel + a.button,
+.modal-footer .btn-group #media-browser-tabset .btn + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group .btn + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset a.button + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group a.button + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset input.form-submit + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group input.form-submit + input.form-submit,
+.modal-footer .btn-group #modal-content #media-browser-tabset .form-submit + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group #modal-content .form-submit + input.form-submit,
+#modal-content .modal-footer .btn-group #media-browser-tabset .form-submit + input.form-submit,
+#media-browser-tabset #modal-content .modal-footer .btn-group .form-submit + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group a.button + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + input.form-submit,
+.modal-footer .btn-group #modal-content #media-browser-tabset #edit-cancel + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group #modal-content #edit-cancel + input.form-submit,
+#modal-content .modal-footer .btn-group #media-browser-tabset #edit-cancel + input.form-submit,
+#media-browser-tabset #modal-content .modal-footer .btn-group #edit-cancel + input.form-submit, .modal-footer .btn-group #modal-content .btn + .form-submit, #modal-content .modal-footer .btn-group .btn + .form-submit, .modal-footer .btn-group #media-browser-tabset #modal-content a.button + .form-submit, #modal-content .modal-footer .btn-group #media-browser-tabset a.button + .form-submit, #media-browser-tabset .modal-footer .btn-group #modal-content a.button + .form-submit, #modal-content #media-browser-tabset .modal-footer .btn-group a.button + .form-submit,
+.modal-footer .btn-group #media-browser-tabset #modal-content input.form-submit + .form-submit,
+#modal-content .modal-footer .btn-group #media-browser-tabset input.form-submit + .form-submit,
+#media-browser-tabset .modal-footer .btn-group #modal-content input.form-submit + .form-submit,
+#modal-content #media-browser-tabset .modal-footer .btn-group input.form-submit + .form-submit, .modal-footer .btn-group #modal-content .form-submit + .form-submit, #modal-content .modal-footer .btn-group .form-submit + .form-submit,
+.modal-footer .btn-group #modal-content #edit-cancel + .form-submit,
+#modal-content .modal-footer .btn-group #edit-cancel + .form-submit,
+.modal-footer .btn-group #media-browser-tabset form a.button + a.button,
+#media-browser-tabset .modal-footer .btn-group form a.button + a.button,
+#media-browser-tabset form .modal-footer .btn-group a.button + a.button,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset .modal-footer .btn-group form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + a.button,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + a.button,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + a.button,
+.modal-footer .btn-group #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group a.button + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset form input.form-submit + input.form-submit,
+#media-browser-tabset .modal-footer .btn-group form input.form-submit + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group input.form-submit + input.form-submit,
+.modal-footer .btn-group #media-browser-tabset form a.button + input.form-submit,
+#media-browser-tabset form .modal-footer .btn-group a.button + input.form-submit,
+.modal-footer .btn-group #modal-content .btn + #edit-cancel,
+#modal-content .modal-footer .btn-group .btn + #edit-cancel,
+.modal-footer .btn-group #media-browser-tabset #modal-content a.button + #edit-cancel,
+#modal-content .modal-footer .btn-group #media-browser-tabset a.button + #edit-cancel,
+#media-browser-tabset .modal-footer .btn-group #modal-content a.button + #edit-cancel,
+#modal-content #media-browser-tabset .modal-footer .btn-group a.button + #edit-cancel,
+.modal-footer .btn-group #media-browser-tabset #modal-content input.form-submit + #edit-cancel,
+#modal-content .modal-footer .btn-group #media-browser-tabset input.form-submit + #edit-cancel,
+#media-browser-tabset .modal-footer .btn-group #modal-content input.form-submit + #edit-cancel,
+#modal-content #media-browser-tabset .modal-footer .btn-group input.form-submit + #edit-cancel,
+.modal-footer .btn-group #modal-content .form-submit + #edit-cancel,
+#modal-content .modal-footer .btn-group .form-submit + #edit-cancel,
+.modal-footer .btn-group #modal-content #edit-cancel + #edit-cancel,
+#modal-content .modal-footer .btn-group #edit-cancel + #edit-cancel {
   margin-left: -1px;
 }
 /* line 92, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_modals.scss */
@@ -13826,8 +14838,21 @@ a.label:hover, .oa-news .oa-news-tags a:hover, a.badge:hover {
 }
 
 /* line 69, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_labels-badges.scss */
-.btn .label, #modal-content #edit-cancel .label, .btn .oa-news .oa-news-tags a, .oa-news .oa-news-tags .btn a, #modal-content #edit-cancel .oa-news .oa-news-tags a, .oa-news .oa-news-tags #modal-content #edit-cancel a,
+.btn .label, #media-browser-tabset a.button .label,
+#media-browser-tabset input.form-submit .label, #modal-content .form-submit .label,
+#modal-content #edit-cancel .label, .btn .oa-news .oa-news-tags a, .oa-news .oa-news-tags .btn a, #media-browser-tabset a.button .oa-news .oa-news-tags a, .oa-news .oa-news-tags #media-browser-tabset a.button a,
+#media-browser-tabset input.form-submit .oa-news .oa-news-tags a,
+.oa-news .oa-news-tags #media-browser-tabset input.form-submit a, #modal-content .form-submit .oa-news .oa-news-tags a, .oa-news .oa-news-tags #modal-content .form-submit a,
+#media-browser-tabset form a.button .oa-news .oa-news-tags a,
+.oa-news .oa-news-tags #media-browser-tabset form a.button a,
+#media-browser-tabset form input.form-submit .oa-news .oa-news-tags a,
+.oa-news .oa-news-tags #media-browser-tabset form input.form-submit a,
+#modal-content #edit-cancel .oa-news .oa-news-tags a,
+.oa-news .oa-news-tags #modal-content #edit-cancel a,
 .btn .badge,
+#media-browser-tabset a.button .badge,
+#media-browser-tabset input.form-submit .badge,
+#modal-content .form-submit .badge,
 #modal-content #edit-cancel .badge {
   position: relative;
   top: -1px;
@@ -15286,7 +16311,10 @@ form fieldset legend {
   font-size: 18px;
 }
 /* line 16, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
-form .form-actions .btn, form .form-actions #modal-content #edit-cancel, #modal-content form .form-actions #edit-cancel {
+form .form-actions .btn, form .form-actions #media-browser-tabset a.button,
+form .form-actions #media-browser-tabset input.form-submit, form .form-actions #modal-content .form-submit, #modal-content form .form-actions .form-submit,
+form .form-actions #modal-content #edit-cancel,
+#modal-content form .form-actions #edit-cancel {
   margin-right: 10px;
 }
 /* line 21, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_form.scss */
@@ -16942,7 +17970,11 @@ html.js input.throbbing {
   }
 
   /* line 75, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_twitter_bootstrap-2.2.2.2/stylesheets/compass_twitter_bootstrap/_responsive-navbar.scss */
-  .nav-collapse .btn, .nav-collapse #modal-content #edit-cancel, #modal-content .nav-collapse #edit-cancel {
+  .nav-collapse .btn, .nav-collapse #media-browser-tabset a.button, #media-browser-tabset .nav-collapse a.button,
+  .nav-collapse #media-browser-tabset input.form-submit,
+  #media-browser-tabset .nav-collapse input.form-submit, .nav-collapse #modal-content .form-submit, #modal-content .nav-collapse .form-submit,
+  .nav-collapse #modal-content #edit-cancel,
+  #modal-content .nav-collapse #edit-cancel {
     padding: 4px 10px 4px;
     font-weight: normal;
     -webkit-border-radius: 4px;
@@ -17138,7 +18170,10 @@ html.js input.throbbing {
 }
 @media (max-width: 767px) {
   /* line 7, ../../../../../../../../var/lib/gems/1.9.1/gems/compass_radix-0.0.12/stylesheets/compass_radix/_responsive_form.scss */
-  form .btn, form #modal-content #edit-cancel, #modal-content form #edit-cancel {
+  form .btn, form #media-browser-tabset a.button,
+  form #media-browser-tabset input.form-submit, form #modal-content .form-submit, #modal-content form .form-submit,
+  form #modal-content #edit-cancel,
+  #modal-content form #edit-cancel {
     width: 100%;
     display: block;
     clear: both;
@@ -17905,7 +18940,9 @@ div.tabs li.active a {
   margin-left: 0;
 }
 /* line 69, ../sass/_panel.scss */
-.pane-oa-widgets-add-content li a.btn, .pane-oa-widgets-add-content li #modal-content a#edit-cancel, #modal-content .pane-oa-widgets-add-content li a#edit-cancel {
+.pane-oa-widgets-add-content li a.btn, .pane-oa-widgets-add-content li #media-browser-tabset a.button, #media-browser-tabset .pane-oa-widgets-add-content li a.button, .pane-oa-widgets-add-content li #modal-content a.form-submit, #modal-content .pane-oa-widgets-add-content li a.form-submit,
+.pane-oa-widgets-add-content li #modal-content a#edit-cancel,
+#modal-content .pane-oa-widgets-add-content li a#edit-cancel {
   margin-bottom: 5px;
 }
 
@@ -18063,25 +19100,82 @@ div.tabs li.active a {
   margin-bottom: 0.5em;
 }
 
-/* line 17, ../sass/_form.scss */
+/* line 23, ../sass/_form.scss */
+form .btn, form #media-browser-tabset a.button,
+form #media-browser-tabset input.form-submit, form #modal-content .form-submit, #modal-content form .form-submit,
+form #modal-content #edit-cancel,
+#modal-content form #edit-cancel {
+  width: auto;
+  height: inherit;
+}
+
+/* line 34, ../sass/_form.scss */
+#modal-content .form-submit,
+#media-browser-tabset a.button,
+#media-browser-tabset form a.button,
+#media-browser-tabset input.form-submit,
+#media-browser-tabset form input.form-submit,
+#modal-content #edit-cancel {
+  height: auto;
+  font-weight: normal;
+  display: inline-block;
+}
+/* line 39, ../sass/_form.scss */
+#modal-content .form-submit:hover,
+#media-browser-tabset a.button:hover,
+#media-browser-tabset form a.button:hover,
+#media-browser-tabset input.form-submit:hover,
+#media-browser-tabset form input.form-submit:hover,
+#modal-content #edit-cancel:hover {
+  color: white;
+  background-color: #0044cc;
+  background-image: none;
+}
+
+/* line 53, ../sass/_form.scss */
 #modal-content .form-item {
   clear: both;
 }
-/* line 20, ../sass/_form.scss */
+/* line 56, ../sass/_form.scss */
 #modal-content .form-submit {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
   margin-bottom: 0;
 }
-/* line 26, ../sass/_form.scss */
-#modal-content .form-submit:hover {
-  color: white;
-  background-color: #0044cc;
-  background-image: none;
+
+/* line 63, ../sass/_form.scss */
+#media-tabs-wrapper ul.ui-tabs-nav {
+  margin-bottom: 0;
 }
 
-/* line 37, ../sass/_form.scss */
+/* line 72, ../sass/_form.scss */
+#media-browser-tabset .views-exposed-form .views-submit-button {
+  margin-top: 30px;
+}
+
+/* line 75, ../sass/_form.scss */
+#media-browser-tabset .views-exposed-form .views-exposed-widget {
+  margin-right: 0;
+}
+
+/* line 78, ../sass/_form.scss */
+#media-browser-tabset #edit-filename-wrapper {
+  width: 200px;
+}
+
+/* line 81, ../sass/_form.scss */
+#media-browser-tabset form select {
+  width: 100%;
+}
+
+/* line 86, ../sass/_form.scss */
+#media-browser-tabset input.form-file,
+#media-browser-tabset span.file {
+  margin-right: 10px;
+}
+
+/* line 90, ../sass/_form.scss */
 #node-edit .burr-flipped-sidebar .panel-pane {
   border: 0;
   border-bottom: 1px solid #e3e3e3;
@@ -18096,100 +19190,100 @@ div.tabs li.active a {
   border-radius: 0;
 }
 
-/* line 47, ../sass/_form.scss */
+/* line 100, ../sass/_form.scss */
 #node-edit .container-inline-date .form-item-date-time, #node-edit .container-inline-date .form-item-date-date {
   padding-bottom: 0.5em;
 }
 
-/* line 51, ../sass/_form.scss */
+/* line 104, ../sass/_form.scss */
 #node-edit .form-actions {
   background: transparent;
 }
-/* line 53, ../sass/_form.scss */
+/* line 106, ../sass/_form.scss */
 #node-edit .form-actions input {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 58, ../sass/_form.scss */
+/* line 111, ../sass/_form.scss */
 #node-edit .form-actions input:hover {
   color: white;
   background-color: #0044cc;
   background-image: none;
 }
 
-/* line 66, ../sass/_form.scss */
+/* line 119, ../sass/_form.scss */
 .panel-pane {
   position: relative;
 }
 
-/* line 70, ../sass/_form.scss */
+/* line 123, ../sass/_form.scss */
 .views-exposed-form .well {
   padding: 0 1em;
 }
 
-/* line 74, ../sass/_form.scss */
+/* line 127, ../sass/_form.scss */
 .views-exposed-form .filter-btn {
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-/* line 80, ../sass/_form.scss */
+/* line 133, ../sass/_form.scss */
 .view-filters form {
   margin: 0;
 }
 
-/* line 84, ../sass/_form.scss */
+/* line 137, ../sass/_form.scss */
 .views-exposed-widget.views-submit-button {
   padding-right: 5px;
 }
 
-/* line 89, ../sass/_form.scss */
+/* line 142, ../sass/_form.scss */
 #oa-discussion-reply-form {
   position: relative;
 }
-/* line 91, ../sass/_form.scss */
+/* line 144, ../sass/_form.scss */
 #oa-discussion-reply-form .form-item {
   margin: 0;
 }
-/* line 94, ../sass/_form.scss */
+/* line 147, ../sass/_form.scss */
 #oa-discussion-reply-form input#edit-subject {
   width: 75%;
 }
-/* line 97, ../sass/_form.scss */
+/* line 150, ../sass/_form.scss */
 #oa-discussion-reply-form .field-name-field-oa-discussion-media {
   position: relative;
 }
-/* line 99, ../sass/_form.scss */
+/* line 152, ../sass/_form.scss */
 #oa-discussion-reply-form .field-name-field-oa-discussion-media .tabledrag-toggle-weight-wrapper {
   position: absolute;
   top: 0;
   right: 0;
   margin: 10px;
 }
-/* line 106, ../sass/_form.scss */
+/* line 159, ../sass/_form.scss */
 #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item img {
   display: block;
   margin: auto;
   width: auto;
 }
-/* line 111, ../sass/_form.scss */
+/* line 164, ../sass/_form.scss */
 #oa-discussion-reply-form .field-name-field-oa-discussion-media .media-item .file a {
   display: none;
 }
-/* line 116, ../sass/_form.scss */
+/* line 169, ../sass/_form.scss */
 #oa-discussion-reply-form #edit-submit {
   position: absolute;
   bottom: 2px;
   right: 0;
 }
 
-/* line 124, ../sass/_form.scss */
+/* line 177, ../sass/_form.scss */
 .checkbox-table .center {
   text-align: center;
 }
-/* line 128, ../sass/_form.scss */
+/* line 181, ../sass/_form.scss */
 .checkbox-table .form-type-checkbox,
 .checkbox-table .space-label {
   margin: 0.4em 0;
