@@ -6,16 +6,14 @@
 }
 
 body.oa-anon-home div.region-content {
+  margin-top: 20px;
   background-image: url('../images/bg-splash.png');
-  background-position: bottom left;
+  background-position: 0 90px;
   background-repeat: no-repeat;
   min-height: 376px;
 
-  .pane-bundle-text:first-child {
-    margin-top: 220px;
-    width: 40%;
-    max-width: 481px;
-    text-align: center;
+  .pane-bundle-text {
+    width: 75%;
     h3 {
       font-size: 60px;
       font-weight: normal;
@@ -23,21 +21,30 @@ body.oa-anon-home div.region-content {
     }
     p {
       font-size: 120%;
+      line-height: 125%;
     }
+  }
+  .pane-bundle-text:first-child {
+    width: 40%;
+    max-width: 481px;
+    margin-top: 220px;
+    height: 230px;
+    text-align: center;
   }
 }
 
 body.oa-anon-home div.content {
+  margin-top: 20px;
   background-image: url('../images/tree-right.png');
   margin-right: 100px;
-  background-position: bottom right;
+  background-position: top right;
   background-repeat: no-repeat;
   min-height: 466px;
   position: relative;
   .oa-pane {
     position: absolute;
     left: 501px;
-    bottom: 0;
+    top: 173px;
     width: 40%;
     .pane-user-login {
       background-color: white;

@@ -18876,68 +18876,76 @@ div.tabs li.active a {
 
 /* line 8, ../sass/_page.scss */
 body.oa-anon-home div.region-content {
+  margin-top: 20px;
   background-image: url("../images/bg-splash.png");
-  background-position: bottom left;
+  background-position: 0 90px;
   background-repeat: no-repeat;
   min-height: 376px;
 }
-/* line 14, ../sass/_page.scss */
-body.oa-anon-home div.region-content .pane-bundle-text:first-child {
-  margin-top: 220px;
-  width: 40%;
-  max-width: 481px;
-  text-align: center;
+/* line 15, ../sass/_page.scss */
+body.oa-anon-home div.region-content .pane-bundle-text {
+  width: 75%;
 }
-/* line 19, ../sass/_page.scss */
-body.oa-anon-home div.region-content .pane-bundle-text:first-child h3 {
+/* line 17, ../sass/_page.scss */
+body.oa-anon-home div.region-content .pane-bundle-text h3 {
   font-size: 60px;
   font-weight: normal;
   margin-bottom: 20px;
 }
-/* line 24, ../sass/_page.scss */
-body.oa-anon-home div.region-content .pane-bundle-text:first-child p {
+/* line 22, ../sass/_page.scss */
+body.oa-anon-home div.region-content .pane-bundle-text p {
   font-size: 120%;
+  line-height: 125%;
+}
+/* line 27, ../sass/_page.scss */
+body.oa-anon-home div.region-content .pane-bundle-text:first-child {
+  width: 40%;
+  max-width: 481px;
+  margin-top: 220px;
+  height: 230px;
+  text-align: center;
 }
 
-/* line 30, ../sass/_page.scss */
+/* line 36, ../sass/_page.scss */
 body.oa-anon-home div.content {
+  margin-top: 20px;
   background-image: url("../images/tree-right.png");
   margin-right: 100px;
-  background-position: bottom right;
+  background-position: top right;
   background-repeat: no-repeat;
   min-height: 466px;
   position: relative;
 }
-/* line 37, ../sass/_page.scss */
+/* line 44, ../sass/_page.scss */
 body.oa-anon-home div.content .oa-pane {
   position: absolute;
   left: 501px;
-  bottom: 0;
+  top: 173px;
   width: 40%;
 }
-/* line 42, ../sass/_page.scss */
+/* line 49, ../sass/_page.scss */
 body.oa-anon-home div.content .oa-pane .pane-user-login {
   background-color: white;
 }
-/* line 44, ../sass/_page.scss */
+/* line 51, ../sass/_page.scss */
 body.oa-anon-home div.content .oa-pane .pane-user-login h3 {
   text-transform: uppercase;
   font-weight: normal;
   font-size: 26px;
 }
-/* line 49, ../sass/_page.scss */
+/* line 56, ../sass/_page.scss */
 body.oa-anon-home div.content .oa-pane .pane-user-login input.form-text {
   width: 95%;
 }
-/* line 52, ../sass/_page.scss */
+/* line 59, ../sass/_page.scss */
 body.oa-anon-home div.content .oa-pane .pane-user-login .form-type-password {
   margin-bottom: 0;
 }
-/* line 54, ../sass/_page.scss */
+/* line 61, ../sass/_page.scss */
 body.oa-anon-home div.content .oa-pane .pane-user-login .form-type-password input {
   margin-bottom: 0;
 }
-/* line 58, ../sass/_page.scss */
+/* line 65, ../sass/_page.scss */
 body.oa-anon-home div.content .oa-pane .pane-user-login .password-reset {
   font-size: 90%;
   color: #777;
