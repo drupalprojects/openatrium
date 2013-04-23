@@ -29,7 +29,7 @@ function oa_teams_menu() {
     'type' => MENU_CALLBACK,
     'page callback' => 'oa_teams_remove_member_menu',
     'page arguments' => array(4, 5),
-    'access callback' => 'og_ui_user_access_group',
+    'access callback' => 'oa_core_user_access_group',
     'access arguments' => array('manage members', 1, 2),
   );
   return $items;

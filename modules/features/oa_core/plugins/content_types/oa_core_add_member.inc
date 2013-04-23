@@ -104,11 +104,7 @@ function oa_core_add_member_form_validate($form, &$form_state) {
 function oa_core_add_member_form_submit($form, &$form_state) {
   $space = $form['#space'];
   $account = user_load_by_name($form_state['values']['name']);
-  // Ungroup user, in case they were already registered.
-  og_ungroup('node', $space->nid, 'user', $account);
-  // add user to group
-  og_group('node', $space->nid, array('entity' => $account));
-  drupal_set_message(t('%user has been added to the space %title.', array('%user' => format_username($account), '%title' => $space->title)));
+  oa_core_add_member('node', $space->nid, $account->uid, FALSE);
 }
 
 

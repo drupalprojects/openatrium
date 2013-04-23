@@ -7,6 +7,7 @@
 include_once 'oa_core.features.inc';
 include_once 'includes/oa_core.util.inc';
 include_once 'includes/oa_core.access.inc';
+include_once 'includes/oa_core.login.inc';
 include_once 'includes/oa_core.theme.inc';
 include_once 'includes/oa_core.views.inc';
 
@@ -66,7 +67,15 @@ function oa_core_menu() {
     'type' => MENU_CALLBACK,
     'page callback' => 'oa_core_remove_member',
     'page arguments' => array(1, 2, 4),
-    'access callback' => 'og_ui_user_access_group',
+    'access callback' => 'oa_core_user_access_group',
+    'access arguments' => array('manage members', 1, 2),
+  );
+  $items['group/%/%/add-member/%'] = array(
+    'title' => 'Add member',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'oa_core_add_member',
+    'page arguments' => array(1, 2, 4),
+    'access callback' => 'oa_core_user_access_group',
     'access arguments' => array('manage members', 1, 2),
   );
   $items['group/%/%/add-admin/%'] = array(
@@ -74,7 +83,7 @@ function oa_core_menu() {
     'type' => MENU_CALLBACK,
     'page callback' => 'oa_core_add_admin',
     'page arguments' => array(1, 2, 4),
-    'access callback' => 'og_ui_user_access_group',
+    'access callback' => 'oa_core_user_access_group',
     'access arguments' => array('manage members', 1, 2),
   );
   $items['group/%/%/remove-admin/%'] = array(
@@ -82,7 +91,7 @@ function oa_core_menu() {
     'type' => MENU_CALLBACK,
     'page callback' => 'oa_core_remove_admin',
     'page arguments' => array(1, 2, 4),
-    'access callback' => 'og_ui_user_access_group',
+    'access callback' => 'oa_core_user_access_group',
     'access arguments' => array('manage members', 1, 2),
   );
   return $items;
@@ -121,6 +130,18 @@ function oa_core_configure_form($form, &$form_state) {
   // blank for for now.  Other modules can alter this to add stuff
   $form = array();
   return system_settings_form($form);
+}
+
+/**
+ * Wrapper around og_ui_user_access_group
+ * Always give user-1 permission
+ */
+function oa_core_user_access_group($perm, $group_type, $gid) {
+  global $user;
+  if ($user->uid == 1) {
+    return TRUE;
+  }
+  return og_ui_user_access_group($perm, $group_type, $gid);
 }
 
 /**
@@ -259,6 +280,29 @@ function oa_core_remove_member($group_type, $gid, $uid) {
 
   drupal_set_message(t('%user has been removed from the space %title.', array('%user' => format_username($account), '%title' => $label)));
   drupal_goto('node/' . $gid . '/members');
+  return;
+}
+
+/**
+ * Menu callback to add user to group
+ * @param  $group_type
+ * @param  $gid
+ * @param  $uid
+ */
+function oa_core_add_member($group_type, $gid, $uid, $goto = TRUE) {
+  $account = user_load($uid);
+  $group = entity_load_single($group_type, $gid);
+  $label = entity_label($group_type, $group);
+
+  // Ungroup user, in case they were already registered.
+  og_ungroup('node', $group->nid, 'user', $account);
+  // add user to group
+  og_group('node', $group->nid, array('entity' => $account));
+
+  drupal_set_message(t('%user has been added to the space %title.', array('%user' => format_username($account), '%title' => $label)));
+  if ($goto) {
+    drupal_goto('node/' . $gid . '/members');
+  }
   return;
 }
 

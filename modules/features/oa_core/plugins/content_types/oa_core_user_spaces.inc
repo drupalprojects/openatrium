@@ -41,15 +41,15 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
 
   $spaces = oa_core_get_public_spaces();
   $spaces = node_load_multiple($spaces['node']);
-  $all_spaces = oa_core_build_space_display($spaces, $conf);
+  $all_spaces = oa_core_build_space_display($spaces, $conf, $user);
 
   $spaces = oa_core_get_user_spaces($user->uid);
   $spaces = node_load_multiple($spaces);
-  $active_spaces = oa_core_build_space_display($spaces, $conf);
+  $active_spaces = oa_core_build_space_display($spaces, $conf, $user);
 
   $spaces = oa_favorites_get_spaces($user);
   $spaces = node_load_multiple($spaces['ids']);
-  $featured_spaces = oa_core_build_space_display($spaces, $conf);
+  $featured_spaces = oa_core_build_space_display($spaces, $conf, $user);
 
   $page = 0;
   // set our maximum item per page
@@ -105,7 +105,7 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
 /**
  * Builds display variables for spaces. Optionally sections as well.
  */
-function oa_core_build_space_display($spaces, $conf) {
+function oa_core_build_space_display($spaces, $conf, $user) {
   $vars = array();
   usort($spaces, 'oa_core_sort_node_by_title');
   foreach ($spaces as $space) {
@@ -126,7 +126,7 @@ function oa_core_build_space_display($spaces, $conf) {
     $vars[$space->nid]['sections'] = array();
 
     if ($conf['show_links']) {
-      $vars[$space->nid]['links'] = oa_core_user_spaces_get_links($space, $conf);
+      $vars[$space->nid]['links'] = oa_core_user_spaces_get_links($space, $conf, $user);
     }
 
     if ($conf['show_description']) {
@@ -164,12 +164,11 @@ function oa_core_build_space_display($spaces, $conf) {
   return $vars;
 }
 
-function oa_core_user_spaces_get_links($space, $conf) {
-  $display = array(
-    'settings' => array('field_name' => 'og_user_node'),
-    'type' => 'og_group_subscribe',
-  );
-  $links = og_ui_field_formatter_view('node', $space, NULL, NULL, NULL, NULL, $display);
+/**
+ * Generate the subscribed/unsubscribed links
+ */
+function oa_core_user_spaces_get_links($space, $conf, $user) {
+  $links = oa_core_user_spaces_og_links($space, $user);
   $vars['links'] = array();
   if (!empty($links) && !empty($conf['link_class'])) {
     foreach ($links as $key => $link) {
@@ -177,6 +176,111 @@ function oa_core_user_spaces_get_links($space, $conf) {
     }
   }
   return $links;
+}
+
+/**
+ * Return the OG subscribed/unsubscribed links
+ * Code taken from og_ui_field_formatter_view
+ * but that was hardcoded to use the logged-in user
+ */
+function oa_core_user_spaces_og_links($entity, $account) {
+  $entity_type = 'node';
+  $settings = array('field_name' => 'og_user_node');
+  $uid = $account->uid;
+
+  if (!og_is_group($entity_type, $entity)) {
+    return;
+  }
+
+  if (!empty($entity->uid) && ($entity->uid == $account->uid)) {
+    // User is the group manager.
+    $element[0] = array('#markup' => t('You are the group manager'));
+    return $element;
+  }
+
+  list($id,, $bundle) = entity_extract_ids($entity_type, $entity);
+  if (og_is_member($entity_type, $id, 'user', $account, array(OG_STATE_ACTIVE, OG_STATE_PENDING))) {
+    if (og_user_access($entity_type, $id, 'unsubscribe', $account)) {
+      $links['title'] = t('Unsubscribe from group');
+      $links['href'] = "group/$entity_type/$id/remove/$uid";
+      $links['options'] = array('query' => array('destination' => current_path()));
+    }
+  }
+  else {
+    if (og_is_member($entity_type, $id, 'user', $account, array(OG_STATE_BLOCKED))) {
+      // If user is blocked, they should not be able to apply for
+      // membership.
+      return;
+    }
+
+    // Check if user can subscribe to the field.
+    if (empty($settings['field_name']) && $audience_field_name = og_get_best_group_audience_field('user', $account, $entity_type, $bundle)) {
+      $settings['field_name'] = $audience_field_name;
+    }
+    if (!$settings['field_name']) {
+      return;
+    }
+
+    $field_info = field_info_field($settings['field_name']);
+
+    // Check if entity is referencable.
+    if ($field_info['settings']['target_type'] != $entity_type) {
+      // Group type doesn't match.
+      return;
+    }
+    if (!empty($field_info['settings']['handler_settings']['target_bundles']) && !in_array($bundle, $field_info['settings']['handler_settings']['target_bundles'])) {
+      // Bundles don't match.
+      return;
+    }
+
+    if (!og_check_field_cardinality('user', $account, $settings['field_name'])) {
+      $element[0] = array('#markup' => format_plural($field_info['cardinality'], 'You are already registered to another group', 'You are already registered to @count groups'));
+      return $element;
+    }
+
+    $url = "group/$entity_type/$id/add-member/$uid";
+    if ($settings['field_name']) {
+      $url .= '/' . $settings['field_name'];
+    }
+
+    if (og_user_access($entity_type, $id, 'subscribe without approval', $account)) {
+      $links['title'] = t('Subscribe to group');
+      if ($account->uid) {
+        $links['href'] = $url;
+        $links['options'] = array('query' => array('destination' => current_path()));
+      }
+      else {
+        $links['href'] = 'user/login';
+        $links['options'] = array('query' => array('destination' => $url));
+      }
+    }
+    elseif (og_user_access($entity_type, $id, 'subscribe')) {
+      $links['title'] = t('Request group membership');
+      if ($account->uid) {
+        $links['href'] = $url;
+      }
+      else {
+        $links['href'] = 'user/login';
+        $links['options'] = array('query' => array('destination' => $url));
+      }
+    }
+    else {
+      $element[0] =  array('#markup' => t('This is a closed group. Only a group administrator can add you.'));
+      return $element;
+    }
+  }
+
+  if (!empty($links['title'])) {
+    $links += array('options' => array());
+    $element[0] = array(
+      '#type' => 'link',
+      '#title' => $links['title'],
+      '#href' => $links['href'],
+      '#options' => $links['options'],
+    );
+    return $element;
+  }
+  // User didn't have permissions.
 }
 
 /**
