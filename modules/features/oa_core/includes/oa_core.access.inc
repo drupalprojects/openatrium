@@ -226,6 +226,20 @@ function oa_core_file_entity_access($op, $file, $account) {
       if (!empty($nodes)) {
         return FILE_ENTITY_ACCESS_ALLOW;
       }
+      else {
+        // if no nodes have access, check to see if ANY nodes reference image
+        $query = db_select('node', 'n');
+        $query->join('field_data_field_oa_media', 'f', "n.nid = f.entity_id AND f.entity_type = 'node'");
+        $nodes = $query
+          ->fields('n', array('nid'))
+          ->condition('f.field_oa_media_fid', $file->fid)
+          ->execute()
+          ->fetchCol(0);
+        if (empty($nodes)) {
+          // image is not referenced by any node, so allow it
+          return FILE_ENTITY_ACCESS_ALLOW;
+        }
+      }
     }
   }
   return FILE_ENTITY_ACCESS_IGNORE;
