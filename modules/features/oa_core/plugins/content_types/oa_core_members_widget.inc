@@ -74,6 +74,10 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     $vars[$key] = array();
     foreach ($entities as $id => $entity) {
       $vars[$key][$id] = oa_core_entity_build_display($entity, $id);
+      if ($entity->uid == $space->uid) {
+        // don't show links for main space owner
+        $vars[$key][$id]['uid'] = 0;
+      }
     }
   }
 
@@ -116,8 +120,8 @@ function oa_core_entity_build_display($entity, $id) {
   $title = ($type == 'user') ?
     (empty($entity->realname) ? $entity->name : $entity->realname) :
     $entity->title;
-  $display['title'] = l($title, $type . '/' . $id);
-  $display['uid'] = $id;
+  $display['title'] = l($title, $type . '/' . $entity->uid);
+  $display['uid'] = $entity->uid;
 
   if ($type == 'user') {
     $display['picture'] = oa_dashboard_render_user_picture($entity);

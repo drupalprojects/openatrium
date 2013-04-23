@@ -18,7 +18,7 @@
 <div class='clearfix well well-small owners'>
   <h5><?php print $owner_title?></h5>
   <?php foreach ($owners as $owner): ?>
-    <?php if (empty($links['add-admin'])): ?>
+    <?php if (empty($links['remove-admin']) || empty($owner['uid'])): ?>
       <div class='pull-left user-badge'>
         <?php print $owner['picture']; ?>
         <?php print $owner['title']; ?>
@@ -56,7 +56,7 @@
 <?php if (!empty($members)): ?>
 <div class='clearfix members'>
   <?php foreach ($members as $member): ?>
-    <?php if (empty($links['add-admin'])): ?>
+    <?php if (empty($links['add-admin']) || empty($member['uid'])): ?>
       <div class='pull-left user-badge'>
         <?php print $member['picture']; ?>
         <?php print $member['title']; ?>
