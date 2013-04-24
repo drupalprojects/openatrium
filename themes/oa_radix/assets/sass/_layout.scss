@@ -24,6 +24,7 @@
 
 .label {
   font-weight: normal;
+  background-color: #ddd;
   a {
     font-weight: normal;
   }
@@ -133,9 +134,7 @@ ul.group-content {
     position: relative;
   }
   .label {
-    color: white;
     a {
-      color: white;
     }
   }
   .links {

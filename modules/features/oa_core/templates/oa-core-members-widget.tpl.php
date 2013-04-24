@@ -46,7 +46,7 @@
 <div class='clearfix well well-small teams'>
   <h5>Teams</h5>
   <?php foreach ($teams as $team): ?>
-    <div class='pull-left team'>
+    <div class='pull-left team label'>
       <?php print $team['title']; ?>
     </div>
   <?php endforeach; ?>

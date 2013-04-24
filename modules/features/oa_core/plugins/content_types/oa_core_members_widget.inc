@@ -120,7 +120,8 @@ function oa_core_entity_build_display($entity, $id) {
   $title = ($type == 'user') ?
     (empty($entity->realname) ? $entity->name : $entity->realname) :
     $entity->title;
-  $display['title'] = l($title, $type . '/' . $entity->uid);
+  $nid = ($type == 'user') ? $entity->uid : $entity->nid;
+  $display['title'] = l($title, $type . '/' . $nid);
   $display['uid'] = $entity->uid;
 
   if ($type == 'user') {
