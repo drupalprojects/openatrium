@@ -203,7 +203,7 @@ function oa_home_default_page_manager_pages() {
     'no_blocks' => 0,
     'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'oa-anon-home',
+    'body_classes_to_add' => 'oa-login',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
