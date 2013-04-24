@@ -95,7 +95,7 @@ dependencies[] = oa_search
 
 ; Open Atrium 2.0 Plugins
 dependencies[] = oa_discussion
-dependencies[] = oa_pages
+dependencies[] = oa_wiki
 
 ; Open Atrium 2.0 Optional
 dependencies[] = oa_home
