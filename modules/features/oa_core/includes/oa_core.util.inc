@@ -5,6 +5,29 @@
  */
 
 /**
+ * Returns the current space id context
+ * @param  boolean $from_session only use the context stored in $SESSION
+ * @return int Space ID
+ */
+function oa_core_get_space_context($from_session = FALSE) {
+  if ($from_session && isset($_SESSION[OG_SESSION_CONTEXT_ID])) {
+    return $_SESSION[OG_SESSION_CONTEXT_ID];
+  }
+  $context = og_context('node');
+  return isset($context['gid']) ? $context['gid'] : 0;
+}
+
+/**
+ * Returns the current section id context
+ * @return int Section ID
+ */
+function oa_core_get_section_context() {
+  return isset($_SESSION[OA_SESSION_SECTION])
+    ? $_SESSION[OA_SESSION_SECTION]
+    : 0;
+}
+
+/**
  * Determine if a user is a member of a team
  * @param  int $team_id
  * @param  int $user_id

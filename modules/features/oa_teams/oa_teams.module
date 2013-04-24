@@ -57,8 +57,7 @@ function oa_teams_theme() {
  */
 function oa_teams_get_teams_for_space($gid = NULL) {
   if (!isset($gid)) {
-    // TODO: Consolidate this in a function
-    $gid = $_SESSION[OG_SESSION_CONTEXT_ID];
+    $gid = oa_core_get_space_context();
   }
   $query = db_select('node', 'n');
   $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');

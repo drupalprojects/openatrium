@@ -33,8 +33,8 @@ function oa_sections_og_menu_single_menu_parent($conf) {
       $value = reset($values);
       $section_id = $value['target_id'];
     }
-    elseif (!empty($_SESSION['oa_section_id'])) {
-      $section_id = $_SESSION['oa_section_id'];
+    else {
+      $section_id = oa_core_get_section_context();
     }
     // If in a section, find the the secondary link that section is in.
     if ($section_id) {

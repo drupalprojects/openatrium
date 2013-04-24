@@ -135,10 +135,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   $vars['home_url'] = url('<front>', array('absolute' => TRUE));
 
   // Spaces
-  $space_id = NULL;
-  if (isset($_SESSION['oa_space_id'])) {
-    $space_id = $_SESSION['oa_space_id'];
-  }
+  $space_id = oa_core_get_space_context();
   $vars['spaces_label'] = '';
   $vars['spaces_recent'] = '';
   $vars['spaces_favorite'] = '';
@@ -196,7 +193,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
     }
   }
 
-  $current_section = !empty($_SESSION['oa_section_id']) ? $_SESSION['oa_section_id'] : 0;
+  $current_section = oa_core_get_section_context();
 
   $home_name = t('Space home');
   $section_name = '';

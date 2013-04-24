@@ -58,8 +58,9 @@ function oa_search_preprocess_oa_sidebar_search(&$vars) {
  */
 function oa_search_add_js() {
   $space_title = '';
-  if (!empty($_SESSION['oa_space_id'])) {
-    $space = node_load($_SESSION['oa_space_id']);
+  $space_id = oa_core_get_space_context();
+  if ($space_id) {
+    $space = node_load($space_id);
     $space_title = $space->title;
   }
 
