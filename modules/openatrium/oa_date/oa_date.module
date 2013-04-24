@@ -25,11 +25,15 @@ function oa_date_views_api() {
  * Implements hook_date_formats().
  */
 function oa_date_date_formats() {
-  return array(
+  $formats = array();
+
+  $formats[] = array(
     'type' => 'oa_date',
     'format' => 'l, F j',
     'locales' => array(),
   );
+
+  return $formats;
 }
 
 /**
