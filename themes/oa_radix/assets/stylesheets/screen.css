@@ -18924,31 +18924,36 @@ body.oa-login div.content .oa-pane {
   width: 40%;
 }
 /* line 49, ../sass/_page.scss */
-body.oa-login div.content .oa-pane .pane-user-login {
+body.oa-login div.content .oa-pane .panel-pane {
   background-color: white;
 }
 /* line 51, ../sass/_page.scss */
-body.oa-login div.content .oa-pane .pane-user-login h3 {
+body.oa-login div.content .oa-pane .panel-pane h3 {
   text-transform: uppercase;
   font-weight: normal;
   font-size: 26px;
 }
 /* line 56, ../sass/_page.scss */
-body.oa-login div.content .oa-pane .pane-user-login input.form-text {
+body.oa-login div.content .oa-pane .panel-pane input.form-text {
   width: 95%;
 }
 /* line 59, ../sass/_page.scss */
-body.oa-login div.content .oa-pane .pane-user-login .form-type-password {
+body.oa-login div.content .oa-pane .panel-pane .form-type-password {
   margin-bottom: 0;
 }
 /* line 61, ../sass/_page.scss */
-body.oa-login div.content .oa-pane .pane-user-login .form-type-password input {
+body.oa-login div.content .oa-pane .panel-pane .form-type-password input {
   margin-bottom: 0;
 }
 /* line 65, ../sass/_page.scss */
-body.oa-login div.content .oa-pane .pane-user-login .password-reset {
+body.oa-login div.content .oa-pane .panel-pane .password-reset {
   font-size: 90%;
   color: #777;
+}
+
+/* line 73, ../sass/_page.scss */
+body.oa-login #user-login-panel .oa-pane {
+  top: 115px;
 }
 
 /* line 6, ../sass/_panel.scss */

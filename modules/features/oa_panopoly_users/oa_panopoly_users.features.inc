@@ -5,6 +5,22 @@
  */
 
 /**
+ * Implements hook_default_page_manager_handlers_alter().
+ */
+function oa_panopoly_users_default_page_manager_handlers_alter(&$data) {
+  if (isset($data['pm_existing_pages_user_login_panel_context'])) {
+    $data['pm_existing_pages_user_login_panel_context']->conf['body_classes_to_add'] = 'oa-login'; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['body_classes_to_remove'] = ''; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->content['new-1']->configuration['override_title_text'] = 'Log In'; /* WAS: '' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->hide_title = 1; /* WAS: 0 */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->layout = 'boxton'; /* WAS: 'burr_flipped' */
+    $data['pm_existing_pages_user_login_panel_context']->conf['display']->panel_settings['contentmain'] = array(
+      'style' => 'oa_styles_oa_pane',
+    ); /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_panelizer_defaults_override_alter().
  */
 function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {

@@ -46,7 +46,7 @@ body.oa-login div.content {
     left: 501px;
     top: 173px;
     width: 40%;
-    .pane-user-login {
+    .panel-pane {
       background-color: white;
       h3 {
         text-transform: uppercase;
@@ -68,4 +68,8 @@ body.oa-login div.content {
       }
     }
   }
+}
+
+body.oa-login #user-login-panel .oa-pane {
+  top: 115px;
 }
