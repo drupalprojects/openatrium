@@ -198,7 +198,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   $home_name = t('Space home');
   $section_name = '';
   $section_url = '';
-  if (isset($space_id)) {
+  if ($space_id) {
     $space_link = l($home_name, 'node/' . $space_id);
     $section_name = $home_name;
     $section_url = url('node/' . $space_id);
