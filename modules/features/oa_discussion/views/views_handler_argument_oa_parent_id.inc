@@ -11,7 +11,7 @@
 class views_handler_argument_oa_parent_id extends views_handler_argument_numeric {
   var $no_operator = TRUE;
 
-  function query() {
+  function query($group_by = FALSE) {
     $this->ensure_my_table();
 
     // determine parent of the node argument if any
