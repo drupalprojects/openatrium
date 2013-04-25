@@ -23,6 +23,8 @@ $plugin = array(
   ),
 );
 
+// make sure message_notify parent class is included to avoid drush errors
+include_once(drupal_get_path('module', 'message_notify') . '/plugins/notifier/email/MessageNotifierEmail.class.php');
 /**
  * Email notifier.
  */
