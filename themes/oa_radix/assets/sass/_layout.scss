@@ -25,6 +25,7 @@
 .label {
   font-weight: normal;
   background-color: #ddd;
+  color: #333;
   a {
     font-weight: normal;
   }
@@ -208,6 +209,17 @@ ul.group-content {
   text-align: right;
 }
 
+dl.admin-list {
+  dt {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #e3e3e3;
+    padding-left: 10px;
+  }
+  dd {
+    padding-left: 20px;
+  }
+}
 /* Tabs */
 div.tabs.main-tabs {
   padding-left: 0;

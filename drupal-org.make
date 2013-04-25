@@ -109,21 +109,33 @@ projects[chosen][version] = 1.0
 projects[chosen][patch][] = http://drupal.org/files/issues/chosen-7.x-1.x-install_profile.patch
 
 ; Twitter Bootstrap UI
-projects[twitter_bootstrap_ui][type] = module
-projects[twitter_bootstrap_ui][subdir] = contrib
-projects[twitter_bootstrap_ui][download][type] = git
-projects[twitter_bootstrap_ui][download][url] = http://git.drupal.org/project/twitter_bootstrap_ui.git
-projects[twitter_bootstrap_ui][download][branch] = 7.x-2.x
-projects[twitter_bootstrap_ui][patch][] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-5.patch
+;; Currently removed Twitter Bootstrap because of license issue:
+;; http://drupal.org/node/1449452 http://drupal.org/node/1445226#comment-7343538
+;; Instead, we load the Bootstrap JS via external CDN in template.php
+;;projects[twitter_bootstrap_ui][type] = module
+;;projects[twitter_bootstrap_ui][subdir] = contrib
+;;projects[twitter_bootstrap_ui][download][type] = git
+;;projects[twitter_bootstrap_ui][download][url] = http://git.drupal.org/project/twitter_bootstrap_ui.git
+;;projects[twitter_bootstrap_ui][download][branch] = 7.x-2.x
+;;projects[twitter_bootstrap_ui][patch][] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-5.patch
 ; tie to previous commit before the (2.x) was added to libraries
 ; since that doesn't work when module is patched in inherited profile
-projects[twitter_bootstrap_ui][download][revision] = 0328b6ff027287fe7e62b058fc4dea12362956f5
+;;projects[twitter_bootstrap_ui][download][revision] = 0328b6ff027287fe7e62b058fc4dea12362956f5
 
-libraries[twitter_bootstrap][download][type] = file
-libraries[twitter_bootstrap][download][url] = http://twitter.github.com/bootstrap/assets/bootstrap.zip
+;;libraries[twitter_bootstrap][download][type] = file
+;;libraries[twitter_bootstrap][download][url] = http://twitter.github.com/bootstrap/assets/bootstrap.zip
 
-; Include other Open Atrium make files
-includes[oa_media] = "modules/features/oa_media/oa_media.make"
+; Make file for oa_media
+; Colorbox
+projects[colorbox][subdir] = contrib
+projects[colorbox][version] = 2.3
+
+projects[media_colorbox][subdir] = contrib
+projects[media_colorbox][version] = 1.0-rc3
+
+libraries[colorbox][download][type] = file
+libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip
+libraries[colorbox][directory_name] = colorbox
 
 ; Devel
 projects[devel][type] = module
@@ -158,7 +170,7 @@ projects[mailhandler][subdir] = contrib
 projects[mailhandler][download][type] = git
 projects[mailhandler][download][url] = http://git.drupal.org/project/mailhandler.git
 projects[mailhandler][download][branch] = 7.x-2.x
-projects[mailhandler][download][commit] = c57579b7990dce3a0cf46336c78f2e7c17581723
+projects[mailhandler][download][revision] = c57579b7990dce3a0cf46336c78f2e7c17581723
 projects[mailhandler][patch][] = http://drupal.org/files/mailhandler-version-requirement-1961780-1.patch
 
 ; Views Load More
@@ -166,7 +178,7 @@ projects[views_load_more][subdir] = contrib
 projects[views_load_more][download][type] = git
 projects[views_load_more][download][url] = http://git.drupal.org/project/views_load_more.git
 projects[views_load_more][download][branch] = 7.x-1.x
-projects[views_load_more][download][commit] = a92b1f610fcf8ee85c064020d865ab849d0c86e6
+projects[views_load_more][download][revision] = a92b1f610fcf8ee85c064020d865ab849d0c86e6
 
 ; Mail System
 projects[mailsystem][subdir] = contrib
