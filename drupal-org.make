@@ -178,7 +178,7 @@ projects[views_load_more][subdir] = contrib
 projects[views_load_more][download][type] = git
 projects[views_load_more][download][url] = http://git.drupal.org/project/views_load_more.git
 projects[views_load_more][download][branch] = 7.x-1.x
-projects[views_load_more][download][revision] = a92b1f610fcf8ee85c064020d865ab849d0c86e6
+projects[views_load_more][download][revision] = 28de3843dba06dcad12aaca2840535b0b7c035a4
 
 ; Mail System
 projects[mailsystem][subdir] = contrib
