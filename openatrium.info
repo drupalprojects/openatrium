@@ -63,7 +63,9 @@ dependencies[] = og_register
 dependencies[] = og_ui
 
 ; Libraries
-dependencies[] = twitter_bootstrap_ui
+; not until drupal is GPLv3
+; for now, include twitter js in theme from cdn
+;dependencies[] = twitter_bootstrap_ui
 
 ; Open Atrium 2.0 Modules
 dependencies[] = oa_core

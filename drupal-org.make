@@ -2,10 +2,77 @@ api = 2
 core = 7.x
 
 ; Panopoly Core
-projects[panopoly][type] = profile
-projects[panopoly][download][type] = git
-projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
-projects[panopoly][download][branch] = 7.x-1.x
+; Drupal.org does not support recursive profiles
+; and also does not support include[]
+; so we need to copy the panopoly.make file here
+; #################### Panopoly #######################
+projects[panopoly_core][version] = 1.x-dev
+projects[panopoly_core][subdir] = panopoly
+projects[panopoly_core][download][type] = git
+projects[panopoly_core][download][revision] = 192ed62
+projects[panopoly_core][download][branch] = 7.x-1.x
+
+projects[panopoly_images][version] = 1.x-dev
+projects[panopoly_images][subdir] = panopoly
+projects[panopoly_images][download][type] = git
+projects[panopoly_images][download][revision] = b57b48f
+projects[panopoly_images][download][branch] = 7.x-1.x
+
+projects[panopoly_theme][version] = 1.x-dev
+projects[panopoly_theme][subdir] = panopoly
+projects[panopoly_theme][download][type] = git
+projects[panopoly_theme][download][revision] = b8d3809
+projects[panopoly_theme][download][branch] = 7.x-1.x
+
+projects[panopoly_magic][version] = 1.x-dev
+projects[panopoly_magic][subdir] = panopoly
+projects[panopoly_magic][download][type] = git
+projects[panopoly_magic][download][revision] = 4f59733
+projects[panopoly_magic][download][branch] = 7.x-1.x
+
+projects[panopoly_widgets][version] = 1.x-dev
+projects[panopoly_widgets][subdir] = panopoly
+projects[panopoly_widgets][download][type] = git
+projects[panopoly_widgets][download][revision] = 0dafe32
+projects[panopoly_widgets][download][branch] = 7.x-1.x
+
+projects[panopoly_admin][version] = 1.x-dev
+projects[panopoly_admin][subdir] = panopoly
+projects[panopoly_admin][download][type] = git
+projects[panopoly_admin][download][revision] = 4d9d071
+projects[panopoly_admin][download][branch] = 7.x-1.x
+
+projects[panopoly_users][version] = 1.x-dev
+projects[panopoly_users][subdir] = panopoly
+projects[panopoly_users][download][type] = git
+projects[panopoly_users][download][revision] = cb4ca09
+projects[panopoly_users][download][branch] = 7.x-1.x
+
+; The Panopoly Toolset
+
+projects[panopoly_pages][version] = 1.x-dev
+projects[panopoly_pages][subdir] = panopoly
+projects[panopoly_pages][download][type] = git
+projects[panopoly_pages][download][revision] = 4125aa6
+projects[panopoly_pages][download][branch] = 7.x-1.x
+
+projects[panopoly_wysiwyg][version] = 1.x-dev
+projects[panopoly_wysiwyg][subdir] = panopoly
+projects[panopoly_wysiwyg][download][type] = git
+projects[panopoly_wysiwyg][download][revision] = e2f938b
+projects[panopoly_wysiwyg][download][branch] = 7.x-1.x
+
+projects[panopoly_search][version] = 1.x-dev
+projects[panopoly_search][subdir] = panopoly
+projects[panopoly_search][download][type] = git
+projects[panopoly_search][download][revision] = 2f6d3e4
+projects[panopoly_search][download][branch] = 7.x-1.x
+; #################### END Panopoly #######################
+; Someday maybe we can turn this on to just inherit Panopoly
+;projects[panopoly][type] = profile
+;projects[panopoly][download][type] = git
+;projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
+;projects[panopoly][download][branch] = 7.x-1.x
 
 ; **** Panopoly Overrides ****
 ; Update Panels to fix issue with custom region styles
