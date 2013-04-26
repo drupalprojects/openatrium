@@ -158,6 +158,49 @@ function og_menu_single_node_update($node) {
 }
 
 /**
+ * Implements hook_block_info().
+ */
+function og_menu_single_block_info() {
+  $blocks['menu'] = array(
+    'info' => t('OG Menu (active space menu)'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+
+  return $blocks;
+}
+/**
+ * Implements hook_block_configure().
+ */
+function og_menu_single_block_configure($delta = '') {
+  // This example comes from node.module.
+  $form = array();
+  if ($delta == 'menu') {
+    $form['settings']['og_menu_single_block_menu_depth'] = array(
+      '#title' => t('Depth'),
+      '#type' => 'select',
+      '#options' => array(0 => t('All'), 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7),
+      '#default_value' => variable_get('og_menu_single_block_menu_depth', 0),
+      '#description' => t('Select how deep/how many levels of the menu to display.'),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function og_menu_single_block_view($delta = '') {
+  $block = array();
+  if ($plid = og_menu_single_get_active_plid()) {
+    $tree = og_menu_single_children_items($plid,  variable_get('og_menu_single_block_menu_depth', MENU_MAX_DEPTH));
+    if ($tree && ($output = menu_tree_output($tree))) {
+      $block['content'] =  $output;
+    }
+  }
+  return $block;
+}
+
+/**
  * Fetches the link for given item in menu.
  *
  * @param $type
