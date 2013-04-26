@@ -45,11 +45,12 @@ ln -s $BASE_PATH/settings.php $DRUPAL/sites/default/settings.php
 
 # Move libraries from inherited profiles into site libraries
 #   These instructions should be incorporated into the make file in the future
-mkdir $DRUPAL/sites/all/libraries
-mv -v $DRUPAL/profiles/panopoly/libraries/tinymce $DRUPAL/sites/all/libraries/tinymce
-mv -v $DRUPAL/profiles/panopoly/libraries/markitup $DRUPAL/sites/all/libraries/markitup
-mv -v $DRUPAL/profiles/panopoly/libraries/respondjs $DRUPAL/sites/all/libraries/respondjs
-mv -v $DRUPAL/profiles/panopoly/libraries/SolrPhpClient $DRUPAL/sites/all/libraries/SolrPhpClient
+#   No longer need to do this until drupal.org supports inherited profiles
+#mkdir $DRUPAL/sites/all/libraries
+#mv -v $DRUPAL/profiles/panopoly/libraries/tinymce $DRUPAL/sites/all/libraries/tinymce
+#mv -v $DRUPAL/profiles/panopoly/libraries/markitup $DRUPAL/sites/all/libraries/markitup
+#mv -v $DRUPAL/profiles/panopoly/libraries/respondjs $DRUPAL/sites/all/libraries/respondjs
+#mv -v $DRUPAL/profiles/panopoly/libraries/SolrPhpClient $DRUPAL/sites/all/libraries/SolrPhpClient
 
 # Clear caches and Run updates
 cd $DRUPAL;
