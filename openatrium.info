@@ -1,9 +1,11 @@
 name = OpenAtrium
-distribution_name = OpenAtrium
+distribution_name = openatrium
 description = A team collaboration platform
 core = 7.x
 
 base[] = panopoly
+
+files[] = openatrium.profile
 
 ; Drupal Core
 dependencies[] = menu
