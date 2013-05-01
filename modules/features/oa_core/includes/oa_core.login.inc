@@ -40,8 +40,8 @@ function oa_core_form_alter(&$form, &$form_state, $form_id) {
         break;
       }
     case 'user_login_block':
-      $form['links']['#markup'] = '<span class="password-reset">' . t('If you forgot your password, ') .
-        l('request a new password.', 'user/password') . '</span>';
+      $form['links']['#markup'] = '<span class="password-reset">' . t('If you forgot your password') . ', ' .
+        l(t('request a new password.'), 'user/password') . '</span>';
       break;
   }
 }
@@ -66,7 +66,7 @@ function oa_core_login_validate($form, &$form_state) {
 
   // Fix the current page in case of 403 page.
   if ($form['#form_id'] == 'user_login') {
-    if(drupal_get_http_header('Status') == '403 Forbidden') {
+    if (drupal_get_http_header('Status') == '403 Forbidden') {
       $_GET['current'] = $_GET['destination'];
     }
   }
@@ -162,7 +162,7 @@ function oa_core_login_get_destination($trigger = '', $current = NULL) {
     }
     return 'user';
   }
-  else if ($trigger == 'logout') {
+  elseif ($trigger == 'logout') {
     return 'home';
   }
 

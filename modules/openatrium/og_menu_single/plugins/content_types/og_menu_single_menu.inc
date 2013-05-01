@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * Custom menu pane for OG menu single.
+ */
+
 
 $plugin = array(
   'title' => t('Group Menu'),

@@ -63,7 +63,7 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
     if (!$conf['tabs'][SPACE_TAB_ALL] && ($num_per_page > 0)) {
       $active_spaces = array_slice($active_spaces, 0, $num_per_page);
       $vars['space_groups'][t(SPACE_TAB_ACTIVE)]['pager'] =
-        l('See all', 'spaces', array(
+        l(t('See all'), 'spaces', array(
           'attributes' => array(
             'class' => $conf['link_class'],
         )));
@@ -93,7 +93,7 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
 
   $block = new stdClass();
   if (count($vars['space_groups']) == 1) {
-    $block->title = key($vars['space_groups']) . t(' Spaces');
+    $block->title = key($vars['space_groups']) . ' ' . t('Spaces');
   }
   else {
     $block->title = t('Spaces');
@@ -199,7 +199,7 @@ function oa_core_user_spaces_og_links($entity, $account) {
     return $element;
   }
 
-  list($id,, $bundle) = entity_extract_ids($entity_type, $entity);
+  list($id, , $bundle) = entity_extract_ids($entity_type, $entity);
   if (og_is_member($entity_type, $id, 'user', $account, array(OG_STATE_ACTIVE, OG_STATE_PENDING))) {
     if (og_user_access($entity_type, $id, 'unsubscribe', $account)) {
       $links['title'] = t('Unsubscribe from group');

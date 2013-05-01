@@ -55,7 +55,7 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   $vars = array();
 
   if (!isset($conf['show_number']) || ($conf['show_number'] != '0')) {
-    $vars['see_all_link'] = l('See all members', 'node/' . $space->nid . '/members');
+    $vars['see_all_link'] = l(t('See all members'), 'node/' . $space->nid . '/members');
     $members = array_slice($members, 0, $conf['show_number']-1);
   }
   else {
@@ -64,7 +64,7 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
 
   $space_title = ($space->type == OA_SPACE_TYPE) ? t('Space') : t('Group');
   $vars['space_title'] = $space_title;
-  $vars['owner_title'] = $space_title . t(' owners');
+  $vars['owner_title'] = $space_title . ' ' . t('owners');
   $items = array(
     'teams' => $teams,
     'members' => $members,
@@ -83,9 +83,9 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
 
   $vars['links']['dashboard'] = 'user/';
   if ($is_admin) {
-    $vars['links']['remove'] = 'group/node/' . $space->nid. '/remove/';
-    $vars['links']['add-admin'] = 'group/node/' . $space->nid. '/add-admin/';
-    $vars['links']['remove-admin'] = 'group/node/' . $space->nid. '/remove-admin/';
+    $vars['links']['remove'] = 'group/node/' . $space->nid . '/remove/';
+    $vars['links']['add-admin'] = 'group/node/' . $space->nid . '/add-admin/';
+    $vars['links']['remove-admin'] = 'group/node/' . $space->nid . '/remove-admin/';
   }
   else {
     $vars['links']['remove'] = '';

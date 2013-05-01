@@ -314,7 +314,7 @@ function og_menu_single_menu_link_load($mlid) {
  * @param $mlid
  *   Current link ID if exists for that group.
  */
-function _og_menu_single_save_group_link($node, $mlid = null) {
+function _og_menu_single_save_group_link($node, $mlid = NULL) {
   $link = array(
     'mlid' => $mlid,
     'link_title' => $node->title . "'s Menu",

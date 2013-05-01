@@ -75,7 +75,7 @@ function oa_core_add_member_form($form, &$form_state, $space) {
 
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Add to ') . $name,
+    '#value' => t('Add to') . ' ' . $name,
   );
 
   return $form;

@@ -53,7 +53,7 @@ function oa_team_members_render($subtype, $conf, $args, $context = NULL) {
   }
   $vars['links']['dashboard'] = 'user/';
   if ($is_admin) {
-    $vars['links']['remove'] = 'group/node/' . $space->nid. '/remove-team/' . $team->nid . '/';
+    $vars['links']['remove'] = 'group/node/' . $space->nid . '/remove-team/' . $team->nid . '/';
   }
   else {
     $vars['links']['remove'] = '';
