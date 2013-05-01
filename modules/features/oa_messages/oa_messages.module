@@ -68,7 +68,12 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
     // Save reference to the node in the node reference field.
     $wrapper = entity_metadata_wrapper('message', $message);
     if (isset($entity_wrapper->{OA_SPACE_FIELD}) && isset($wrapper->field_oa_message_space)) {
-      $wrapper->field_oa_message_space = $entity_wrapper->{OA_SPACE_FIELD}->value();
+      $space = $entity_wrapper->{OA_SPACE_FIELD}->value();
+      if (is_array($space)) {
+        // if multi-value space field, just use first space for message
+        $space = array_shift($space);
+      }
+      $wrapper->field_oa_message_space = $space;
     }
     if (isset($entity_wrapper->{OA_SECTION_FIELD}) && isset($wrapper->field_oa_message_section)) {
       $wrapper->field_oa_message_section = $entity_wrapper->{OA_SECTION_FIELD}->value();
