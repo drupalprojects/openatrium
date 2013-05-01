@@ -138,6 +138,10 @@ function oa_core_create_node($bundle, $title = '', $context = NULL) {
     $context_wrapper = entity_metadata_wrapper('node', $context);
     if (isset($context_wrapper->{OA_SPACE_FIELD})) {
       $space_id = $context_wrapper->{OA_SPACE_FIELD}->value();
+      if (is_array($space_id)) {
+        // if multi-value space field, just use first space for message
+        $space_id = array_shift($space_id);
+      }
     }
     if (isset($context_wrapper->{OA_SECTION_FIELD})) {
       $section_id = $context_wrapper->{OA_SECTION_FIELD}->value();
