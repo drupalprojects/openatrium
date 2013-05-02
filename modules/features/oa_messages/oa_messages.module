@@ -350,7 +350,7 @@ function theme_oa_team_update($vars) {
   $diff = array_diff($new, $old);
   $add_links = array();
   foreach ($diff as $uid) {
-    $add_links[] = l($users[$uid]->realname, 'users/' . $uid);
+    $add_links[] = l($users[$uid]->realname, 'user/' . $uid);
   }
   if (!empty($add_links)) {
     $output .= t('Added') . ' ' . implode(', ', $add_links) . '. ';
@@ -360,7 +360,7 @@ function theme_oa_team_update($vars) {
   $diff = array_diff($old, $new);
   $remove_links = array();
   foreach ($diff as $uid) {
-    $remove_links[] = l($users[$uid]->realname, 'users/' . $uid);
+    $remove_links[] = l($users[$uid]->realname, 'user/' . $uid);
   }
   if (!empty($remove_links)) {
     $output .= t('Removed') . ' ' . implode(', ', $remove_links) . '. ';
