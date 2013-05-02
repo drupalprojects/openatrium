@@ -54,9 +54,10 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
 
   $vars = array();
 
-  if (!isset($conf['show_number']) || ($conf['show_number'] != '0')) {
+  $show_number = isset($conf['show_number']) ? $conf['show_number'] : 10;
+  if ($show_number > 0)) {
     $vars['see_all_link'] = l(t('See all members'), 'node/' . $space->nid . '/members');
-    $members = array_slice($members, 0, $conf['show_number']-1);
+    $members = array_slice($members, 0, $show_number-1);
   }
   else {
     $vars['see_all_link'] = '';
