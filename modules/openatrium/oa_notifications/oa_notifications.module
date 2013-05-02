@@ -158,7 +158,7 @@ function oa_notifications_get_users_for_node($node, $gid = NULL) {
  *    then beneath that keyed by the target_id
  */
 function oa_notifications_load_multiple($source_entity, $source_type = 'node', $target_type = NULL) {
-  $source_id = array_shift(entity_extract_ids($source_type, $source_entity));
+  $source_id = current(entity_extract_ids($source_type, $source_entity));
   $query = db_select('oa_notifications', 'n')
     ->fields('n')
     ->condition('n.source_id', $source_id)
@@ -187,7 +187,7 @@ function oa_notifications_save_notifications($values) {
   if (isset($values['source_entity']) && isset($values['source_type'])) {
     drupal_alter('oa_notifications_save', $values);
     $source_type = $values['source_type'];
-    $source_id = array_shift(entity_extract_ids($source_type, $values['source_entity']));
+    $source_id = current(entity_extract_ids($source_type, $values['source_entity']));
     $notifications = array();
 
     if (isset($values['override'])) {
