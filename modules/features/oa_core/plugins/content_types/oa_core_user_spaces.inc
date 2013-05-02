@@ -85,8 +85,7 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
     $vars['active'] = SPACE_TAB_ALL;
   }
   else {
-    $keys = array_keys($vars['space_groups']);
-    $vars['active'] = reset($keys);
+    $vars['active'] = key($vars['space_groups']);
   }
   $vars['title_tag'] = ($conf['show_description']) ? 'h4' : 'div';
   $vars['main_class'] = ($conf['show_description']) ? 'member-full' : 'member-sidebar';
