@@ -28,7 +28,7 @@ function oa_messages_create($message_type, $entity = NULL, $entity_type = 'node'
 
   if (!empty($entity) && !is_object($entity)) {
     $entity_id = $entity;
-    $entity = array_shift( entity_load($entity_type, array($entity_id)));
+    $entity = current(entity_load($entity_type, array($entity_id)));
   }
   elseif (!empty($entity) && is_object($entity)) {
     $entity_info = entity_get_info($entity_type);

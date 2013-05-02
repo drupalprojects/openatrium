@@ -51,11 +51,11 @@ class OaMailParser extends MailhandlerParser {
       if ($contextual_nid) {
         $context = node_load($contextual_nid);
         $item['contextual_nid'] = $context->nid;
-        $space = array_shift(field_get_items('node', $context, 'og_group_ref'));
+        $space = current(field_get_items('node', $context, 'og_group_ref'));
         if ($space) {
           $item['contextual_space_id'] = $space['target_id'];
         }
-        $section = array_shift(field_get_items('node', $context, 'oa_section_ref'));
+        $section = current(field_get_items('node', $context, 'oa_section_ref'));
         if ($section) {
           $item['contextual_section_id'] = $section['target_id'];
         }
