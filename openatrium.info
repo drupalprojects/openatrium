@@ -77,6 +77,8 @@ dependencies[] = og_access
 dependencies[] = og_context
 dependencies[] = og_register
 dependencies[] = og_ui
+dependencies[] = og_subgroups
+dependencies[] = og_menu_single
 
 ; Libraries
 ; not until drupal is GPLv3
@@ -91,13 +93,13 @@ dependencies[] = oa_dashboard
 dependencies[] = oa_notifications
 dependencies[] = og_session_context
 dependencies[] = oa_section_context
-dependencies[] = og_menu_single
 
 ; Open Atrium 2.0 Features
 dependencies[] = oa_config
 dependencies[] = oa_widgets
 dependencies[] = oa_teams
 dependencies[] = oa_sections
+dependencies[] = oa_subspaces
 dependencies[] = oa_messages
 dependencies[] = oa_layouts
 dependencies[] = oa_news
