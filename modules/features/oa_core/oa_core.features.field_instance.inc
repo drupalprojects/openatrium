@@ -57,7 +57,7 @@ function oa_core_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -113,7 +113,7 @@ function oa_core_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -169,7 +169,7 @@ function oa_core_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 4,
     ),
     'widget_type' => 'options_select',
   );
@@ -234,7 +234,7 @@ function oa_core_field_default_field_instances() {
         'og_hide' => TRUE,
       ),
       'type' => 'options_onoff',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
