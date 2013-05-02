@@ -2,6 +2,7 @@ name = OpenAtrium
 distribution_name = openatrium
 description = A team collaboration platform
 core = 7.x
+exclusive = TRUE
 
 base[] = panopoly
 
