@@ -10,10 +10,33 @@
 define('OG_MENU_SINGLE_MENU_NAME', 'og-menu-single');
 
 /**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function og_menu_single_form_node_type_form_alter(&$form, $form_state) {
+  $type = $form['#node_type']->type;
+  $form['menu']['og_menu_single'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Og Menu Single'),
+    '#collapsible' => TRUE,
+    '#collapsed' => !og_menu_single_is_enabled_group_content('node', $type) && !og_menu_single_is_enabled_group('node', $type),
+  );
+  $form['menu']['og_menu_single']['og_menu_single_group_content__node__' . $type] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Content of this type may be placed in a group menu. Must also be a group content type'),
+    '#default_value' => og_menu_single_is_enabled_group_content($type),
+  );
+  $form['menu']['og_menu_single']['og_menu_single_group_content__node__' . $type] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Groups of this type may have a group menu. Must also be a group type'),
+    '#default_value' => og_menu_single_is_enabled_group_content($type),
+  );
+}
+
+/**
  * Implements hook_node_prepare().
  */
 function og_menu_single_node_prepare($node) {
-  if (og_is_group_content_type('node', $node->type)) {
+  if (og_menu_single_is_enabled_group_content('node', $node->type)) {
     // Set PLID for form use later.
     $node->group_plid = og_menu_single_get_active_plid();
     if ($node->group_plid && !empty($node->nid)) {
@@ -29,7 +52,7 @@ function og_menu_single_node_prepare($node) {
  * Implements hook_form_FORMID_alter().
  */
 function og_menu_single_form_node_form_alter(&$form, $form_state) {
-  if (!og_is_group_content_type('node', $form['#node']->type) || empty($form['#node']->group_plid)) {
+  if (!og_menu_single_is_enabled_group_content('node', $form['#node']->type) || empty($form['#node']->group_plid)) {
     return;
   }
   $link = $form['#node']->menu;
@@ -142,7 +165,7 @@ function og_menu_single_form_node_form_alter(&$form, $form_state) {
  * Implements hook_node_insert().
  */
 function og_menu_single_node_insert($node) {
-  if (og_is_group_type('node', $node->type)) {
+  if (og_menu_single_is_enabled_group('node', $node->type)) {
     _og_menu_single_save_group_link($node);
   }
 }
@@ -152,7 +175,7 @@ function og_menu_single_node_insert($node) {
  * Implements hook_node_update().
  */
 function og_menu_single_node_update($node) {
-  if (og_is_group_type('node', $node->type)) {
+  if (og_menu_single_is_enabled_group('node', $node->type)) {
     _og_menu_single_save_group_link($node, og_menu_single_get_link_mlid('node', $node->nid));
   }
 }
@@ -198,6 +221,22 @@ function og_menu_single_block_view($delta = '') {
     }
   }
   return $block;
+}
+
+/**
+ * Returns whether the group type is a considered group content.
+ */
+function og_menu_single_is_enabled_group_content($entity_type = 'node', $bundle) {
+  $is_group_content_type = og_is_group_content_type($entity_type, $bundle);
+  return $is_group_content_type && variable_get('og_menu_single_group_content__' . $entity_type . '__' . $bundle, $is_group_content_type && (!og_is_group_type($entity_type, $bundle)));
+}
+
+/**
+ * Returns whether the group type is a considered a group.
+ */
+function og_menu_single_is_enabled_group($entity_type = 'node', $bundle) {
+  $is_group_type = og_is_group_type($entity_type, $bundle);
+  return $is_group_type && variable_get('og_menu_single_group__' . $entity_type . '__' . $bundle, $is_group_type);
 }
 
 /**
@@ -314,7 +353,7 @@ function og_menu_single_menu_link_load($mlid) {
  * @param $mlid
  *   Current link ID if exists for that group.
  */
-function _og_menu_single_save_group_link($node, $mlid = NULL) {
+function _og_menu_single_save_group_link($node, $mlid = null) {
   $link = array(
     'mlid' => $mlid,
     'link_title' => $node->title . "'s Menu",
