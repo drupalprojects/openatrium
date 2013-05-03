@@ -123,8 +123,8 @@ function oa_home_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'oa_widgets_types' => array(
+        'oa_group' => 'oa_group',
         'oa_space' => 'oa_space',
-        'oa_group' => 0,
         'oa_discussion_post' => 0,
         'oa_section' => 0,
         'oa_team' => 0,
@@ -136,7 +136,7 @@ function oa_home_default_page_manager_pages() {
       'cancel' => 'Cancel',
       'override_title' => 1,
       'override_title_text' => '',
-      'form_build_id' => 'form-wnesLEwAkeXHXAJjZsx9NM0LGBEutFLa-GNaIlr_iLE',
+      'form_build_id' => 'form-xg4MVDRrDOwS85QXcLqk6cTkEqVBnqcjyM8U9Vg3RcE',
       'form_token' => 'ZT14dmU8EIt-EIcxQG6v1Doq-mj7M-JeAqUDMaHcTAE',
       'form_id' => 'oa_widgets_add_content_edit_form',
       'op' => 'Finish',

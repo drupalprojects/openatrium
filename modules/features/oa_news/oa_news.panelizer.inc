@@ -122,7 +122,7 @@ function oa_news_panelizer_defaults() {
         'type' => array(),
         'widget_title' => '',
         'use_pager' => 1,
-        'pager_id' => '0',
+        'pager_id' => '',
         'sort_by' => NULL,
         'sort_order' => NULL,
       ),
