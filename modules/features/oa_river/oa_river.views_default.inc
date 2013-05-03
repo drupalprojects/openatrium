@@ -312,6 +312,11 @@ function oa_river_views_default_views() {
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content access: Access */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node_access';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['relationship'] = 'field_oa_node_ref_target_id';
 
   /* Display: Space Activity */
   $handler = $view->new_display('panel_pane', 'Space Activity', 'space_activity');
@@ -378,6 +383,11 @@ function oa_river_views_default_views() {
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content access: Access */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node_access';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['relationship'] = 'field_oa_node_ref_target_id';
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -470,6 +480,11 @@ function oa_river_views_default_views() {
     3 => 0,
     4 => 0,
   );
+  /* Filter criterion: Content access: Access */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node_access';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['relationship'] = 'field_oa_node_ref_target_id';
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -556,6 +571,11 @@ function oa_river_views_default_views() {
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['realname']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content access: Access */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node_access';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['relationship'] = 'field_oa_node_ref_target_id';
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
