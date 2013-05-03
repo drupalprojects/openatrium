@@ -12,4 +12,4 @@ projects[drupal][patch][] = http://drupal.org/files/d7_move_access_to_join_condi
 ; Patch for simpletest
 projects[drupal][patch][911354] = http://drupal.org/files/911354-drupal-profile-85.patch
 ; Patch to allow install profile enabling to enable dependencies correctly.
-projects[drupal][patch][1093420] = http://drupal.org/files/1093420-2.patch
+projects[drupal][patch][1093420] = http://drupal.org/files/1093420-22.patch
