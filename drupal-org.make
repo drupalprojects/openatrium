@@ -260,3 +260,10 @@ projects[date_facets][download][type] = git
 projects[date_facets][download][url] = http://git.drupal.org/project/date_facets.git
 projects[date_facets][download][branch] = 7.x-1.x
 projects[date_facets][download][revision] = a7a35f8
+
+; Og menu single
+projects[og_menu_single][subdir] = contrib
+projects[og_menu_single][download][type] = git
+projects[og_menu_single][download][url] = http://git.drupal.org/project/og_menu_single.git
+projects[og_menu_single][download][branch] = 7.x-1.x
+projects[og_menu_single][download][revision] = 83dcd08
