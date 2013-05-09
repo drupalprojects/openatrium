@@ -13,6 +13,7 @@ dependencies[] = number
 dependencies[] = oa_core
 dependencies[] = oa_teams
 dependencies[] = og
+dependencies[] = reference_option_limit
 dependencies[] = options
 dependencies[] = strongarm
 dependencies[] = text
