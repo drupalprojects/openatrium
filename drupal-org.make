@@ -4,8 +4,8 @@ core = 7.x
 ; ************************************************
 ; ************** PANOPOLY OVERRIDES **************
 
-; Note that this makefile are parsed bottom-up and that in Drush concurrency
-; might interfere with recursion.
+; Note that makefiles are parsed bottom-up and that in Drush concurrency might
+; interfere with recursion.
 ; Therefore PANOPOLY OVERRIDES need to be listed AT THE TOP of this makefile,
 ; so we can patch or update certain projects fetched by Panopoly's makefiles.
 
@@ -36,6 +36,16 @@ projects[entityreference][download][type] = git
 projects[entityreference][download][url] = http://git.drupal.org/project/entityreference.git
 projects[entityreference][download][branch] = 7.x-1.x
 projects[entityreference][download][revision] = 1c176da
+
+; Override panopoly_core.make: 1143ee2
+; Patch FAPE to fix warnings (#1846156)
+projects[fape][type] = module
+projects[fape][subdir] = contrib
+projects[fape][download][type] = git
+projects[fape][download][url] = http://git.drupal.org/project/fape.git
+projects[fape][download][branch] = 7.x-1.x
+projects[fape][download][revision] = 1143ee2
+projects[fape][patch][1846156] = http://drupal.org/files/fape-1846156-5.patch
 
 ; Override panopoly_widgets.make: 5418cbe
 ; Update Media Youtube to work with private filesystem (#1946002)
@@ -224,8 +234,8 @@ projects[reference_option_limit][patch][1989262] = http://drupal.org/files/refer
 ; ************************************************
 ; ******************* PANOPOLY *******************
 
-; Note that this makefile are parsed bottom-up, and that in Drush concurrency
-; might interfere with recursion.
+; Note that makefiles are parsed bottom-up, and that in Drush concurrency might
+; interfere with recursion.
 ; Therefore PANOPOLY needs to be listed AT THE BOTTOM of this makefile,
 ; so we can patch or update certain projects fetched by Panopoly's makefiles.
 
