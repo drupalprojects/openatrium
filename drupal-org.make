@@ -205,6 +205,17 @@ projects[og_menu_single][download][branch] = 7.x-1.x
 projects[og_menu_single][download][revision] = 83dcd08
 projects[og_menu_single][type] = module
 
+; Reference Option Limit
+projects[reference_option_limit][subdir] = contrib
+projects[reference_option_limit][download][type] = git
+projects[reference_option_limit][download][url] = http://git.drupal.org/project/reference_option_limit.git
+projects[reference_option_limit][download][branch] = 7.x-1.x
+projects[reference_option_limit][download][revision] = 74bee91
+projects[reference_option_limit][type] = module
+projects[reference_option_limit][patch][1986532] = http://drupal.org/files/reference_option_limit_organic_groups.patch
+projects[reference_option_limit][patch][1986526] = http://drupal.org/files/1986526_reference_option_limit_3.patch
+projects[reference_option_limit][patch][1989262] = http://drupal.org/files/reference_option_limit_optomize_entityreference.patch
+
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************
 
