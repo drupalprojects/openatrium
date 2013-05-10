@@ -119,7 +119,7 @@ projects[flag][download][type] = git
 projects[flag][download][url] = http://git.drupal.org/project/flag.git
 projects[flag][download][branch] = 7.x-2.x
 projects[flag][download][revision] = 32cac54
-projects[flag][patch][] = http://drupal.org/files/flag-all-bundles-7.x-2.x-471212-13.patch
+projects[flag][patch][] = http://drupal.org/files/471212-14-flag-all-bundles.patch
 
 ; RealName
 projects[realname][subdir] = contrib
