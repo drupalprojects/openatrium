@@ -1,5 +1,5 @@
 name = OpenAtrium
-distribution_name = openatrium
+distribution_name = Open Atrium 2
 description = A team collaboration platform
 core = 7.x
 exclusive = TRUE
