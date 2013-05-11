@@ -224,7 +224,6 @@ projects[reference_option_limit][download][revision] = 74bee91
 projects[reference_option_limit][type] = module
 projects[reference_option_limit][patch][1986532] = http://drupal.org/files/reference_option_limit_organic_groups.patch
 projects[reference_option_limit][patch][1986526] = http://drupal.org/files/1986526_reference_option_limit_3.patch
-projects[reference_option_limit][patch][1989262] = http://drupal.org/files/reference_option_limit_optomize_entityreference.patch
 
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************
