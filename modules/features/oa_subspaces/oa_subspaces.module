@@ -25,11 +25,13 @@ function oa_subspaces_form_node_form_alter(&$form, $form_state, $form_id) {
     $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#description'] = t('Inherit membership from the selected spaces.');
 
     // remove any children of this space from the selection list
-    $children = array();
-    _oa_subspaces_get_children_groups('node', $node->nid, $children);
-    foreach ($form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#options'] as $key => $option) {
-      if (($key == $node->nid) || (in_array($key, $children))) {
-        unset($form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#options'][$key]);
+    if (!empty($node->nid)) {
+      $children = array();
+      _oa_subspaces_get_children_groups('node', $node->nid, $children);
+      foreach ($form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#options'] as $key => $option) {
+        if (($key == $node->nid) || (in_array($key, $children))) {
+          unset($form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#options'][$key]);
+        }
       }
     }
   }
