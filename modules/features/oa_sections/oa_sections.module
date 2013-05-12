@@ -98,6 +98,10 @@ function _oa_sections_get_current_selected_space($entity) {
   if (!empty($_GET['og_group_ref_target_id'])) {
     $value = $_GET['og_group_ref_target_id'];
   }
+  // For panelizer settings.
+  elseif (!empty($_POST['exposed']['og_group_ref_target_id'])) {
+    $value = $_POST['exposed']['og_group_ref_target_id'];
+  }
   // Check post or entity values.
   elseif (isset($process) && is_array($process)) {
     if (!empty($process[LANGUAGE_NONE][0]['target_id'])) {
