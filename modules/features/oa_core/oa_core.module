@@ -378,7 +378,7 @@ function oa_core_remove_admin($group_type, $gid, $uid) {
  * Implements hook_views_pre_view().
  */
 function oa_core_views_pre_view(&$view) {
-  if ($view->name == 'open_atrium_content') {
+  if (_oa_core_set_default_value_for_view($view->name)) {
     $filters =& $view->display_handler->default_display->options['filters'];
     // Default group to current group.
     if (defined('OG_SESSION_CONTEXT_ID') && !empty($_SESSION[OG_SESSION_CONTEXT_ID])) {
@@ -396,7 +396,7 @@ function oa_core_views_pre_view(&$view) {
  */
 function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
   // Set default since hook_views_pre_view doesn't get called here?.
-  if ($form_state['view']->name == 'open_atrium_content' && isset($form['exposed'])) {
+  if (_oa_core_set_default_value_for_view($form_state['view']->name) && isset($form['exposed'])) {
     if (empty($form_state['conf']['exposed']['og_group_ref_target_id']) && defined('OG_SESSION_CONTEXT_ID') && !empty($_SESSION[OG_SESSION_CONTEXT_ID])) {
       $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#default_value'] = $_SESSION[OG_SESSION_CONTEXT_ID];
     }
@@ -404,4 +404,11 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
       $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#default_value'] = $_SESSION[OA_SESSION_SECTION];
     }
   }
+}
+
+/** 
+ * See which views to setthe default value for exposed filters.
+ */
+function _oa_core_set_default_value_for_view($name) {
+  return in_array($name, array('open_atrium_content', 'oa_recent_activity'));
 }
