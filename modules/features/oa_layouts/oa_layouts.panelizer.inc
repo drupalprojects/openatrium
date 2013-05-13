@@ -502,7 +502,7 @@ function oa_layouts_panelizer_defaults() {
     $pane->pid = 'new-14';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'oa_recent_activity-space_activity';
+    $pane->subtype = 'oa_recent_activity-section_activity';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
