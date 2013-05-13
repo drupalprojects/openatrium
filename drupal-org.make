@@ -94,7 +94,8 @@ projects[og_subgroups][download][type] = git
 projects[og_subgroups][download][url] = http://git.drupal.org/project/og_subgroups.git
 projects[og_subgroups][download][branch] = 7.x-2.x
 projects[og_subgroups][download][revision] = 7693f8915cb4bd45ae01c39d7abd5b54128e6d31
-projects[og_subgroups][patch][] = http://drupal.org/files/og_subgroup-1985514-1.patch
+projects[og_subgroups][patch][1985514] = http://drupal.org/files/og_subgroup-1985514-1.patch
+projects[og_subgroups][patch][1993944] = http://drupal.org/files/1993944_og_subgroups_fields-1.patch
 
 ; Rules
 projects[rules][subdir] = contrib
