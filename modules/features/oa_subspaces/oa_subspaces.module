@@ -217,10 +217,8 @@ function oa_subspaces_views_pre_view(&$view) {
 function oa_subspaces_views_query_alter(&$view, &$query) {
   // If selected, add all the children groups content to the space.
   if (!empty($view->exposed_input['og_subspaces_view_all']) && is_numeric($view->exposed_input['og_group_ref_target_id']) && !empty($view->filter['og_group_ref_target_id']->options['exposed'])) {
-    dsm($query);
     $settings = _oa_subspaces_find_view_settings($view);
     if ($settings['og_subspaces_view_all'] && ($children = oa_subspaces_get_children_groups('node', $view->exposed_input['og_group_ref_target_id']))) {
-      dsm('ereee');
       foreach ($query->where[1]['conditions'] as $key => $condition) {
         // @todo - can we calculate this?
         if ($condition['field'] == 'og_membership.gid' || $condition['field'] == 'node_field_data_field_oa_node_ref__og_membership.gid') {
