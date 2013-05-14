@@ -83,6 +83,7 @@ projects[features_override][version] = 2.0-beta2
 ; Organic Groups
 projects[og][subdir] = contrib
 projects[og][version] = 2.2
+projects[og][patch][1995012] = http://drupal.org/files/og_membership_alter.patch
 
 ; Organic Groups Vocabulary
 projects[og_vocab][subdir] = contrib
@@ -96,6 +97,7 @@ projects[og_subgroups][download][branch] = 7.x-2.x
 projects[og_subgroups][download][revision] = 7693f8915cb4bd45ae01c39d7abd5b54128e6d31
 projects[og_subgroups][patch][1985514] = http://drupal.org/files/og_subgroup-1985514-1.patch
 projects[og_subgroups][patch][1993944] = http://drupal.org/files/1993944_og_subgroups_fields-1.patch
+projects[og_subgroups][patch][1995018] = http://drupal.org/files/og_subgroups_og_get_groups_by_user_alter.patch
 
 ; Rules
 projects[rules][subdir] = contrib
