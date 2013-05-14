@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Tests permission inheritence for oa_subspaces
+ */
+
+class oa_subspacesPermission extends oa_coreBaseWebTest {
+  static function getInfo() {
+    return array(
+      'name' => 'OA Subspace Permission test',
+      'description' => 'Test that can permissions are correct',
+      'group' => 'OAS',
+    );
+  }
+
+  function test_oa_subspacesPermission() {
+    extract($this->createOaSpaceAndUsers(array('og_user_inheritance' => array(LANGUAGE_NONE => array(0 => array('value' => 1))))));
+    // Create another space that is a child of this one.
+    $child = $this->createOaSpace(array('oa_parent_space' => array(LANGUAGE_NONE => array(0 => array('target_id' => $space->nid)))));
+    og_group('node', $space, array('entity' => $child));
+    $roles = array_flip(og_roles('node', 'oa_space'));
+    // Add create permission.
+    $permissions = array(
+      'create oa_discussion_post content' => 1,
+    );
+    og_role_change_permissions($roles[OG_AUTHENTICATED_ROLE], $permissions);
+    $this->assertTrue(og_user_access('node', $space->nid, 'create oa_discussion_post content', $space_member), t('Member has access to do permissions in main space.'));
+    $this->assertTrue(og_user_access('node', $child->nid, 'create oa_discussion_post content', $space_member), t('Member has access to do permissions in child space.'));
+  }
+}
