@@ -8,6 +8,11 @@
 	position: relative;
 }
 
+#oa_toobar .btn-toolbar {
+  float: left;
+  margin-left: 10px;
+}
+
 .navbar-inverse #oa_toolbar .btn.btn-inverse {
   color: #BBB;
 }
