@@ -379,14 +379,28 @@ function oa_core_remove_admin($group_type, $gid, $uid) {
  */
 function oa_core_views_pre_view(&$view) {
   if (_oa_core_set_default_value_for_view($view->name)) {
-    $filters =& $view->display_handler->default_display->options['filters'];
+    $default_filters =& $view->display_handler->default_display->options['filters'];
+    $current_filters =& $view->display_handler->options['filters'];
     // Default group to current group.
     if (defined('OG_SESSION_CONTEXT_ID') && !empty($_SESSION[OG_SESSION_CONTEXT_ID])) {
-      $filters['og_group_ref_target_id']['value'] = $_SESSION[OG_SESSION_CONTEXT_ID];
+      $group = $_SESSION[OG_SESSION_CONTEXT_ID];
+      if (isset($default_filters['og_group_ref_target_id'])) {
+        $default_filters['og_group_ref_target_id']['value'] = $group;
+      }
+      if (isset($current_filters['og_group_ref_target_id'])) {
+        $current_filters['og_group_ref_target_id']['value'] = $group;
+      }
     }
+    $node = menu_get_object();
     // Default section to current group.
-    if (defined('OA_SESSION_SECTION') && !empty($_SESSION[OA_SESSION_SECTION])) {
-      $filters['oa_section_ref_target_id']['value'] = $_SESSION[OA_SESSION_SECTION];
+    if (defined('OA_SESSION_SECTION') && !empty($_SESSION[OA_SESSION_SECTION]) && (!$node || $node->type != 'oa_space')) {
+      $section = $_SESSION[OA_SESSION_SECTION];
+      if (isset($default_filters['oa_section_ref_target_id'])) {
+        $default_filters['oa_section_ref_target_id']['value'] = isset($default_filters['oa_section_ref_target_id']['value']) && is_array($default_filters['oa_section_ref_target_id']['value']) ? array($section => $section) : $section;
+      }
+      if (isset($current_filters['oa_section_ref_target_id'])) {
+        $current_filters['oa_section_ref_target_id']['value'] =  isset($current_filters['oa_section_ref_target_id']['value']) && is_array($current_filters['oa_section_ref_target_id']['value']) ? array($section => $section) : $section;
+      }
     }
   }
 }
