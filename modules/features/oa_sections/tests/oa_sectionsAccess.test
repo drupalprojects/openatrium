@@ -51,5 +51,26 @@ class oa_sectionsAccess extends oa_coreBaseWebTest {
     $this->drupalLogin($space_member_2);
     $this->drupalGet('node/' . $section_space_member_only->nid);
     $this->assertResponse(403, t('Non-included member cannot view private section (http response code).'));
+
+    $this->drupalLogin($space_member);
+    $this->drupalGet('node/' . $space->nid);
+    $this->assertText($section_public->title, t('Public section title appears somewhere on homepage for member'));
+    $this->assertText($section_space_member_only->title, t('Private section title appears somewhere on homepage for member'));
+  
+    $this->drupalLogin($space_admin);
+    $this->drupalGet('node/' . $space->nid);
+    $this->assertText($section_public->title, t('Public section title appears somewhere on homepage for admin'));
+    $this->assertNoText($section_space_member_only->title, t('Private section title does not appear somewhere on homepage for admin'));
+  
+    $this->drupalLogin($space_member_2);
+    $this->drupalGet('node/' . $space->nid);
+    $this->assertText($section_public->title, t('Public section title appears somewhere on homepage for admin'));
+    $this->assertNoText($section_space_member_only->title, t('Private section title does not appear somewhere on homepage for admin'));
+
+    $this->drupalLogout();
+    $this->drupalGet('node/' . $space->nid);
+    $this->assertText($section_public->title, t('Public section title appears somewhere on homepage for anonymous'));
+    $this->assertNoText($section_space_member_only->title, t('Private section title does not appear somewhere on homepage for anonymous'));
+
   }
 }
