@@ -17,9 +17,19 @@ class oa_sectionsAccess extends oa_coreBaseWebTest {
   function test_oa_sectionsAccess() {
     extract($this->createOaSpaceAndUsers());
     $space_member_2 = $this->createUserInOaSpace($space);
+    $non_member = $this->drupalCreateUser();
+
+    // Group that just $space_member is part of.
     $group = $this->drupalCreateNode(array('type' => 'oa_group'));
     og_group('node', $group, array('entity' => $space_member));
-    $this->oaTestOaSectionAccess('a space', $space, $space_admin, $space_member, $space_member_2, $group);
+    // Test a public space.
+    $this->oaTestOaSectionAccess('a public space', $space, $space_admin, $space_member, $space_member_2, $non_member, $group);
+
+    // Test a private space.
+    $space_private = $this->drupalCreateNode(array('type' => 'oa_space', 'uid' => $space_admin->uid, 'group_access' => array(LANGUAGE_NONE => array(array('value' => 1)))));
+    og_group('node', $space_private, array('entity' => $space_member));
+    og_group('node', $space_private, array('entity' => $space_member_2));
+    $this->oaTestOaSectionAccess('a private space', $space_private, $space_admin, $space_member, $space_member_2, $non_member, $group);
   }
 
   /**
@@ -38,7 +48,7 @@ class oa_sectionsAccess extends oa_coreBaseWebTest {
    * @param $group_for_section
    *   A group that space member is part of.
    */
-  protected function oaTestOaSectionAccess($text, $test_space, $space_admin, $space_member, $space_member_2, $group_for_section = NULL) {
+  protected function oaTestOaSectionAccess($text, $test_space, $space_admin, $space_member, $space_member_2, $non_member, $group_for_section = NULL) {
     $this->drupalLogin($space_admin);
     $this->drupalGet('node/' . $test_space->nid);
     $anon = user_load(0);
@@ -52,18 +62,23 @@ class oa_sectionsAccess extends oa_coreBaseWebTest {
     $this->oaTestOaSectionAccessToSection($text, 'member', 'public', $test_space, $section_public, $space_member, TRUE);
     $this->oaTestOaSectionAccessToSection($text, 'member 2', 'public', $test_space, $section_public, $space_member_2, TRUE);
     $this->oaTestOaSectionAccessToSection($text, 'admin', 'public', $test_space, $section_public, $space_admin, TRUE);
-    $this->oaTestOaSectionAccessToSection($text, 'anonymous', 'public', $test_space, $section_public, $anon, TRUE);
+    $this->oaTestOaSectionAccessToSection($text, 'anonymous', 'public', $test_space, $section_public, $anon, $this->oaSpaceIsPublic($test_space));
+    $this->oaTestOaSectionAccessToSection($text, 'non-member', 'public', $test_space, $section_public, $non_member, $this->oaSpaceIsPublic($test_space));
 
-    // Test access to private sections.
+    // Test access to private sections done by specific user.
     $this->oaTestOaSectionAccessToSection($text, 'admin', 'private', $test_space, $section_space_member_only, $space_admin, FALSE);
     $this->oaTestOaSectionAccessToSection($text, 'member', 'private', $test_space, $section_space_member_only, $space_member, TRUE);
     $this->oaTestOaSectionAccessToSection($text, 'member 2', 'private', $test_space, $section_space_member_only, $space_member_2, FALSE);
     $this->oaTestOaSectionAccessToSection($text, 'anonymous', 'private', $test_space, $section_space_member_only, $anon, FALSE);
+    $this->oaTestOaSectionAccessToSection($text, 'non-member', 'private', $test_space, $section_space_member_only, $non_member, FALSE);
+
+    // Test access to private sections done by group.
     if ($group_for_section) {
       $this->oaTestOaSectionAccessToSection($text, 'admin', 'private by group', $test_space, $section_space_group_only, $space_admin, FALSE);
       $this->oaTestOaSectionAccessToSection($text, 'member', 'private by group', $test_space, $section_space_group_only, $space_member, TRUE);
       $this->oaTestOaSectionAccessToSection($text, 'member 2', 'private by group', $test_space, $section_space_group_only, $space_member_2, FALSE);
       $this->oaTestOaSectionAccessToSection($text, 'anonymous', 'private by group', $test_space, $section_space_group_only, $anon, FALSE);
+      $this->oaTestOaSectionAccessToSection($text, 'non-member', 'private by group', $test_space, $section_space_group_only, $non_member, FALSE);
     }
   }
 

@@ -53,6 +53,10 @@ abstract class oa_coreBaseWebTest extends DrupalWebTestCase {
     return $member;
   }
 
+  protected function oaSpaceIsPublic($space) {
+    return empty($space->group_access[LANGUAGE_NONE][0]['value']);
+  }
+
   protected function assertOptionExists($id, $option, $message = '') {
     $elements = $this->xpath('//select[@id=:id]//option[@value=:option]', array(':id' => $id, ':option' => $option));
     return $this->assertTrue(!empty($elements[0]), $message ? $message : t('Option @option for field @id is selected.', array('@option' => $option, '@id' => $id)), t('Browser'));
