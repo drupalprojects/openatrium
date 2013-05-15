@@ -61,3 +61,6 @@ features_exclude[field][node-oa_section-field_oa_user_ref] = node-oa_section-fie
 features_exclude[field][node-oa_section-og_group_ref] = node-oa_section-og_group_ref
 features_exclude[field][node-oa_section-field_oa_section_weight] = node-oa_section-field_oa_section_weight
 project path = profiles/openatrium/modules/features
+
+files[] = tests/oa_sectionsAccess.test
+

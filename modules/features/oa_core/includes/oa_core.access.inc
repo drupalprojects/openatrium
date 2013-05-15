@@ -49,7 +49,7 @@ function oa_core_section_access($row, $spaces, $account) {
  * Define node access grant realm for Open Atrium sections
  */
 function oa_core_node_grants($account, $op) {
-  static $cache = array();
+  $cache = drupal_static(__FUNCTION__, array());
 
   if ($op != 'view') {
     return;
@@ -207,7 +207,8 @@ function oa_core_node_update($node) {
 }
 
 /**
- * Implements hook_file_entity_access
+ * Implements hook_file_entity_access().
+ *
  * Check permissions of private files based upon the node they are attached to
  */
 function oa_core_file_entity_access($op, $file, $account) {
@@ -243,4 +244,12 @@ function oa_core_file_entity_access($op, $file, $account) {
     }
   }
   return FILE_ENTITY_ACCESS_IGNORE;
+}
+
+
+/**
+ * Implements hook_og_membership_insert().
+ */
+function oa_core_og_membership_insert($og_membership) {
+  drupal_static_reset('oa_core_node_grants');
 }

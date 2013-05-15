@@ -37,18 +37,29 @@ abstract class oa_coreBaseWebTest extends DrupalWebTestCase {
     return $this->drupalCreateNode($node_info);
   }
 
-  protected function createOaSpaceAndUsers($space_info) {
-    $admin = $this->drupalCreateUser(array('create oa_space content'));
-    $member = $this->drupalCreateUser();
-    $this->drupalLogin($admin);
+  protected function createOaSpaceAndUsers($space_info = array()) {
+    $admin = $this->drupalCreateUser(array('create oa_space content', 'create oa_section content', 'edit any oa_section content'));
     $space = $this->createOaSpace($space_info);
-    og_group('node', $space, array('entity' => $member));
-
     return array(
       'space' => $space,
-      'space_member' => $member,
+      'space_member' => $this->createUserInOaSpace($space),
       'space_admin' => $admin,
     );
+  }
+
+  protected function createUserInOaSpace($space, $permissions = array()) {
+    $member = $this->drupalCreateUser();
+    og_group('node', $space, array('entity' => $member));
+    return $member;
+  }
+
+  protected function assertOptionExists($id, $option, $message = '') {
+    $elements = $this->xpath('//select[@id=:id]//option[@value=:option]', array(':id' => $id, ':option' => $option));
+    return $this->assertTrue(!empty($elements[0]), $message ? $message : t('Option @option for field @id is selected.', array('@option' => $option, '@id' => $id)), t('Browser'));
+  }
+  protected function assertOptionNoExists($id, $option, $message = '') {
+    $elements = $this->xpath('//select[@id=:id]//option[@value=:option]', array(':id' => $id, ':option' => $option));
+    return $this->assertTrue(empty($elements[0]), $message ? $message : t('Option @option for field @id is selected.', array('@option' => $option, '@id' => $id)), t('Browser'));
   }
 }
 
