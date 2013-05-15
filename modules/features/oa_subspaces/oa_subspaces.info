@@ -23,3 +23,5 @@ features[field_instance][] = node-oa_space-og_user_inheritance
 project path = profiles/openatrium/modules/features
 
 files[] = tests/oa_subspacesPermission.test
+files[] = tests/oa_subspacesSectionAccess.test
+
