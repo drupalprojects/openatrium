@@ -17,60 +17,103 @@ class oa_sectionsAccess extends oa_coreBaseWebTest {
   function test_oa_sectionsAccess() {
     extract($this->createOaSpaceAndUsers());
     $space_member_2 = $this->createUserInOaSpace($space);
-    $section_public = $this->createNodeInOaSpace($space, array('type' => 'oa_section'));
-
-    $this->assertTrue(node_access('view', $section_public, $space_member), t('Member can view public section'));
-    $this->drupalLogin($space_member);
-    $this->drupalGet('node/' . $section_public->nid);
-    $this->assertResponse(200, t('Member can view public section (http response code).'));
-
-    $this->assertTrue(node_access('view', $section_public, user_load(0)), t('Anonymous can view public section.'));
-    $this->drupalLogout();
-    $this->drupalGet('node/' . $section_public->nid);
-    $this->assertResponse(200, t('Anonymous can view public section (http response code).'));
-
-    $this->drupalLogin($space_admin);
-    $section_space_member_only = $this->createNodeInOaSpace($space, array('type' => 'oa_section', 'field_oa_user_ref' => array(LANGUAGE_NONE => array(array('target_id' => $space_member->uid)))));
-
-    $this->assertFalse(node_access('view', $section_space_member_only, user_load(0)), t('Anonymous cannot view private section.'));
-    $this->drupalLogout();
-    $this->drupalGet('node/' . $section_space_member_only->nid);
-    $this->assertResponse(403, t('Anonymous cannot view private section (http response code).'));
-
-    $this->assertTrue(node_access('view', $section_space_member_only, user_load($space_member->uid)), t('Member can view private section'));
-    $this->drupalLogin($space_member);
-    $this->drupalGet('node/' . $section_space_member_only->nid);
-    $this->assertResponse(200, t('Member can view private section (http response code).'));
-
-    $this->assertFalse(node_access('view', $section_space_member_only, $space_admin), t('Group admin cannot view private section'));
-    $this->drupalLogin($space_admin);
-    $this->drupalGet('node/' . $section_space_member_only->nid);
-    $this->assertResponse(403, t('Admin cannot view private section (http response code).'));
-
-    $this->assertFalse(node_access('view', $section_space_member_only, $space_member_2), t('Non-included member cannot view private section'));
-    $this->drupalLogin($space_member_2);
-    $this->drupalGet('node/' . $section_space_member_only->nid);
-    $this->assertResponse(403, t('Non-included member cannot view private section (http response code).'));
-
-    $this->drupalLogin($space_member);
-    $this->drupalGet('node/' . $space->nid);
-    $this->assertText($section_public->title, t('Public section title appears somewhere on homepage for member'));
-    $this->assertText($section_space_member_only->title, t('Private section title appears somewhere on homepage for member'));
-  
-    $this->drupalLogin($space_admin);
-    $this->drupalGet('node/' . $space->nid);
-    $this->assertText($section_public->title, t('Public section title appears somewhere on homepage for admin'));
-    $this->assertNoText($section_space_member_only->title, t('Private section title does not appear somewhere on homepage for admin'));
-  
-    $this->drupalLogin($space_member_2);
-    $this->drupalGet('node/' . $space->nid);
-    $this->assertText($section_public->title, t('Public section title appears somewhere on homepage for admin'));
-    $this->assertNoText($section_space_member_only->title, t('Private section title does not appear somewhere on homepage for admin'));
-
-    $this->drupalLogout();
-    $this->drupalGet('node/' . $space->nid);
-    $this->assertText($section_public->title, t('Public section title appears somewhere on homepage for anonymous'));
-    $this->assertNoText($section_space_member_only->title, t('Private section title does not appear somewhere on homepage for anonymous'));
-
+    $group = $this->drupalCreateNode(array('type' => 'oa_group'));
+    og_group('node', $group, array('entity' => $space_member));
+    $this->oaTestOaSectionAccess('a space', $space, $space_admin, $space_member, $space_member_2, $group);
   }
+
+  /**
+   * Tests access to sections.
+   *
+   * @param $text
+   *   Text to use for asserts.
+   * @param $test_space
+   *   Space to add sections to
+   * @param $space_admin
+   *   Administer of that space
+   * @param $space_member
+   *   Member of that space
+   * @param $space_member_2
+   *   A different member of that space.
+   * @param $group_for_section
+   *   A group that space member is part of.
+   */
+  protected function oaTestOaSectionAccess($text, $test_space, $space_admin, $space_member, $space_member_2, $group_for_section = NULL) {
+    $this->drupalLogin($space_admin);
+    $this->drupalGet('node/' . $test_space->nid);
+    $anon = user_load(0);
+    $section_public = $this->createNodeInOaSpace($test_space, array('type' => 'oa_section'));
+    $section_space_member_only = $this->createNodeInOaSpace($test_space, array('type' => 'oa_section', 'field_oa_user_ref' => array(LANGUAGE_NONE => array(array('target_id' => $space_member->uid)))));
+    if ($group_for_section) {
+      $section_space_group_only = $this->createNodeInOaSpace($test_space, array('type' => 'oa_section', 'field_oa_group_ref' => array(LANGUAGE_NONE => array(array('target_id' => $group_for_section->nid)))));
+    }
+
+    // Test access to public section.
+    $this->oaTestOaSectionAccessToSection($text, 'member', 'public', $test_space, $section_public, $space_member, TRUE);
+    $this->oaTestOaSectionAccessToSection($text, 'member 2', 'public', $test_space, $section_public, $space_member_2, TRUE);
+    $this->oaTestOaSectionAccessToSection($text, 'admin', 'public', $test_space, $section_public, $space_admin, TRUE);
+    $this->oaTestOaSectionAccessToSection($text, 'anonymous', 'public', $test_space, $section_public, $anon, TRUE);
+
+    // Test access to private sections.
+    $this->oaTestOaSectionAccessToSection($text, 'admin', 'private', $test_space, $section_space_member_only, $space_admin, FALSE);
+    $this->oaTestOaSectionAccessToSection($text, 'member', 'private', $test_space, $section_space_member_only, $space_member, TRUE);
+    $this->oaTestOaSectionAccessToSection($text, 'member 2', 'private', $test_space, $section_space_member_only, $space_member_2, FALSE);
+    $this->oaTestOaSectionAccessToSection($text, 'anonymous', 'private', $test_space, $section_space_member_only, $anon, FALSE);
+    if ($group_for_section) {
+      $this->oaTestOaSectionAccessToSection($text, 'admin', 'private by group', $test_space, $section_space_group_only, $space_admin, FALSE);
+      $this->oaTestOaSectionAccessToSection($text, 'member', 'private by group', $test_space, $section_space_group_only, $space_member, TRUE);
+      $this->oaTestOaSectionAccessToSection($text, 'member 2', 'private by group', $test_space, $section_space_group_only, $space_member_2, FALSE);
+      $this->oaTestOaSectionAccessToSection($text, 'anonymous', 'private by group', $test_space, $section_space_group_only, $anon, FALSE);
+    }
+  }
+
+
+  /**
+   * Tests access to a specfic section.
+   *
+   * @param $space_text
+   *   Text to use for asserts.
+   * @param $member_text
+   *   Text to use for asserts.
+   * @param $section_text
+   *   Text to use for asserts.
+   * @param $space
+   *   Space the section is part of.
+   * @param $section
+   *   Section to test.
+   * @param $account
+   *   Account to test access for.
+   * @param $has_access
+   *   Whether $account should have access to this space.
+   */
+  protected function oaTestOaSectionAccessToSection($space_text, $member_text, $section_text, $space, $section, $account, $has_access) {
+    if ($account->uid) {
+      $this->drupalLogin($account);
+    }
+    else {
+      $this->drupalLogout();
+    }
+
+    // Test node_access directly and viewing section page.
+    $this->drupalGet('node/' . $section->nid);
+    if ($has_access) {
+      $this->assertTrue(node_access('view', $section, $account), t('@member has view access to @section section for @space', array('@space' => $space_text, '@member' => $member_text, '@section' => $section_text)));
+      $this->assertResponse(200, t('@member can view @section section for @space', array('@space' => $space_text, '@member' => $member_text, '@section' => $section_text)));
+
+    }
+    else {
+      $this->assertFalse(node_access('view', $section, $account), t('@member does not have view access to @section section for @space', array('@space' => $space_text, '@member' => $member_text, '@section' => $section_text)));
+      $this->assertResponse(403, t('@member cannot view @section section for @space', array('@space' => $space_text, '@member' => $member_text, '@section' => $section_text)));
+    }
+
+    // Test listing of sections (by viewing space homepage)
+    $this->drupalGet('node/' . $space->nid);
+    if ($has_access) {
+      $this->assertText($section->title,  t('@member can view @section section on @space homepage', array('@space' => $space_text, '@member' => $member_text, '@section' => $section_text)));
+    }
+    else {
+      $this->assertNoText($section->title,  t('@member cannot view @section section on @space homepage', array('@space' => $space_text, '@member' => $member_text, '@section' => $section_text)));
+    }
+  }
+
 }
