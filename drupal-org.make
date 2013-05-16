@@ -228,9 +228,16 @@ projects[reference_option_limit][type] = module
 projects[reference_option_limit][patch][1986532] = http://drupal.org/files/reference_option_limit_organic_groups.patch
 projects[reference_option_limit][patch][1986526] = http://drupal.org/files/1986526_reference_option_limit_3.patch
 
+; Quicktabs
+projects[quicktabs][type] = module
+projects[quicktabs][download][type] = git
+projects[quicktabs][version] = 3.4
+projects[quicktabs][subdir] = contrib
+projects[quicktabs][download][url] = http://git.drupal.org/project/quicktabs.git
+projects[quicktabs][download][branch] = 7.x-3.x
+
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************
-
 
 
 ; ************************************************
