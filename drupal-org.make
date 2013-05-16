@@ -240,9 +240,9 @@ projects[quicktabs][download][branch] = 7.x-3.x
 ;; eventually this gets moved to oa_events when it's a full drupal.org project
 projects[calendar][type] = module
 projects[calendar][subdir] = contrib
+projects[calendar][version] = 3.4
 projects[calendar][download][url] = http://git.drupal.org/project/calendar.git
 projects[calendar][download][type] = git
-projects[calendar][download][version] = 3.4
 projects[calendar][download][branch] = 7.x-3.x
 projects[calendar][patch][1214940] = http://drupal.org/files/1214940-remove-resizeViewport.patch
 projects[calendar][patch][1995062] = http://drupal.org/files/1995062-no-weekno-in-weekly_0.patch
@@ -256,11 +256,11 @@ projects[date_ical][download][branch] = 7.x-2.x
 
 projects[geophp][type] = module
 projects[geophp][subdir] = contrib
-projects[geophp][download][version] = 1.7
+projects[geophp][version] = 1.7
 
 projects[geofield][type] = module
 projects[geofield][subdir] = contrib
-projects[geofield][download][version] = 1.1
+projects[geofield][version] = 1.1
 
 projects[geocoder][type] = module
 projects[geocoder][subdir] = contrib
