@@ -15,7 +15,7 @@
  * See http://drupal.org/project/installprofiletest for patches need to have
  * a successful run w/o simpletest clone.
  */
-abstract class oa_coreBaseWebTest extends DrupalWebTestCase {
+abstract class oa_coreBaseWebTest extends SimpleTestCloneTestCase {
   protected $profile = 'openatrium';
 
   /**
