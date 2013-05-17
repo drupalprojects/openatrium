@@ -44,7 +44,7 @@ function oa_panopoly_users_features_override_default_overrides() {
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|panel"] = 'contentheader';
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|subtype"] = 'user:field_user_about';
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|type"] = 'entity_field';
-  $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|context|0"] = 'panelizer';
+  $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|context"] =  array('panelizer');
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|delta_limit"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|delta_offset"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.user:user:default.display|content|new-2|configuration|delta_reversed"]["DELETED"] = TRUE;
