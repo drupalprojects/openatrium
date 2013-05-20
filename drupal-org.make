@@ -56,6 +56,18 @@ projects[media_youtube][download][url] = http://git.drupal.org/project/media_you
 projects[media_youtube][download][branch] = 7.x-2.x
 projects[media_youtube][download][revision] = c53660c
 
+; Override panopoly_core.make: 72f3d17
+; Update token to allow disabling of empty token errors during test runs
+projects[token][type] = module
+projects[token][subdir] = contrib
+projects[token][download][type] = git
+projects[token][download][url] = http://git.drupal.org/project/token.git
+projects[token][download][version] = 7.x-1.x
+projects[token][download][revision] = 72f3d17
+projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-warnings.patch
+
+
+
 ; ************ End Panopoly Overrides ************
 ; ************************************************
 
