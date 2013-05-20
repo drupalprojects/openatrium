@@ -44,6 +44,8 @@ function oa_panopoly_users_panelizer_defaults_override_alter(&$data) {
     $data['user:user:default']->display->content['new-1']->configuration['path'] = NULL; /* WAS: '' */
     $data['user:user:default']->display->content['new-1']->configuration['use_pager'] = NULL; /* WAS: '' */
     $data['user:user:default']->display->content['new-1']->configuration['widget_title'] = NULL; /* WAS: '' */
+    // @TODO Fix this so don't have to manually update it after fu.
+    $data['user:user:default']->display->content['new-1']->configuration['context'] = 'panelizer'; /* WAS: 'p' */
     $data['user:user:default']->display->content['new-1']->panel = 'contentheader'; /* WAS: 'column1' */
     $data['user:user:default']->display->content['new-1']->subtype = 'user:field_user_about'; /* WAS: 'user_profile' */
     $data['user:user:default']->display->content['new-1']->type = 'entity_field'; /* WAS: 'user_profile' */

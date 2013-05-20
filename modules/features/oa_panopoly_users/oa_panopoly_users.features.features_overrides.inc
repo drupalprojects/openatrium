@@ -41,6 +41,7 @@ function oa_panopoly_users_features_override_default_overrides() {
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|configuration|path"] = NULL;
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|configuration|use_pager"] = NULL;
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|configuration|widget_title"] = NULL;
+  $overrides["panelizer_defaults.user:user:default.display|content|new-1|configuration|context"] = 'panelizer';
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|panel"] = 'contentheader';
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|subtype"] = 'user:field_user_about';
   $overrides["panelizer_defaults.user:user:default.display|content|new-1|type"] = 'entity_field';
