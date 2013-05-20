@@ -225,7 +225,7 @@ projects[reference_option_limit][download][url] = http://git.drupal.org/project/
 projects[reference_option_limit][download][branch] = 7.x-1.x
 projects[reference_option_limit][download][revision] = 74bee91
 projects[reference_option_limit][type] = module
-projects[reference_option_limit][patch][1986532] = http://drupal.org/files/reference_option_limit_organic_groups.patch
+projects[reference_option_limit][patch][1986532] = http://drupal.org/files/1986532_reference_option_limit_og-2.patch
 projects[reference_option_limit][patch][1986526] = http://drupal.org/files/1986526_reference_option_limit_3.patch
 
 ; Quicktabs
