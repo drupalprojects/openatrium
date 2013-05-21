@@ -63,4 +63,4 @@ features_exclude[field][node-oa_section-field_oa_section_weight] = node-oa_secti
 project path = profiles/openatrium/modules/features
 
 files[] = tests/oa_sectionsAccess.test
-
+files[] = tests/oa_sectionsAccessBase.test

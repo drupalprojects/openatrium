@@ -5,7 +5,7 @@
  * Tests permission inheritence for oa_subspaces
  */
 
-class oa_subspacesSectionAccess extends oa_sectionsAccess {
+class oa_subspacesSectionAccess extends oa_sectionsAccessBase {
   static function getInfo() {
     return array(
       'name' => 'OA Subspace Section Permission test',
