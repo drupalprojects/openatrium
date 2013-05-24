@@ -62,7 +62,7 @@ projects[token][type] = module
 projects[token][subdir] = contrib
 projects[token][download][type] = git
 projects[token][download][url] = http://git.drupal.org/project/token.git
-projects[token][download][branch] = 7.x-1.x
+projects[token][download][version] = 7.x-1.x
 projects[token][download][revision] = 72f3d17
 projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-warnings.patch
 
@@ -279,8 +279,7 @@ projects[geocoder][subdir] = contrib
 projects[geocoder][download][type] = git
 projects[geocoder][download][url] = http://git.drupal.org/project/geocoder.git
 projects[geocoder][download][branch] = 7.x-1.x
-projects[geocoder][download][revision] = f6b34bc
-projects[geocoder][patch][1996592] = http://drupal.org/files/1996592-geocoder_geocode_values.patch
+projects[geocoder][download][revision] = 8e531f4
 
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************
