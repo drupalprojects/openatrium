@@ -61,7 +61,7 @@ function oa_search_add_js() {
   $space_id = oa_core_get_space_context();
   if ($space_id) {
     $space = node_load($space_id);
-    if (isset($space)) {
+    if (!empty($space->title)) {
       $space_title = $space->title;
     }
   }
