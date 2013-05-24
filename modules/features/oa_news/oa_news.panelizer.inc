@@ -136,7 +136,7 @@ function oa_news_panelizer_defaults() {
         'sort_order' => NULL,
       ),
       'context' => array(
-        0 => 'panelizer',
+        0 => 'relationship_entity_from_field:og_group_ref-node-node_1',
         1 => 'panelizer',
       ),
       'override_title' => '',
