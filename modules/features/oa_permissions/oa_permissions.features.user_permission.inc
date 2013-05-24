@@ -20,6 +20,407 @@ function oa_permissions_user_default_permissions() {
     'module' => 'media_internet',
   );
 
+  // Exported permission: administer panelizer node oa_group breadcrumbs.
+  $permissions['administer panelizer node oa_group breadcrumbs'] = array(
+    'name' => 'administer panelizer node oa_group breadcrumbs',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_group content.
+  $permissions['administer panelizer node oa_group content'] = array(
+    'name' => 'administer panelizer node oa_group content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_group context.
+  $permissions['administer panelizer node oa_group context'] = array(
+    'name' => 'administer panelizer node oa_group context',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_group defaults.
+  $permissions['administer panelizer node oa_group defaults'] = array(
+    'name' => 'administer panelizer node oa_group defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_group layout.
+  $permissions['administer panelizer node oa_group layout'] = array(
+    'name' => 'administer panelizer node oa_group layout',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_group overview.
+  $permissions['administer panelizer node oa_group overview'] = array(
+    'name' => 'administer panelizer node oa_group overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_group settings.
+  $permissions['administer panelizer node oa_group settings'] = array(
+    'name' => 'administer panelizer node oa_group settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_section breadcrumbs.
+  $permissions['administer panelizer node oa_section breadcrumbs'] = array(
+    'name' => 'administer panelizer node oa_section breadcrumbs',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_section content.
+  $permissions['administer panelizer node oa_section content'] = array(
+    'name' => 'administer panelizer node oa_section content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_section context.
+  $permissions['administer panelizer node oa_section context'] = array(
+    'name' => 'administer panelizer node oa_section context',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_section defaults.
+  $permissions['administer panelizer node oa_section defaults'] = array(
+    'name' => 'administer panelizer node oa_section defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_section layout.
+  $permissions['administer panelizer node oa_section layout'] = array(
+    'name' => 'administer panelizer node oa_section layout',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_section overview.
+  $permissions['administer panelizer node oa_section overview'] = array(
+    'name' => 'administer panelizer node oa_section overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_section settings.
+  $permissions['administer panelizer node oa_section settings'] = array(
+    'name' => 'administer panelizer node oa_section settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_space breadcrumbs.
+  $permissions['administer panelizer node oa_space breadcrumbs'] = array(
+    'name' => 'administer panelizer node oa_space breadcrumbs',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_space content.
+  $permissions['administer panelizer node oa_space content'] = array(
+    'name' => 'administer panelizer node oa_space content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_space context.
+  $permissions['administer panelizer node oa_space context'] = array(
+    'name' => 'administer panelizer node oa_space context',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_space defaults.
+  $permissions['administer panelizer node oa_space defaults'] = array(
+    'name' => 'administer panelizer node oa_space defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_space layout.
+  $permissions['administer panelizer node oa_space layout'] = array(
+    'name' => 'administer panelizer node oa_space layout',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_space overview.
+  $permissions['administer panelizer node oa_space overview'] = array(
+    'name' => 'administer panelizer node oa_space overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_space settings.
+  $permissions['administer panelizer node oa_space settings'] = array(
+    'name' => 'administer panelizer node oa_space settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_team breadcrumbs.
+  $permissions['administer panelizer node oa_team breadcrumbs'] = array(
+    'name' => 'administer panelizer node oa_team breadcrumbs',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_team content.
+  $permissions['administer panelizer node oa_team content'] = array(
+    'name' => 'administer panelizer node oa_team content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_team context.
+  $permissions['administer panelizer node oa_team context'] = array(
+    'name' => 'administer panelizer node oa_team context',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_team defaults.
+  $permissions['administer panelizer node oa_team defaults'] = array(
+    'name' => 'administer panelizer node oa_team defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_team layout.
+  $permissions['administer panelizer node oa_team layout'] = array(
+    'name' => 'administer panelizer node oa_team layout',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_team overview.
+  $permissions['administer panelizer node oa_team overview'] = array(
+    'name' => 'administer panelizer node oa_team overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node oa_team settings.
+  $permissions['administer panelizer node oa_team settings'] = array(
+    'name' => 'administer panelizer node oa_team settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node panopoly_page breadcrumbs.
+  $permissions['administer panelizer node panopoly_page breadcrumbs'] = array(
+    'name' => 'administer panelizer node panopoly_page breadcrumbs',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node panopoly_page content.
+  $permissions['administer panelizer node panopoly_page content'] = array(
+    'name' => 'administer panelizer node panopoly_page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node panopoly_page context.
+  $permissions['administer panelizer node panopoly_page context'] = array(
+    'name' => 'administer panelizer node panopoly_page context',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node panopoly_page defaults.
+  $permissions['administer panelizer node panopoly_page defaults'] = array(
+    'name' => 'administer panelizer node panopoly_page defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node panopoly_page layout.
+  $permissions['administer panelizer node panopoly_page layout'] = array(
+    'name' => 'administer panelizer node panopoly_page layout',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node panopoly_page overview.
+  $permissions['administer panelizer node panopoly_page overview'] = array(
+    'name' => 'administer panelizer node panopoly_page overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer node panopoly_page settings.
+  $permissions['administer panelizer node panopoly_page settings'] = array(
+    'name' => 'administer panelizer node panopoly_page settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer user user breadcrumbs.
+  $permissions['administer panelizer user user breadcrumbs'] = array(
+    'name' => 'administer panelizer user user breadcrumbs',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer user user content.
+  $permissions['administer panelizer user user content'] = array(
+    'name' => 'administer panelizer user user content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer user user context.
+  $permissions['administer panelizer user user context'] = array(
+    'name' => 'administer panelizer user user context',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer user user defaults.
+  $permissions['administer panelizer user user defaults'] = array(
+    'name' => 'administer panelizer user user defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer user user layout.
+  $permissions['administer panelizer user user layout'] = array(
+    'name' => 'administer panelizer user user layout',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer user user overview.
+  $permissions['administer panelizer user user overview'] = array(
+    'name' => 'administer panelizer user user overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: administer panelizer user user settings.
+  $permissions['administer panelizer user user settings'] = array(
+    'name' => 'administer panelizer user user settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
   // Exported permission: administer panels styles.
   $permissions['administer panels styles'] = array(
     'name' => 'administer panels styles',
@@ -35,6 +436,7 @@ function oa_permissions_user_default_permissions() {
     'name' => 'change layouts in place editing',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
     'module' => 'panels',
@@ -382,6 +784,7 @@ function oa_permissions_user_default_permissions() {
     'name' => 'use panels in place editing',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
     'module' => 'panels',
