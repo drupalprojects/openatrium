@@ -116,7 +116,7 @@ function oa_wiki_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_oa_wiki_page';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'og-menu-single',
   );
   $export['menu_options_oa_wiki_page'] = $strongarm;
 
@@ -124,7 +124,7 @@ function oa_wiki_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_oa_wiki_page';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'og-menu-single:0';
   $export['menu_parent_oa_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
