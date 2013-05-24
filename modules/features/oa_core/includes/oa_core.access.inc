@@ -72,12 +72,12 @@ function oa_core_node_grants($account, $op) {
     // we join with the Groups, Teams, Users fields
     $query->fields('n', array('nid'));
     $query->condition('n.type', OA_SECTION_TYPE);
-    // @todo status?
+
     // Create an or condition that finds if section is allowed.
     $db_or = db_or();
 
     // Allow author of section.
-    $db_or->condition('n.nid', $account->uid , '=');
+    $db_or->condition('n.uid', $account->uid , '=');
 
     // If user is specified in user ref column.
     $query->leftJoin('field_data_field_oa_user_ref', 'u', "n.nid = u.entity_id AND u.entity_type = 'node'");

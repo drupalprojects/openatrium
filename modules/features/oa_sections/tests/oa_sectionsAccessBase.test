@@ -44,7 +44,7 @@ abstract class oa_sectionsAccessBase extends oa_coreBaseWebTest {
     $this->oaTestOaSectionAccessToSection($text, 'non-member', 'public', $test_space, $section_public, $non_member, $this->oaSpaceIsPublic($test_space));
 
     // Test access to private sections done by specific user.
-    $this->oaTestOaSectionAccessToSection($text, 'admin', 'private', $test_space, $section_space_member_only, $space_admin, FALSE);
+    $this->oaTestOaSectionAccessToSection($text, 'admin/author', 'private', $test_space, $section_space_member_only, $space_admin, TRUE);
     $this->oaTestOaSectionAccessToSection($text, 'member', 'private', $test_space, $section_space_member_only, $space_member, TRUE);
     $this->oaTestOaSectionAccessToSection($text, 'member 2', 'private', $test_space, $section_space_member_only, $space_member_2, FALSE);
     $this->oaTestOaSectionAccessToSection($text, 'anonymous', 'private', $test_space, $section_space_member_only, $anon, FALSE);
@@ -52,7 +52,7 @@ abstract class oa_sectionsAccessBase extends oa_coreBaseWebTest {
 
     // Test access to private sections done by group.
     if ($group_for_section) {
-      $this->oaTestOaSectionAccessToSection($text, 'admin', 'private by group', $test_space, $section_space_group_only, $space_admin, FALSE);
+      $this->oaTestOaSectionAccessToSection($text, 'admin', 'private by group', $test_space, $section_space_group_only, $space_admin, TRUE);
       $this->oaTestOaSectionAccessToSection($text, 'member', 'private by group', $test_space, $section_space_group_only, $space_member, TRUE);
       $this->oaTestOaSectionAccessToSection($text, 'member 2', 'private by group', $test_space, $section_space_group_only, $space_member_2, FALSE);
       $this->oaTestOaSectionAccessToSection($text, 'anonymous', 'private by group', $test_space, $section_space_group_only, $anon, FALSE);
