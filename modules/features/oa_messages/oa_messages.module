@@ -146,14 +146,17 @@ function oa_messages_determine_user_notifiers($user, $entity, $message, $notifie
     $notifiers = oa_message_notifiers();
   }
 
-  $settings = $user->data['oa_messages']['message_notifications'];
-  $space_id = $entity->og_group_ref[LANGUAGE_NONE][0]['target_id'];
   $allowed_notifiers = array();
+  $settings = $user->data['oa_messages']['message_notifications'];
 
-  foreach ($notifiers as $notifier) {
-    // If unset, assume it should send.
-    if ($settings[$space_id][$message->type][$notifier] || !isset($settings[$space_id][$message->type][$notifier])) {
-      $allowed_notifiers[] = $notifier;
+  if (!empty($entity->{OA_SPACE_FIELD}[LANGUAGE_NONE][0]['target_id'])) {
+    $space_id = $entity->{OA_SPACE_FIELD}[LANGUAGE_NONE][0]['target_id'];
+
+    foreach ($notifiers as $notifier) {
+      // If unset, assume it should send.
+      if ($settings[$space_id][$message->type][$notifier] || !isset($settings[$space_id][$message->type][$notifier])) {
+        $allowed_notifiers[] = $notifier;
+      }
     }
   }
 
