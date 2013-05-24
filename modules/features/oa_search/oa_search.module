@@ -61,7 +61,9 @@ function oa_search_add_js() {
   $space_id = oa_core_get_space_context();
   if ($space_id) {
     $space = node_load($space_id);
-    $space_title = $space->title;
+    if (isset($space)) {
+      $space_title = $space->title;
+    }
   }
 
   drupal_add_js(array(
