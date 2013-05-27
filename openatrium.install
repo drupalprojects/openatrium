@@ -5,3 +5,11 @@
  * Perform actions to set up the site for this profile.
  */
 
+/**
+ * Enable oa_variables module.
+ */
+function openatrium_update_7001() {
+  if (!module_existS('oa_variables') && !module_enable(array('oa_variables'))) {
+    trigger_error('Unable to enable oa_variables module. Please check for any missing depedencies.');
+  }
+}

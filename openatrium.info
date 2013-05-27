@@ -113,6 +113,7 @@ dependencies[] = oa_permissions
 dependencies[] = oa_admin
 dependencies[] = oa_search
 dependencies[] = oa_mailhandler
+dependencies[] = oa_variables
 
 ; Open Atrium 2.0 Plugins
 dependencies[] = oa_discussion
