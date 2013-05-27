@@ -230,6 +230,17 @@ projects[og_menu_single][download][branch] = 7.x-1.x
 projects[og_menu_single][download][revision] = 83dcd08
 projects[og_menu_single][type] = module
 
+; Variable
+projects[variable][subdir] = contrib
+projects[variable][version] = 2.2
+
+; Og Variables
+projects[og_variables][subdir] = contrib
+projects[og_variables][download][type] = git
+projects[og_variables][download][url] = http://git.drupal.org/project/og_variables.git
+projects[og_variables][download][branch] = 7.x-1.x
+projects[og_variables][type] = module
+
 ; Reference Option Limit
 projects[reference_option_limit][subdir] = contrib
 projects[reference_option_limit][download][type] = git
