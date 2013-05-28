@@ -7,6 +7,17 @@
 include_once 'oa_discussion.features.inc';
 include_once 'oa_discussion.theme.inc';
 
+/**
+ * Implements hook_pre_features_rebuild().
+ *
+ * @see http://drupal.org/node/1549608
+ */
+function oa_discussion_pre_features_rebuild($component) {
+  if ($component == 'user_permission') {
+    drupal_static_reset('panelizer_entity_plugin_get_handler');
+  }
+}
+
 /*
  * Implements hook_ctools_plugin_directory
  */

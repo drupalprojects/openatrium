@@ -22,6 +22,7 @@ dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = panelizer
 dependencies[] = panels
+dependencies[] = panels_breadcrumbs
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views
