@@ -12,4 +12,13 @@ function openatrium_update_7002() {
   if (!module_exists('oa_variables') && !module_enable(array('oa_variables'))) {
     trigger_error('Unable to enable oa_variables module. Please check for any missing dependencies.');
   }
+  // This may be missing from older installs.
+  $missing = array(
+    'backports',
+    'date_popup_authored',
+    'simplified_menu_admin',
+  );
+  module_enable($missing);
+  // Ensure the install profile is enabled.
+  module_enable(array('openatrium'));
 }
