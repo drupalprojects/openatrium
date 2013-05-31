@@ -405,6 +405,19 @@ function oa_core_views_pre_view(&$view) {
   }
 }
 
+/**
+ * Implements hook_views_pre_view().
+ */
+function oa_core_views_post_execute(&$view) {
+  // Disable exposed form as it conflicts with live preview.
+  // It causes configuration to close.
+  if (_oa_core_set_default_value_for_view($view->name)) {
+    if (strpos($_GET['q'], 'panels/ajax/ipe') === 0 && $view->exposed_widgets) {
+      $view->exposed_widgets = t('[exposed Form preview disabled]');
+    }
+  }
+}
+
 /** 
  * Implements hook_form_FORM_ID_alter().
  */
@@ -417,6 +430,13 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
     if (empty($form_state['conf']['exposed']['oa_section_ref_target_id']) && defined('OA_SESSION_SECTION') && !empty($_SESSION[OA_SESSION_SECTION])) {
       $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#default_value'] = $_SESSION[OA_SESSION_SECTION];
     }
+    // Set exposed form to be disabled at first.
+    if (isset($form['show_exposed_form'])) {
+      $form['show_exposed_form']['#default_value'] = isset($form_state['conf']['show_exposed_form']) ? $form_state['conf']['show_exposed_form'] : FALSE;
+      $form['display_settings']['show_exposed_form'] = $form['show_exposed_form'];
+      $form['display_settings']['show_exposed_form']['#weight'] = 10;
+      unset($form['show_exposed_form']);
+    }
   }
 }
 
@@ -425,4 +445,16 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
  */
 function _oa_core_set_default_value_for_view($name) {
   return in_array($name, array('open_atrium_content', 'oa_recent_activity'));
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function oa_core_form_views_exposed_form_alter(&$form, $form_state) {
+  if (_oa_core_set_default_value_for_view($form_state['view']->name) && strpos($_GET['q'], 'panels/ajax/ipe') === 0) {
+    foreach (element_children($form) as $item) {
+      $form[$item]['#attributes']['class'][] = 'ctools-auto-submit-exclude';
+    }
+  }
 }
