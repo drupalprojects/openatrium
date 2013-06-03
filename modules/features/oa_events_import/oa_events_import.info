@@ -21,6 +21,7 @@ features[field_instance][] = node-oa_ical_importer-body
 features[field_instance][] = node-oa_ical_importer-oa_section_ref
 features[field_instance][] = node-oa_ical_importer-og_group_ref
 features[node][] = oa_ical_importer
+features[page_manager_pages][] = oa_ical_feeds
 features[variable][] = comment_anonymous_oa_ical_importer
 features[variable][] = comment_default_mode_oa_ical_importer
 features[variable][] = comment_default_per_page_oa_ical_importer
