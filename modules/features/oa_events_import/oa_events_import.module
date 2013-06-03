@@ -6,6 +6,23 @@
 
 include_once 'oa_events_import.features.inc';
 
+
+/**
+ * Implements hook_og_ui_get_group_admin()
+ */
+function oa_events_og_ui_get_group_admin($group_type, $gid) {
+  $items = array();
+  if (og_user_access($group_type, $gid, 'update any oa_ical_importer content')) {
+    $items['ical_feeds'] = array(
+      'title' => t('iCal Imports'),
+      'description' => t('Show iCal feeds being used by this group.'),
+      'href' => 'admin/ical',
+    );
+  }
+
+  return $items;
+}
+
 /**
  * Implements hook_node_insert().
  */
