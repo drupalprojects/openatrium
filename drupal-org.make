@@ -207,6 +207,10 @@ projects[job_scheduler][version] = 2.0-alpha3
 projects[feeds][subdir] = contrib
 projects[feeds][version] = 2.0-alpha8
 
+; Google Analytics
+projects[google_analytics][subdir] = contrib
+projects[google_analytics][version] = 1.3
+
 ; Mailhandler
 projects[mailhandler][subdir] = contrib
 projects[mailhandler][download][type] = git
