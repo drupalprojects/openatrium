@@ -27,4 +27,6 @@ function oa_devel_uninstall() {
   );
 
   module_disable($modules);
+
+  drupal_set_message(t('The following modules have been uninstalled: %modules', array('%modules' => implode(', ', $modules))));
 }

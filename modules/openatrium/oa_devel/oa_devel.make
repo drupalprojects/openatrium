@@ -5,8 +5,9 @@ core = 7.x
 
 ; Devel
 projects[devel][type] = module
-projects[devel][download][version]
-projects[devel][version] = 1.3
+projects[devel][download][type] = git
+projects[devel][download][url] = http://git.drupal.org/project/devel.git
+projects[devel][download][branch] = 7.x-1.x
 projects[devel][subdir] = contrib
 
 ; Coder

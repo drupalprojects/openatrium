@@ -188,6 +188,13 @@ projects[devel][download][url] = http://git.drupal.org/project/devel.git
 projects[devel][download][branch] = 7.x-1.x
 projects[devel][subdir] = contrib
 
+; Coder
+projects[coder][type] = module
+projects[coder][download][type] = git
+projects[coder][download][url] = http://git.drupal.org/project/coder.git
+projects[coder][download][branch] = 7.x-2.x
+projects[coder][subdir] = contrib
+
 ; Diff
 projects[diff][subdir] = contrib
 projects[diff][version] = 3.2
