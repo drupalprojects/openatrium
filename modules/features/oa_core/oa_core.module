@@ -452,9 +452,9 @@ function _oa_core_set_default_value_for_view($name) {
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_core_form_views_exposed_form_alter(&$form, $form_state) {
-  if (_oa_core_set_default_value_for_view($form_state['view']->name) && strpos($_GET['q'], 'panels/ajax/ipe') === 0) {
-    foreach (element_children($form) as $item) {
-      $form[$item]['#attributes']['class'][] = 'ctools-auto-submit-exclude';
-    }
+  if (_oa_core_set_default_value_for_view($form_state['view']->name) && $form_state['view']->display_handler->get_url() != $_GET['q']) {
+    // Change exposed form to submit to given page instead of redirecting to 
+    // view all.
+    $form['#action'] = url($_GET['q']);
   }
 }
