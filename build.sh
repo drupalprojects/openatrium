@@ -33,7 +33,7 @@ echo 'Wiping Drupal directory...'
 rm -rf "$TARGET"
 # Do the build
 echo 'Verifying make...'
-drush verify makefile "$ABS_CALLPATH/$MAKEFILE"
+drush verify-makefile
 echo 'Running drush make...'
 drush make $DRUSH_OPTS "$ABS_CALLPATH/$MAKEFILE" "$TARGET"
 # Build Symlinks
