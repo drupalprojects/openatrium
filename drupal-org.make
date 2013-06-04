@@ -94,7 +94,7 @@ projects[radix][download][revision] = d92c98b
 ;projects[radix][download][url] = http://git.drupal.org/project/radix.git
 ;projects[radix][download][branch] = 7.x-2.x
 ;projects[radix][download][revision] = fbcbc725ba78792efc4fe2aee78d37b1cc567fc6
-;projects[radix][patch][] = http://drupal.org/files/radix_button_parent-1975516.patch
+;projects[radix][patch][1975516] = http://drupal.org/files/radix_button_parent-1975516.patch
 
 ; Features Override
 projects[features_override][subdir] = contrib
@@ -142,7 +142,7 @@ projects[flag][download][type] = git
 projects[flag][download][url] = http://git.drupal.org/project/flag.git
 projects[flag][download][branch] = 7.x-2.x
 projects[flag][download][revision] = 32cac54
-projects[flag][patch][] = http://drupal.org/files/471212-14-flag-all-bundles.patch
+projects[flag][patch][471212] = http://drupal.org/files/471212-14-flag-all-bundles.patch
 
 ; RealName
 projects[realname][subdir] = contrib
@@ -161,7 +161,7 @@ projects[chosen][version] = 2.0-alpha1
 ;;projects[twitter_bootstrap_ui][download][type] = git
 ;;projects[twitter_bootstrap_ui][download][url] = http://git.drupal.org/project/twitter_bootstrap_ui.git
 ;;projects[twitter_bootstrap_ui][download][branch] = 7.x-2.x
-;;projects[twitter_bootstrap_ui][patch][] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-5.patch
+;;projects[twitter_bootstrap_ui][patch][1906722] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-5.patch
 ; tie to previous commit before the (2.x) was added to libraries
 ; since that doesn't work when module is patched in inherited profile
 ;;projects[twitter_bootstrap_ui][download][revision] = 0328b6ff027287fe7e62b058fc4dea12362956f5
@@ -217,7 +217,7 @@ projects[mailhandler][download][type] = git
 projects[mailhandler][download][url] = http://git.drupal.org/project/mailhandler.git
 projects[mailhandler][download][branch] = 7.x-2.x
 projects[mailhandler][download][revision] = c57579b
-projects[mailhandler][patch][] = http://drupal.org/files/mailhandler-version-requirement-1961780-1.patch
+projects[mailhandler][patch][1961780] = http://drupal.org/files/mailhandler-version-requirement-1961780-1.patch
 
 ; Views Load More
 projects[views_load_more][subdir] = contrib
