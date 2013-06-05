@@ -9,7 +9,7 @@
  * Implements hook_install().
  */
 function oa_devel_install() {
-  variable_set('token_report_empty_test_tokens', TRUE);
+  variable_set('token_report_empty_test_tokens', FALSE);
 }
 
 /**
