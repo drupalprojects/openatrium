@@ -135,6 +135,10 @@ projects[message_notify][version] = 2.5
 projects[message_subscribe][subdir] = contrib
 projects[message_subscribe][version] = 1.0-alpha5
 
+; Markdown
+projects[markdown][subdir] = contrib
+projects[markdown][version] = 1.1
+
 ; Flag
 projects[flag][subdir] = contrib
 projects[flag][version] = 2.0
