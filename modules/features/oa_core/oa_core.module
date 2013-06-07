@@ -402,6 +402,32 @@ function oa_core_views_pre_view(&$view) {
         $current_filters['oa_section_ref_target_id']['value'] =  isset($current_filters['oa_section_ref_target_id']['value']) && is_array($current_filters['oa_section_ref_target_id']['value']) ? array($section => $section) : $section;
       }
     }
+
+    // Since section dynamically changes, someone could have choisen a section
+    // then switched to a different group, making the choisen section no longer
+    // valid and causing illegal choice errors.
+    // @todo make this more elegent.
+    $check = array(
+      &$_GET,
+    );
+    if (isset($_POST['conf'])) {
+      $check[] = &$_POST['conf'];
+    }
+    if ($exposed = $view->get_exposed_input()) {
+      $check[] = &$exposed;
+    }
+    foreach ($check as &$input_source) {
+      if (!empty($input_source['oa_section_ref_target_id']) && !empty($input_source['og_group_ref_target_id'])) {
+        $section = $input_source['oa_section_ref_target_id'];
+        $group = $input_source['og_group_ref_target_id'];
+        if ($section != 'All' && $group != 'All' && ($section = node_load($section)) && $section->og_group_ref[LANGUAGE_NONE][0]['target_id'] != $group) {
+          $input_source['oa_section_ref_target_id'] = 'All';
+        }
+      }
+    }
+    if ($exposed) {
+      $view->set_exposed_input($exposed);
+    }
   }
 }
 
@@ -446,7 +472,6 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
 function _oa_core_set_default_value_for_view($name) {
   return in_array($name, array('open_atrium_content', 'oa_recent_activity'));
 }
-
 
 /**
  * Implements hook_form_FORM_ID_alter().
