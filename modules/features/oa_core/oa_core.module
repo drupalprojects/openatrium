@@ -410,8 +410,8 @@ function oa_core_views_pre_view(&$view) {
     $check = array(
       &$_GET,
     );
-    if (isset($_POST['conf'])) {
-      $check[] = &$_POST['conf'];
+    if (isset($_POST['exposed'])) {
+      $check[] = &$_POST['exposed'];
     }
     if ($exposed = $view->get_exposed_input()) {
       $check[] = &$exposed;
