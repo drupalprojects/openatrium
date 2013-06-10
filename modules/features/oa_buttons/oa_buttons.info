@@ -9,6 +9,7 @@ dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = field_group
+dependencies[] = fieldable_panels_panes
 dependencies[] = link
 dependencies[] = list
 dependencies[] = options
