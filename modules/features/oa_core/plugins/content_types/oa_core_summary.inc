@@ -33,12 +33,8 @@ function oa_core_summary_render($subtype, $conf, $args, $context = NULL) {
 
   $vars['title'] = $space->title;
 
-  $vars['description'] = '';
-  $body = field_get_items('node', $space, 'body');
-  if (!empty($body)) {
-    $body = array_shift($body);
-    $vars['description'] = $body['value'];
-  }
+  $vars['description'] = render(field_view_field('node', $space, 'body', array(
+    'label' => 'hidden')));
 
   $vars['picture'] = '';
   $picture = field_get_items('node', $space, 'field_featured_image');
