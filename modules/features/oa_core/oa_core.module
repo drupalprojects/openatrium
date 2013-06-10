@@ -432,6 +432,28 @@ function oa_core_views_pre_view(&$view) {
 }
 
 /**
+ * Implements hook_views_pre_render()
+ */
+function oa_core_views_pre_render(&$view) {
+  if ($view->name == 'open_atrium_content' && !empty($view->display_handler->display->display_options['pane_conf']['view_settings']) && $view->display_handler->display->display_options['pane_conf']['view_settings'] == 'table') {
+    $view->style_plugin->options = $view->display['page_1']->display_options['style_options'];
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function oa_core_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'views_pre_render') {
+    $value = $implementations['oa_core'];
+    unset($implementations['oa_core']);
+    $implementations['oa_core'] = $value;
+  }
+}
+
+
+
+/**
  * Implements hook_views_pre_view().
  */
 function oa_core_views_post_execute(&$view) {
