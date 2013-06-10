@@ -171,7 +171,7 @@ function oa_core_views_default_views() {
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['exposed_form_configure'] = 'exposed_form_configure';
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
-  $handler->display->display_options['exposed_form_overrides'] = array(
+  $handler->display->display_options['exposed_form_overrides']['filters'] = array(
     'type' => '',
     'og_group_ref_target_id' => 'pane_and_exposed',
     'oa_section_ref_target_id' => 'pane_and_exposed',
