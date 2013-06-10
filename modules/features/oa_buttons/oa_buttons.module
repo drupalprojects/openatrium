@@ -200,6 +200,9 @@ function oa_buttons_permission() {
       'description' => t('Allows users to delete command buttons of bundle %type.', array('%type' => $info['label'])),
     );
   }
+
+
+  return $perms;
 }
 
 /**
