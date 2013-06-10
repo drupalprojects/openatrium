@@ -26,6 +26,7 @@ projects[ctools][download][url] = http://git.drupal.org/project/ctools.git
 projects[ctools][download][revision] = 83817fa
 projects[ctools][download][branch] = 7.x-1.x
 projects[ctools][patch][1838544] = https://drupal.org/files/1901106-ctools-views_content-exposed_form_override-13.patch
+projects[ctools][patch][2016559] = https://drupal.org/files/ctools_views_content_numeric_pager_id.patch
 
 ; Override panopoly_core.make: 3.1
 ; Update Panelizer to latest dev version
