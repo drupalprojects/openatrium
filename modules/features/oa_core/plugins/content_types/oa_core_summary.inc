@@ -14,6 +14,9 @@ $plugin = array(
   'render callback' => 'oa_core_summary_render',
   'required context' => new ctools_context_required(t('Node'), 'node'),
   'defaults' => array(
+    'show_description' => TRUE,
+    'show_favorite' => TRUE,
+    'show_links' => TRUE,
     'image_size' => 'quarter',
   ),
 );
@@ -32,30 +35,35 @@ function oa_core_summary_render($subtype, $conf, $args, $context = NULL) {
   $vars = array();
 
   $vars['title'] = $space->title;
+  $vars['description'] = '';
+  $vars['picture'] = '';
+  $vars['links']['favorite'] = '';
+  $vars['links']['edit'] = '';
 
-  $vars['description'] = render(field_view_field('node', $space, 'body', array(
+  if (!empty($conf['show_description'])) {
+    $vars['description'] = render(field_view_field('node', $space, 'body', array(
     'label' => 'hidden')));
 
-  $vars['picture'] = '';
-  $picture = field_get_items('node', $space, 'field_featured_image');
-  if (!empty($picture)) {
-    $picture = array_shift($picture);
-    $vars['picture'] = theme('image_style', array(
-      'style_name' => 'panopoly_image_' . $conf['image_size'],
-      'path' => $picture['uri'],
-      'width' => $picture['width'],
-      'height' => $picture['height'],
-      'alt' => $picture['alt'],
-      'attributes' => array(
-        'class' => array(
-          'img-polaroid',
+    $picture = field_get_items('node', $space, 'field_featured_image');
+    if (!empty($picture)) {
+      $picture = array_shift($picture);
+      $vars['picture'] = theme('image_style', array(
+        'style_name' => 'panopoly_image_' . $conf['image_size'],
+        'path' => $picture['uri'],
+        'width' => $picture['width'],
+        'height' => $picture['height'],
+        'alt' => $picture['alt'],
+        'attributes' => array(
+          'class' => array(
+            'img-polaroid',
+          ),
         ),
-      ),
-    ));
+      ));
+    }
   }
 
   $vars['links'] = array();
-  if ($user->uid && module_exists('oa_favorites')) {
+  if (!empty($conf['show_favorite']) && $user->uid && module_exists('oa_favorites')) {
     $favorite = oa_favorites_is_favorite_space($user->uid, $space->nid);
     $vars['links']['favorite'] = theme('flag', array(
       'flag' => flag_get_flag(FAVORITE_SPACE),
@@ -63,7 +71,7 @@ function oa_core_summary_render($subtype, $conf, $args, $context = NULL) {
       'content_id' => $space->nid,
     ));
   }
-  if (node_access('update', $space)) {
+  if (!empty($conf['show_links']) && node_access('update', $space)) {
     $vars['links']['edit'] = l(t('Edit'), 'node/' . $space->nid . '/edit');
   }
 
@@ -80,6 +88,21 @@ function oa_core_summary_render($subtype, $conf, $args, $context = NULL) {
  */
 function oa_core_summary_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
+  $form['show_description'] = array(
+    '#title' => t('Show description'),
+    '#type' => 'checkbox',
+    '#default_value' => $conf['show_description'],
+  );
+  $form['show_favorite'] = array(
+    '#title' => t('Show favorite button'),
+    '#type' => 'checkbox',
+    '#default_value' => $conf['show_favorite'],
+  );
+  $form['show_links'] = array(
+    '#title' => t('Show links'),
+    '#type' => 'checkbox',
+    '#default_value' => $conf['show_links'],
+  );
   $form['image_size'] = array(
     '#type' => 'radios',
     '#title' => t('Image size'),

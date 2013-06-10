@@ -487,6 +487,9 @@ function oa_layouts_panelizer_defaults() {
       'context' => 'panelizer',
       'override_title' => 1,
       'override_title_text' => '',
+      'show_description' => 1,
+      'show_favorite' => 0,
+      'show_links' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -567,6 +570,32 @@ function oa_layouts_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-15';
     $pane->panel = 'sidebar';
+    $pane->type = 'oa_core_summary';
+    $pane->subtype = 'oa_core_summary';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'show_description' => 0,
+      'show_favorite' => 1,
+      'show_links' => 0,
+      'image_size' => 'quarter',
+      'context' => 'panelizer',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-15'] = $pane;
+    $display->panels['sidebar'][1] = 'new-15';
+    $pane = new stdClass();
+    $pane->pid = 'new-16';
+    $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:group_group';
     $pane->shown = TRUE;
@@ -603,12 +632,12 @@ function oa_layouts_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-15'] = $pane;
-    $display->panels['sidebar'][1] = 'new-15';
+    $display->content['new-16'] = $pane;
+    $display->panels['sidebar'][2] = 'new-16';
     $pane = new stdClass();
-    $pane->pid = 'new-16';
+    $pane->pid = 'new-17';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
     $pane->subtype = 'open_atrium_section_pages-section_pages_within_spaces';
@@ -645,12 +674,12 @@ function oa_layouts_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-16'] = $pane;
-    $display->panels['sidebar'][2] = 'new-16';
+    $display->content['new-17'] = $pane;
+    $display->panels['sidebar'][3] = 'new-17';
     $pane = new stdClass();
-    $pane->pid = 'new-17';
+    $pane->pid = 'new-18';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_add_content';
     $pane->subtype = 'oa_widgets_add_content';
@@ -684,10 +713,10 @@ function oa_layouts_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
-    $display->content['new-17'] = $pane;
-    $display->panels['sidebar'][3] = 'new-17';
+    $display->content['new-18'] = $pane;
+    $display->panels['sidebar'][4] = 'new-18';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
@@ -735,7 +764,7 @@ function oa_layouts_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-18';
+    $pane->pid = 'new-19';
     $pane->panel = 'contentmain';
     $pane->type = 'oa_core_summary';
     $pane->subtype = 'oa_core_summary';
@@ -746,6 +775,9 @@ function oa_layouts_panelizer_defaults() {
       'context' => 'panelizer',
       'override_title' => 1,
       'override_title_text' => '',
+      'show_description' => 1,
+      'show_favorite' => 1,
+      'show_links' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -755,10 +787,10 @@ function oa_layouts_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-18'] = $pane;
-    $display->panels['contentmain'][0] = 'new-18';
+    $display->content['new-19'] = $pane;
+    $display->panels['contentmain'][0] = 'new-19';
     $pane = new stdClass();
-    $pane->pid = 'new-19';
+    $pane->pid = 'new-20';
     $pane->panel = 'contentmain';
     $pane->type = 'oa_core_members_widget';
     $pane->subtype = 'oa_core_members_widget';
@@ -777,10 +809,10 @@ function oa_layouts_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['contentmain'][1] = 'new-19';
+    $display->content['new-20'] = $pane;
+    $display->panels['contentmain'][1] = 'new-20';
     $pane = new stdClass();
-    $pane->pid = 'new-20';
+    $pane->pid = 'new-21';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_content_visibility';
     $pane->subtype = 'oa_widgets_content_visibility';
@@ -805,10 +837,10 @@ function oa_layouts_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['sidebar'][0] = 'new-20';
+    $display->content['new-21'] = $pane;
+    $display->panels['sidebar'][0] = 'new-21';
     $pane = new stdClass();
-    $pane->pid = 'new-21';
+    $pane->pid = 'new-22';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:group_group';
@@ -848,10 +880,10 @@ function oa_layouts_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['sidebar'][1] = 'new-21';
+    $display->content['new-22'] = $pane;
+    $display->panels['sidebar'][1] = 'new-22';
     $pane = new stdClass();
-    $pane->pid = 'new-22';
+    $pane->pid = 'new-23';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
     $pane->subtype = 'open_atrium_section_pages-section_pages_within_spaces';
@@ -890,10 +922,10 @@ function oa_layouts_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['sidebar'][2] = 'new-22';
+    $display->content['new-23'] = $pane;
+    $display->panels['sidebar'][2] = 'new-23';
     $pane = new stdClass();
-    $pane->pid = 'new-23';
+    $pane->pid = 'new-24';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_add_content';
     $pane->subtype = 'oa_widgets_add_content';
@@ -929,8 +961,8 @@ function oa_layouts_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-23'] = $pane;
-    $display->panels['sidebar'][3] = 'new-23';
+    $display->content['new-24'] = $pane;
+    $display->panels['sidebar'][3] = 'new-24';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
