@@ -22,3 +22,13 @@ function openatrium_update_7002() {
   // Ensure the install profile is enabled.
   module_enable(array('openatrium'));
 }
+
+/**
+ * Enable oa_buttons.
+ */
+function openatrium_update_7003() {
+  $enable = array(
+    'oa_buttons',
+  );
+  module_enable($enable);
+}
