@@ -36,9 +36,7 @@
               </<?php print $title_tag; ?>>
             </a>
             <?php if (!empty($space['picture'])): ?>
-              <div class='pull-left'>
-                <?php print $space['picture']; ?>
-              </div>
+              <?php print $space['picture']; ?>
             <?php endif; ?>
             <?php if (!empty($space['body'])): ?>
               <p><?php print $space['body']; ?></p>
