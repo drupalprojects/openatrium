@@ -282,6 +282,13 @@ projects[quicktabs][subdir] = contrib
 projects[quicktabs][download][url] = http://git.drupal.org/project/quicktabs.git
 projects[quicktabs][download][branch] = 7.x-3.x
 
+; Conditional Fields
+projects[conditional_fields][subdir] = contrib
+projects[conditional_fields][download][branch] = 7.x-3.x
+projects[conditional_fields][download][revision] = cd29b00
+projects[conditional_fields][patch][1982276] = http://drupal.org/files/conditional_fields-typo-in-if-condition-1982276-1.patch
+
+
 ; Open Atrium Events Makefile
 ;; eventually this gets moved to oa_events when it's a full drupal.org project
 projects[calendar][type] = module
@@ -314,6 +321,8 @@ projects[geocoder][download][type] = git
 projects[geocoder][download][url] = http://git.drupal.org/project/geocoder.git
 projects[geocoder][download][branch] = 7.x-1.x
 projects[geocoder][download][revision] = 8e531f4
+
+
 
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************
