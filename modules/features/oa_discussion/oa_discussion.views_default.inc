@@ -489,7 +489,7 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '1';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
@@ -600,6 +600,7 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['last_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['last_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['last_date']['date_format'] = 'oa_date';
+  $handler->display->display_options['fields']['last_date']['oa_date'] = '0';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -637,13 +638,12 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['fields']['last_date_1']['date_format'] = 'oa_date';
   $handler->display->display_options['fields']['last_date_1']['oa_date'] = 'oa_date';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last updated date (child/parent) */
-  $handler->display->display_options['sorts']['last_date']['id'] = 'last_date';
-  $handler->display->display_options['sorts']['last_date']['table'] = 'node';
-  $handler->display->display_options['sorts']['last_date']['field'] = 'last_date';
-  $handler->display->display_options['sorts']['last_date']['relationship'] = 'reverse_oa_parent_node';
-  $handler->display->display_options['sorts']['last_date']['group_type'] = 'max';
-  $handler->display->display_options['sorts']['last_date']['order'] = 'DESC';
+  /* Sort criterion: Content: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['group_type'] = 'max';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: OG membership: Group ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
@@ -694,13 +694,17 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
-  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['offset'] = 'offset';
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['exposed_form_overrides'] = array(
+    'type' => '',
+  );
   $handler->display->display_options['argument_input'] = array(
     'gid' => array(
       'type' => 'none',
@@ -719,6 +723,7 @@ function oa_discussion_views_default_views() {
       'label' => 'Content: OpenAtrium Section (oa_section_ref)',
     ),
   );
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: User Topics */
   $handler = $view->new_display('panel_pane', 'User Topics', 'discussion_user');
@@ -970,6 +975,7 @@ function oa_discussion_views_default_views() {
       'label' => 'Content: Author uid',
     ),
   );
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: User Reply Topics */
   $handler = $view->new_display('panel_pane', 'User Reply Topics', 'discussion_user_reply');
@@ -1211,7 +1217,13 @@ function oa_discussion_views_default_views() {
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['exposed_form_overrides'] = array(
+    'filters' => array(
+      'type' => '',
+    ),
+  );
   $handler->display->display_options['argument_input'] = array(
     'uid' => array(
       'type' => 'context',
@@ -1222,6 +1234,7 @@ function oa_discussion_views_default_views() {
       'label' => 'Content: Author uid',
     ),
   );
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['open_atrium_discussions'] = $view;
 
   return $export;
