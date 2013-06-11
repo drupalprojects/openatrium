@@ -477,3 +477,40 @@ function oa_core_form_views_exposed_form_alter(&$form, $form_state) {
     $form['#action'] = url($_GET['q']);
   }
 }
+
+/**
+ * Implements hook_token_info().
+ */
+function oa_core_token_info() {
+  $node['group-or-section-alias'] = array(
+    'name' => t("URL"),
+    'description' => t("The alias to the section (or group if no section of given content.)"),
+  );
+  return array(
+    'tokens' => array('node' => $node),
+  );
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function oa_core_tokens($type, $tokens, array $data = array(), array $options = array()) {
+ if ($type == 'node' && !empty($data['node']) && isset($tokens['group-or-section-alias'])) {
+    $node = $data['node'];
+    $replacements = array();
+    $original = $tokens['group-or-section-alias'];
+    if (!empty($node->oa_section_ref[LANGUAGE_NONE][0]['target_id']) && ($path = drupal_get_path_alias('node/' . $node->oa_section_ref[LANGUAGE_NONE][0]['target_id']))) {
+      $replacements[$original] = $path;
+    }
+    elseif (!empty($node->og_group_ref[LANGUAGE_NONE][0]['target_id']) && ($path = drupal_get_path_alias('node/' . $node->og_group_ref[LANGUAGE_NONE][0]['target_id']))) {
+      $replacements[$original] = $path;
+      if ($node->type != 'oa_section') {
+        $replacements[$original] .= '/content';
+      }
+    }
+    else {
+      $replacements[$original] = 'content';
+    }
+    return $replacements;
+  }
+}
