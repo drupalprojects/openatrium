@@ -35,7 +35,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '1';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['grouping'] = array(
@@ -109,7 +109,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'field_oa_node_ref_target_id';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Field: Space */
+  /* Field: Message: Space */
   $handler->display->display_options['fields']['field_oa_message_space']['id'] = 'field_oa_message_space';
   $handler->display->display_options['fields']['field_oa_message_space']['table'] = 'field_data_field_oa_message_space';
   $handler->display->display_options['fields']['field_oa_message_space']['field'] = 'field_oa_message_space';
@@ -228,7 +228,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['sorts']['mid']['table'] = 'message';
   $handler->display->display_options['sorts']['mid']['field'] = 'mid';
   $handler->display->display_options['sorts']['mid']['order'] = 'DESC';
-  /* Contextual filter: Field: Space (field_oa_message_space) */
+  /* Contextual filter: Message: Space (field_oa_message_space) */
   $handler->display->display_options['arguments']['field_oa_message_space_target_id']['id'] = 'field_oa_message_space_target_id';
   $handler->display->display_options['arguments']['field_oa_message_space_target_id']['table'] = 'field_data_field_oa_message_space';
   $handler->display->display_options['arguments']['field_oa_message_space_target_id']['field'] = 'field_oa_message_space_target_id';
@@ -237,7 +237,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['arguments']['field_oa_message_space_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_oa_message_space_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_oa_message_space_target_id']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Field: Space (field_oa_message_space) */
+  /* Filter criterion: Message: Space (field_oa_message_space) */
   $handler->display->display_options['filters']['field_oa_message_space_target_id']['id'] = 'field_oa_message_space_target_id';
   $handler->display->display_options['filters']['field_oa_message_space_target_id']['table'] = 'field_data_field_oa_message_space';
   $handler->display->display_options['filters']['field_oa_message_space_target_id']['field'] = 'field_oa_message_space_target_id';
@@ -335,7 +335,7 @@ function oa_river_views_default_views() {
   $handler->display->display_options['arguments']['user']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Field: Space (field_oa_message_space) */
+  /* Filter criterion: Message: Space (field_oa_message_space) */
   $handler->display->display_options['filters']['field_oa_message_space_target_id']['id'] = 'field_oa_message_space_target_id';
   $handler->display->display_options['filters']['field_oa_message_space_target_id']['table'] = 'field_data_field_oa_message_space';
   $handler->display->display_options['filters']['field_oa_message_space_target_id']['field'] = 'field_oa_message_space_target_id';
@@ -504,6 +504,24 @@ function oa_river_views_default_views() {
   );
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['exposed_form_overrides'] = array(
+    'filters' => array(
+      'type' => 'pane_and_exposed',
+      'realname' => 'pane_and_exposed',
+      'og_group_ref_target_id' => 'pane_and_exposed',
+      'oa_section_ref_target_id' => 'pane_and_exposed',
+    ),
+  );
   $handler->display->display_options['argument_input'] = array(
     'field_oa_message_space_target_id' => array(
       'type' => 'context',
@@ -522,6 +540,7 @@ function oa_river_views_default_views() {
       'label' => 'Message: Section (field_oa_message_section)',
     ),
   );
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['oa_recent_activity'] = $view;
 
   return $export;
