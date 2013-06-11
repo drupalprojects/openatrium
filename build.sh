@@ -62,4 +62,9 @@ echo 'Clearing caches...'
 drush cc all; drush cc all;
 echo 'Running updates...'
 drush updb -y;
+# @TODO Figure out why this cc all is needed
+drush cc drush;
+echo 'Reverting all features...'
+drush fra -y;
+drush cc all;
 echo 'Build complete.'
