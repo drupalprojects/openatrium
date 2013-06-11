@@ -11,7 +11,7 @@
 .oa-river .pull-right .oa-description {
   padding-top: 3px;
 }
-.chzn-container,
-.chzn-container input {
+.views-exposed-form .chzn-container,
+.views-exposed-form .chzn-container input {
   min-width: 120px;
 }
