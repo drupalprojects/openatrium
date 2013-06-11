@@ -527,6 +527,7 @@ function oa_permissions_user_default_permissions() {
     'name' => 'create files',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -646,6 +647,7 @@ function oa_permissions_user_default_permissions() {
     'name' => 'download own files',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'file_entity',
   );
@@ -745,6 +747,7 @@ function oa_permissions_user_default_permissions() {
     'name' => 'edit own files',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -827,6 +830,7 @@ function oa_permissions_user_default_permissions() {
     'name' => 'view own files',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -837,6 +841,7 @@ function oa_permissions_user_default_permissions() {
     'name' => 'view own private files',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
