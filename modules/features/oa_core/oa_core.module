@@ -451,21 +451,6 @@ function oa_core_module_implements_alter(&$implementations, $hook) {
   }
 }
 
-
-
-/**
- * Implements hook_views_pre_view().
- */
-function oa_core_views_post_execute(&$view) {
-  // Disable exposed form as it conflicts with live preview.
-  // It causes configuration to close.
-  if (_oa_core_set_default_value_for_view($view->name)) {
-    if (strpos($_GET['q'], 'panels/ajax/ipe') === 0 && $view->exposed_widgets) {
-      $view->exposed_widgets = t('[exposed Form preview disabled]');
-    }
-  }
-}
-
 /** 
  * Implements hook_form_FORM_ID_alter().
  */
