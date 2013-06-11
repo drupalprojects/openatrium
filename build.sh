@@ -28,6 +28,7 @@ echo '================'
 # Temp move settings
 echo 'Backing up settings.php...'
 mv "$TARGET/sites/default/settings.php" settings.php
+set -e
 echo 'Verifying make...'
 drush verify-makefile
 # Remove current drupal dir
@@ -36,6 +37,7 @@ rm -rf "$TARGET"
 # Do the build
 echo 'Running drush make...'
 drush make $DRUSH_OPTS "$ABS_CALLPATH/$MAKEFILE" "$TARGET"
+set +e
 # Build Symlinks
 echo 'Setting up symlinks...'
 DRUPAL=`cd "$TARGET"; pwd -P`
