@@ -372,6 +372,7 @@ projects[panopoly_magic][download][type] = git
 projects[panopoly_magic][download][revision] = 16add888f93577ad9a27379ca309fcf7bd870a80
 projects[panopoly_magic][download][branch] = 7.x-1.x
 projects[panopoly_magic][patch][2016527] = https://drupal.org/files/panpopoly_magic_exposed_parents_eww.patch
+projects[panopoly_magic][patch][2016643] = https://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-2-do-not-test.patch
 
 
 projects[panopoly_widgets][version] = 1.x-dev
