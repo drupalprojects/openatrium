@@ -120,10 +120,6 @@ projects[og_subgroups][patch][1985514] = http://drupal.org/files/og_subgroup-198
 projects[og_subgroups][patch][1993944] = http://drupal.org/files/1993944_og_subgroups_fields-1.patch
 projects[og_subgroups][patch][1995018] = http://drupal.org/files/og_subgroups_og_get_groups_by_user_alter.patch
 
-; Rules
-projects[rules][subdir] = contrib
-projects[rules][version] = 2.3
-
 ; Message
 projects[message][subdir] = contrib
 projects[message][version] = 1.8
