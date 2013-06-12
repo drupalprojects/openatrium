@@ -236,8 +236,20 @@ function oa_core_preprocess_views_view_fields(&$vars) {
   $vars['display'] = $vars['view']->current_display;
   foreach ($vars['fields'] as $id => $field) {
     $vars[$id] = $field->content;
-    if ($id == 'timestamp') {
-      $vars[$id . '_raw'] = $field->raw;
+    switch ($id) {
+      case 'timestamp':
+        $vars[$id . '_raw'] = $field->raw;
+        break;
+      case 'field_user_picture':
+        // check for missing user image in a view
+        if (!strip_tags($field->content, '<img>')) {
+          $image_style = 'oa_small_thumbnail';
+          if (isset($field->handler->options['settings']['image_style'])) {
+            $image_style = $field->handler->options['settings']['image_style'];
+          }
+          $vars[$id] = oa_users_picture($image_style);
+        }
+        break;
     }
   }
 }
@@ -438,7 +450,7 @@ function oa_core_views_pre_view(&$view) {
 }
 
 
-/** 
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
@@ -460,7 +472,7 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
   }
 }
 
-/** 
+/**
  * See which views to setthe default value for exposed filters.
  */
 function _oa_core_set_default_value_for_view($name) {
@@ -472,7 +484,7 @@ function _oa_core_set_default_value_for_view($name) {
  */
 function oa_core_form_views_exposed_form_alter(&$form, $form_state) {
   if (_oa_core_set_default_value_for_view($form_state['view']->name) && $form_state['view']->display_handler->get_url() != $_GET['q']) {
-    // Change exposed form to submit to given page instead of redirecting to 
+    // Change exposed form to submit to given page instead of redirecting to
     // view all.
     $form['#action'] = url($_GET['q']);
   }

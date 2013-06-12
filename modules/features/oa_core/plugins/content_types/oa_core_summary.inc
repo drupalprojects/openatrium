@@ -53,11 +53,6 @@ function oa_core_summary_render($subtype, $conf, $args, $context = NULL) {
         'width' => $picture['width'],
         'height' => $picture['height'],
         'alt' => $picture['alt'],
-        'attributes' => array(
-          'class' => array(
-            'img-polaroid',
-          ),
-        ),
       ));
     }
   }
