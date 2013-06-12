@@ -13,7 +13,7 @@ function oa_buttons_views_default_views() {
   $view = new view();
   $view->name = 'oa_buttons_entities';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'OA';
   $view->base_table = 'oa_buttons';
   $view->human_name = 'Open Atrium Command Buttons';
   $view->core = 7;
