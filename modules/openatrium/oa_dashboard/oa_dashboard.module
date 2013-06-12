@@ -273,25 +273,6 @@ function oa_dashboard_preprocess_oa_user_badge(&$vars) {
 }
 
 /**
- * Builds a user thumbnail picture from user entity.
- */
-function oa_dashboard_render_user_picture($user, $image_style = 'oa_small_thumbnail') {
-  if (!empty($user->field_user_picture)) {
-    $picture = $user->field_user_picture[LANGUAGE_NONE][0];
-    $image = array(
-      'style_name' => $image_style,
-      'path' => $picture['uri'],
-      'width' => $picture['width'],
-      'height' => $picture['height'],
-      'alt' => t('Your profile picture'),
-    );
-    return theme('image_style', $image);
-  }
-  return '';
-}
-
-
-/**
  * Preprocess function for the oa_toolbar_menu_button block.
  */
 function oa_dashboard_preprocess_oa_toolbar_menu_button(&$vars) {

@@ -53,9 +53,19 @@ function oa_users_build_user_details($user, $image_style = 'oa_small_thumbnail')
   $details['user'] = $user;
   $details['realname'] = empty($user->realname) ? $user->name : $user->realname;
   $details['name'] = $user->name;
-  $details['picture'] = '';
+  $details['picture'] = oa_users_picture($image_style, $user);
+  //Build out links
+  $details['links']['dashboard'] = 'user';
+  $details['links']['edit_profile'] = 'user/' . $user->uid . '/edit';
+  $details['links']['logout'] = 'user/logout';
+  return $details;
+}
 
-  if (!empty($user->field_user_picture)) {
+/**
+ * Return a user's profile image
+ */
+function oa_users_picture($image_style = 'oa_small_thumbnail', $user = NULL) {
+  if (isset($user) && !empty($user->field_user_picture)) {
     $picture = $user->field_user_picture[LANGUAGE_NONE][0];
     $image = array(
       'style_name' => $image_style,
@@ -64,12 +74,20 @@ function oa_users_build_user_details($user, $image_style = 'oa_small_thumbnail')
       'height' => $picture['height'],
       'alt' => t('Your profile picture'),
     );
-    $details['picture'] = theme('image_style', $image);
+    return theme('image_style', $image);
+  }
+  else {
+    $image = array(
+      'style_name' => $image_style,
+      'path' => drupal_get_path('module', 'oa_users') . '/oa-user.png',
+      'width' => 30,
+      'height' => 30,
+      'alt' => t('Your profile picture'),
+    );
+    // image styles only supported for images in /files dir
+    // so for now, ignore the image style
+    return theme('image', $image);
   }
 
-  //Build out links
-  $details['links']['dashboard'] = 'user';
-  $details['links']['edit_profile'] = 'user/' . $user->uid . '/edit';
-  $details['links']['logout'] = 'user/logout';
-  return $details;
+
 }

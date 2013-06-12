@@ -126,7 +126,7 @@ function oa_core_entity_build_display($entity, $id) {
   $display['uid'] = $entity->uid;
 
   if ($type == 'user') {
-    $display['picture'] = oa_dashboard_render_user_picture($entity);
+    $display['picture'] = oa_users_picture($entity);
   }
   else {
     $display['picture'] = '';

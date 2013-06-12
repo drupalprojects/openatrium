@@ -84,7 +84,7 @@ function oa_teams_entity_build_display($entity, $id) {
   $display['uid'] = $id;
 
   if ($type == 'user') {
-    $display['picture'] = oa_dashboard_render_user_picture($entity);
+    $display['picture'] = oa_users_picture($entity);
   }
   else {
     $display['picture'] = '';
