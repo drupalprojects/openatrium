@@ -119,7 +119,7 @@ projects[og_subgroups][download][revision] = 7693f8915cb4bd45ae01c39d7abd5b54128
 projects[og_subgroups][patch][1985514] = http://drupal.org/files/og_subgroup-1985514-1.patch
 projects[og_subgroups][patch][1993944] = http://drupal.org/files/1993944_og_subgroups_fields-1.patch
 projects[og_subgroups][patch][1995018] = http://drupal.org/files/og_subgroups_og_get_groups_by_user_alter.patch
-projects[og_subgroups][patch][2017955] = http://drupal.org/files/og_subgroups-recursion-depth-2017955-3.patch
+projects[og_subgroups][patch][2017955] = http://drupal.org/files/og_subgroups-recursion-depth-2017955-4.patch
 
 ; Message
 projects[message][subdir] = contrib
@@ -349,7 +349,6 @@ projects[panopoly_core][subdir] = panopoly
 projects[panopoly_core][download][type] = git
 projects[panopoly_core][download][revision] = 6a257ac
 projects[panopoly_core][download][branch] = 7.x-1.x
-projects[panopoly_core][patch][1979558] = http://drupal.org/files/1979558-panopoly-core-update-3.patch
 
 projects[panopoly_images][version] = 1.x-dev
 projects[panopoly_images][subdir] = panopoly
