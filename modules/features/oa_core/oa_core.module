@@ -391,29 +391,12 @@ function oa_core_remove_admin($group_type, $gid, $uid) {
  */
 function oa_core_views_pre_view(&$view) {
   if (_oa_core_set_default_value_for_view($view->name)) {
-    $default_filters =& $view->display_handler->default_display->options['filters'];
-    $current_filters =& $view->display_handler->options['filters'];
-    // Default group to current group.
-    if (defined('OG_SESSION_CONTEXT_ID') && !empty($_SESSION[OG_SESSION_CONTEXT_ID])) {
-      $group = $_SESSION[OG_SESSION_CONTEXT_ID];
-      if (isset($default_filters['og_group_ref_target_id'])) {
-        $default_filters['og_group_ref_target_id']['value'] = $group;
-      }
-      if (isset($current_filters['og_group_ref_target_id'])) {
-        $current_filters['og_group_ref_target_id']['value'] = $group;
-      }
+    $group = oa_core_get_space_context();
+    $section = oa_core_get_section_context();
+    if (($node = menu_get_object()) && $node->type == 'oa_space') {
+      $section = NULL;
     }
-    $node = menu_get_object();
-    // Default section to current group.
-    if (defined('OA_SESSION_SECTION') && !empty($_SESSION[OA_SESSION_SECTION]) && (!$node || $node->type != 'oa_space')) {
-      $section = $_SESSION[OA_SESSION_SECTION];
-      if (isset($default_filters['oa_section_ref_target_id'])) {
-        $default_filters['oa_section_ref_target_id']['value'] = isset($default_filters['oa_section_ref_target_id']['value']) && is_array($default_filters['oa_section_ref_target_id']['value']) ? array($section => $section) : $section;
-      }
-      if (isset($current_filters['oa_section_ref_target_id'])) {
-        $current_filters['oa_section_ref_target_id']['value'] =  isset($current_filters['oa_section_ref_target_id']['value']) && is_array($current_filters['oa_section_ref_target_id']['value']) ? array($section => $section) : $section;
-      }
-    }
+    $set_default = array('og_group_ref_target_id' => $group, 'oa_section_ref_target_id' => $section);
 
     // Since section dynamically changes, someone could have choisen a section
     // then switched to a different group, making the choisen section no longer
@@ -425,9 +408,12 @@ function oa_core_views_pre_view(&$view) {
     if (isset($_POST['exposed'])) {
       $check[] = &$_POST['exposed'];
     }
+    $set_exposed = FALSE;
     if ($exposed = $view->get_exposed_input()) {
       $check[] = &$exposed;
+      $set_exposed = TRUE;
     }
+
     foreach ($check as &$input_source) {
       if (!empty($input_source['oa_section_ref_target_id']) && !empty($input_source['og_group_ref_target_id'])) {
         $section = $input_source['oa_section_ref_target_id'];
@@ -436,9 +422,42 @@ function oa_core_views_pre_view(&$view) {
           $input_source['oa_section_ref_target_id'] = 'All';
         }
       }
+      // Clear out NULL values (from auto use current selection).
+      if (isset($input_source['og_group_ref_target_id']) && empty($input_source['og_group_ref_target_id'])) {
+        if ($group) {
+          $input_source['og_group_ref_target_id'] = $group;
+        }
+        else {
+          unset($input_source['og_group_ref_target_id']);
+        }
+      }
+      if (isset($input_source['oa_section_ref_target_id']) && empty($input_source['oa_section_ref_target_id'])) {
+        foreach ($set_default as $key => $value) {
+          if (isset($input_source[$key]) && empty($input_source[$key])) {
+            if ($value) {
+              $input_source[$key] = $value;
+            }
+            else {
+              unset($input_source[$key]);
+            }
+          }
+        }
+      }
     }
-    if ($exposed) {
+    if ($set_exposed) {
       $view->set_exposed_input($exposed);
+    }
+
+    // Set the default group/section if above didn't do it.
+    $default_filters =& $view->display_handler->default_display->options['filters'];
+    $current_filters =& $view->display_handler->options['filters'];
+    foreach (array_filter($set_default) as $key => $value) {
+      if (isset($current_filters[$key])) {
+        $current_filters[$key]['value'] = $group;
+      }
+      elseif (isset($default_filters[$key])) {
+        $default_filters[$key]['value'] = $group;
+      }
     }
   }
 
@@ -456,6 +475,10 @@ function oa_core_views_pre_view(&$view) {
 function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
   // Set default since hook_views_pre_view doesn't get called here?.
   if (_oa_core_set_default_value_for_view($form_state['view']->name) && isset($form['exposed'])) {
+    $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options'] = array(NULL => t('- Active Space -')) + $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options'];
+    $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'] = array(NULL => t('- Active Space -')) + $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'];
+
+
     if (empty($form_state['conf']['exposed']['og_group_ref_target_id']) && defined('OG_SESSION_CONTEXT_ID') && !empty($_SESSION[OG_SESSION_CONTEXT_ID])) {
       $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#default_value'] = $_SESSION[OG_SESSION_CONTEXT_ID];
     }

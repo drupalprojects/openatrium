@@ -10,7 +10,7 @@
  * @return int Space ID
  */
 function oa_core_get_space_context($from_session = FALSE) {
-  if ($from_session && isset($_SESSION[OG_SESSION_CONTEXT_ID])) {
+  if ($from_session && defined('OG_SESSION_CONTEXT_ID') && isset($_SESSION[OG_SESSION_CONTEXT_ID])) {
     return $_SESSION[OG_SESSION_CONTEXT_ID];
   }
   $context = og_context('node');
@@ -22,7 +22,7 @@ function oa_core_get_space_context($from_session = FALSE) {
  * @return int Section ID
  */
 function oa_core_get_section_context() {
-  return isset($_SESSION[OA_SESSION_SECTION])
+  return defined('OA_SESSION_SECTION') && isset($_SESSION[OA_SESSION_SECTION])
     ? $_SESSION[OA_SESSION_SECTION]
     : 0;
 }
