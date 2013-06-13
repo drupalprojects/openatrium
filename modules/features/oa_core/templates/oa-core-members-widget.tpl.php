@@ -14,6 +14,17 @@
  */
 ?>
 
+<?php if (!empty($parents)): ?>
+<div class='clearfix well well-small parents'>
+  <h5><?php print $parent_title?></h5>
+  <?php foreach ($parents as $parent): ?>
+    <div class='pull-left parent label'>
+      <?php print $parent['title']; ?>
+    </div>
+  <?php endforeach; ?>
+</div>
+<?php endif; ?>
+
 <?php if (!empty($owners)): ?>
 <div class='clearfix well well-small owners'>
   <h5><?php print $owner_title?></h5>
@@ -44,7 +55,7 @@
 
 <?php if (!empty($teams)): ?>
 <div class='clearfix well well-small teams'>
-  <h5>Teams</h5>
+  <h5><?php print $team_title?></h5>
   <?php foreach ($teams as $team): ?>
     <div class='pull-left team label'>
       <?php print $team['title']; ?>

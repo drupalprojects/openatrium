@@ -52,6 +52,15 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     }
   }
 
+  $parents = array();
+  if ($is_admin) {
+    $parent_field = field_get_items('node', $space, 'oa_parent_space');
+    foreach ($parent_field as $parent) {
+      $parents[$parent['target_id']] = $parent['target_id'];
+    }
+    $parents = node_load_multiple(array_keys($parents));
+  }
+
   $vars = array();
 
   $show_number = isset($conf['show_number']) ? $conf['show_number'] : 10;
@@ -66,10 +75,13 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   $space_title = ($space->type == OA_SPACE_TYPE) ? t('Space') : t('Group');
   $vars['space_title'] = $space_title;
   $vars['owner_title'] = $space_title . ' ' . t('owners');
+  $vars['team_title']  = t('Teams');
+  $vars['parent_title'] = t('Inheriting members from');
   $items = array(
     'teams' => $teams,
     'members' => $members,
     'owners' => $owners,
+    'parents' => $parents,
   );
   foreach ($items as $key => $entities) {
     $vars[$key] = array();

@@ -20290,8 +20290,8 @@ form .button.fake-cancel {
   min-width: 160px;
 }
 /* line 93, ../sass/_user.scss */
-.pane-oa-core-members-widget .team,
-.pane-oa-core-members-widget .user-badge, .pane-oa-teams-members .team,
+.pane-oa-core-members-widget .label, .pane-oa-core-members-widget .oa-news .oa-news-tags a, .oa-news .oa-news-tags .pane-oa-core-members-widget a,
+.pane-oa-core-members-widget .user-badge, .pane-oa-teams-members .label, .pane-oa-teams-members .oa-news .oa-news-tags a, .oa-news .oa-news-tags .pane-oa-teams-members a,
 .pane-oa-teams-members .user-badge {
   margin: 0 5px 10px 0;
   border: 1px solid transparent;
