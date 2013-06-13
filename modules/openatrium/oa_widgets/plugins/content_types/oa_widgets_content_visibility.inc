@@ -31,6 +31,16 @@ function oa_widgets_content_visibility_render($subtype, $conf, $args, $context =
   if ($node->type == OA_SPACE_TYPE || $node->type == OA_GROUP_TYPE) {
     $visibility = field_get_items('node', $node, 'group_access');
     $vars['public'] = empty($visibility[0]['value']);
+    if (!$vars['public']) {
+      $vars['accessors']['group'] = array(
+        'links' => oa_widgets_build_visibility_links('node', $node, 'oa_parent_space', OA_GROUP_TYPE),
+        'label' => t('Groups'),
+      );
+      $vars['accessors']['space'] = array(
+        'links' => oa_widgets_build_visibility_links('node', $node, 'oa_parent_space', OA_SPACE_TYPE),
+        'label' => t('Spaces'),
+      );
+    }
   }
   else {
 
@@ -70,7 +80,7 @@ function oa_widgets_content_visibility_render($subtype, $conf, $args, $context =
 /**
  * Helper function, builds links for the various visibility fields on content.
  */
-function oa_widgets_build_visibility_links($type, $node, $field) {
+function oa_widgets_build_visibility_links($type, $node, $field, $bundle = '') {
   $links = array();
   $values = field_get_items('node', $node, $field);
   if (!empty($values)) {
@@ -78,7 +88,9 @@ function oa_widgets_build_visibility_links($type, $node, $field) {
     foreach ($values as $value) {
       if ($type == 'node') {
         $value_node = node_load($value['target_id']);
-        $links[] = l($value_node->title, "node/" . $value_node->nid);
+        if (empty($bundle) || ($bundle == $value_node->type)) {
+          $links[] = l($value_node->title, "node/" . $value_node->nid);
+        }
       }
       elseif ($type == 'user') {
         $user = user_load($value['target_id']);
