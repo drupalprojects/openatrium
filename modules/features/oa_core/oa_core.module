@@ -390,77 +390,6 @@ function oa_core_remove_admin($group_type, $gid, $uid) {
  * Implements hook_views_pre_view().
  */
 function oa_core_views_pre_view(&$view) {
-  if (_oa_core_set_default_value_for_view($view->name)) {
-    $group = oa_core_get_space_context();
-    $section = oa_core_get_section_context();
-    if (($node = menu_get_object()) && $node->type == 'oa_space') {
-      $section = NULL;
-    }
-    $set_default = array('og_group_ref_target_id' => $group, 'oa_section_ref_target_id' => $section);
-
-    // Since section dynamically changes, someone could have choisen a section
-    // then switched to a different group, making the choisen section no longer
-    // valid and causing illegal choice errors.
-    // @todo make this more elegent.
-    $check = array(
-      &$_GET,
-    );
-    if (isset($_POST['exposed'])) {
-      $check[] = &$_POST['exposed'];
-    }
-    $set_exposed = FALSE;
-    if ($exposed = $view->get_exposed_input()) {
-      $check[] = &$exposed;
-      $set_exposed = TRUE;
-    }
-
-    foreach ($check as &$input_source) {
-      if (!empty($input_source['oa_section_ref_target_id']) && !empty($input_source['og_group_ref_target_id'])) {
-        $section = $input_source['oa_section_ref_target_id'];
-        $group = $input_source['og_group_ref_target_id'];
-        if ($section != 'All' && $group != 'All' && ($section = node_load($section)) && $section->og_group_ref[LANGUAGE_NONE][0]['target_id'] != $group) {
-          $input_source['oa_section_ref_target_id'] = 'All';
-        }
-      }
-      // Clear out NULL values (from auto use current selection).
-      if (isset($input_source['og_group_ref_target_id']) && empty($input_source['og_group_ref_target_id'])) {
-        if ($group) {
-          $input_source['og_group_ref_target_id'] = $group;
-        }
-        else {
-          unset($input_source['og_group_ref_target_id']);
-        }
-      }
-      if (isset($input_source['oa_section_ref_target_id']) && empty($input_source['oa_section_ref_target_id'])) {
-        foreach ($set_default as $key => $value) {
-          if (isset($input_source[$key]) && empty($input_source[$key])) {
-            if ($value) {
-              $input_source[$key] = $value;
-            }
-            else {
-              unset($input_source[$key]);
-            }
-          }
-        }
-      }
-    }
-    if ($set_exposed) {
-      $view->set_exposed_input($exposed);
-    }
-
-    // Set the default group/section if above didn't do it.
-    $default_filters =& $view->display_handler->default_display->options['filters'];
-    $current_filters =& $view->display_handler->options['filters'];
-    foreach (array_filter($set_default) as $key => $value) {
-      if (isset($current_filters[$key])) {
-        $current_filters[$key]['value'] = $group;
-      }
-      elseif (isset($default_filters[$key])) {
-        $default_filters[$key]['value'] = $group;
-      }
-    }
-  }
-
   // Use page_1 display's style option so it allows sorting by table headers.
   if ($view->name == 'open_atrium_content' && !empty($view->display_handler->options['pane_conf']['view_settings']) &&$view->display_handler->options['pane_conf']['view_settings'] == 'table') {
     $view->display_handler->options['defaults']['style_options'] = FALSE;
@@ -473,25 +402,20 @@ function oa_core_views_pre_view(&$view) {
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
-  // Set default since hook_views_pre_view doesn't get called here?.
-  if (_oa_core_set_default_value_for_view($form_state['view']->name) && isset($form['exposed'])) {
+  // Add in te Active options
+  // @todo be a bit smarter on this, check type of field.
+  if (isset($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id'])) {
     $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options'] = array(NULL => t('- Active Space -')) + $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options'];
+  }
+  if (isset($form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id'])) {
     $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'] = array(NULL => t('- Active Section -')) + $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'];
-
-
-    if (empty($form_state['conf']['exposed']['og_group_ref_target_id']) && defined('OG_SESSION_CONTEXT_ID') && !empty($_SESSION[OG_SESSION_CONTEXT_ID])) {
-      $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#default_value'] = $_SESSION[OG_SESSION_CONTEXT_ID];
-    }
-    if (empty($form_state['conf']['exposed']['oa_section_ref_target_id']) && defined('OA_SESSION_SECTION') && !empty($_SESSION[OA_SESSION_SECTION])) {
-      $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#default_value'] = $_SESSION[OA_SESSION_SECTION];
-    }
-    // Set exposed form to be disabled at first.
-    if (isset($form['show_exposed_form'])) {
-      $form['show_exposed_form']['#default_value'] = isset($form_state['conf']['show_exposed_form']) ? $form_state['conf']['show_exposed_form'] : FALSE;
-      $form['display_settings']['show_exposed_form'] = $form['show_exposed_form'];
-      $form['display_settings']['show_exposed_form']['#weight'] = 10;
-      unset($form['show_exposed_form']);
-    }
+  }
+  // Set exposed form to be disabled at first.
+  if (isset($form['show_exposed_form'])) {
+    $form['show_exposed_form']['#default_value'] = isset($form_state['conf']['show_exposed_form']) ? $form_state['conf']['show_exposed_form'] : FALSE;
+    $form['display_settings']['show_exposed_form'] = $form['show_exposed_form'];
+    $form['display_settings']['show_exposed_form']['#weight'] = 10;
+    unset($form['show_exposed_form']);
   }
 }
 
