@@ -267,7 +267,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -444,7 +444,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -522,7 +522,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -585,7 +585,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -689,7 +689,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -1005,7 +1005,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['field_oa_date_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_oa_date_value']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_oa_date_value']['granularity'] = 'week';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -1305,7 +1305,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['field_oa_date_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_oa_date_value']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_oa_date_value']['granularity'] = 'day';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -1938,7 +1938,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['field_oa_date_value']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_oa_date_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_oa_date_value']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -2005,7 +2005,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['field_oa_date_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_oa_date_value']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_oa_date_value']['granularity'] = 'year';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -3256,7 +3256,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['arguments']['field_oa_date_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_oa_date_value']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_oa_date_value']['granularity'] = 'year';
-  /* Contextual filter: Content: Open Atrium Section (oa_section_ref) */
+  /* Contextual filter: Content: OpenAtrium Section (oa_section_ref) */
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['arguments']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';

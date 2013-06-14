@@ -21,7 +21,7 @@ function oa_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Access',
-    'weight' => '11',
+    'weight' => '7',
     'children' => array(
       0 => 'oa_section_ref',
       1 => 'og_group_ref',
@@ -50,11 +50,8 @@ function oa_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '4',
-    'children' => array(
-      0 => 'field_oa_location',
-      1 => 'field_oa_event_link',
-    ),
+    'weight' => '5',
+    'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'formatter' => 'collapsible',
