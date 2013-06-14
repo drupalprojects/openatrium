@@ -65,7 +65,7 @@ function oa_events_import_feeds_importer_default() {
           5 => array(
             'source' => 'uid',
             'target' => 'guid',
-            'unique' => FALSE,
+            'unique' => TRUE,
           ),
         ),
         'update_existing' => '2',
