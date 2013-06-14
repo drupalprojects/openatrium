@@ -19889,6 +19889,11 @@ form .pane-oa-widgets-add-content li a.button.fake-cancel, .pane-oa-widgets-add-
   padding: 0 10px;
 }
 
+/* line 213, ../sass/_panel.scss */
+.oa-command-buttons li {
+  margin-bottom: 3px;
+}
+
 /* line 6, ../sass/_form.scss */
 .form-actions {
   border: 0;
