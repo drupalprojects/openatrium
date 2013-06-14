@@ -206,8 +206,13 @@ projects[job_scheduler][subdir] = contrib
 projects[job_scheduler][version] = 2.0-alpha3
 
 ; Feeds
+projects[feeds][type] = module
 projects[feeds][subdir] = contrib
-projects[feeds][version] = 2.0-alpha8
+projects[feeds][download][type] = git
+projects[feeds][download][url] = http://git.drupal.org/project/feeds.git
+projects[feeds][download][branch] = 7.x-2.x
+projects[feeds][download][revision] = 7e6679d
+
 
 ; Google Analytics
 projects[google_analytics][subdir] = contrib
@@ -319,6 +324,9 @@ projects[geocoder][download][type] = git
 projects[geocoder][download][url] = http://git.drupal.org/project/geocoder.git
 projects[geocoder][download][branch] = 7.x-1.x
 projects[geocoder][download][revision] = 8e531f4
+
+libraries[iCalcreator][download][type] = get
+libraries[iCalcreator][download][url] = http://kigkonsult.se/downloads/dl.php?f=iCalcreator-2.16.12
 
 
 
