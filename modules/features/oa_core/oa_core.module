@@ -9,7 +9,6 @@ include_once 'includes/oa_core.util.inc';
 include_once 'includes/oa_core.access.inc';
 include_once 'includes/oa_core.login.inc';
 include_once 'includes/oa_core.theme.inc';
-include_once 'includes/oa_core.views.inc';
 
 /**
  * Name of default OpenAtrium Space type.
@@ -398,7 +397,7 @@ function oa_core_views_pre_view(&$view) {
     // @todo There has to be a way to make this more elegant.
     $exposed = $view->get_exposed_input();
     if (!isset($_GET['uid']) && empty($exposed['uid'])) {
-      $exposed['uid'] = format_username($user);
+      $exposed['uid'] = $user->name;
     }
     $view->set_exposed_input($exposed);
   }
@@ -514,4 +513,13 @@ function oa_core_tokens($type, $tokens, array $data = array(), array $options = 
     }
     return $replacements;
   }
+}
+
+
+/**
+ * Implements hook_preprocess_views_exposed_form().
+ */
+function oa_core_preprocess_views_exposed_form(&$vars) {
+  // Add options from a filters to the variables for use in our template.
+  $vars['collapsed_filter'] = empty($vars['form']['#collapsed_filter']) ? FALSE : TRUE;
 }
