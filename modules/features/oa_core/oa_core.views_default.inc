@@ -46,6 +46,10 @@ function oa_core_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'No results were returned.';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   /* Field: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -150,6 +154,23 @@ function oa_core_views_default_views() {
     4 => 0,
     6 => 0,
   );
+  /* Filter criterion: User: Name */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'users';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['uid']['value'] = '';
+  $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
+  $handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
 
   /* Display: Recent Content */
   $handler = $view->new_display('panel_pane', 'Recent Content', 'panel_pane_2');
@@ -176,24 +197,7 @@ function oa_core_views_default_views() {
       'type' => '',
       'og_group_ref_target_id' => 'pane_and_exposed',
       'oa_section_ref_target_id' => 'pane_and_exposed',
-    ),
-  );
-  $handler->display->display_options['argument_input'] = array(
-    'gid' => array(
-      'type' => 'context',
-      'context' => 'entity:node.nid',
-      'context_optional' => 1,
-      'panel' => '0',
-      'fixed' => '31',
-      'label' => 'Space ID',
-    ),
-    'oa_section_ref_target_id' => array(
-      'type' => 'context',
-      'context' => 'entity:node.nid',
-      'context_optional' => 1,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'OpenAtrium Section',
+      'uid' => 'pane_and_exposed',
     ),
   );
 

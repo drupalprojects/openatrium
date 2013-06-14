@@ -200,8 +200,6 @@ function oa_core_og_fields_info() {
  * Implements hook_form_alter for node edit forms
  */
 function oa_core_form_node_form_alter(&$form, &$form_state, $form_id) {
-  global $user;
-
   // we are in an edit form
   // autofill empty group audience field
   if (isset($form[OA_SPACE_FIELD]) && empty($form[OA_SPACE_FIELD][LANGUAGE_NONE][0]['default']['#default_value'])) {
@@ -395,6 +393,15 @@ function oa_core_views_pre_view(&$view) {
     $view->display_handler->options['defaults']['style_options'] = FALSE;
     $view->display_handler->options['style_options'] = $view->display['page_1']->display_options['style_options'];
   }
+  if (!empty($view->display_handler->options['pane_conf']['exposed']['oa_core_default_to_current_user'])) {
+    global $user;
+    // @todo There has to be a way to make this more elegant.
+    $exposed = $view->get_exposed_input();
+    if (!isset($_GET['uid']) && empty($exposed['uid'])) {
+      $exposed['uid'] = format_username($user);
+    }
+    $view->set_exposed_input($exposed);
+  }
 }
 
 
@@ -402,6 +409,7 @@ function oa_core_views_pre_view(&$view) {
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
+  $conf = $form_state['conf'];
   // Add in te Active options
   // @todo be a bit smarter on this, check type of field.
   if (isset($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id'])) {
@@ -409,6 +417,20 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
   }
   if (isset($form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id'])) {
     $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'] = array(NULL => t('- Active Section -')) + $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'];
+  }
+  if (!empty($form['exposed']['filter-uid'])) {
+    $form['exposed']['filter-uid']['oa_core_default_to_current_user'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Default to current user'),
+      '#parents' => array('exposed', 'oa_core_default_to_current_user'),
+      '#default_value' => !empty($conf['exposed']['oa_core_default_to_current_user']),
+    );
+    $form['exposed']['filter-uid']['uid']['#states'] = array(
+      'visible' => array(
+        ':input[name="exposed[oa_core_default_to_current_user]"]' => array('checked' => FALSE),
+      ),
+    );
+
   }
   // Set exposed form to be disabled at first.
   if (isset($form['show_exposed_form'])) {

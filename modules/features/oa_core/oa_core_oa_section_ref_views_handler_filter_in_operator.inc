@@ -33,14 +33,4 @@ class oa_core_oa_section_ref_views_handler_filter_in_operator extends views_hand
       $this->view->set_exposed_input($exposed);
     }
   }
-
-  function exposed_form(&$form, &$form_state) {
-    parent::exposed_form($form, $form_state);
-    if (!empty($this->options['expose']['identifier'])) {
-      $id = $this->options['expose']['identifier'];
-      if (!empty($form_state['input'][$id]) && !in_array($form_state['input'][$id], $form[$id]['#options'])) {
-        unset($form_state['input'][$id]);
-      }
-    }
-  }
 }
