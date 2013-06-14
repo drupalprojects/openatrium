@@ -301,7 +301,7 @@ function oa_buttons_entities_list_page($type) {
  *
  * @see entity_view()
  */
-function oa_buttons_view($entity, $view_mode = 'full', $langcode) {
+function oa_buttons_view($entity, $view_mode = 'full', $langcode = LANGUAGE_NONE) {
   return entity_get_controller('oa_button')->view($entity, $view_mode, $langcode);
 }
 
@@ -309,7 +309,7 @@ function oa_buttons_view($entity, $view_mode = 'full', $langcode) {
  * This is just a passthrough for entityname_view().
  */
 function oa_button_view($entity, $view_mode = 'full', $langcode) {
-  return oa_buttons_view($entity, $view_mode = 'full', $langcode);
+  return oa_buttons_view($entity, $view_mode, $langcode);
 }
 
 /**
