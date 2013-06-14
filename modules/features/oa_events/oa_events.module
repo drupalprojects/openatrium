@@ -23,6 +23,10 @@ function oa_events_field_formatter_info() {
       'label' => t('Next Upcoming Date'),
       'field types' => array('datestamp'),
     ),
+    'oa_events_addthis' => array(
+      'label' => t('AddThis Calendar Widget'),
+      'field types' => array('datestamp'),
+    ),
   );
 }
 
@@ -44,6 +48,55 @@ function oa_events_geocoder_geocode_values_alter(&$items, &$field_info, &$handle
       $items[$delta]['value'] = preg_replace($search, PHP_EOL, $items[$delta]['value']);
     }
   }
+}
+
+/**
+ * Create Addthis Event calendar markup.
+ */
+function oa_events_field_add_to_calendar_markup($nid, $items, $title = 'Add to Calendar') {
+  static $date_field_info = FALSE;
+  static $date_field_instance = FALSE;
+  drupal_add_js('http://js.addthisevent.com/atemay.js', 'external');
+
+  $node = node_load($nid);
+  if (false === $date_field_info) {
+    $date_field_info = field_info_field('field_event_date');
+    $date_field_instance = field_info_instance('node', 'field_event_date', $node->type);
+  }
+
+  $event_info = oa_events_find_next_event($items);
+  $date = $event_info['event'];
+
+  $date_field_date1 = new DateObject($date['value'], $date['timezone_db'], DATE_FORMAT_UNIX);
+  $date_field_date2 = new DateObject($date['value2'], $date['timezone_db'], DATE_FORMAT_UNIX);
+
+  $link_content = $title;
+  $event_url = url('node/' . $node->nid, array('absolute' => TRUE));
+  $spans = array(
+    '_url' => $event_url,
+    '_start' => date_format_date($date_field_date1, 'custom', 'm-d-Y H:i:s'),
+    '_end' => date_format_date($date_field_date2, 'custom', 'm-d-Y H:i:s'),
+    '_zonecode' => '35', // UTC
+    '_summary' => check_plain($node->title),
+    '_description' => check_plain($node->body[$node->language][0]['safe_value']),
+    '_all_day_event' => 'false',
+  );
+
+  foreach ($spans as $span_class => $span_value) {
+    $link_content .= '<span class="' . $span_class . '">' . $span_value . '</span>';
+  }
+
+  return l(
+    $link_content,
+    $event_url,
+    array(
+      'attributes' => array(
+        'class' => 'addthisevent',
+        'title' => t('Add to Calendar'),
+      ),
+      'html' => TRUE,
+    )
+  );
 }
 
 /**
@@ -121,9 +174,11 @@ function oa_events_find_next_event($items) {
  */
 function oa_events_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
 
-
   $element = array();
-  if ($display['type'] == 'oa_events_date_formatter') {
+  if ($display['type'] == 'oa_events_addthis') {
+    $element[0]['#markup'] = oa_events_field_add_to_calendar_markup($entity->nid, $items);
+  }
+  else if ($display['type'] == 'oa_events_date_formatter') {
     foreach ($items as $delta => $item) {
       // Create Date objects from item values.
       $start_date = new DateObject($item['value'], $item['timezone'], DATE_FORMAT_UNIX);
@@ -152,7 +207,7 @@ function oa_events_field_formatter_view($entity_type, $entity, $field, $instance
       }
     }
   }
-  else if ($display['type'] == 'oa_events_upcoming_date') {
+  elseif ($display['type'] == 'oa_events_upcoming_date') {
     $event_info = oa_events_find_next_event($items);
     $event = $event_info['event'];
 

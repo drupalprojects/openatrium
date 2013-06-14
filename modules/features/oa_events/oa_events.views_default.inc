@@ -82,6 +82,25 @@ function oa_events_views_default_views() {
   $handler->display->display_options['fields']['field_oa_address']['alter']['text'] = '[field_oa_address]
 [field_oa_event_link]';
   $handler->display->display_options['fields']['field_oa_address']['element_label_colon'] = FALSE;
+
+
+  /* Field: Content: Event Date */
+  $handler->display->display_options['fields']['field_oa_date_2']['id'] = 'field_oa_date_2';
+  $handler->display->display_options['fields']['field_oa_date_2']['table'] = 'field_data_field_oa_date';
+  $handler->display->display_options['fields']['field_oa_date_2']['field'] = 'field_oa_date';
+  $handler->display->display_options['fields']['field_oa_date_2']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_date_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_date_2']['type'] = 'oa_events_addthis';
+  $handler->display->display_options['fields']['field_oa_date_2']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_oa_date_2']['delta_offset'] = '0';
+
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -252,6 +271,22 @@ function oa_events_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Event Date */
+  $handler->display->display_options['fields']['field_oa_date_2']['id'] = 'field_oa_date_2';
+  $handler->display->display_options['fields']['field_oa_date_2']['table'] = 'field_data_field_oa_date';
+  $handler->display->display_options['fields']['field_oa_date_2']['field'] = 'field_oa_date';
+  $handler->display->display_options['fields']['field_oa_date_2']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_date_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_date_2']['type'] = 'oa_events_addthis';
+  $handler->display->display_options['fields']['field_oa_date_2']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_oa_date_2']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Event Date -  start date (field_oa_date) */
   $handler->display->display_options['sorts']['field_oa_date_value']['id'] = 'field_oa_date_value';
