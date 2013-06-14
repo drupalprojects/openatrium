@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the Open Atrium Subgroup Intergration for Spaces feature.
+ */
+
+include_once 'oa_subspaces.features.inc';
+/**
+ * @file
  * Enhance the OG Subgroups module
  */
 
@@ -42,7 +48,7 @@ function oa_subspaces_form_node_form_alter(&$form, $form_state, $form_id) {
  */
 function oa_subspaces_form_node_form_validate($form, &$form_state) {
   $node = $form['#node'];
-  if (!empty($form_state['values'][OA_PARENT_SPACE][LANGUAGE_NONE])) {
+  if (!empty($node->nid) && !empty($form_state['values'][OA_PARENT_SPACE][LANGUAGE_NONE])) {
     foreach ($form_state['values'][OA_PARENT_SPACE][LANGUAGE_NONE] as $oa_parent) {
       if (!empty($oa_parent['target_id']) && ($oa_parent['target_id'] == $node->nid)) {
         form_set_error(OA_PARENT_SPACE, t('You cannot set the Parent Space to itself.'));
@@ -96,13 +102,12 @@ function _oa_subspaces_get_children_groups($group_type, $group_id, &$children_gr
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_subspaces_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
-  $exposed = $form_state['view']->exposed_input;
   if (!empty($form['og_group_ref_target_id']['#options'])) {
     $options = $form['og_group_ref_target_id']['#options'];
     _oa_subspaces_rearrange_options($form['og_group_ref_target_id']['#options']);
     $settings = _oa_subspaces_find_view_settings($form_state['view'], $form_state);
-    if ($settings['og_group_ref_target_id'] && oa_subspaces_get_children_groups('node', $settings['og_group_ref_target_id'])) {
-      _oa_subspaces_add_element($form['og_group_ref_target_id'], $settings['og_subspaces_view_all']);
+    if ($settings['og_group_ref_target_id'] && is_numeric($settings['og_group_ref_target_id']) && oa_subspaces_get_children_groups('node', $settings['og_group_ref_target_id'])) {
+      _oa_subspaces_add_element($form, $settings['og_subspaces_view_all']);
     }
   }
 }
@@ -130,10 +135,10 @@ function _oa_subspaces_rearrange_options(&$options) {
 function oa_subspaces_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
   // Doing it to the exposed form alone doesn't work :(. 
   if (!empty($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id'])) {
-    $settings = _oa_subspaces_find_view_settings(NULL, $form_state);
+    $settings = _oa_subspaces_find_view_settings($form_state['view'], $form_state);
     _oa_subspaces_rearrange_options($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options']);
     if ($settings['og_group_ref_target_id'] && oa_subspaces_get_children_groups('node', $settings['og_group_ref_target_id'])) {
-      _oa_subspaces_add_element($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id'], $current, array('exposed', 'og_subspaces_view_all'));
+      _oa_subspaces_add_element($form['exposed']['filter-og_group_ref_target_id'], $settings['og_subspaces_view_all'], array('exposed', 'og_subspaces_view_all'));
     }
   }
 }
@@ -142,14 +147,12 @@ function oa_subspaces_form_views_content_views_panes_content_type_edit_form_alte
  * Helper to add i the checkbox at same place as group ref.
  */
 function _oa_subspaces_add_element(&$element, $value, $parents = array('og_subspaces_view_all')) {
-  $element = array(
-    'og_group_ref_target_id' => $element,
-    'og_subspaces_view_all' => array(
-      '#title' => t('Show subspace content'),
-      '#type' => 'checkbox',
-      '#default_value' => $value,
-      '#parents' => $parents,
-    ),
+  $element['og_subspaces_view_all'] = array(
+    '#title' => t('Show subspace content'),
+    '#type' => 'checkbox',
+    '#default_value' => $value,
+    '#value' => $value, // @todo what is setting this incorrectly?
+    '#parents' => $parents,
   );
 }
 
@@ -157,7 +160,7 @@ function _oa_subspaces_add_element(&$element, $value, $parents = array('og_subsp
  * Finding the active current configuration for each is a pane in the ***.
  */
 function _oa_subspaces_find_view_settings($view = NULL, $form_state = NULL) {
-  $find = array('og_subspaces_view_all', 'oa_section_ref_target_id', 'og_group_ref_target_id');
+  $find = array('og_subspaces_view_all', 'oa_section_ref_target_id', 'og_group_ref_target_id', 'og_group_ref_target_id_mine');
   $return = array();
   foreach ($find as $key) {
     if (isset($_GET[$key])) {
@@ -170,13 +173,13 @@ function _oa_subspaces_find_view_settings($view = NULL, $form_state = NULL) {
       $return[$key] = $form_state['values'][$key];
     }
     elseif ($form_state && isset($form_state['conf']['exposed'][$key])) {
-      $return[$key] = $form_state['conf'][$key];
-    }
-    elseif ($view && isset($view->display_handler->options['pane_conf'][$key])) {
-      $return[$key] = $view->display_handler->options['pane_conf'][$key];
+      $return[$key] = $form_state['conf']['exposed'][$key];
     }
     elseif ($view && isset($view->exposed_input[$key])) {
       $return[$key] = $view->exposed_input[$key];
+    }
+    elseif ($view && isset($view->display_handler->options['pane_conf'][$key])) {
+      $return[$key] = $view->display_handler->options['pane_conf'][$key];
     }
     else {
       $return[$key] = FALSE;
@@ -184,6 +187,10 @@ function _oa_subspaces_find_view_settings($view = NULL, $form_state = NULL) {
     if ($return[$key] === 'All') {
       $return[$key] = FALSE;
     }
+  }
+  if (!empty($return['og_group_ref_target_id_mine'])) {
+    $return['og_group_ref_target_id'] = FALSE;
+    $return['og_subspaces_view_all'] = FALSE;
   }
   if ($return['oa_section_ref_target_id'] || !$return['og_group_ref_target_id']) {
     $return['og_subspaces_view_all'] = FALSE;
@@ -220,7 +227,7 @@ function oa_subspaces_views_pre_view(&$view) {
  */
 function oa_subspaces_views_query_alter(&$view, &$query) {
   // If selected, add all the children groups content to the space.
-  if (!empty($view->exposed_input['og_subspaces_view_all']) && is_numeric($view->exposed_input['og_group_ref_target_id']) && !empty($view->filter['og_group_ref_target_id']->options['exposed'])) {
+  if (!empty($view->exposed_input['og_group_ref_target_id']) && is_numeric($view->exposed_input['og_group_ref_target_id']) && !empty($view->filter['og_group_ref_target_id']->options['exposed'])) {
     $settings = _oa_subspaces_find_view_settings($view);
     if ($settings['og_subspaces_view_all'] && ($children = oa_subspaces_get_children_groups('node', $view->exposed_input['og_group_ref_target_id']))) {
       foreach ($query->where[1]['conditions'] as $key => $condition) {

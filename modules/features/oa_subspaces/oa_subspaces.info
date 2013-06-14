@@ -5,6 +5,7 @@ package = Open Atrium
 php = 5.2.4
 version = 7.x-2.0
 project = oa_subspaces
+dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = list
@@ -13,6 +14,8 @@ dependencies[] = og
 dependencies[] = og_subgroups
 dependencies[] = og_ui
 dependencies[] = options
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:1
 features[field_base][] = oa_parent_space
 features[field_base][] = og_user_inheritance
@@ -20,8 +23,7 @@ features[field_instance][] = node-oa_group-oa_parent_space
 features[field_instance][] = node-oa_group-og_user_inheritance
 features[field_instance][] = node-oa_space-oa_parent_space
 features[field_instance][] = node-oa_space-og_user_inheritance
-project path = profiles/openatrium/modules/features
-
+features[variable][] = og_subgroups_default_fields_node
 files[] = tests/oa_subspacesPermission.test
 files[] = tests/oa_subspacesSectionAccess.test
-
+project path = profiles/openatrium/modules/features

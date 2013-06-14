@@ -457,6 +457,26 @@ function oa_core_form_views_exposed_form_alter(&$form, $form_state) {
     // view all.
     $form['#action'] = url($_GET['q']);
   }
+  if (!empty($form['og_group_ref_target_id'])) {
+    $form['#after_build'][] = 'oa_core_views_exposed_form_rearrange';
+  }
+}
+
+function oa_core_views_exposed_form_rearrange($form) {
+  if (!empty($form['og_group_ref_target_id_mine']) || !empty($form['og_subspaces_view_all'])) {
+    $form['og_group_ref_target_id'] = array(
+      'og_group_ref_target_id' => $form['og_group_ref_target_id'],
+    );
+    if (!empty($form['og_group_ref_target_id_mine'])) {
+      $form['og_group_ref_target_id']['og_group_ref_target_id_mine'] = $form['og_group_ref_target_id_mine'];
+      unset($form['og_group_ref_target_id_mine']);
+    }
+    if (!empty($form['og_subspaces_view_all'])) {
+      $form['og_group_ref_target_id']['og_subspaces_view_all'] = $form['og_subspaces_view_all'];
+      unset($form['og_subspaces_view_all']);
+    }
+  }
+  return $form;
 }
 
 /**
