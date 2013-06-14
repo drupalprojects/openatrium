@@ -42,7 +42,6 @@
     </div>
   </div>
   <div class='oa-event-description'>
-    <?php print $field_oa_date_2; ?>
     <?php print $body; ?>
     <?php print $field_oa_media_1; ?>
     <?php print $term_node_tid; ?>

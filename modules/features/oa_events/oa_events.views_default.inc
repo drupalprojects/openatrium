@@ -133,50 +133,11 @@ function oa_events_views_default_views() {
     'focusarea' => 0,
     'keywords' => 0,
     'meaningfuluse' => 0,
-    'ahrq_wiki_page_type' => 0,
     'publicationtype' => 0,
     'settings' => 0,
     'targetaudience' => 0,
     'tooltype' => 0,
   );
-  /* Field: Content: Event Date */
-  $handler->display->display_options['fields']['field_oa_date_2']['id'] = 'field_oa_date_2';
-  $handler->display->display_options['fields']['field_oa_date_2']['table'] = 'field_data_field_oa_date';
-  $handler->display->display_options['fields']['field_oa_date_2']['field'] = 'field_oa_date';
-  $handler->display->display_options['fields']['field_oa_date_2']['type'] = 'ahrq_events_addthis';
-  $handler->display->display_options['fields']['field_oa_date_2']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
-  $handler->display->display_options['fields']['field_oa_date_2']['delta_offset'] = '0';
-  /* Field: Content: References */
-  $handler->display->display_options['fields']['field_ahrq_links']['id'] = 'field_ahrq_links';
-  $handler->display->display_options['fields']['field_ahrq_links']['table'] = 'field_data_field_ahrq_links';
-  $handler->display->display_options['fields']['field_ahrq_links']['field'] = 'field_ahrq_links';
-  $handler->display->display_options['fields']['field_ahrq_links']['settings'] = array(
-    'edit' => '',
-    'delete' => '',
-    'add' => '',
-    'description' => 1,
-    'view_mode' => 'full',
-  );
-  $handler->display->display_options['fields']['field_ahrq_links']['delta_offset'] = '0';
-  /* Field: Content: Resources */
-  $handler->display->display_options['fields']['field_ahrq_resources']['id'] = 'field_ahrq_resources';
-  $handler->display->display_options['fields']['field_ahrq_resources']['table'] = 'field_data_field_ahrq_resources';
-  $handler->display->display_options['fields']['field_ahrq_resources']['field'] = 'field_ahrq_resources';
-  $handler->display->display_options['fields']['field_ahrq_resources']['settings'] = array(
-    'edit' => '',
-    'delete' => '',
-    'add' => '',
-    'description' => 0,
-    'view_mode' => 'full',
-  );
-  $handler->display->display_options['fields']['field_ahrq_resources']['delta_offset'] = '0';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -274,26 +235,11 @@ function oa_events_views_default_views() {
     'focusarea' => 0,
     'keywords' => 0,
     'meaningfuluse' => 0,
-    'ahrq_wiki_page_type' => 0,
     'publicationtype' => 0,
     'settings' => 0,
     'targetaudience' => 0,
     'tooltype' => 0,
   );
-  /* Field: Content: Event Date */
-  $handler->display->display_options['fields']['field_oa_date_2']['id'] = 'field_oa_date_2';
-  $handler->display->display_options['fields']['field_oa_date_2']['table'] = 'field_data_field_oa_date';
-  $handler->display->display_options['fields']['field_oa_date_2']['field'] = 'field_oa_date';
-  $handler->display->display_options['fields']['field_oa_date_2']['type'] = 'ahrq_events_addthis';
-  $handler->display->display_options['fields']['field_oa_date_2']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
-  $handler->display->display_options['fields']['field_oa_date_2']['delta_offset'] = '0';
   /* Field: Content: Location */
   $handler->display->display_options['fields']['field_oa_address']['id'] = 'field_oa_address';
   $handler->display->display_options['fields']['field_oa_address']['table'] = 'field_data_field_oa_address';
@@ -363,7 +309,7 @@ function oa_events_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'AHRQ iCal Calendar';
+  $handler->display->display_options['title'] = 'Open Atrium iCal Calendar';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -1107,7 +1053,6 @@ function oa_events_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
   $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
-    'ahrq_action_item' => '#ffffff',
     'panopoly_page' => '#ffffff',
     'oa_discussion_post' => '#ffffff',
     'oa_event' => '#ffffff',
@@ -1437,19 +1382,11 @@ function oa_events_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
-    'ahrq_action_item' => '#ffffff',
-    'ahrq_announcement' => '#ffffff',
     'panopoly_page' => '#ffffff',
     'oa_discussion_post' => '#ffffff',
     'oa_event' => '#ffffff',
     'oa_group' => '#ffffff',
-    'ahrq_issue' => '#ffffff',
-    'ahrq_leadingpractice' => '#ffffff',
-    'ahrq_lessonlearned' => '#ffffff',
-    'ahrq_newsletter' => '#ffffff',
     'oa_section' => '#ffffff',
-    'ahrq_solution' => '#ffffff',
-    'ahrq_solutionpage' => '#ffffff',
     'oa_space' => '#ffffff',
     'oa_team' => '#ffffff',
     'oa_wiki_page' => '#ffffff',
@@ -2431,7 +2368,6 @@ function oa_events_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
   $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
-    'ahrq_action_item' => '#ffffff',
     'panopoly_page' => '#ffffff',
     'oa_discussion_post' => '#ffffff',
     'oa_event' => '#ffffff',
@@ -2741,19 +2677,11 @@ function oa_events_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
-    'ahrq_action_item' => '#ffffff',
-    'ahrq_announcement' => '#ffffff',
     'panopoly_page' => '#ffffff',
     'oa_discussion_post' => '#ffffff',
     'oa_event' => '#ffffff',
     'oa_group' => '#ffffff',
-    'ahrq_issue' => '#ffffff',
-    'ahrq_leadingpractice' => '#ffffff',
-    'ahrq_lessonlearned' => '#ffffff',
-    'ahrq_newsletter' => '#ffffff',
     'oa_section' => '#ffffff',
-    'ahrq_solution' => '#ffffff',
-    'ahrq_solutionpage' => '#ffffff',
     'oa_space' => '#ffffff',
     'oa_team' => '#ffffff',
     'oa_wiki_page' => '#ffffff',
