@@ -343,13 +343,15 @@ function oa_layouts_panelizer_defaults() {
       ),
       'view_mode' => 'teaser',
       'widget_title' => NULL,
-      'items_per_page' => NULL,
+      'items_per_page' => '',
       'exposed' => array(
-        'sort_by' => NULL,
-        'sort_order' => NULL,
+        'type' => array(),
+        'realname' => '',
+        'og_group_ref_target_id' => '',
+        'oa_section_ref_target_id' => '',
       ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
+      'use_pager' => 1,
+      'pager_id' => '',
       'offset' => NULL,
       'link_to_view' => NULL,
       'more_link' => NULL,
@@ -391,7 +393,7 @@ function oa_layouts_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $display->content['new-10'] = $pane;
     $display->panels['sidebar'][0] = 'new-10';
@@ -428,7 +430,7 @@ function oa_layouts_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $display->content['new-11'] = $pane;
     $display->panels['sidebar'][1] = 'new-11';
@@ -514,13 +516,15 @@ function oa_layouts_panelizer_defaults() {
       ),
       'view_mode' => 'teaser',
       'widget_title' => NULL,
-      'items_per_page' => NULL,
+      'items_per_page' => '',
       'exposed' => array(
-        'sort_by' => NULL,
-        'sort_order' => NULL,
+        'type' => array(),
+        'realname' => '',
+        'og_group_ref_target_id' => '',
+        'oa_section_ref_target_id' => '',
       ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
+      'use_pager' => 1,
+      'pager_id' => '',
       'offset' => NULL,
       'link_to_view' => NULL,
       'more_link' => NULL,

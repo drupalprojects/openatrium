@@ -83,7 +83,7 @@ function oa_core_default_page_manager_pages() {
       'context' => 'context_user_1',
       'override_title' => 0,
       'override_title_text' => '',
-      'image_size' => 'square',
+      'image_size' => 'quarter',
       'show_sections' => 1,
       'show_description' => 1,
       'tabs' => array(
