@@ -198,22 +198,20 @@ function oa_events_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-4';
     $pane->panel = 'sidebar';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:og_group_ref';
+    $pane->type = 'oa_widgets_content_visibility';
+    $pane->subtype = 'oa_widgets_content_visibility';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'entityreference_label',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'link' => 0,
-      ),
-      'context' => array(),
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'context' => 'panelizer',
       'override_title' => 0,
       'override_title_text' => '',
+      'form_build_id' => 'form-6Fnl37ZeEeU2hCxrypXlZVcvAy9Rb5CbH610FgT3qGc',
+      'form_token' => 'oe5c2G_GZIK6IUkWVwc6PoyfBt5SVSqWK7_R7R7wf1c',
+      'form_id' => 'oa_widgets_content_visibility_edit_form',
+      'op' => 'Finish',
     );
     $pane->cache = array();
     $pane->style = array(

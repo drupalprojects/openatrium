@@ -16,7 +16,10 @@ function oa_events_default_page_manager_pages() {
   $page->admin_title = 'Open Atrium Calendar';
   $page->admin_description = '';
   $page->path = 'content/calendar';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
