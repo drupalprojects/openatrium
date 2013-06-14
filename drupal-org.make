@@ -325,10 +325,6 @@ projects[geocoder][download][url] = http://git.drupal.org/project/geocoder.git
 projects[geocoder][download][branch] = 7.x-1.x
 projects[geocoder][download][revision] = 8e531f4
 
-libraries[iCalcreator][download][type] = get
-libraries[iCalcreator][download][url] = http://kigkonsult.se/downloads/dl.php?f=iCalcreator-2.16.12
-
-
 
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************
