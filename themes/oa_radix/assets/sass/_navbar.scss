@@ -47,6 +47,16 @@
       }
     }
   }
+  .pane-page-site-name {
+    margin-top: 12px;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+}
+
+.navbar.navbar-inverse .pane-page-site-name {
+  color: #EEE;
 }
 
 #navbar div.devel-querylog div.cell-5 {
