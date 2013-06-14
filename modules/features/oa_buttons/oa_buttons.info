@@ -41,6 +41,7 @@ features[field_instance][] = oa_button-button-field_link_icon
 files[] = oa_buttons.module
 files[] = includes/ButtonController.class.php
 files[] = plugins/views/oa_buttons.views.inc
+files[] = plugins/views/oa_buttons.views_default.inc
 files[] = plugins/views/oa_buttons_handler_argument_bundle.inc
 files[] = plugins/views/oa_buttons_handler_field_bundle.inc
 files[] = plugins/views/oa_buttons_handler_field_delete_entity.inc
