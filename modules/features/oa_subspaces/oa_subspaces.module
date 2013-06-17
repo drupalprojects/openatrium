@@ -103,7 +103,6 @@ function _oa_subspaces_get_children_groups($group_type, $group_id, &$children_gr
  */
 function oa_subspaces_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
   if (!empty($form['og_group_ref_target_id']['#options'])) {
-    $options = $form['og_group_ref_target_id']['#options'];
     _oa_subspaces_rearrange_options($form['og_group_ref_target_id']['#options']);
     $settings = _oa_subspaces_find_view_settings($form_state['view'], $form_state);
     if ($settings['og_group_ref_target_id'] && is_numeric($settings['og_group_ref_target_id']) && oa_subspaces_get_children_groups('node', $settings['og_group_ref_target_id'])) {

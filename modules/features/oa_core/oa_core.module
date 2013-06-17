@@ -413,6 +413,17 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
   // @todo be a bit smarter on this, check type of field.
   if (isset($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id'])) {
     $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options'] = array(NULL => t('- Active Space -')) + $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options'];
+    $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id_mine'] = array(
+      '#title' => t('Limit to groups of current user'),
+      '#type' => 'checkbox',
+      '#default_value' => !empty($conf['exposed']['og_group_ref_target_id_mine']),
+      '#parents' => array('exposed', 'og_group_ref_target_id_mine'),
+    );
+    $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#states'] = array(
+      'visible' => array(
+        ':input[name="exposed[og_group_ref_target_id_mine]"]' => array('checked' => FALSE),
+      ),
+    );
   }
   if (isset($form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id'])) {
     $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'] = array(NULL => t('- Active Section -')) + $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'];
