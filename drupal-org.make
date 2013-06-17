@@ -154,6 +154,10 @@ projects[realname][version] = 1.1
 projects[chosen][subdir] = contrib
 projects[chosen][version] = 2.0-alpha1
 
+libraries[chosen][download][type]    = git
+libraries[chosen][download][url]     = https://github.com/harvesthq/chosen.git
+libraries[chosen][download][tag]     = v0.9.15
+
 ; Twitter Bootstrap UI
 ;; Currently removed Twitter Bootstrap because of license issue:
 ;; http://drupal.org/node/1449452 http://drupal.org/node/1445226#comment-7343538
