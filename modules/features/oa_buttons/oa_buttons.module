@@ -504,7 +504,7 @@ function oa_buttons_entity_view($entity, $type, $view_mode, $langcode) {
       // Add the correct css class to each link, do token replacement, and render the link.
       foreach ($links as $link) {
         $link['attributes']['class'] = $classes['item_class'];
-        $link['attributes']['class'] .= ' oa-' . str_replace('-', '_', $command['entity']->name);
+        $link['attributes']['class'] += array(' oa-' . str_replace('-', '_', $command['entity']->name));
         $options = array('attributes' => $link['attributes']);
         $path = filter_xss(token_replace($link['url']));
         if (drupal_valid_path($path)) {
@@ -532,7 +532,7 @@ function oa_buttons_entity_view($entity, $type, $view_mode, $langcode) {
       if (!empty($use_dropdowns[0]['value']) && !empty($dropdown_label[0]['value'])) {
         $ul_class .= ' dropdown-menu';
         $output = '<div class="btn-group">
-          <button class="dropdown-toggle '. $classes['wrapper_class'] . '" data-toggle="dropdown" href="#">' . check_plain($dropdown_label[0]['value']) . ' <span class="caret"></span></button>
+          <button class="dropdown-toggle '. implode(' ', $classes['wrapper_class']) . '" data-toggle="dropdown" href="#">' . check_plain($dropdown_label[0]['value']) . ' <span class="caret"></span></button>
           <ul class="' . $ul_class .'">' . $output . '<ul></div>';
       }
       else {
@@ -560,8 +560,8 @@ function oa_buttons_entity_view($entity, $type, $view_mode, $langcode) {
  */
 function oa_buttons_get_button_class($entity, $type, $view_mode, $langcode) {
   $return_classes = array(
-    'item_class' => 'oa-button',
-    'wrapper_class' => 'oa-buttons'
+    'item_class' => array('oa-button'),
+    'wrapper_class' => array('oa-buttons'),
   );
 
   $style = field_get_items($type, $entity, 'field_button_style', $langcode);
@@ -591,10 +591,10 @@ function oa_buttons_get_button_class($entity, $type, $view_mode, $langcode) {
 
   $use_dropdowns = field_get_items($type, $entity, 'field_use_dropdowns', $langcode);
   if (!empty($use_dropdowns[0]['value'])) {
-    $return_classes['wrapper_class'] .= ' ' . implode(' ', $classes);
+    $return_classes['wrapper_class'] = array_merge($classes, $return_classes['wrapper_class']);
   }
   else {
-    $return_classes['item_class'] .= ' ' . implode(' ', $classes);
+    $return_classes['item_class'] = array_merge($classes, $return_classes['item_class']);
   }
 
   return $return_classes;
