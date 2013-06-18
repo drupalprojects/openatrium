@@ -12,7 +12,10 @@
  */
 ?>
 
-<?php if ($public): ?>
+<?php if (!$published): ?>
+  <div class="oa-visibility-private"><?php print t('Unpublished'); ?></div>
+
+<?php elseif ($public): ?>
   <div class="oa-visibility-public"><?php print t('Public'); ?></div>
 <?php else: ?>
   <div class="oa-visibility-private">

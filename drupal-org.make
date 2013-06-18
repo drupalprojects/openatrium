@@ -36,6 +36,10 @@ projects[panelizer][download][type] = git
 projects[panelizer][download][url] = http://git.drupal.org/project/panelizer.git
 projects[panelizer][download][branch] = 7.x-3.x
 projects[panelizer][download][revision] = 1e050d3
+projects[panelizer][patch][1992106] = http://drupal.org/files/panelizer_strongarm_vars_load.patch
+projects[panelizer][patch][1982654] = http://drupal.org/files/1982654-panelizer-dontaskmethatagain-2.patch
+projects[panelizer][patch][2022541] = http://drupal.org/files/2022541-panelizer-node-page-unpublished-1.patch
+
 
 ; Override panopoly_core.make: 1.0
 ; Update Entity Reference to work with Devel Generate (#1852112)

@@ -28,6 +28,7 @@ function oa_widgets_content_visibility_render($subtype, $conf, $args, $context =
   $block->title = 'Content Visibility';
 
   $node = $context->data;
+  $vars['published'] = !empty($node->status);
   if ($node->type == OA_SPACE_TYPE || $node->type == OA_GROUP_TYPE) {
     $visibility = field_get_items('node', $node, 'group_access');
     $vars['public'] = empty($visibility[0]['value']);
