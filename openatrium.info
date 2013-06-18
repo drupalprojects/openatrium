@@ -21,6 +21,7 @@ dependencies[] = shortcut
 dependencies[] = field
 dependencies[] = field_ui
 dependencies[] = file
+dependencies[] = update
 
 ;
 ; Panopoly Modules
