@@ -86,9 +86,7 @@ function oa_events_import_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_oa_ical_importer';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_oa_ical_importer'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -121,6 +119,20 @@ function oa_events_import_strongarm() {
   $strongarm->name = 'node_submitted_oa_ical_importer';
   $strongarm->value = 1;
   $export['node_submitted_oa_ical_importer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'og_menu_single_group_content__node__oa_ical_importer_oa_ical_importer';
+  $strongarm->value = 0;
+  $export['og_menu_single_group_content__node__oa_ical_importer_oa_ical_importer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'og_menu_single_group__node__oa_ical_importer_oa_ical_importer';
+  $strongarm->value = 0;
+  $export['og_menu_single_group__node__oa_ical_importer_oa_ical_importer'] = $strongarm;
 
   return $export;
 }
