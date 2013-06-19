@@ -333,6 +333,11 @@ projects[geocoder][download][url] = http://git.drupal.org/project/geocoder.git
 projects[geocoder][download][branch] = 7.x-1.x
 projects[geocoder][download][revision] = 8e531f4
 
+projects[panels_customerror][type] = module
+projects[panels_customerror][subdir] = contrib
+projects[panels_customerror][download][type] = git
+projects[panels_customerror][download][url] = http://git.drupal.org/project/panels_customerror.git
+projects[panels_customerror][download][branch] = 7.x-1.x
 
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************

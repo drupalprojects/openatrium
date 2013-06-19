@@ -124,6 +124,9 @@ dependencies[] = oa_events_import
 ; Open Atrium 2.0 Optional
 dependencies[] = oa_home
 
+; Contrib Optional
+dependencies[] = panels_customerror
+
 ; Development Modules - Temporary
 dependencies[] = devel
 dependencies[] = diff
