@@ -120,7 +120,6 @@ function oa_buttons_menu() {
  * Implementation of hook_entity_info_alter()
  */
 function oa_buttons_entity_info_alter(&$entity_info) {
-
   // Command List
   $entity_info['fieldable_panels_pane']['bundles']['command_buttons'] = array(
     'label' => t('Add Command List'),
@@ -134,6 +133,89 @@ function oa_buttons_entity_info_alter(&$entity_info) {
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
+}
+
+/**
+ * Implements hook_modules_enabled().
+ *
+ * It's kind of strange that we initially add node command buttons here,
+ * but we needed to wait for features to add the correct fields to our bundle
+ * and hook_modules_enabled happens late enough that we can safely save our
+ * entities.
+ */
+function oa_buttons_modules_enabled($modules) {
+  if (in_array('oa_buttons', $modules)) {
+    $node_type = entity_get_info('node');
+    foreach ($node_type['bundles'] as $bundle => $definition) {
+      oa_buttons_create_node_button($bundle, $definition['label']);
+    }
+  }
+}
+
+/**
+ * Implements hook_node_type_insert().
+ */
+function oa_buttons_node_type_insert($info) {
+  oa_buttons_create_node_button($info->type, $info->name);
+}
+
+/**
+ * Create a node add button based on the node type and label.
+ *
+ * @param  $type
+ *  The machine name of the content type you are creating a button for.
+ * @param  $label
+ *  The label of the content type you are creating a button for.
+ */
+function oa_buttons_create_node_button($type, $label) {
+  $new_buttons = array();
+  // Create node/add buttons for the new node type.
+  if (!oa_buttons_machine_name_exists($type)) {
+
+    $type_url_str = str_replace('_', '-', $type);
+    $values = array(
+      'bundle' => 'node_add',
+      'name' => $type,
+      'title' => t('Create !title', array('!title' => $label)),
+      'language' => LANGUAGE_NONE,
+      'field_command_link' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'url' => 'node/add/' . $type_url_str,
+            'title' => 'Create ' . $label,
+          )
+        ),
+      )
+    );
+
+    $new_buttons[$type] = oa_buttons_create($values);
+  }
+
+
+  if (count($new_buttons)) {
+    drupal_alter('oa_buttons_node_buttons', $new_buttons);
+    // All buttons may have been removed, so check once again.
+    if (count($new_buttons)) {
+      foreach ($new_buttons as $new_button) {
+        oa_buttons_save($new_button);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_node_type_delete().
+ */
+function oa_buttons_node_type_delete($info) {
+  if (oa_buttons_machine_name_exists($info->name)) {
+    $bid = db_select('oa_buttons', 'b')
+            ->fields('b', array('bid'))
+            ->condition('name', $info->name)
+            ->execute()
+            ->fetchField();
+
+    oa_buttons_delete($bid);
+  }
 }
 
 /**
@@ -153,13 +235,13 @@ function oa_buttons_type_load($type) {
  *
  * @see entity_load().
  */
-function oa_buttons_load($fpid) {
-  if (!is_numeric($fpid)) {
+function oa_buttons_load($bid) {
+  if (!is_numeric($bid)) {
     return FALSE;
   }
   $conditions = array();
 
-  $entities = oa_buttons_load_multiple(array($fpid), $conditions);
+  $entities = oa_buttons_load_multiple(array($bid), $conditions);
   if ($entities) {
     return reset($entities);
   }
@@ -235,6 +317,15 @@ function oa_buttons_entity_info() {
             'path' => 'admin/structure/command-buttons/manage/%oa_buttons_type',
             'bundle argument' => 4,
             'real path' => 'admin/structure/command-buttons/manage/button',
+            'access arguments' => array('administer command buttons'),
+          ),
+        ),
+        'node_add' => array(
+          'label' => t('Node Creation Button'),
+          'admin' => array(
+            'path' => 'admin/structure/command-buttons/manage/%oa_buttons_type',
+            'bundle argument' => 4,
+            'real path' => 'admin/structure/command-buttons/manage/node-add',
             'access arguments' => array('administer command buttons'),
           ),
         ),
@@ -624,9 +715,11 @@ function oa_buttons_form_oa_buttons_entity_edit_form_alter(&$form, &$form_state,
       '#click_insert' => TRUE,
     );
 
-    foreach ($form['field_link_icon'][LANGUAGE_NONE]['#options'] as $key => $option) {
-      if ($key != '_none') {
-        $form['field_link_icon'][LANGUAGE_NONE]['#options'][$key] = "<i class='" . $option . "'></i> " . $option;
+    if (isset($form['field_link_icon'])) {
+      foreach ($form['field_link_icon'][LANGUAGE_NONE]['#options'] as $key => $option) {
+        if ($key != '_none') {
+          $form['field_link_icon'][LANGUAGE_NONE]['#options'][$key] = "<i class='" . $option . "'></i> " . $option;
+        }
       }
     }
   }

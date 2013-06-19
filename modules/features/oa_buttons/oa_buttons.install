@@ -70,3 +70,13 @@ function oa_buttons_schema() {
 
   return $schema;
 }
+
+/**
+ * Create buttons for all node types.
+ */
+function oa_buttons_update_7002() {
+  $node_info = entity_get_info('node');
+  foreach ($node_info['bundles'] as $type => $defintiion) {
+    oa_buttons_create_node_button($type, $definition['label']);
+  }
+}
