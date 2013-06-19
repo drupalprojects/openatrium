@@ -261,7 +261,7 @@ projects[og_menu_single][subdir] = contrib
 projects[og_menu_single][download][type] = git
 projects[og_menu_single][download][url] = http://git.drupal.org/project/og_menu_single.git
 projects[og_menu_single][download][branch] = 7.x-1.x
-projects[og_menu_single][download][revision] = 8f0e470a0462e4547a5d30bb3847f8cd8a27c671
+projects[og_menu_single][download][revision] = 8c4abd8
 projects[og_menu_single][type] = module
 
 ; Variable
