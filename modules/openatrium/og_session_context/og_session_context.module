@@ -36,7 +36,7 @@ function og_session_context_og_context_handler_sessions() {
   _og_session_context_set_context();  // update the session variable
 
   $gids = FALSE;
-  if (isset($_SESSION[OG_SESSION_CONTEXT_ID])) {
+  if (!empty($_SESSION[OG_SESSION_CONTEXT_ID]) && ($node = node_load($_SESSION[OG_SESSION_CONTEXT_ID])) && node_access('view', $node)) {
     $gids['node'][0] = $_SESSION[OG_SESSION_CONTEXT_ID];
   }
 
@@ -64,7 +64,7 @@ function _og_session_context_set_context() {
     // get space id directly from space nodes
     $_SESSION[OG_SESSION_CONTEXT_ID] = $nid;
   }
-  elseif (isset($node->{OG_AUDIENCE_FIELD}[LANGUAGE_NONE][0]['target_id'])) {
+  elseif (!empty($node->{OG_AUDIENCE_FIELD}[LANGUAGE_NONE][0]['target_id'])) {
     // otherwise get space id from space field reference
     $_SESSION[OG_SESSION_CONTEXT_ID] = $node->{OG_AUDIENCE_FIELD}[LANGUAGE_NONE][0]['target_id'];
   }
