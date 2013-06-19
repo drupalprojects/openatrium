@@ -13,3 +13,5 @@ projects[drupal][patch][1349080] = http://drupal.org/files/d7_move_access_to_joi
 projects[drupal][patch][911354] = http://drupal.org/files/911354-drupal-profile-85.patch
 ; Patch to allow install profile enabling to enable dependencies correctly.
 projects[drupal][patch][1093420] = http://drupal.org/files/1093420-22.patch
+; Patch to prevent empty titles when menu_check_access called more than once
+projects[drupal][patch][1697570] = http://drupal.org/files/drupal-menu_always_load_objects-1697570-5.patch
