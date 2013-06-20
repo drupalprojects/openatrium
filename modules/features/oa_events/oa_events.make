@@ -3,14 +3,20 @@
 api = 2
 core = 7.x
 
-projects[calendar][type] = module
-projects[calendar][subdir] = contrib
-projects[calendar][download][url] = http://git.drupal.org/project/calendar.git
-projects[calendar][download][type] = git
-projects[calendar][download][version] = 3.4
-projects[calendar][download][branch] = 7.x-3.x
-projects[calendar][patch][1214940] = http://drupal.org/files/1214940-remove-resizeViewport.patch
-projects[calendar][patch][1995062] = http://drupal.org/files/1995062-no-weekno-in-weekly_0.patch
+projects[fullcalendar][type] = module
+projects[fullcalendar][subdir] = contrib
+projects[fullcalendar][download][url] = http://git.drupal.org/project/fullcalendar.git
+projects[fullcalendar][download][type] = git
+projects[fullcalendar][download][version] = 2.0
+projects[fullcalendar][download][branch] = 7.x-2.x
+projects[fullcalendar][patch][1814972] = https://drupal.org/files/og-7.x-2.x_0.patch
+
+projects[colors][type] = module
+projects[colors][subdir] = contrib
+projects[colors][download][url] = http://git.drupal.org/project/colors.git
+projects[colors][download][type] = git
+projects[colors][download][version] = 1.0-rc1
+projects[colors][download][branch] = 7.x-1.x
 
 projects[date_ical][type] = module
 projects[date_ical][subdir] = contrib
@@ -34,4 +40,10 @@ projects[geocoder][download][url] = http://git.drupal.org/project/geocoder.git
 projects[geocoder][download][branch] = 7.x-1.x
 projects[geocoder][download][revision] = f6b34bc
 projects[geocoder][patch][1996592] = http://drupal.org/files/1996592-geocoder_geocode_values.patch
+
+libraries[fullcalendar][download][type] = get
+libraries[fullcalendar][download][url] = http://arshaw.com/fullcalendar/downloads/fullcalendar-1.6.1.zip
+libraries[fullcalendar][directory_name] = fullcalendar
+libraries[fullcalendar][destination] = libraries
+libraries[fullcalendar][download][subtree] = fullcalendar-1.6.1/fullcalendar
 

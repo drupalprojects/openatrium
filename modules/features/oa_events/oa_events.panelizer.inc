@@ -177,13 +177,19 @@ function oa_events_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'contentmain';
-    $pane->type = 'block';
-    $pane->subtype = 'quicktabs-oa_calendar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'oa_fullcalendar-oa_calendar_month';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => ' ',
+      'exposed' => array(
+        'og_group_ref_target_id' => '',
+        'og_group_ref_target_id_mine' => 0,
+        'oa_section_ref_target_id' => '',
+      ),
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
     );
     $pane->cache = array();
     $pane->style = array(

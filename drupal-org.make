@@ -300,17 +300,29 @@ projects[conditional_fields][download][branch] = 7.x-3.x
 projects[conditional_fields][download][revision] = cd29b00
 projects[conditional_fields][patch][1982276] = http://drupal.org/files/conditional_fields-typo-in-if-condition-1982276-1.patch
 
+projects[panels_customerror][type] = module
+projects[panels_customerror][subdir] = contrib
+projects[panels_customerror][download][type] = git
+projects[panels_customerror][download][url] = http://git.drupal.org/project/panels_customerror.git
+projects[panels_customerror][download][branch] = 7.x-1.x
 
 ; Open Atrium Events Makefile
 ;; eventually this gets moved to oa_events when it's a full drupal.org project
-projects[calendar][type] = module
-projects[calendar][subdir] = contrib
-projects[calendar][version] = 3.4
-projects[calendar][download][url] = http://git.drupal.org/project/calendar.git
-projects[calendar][download][type] = git
-projects[calendar][download][branch] = 7.x-3.x
-projects[calendar][patch][1214940] = http://drupal.org/files/1214940-remove-resizeViewport.patch
-projects[calendar][patch][1995062] = http://drupal.org/files/1995062-no-weekno-in-weekly_0.patch
+; Open Atrium Events Makefile
+projects[fullcalendar][type] = module
+projects[fullcalendar][subdir] = contrib
+projects[fullcalendar][download][url] = http://git.drupal.org/project/fullcalendar.git
+projects[fullcalendar][download][type] = git
+projects[fullcalendar][download][version] = 2.0
+projects[fullcalendar][download][branch] = 7.x-2.x
+projects[fullcalendar][patch][1814972] = https://drupal.org/files/og-7.x-2.x_0.patch
+
+projects[colors][type] = module
+projects[colors][subdir] = contrib
+projects[colors][download][url] = http://git.drupal.org/project/colors.git
+projects[colors][download][type] = git
+projects[colors][download][version] = 1.0-rc1
+projects[colors][download][branch] = 7.x-1.x
 
 projects[date_ical][type] = module
 projects[date_ical][subdir] = contrib
@@ -321,24 +333,25 @@ projects[date_ical][download][branch] = 7.x-2.x
 
 projects[geophp][type] = module
 projects[geophp][subdir] = contrib
-projects[geophp][version] = 1.7
+projects[geophp][download][version] = 1.7
 
 projects[geofield][type] = module
 projects[geofield][subdir] = contrib
-projects[geofield][version] = 1.1
+projects[geofield][download][version] = 1.1
 
 projects[geocoder][type] = module
 projects[geocoder][subdir] = contrib
 projects[geocoder][download][type] = git
 projects[geocoder][download][url] = http://git.drupal.org/project/geocoder.git
 projects[geocoder][download][branch] = 7.x-1.x
-projects[geocoder][download][revision] = 8e531f4
+projects[geocoder][download][revision] = f6b34bc
+projects[geocoder][patch][1996592] = http://drupal.org/files/1996592-geocoder_geocode_values.patch
 
-projects[panels_customerror][type] = module
-projects[panels_customerror][subdir] = contrib
-projects[panels_customerror][download][type] = git
-projects[panels_customerror][download][url] = http://git.drupal.org/project/panels_customerror.git
-projects[panels_customerror][download][branch] = 7.x-1.x
+libraries[fullcalendar][download][type] = get
+libraries[fullcalendar][download][url] = http://arshaw.com/fullcalendar/downloads/fullcalendar-1.6.1.zip
+libraries[fullcalendar][directory_name] = fullcalendar
+libraries[fullcalendar][destination] = libraries
+libraries[fullcalendar][download][subtree] = fullcalendar-1.6.1/fullcalendar
 
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************

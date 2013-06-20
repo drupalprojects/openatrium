@@ -19894,6 +19894,11 @@ form .pane-oa-widgets-add-content li a.button.fake-cancel, .pane-oa-widgets-add-
   margin-bottom: 3px;
 }
 
+/* line 5, ../sass/_view.scss */
+table thead th {
+  background-color: #eee;
+}
+
 /* line 6, ../sass/_form.scss */
 .form-actions {
   border: 0;
