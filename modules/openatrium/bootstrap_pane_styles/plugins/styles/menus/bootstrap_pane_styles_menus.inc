@@ -42,14 +42,16 @@ $plugin = array(
  * Render callback for menu_tree
  */
 function theme_bootstrap_pane_styles_menu_tree($vars) {
-  return '<ul class="' . $vars['tree']['#ul_classes'] . '">' . $vars['tree']['#children'] . '</ul>';
+  $vars['tree']['#attributes']['class'] .= ' nav';
+  return '<ul ' . drupal_attributes($vars['tree']['#attributes']) . ' ' . $vars['tree']['#children'] . '</ul>';
 }
 
 /**
  * Render callback for btn group
  */
 function theme_bootstrap_pane_styles_btn_group($vars) {
-  $group = '<div class="btn-group">' . $vars['tree']['#children'] . '</div>';
+  $vars['tree']['#attributes']['class'] .= ' btn-group';
+  $group = '<div ' .  drupal_attributes($vars['tree']['#attributes'])  . '>' . $vars['tree']['#children'] . '</div>';
   if (!empty($vars['tree']['#bootstrap_stacked'])) {
     $group = '<div>' . $group . '</div>';
   }
@@ -199,13 +201,21 @@ function theme_bootstrap_pane_styles_menus_style_render_pane($vars) {
       $content[$child_key]['#theme_wrappers'] = array('bootstrap_pane_styles_btn_group');
     }
   }
+  $attributes = array('class' => '');
+  if ($vars['content']->css_id) {
+    $attributes['id'] = $vars['content']->css_id;
+  }
+  if ($vars['content']->css_class) {
+    $attributes['class'] = $vars['content']->css_class;
+  }
   if ($is_button_style) {
     $content['#theme_wrappers'] = array('bootstrap_pane_styles_btn_toolbar');
   }
   else {
     $content['#theme_wrappers'] = array('bootstrap_pane_styles_menu_tree');
-    $content['#ul_classes'] = $ul_classes;
+    $attributes['class'] .= $ul_classes;
   }
+  $content['#attributes'] = $attributes;
   // Render the pane as normal
   $content = drupal_render($content);
   return $content && $wrapper_theme ? theme($wrapper_theme, $vars) : $content;
