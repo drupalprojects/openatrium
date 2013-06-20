@@ -333,7 +333,7 @@ projects[date_ical][download][branch] = 7.x-2.x
 
 projects[geophp][type] = module
 projects[geophp][subdir] = contrib
-projects[geophp][download][version] = 1.7
+projects[geophp][version] = 1.7
 
 projects[geofield][type] = module
 projects[geofield][subdir] = contrib
