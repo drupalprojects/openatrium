@@ -43,7 +43,7 @@ $plugin = array(
  */
 function theme_bootstrap_pane_styles_menu_tree($vars) {
   $vars['tree']['#attributes']['class'] .= ' nav';
-  return '<ul ' . drupal_attributes($vars['tree']['#attributes']) . ' ' . $vars['tree']['#children'] . '</ul>';
+  return '<ul ' . drupal_attributes($vars['tree']['#attributes']) . '> ' . $vars['tree']['#children'] . '</ul>';
 }
 
 /**
