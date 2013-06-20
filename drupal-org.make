@@ -18,6 +18,7 @@ projects[panels][download][url] = http://git.drupal.org/project/panels.git
 projects[panels][download][revision] = a915408
 projects[panels][download][branch] = 7.x-3.x
 projects[panels][patch][1838544] = http://drupal.org/files/1838544-panels_ipe_region_style_0.patch
+projects[panels][patch][2024441] = https://drupal.org/files/panels_edit_style_settings_form_validate_include_plugins.patch
 
 projects[ctools][type] = module
 projects[ctools][subdir] = contrib
@@ -27,6 +28,7 @@ projects[ctools][download][revision] = 83817fa
 projects[ctools][download][branch] = 7.x-1.x
 projects[ctools][patch][1838544] = http://drupal.org/files/1901106-ctools-views_content-exposed_form_override-13.patch
 projects[ctools][patch][2016559] = http://drupal.org/files/ctools_views_content_numeric_pager_id.patch
+projects[ctools][patch][2023705] = https://drupal.org/files/2023705-ctools-autosubmit-2.patch
 
 ; Override panopoly_core.make: 3.1
 ; Update Panelizer to latest dev version
@@ -387,7 +389,7 @@ projects[panopoly_magic][download][revision] = 16add888f93577ad9a27379ca309fcf7b
 projects[panopoly_magic][download][branch] = 7.x-1.x
 projects[panopoly_magic][patch][2016527] = http://drupal.org/files/2016527-panopoly_magic_parents_exposed-2.patch
 projects[panopoly_magic][patch][2016643] = http://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-3-do-not-test.patch
-projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-1.patch
+projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-5.patch
 
 
 projects[panopoly_widgets][version] = 1.x-dev

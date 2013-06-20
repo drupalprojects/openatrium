@@ -426,6 +426,10 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
     );
   }
   if (isset($form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id'])) {
+  
+    if (isset($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id'])) {
+      $form['buttons']['#process'] = array('oa_core_form_views_content_views_panes_content_type_edit_process', 'form_process_actions', 'form_process_container');
+    }
     $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'] = array(NULL => t('- Active Section -')) + $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'];
   }
   if (!empty($form['exposed']['filter-uid'])) {
@@ -449,6 +453,64 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
     $form['display_settings']['show_exposed_form']['#weight'] = 10;
     unset($form['show_exposed_form']);
   }
+}
+
+/**
+ * Only way I figured out to change the #ajax of this w/o changing the weight.
+ * Can't hook_form_alter cause go before panopoly_magic and panopoly_magic does
+ * module implements alter and puts itself last. Argh!
+ */
+function oa_core_form_views_content_views_panes_content_type_edit_process($element, &$form_state) {
+  if (isset($element['preview']['#ajax'])) {
+    $element['preview']['#ajax']['callback'] = 'oa_core_refresh_oa_section_ref_target_id';
+    $form_state['executed'] = TRUE;
+  }
+  return $element;
+}
+
+/**
+ * Replaces any changed elements on the form on ajax.
+ */
+function oa_core_refresh_oa_section_ref_target_id($form, $form_state) {
+  $messages = theme('status_messages');
+  $messages = $messages ? $messages : '';
+  $return = array(
+    '#type' => 'ajax',
+    '#commands' => array(),
+  );
+  $return['#commands'][] = ajax_command_replace('#panopoly-form-widget-preview', $messages . panopoly_magic_ajax_update_preview($form, $form_state));
+  if (isset($form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id'])) {
+    // Redo the exposed form to get new values with new configuration.
+    $view = $form_state['view'];
+    $exposed_form_state = array(
+      'view' => &$view,
+      'display' => &$view->display[$display_id],
+    );
+    $view->set_exposed_input($form['#panopoly_magic_preview_info']['configuration']['exposed']);
+    if (version_compare(views_api_version(), '3', '>=')) {
+      $exposed_form_state['exposed_form_plugin'] = $view->display_handler->get_plugin('exposed_form');
+    }
+    $view->init_handlers();
+    $exposed_form = array();
+    $exposed_form = views_exposed_form($exposed_form, $exposed_form_state);
+
+    // Change the exposed filter.
+    $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'] =
+      array_intersect_key($form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#options'], array(NULL, 'All'))
+      + $exposed_form['oa_section_ref_target_id']['#options'];
+    $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#theme_wrappers'] = array();
+    $form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']['#attributes']['id'] = 'edit-exposed-oa-section-ref-target-id';
+    $return['#commands'][] = ajax_command_replace('#edit-exposed-oa-section-ref-target-id', drupal_render($form['exposed']['filter-oa_section_ref_target_id']['oa_section_ref_target_id']));
+  }
+  // the "my spaces" may have changed this, so update it.
+  if (isset($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id'])) {
+    $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#theme_wrappers'] = array();
+    $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#attributes']['id'] = 'edit-exposed-og-group-ref-target-id';
+    $return['#commands'][] = ajax_command_replace('#edit-exposed-og-group-ref-target-id', drupal_render($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']));
+  
+  }
+
+  return $return;
 }
 
 /**
