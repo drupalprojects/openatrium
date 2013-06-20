@@ -1,9 +1,10 @@
 .oa-event-date-wrapper {
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
   margin: 5px;
   border: 1px solid #AAA;
   background: #F6F7FC;
+  float: left;
 }
 
 .oa-event-date-month-wrapper {
@@ -18,7 +19,7 @@
   margin: 0 auto;
   display: block;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1em;
   font-weight: bold;
   color: #FFFFFF;
 }
@@ -34,8 +35,8 @@
 
 .oa-event-date-day {
   display: block;
-  padding-top: 25%;
-  font-size: 3.5em;
+  padding-top: 20%;
+  font-size: 2.5em;
   text-align: center;
 }
 
@@ -59,6 +60,10 @@
 .oa-event-description ul,
 .oa-event-list li {
   list-style: none;
+}
+.view-oa-event-list li {
+  overflow: hidden;
+  clear: both;
 }
 
 .view .date-nav-wrapper .date-prev,
