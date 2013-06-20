@@ -315,7 +315,6 @@ projects[fullcalendar][download][url] = http://git.drupal.org/project/fullcalend
 projects[fullcalendar][download][type] = git
 projects[fullcalendar][version] = 2.0
 projects[fullcalendar][download][branch] = 7.x-2.x
-projects[fullcalendar][patch][1814972] = https://drupal.org/files/og-7.x-2.x_0.patch
 
 projects[colors][type] = module
 projects[colors][subdir] = contrib
@@ -323,6 +322,7 @@ projects[colors][download][url] = http://git.drupal.org/project/colors.git
 projects[colors][download][type] = git
 projects[colors][version] = 1.0-rc1
 projects[colors][download][branch] = 7.x-1.x
+projects[colors][patch][1814972] = https://drupal.org/files/og-7.x-2.x_0.patch
 
 projects[date_ical][type] = module
 projects[date_ical][subdir] = contrib
