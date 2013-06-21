@@ -202,10 +202,10 @@ function theme_bootstrap_pane_styles_menus_style_render_pane($vars) {
     }
   }
   $attributes = array('class' => '');
-  if ($vars['content']->css_id) {
+  if (!empty($vars['content']->css_id)) {
     $attributes['id'] = $vars['content']->css_id;
   }
-  if ($vars['content']->css_class) {
+  if (!empty($vars['content']->css_class)) {
     $attributes['class'] = $vars['content']->css_class;
   }
   if ($is_button_style) {
