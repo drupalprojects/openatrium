@@ -5,3 +5,12 @@
  */
 
 include_once 'oa_layouts.features.inc';
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function oa_layouts_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools') {
+    return 'plugins/' . $plugin;
+  }
+}

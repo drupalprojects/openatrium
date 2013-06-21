@@ -23,4 +23,5 @@ features[panelizer_defaults][] = node:oa_space:default
 features[panelizer_defaults][] = node:oa_space:space_description
 features[panels_mini][] = oa_footer_panel
 features[panels_mini][] = oa_toolbar_panel
+features[pipelines][] = ipe_node_access
 project path = profiles/openatrium/modules/features

@@ -24,4 +24,7 @@ function oa_layouts_ctools_plugin_api() {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
+  if ($module == 'panels' && $api == 'pipelines') {
+    return array("version" => "1");
+  }
 }
