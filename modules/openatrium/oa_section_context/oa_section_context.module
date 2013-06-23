@@ -48,9 +48,14 @@ function oa_section_context_init() {
  * session context if it exists.
  */
 function oa_section_context_form_node_form_alter(&$form, &$form_state, $form_id) {
-  if (empty($form[OA_SECTION_FIELD][LANGUAGE_NONE]['#default_value'])) {
-    if (!empty($_SESSION[OA_SESSION_SECTION])) {
-      $form[OA_SECTION_FIELD][LANGUAGE_NONE]['#default_value'] = $_SESSION[OA_SESSION_SECTION];
-    }
+  if (!empty($_REQUEST['oa_section_ref'])) {
+    $section = check_plain($_REQUEST['oa_section_ref']);
+  }
+  elseif (!empty($_SESSION[OA_SESSION_SECTION])) {
+    $section = $_SESSION[OA_SESSION_SECTION];
+  }
+
+  if (empty($form[OA_SECTION_FIELD][LANGUAGE_NONE]['#default_value']) && !empty($section)) {
+    $form[OA_SECTION_FIELD][LANGUAGE_NONE]['#default_value'] = $section;
   }
 }
