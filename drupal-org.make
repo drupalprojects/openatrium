@@ -223,6 +223,13 @@ projects[feeds][download][url] = http://git.drupal.org/project/feeds.git
 projects[feeds][download][branch] = 7.x-2.x
 projects[feeds][download][revision] = 7e6679d
 
+; Command buttons
+projects[command_buttons][type] = module
+projects[command_buttons][subdir] = contrib
+projects[command_buttons][download][type] = git
+projects[command_buttons][download][url] = http://git.drupal.org/project/command_buttons.git
+projects[command_buttons][download][branch] = 7.x-1.x
+projects[command_buttons][download][revision] = c31f9b1
 
 ; Google Analytics
 projects[google_analytics][subdir] = contrib
