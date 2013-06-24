@@ -1,9 +1,5 @@
 <?php
 
-function oa_buttons_install() {
-  oa_buttons_create_default_terms();
-}
-
 /**
  * @file
  * Install and update functionality..
