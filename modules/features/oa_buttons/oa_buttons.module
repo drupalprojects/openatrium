@@ -369,7 +369,7 @@ function oa_buttons_get_default_terms() {
  */
 function oa_section_create_term($taxonomy, $name, $node_options, $layout) {
   $vocab = taxonomy_vocabulary_machine_name_load($taxonomy);
-  if (!taxonomy_get_term_by_name($name, $vocab->vid)) {
+  if (!taxonomy_get_term_by_name($name, $taxonomy)) {
     $term = array(
       'vid' => $vocab->vid,
       'name' => $name,
