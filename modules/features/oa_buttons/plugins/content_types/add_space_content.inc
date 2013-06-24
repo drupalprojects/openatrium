@@ -10,7 +10,6 @@ $plugin = array(
   'category' => array(t('Open Atrium'), -9),
   'edit form' => 'oa_buttons_add_space_content_settings_form',
   'render callback' => 'oa_buttons_add_space_content_render',
-  'required context' => new ctools_context_required(t('Node'), 'node'),
 );
 
 
