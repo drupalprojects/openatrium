@@ -369,7 +369,7 @@ function oa_buttons_get_default_terms() {
  */
 function oa_buttons_create_term($taxonomy, $name, $node_options, $layout) {
   $vocab = taxonomy_vocabulary_machine_name_load($taxonomy);
-  if (!taxonomy_get_term_by_name($name, $taxonomy)) {
+  if (!($term = taxonomy_get_term_by_name($name, $taxonomy))) {
     $term = array(
       'vid' => $vocab->vid,
       'name' => $name,
@@ -379,8 +379,7 @@ function oa_buttons_create_term($taxonomy, $name, $node_options, $layout) {
         ),
       ),
       'field_oa_node_types' => array(
-        LANGUAGE_NONE => array(
-        ),
+        LANGUAGE_NONE => array(),
       ),
     );
 
@@ -392,6 +391,7 @@ function oa_buttons_create_term($taxonomy, $name, $node_options, $layout) {
     $term = (object) $term;
     taxonomy_term_save($term);
   }
+  return $term;
 }
 
 /**
