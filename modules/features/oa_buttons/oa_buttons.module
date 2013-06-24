@@ -306,7 +306,7 @@ function oa_buttons_get_default_terms() {
       'name' => 'Default',
       'node_options' => array(
         'oa_team',
-        'oa_buttons',
+        'oa_section',
       ),
       'layout' => 'node:oa_space:default'
     ),
@@ -315,7 +315,7 @@ function oa_buttons_get_default_terms() {
       'name' => 'Space Members',
       'node_options' => array(
         'oa_team',
-        'oa_buttons',
+        'oa_section',
       ),
       'layout' => 'node:oa_space:space_description'
     ),
@@ -417,9 +417,8 @@ function oa_buttons_clear_section_button_cache($gid = NULL) {
 
   if (empty($gid)) {
     $context = og_context();
-    $gid = $context['gid'];
   }
-  if (!empty($gid)) {
+  if (!empty($context['gid'])) {
     $cache_key = 'oa_section_buttons:' . $context['gid'] . ':' . $user->uid;
     cache_clear_all($cache_key, 'cache_oa_section_buttons');
   }
