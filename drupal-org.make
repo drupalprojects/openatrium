@@ -38,7 +38,7 @@ projects[panelizer][download][type] = git
 projects[panelizer][download][url] = http://git.drupal.org/project/panelizer.git
 projects[panelizer][download][branch] = 7.x-3.x
 projects[panelizer][download][revision] = 1e050d3
-projects[panelizer][patch][1992106] = http://drupal.org/files/panelizer_strongarm_vars_load.patch
+projects[panelizer][patch][1992106] = http://drupal.org/files/1992106_panelizer_features_pipe-1.patch
 projects[panelizer][patch][1982654] = http://drupal.org/files/1982654-panelizer-dontaskmethatagain-2.patch
 projects[panelizer][patch][2022541] = http://drupal.org/files/2022541-panelizer-node-page-unpublished-1.patch
 
@@ -299,6 +299,13 @@ projects[conditional_fields][subdir] = contrib
 projects[conditional_fields][download][branch] = 7.x-3.x
 projects[conditional_fields][download][revision] = cd29b00
 projects[conditional_fields][patch][1982276] = http://drupal.org/files/conditional_fields-typo-in-if-condition-1982276-1.patch
+
+; Trash Flag
+projects[trash_flag][type] = module
+projects[trash_flag][download][type] = git
+projects[trash_flag][subdir] = contrib
+projects[trash_flag][download][url] = http://git.drupal.org/project/trash_flag.git
+projects[trash_flag][download][branch] = 7.x-1.x
 
 projects[panels_customerror][type] = module
 projects[panels_customerror][subdir] = contrib

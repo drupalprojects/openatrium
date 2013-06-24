@@ -77,5 +77,76 @@ function oa_wiki_user_default_permissions() {
     'module' => 'panelizer',
   );
 
+  // Exported permission: create oa_wiki_page content.
+  $permissions['create oa_wiki_page content'] = array(
+    'name' => 'create oa_wiki_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any oa_wiki_page content.
+  $permissions['delete any oa_wiki_page content'] = array(
+    'name' => 'delete any oa_wiki_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own oa_wiki_page content.
+  $permissions['delete own oa_wiki_page content'] = array(
+    'name' => 'delete own oa_wiki_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any oa_wiki_page content.
+  $permissions['edit any oa_wiki_page content'] = array(
+    'name' => 'edit any oa_wiki_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own oa_wiki_page content.
+  $permissions['edit own oa_wiki_page content'] = array(
+    'name' => 'edit own oa_wiki_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: trash any oa_wiki_page content.
+  $permissions['trash any oa_wiki_page content'] = array(
+    'name' => 'trash any oa_wiki_page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'trash_flag',
+  );
+
+  // Exported permission: trash own oa_wiki_page content.
+  $permissions['trash own oa_wiki_page content'] = array(
+    'name' => 'trash own oa_wiki_page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'trash_flag',
+  );
+
+  // Exported permission: untrash any oa_wiki_page content.
+  $permissions['untrash any oa_wiki_page content'] = array(
+    'name' => 'untrash any oa_wiki_page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'trash_flag',
+  );
+
+  // Exported permission: untrash own oa_wiki_page content.
+  $permissions['untrash own oa_wiki_page content'] = array(
+    'name' => 'untrash own oa_wiki_page content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'trash_flag',
+  );
+
   return $permissions;
 }

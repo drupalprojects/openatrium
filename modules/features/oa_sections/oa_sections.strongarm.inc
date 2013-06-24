@@ -13,6 +13,13 @@ function oa_sections_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_oa_section';
+  $strongarm->value = 'edit-panelizer';
+  $export['additional_settings__active_tab_oa_section'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_oa_section';
   $strongarm->value = 0;
   $export['comment_anonymous_oa_section'] = $strongarm;
@@ -58,6 +65,48 @@ function oa_sections_strongarm() {
   $strongarm->name = 'comment_subject_field_oa_section';
   $strongarm->value = 1;
   $export['comment_subject_field_oa_section'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_popup_authored_enabled_oa_section';
+  $strongarm->value = 1;
+  $export['date_popup_authored_enabled_oa_section'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_popup_authored_format_oa_section';
+  $strongarm->value = 'm/d/Y - H:i';
+  $export['date_popup_authored_format_oa_section'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_popup_authored_year_range_oa_section';
+  $strongarm->value = '3';
+  $export['date_popup_authored_year_range_oa_section'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_oa_section';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_oa_section'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_oa_section';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_oa_section'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_oa_section';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_oa_section'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -149,6 +198,13 @@ function oa_sections_strongarm() {
   $strongarm->name = 'node_submitted_oa_section';
   $strongarm->value = 0;
   $export['node_submitted_oa_section'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'og_menu_enable_oa_section';
+  $strongarm->value = 0;
+  $export['og_menu_enable_oa_section'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
