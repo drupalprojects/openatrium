@@ -23,7 +23,7 @@
     },
     updateSection: function(context) {
       var section = $('select:[name="field_oa_section[und]"], select:[name="field_oa_space_type[und]"]', context).val();
-      if (section) {
+      if (section && Drupal.settings.oaButtons[section]) {
         var layout = Drupal.settings.oaButtons[section].layout;
         var $layout_selector = $('select:[name="panelizer[page_manager][name]"]', context);
         var override = $('input:[name="field_oa_section_override[und]"]:checked', context).length;

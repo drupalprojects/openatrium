@@ -306,7 +306,7 @@ function oa_buttons_get_default_terms() {
       'name' => 'Default',
       'node_options' => array(
         'oa_team',
-        'oa_buttons',
+        'oa_section',
       ),
       'layout' => 'node:oa_space:default'
     ),
@@ -315,7 +315,7 @@ function oa_buttons_get_default_terms() {
       'name' => 'Space Members',
       'node_options' => array(
         'oa_team',
-        'oa_buttons',
+        'oa_section',
       ),
       'layout' => 'node:oa_space:space_description'
     ),
@@ -369,7 +369,7 @@ function oa_buttons_get_default_terms() {
  */
 function oa_buttons_create_term($taxonomy, $name, $node_options, $layout) {
   $vocab = taxonomy_vocabulary_machine_name_load($taxonomy);
-  if (!taxonomy_get_term_by_name($name, $taxonomy)) {
+  if (!($term = taxonomy_get_term_by_name($name, $taxonomy))) {
     $term = array(
       'vid' => $vocab->vid,
       'name' => $name,
@@ -379,8 +379,7 @@ function oa_buttons_create_term($taxonomy, $name, $node_options, $layout) {
         ),
       ),
       'field_oa_node_types' => array(
-        LANGUAGE_NONE => array(
-        ),
+        LANGUAGE_NONE => array(),
       ),
     );
 
@@ -392,6 +391,7 @@ function oa_buttons_create_term($taxonomy, $name, $node_options, $layout) {
     $term = (object) $term;
     taxonomy_term_save($term);
   }
+  return $term;
 }
 
 /**
@@ -417,9 +417,8 @@ function oa_buttons_clear_section_button_cache($gid = NULL) {
 
   if (empty($gid)) {
     $context = og_context();
-    $gid = $context['gid'];
   }
-  if (!empty($gid)) {
+  if (!empty($context['gid'])) {
     $cache_key = 'oa_section_buttons:' . $context['gid'] . ':' . $user->uid;
     cache_clear_all($cache_key, 'cache_oa_section_buttons');
   }
