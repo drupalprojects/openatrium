@@ -278,7 +278,7 @@ function oa_buttons_get_command_buttons($node) {
  * Implements hook_modules_enabled().
  */
 function oa_buttons_modules_enabled($modules) {
-  //features_revert(array('oa_buttons' => array('taxonomy', 'field_instance', 'field_base')));
+  features_revert(array('oa_buttons' => array('taxonomy', 'field_instance', 'field_base')));
   if (in_array('oa_buttons', $modules)) {
     oa_buttons_create_default_terms();
   }
