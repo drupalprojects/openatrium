@@ -69,6 +69,10 @@ function oa_dashboard_block_info() {
     'info' => t('Open Atrium Toolbar Menu Button'),
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
+  $blocks['oa_breadcrumb'] = array(
+    'info' => t('Open Atrium Breadcrumbs'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
 
   return $blocks;
 }
@@ -97,6 +101,10 @@ function oa_dashboard_block_view($delta = '') {
         }
       }
       break;
+    case 'oa_breadcrumb':
+      $block['subject'] = '';
+      $block['content'] = theme('oa_breadcrumb');
+      break;
   }
 
   return $block;
@@ -115,6 +123,9 @@ function oa_dashboard_theme() {
     ),
     'oa_toolbar_menu_button' => array(
       'template' => 'oa_toolbar_menu_button',
+    ),
+    'oa_breadcrumb' => array(
+      'template' => 'oa_breadcrumb',
     ),
   );
 }
@@ -141,6 +152,8 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   $vars['spaces_favorite'] = '';
   $vars['sections_label'] = '';
   $vars['sections_list'] = '';
+  $vars['parent_label'] = '';
+  $vars['parent_url'] = '';
 
   // grab list of user's spaces and sections
   $vars['space_label'] = t('Spaces');
@@ -151,6 +164,22 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
     if (!empty($title['titles'][0])) {
       $vars['space_label'] = $title['titles'][0];
       $vars['space_url'] = url('node/' . $space_id);
+    }
+    // get the parents that are Spaces
+    $parents = oa_core_get_parents($space_id, OA_SPACE_TYPE);
+    if (count($parents)) {
+      $items = oa_core_get_titles($parents);
+      if (!empty($items['titles'][0])) {
+        $vars['parent_label'] = $items['titles'][0];
+        $vars['parent_url'] = url('node/' . $parents[0]);
+      }
+      if (count($parents) > 1) {
+        $list = oa_core_truncate_list($items['links'], 15);
+        $vars['parent_list'] = theme('item_list', array(
+          'items' => $list,
+          'type' => 'ul',
+        ));
+      }
     }
   }
 
@@ -253,6 +282,12 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
 }
 
+/**
+ * Preprocess function for the oa_breadcrumb.
+ */
+function oa_dashboard_preprocess_oa_breadcrumb(&$vars) {
+  oa_dashboard_preprocess_oa_toolbar($vars);
+}
 
 /**
  * Preprocess function for the oa_user_badge block.

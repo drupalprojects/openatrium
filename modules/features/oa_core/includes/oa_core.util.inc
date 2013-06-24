@@ -28,6 +28,30 @@ function oa_core_get_section_context() {
 }
 
 /**
+ * Return an array of parent nids
+ * @param  int $nid    nid of space/group to check
+ * @param  string $bundle node type
+ * @return array of parent nids
+ */
+function oa_core_get_parents($nid, $bundle = OA_SPACE_TYPE) {
+  $cache = &drupal_static(__FUNCTION__);
+
+  if (!isset($cache[$nid][$bundle])) {
+    $query = db_select('og_membership', 'f');
+    $query->leftJoin('node', 'n', "n.nid = f.gid");
+    $result = $query
+      ->fields('f', array('gid'))
+      ->condition('f.etid', $nid)
+      ->condition('f.entity_type', 'node')
+      ->condition('n.type', $bundle)
+      ->execute()
+      ->fetchCol(0);
+    $cache[$nid][$bundle] = $result;
+  }
+  return $cache[$nid][$bundle];
+}
+
+/**
  * Determine if a user is a member of a team
  * @param  int $team_id
  * @param  int $user_id

@@ -1,4 +1,4 @@
-<ul id="oa_toolbar">
+<ul id="oa_toolbar" class="oa_toolbar">
   <?php if (!empty($space_label)): ?>
     <li class="btn-group">
       <a href="<?php print $home_url; ?>"><i class="icon-home"></i></a>
