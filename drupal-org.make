@@ -158,6 +158,7 @@ projects[flag][download][url] = http://git.drupal.org/project/flag.git
 projects[flag][download][branch] = 7.x-2.x
 projects[flag][download][revision] = 32cac54
 projects[flag][patch][471212] = http://drupal.org/files/471212-14-flag-all-bundles.patch
+projects[flag][patch][2027091] = http://drupal.org/files/flag_hook_flag_default_flags_alter.patch
 
 ; RealName
 projects[realname][subdir] = contrib
