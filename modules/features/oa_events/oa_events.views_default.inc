@@ -776,8 +776,12 @@ function oa_events_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['style_plugin'] = 'fullcalendar';
+  $handler->display->display_options['style_options']['left'] = 'month agendaWeek agendaDay';
+  $handler->display->display_options['style_options']['right'] = 'today prev,next';
+  $handler->display->display_options['style_options']['advanced'] = TRUE;
+  $handler->display->display_options['style_options']['timeformatMonth'] = 'h(:mm)t';
+  $handler->display->display_options['style_options']['sameWindow'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -878,10 +882,19 @@ function oa_events_views_default_views() {
   /* Display: Daily Calendar */
   $handler = $view->new_display('panel_pane', 'Daily Calendar', 'oa_calendar_day');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'fullcalendar';
+  $handler->display->display_options['style_options']['defaultView'] = 'agendaDay';
+  $handler->display->display_options['style_options']['left'] = '';
+  $handler->display->display_options['style_options']['center'] = '';
+  $handler->display->display_options['style_options']['right'] = 'today prev,next';
+  $handler->display->display_options['style_options']['advanced'] = TRUE;
+  $handler->display->display_options['style_options']['timeformatMonth'] = 'h(:mm)t';
+  $handler->display->display_options['style_options']['columnformatDay'] = 'dddd, MMM d, yyyy';
+  $handler->display->display_options['style_options']['sameWindow'] = TRUE;
+  $handler->display->display_options['style_options']['contentHeight'] = 480;
+  $handler->display->display_options['style_options']['fullcalendar_options']['firstHour'] = 8;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium Events';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -906,10 +919,19 @@ function oa_events_views_default_views() {
   /* Display: Weekly Calendar */
   $handler = $view->new_display('panel_pane', 'Weekly Calendar', 'oa_calendar_week');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'fullcalendar';
+  $handler->display->display_options['style_options']['defaultView'] = 'agendaWeek';
+  $handler->display->display_options['style_options']['left'] = 'title';
+  $handler->display->display_options['style_options']['center'] = '';
+  $handler->display->display_options['style_options']['right'] = 'today prev,next';
+  $handler->display->display_options['style_options']['advanced'] = TRUE;
+  $handler->display->display_options['style_options']['timeformatMonth'] = 'h(:mm)t';
+  $handler->display->display_options['style_options']['columnformatDay'] = 'dddd, MMM d, yyyy';
+  $handler->display->display_options['style_options']['sameWindow'] = TRUE;
+  $handler->display->display_options['style_options']['contentHeight'] = 480;
+  $handler->display->display_options['style_options']['fullcalendar_options']['firstHour'] = 8;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium Events';
   $handler->display->display_options['pane_category']['weight'] = '0';
