@@ -21,14 +21,14 @@ function oa_buttons_ctools_plugin_directory($owner, $plugin_type) {
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_buttons_form_oa_section_node_form_alter(&$form, &$form_state, $form_id) {
-  oa_section_node_overrides(&$form, &$form_state, $form_id);
+  oa_section_node_overrides($form, $form_state, $form_id);
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_buttons_form_oa_space_node_form_alter(&$form, &$form_state, $form_id) {
-  oa_section_node_overrides(&$form, &$form_state, $form_id);
+  oa_section_node_overrides($form, $form_state, $form_id);
 }
 
 /**

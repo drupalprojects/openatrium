@@ -26,7 +26,6 @@ function oa_buttons_update_7005() {
 function oa_buttons_update_7006(&$sandbox) {
   $terms = oa_buttons_get_default_terms();
 
-
   // If this is the first pass through this update function then set some variables.
   if (!isset($sandbox['total'])) {
     $result = db_query('SELECT nid FROM {node} WHERE type IN (:types)', array(':types' => array('oa_space', 'oa_section')));
@@ -55,7 +54,6 @@ function oa_buttons_update_7006(&$sandbox) {
             elseif($node->type == 'oa_space') {
               $node->field_oa_space_type[$node->language][0]['tid'] = $t->tid;
             }
-            print $node->nid;
           }
         }
       }
