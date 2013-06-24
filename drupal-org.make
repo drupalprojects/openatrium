@@ -110,9 +110,9 @@ projects[features_override][version] = 2.0-beta2
 ; Features
 projects[features][subdir] = contrib
 projects[features][download][type] = git
-projects[features][download][url] = http://git.drupal.org/project/token.git
+projects[features][download][url] = http://git.drupal.org/project/features.git
 projects[features][download][branch] = 7.x-2.x
-projects[radix][patch][2027023] = http://drupal.org/files/features_conflict_components.patch
+projects[features][patch][2027023] = http://drupal.org/files/features_conflict_components.patch
 
 ; Organic Groups
 projects[og][subdir] = contrib
