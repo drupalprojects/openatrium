@@ -42,3 +42,15 @@ function openatrium_update_7004() {
   );
   module_enable($enable);
 }
+
+
+/**
+ * Enable command_buttons.
+ */
+function openatrium_update_7004() {
+  $enable = array(
+    'command_buttons',
+  );
+  module_enable($enable);
+}
+

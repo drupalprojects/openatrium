@@ -68,3 +68,34 @@ function oa_buttons_update_7006(&$sandbox) {
 function oa_buttons_update_7007() {
   drupal_install_schema('oa_buttons');
 }
+
+/**
+ * Update default section buttons to fix bug with initial creation.
+ */
+function oa_buttons_update_7008() {
+  $terms = oa_buttons_get_default_terms();
+  foreach ($terms as $machine_name => $t) {
+    $vocab = taxonomy_vocabulary_machine_name_load($taxonomy);
+    if ($term = taxonomy_get_term_by_name($t['name'], $t['taxonomy'])) {
+      $term = reset($term);
+      $term->name = $t['name'];
+      $term->field_oa_section_layout = array(
+        LANGUAGE_NONE => array(
+          array('value' => $t['layout']),
+        ),
+      );
+
+      $term->field_oa_node_types = array(
+        LANGUAGE_NONE => array(
+        ),
+      );
+
+      if (!empty($t['node_options'])) {
+        foreach ($t['node_options'] as $type) {
+          $term->field_oa_node_types[LANGUAGE_NONE][] = array('value' => $type);
+        }
+      }
+      taxonomy_term_save($term);
+    }
+  }
+}
