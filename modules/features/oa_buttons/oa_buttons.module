@@ -278,7 +278,6 @@ function oa_buttons_get_command_buttons($node) {
  * Implements hook_modules_enabled().
  */
 function oa_buttons_modules_enabled($modules) {
-  features_revert(array('oa_buttons' => array('taxonomy', 'field_instance', 'field_base')));
   if (in_array('oa_buttons', $modules)) {
     oa_buttons_create_default_terms();
   }
@@ -288,6 +287,9 @@ function oa_buttons_modules_enabled($modules) {
  * Create default terms for section and space type taxonomies.
  */
 function oa_buttons_create_default_terms() {
+  // Revert features to known proper state, also clear the static for taxonomy_get_term_by_name().
+  features_revert(array('oa_buttons' => array('taxonomy', 'field_instance', 'field_base')));
+  drupal_static('taxonomy_vocabulary_get_names', NULL, TRUE);
   $terms = oa_buttons_get_default_terms();
   foreach ($terms as $term) {
     oa_section_create_term($term['taxonomy'], $term['name'], $term['node_options'], $term['layout']);
