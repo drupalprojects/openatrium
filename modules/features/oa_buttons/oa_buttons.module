@@ -21,20 +21,20 @@ function oa_buttons_ctools_plugin_directory($owner, $plugin_type) {
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_buttons_form_oa_section_node_form_alter(&$form, &$form_state, $form_id) {
-  oa_section_node_overrides($form, $form_state, $form_id);
+  oa_buttons_node_overrides($form, $form_state, $form_id);
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_buttons_form_oa_space_node_form_alter(&$form, &$form_state, $form_id) {
-  oa_section_node_overrides($form, $form_state, $form_id);
+  oa_buttons_node_overrides($form, $form_state, $form_id);
 }
 
 /**
  * Provides override for node pages which impliment sections and spaces.
  */
-function oa_section_node_overrides(&$form, &$form_state, $form_id) {
+function oa_buttons_node_overrides(&$form, &$form_state, $form_id) {
   $node_type_options = oa_buttons_get_node_type_options();
   $form['field_oa_node_types'][$form['field_oa_node_types']['#language']]['#options'] = $node_type_options;
    $node_options = field_get_items('node', $form['#node'], 'field_oa_node_types', LANGUAGE_NONE);
@@ -288,11 +288,11 @@ function oa_buttons_modules_enabled($modules) {
  */
 function oa_buttons_create_default_terms() {
   // Revert features to known proper state, also clear the static for taxonomy_get_term_by_name().
-  features_revert(array('oa_buttons' => array('taxonomy', 'field_instance', 'field_base')));
-  drupal_static('taxonomy_vocabulary_get_names', NULL, TRUE);
+  features_revert(array('oa_buttons' => array('taxonomy','field_base', 'field_instance')));
+  drupal_static('taxonomy_vocabulary_get_names');
   $terms = oa_buttons_get_default_terms();
   foreach ($terms as $term) {
-    oa_section_create_term($term['taxonomy'], $term['name'], $term['node_options'], $term['layout']);
+    oa_buttons_create_term($term['taxonomy'], $term['name'], $term['node_options'], $term['layout']);
   }
 }
 
@@ -367,7 +367,7 @@ function oa_buttons_get_default_terms() {
  * @param $layout
  *   The panelizer layout key to use for this section.
  */
-function oa_section_create_term($taxonomy, $name, $node_options, $layout) {
+function oa_buttons_create_term($taxonomy, $name, $node_options, $layout) {
   $vocab = taxonomy_vocabulary_machine_name_load($taxonomy);
   if (!taxonomy_get_term_by_name($name, $taxonomy)) {
     $term = array(

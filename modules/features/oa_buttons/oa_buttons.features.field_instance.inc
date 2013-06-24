@@ -10,7 +10,6 @@
 function oa_buttons_field_default_field_instances() {
   $field_instances = array();
 
-
   // Exported field_instance: 'node-oa_section-field_oa_node_types'
   $field_instances['node-oa_section-field_oa_node_types'] = array(
     'bundle' => 'oa_section',
@@ -443,7 +442,6 @@ function oa_buttons_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Allowed in space and section configuration');
   t('Chose the default layout for this section');
   t('Node Types');
   t('Override default section options');
