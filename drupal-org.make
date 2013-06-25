@@ -114,6 +114,11 @@ projects[features][download][url] = http://git.drupal.org/project/features.git
 projects[features][download][branch] = 7.x-2.x
 projects[features][patch][2027023] = http://drupal.org/files/features_conflict_components.patch
 
+projects[views][version] = 3.7
+projects[views][subdir] = contrib
+projects[views][patch][1979926] = http://drupal.org/files/1979926-views-reset_fetch_data-2.patch
+projects[views][patch][1735096] = http://drupal.org/files/multi-instance-exposed-form-safety.patch
+
 ; Organic Groups
 projects[og][subdir] = contrib
 projects[og][version] = 2.2
@@ -376,11 +381,6 @@ libraries[fullcalendar][download][url] = http://arshaw.com/fullcalendar/download
 libraries[fullcalendar][directory_name] = fullcalendar
 libraries[fullcalendar][destination] = libraries
 libraries[fullcalendar][download][subtree] = fullcalendar-1.6.1/fullcalendar
-
-
-projects[views][patch][1735096] = http://drupal.org/files/multi-instance-exposed-form-safety.patch
-projects[views][patch][1979926] = http://drupal.org/files/1979926-views-reset_fetch_data-2.patch
-projects[views][subdir] = contrib
 
 
 ; ******** End Open Atrium's Dependencies ********
