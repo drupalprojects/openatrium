@@ -242,7 +242,7 @@ projects[command_buttons][subdir] = contrib
 projects[command_buttons][download][type] = git
 projects[command_buttons][download][url] = http://git.drupal.org/project/command_buttons.git
 projects[command_buttons][download][branch] = 7.x-1.x
-projects[command_buttons][download][revision] = c31f9b1
+projects[command_buttons][download][revision] = 2cf233d
 
 ; Google Analytics
 projects[google_analytics][subdir] = contrib
