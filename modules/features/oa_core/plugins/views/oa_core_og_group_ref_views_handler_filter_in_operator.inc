@@ -6,6 +6,7 @@
  */
 
 class oa_core_og_group_ref_views_handler_filter_in_operator extends views_handler_filter_in_operator {
+  private $fail_build = FALSE;
   function init(&$view, &$options) {
     parent::init($view, $options);
     $exposed = $this->view->get_exposed_input();
@@ -25,15 +26,30 @@ class oa_core_og_group_ref_views_handler_filter_in_operator extends views_handle
       $exposed[$id . '_mine'] = 1;
     }
     global $user;
-    if (!empty($exposed[$id . '_mine']) && ($gids = array_intersect_key(og_get_groups_by_user($user, 'node'), $this->get_value_options()))) {
-      $exposed[$id] = $gids;
-      $this->options['expose']['multiple'] = TRUE;
+    if (!empty($exposed[$id . '_mine'])) {
+      $groups = og_get_groups_by_user($user, 'node');
+      if ($groups && ($gids = array_intersect_key(og_get_groups_by_user($user, 'node'), $this->get_value_options()))) {
+        $exposed[$id] = $gids;
+        $this->options['expose']['multiple'] = TRUE;
+      }
+      else {
+        drupal_set_message('set fail build');
+        $this->fail_build = TRUE;
+      }
     }
     // If was multiple from mine setting, clear it out.
     elseif (empty($this->options['expose']['multiple']) && isset($exposed[$id]) && is_array($exposed[$id])) {
       unset($exposed[$id]);
     }
     $this->view->set_exposed_input($exposed);
+  }
+
+  function query() {
+    parent::query();
+    if (!empty($this->fail_build)) {
+      $this->view->build_info['fail'] = TRUE;
+      drupal_seT_message('fail build');
+    }
   }
 
   function exposed_form(&$form, &$form_state) {
