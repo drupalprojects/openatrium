@@ -314,6 +314,8 @@ projects[conditional_fields][subdir] = contrib
 projects[conditional_fields][download][branch] = 7.x-3.x
 projects[conditional_fields][download][revision] = cd29b00
 projects[conditional_fields][patch][1982276] = http://drupal.org/files/conditional_fields-typo-in-if-condition-1982276-1.patch
+projects[conditional_fields][patch][2027307] = https://drupal.org/files/conditional_fields-export-0.patch
+projects[conditional_fields][patch][1916988] = https://drupal.org/files/1916988-conditional-fields-alter-3.patch
 
 ; Trash Flag
 projects[trash_flag][type] = module
