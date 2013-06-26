@@ -360,6 +360,11 @@ projects[date_ical][download][url] = http://git.drupal.org/project/date_ical.git
 projects[date_ical][download][type] = git
 projects[date_ical][download][branch] = 7.x-2.x
 
+; iCalCreator library
+libraries[icalcreator][download][type] = file
+libraries[icalcreator][download][url] = http://kigkonsult.se/downloads/dl.php?f=iCalcreator-2.16.12
+libraries[icalcreator][directory_name] = iCalcreator
+
 projects[geophp][type] = module
 projects[geophp][subdir] = contrib
 projects[geophp][version] = 1.7
