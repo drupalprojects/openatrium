@@ -16,6 +16,8 @@ $plugin = array(
   'defaults' => array(
     'hide_owner' => FALSE,
     'hide_teams' => FALSE,
+    'hide_members' => FALSE,
+    'hide_inherited' => FALSE,
     'show_number' => 10,
   ),
 );
@@ -73,10 +75,12 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   }
 
   $space_title = ($space->type == OA_SPACE_TYPE) ? t('Space') : t('Group');
-  $vars['space_title'] = $space_title;
-  $vars['owner_title'] = $space_title . ' ' . t('owners');
-  $vars['team_title']  = t('Teams');
-  $vars['parent_title'] = t('Inheriting members from');
+  $vars['title'] = array(
+    'teams' => t('Teams'),
+    'members' => $space_title,
+    'owners' => $space_title . ' ' . t('owners'),
+    'parents' => t('Inheriting members from'),
+  );
   $items = array(
     'teams' => $teams,
     'members' => $members,
@@ -107,9 +111,22 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   }
   if (!empty($conf['hide_owner'])) {
     unset($vars['owners']);
+    unset($vars['title']['owners']);
   }
   if (!empty($conf['hide_teams'])) {
     unset($vars['teams']);
+    unset($vars['title']['teams']);
+  }
+  if (!empty($conf['hide_teams'])) {
+    unset($vars['members']);
+    unset($vars['title']['members']);
+  }
+  if (!empty($conf['hide_inherited'])) {
+    unset($vars['parents']);
+    unset($vars['title']['parents']);
+  }
+  if (count($vars['title'] == 1)) {
+    unset($vars['title']);
   }
   $block->content = theme('oa_core_members_widget', $vars);
   return $block;
@@ -162,6 +179,16 @@ function oa_core_members_widget_edit_form($form, &$form_state) {
     '#title' => t('Hide teams'),
     '#type' => 'checkbox',
     '#default_value' => $conf['hide_teams'],
+  );
+  $form['hide_members'] = array(
+    '#title' => t('Hide members'),
+    '#type' => 'checkbox',
+    '#default_value' => $conf['hide_members'],
+  );
+  $form['hide_inherited'] = array(
+    '#title' => t('Hide inherited'),
+    '#type' => 'checkbox',
+    '#default_value' => $conf['hide_inherited'],
   );
   $form['show_number'] = array(
     '#title' => t('Number of members to show'),

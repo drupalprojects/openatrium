@@ -14,9 +14,14 @@
  */
 ?>
 
+<?php
+  $well = (!empty($title)) ? ' well well-small' : '';
+?>
 <?php if (!empty($parents)): ?>
-<div class='clearfix well well-small parents'>
-  <h5><?php print $parent_title?></h5>
+<div class='clearfix <?php print $well;?> parents'>
+  <?php if (!empty($title['parents'])):?>
+    <h5><?php print $title['parents']?></h5>
+  <?php endif;?>
   <?php foreach ($parents as $parent): ?>
     <div class='pull-left parent label'>
       <?php print $parent['title']; ?>
@@ -26,8 +31,10 @@
 <?php endif; ?>
 
 <?php if (!empty($owners)): ?>
-<div class='clearfix well well-small owners'>
-  <h5><?php print $owner_title?></h5>
+<div class='clearfix <?php print $well;?> owners'>
+  <?php if (!empty($title['owners'])):?>
+    <h5><?php print $title['owners']?></h5>
+  <?php endif;?>
   <?php foreach ($owners as $owner): ?>
     <?php if (empty($links['remove-admin']) || empty($owner['uid'])): ?>
       <div class='pull-left user-badge'>
@@ -54,8 +61,10 @@
 <?php endif; ?>
 
 <?php if (!empty($teams)): ?>
-<div class='clearfix well well-small teams'>
-  <h5><?php print $team_title?></h5>
+<div class='clearfix <?php print $well;?> teams'>
+  <?php if (!empty($title['teams'])):?>
+    <h5><?php print $title['teams']?></h5>
+  <?php endif; ?>
   <?php foreach ($teams as $team): ?>
     <div class='pull-left team label'>
       <?php print $team['title']; ?>
