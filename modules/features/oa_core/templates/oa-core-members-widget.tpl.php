@@ -91,7 +91,7 @@
         <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
           <ul>
             <li><?php print l(t('Dashboard'), $links['dashboard'] . $member['uid']); ?></li>
-            <li><?php print l(t('Remove from ') . $space_title, $links['remove'] . $member['uid']); ?></li>
+            <li><?php print l(t('Remove from ') . $title['members'], $links['remove'] . $member['uid']); ?></li>
             <li><?php print l(t('Add as Admin'), $links['add-admin'] . $member['uid']); ?></li>
           </ul>
         </div>
