@@ -158,6 +158,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   // grab list of user's spaces and sections
   $vars['space_label'] = t('Spaces');
   $vars['space_url'] = url('spaces');
+  $parent_id = NULL;
   if (isset($space_id)) {
     // get name of current space (without fully loading node)
     $title = oa_core_get_titles(array($space_id));
@@ -165,26 +166,42 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
       $vars['space_label'] = $title['titles'][0];
       $vars['space_url'] = url('node/' . $space_id);
     }
-    // get the parents that are Spaces
-    $parents = oa_core_get_parents($space_id, OA_SPACE_TYPE);
-    if (count($parents)) {
-      $items = oa_core_get_titles($parents);
-      if (!empty($items['titles'][0])) {
-        $vars['parent_label'] = $items['titles'][0];
-        $vars['parent_url'] = url('node/' . $parents[0]);
-      }
-      if (count($parents) > 1) {
-        $list = oa_core_truncate_list($items['links'], 15);
-        $vars['parent_list'] = theme('item_list', array(
-          'items' => $list,
-          'type' => 'ul',
-        ));
+    if (isset($vars['show_parents'])) {
+      // get the parents that are Spaces
+      $parents = oa_core_get_parents($space_id, OA_SPACE_TYPE);
+      if (count($parents)) {
+        $items = oa_core_get_titles($parents);
+        if (!empty($items['titles'][0])) {
+          $vars['parent_label'] = $items['titles'][0];
+          $parent_id = $parents[0];
+          $vars['parent_url'] = url('node/' . $parent_id);
+        }
+        if (count($parents) > 1) {
+          $list = oa_core_truncate_list($items['links'], 15);
+          $vars['parent_list'] = theme('item_list', array(
+            'items' => $list,
+            'type' => 'ul',
+          ));
+        }
       }
     }
   }
 
+  $show_all = TRUE;
+  $menu_title = '';
+  $spaces = NULL;
   // get names of spaces
-  if ($user->uid == 0) {
+  if (isset($vars['show_parents'])) {
+    if (isset($parent_id)) {
+      $spaces = oa_get_groups_by_parent($parent_id, OA_SPACE_TYPE);
+      $show_all = FALSE;
+    }
+    elseif (isset($space_id)) {
+      $spaces = oa_get_groups_by_parent($space_id, OA_SPACE_TYPE);
+      $show_all = FALSE;
+    }
+  }
+  elseif ($user->uid == 0) {
     // og_get_entity_groups doesn't return anything for anonymous users
     // so return list of all public spaces
     $spaces = oa_core_get_public_spaces();
@@ -199,10 +216,10 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
   }
   else {
     $items = oa_core_get_titles($spaces, OA_SPACE_TYPE);
-    $list = oa_core_truncate_list($items['links'], 15,
+    $list = oa_core_truncate_list($items['links'], 25,
       l(t('All spaces...'), 'spaces',
         array('attributes' => array('class' => array('more-link')))),
-      TRUE);
+      $show_all);
   }
   if (!empty($list)) {
     $vars['spaces_recent'] = theme('item_list', array(
@@ -286,6 +303,7 @@ function oa_dashboard_preprocess_oa_toolbar(&$vars) {
  * Preprocess function for the oa_breadcrumb.
  */
 function oa_dashboard_preprocess_oa_breadcrumb(&$vars) {
+  $vars['show_parents'] = TRUE;
   oa_dashboard_preprocess_oa_toolbar($vars);
 }
 

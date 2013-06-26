@@ -40,10 +40,36 @@ function oa_core_get_parents($nid, $bundle = OA_SPACE_TYPE) {
     $query = db_select('og_membership', 'f');
     $query->leftJoin('node', 'n', "n.nid = f.gid");
     $result = $query
-      ->fields('f', array('gid'))
+      ->fields('n', array('nid'))
       ->condition('f.etid', $nid)
       ->condition('f.entity_type', 'node')
       ->condition('n.type', $bundle)
+      ->orderBy('n.title')
+      ->execute()
+      ->fetchCol(0);
+    $cache[$nid][$bundle] = $result;
+  }
+  return $cache[$nid][$bundle];
+}
+
+/**
+ * Return an array of children groups
+ * @param  int $nid    nid of space/group to check
+ * @param  string $bundle node type
+ * @return array of children nids
+ */
+function oa_get_groups_by_parent($nid, $bundle = OA_SPACE_TYPE) {
+  $cache = &drupal_static(__FUNCTION__);
+
+  if (!isset($cache[$nid][$bundle])) {
+    $query = db_select('og_membership', 'f');
+    $query->leftJoin('node', 'n', "n.nid = f.etid");
+    $result = $query
+      ->fields('n', array('nid'))
+      ->condition('f.gid', $nid)
+      ->condition('f.entity_type', 'node')
+      ->condition('n.type', $bundle)
+      ->orderBy('n.title')
       ->execute()
       ->fetchCol(0);
     $cache[$nid][$bundle] = $result;
@@ -191,18 +217,21 @@ function oa_core_create_node($bundle, $title = '', $context = NULL) {
  *   'links' is a list of node links
  *   'ids' is a list of the node ids
  */
-function oa_core_get_titles($ids = array(), $type = '', $sort_field = NULL) {
+function oa_core_get_titles($ids = array(), $type = '', $sort_field = 'title') {
   $items = array('titles' => array(), 'links' => array(), 'ids' => array());
   if (!empty($ids)) {
     $query = db_select('node', 'n');
-    if (!empty($sort_field)) {
+    if (!empty($sort_field) && ($sort_field != 'title')) {
       $query->leftJoin('field_data_' . $sort_field, 's',
         "n.nid = s.entity_id AND s.entity_type = 'node'");
     }
     $query
       ->fields('n', array('nid', 'title'))
       ->condition('n.nid', $ids, 'IN');
-    if (!empty($sort_field)) {
+    if ($sort_field == 'title') {
+      $query->orderBy('title');
+    }
+    elseif (!empty($sort_field)) {
       $query->orderBy('s.' . $sort_field . '_value');
     }
     if (!empty($type)) {
