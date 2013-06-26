@@ -54,3 +54,16 @@ function openatrium_update_7005() {
   module_enable($enable);
 }
 
+
+
+/**
+ * Enable date_all_day.
+ */
+function openatrium_update_7006() {
+  $enable = array(
+    'date_all_day',
+  );
+  module_enable($enable);
+}
+
+

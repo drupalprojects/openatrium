@@ -10,6 +10,7 @@ dependencies[] = date
 dependencies[] = date_ical
 dependencies[] = date_repeat_field
 dependencies[] = date_views
+dependencies[] = date_all_day
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
