@@ -125,7 +125,7 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     unset($vars['parents']);
     unset($vars['title']['parents']);
   }
-  if (count($vars['title'] == 1)) {
+  if (count($vars['title']) == 1) {
     unset($vars['title']);
   }
   $block->content = theme('oa_core_members_widget', $vars);
