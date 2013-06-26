@@ -717,7 +717,7 @@ function oa_discussion_views_default_views() {
     'oa_section_ref_target_id' => array(
       'type' => 'context',
       'context' => 'entity:node.nid',
-      'context_optional' => 0,
+      'context_optional' => 1,
       'panel' => '0',
       'fixed' => '',
       'label' => 'Content: OpenAtrium Section (oa_section_ref)',
