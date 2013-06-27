@@ -308,14 +308,16 @@ function oa_discussion_mark_as_read($nids) {
  * Change the subscribe flag for the notifications pane to use parent post id.
  */
 function oa_discussion_alter_notifications_pane(&$content, $pane, $args, $context) {
-  $node = $context->data;
-  if ($node->type == 'oa_discussion_post' && isset($content->content['#subscribe'])) {
-    $parent_id = empty($node->oa_parent) ? FALSE : $node->oa_parent[LANGUAGE_NONE][0]['target_id'];
-    if ($parent_id) {
-      $content->content['#subscribe'] = array(
-        '#type' => 'markup',
-        '#markup' => flag_create_link('subscribe_section_content', $parent_id),
-      );
+  if (isset($context->data)) {
+    $node = $context->data;
+    if ($node->type == 'oa_discussion_post' && isset($content->content['#subscribe'])) {
+      $parent_id = empty($node->oa_parent) ? FALSE : $node->oa_parent[LANGUAGE_NONE][0]['target_id'];
+      if ($parent_id) {
+        $content->content['#subscribe'] = array(
+          '#type' => 'markup',
+          '#markup' => flag_create_link('subscribe_section_content', $parent_id),
+        );
+      }
     }
   }
 }
