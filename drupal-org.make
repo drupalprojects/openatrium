@@ -137,7 +137,7 @@ projects[og_subgroups][subdir] = contrib
 projects[og_subgroups][download][type] = git
 projects[og_subgroups][download][url] = http://git.drupal.org/project/og_subgroups.git
 projects[og_subgroups][download][branch] = 7.x-2.x
-projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-1.patch
+projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-2.patch
 projects[og_subgroups][patch][1995018] = https://drupal.org/files/1995018-og_subgroups_og_alter-5.patch
 
 ; Message
