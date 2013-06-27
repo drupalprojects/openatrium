@@ -120,8 +120,11 @@ projects[views][patch][1979926] = http://drupal.org/files/1979926-views-reset_fe
 projects[views][patch][1735096] = http://drupal.org/files/multi-instance-exposed-form-safety.patch
 
 ; Organic Groups
+projects[og][download][type] = git
 projects[og][subdir] = contrib
-projects[og][version] = 2.2
+projects[og][download][url] = http://git.drupal.org/project/og.git
+projects[og][download][branch] = 7.x-2.x
+projects[og][download][revision] = 05ee95269e2c31492158dc6eabd2e386aec1c931
 projects[og][patch][1995012] = http://drupal.org/files/og_membership_alter.patch
 
 ; Organic Groups Vocabulary
