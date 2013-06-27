@@ -1,8 +1,10 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Open Atrium Permissions feature.
  */
+
+include_once 'oa_permissions.features.inc';
 
 /**
  * Implements hook_pre_features_rebuild().

@@ -364,10 +364,13 @@ function _oa_buttons_perm_name($machine_name, $tid) {
  */
 function oa_buttons_get_allowed_types($field) {
   $options = array();
-  if (user_access('create oa_space content')) {
+  $gid = oa_core_get_space_context();
+  // If no gid, may be using this as a filter or such.
+  // @see oa_subspaces_form_node_form_alter().
+  if (!$gid || !module_exists('oa_subspaces') || user_access('administer group') || user_access('create oa_space content') || og_user_access('node', $gid, 'use any oa button space_type') || og_user_access('node', $gid, 'administer group')) {
     return taxonomy_allowed_values($field);
   }
-  if ($gid = oa_core_get_space_context()) {
+  if ($gid) {
     foreach ($field['settings']['allowed_values'] as $tree) {
       if ($vocabulary = taxonomy_vocabulary_machine_name_load($tree['vocabulary'])) {
         if ($terms = taxonomy_get_tree($vocabulary->vid, $tree['parent'])) {
@@ -385,10 +388,15 @@ function oa_buttons_get_allowed_types($field) {
 
 function oa_buttons_og_permission() {
   $perms = array();
-  if (module_exists('oa_subgroups') && ($vocabulary = taxonomy_vocabulary_machine_name_load('space_type')) && ($terms = taxonomy_get_tree($vocabulary->vid, 0))) {
+  if (module_exists('oa_subspaces') && ($vocabulary = taxonomy_vocabulary_machine_name_load('space_type')) && ($terms = taxonomy_get_tree($vocabulary->vid, 0))) {
+    $perms['use any oa button space_type'] = array(
+      'title' => t('Use any space type'),
+      'description' => t('Users may use any of the available space types..'),
+      'restrict access' => TRUE,
+    );
     foreach ($terms as $term) {
       $perms[_oa_buttons_perm_name('space_type', $term->tid)] = array(
-        'title' => t('User @name space type', array('@name' => $term->name)),
+        'title' => t('Use @name space type', array('@name' => $term->name)),
         'description' => t('Users may select @name space type on create space form. This permission will be ignored if user can create space globally or if they can administer current group.', array('@name' => $term->name)),
         'restrict access' => TRUE,
       );

@@ -30,12 +30,13 @@ function oa_subspaces_form_node_form_alter(&$form, $form_state, $form_id) {
     $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#title'] = t('Parent Spaces');
     $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#description'] = t('Inherit membership from the selected spaces.');
     $type = $form['#node']->type;
+    $admin_access = user_access('create ' . $type . ' content') || user_access('administer group');
     if (empty($form['#node']->nid)) {
       $gid = oa_core_get_space_context();
       // If they are being granted create permission based on group permission
       // restrict the parent field to current group so don't have to deal with
       // changing values in form based on changed parent field.
-      if (!user_access('create ' . $type . ' content')) {
+      if (!$admin_access) {
         if (!$gid || !in_array($gid, $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default'])) {
           drupal_access_denied();
           die();
@@ -49,7 +50,7 @@ function oa_subspaces_form_node_form_alter(&$form, $form_state, $form_id) {
     }
     // When on edit form, restrict parent and space type field on edit
     // to avoid any access issues between space type and parent.
-    elseif (!user_access('create ' . $type . ' content') && !empty($form['field_oa_space_type'])) {
+    elseif (!$admin_access && !empty($form['field_oa_space_type'])) {
       $form['field_oa_space_type']['#access'] = FALSE;
       $form[OA_PARENT_SPACE]['#access'] = FALSE;
     }
