@@ -588,6 +588,16 @@ function oa_events_views_default_views() {
   $handler->display->display_options['filters']['field_oa_date_value2']['default_date'] = 'today';
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium Events';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Past Events */
   $handler = $view->new_display('panel_pane', 'Past Events', 'panel_pane_1');
@@ -595,6 +605,16 @@ function oa_events_views_default_views() {
   $handler->display->display_options['title'] = 'Past Events';
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium Events';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: iCal Feed */
   $handler = $view->new_display('feed', 'iCal Feed', 'oa_events_ical');
@@ -671,22 +691,6 @@ function oa_events_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_oa_event_link']['id'] = 'field_oa_event_link';
-  $handler->display->display_options['fields']['field_oa_event_link']['table'] = 'field_data_field_oa_event_link';
-  $handler->display->display_options['fields']['field_oa_event_link']['field'] = 'field_oa_event_link';
-  $handler->display->display_options['fields']['field_oa_event_link']['label'] = '';
-  $handler->display->display_options['fields']['field_oa_event_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_oa_event_link']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_oa_location']['id'] = 'field_oa_location';
-  $handler->display->display_options['fields']['field_oa_location']['table'] = 'field_data_field_oa_location';
-  $handler->display->display_options['fields']['field_oa_location']['field'] = 'field_oa_location';
-  $handler->display->display_options['fields']['field_oa_location']['label'] = '';
-  $handler->display->display_options['fields']['field_oa_location']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_oa_location']['alter']['text'] = '[field_oa_location]
-[field_oa_event_link]';
-  $handler->display->display_options['fields']['field_oa_location']['element_label_colon'] = FALSE;
   /* Field: Content: Event Date */
   $handler->display->display_options['fields']['field_oa_date_1']['id'] = 'field_oa_date_1';
   $handler->display->display_options['fields']['field_oa_date_1']['table'] = 'field_data_field_oa_date';
@@ -755,6 +759,16 @@ function oa_events_views_default_views() {
   $handler->display->display_options['filters']['field_oa_date_value2']['default_date'] = 'today';
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium Events';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $export['oa_event_list'] = $view;
 
   $view = new view();
