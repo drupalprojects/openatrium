@@ -133,11 +133,8 @@ projects[og_subgroups][subdir] = contrib
 projects[og_subgroups][download][type] = git
 projects[og_subgroups][download][url] = http://git.drupal.org/project/og_subgroups.git
 projects[og_subgroups][download][branch] = 7.x-2.x
-projects[og_subgroups][download][revision] = 7693f8915cb4bd45ae01c39d7abd5b54128e6d31
-projects[og_subgroups][patch][1985514] = http://drupal.org/files/og_subgroup-1985514-1.patch
-projects[og_subgroups][patch][1993944] = http://drupal.org/files/1993944_og_subgroups_fields-1.patch
-projects[og_subgroups][patch][1995018] = http://drupal.org/files/og_subgroups_og_get_groups_by_user_alter.patch
-projects[og_subgroups][patch][2017955] = http://drupal.org/files/og_subgroups-recursion-depth-2017955-6.patch
+projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-1.patch
+projects[og_subgroups][patch][1995018] = https://drupal.org/files/1995018-og_subgroups_og_alter-5.patch
 
 ; Message
 projects[message][subdir] = contrib
@@ -326,6 +323,12 @@ projects[panels_customerror][subdir] = contrib
 projects[panels_customerror][download][type] = git
 projects[panels_customerror][download][url] = http://git.drupal.org/project/panels_customerror.git
 projects[panels_customerror][download][branch] = 7.x-1.x
+
+; Jquery Update
+projects[jquery_update][subdir] = contrib
+projects[jquery_update][version] = 2.3
+projects[jquery_update][patch][1448490] = http://drupal.org/files/jquery_update-fixes-states-js-1448490.patch
+
 
 ; Open Atrium Events Makefile
 ;; eventually this gets moved to oa_events when it's a full drupal.org project

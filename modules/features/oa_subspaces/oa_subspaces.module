@@ -40,6 +40,13 @@ function oa_subspaces_form_node_form_alter(&$form, $form_state, $form_id) {
         }
       }
     }
+    if (isset($form[OG_USER_INHERITANCE_FIELD][LANGUAGE_NONE]) && isset($form[OG_USER_INHERITANCE_PERMISSION_FIELD][LANGUAGE_NONE])) {
+      $form[OG_USER_INHERITANCE_PERMISSION_FIELD][LANGUAGE_NONE]['#states'] = array(
+        'visible' => array(
+          ':input[name="og_user_inheritance[und]"]' => array(array('value' => 1)),
+        ),
+      );
+    }
   }
 }
 
@@ -237,5 +244,14 @@ function oa_subspaces_views_query_alter(&$view, &$query) {
         }
       }
     }
+  }
+}
+
+/**
+ * Implements hook_field_access().
+ */
+function oa_subspaces_field_access($op, $field, $entity_type, $entity, $account) {
+  if ($field['field_name'] == OG_USER_INHERITANCE_PERMISSION_FIELD && $op == 'edit') {
+    return user_access('administer group', $account);
   }
 }

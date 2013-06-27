@@ -85,5 +85,29 @@ function oa_subspaces_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
+  // Exported field_base: 'og_user_permission_inheritance'
+  $field_bases['og_user_permission_inheritance'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'og_user_permission_inheritance',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'no_ui' => TRUE,
+    'settings' => array(
+      'allowed_values' => array(),
+      'allowed_values_function' => 'og_subgroups_og_user_inhertiance_permission_allowed_values',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   return $field_bases;
 }
