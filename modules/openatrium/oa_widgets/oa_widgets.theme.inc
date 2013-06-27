@@ -26,5 +26,13 @@ function oa_widgets_theme() {
       ),
       'path' => drupal_get_path('module', 'oa_widgets') . '/templates',
     ),
+    'oa_widgets_visibility_toolbar' => array(
+      'template'  => 'oa-widgets-visibility-toolbar',
+      'arguments' => array(
+        'public' => NULL,
+        'links'  => array(),
+      ),
+      'path' => drupal_get_path('module', 'oa_widgets') . '/templates',
+    ),
   );
 }

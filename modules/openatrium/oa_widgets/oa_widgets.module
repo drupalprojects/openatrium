@@ -7,11 +7,13 @@
 
 include_once 'oa_widgets.theme.inc';
 
-/* 
+/*
  * Implements hook_ctools_plugin_directory
- */ 
+ */
 function oa_widgets_ctools_plugin_directory($owner, $plugin_type) {
   if ($owner == 'ctools' && $plugin_type == 'content_types') {
     return 'plugins/content_types';
   }
 }
+
+

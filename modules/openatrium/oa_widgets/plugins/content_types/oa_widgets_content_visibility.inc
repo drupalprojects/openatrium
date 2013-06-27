@@ -15,7 +15,6 @@ $plugin = array(
   'required context' => new ctools_context_required(t('Node'), 'node'),
 );
 
-
 /**
  * Render callback for the content visibility panel.
  */
@@ -23,85 +22,15 @@ function oa_widgets_content_visibility_render($subtype, $conf, $args, $context =
   if (!isset($context->data)) {
     return;
   }
-  $vars = array();
   $block = new stdClass();
   $block->title = 'Content Visibility';
 
   $node = $context->data;
-  $vars['published'] = !empty($node->status);
-  if ($node->type == OA_SPACE_TYPE || $node->type == OA_GROUP_TYPE) {
-    $visibility = field_get_items('node', $node, 'group_access');
-    $vars['public'] = empty($visibility[0]['value']);
-    if (!$vars['public']) {
-      $vars['accessors']['group'] = array(
-        'links' => oa_widgets_build_visibility_links('node', $node, 'oa_parent_space', OA_GROUP_TYPE),
-        'label' => t('Groups'),
-      );
-      $vars['accessors']['space'] = array(
-        'links' => oa_widgets_build_visibility_links('node', $node, 'oa_parent_space', OA_SPACE_TYPE),
-        'label' => t('Spaces'),
-      );
-    }
-  }
-  else {
-
-    if ($node->type == OA_SECTION_TYPE) {
-      $section_node = $node;
-    }
-    else {
-      $section_reference_field = field_get_items('node', $node, OA_SECTION_FIELD);
-      $section_node = node_load($section_reference_field[0]['target_id']);
-    }
-    $vars['public'] = oa_core_section_is_public($section_node);
-
-    if (!$vars['public']) {
-      $space_reference_field = field_get_items('node', $section_node, OA_SPACE_FIELD);
-      $space_node = node_load($space_reference_field[0]['target_id']);
-
-      $vars['accessors']['group'] = array(
-        'links' => oa_widgets_build_visibility_links('node', $section_node, OA_GROUP_FIELD),
-        'label' => t('Groups'),
-      );
-      $vars['accessors']['teams'] = array(
-        'links' => oa_widgets_build_visibility_links('node', $section_node, OA_TEAM_FIELD),
-        'label' => t('Teams'),
-      );
-      $vars['accessors']['users'] = array(
-        'links' => oa_widgets_build_visibility_links('user', $section_node, OA_USER_FIELD),
-        'label' => t('Additional Users'),
-      );
-    }
-  }
+  $vars = oa_core_visibility_data($node);
 
   $block->content = theme('oa_widgets_content_visibility', $vars);
   return $block;
 }
-
-
-/**
- * Helper function, builds links for the various visibility fields on content.
- */
-function oa_widgets_build_visibility_links($type, $node, $field, $bundle = '') {
-  $links = array();
-  $values = field_get_items('node', $node, $field);
-  if (!empty($values)) {
-    $links = array();
-    foreach ($values as $value) {
-      if ($type == 'node') {
-        $value_node = node_load($value['target_id']);
-        if (empty($bundle) || ($bundle == $value_node->type)) {
-          $links[] = l($value_node->title, "node/" . $value_node->nid);
-        }
-      }
-      elseif ($type == 'user') {
-        $user = user_load($value['target_id']);
-        $links[] = l($user->name, "user/" . $user->uid);
-      }
-    }
-  }
-  return $links;
-}
-
 
 /**
  * Custom edit form to allow users to enable/disable selectable content types
@@ -109,7 +38,6 @@ function oa_widgets_build_visibility_links($type, $node, $field, $bundle = '') {
 function oa_widgets_content_visibility_edit_form($form, &$form_state) {
   return $form;
 }
-
 
 /**
  * Saves changes to the widget.

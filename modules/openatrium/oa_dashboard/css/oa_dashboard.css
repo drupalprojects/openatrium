@@ -16,33 +16,33 @@ ul.oa_toolbar {
   margin: 3px 0 0 10px;
 }
 
-.navbar-inverse ul.oa_toolbar .btn.btn-inverse {
+.navbar-inverse #oa-navbar .btn.btn-inverse {
   color: #BBB;
 }
 
-.navbar-inverse ul.oa_toolbar .caret {
+.navbar-inverse #oa-navbar .caret {
   border-top-color: #BBB;
   border-bottom-color: #BBB;
 }
 
-.navbar-inverse ul.oa_toolbar .icon-home {
+.navbar-inverse #oa-navbar .icon-home {
   color: #BBB;
 }
 
-ul.oa_toolbar .btn {
+.oa_toolbar .btn {
 	padding: 0.5em 1em;
 	margin: 0 0;
 }
-ul.oa_toolbar .btn-group {
+#oa-navbar .btn-group {
 	margin: 0;
 }
 
-ul.oa_toolbar ul.dropdown-menu .dropdown-column {
+#oa-navbar ul.dropdown-menu .dropdown-column {
 	float: left;
 	margin: 0.5em;
 	padding: 0;
 }
-ul.oa_toolbar ul.dropdown-menu h3 {
+#oa-navbar ul.dropdown-menu h3 {
 	color: white;
 	font-size: 14px;
 	line-height: 30px;
@@ -51,19 +51,19 @@ ul.oa_toolbar ul.dropdown-menu h3 {
 	background-color: #333
 }
 
-ul.oa_toolbar li ul li {
+#oa-navbar li ul li {
   margin: 0;
 }
 
-ul.oa_toolbar li ul li ul {
+#oa-navbar li ul li ul {
   margin: 0;
 }
 
-ul.oa_toolbar li a.active {
+#oa-navbar li a.active {
 	font-style: italic;
 }
 
-ul.oa_toolbar .icon-home {
+#oa-navbar .icon-home {
 	font-size: 24px;
 	vertical-align: baseline;
 	padding: 0 0 0 0;
@@ -71,7 +71,7 @@ ul.oa_toolbar .icon-home {
   line-height: 0px;
 }
 
-ul.oa_toolbar .more-link {
+#oa-navbar .more-link {
 	font-size: 14px;
 }
 

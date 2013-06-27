@@ -30,6 +30,8 @@ function oa_favorites_favorites_button_render($subtype, $conf, $args, $context =
         'title' => t('Favorite Spaces'),
         'type' => 'ul',
       ));
+      $vars['title'] = t('Favorites');
+      $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
       $block->content = theme('oa_favorites_favorites_button', $vars);
     }
   }

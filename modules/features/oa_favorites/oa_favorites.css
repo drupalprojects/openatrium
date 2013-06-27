@@ -1,0 +1,13 @@
+#oa_favorites {
+  margin: 0;
+  margin-top: 10px;
+}
+.pull-right #oa_favorites {
+  margin-right: 5px;
+}
+.pull-left #oa_favorites {
+  margin-left: 5px;
+}
+#oa_favorites a.dropdown-toggle {
+  font-size: 16px;
+}

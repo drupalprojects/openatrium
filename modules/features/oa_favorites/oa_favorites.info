@@ -5,6 +5,7 @@ package = Open Atrium
 php = 5.2.4
 version = 7.x-2.0
 project = oa_favorites
+stylesheets[all][] = oa_favorites.css
 dependencies[] = flag
 dependencies[] = ctools
 features[features_api][] = api:1

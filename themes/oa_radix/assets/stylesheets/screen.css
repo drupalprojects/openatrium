@@ -19850,46 +19850,7 @@ form .pane-oa-widgets-add-content li a.button.fake-cancel, .pane-oa-widgets-add-
   margin: 10px 0 0;
 }
 
-/* line 179, ../sass/_panel.scss */
-.pane-oa-widgets-content-visibility .oa-visibility-private {
-  font-size: 16px;
-  text-align: center;
-  color: white;
-  background-color: #CF696B;
-  border: 2px solid #b85652;
-  padding: 5px;
-}
-/* line 186, ../sass/_panel.scss */
-.pane-oa-widgets-content-visibility .oa-visibility-private i {
-  font-size: 24px;
-  padding-right: 10px;
-  line-height: 5px;
-  color: #B33D3E;
-}
-/* line 193, ../sass/_panel.scss */
-.pane-oa-widgets-content-visibility .oa-visibility-header {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  background-color: #F2F2F2;
-  margin: 15px 0 5px 0;
-  padding: 3px 10px;
-}
-/* line 199, ../sass/_panel.scss */
-.pane-oa-widgets-content-visibility .oa-visibility-public {
-  font-size: 16px;
-  text-align: center;
-  color: #1D3800;
-  background-color: #EEFFE5;
-  border: 1px solid #bdff99;
-  padding: 5px;
-}
-/* line 207, ../sass/_panel.scss */
-.pane-oa-widgets-content-visibility .oa-visibility-list {
-  padding: 0 10px;
-}
-
-/* line 213, ../sass/_panel.scss */
+/* line 178, ../sass/_panel.scss */
 .oa-command-buttons li {
   margin-bottom: 3px;
 }

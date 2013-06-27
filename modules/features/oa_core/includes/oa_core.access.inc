@@ -255,3 +255,78 @@ function oa_core_file_entity_access($op, $file, $account) {
 function oa_core_og_membership_insert($og_membership) {
   drupal_static_reset('oa_core_node_grants');
 }
+
+function oa_core_visibility_data($node) {
+  $data = array();
+  $data['published'] = !empty($node->status);
+  if ($node->type == OA_SPACE_TYPE || $node->type == OA_GROUP_TYPE) {
+    $visibility = field_get_items('node', $node, 'group_access');
+    $data['public'] = empty($visibility[0]['value']);
+    if (!$data['public']) {
+      $data['accessors']['group'] = array(
+        'links' => _oa_core_build_visibility_links('node', $node, 'oa_parent_space', OA_GROUP_TYPE),
+        'label' => t('Groups'),
+      );
+      $data['accessors']['space'] = array(
+        'links' => _oa_core_build_visibility_links('node', $node, 'oa_parent_space', OA_SPACE_TYPE),
+        'label' => t('Spaces'),
+      );
+    }
+  }
+  else {
+
+    if ($node->type == OA_SECTION_TYPE) {
+      $section_node = $node;
+    }
+    else {
+      $section_reference_field = field_get_items('node', $node, OA_SECTION_FIELD);
+      $section_node = node_load($section_reference_field[0]['target_id']);
+    }
+    $data['public'] = oa_core_section_is_public($section_node);
+
+    if (!$data['public']) {
+      $space_reference_field = field_get_items('node', $section_node, OA_SPACE_FIELD);
+      $space_node = node_load($space_reference_field[0]['target_id']);
+
+      $data['accessors']['group'] = array(
+        'links' => _oa_core_build_visibility_links('node', $section_node, OA_GROUP_FIELD),
+        'label' => t('Groups'),
+      );
+      $data['accessors']['teams'] = array(
+        'links' => _oa_core_build_visibility_links('node', $section_node, OA_TEAM_FIELD),
+        'label' => t('Teams'),
+      );
+      $data['accessors']['users'] = array(
+        'links' => _oa_core_build_visibility_links('user', $section_node, OA_USER_FIELD),
+        'label' => t('Additional Users'),
+      );
+    }
+  }
+  $data['title'] = $data['public'] ? t('Public') : t('Private');
+  return $data;
+}
+
+/**
+ * Helper function, builds links for the various visibility fields on content.
+ */
+function _oa_core_build_visibility_links($type, $node, $field, $bundle = '') {
+  $links = array();
+  $values = field_get_items('node', $node, $field);
+  if (!empty($values)) {
+    $links = array();
+    foreach ($values as $value) {
+      if ($type == 'node') {
+        $value_node = node_load($value['target_id']);
+        if (empty($bundle) || ($bundle == $value_node->type)) {
+          $links[] = l($value_node->title, "node/" . $value_node->nid);
+        }
+      }
+      elseif ($type == 'user') {
+        $user = user_load($value['target_id']);
+        $links[] = l($user->name, "user/" . $user->uid);
+      }
+    }
+  }
+  return $links;
+}
+
