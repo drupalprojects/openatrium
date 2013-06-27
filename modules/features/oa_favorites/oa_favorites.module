@@ -5,10 +5,20 @@
  */
 
 include_once 'oa_favorites.features.inc';
+include_once 'oa_favorites.theme.inc';
 
 // Machine name for the favorite space flag.
 define('FAVORITE_SPACE', 'favorite_space');
 
+
+/*
+ * Implements hook_ctools_plugin_directory
+ */
+function oa_favorites_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+}
 
 /**
  * Get a user's favorited spaces.
