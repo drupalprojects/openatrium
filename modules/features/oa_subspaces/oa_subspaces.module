@@ -29,6 +29,30 @@ function oa_subspaces_form_node_form_alter(&$form, $form_state, $form_id) {
     unset($form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['admin']);
     $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#title'] = t('Parent Spaces');
     $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#description'] = t('Inherit membership from the selected spaces.');
+    $type = $form['#node']->type;
+    if (empty($form['#node']->nid)) {
+      $gid = oa_core_get_space_context();
+      // If they are being granted create permission based on group permission
+      // restrict the parent field to current group so don't have to deal with
+      // changing values in form based on changed parent field.
+      if (!user_access('create ' . $type . ' content')) {
+        if (!$gid || !in_array($gid, $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default'])) {
+          drupal_access_denied();
+          die();
+        }
+        else {
+          $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#default_value'] = array($gid => $gid);
+          $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#access'] = FALSE;
+          drupal_set_title(t('Create @type in @title', array('@type' => node_type_get_name($type), '@title' => $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#options'][$gid])));
+        }
+      }
+    }
+    // When on edit form, restrict parent and space type field on edit
+    // to avoid any access issues between space type and parent.
+    elseif (!user_access('create ' . $type . ' content') && !empty($form['field_oa_space_type'])) {
+      $form['field_oa_space_type']['#access'] = FALSE;
+      $form[OA_PARENT_SPACE]['#access'] = FALSE;
+    }
 
     // remove any children of this space from the selection list
     if (!empty($node->nid)) {
@@ -46,6 +70,9 @@ function oa_subspaces_form_node_form_alter(&$form, $form_state, $form_id) {
           ':input[name="og_user_inheritance[und]"]' => array(array('value' => 1)),
         ),
       );
+      // This field acts odd when required but user doesn't have access, throws
+      // a required warning when 0 is valid and works fine otherwise
+      $form[OG_USER_INHERITANCE_PERMISSION_FIELD][LANGUAGE_NONE]['#required'] = FALSE;
     }
   }
 }
@@ -253,5 +280,28 @@ function oa_subspaces_views_query_alter(&$view, &$query) {
 function oa_subspaces_field_access($op, $field, $entity_type, $entity, $account) {
   if ($field['field_name'] == OG_USER_INHERITANCE_PERMISSION_FIELD && $op == 'edit') {
     return user_access('administer group', $account);
+  }
+}
+
+/**
+ * Implements hook_og_permission_alter().
+ *
+ * Changes group create permissions to restricted.
+ */
+function oa_subspaces_og_permission_alter(&$permissions) {
+  foreach (node_permissions_get_configured_types() as $type) {
+    if (og_is_group_type('node', $type) && ($perms = og_list_permissions($type))) {
+      foreach (array_keys($perms) as $perm_name) {
+        // Group permission should onyl use the global field.
+        if ($type == 'oa_group') {
+          unset($permissions[$perm_name]);
+        }
+        elseif (!empty($permissions[$perm_name])) {
+          $permissions[$perm_name]['restrict access'] = TRUE;
+          $permissions[$perm_name]['default role'] = array(OG_ADMINISTRATOR_ROLE);
+          $permissions[$perm_name]['roles'] = array(OG_AUTHENTICATED_ROLE);
+        }
+      }
+    }
   }
 }

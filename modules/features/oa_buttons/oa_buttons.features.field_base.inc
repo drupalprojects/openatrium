@@ -139,6 +139,7 @@ function oa_buttons_field_default_field_bases() {
     'locked' => 0,
     'module' => 'taxonomy',
     'settings' => array(
+      'options_list_callback' => 'oa_buttons_get_allowed_types',
       'allowed_values' => array(
         0 => array(
           'vocabulary' => 'space_type',
