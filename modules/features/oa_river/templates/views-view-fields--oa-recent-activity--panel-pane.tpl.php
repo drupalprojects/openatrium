@@ -44,6 +44,7 @@
       <?php if (($display != 'section_activity') && !empty($field_oa_message_section)): ?>
         <?php print t(' in ') . $field_oa_message_section; ?>
       <?php endif; ?>
+    <?php if (!empty($fields['ops'])) print $fields['ops']->content; ?>
     </div>
     <?php if (strlen(trim(strip_tags($rendered_entity_2))) > 0): ?>
     <div class="accordion" id="oa-river-accordion<?php print $index; ?>">

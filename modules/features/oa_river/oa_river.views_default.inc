@@ -541,6 +541,217 @@ function oa_river_views_default_views() {
     ),
   );
   $handler->display->display_options['inherit_panels_path'] = '1';
+
+  /* Display: Subscribed Activity */
+  $handler = $view->new_display('panel_pane', 'Subscribed Activity', 'panel_pane_subscribed');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_oa_node_ref_target_id']['id'] = 'field_oa_node_ref_target_id';
+  $handler->display->display_options['relationships']['field_oa_node_ref_target_id']['table'] = 'field_data_field_oa_node_ref';
+  $handler->display->display_options['relationships']['field_oa_node_ref_target_id']['field'] = 'field_oa_node_ref_target_id';
+  $handler->display->display_options['relationships']['field_oa_node_ref_target_id']['label'] = 'Referenced Node';
+  /* Relationship: Message: User uid */
+  $handler->display->display_options['relationships']['user']['id'] = 'user';
+  $handler->display->display_options['relationships']['user']['table'] = 'message';
+  $handler->display->display_options['relationships']['user']['field'] = 'user';
+  /* Relationship: Flags: subscribe_section_content */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['relationship'] = 'field_oa_node_ref_target_id';
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'subscribe_section_content';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp_1']['id'] = 'timestamp_1';
+  $handler->display->display_options['fields']['timestamp_1']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp_1']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp_1']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_1']['date_format'] = 'panopoly_day';
+  $handler->display->display_options['fields']['timestamp_1']['oa_date'] = 'oa_date';
+  /* Field: Message: Message ID */
+  $handler->display->display_options['fields']['mid']['id'] = 'mid';
+  $handler->display->display_options['fields']['mid']['table'] = 'message';
+  $handler->display->display_options['fields']['mid']['field'] = 'mid';
+  $handler->display->display_options['fields']['mid']['label'] = '';
+  $handler->display->display_options['fields']['mid']['element_label_colon'] = FALSE;
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['label'] = '';
+  $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp']['date_format'] = 'panopoly_time';
+  $handler->display->display_options['fields']['timestamp']['oa_date'] = '0';
+  /* Field: Message: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'message';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'field_oa_node_ref_target_id';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_oa_node_ref_target_id';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Message: Space */
+  $handler->display->display_options['fields']['field_oa_message_space']['id'] = 'field_oa_message_space';
+  $handler->display->display_options['fields']['field_oa_message_space']['table'] = 'field_data_field_oa_message_space';
+  $handler->display->display_options['fields']['field_oa_message_space']['field'] = 'field_oa_message_space';
+  $handler->display->display_options['fields']['field_oa_message_space']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_message_space']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_oa_message_space']['element_class'] = 'label';
+  $handler->display->display_options['fields']['field_oa_message_space']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_message_space']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_message_space']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Message: Section */
+  $handler->display->display_options['fields']['field_oa_message_section']['id'] = 'field_oa_message_section';
+  $handler->display->display_options['fields']['field_oa_message_section']['table'] = 'field_data_field_oa_message_section';
+  $handler->display->display_options['fields']['field_oa_message_section']['field'] = 'field_oa_message_section';
+  $handler->display->display_options['fields']['field_oa_message_section']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_message_section']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_oa_message_section']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_message_section']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_message_section']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'user';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  $handler->display->display_options['fields']['realname']['relationship'] = 'user';
+  $handler->display->display_options['fields']['realname']['label'] = '';
+  $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'user';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'oa_small_thumbnail',
+    'image_link' => 'content',
+  );
+  /* Field: Message River Header */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_message';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['ui_name'] = 'Message River Header';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['preserve_tags'] = '<b> <i> <strong> <em> <a> <span> <img>';
+  $handler->display->display_options['fields']['rendered_entity']['element_type'] = 'span';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'oa_river_header';
+  /* Field: Message River Accordian */
+  $handler->display->display_options['fields']['rendered_entity_1']['id'] = 'rendered_entity_1';
+  $handler->display->display_options['fields']['rendered_entity_1']['table'] = 'views_entity_message';
+  $handler->display->display_options['fields']['rendered_entity_1']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity_1']['ui_name'] = 'Message River Accordian';
+  $handler->display->display_options['fields']['rendered_entity_1']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['max_length'] = '80';
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['preserve_tags'] = '<b> <i> <strong> <em> <a> <img>';
+  $handler->display->display_options['fields']['rendered_entity_1']['element_type'] = 'span';
+  $handler->display->display_options['fields']['rendered_entity_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity_1']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity_1']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'oa_river_accordian';
+  /* Field: Message River Body */
+  $handler->display->display_options['fields']['rendered_entity_2']['id'] = 'rendered_entity_2';
+  $handler->display->display_options['fields']['rendered_entity_2']['table'] = 'views_entity_message';
+  $handler->display->display_options['fields']['rendered_entity_2']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity_2']['ui_name'] = 'Message River Body';
+  $handler->display->display_options['fields']['rendered_entity_2']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity_2']['alter']['max_length'] = '3000';
+  $handler->display->display_options['fields']['rendered_entity_2']['alter']['more_link'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity_2']['alter']['more_link_text'] = 'Read more';
+  $handler->display->display_options['fields']['rendered_entity_2']['alter']['more_link_path'] = '/node/[nid]';
+  $handler->display->display_options['fields']['rendered_entity_2']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity_2']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity_2']['element_type'] = '0';
+  $handler->display->display_options['fields']['rendered_entity_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity_2']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity_2']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity_2']['view_mode'] = 'oa_river_body';
+  /* Field: Message: Custom Text */
+  $handler->display->display_options['fields']['field_oa_message_text']['id'] = 'field_oa_message_text';
+  $handler->display->display_options['fields']['field_oa_message_text']['table'] = 'field_data_field_oa_message_text';
+  $handler->display->display_options['fields']['field_oa_message_text']['field'] = 'field_oa_message_text';
+  $handler->display->display_options['fields']['field_oa_message_text']['label'] = '';
+  $handler->display->display_options['fields']['field_oa_message_text']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_oa_message_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_oa_message_text']['element_default_classes'] = FALSE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Message: Timestamp */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'message';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  /* Sort criterion: Message: Message ID */
+  $handler->display->display_options['sorts']['mid']['id'] = 'mid';
+  $handler->display->display_options['sorts']['mid']['table'] = 'message';
+  $handler->display->display_options['sorts']['mid']['field'] = 'mid';
+  $handler->display->display_options['sorts']['mid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['exposed_form_configure'] = 'exposed_form_configure';
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['exposed_form_overrides'] = array(
+    'filters' => array(
+      'field_oa_message_space_target_id' => 'pane_and_exposed',
+      'field_oa_message_section_target_id' => 'pane_and_exposed',
+      'type' => 'pane_and_exposed',
+      'realname' => 'pane_and_exposed',
+    ),
+  );
   $export['oa_recent_activity'] = $view;
 
   return $export;
