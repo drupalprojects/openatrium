@@ -126,7 +126,7 @@ projects[og][download][url] = http://git.drupal.org/project/og.git
 projects[og][download][branch] = 7.x-2.x
 projects[og][download][revision] = 05ee95269e2c31492158dc6eabd2e386aec1c931
 projects[og][patch][1995012] = http://drupal.org/files/og_membership_alter.patch
-projects[og][patch][998094] = https://drupal.org/files/998094-og_membership_administer_member-16.patch
+projects[og][patch][998094] = http://drupal.org/files/998094-og_membership_administer_member-16.patch
 
 ; Organic Groups Vocabulary
 projects[og_vocab][subdir] = contrib
@@ -138,7 +138,7 @@ projects[og_subgroups][download][type] = git
 projects[og_subgroups][download][url] = http://git.drupal.org/project/og_subgroups.git
 projects[og_subgroups][download][branch] = 7.x-2.x
 projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-2.patch
-projects[og_subgroups][patch][1995018] = https://drupal.org/files/1995018-og_subgroups_og_alter-5.patch
+projects[og_subgroups][patch][1995018] = http://drupal.org/files/1995018-og_subgroups_og_alter-5.patch
 
 ; Message
 projects[message][subdir] = contrib
