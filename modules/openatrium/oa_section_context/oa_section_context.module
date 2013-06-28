@@ -48,8 +48,8 @@ function oa_section_context_init() {
  * session context if it exists.
  */
 function oa_section_context_form_node_form_alter(&$form, &$form_state, $form_id) {
-  if (!empty($_REQUEST['oa_section_ref'])) {
-    $section = check_plain($_REQUEST['oa_section_ref']);
+  if (!empty($_GET['oa_section_ref'])) {
+    $section = check_plain($_GET['oa_section_ref']);
   }
   elseif (!empty($_SESSION[OA_SESSION_SECTION])) {
     $section = $_SESSION[OA_SESSION_SECTION];
