@@ -66,6 +66,54 @@ function oa_events_import_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-oa_ical_importer-field_basic_file_file'
+  $field_instances['node-oa_ical_importer-field_basic_file_file'] = array(
+    'bundle' => 'oa_ical_importer',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_basic_file_file',
+    'label' => 'iCal File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'ics',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-oa_ical_importer-oa_section_ref'
   $field_instances['node-oa_ical_importer-oa_section_ref'] = array(
     'bundle' => 'oa_ical_importer',
@@ -194,6 +242,7 @@ function oa_events_import_field_default_field_instances() {
   t('Body');
   t('Groups audience');
   t('Open Atrium Section');
+  t('iCal File');
 
   return $field_instances;
 }

@@ -23,6 +23,38 @@ function oa_events_og_ui_get_group_admin($group_type, $gid) {
   return $items;
 }
 
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function oa_events_import_form_oa_ical_importer_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['feeds']['field_basic_file_file'] = $form['field_basic_file_file'];
+  unset($form['field_basic_file_file']);
+  $form['feeds']['FeedsHTTPFetcher']['source']['#required'] = FALSE;
+  $form['#validate'] = array_merge(array('oa_events_import_form_oa_ical_importer_node_form_validate'), $form['#validate']);;
+}
+
+/**
+ * Provides validation for the ical importer node form.
+ */
+function oa_events_import_form_oa_ical_importer_node_form_validate($form, &$form_state) {
+  $fid = empty($form_state['values']['feeds']['field_basic_file_file'][LANGUAGE_NONE][0]['fid']) ? NULL : $form_state['values']['feeds']['field_basic_file_file'][LANGUAGE_NONE][0]['fid'];
+  $url = empty($form_state['values']['feeds']['FeedsHTTPFetcher']['source']) ? NULL : $form_state['values']['feeds']['FeedsHTTPFetcher']['source'];
+
+  if ($fid && $url) {
+    form_set_error('feeds', t('You cannot use both an uploaded file and a feed URL at the same time.'));
+  }
+
+  if (!$fid && !$url) {
+    form_set_error('feeds', t('You must provide and uploaded file or URL.'));
+  }
+
+  if ($fid && !$url) {
+    $file = file_load($fid);
+    $form_state['values']['feeds']['FeedsHTTPFetcher']['source'] = file_create_url($file->uri);
+  }
+}
+
 /**
  * Implements hook_node_insert().
  */
