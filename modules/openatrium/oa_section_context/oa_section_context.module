@@ -39,6 +39,10 @@ function oa_section_context_init() {
       unset($_SESSION[OA_SESSION_SECTION]);
     }
   }
+  else {
+    // If a node exists but does not have the section field, unset the section.
+    unset($_SESSION[OA_SESSION_SECTION]);
+  }
 }
 
 /**
