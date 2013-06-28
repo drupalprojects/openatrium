@@ -236,12 +236,14 @@ function oa_buttons_get_command_buttons($node) {
   // Grab from the taxonomy term.
   if (empty($override_node_options[0]['value'])) {
     if ($node->type == 'oa_section') {
-      $tid = reset(field_get_items('node', $node, 'field_oa_section'));
+      $items = field_get_items('node', $node, 'field_oa_section');
     }
     else {
-      $tid = reset(field_get_items('node', $node, 'field_oa_space_type'));
+      $items = field_get_items('node', $node, 'field_oa_space_type');
     }
-    if (!empty($tid) && $term = taxonomy_term_load($tid['tid'])) {
+
+    if (!empty($items) && $tid = reset($items)) {
+      $term = taxonomy_term_load($tid['tid']);
       $node_options = field_get_items('taxonomy_term', $term, 'field_oa_node_types');
     }
   }
@@ -261,12 +263,22 @@ function oa_buttons_get_command_buttons($node) {
     }
   }
 
-  if ($node->type = 'oa_space') {
+  if ($node->type == 'oa_space') {
     $sections = oa_core_space_sections($node->nid);
     if (count($sections)) {
-      foreach ($sections as $nid => $section) {
-        $section_node = node_load($nid);
-        $node_types = array_merge($node_types, oa_buttons_get_command_buttons($section_node));
+      // If we are within a section only show the buttons for this specific section.
+      if ($section = oa_core_get_section_context()) {
+        if (isset($sections[$section])) {
+          $section_node = node_load($section);
+          $node_types = array_merge($node_types, oa_buttons_get_command_buttons($section_node));
+        }
+      }
+      else {
+        // Otherwise show the buttons for al lsections.
+        foreach ($sections as $nid => $section) {
+          $section_node = node_load($nid);
+          $node_types = array_merge($node_types, oa_buttons_get_command_buttons($section_node));
+        }
       }
     }
   }
@@ -469,8 +481,8 @@ function oa_buttons_clear_section_button_cache($gid = NULL) {
     $context = og_context();
   }
   if (!empty($context['gid'])) {
-    $cache_key = 'oa_section_buttons:' . $context['gid'] . ':' . $user->uid;
-    cache_clear_all($cache_key, 'cache_oa_section_buttons');
+    $cache_key = 'oa_section_buttons:' . $context['gid'];
+    cache_clear_all($cache_key, 'cache_oa_section_buttons', TRUE);
   }
 }
 

@@ -28,6 +28,7 @@ function oa_buttons_add_space_content_render($subtype, $conf, $args, $context) {
   global $user;
   $block = new stdClass();
   $context = og_context();
+  $section = oa_core_get_section_context();
   $content = '';
   if (isset($context['gid'])) {
     $node = node_load($context['gid']);
@@ -35,7 +36,7 @@ function oa_buttons_add_space_content_render($subtype, $conf, $args, $context) {
   else {
     return;
   }
-  $cache_key = 'oa_section_buttons:' . $context['gid'] . ':' . $user->uid;
+  $cache_key = 'oa_section_buttons:' . $context['gid'] . ':' . $section . ':' . $user->uid;
   // Lets cache this, since it can be expensive.
   if ($cache = cache_get($cache_key, 'cache_oa_section_buttons')) {
     $content = $cache->data;
