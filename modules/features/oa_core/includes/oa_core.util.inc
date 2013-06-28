@@ -365,13 +365,10 @@ function oa_core_get_group_users_for_space($space_id, $group_id) {
  * Return a list of space ids that a user belongs to.
  */
 function oa_core_get_user_spaces($uid) {
-  $query = db_select('og_membership', 'og')
-    ->fields('og')
-    ->condition('entity_type', 'user')
-    ->condition('etid', $uid);
-
-  $results = $query->execute()->fetchAllAssoc('gid');
-  return array_keys($results);
+  if ($groups = og_get_entity_groups('user')) {
+    return !empty($groups['node']) ? $groups['node'] : array();
+  }
+  return array();
 }
 
 /**

@@ -33,22 +33,22 @@ $plugin = array(
  * Render callback for the content visibility panel.
  */
 function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
-  if (empty($context->data)) {
+  if (empty($context->data) || !user_access('access content')) {
     return;
   }
-  $user = $context->data;
+  $account = $context->data;
   $vars = array();
 
   $spaces = node_load_multiple(oa_core_get_public_spaces());
-  $all_spaces = oa_core_build_space_display($spaces, $conf, $user);
+  $all_spaces = oa_core_build_space_display($spaces, $conf, $account);
 
-  $spaces = oa_core_get_user_spaces($user->uid);
+  $spaces = oa_core_get_user_spaces($account->uid);
   $spaces = node_load_multiple($spaces);
-  $active_spaces = oa_core_build_space_display($spaces, $conf, $user);
+  $active_spaces = oa_core_build_space_display($spaces, $conf, $account);
 
-  $spaces = oa_favorites_get_spaces($user);
+  $spaces = oa_favorites_get_spaces($account);
   $spaces = node_load_multiple($spaces['ids']);
-  $featured_spaces = oa_core_build_space_display($spaces, $conf, $user);
+  $featured_spaces = oa_core_build_space_display($spaces, $conf, $account);
 
   $page = 0;
   // set our maximum item per page
@@ -104,38 +104,26 @@ function oa_core_user_spaces_render($subtype, $conf, $args, $context = NULL) {
 /**
  * Builds display variables for spaces. Optionally sections as well.
  */
-function oa_core_build_space_display($spaces, $conf, $user) {
+function oa_core_build_space_display($spaces, $conf, $account) {
   $vars = array();
   usort($spaces, 'oa_core_sort_node_by_title');
   foreach ($spaces as $space) {
-    if ($space->type != 'oa_space') {
+    if ($space->type != 'oa_space' || !node_access('view', $space)) {
       continue;
     }
-    $vars[$space->nid]['title'] = $space->title;
-
-    $alter = array(
-      'max_length' => 600,
-      'word_boundary' => TRUE,
-      'ellipsis' => TRUE,
-      'html' => TRUE,
-    );
-    $vars[$space->nid]['href'] = url('node/' . $space->nid);
+    $vars[$space->nid]['title'] = check_plain($space->title);
+    $vars[$space->nid]['href'] = check_plain(url('node/' . $space->nid));
     $vars[$space->nid]['body'] = '';
     $vars[$space->nid]['links'] = '';
     $vars[$space->nid]['sections'] = array();
 
     if ($conf['show_links']) {
-      $vars[$space->nid]['links'] = oa_core_user_spaces_get_links($space, $conf, $user);
+      $vars[$space->nid]['links'] = oa_core_user_spaces_get_links($space, $conf, $account);
     }
 
     if ($conf['show_description']) {
       $body = field_get_items('node', $space, 'body');
-      if (!empty($body[0]['summary'])) {
-        $vars[$space->nid]['body'] = $body[0]['summary'];
-      }
-      else {
-        $vars[$space->nid]['body'] = views_trim_text($alter, $body[0]['value']);
-      }
+      $vars[$space->nid]['body'] = drupal_render(field_view_field('node', $space, 'body', 'teaser'));
     }
 
     $vars[$space->nid]['picture'] = '';
@@ -166,8 +154,8 @@ function oa_core_build_space_display($spaces, $conf, $user) {
 /**
  * Generate the subscribed/unsubscribed links
  */
-function oa_core_user_spaces_get_links($space, $conf, $user) {
-  $links = oa_core_user_spaces_og_links($space, $user);
+function oa_core_user_spaces_get_links($space, $conf, $account) {
+  $links = oa_core_user_spaces_og_links($space, $account);
   $vars['links'] = array();
   if (!empty($links) && !empty($conf['link_class'])) {
     foreach ($links as $key => $link) {
