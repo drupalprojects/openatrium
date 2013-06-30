@@ -34,15 +34,14 @@ function oa_core_summary_render($subtype, $conf, $args, $context = NULL) {
   $space = $context->data;
   $vars = array();
 
-  $vars['title'] = $space->title;
+  $vars['title'] = check_plain($space->title);
   $vars['description'] = '';
   $vars['picture'] = '';
   $vars['links']['favorite'] = '';
   $vars['links']['edit'] = '';
 
   if (!empty($conf['show_description'])) {
-    $vars['description'] = render(field_view_field('node', $space, 'body', array(
-    'label' => 'hidden')));
+    $vars['description'] = drupal_render(field_view_field('node', $space, 'body', array('label' => 'hidden')));
 
     $picture = field_get_items('node', $space, 'field_featured_image');
     if (!empty($picture)) {
@@ -71,7 +70,7 @@ function oa_core_summary_render($subtype, $conf, $args, $context = NULL) {
   }
 
   $block = new stdClass();
-  $block->title = $space->title;
+  $block->title = check_plain($space->title);
   $block->content = theme('oa_core_summary', $vars);
 
   return $block;
