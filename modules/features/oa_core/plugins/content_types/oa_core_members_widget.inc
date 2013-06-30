@@ -29,36 +29,39 @@ $plugin = array(
 function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) {
   global $user;
 
-  if (!isset($context->data)) {
+  if (!isset($context->data) || !node_access('view', $context->data)) {
     return;
   }
+  $space = $context->data;
+  $is_admin = og_user_access('node', $space->nid, 'manage members');
 
   $block = new stdClass();
-  $block->title = 'Members';
+  $block->title = t('Members');
 
-  $space = $context->data;
-  $teams = oa_teams_get_teams_for_space($space->nid);
-  $teams = node_load_multiple(array_keys($teams));
-  $members = oa_core_get_users_for_space($space->nid);
+  if (empty($conf['hide_teams']) && module_exists('oa_teams') && ($teams = oa_teams_get_teams_for_space($space->nid))) {
+    $teams = node_load_multiple(array_keys($teams));
+  }
+  else {
+    $teams = array();
+  }
+  $members = empty($conf['hide_owner']) || empty($conf['hide_members']) ? oa_core_get_users_for_space($space->nid) : array();
   uasort($members, '_oa_core_sort_user_by_name');
   $owners = array();
-
-  $is_admin = ($user->uid == 1) ? TRUE : FALSE;
-  foreach ($members as $member) {
-    $roles = og_get_user_roles('node', $space->nid, $member->uid);
-    if (in_array(OG_ADMINISTRATOR_ROLE, $roles) || $member->uid == $space->uid) {
-      $owners[$member->uid] = $member;
-      if ($member->uid == $user->uid) {
-        $is_admin = TRUE;
+  if (empty($conf['hide_owner'])) {
+    foreach ($members as $member) {
+      $roles = og_get_user_roles('node', $space->nid, $member->uid);
+      if (in_array(OG_ADMINISTRATOR_ROLE, $roles) || $member->uid == $space->uid) {
+        $owners[$member->uid] = $member;
       }
     }
   }
 
   $parents = array();
-  if ($is_admin) {
-    $parent_field = field_get_items('node', $space, 'oa_parent_space');
+  if (empty($conf['hide_inherited']) && $is_admin && ($parent_field = field_get_items('node', $space, 'oa_parent_space'))) {
     foreach ($parent_field as $parent) {
-      $parents[$parent['target_id']] = $parent['target_id'];
+      if (!empty($parent['target_id'])) {
+        $parents[$parent['target_id']] = $parent['target_id'];
+      }
     }
     $parents = node_load_multiple(array_keys($parents));
   }
@@ -74,28 +77,36 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     $vars['see_all_link'] = '';
   }
 
-  $space_title = ($space->type == OA_SPACE_TYPE) ? t('Space') : t('Group');
+  $space_title = node_type_get_name($space->type);
   $vars['title'] = array(
     'teams' => t('Teams'),
-    'members' => $space_title,
-    'owners' => $space_title . ' ' . t('owners'),
+    'members' => check_plain($space_title),
+    'owners' => t('@type administrators', array('@type' => $space_title)),
     'parents' => t('Inheriting members from'),
   );
   $items = array(
     'teams' => $teams,
-    'members' => $members,
+    'members' => empty($conf['hide_members']) ? $members : array(),
     'owners' => $owners,
     'parents' => $parents,
   );
   foreach ($items as $key => $entities) {
     $vars[$key] = array();
-    foreach ($entities as $id => $entity) {
-      $vars[$key][$id] = oa_core_entity_build_display($entity, $id);
-      if ($entity->uid == $space->uid) {
-        // don't show links for main space owner
-        $vars[$key][$id]['uid'] = 0;
+    if ($entities) {
+      foreach ($entities as $id => $entity) {
+        $vars[$key][$id] = oa_core_entity_build_display($entity, $id);
+        if ($entity->uid == $space->uid) {
+          // don't show links for main space owner
+          $vars[$key][$id]['uid'] = 0;
+        }
       }
     }
+    else {
+      unset($vars['title'][$key]);
+    }
+  }
+  if (count($vars['title']) == 1) {
+    unset($vars['title']);
   }
 
   $vars['links']['dashboard'] = 'user/';
@@ -109,25 +120,7 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     $vars['links']['add-admin'] = '';
     $vars['links']['remove-admin'] = '';
   }
-  if (!empty($conf['hide_owner'])) {
-    unset($vars['owners']);
-    unset($vars['title']['owners']);
-  }
-  if (!empty($conf['hide_teams'])) {
-    unset($vars['teams']);
-    unset($vars['title']['teams']);
-  }
-  if (!empty($conf['hide_teams'])) {
-    unset($vars['members']);
-    unset($vars['title']['members']);
-  }
-  if (!empty($conf['hide_inherited'])) {
-    unset($vars['parents']);
-    unset($vars['title']['parents']);
-  }
-  if (count($vars['title']) == 1) {
-    unset($vars['title']);
-  }
+
   $block->content = theme('oa_core_members_widget', $vars);
   return $block;
 }
@@ -137,28 +130,33 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
  */
 function _oa_core_sort_user_by_name($u1, $u2) {
   // Get last name for sorting.
-  $name1 = $u1->realname ? array_pop(explode(' ', $u1->realname)) : $u1->name;
-  $name2 = $u2->realname ? array_pop(explode(' ', $u2->realname)) : $u2->name;
+  $name1 = !empty($u1->realname) ? oa_core_get_last_word($u1->realname) : $u1->name;
+  $name2 = !empty($u2->realname) ? oa_core_get_last_word($u2->realname) : $u2->name;
   return strcasecmp($name1, $name2);
+}
+
+function oa_core_get_last_word($string) {
+  return ($pos =  strrpos($string, ' ')) ?  substr($string, $pos + 1) : $string;
 }
 
 /**
  * Convert known entities in to a simple array of title and picture.
  */
 function oa_core_entity_build_display($entity, $id) {
-  $type = isset($entity->nid) ? 'node' : 'user';
-  $title = ($type == 'user') ?
-    (empty($entity->realname) ? $entity->name : $entity->realname) :
-    $entity->title;
-  $nid = ($type == 'user') ? $entity->uid : $entity->nid;
-  $display['title'] = l($title, $type . '/' . $nid);
-  $display['uid'] = $entity->uid;
-
-  if ($type == 'user') {
-    $display['picture'] = oa_users_picture($entity);
+  if (!empty($entity->nid)) {
+    if (node_access('view', $entity)) {
+      $display['title'] = l($entity->title, 'node/' . $entity->nid);
+    }
+    else {
+      $display['title'] = t('A @type', array('@type' => array('@type' => node_type_get_name($entity->type))));
+    }
+    $display['picture'] = '';
+    $display['uid'] = 0;
   }
   else {
-    $display['picture'] = '';
+    $display['title'] = l(format_username($entity), 'user/' . $entity->uid);
+    $display['uid'] = $entity->uid;
+    $display['picture'] = oa_users_picture($entity);
   }
 
   return $display;
@@ -171,7 +169,7 @@ function oa_core_members_widget_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
 
   $form['hide_owner'] = array(
-    '#title' => t('Hide space owner'),
+    '#title' => t('Hide administrators'),
     '#type' => 'checkbox',
     '#default_value' => $conf['hide_owner'],
   );

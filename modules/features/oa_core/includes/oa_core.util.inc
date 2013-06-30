@@ -324,15 +324,7 @@ function oa_core_get_all_groups() {
  * Returns the users that are in a space.
  */
 function oa_core_get_users_for_space($space_id) {
-  $query = db_select('users', 'u');
-  $query->innerJoin('og_membership', 'og', 'u.uid = og.etid');
-  $query->fields('u', array('uid'))
-    ->condition('og.entity_type', 'user')
-    ->condition('og.gid', $space_id);
-    //->condition('og.group_type', 'node');
-
-  $results = $query->execute()->fetchAllAssoc('uid');
-  return user_load_multiple(array_keys($results));
+  return entity_metadata_wrapper('node', node_load($space_id))->{'members__' . OG_STATE_ACTIVE}->value();
 }
 
 /**
@@ -369,17 +361,4 @@ function oa_core_get_user_spaces($uid) {
     return !empty($groups['node']) ? $groups['node'] : array();
   }
   return array();
-}
-
-/**
- * Returns the space ID that a node belongs to.
- */
-function oa_core_get_node_space($nid) {
-  $query = db_select('og_membership', 'og')
-    ->fields('og')
-    ->condition('entity_type', 'node')
-    ->condition('etid', $nid);
-
-  $result = $query->execute()->fetchAssoc();
-  return empty($result) ? 0 : $result['gid'];
 }
