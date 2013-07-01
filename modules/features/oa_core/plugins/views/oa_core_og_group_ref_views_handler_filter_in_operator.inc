@@ -33,7 +33,6 @@ class oa_core_og_group_ref_views_handler_filter_in_operator extends views_handle
         $this->options['expose']['multiple'] = TRUE;
       }
       else {
-        drupal_set_message('set fail build');
         $this->fail_build = TRUE;
       }
     }

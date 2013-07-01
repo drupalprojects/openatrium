@@ -111,9 +111,9 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
 
   $vars['links']['dashboard'] = 'user/';
   if ($is_admin) {
-    $vars['links']['remove'] = 'group/node/' . $space->nid . '/remove/';
+    $vars['links']['remove'] = 'group/node/' . $space->nid . '/remove/single/';
     $vars['links']['add-admin'] = 'group/node/' . $space->nid . '/add-admin/';
-    $vars['links']['remove-admin'] = 'group/node/' . $space->nid . '/remove-admin/single';
+    $vars['links']['remove-admin'] = 'group/node/' . $space->nid . '/remove-admin/';
     if (og_user_access('node', $space->nid, 'administer group') && module_exists('oa_subspaces') && og_subgroups_children_load('node', $space->nid, FALSE)) {
       $vars['links']['remove-child'] = 'group/node/' . $space->nid . '/remove/all/';
     }
