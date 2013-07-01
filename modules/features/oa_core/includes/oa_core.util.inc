@@ -362,3 +362,19 @@ function oa_core_get_user_spaces($uid) {
   }
   return array();
 }
+
+function oa_core_get_group_from_node($nid, $allowed_types = array('oa_space', 'oa_group')) {
+  if ($node =  node_load($nid)) {
+    if (in_array($node->type, $allowed_types)) {
+      return $node;
+    }
+    elseif ($items = field_get_items('node', $node, OA_SPACE_FIELD)) {
+      foreach ($items as $item) {
+        if (!empty($item['target_id']) && ($space = oa_core_get_group_from_node($item['target_id']))) {
+          return $space;
+        }
+      }
+    }
+  }
+  return FALSE;
+}

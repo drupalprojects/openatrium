@@ -26,12 +26,11 @@ $plugin = array(
  * Render callback for the content visibility panel.
  */
 function oa_core_summary_render($subtype, $conf, $args, $context = NULL) {
-  if (!isset($context->data)) {
+  if (!isset($context->data->nid) || !($space = oa_core_get_group_from_node($context->data->nid, array('oa_space'))) || !node_access('view', $space)) {
     return;
   }
 
   global $user;
-  $space = $context->data;
   $vars = array();
 
   $vars['title'] = check_plain($space->title);
