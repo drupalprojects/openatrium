@@ -104,9 +104,7 @@ function oa_core_og_features_default_permissions() {
 
   // Exported og permission: 'node:oa_space:trash any oa_space content'
   $permissions['node:oa_space:trash any oa_space content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:oa_space:trash own oa_group content'
@@ -119,10 +117,7 @@ function oa_core_og_features_default_permissions() {
 
   // Exported og permission: 'node:oa_space:trash own oa_space content'
   $permissions['node:oa_space:trash own oa_space content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:oa_space:untrash any oa_group content'

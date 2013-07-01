@@ -12,6 +12,6 @@ dependencies[] = feeds
 dependencies[] = mailhandler
 dependencies[] = mailhandler_php_imap
 features[ctools][] = feeds:feeds_importer_default:1
-features[features_api][] = api:1
+features[features_api][] = api:2
 features[feeds_importer][] = discussion_reply_email_importer
 project path = profiles/openatrium/modules/features

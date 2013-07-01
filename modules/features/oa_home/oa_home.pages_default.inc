@@ -16,7 +16,10 @@ function oa_home_default_page_manager_pages() {
   $page->admin_title = 'Home Page';
   $page->admin_description = 'Site home page.';
   $page->path = 'home';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',

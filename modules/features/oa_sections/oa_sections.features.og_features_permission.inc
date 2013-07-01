@@ -78,17 +78,12 @@ function oa_sections_og_features_default_permissions() {
 
   // Exported og permission: 'node:oa_space:trash any oa_section content'
   $permissions['node:oa_space:trash any oa_section content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:oa_space:trash own oa_section content'
   $permissions['node:oa_space:trash own oa_section content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:oa_space:untrash any oa_section content'

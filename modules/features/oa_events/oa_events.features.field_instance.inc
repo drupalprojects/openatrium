@@ -186,6 +186,7 @@ http://www.whitehouse.gov/',
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'M j Y - g:i:sa',
         'input_format_custom' => '',

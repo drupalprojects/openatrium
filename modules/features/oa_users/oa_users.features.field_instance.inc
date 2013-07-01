@@ -130,7 +130,7 @@ function oa_users_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '150x150',
+      'min_resolution' => '300x200',
       'title_field' => 0,
       'user_register_form' => 0,
     ),
@@ -142,7 +142,7 @@ function oa_users_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 

@@ -19,14 +19,14 @@ function oa_permissions_og_features_default_permissions() {
 
   // Exported og permission: 'node:oa_group:administer group'
   $permissions['node:oa_group:administer group'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:oa_group:administer taxonomy'
   $permissions['node:oa_group:administer taxonomy'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:oa_group:approve and deny subscription'
@@ -38,12 +38,16 @@ function oa_permissions_og_features_default_permissions() {
 
   // Exported og permission: 'node:oa_group:delete terms'
   $permissions['node:oa_group:delete terms'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:oa_group:edit terms'
   $permissions['node:oa_group:edit terms'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:oa_group:manage members'
@@ -55,7 +59,9 @@ function oa_permissions_og_features_default_permissions() {
 
   // Exported og permission: 'node:oa_group:manage menu'
   $permissions['node:oa_group:manage menu'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:oa_group:manage permissions'
@@ -117,7 +123,9 @@ function oa_permissions_og_features_default_permissions() {
 
   // Exported og permission: 'node:oa_group:use any oa button space_type'
   $permissions['node:oa_group:use any oa button space_type'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:oa_group:view trash bin'
@@ -214,9 +222,7 @@ function oa_permissions_og_features_default_permissions() {
 
   // Exported og permission: 'node:oa_space:trash any content'
   $permissions['node:oa_space:trash any content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:oa_space:unsubscribe'

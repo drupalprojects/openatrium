@@ -16,7 +16,10 @@ function oa_users_default_page_manager_pages() {
   $page->admin_title = 'user_actitivy';
   $page->admin_description = 'Recent activity from user';
   $page->path = 'user/%user/activity';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'tab',
     'title' => 'Activity',

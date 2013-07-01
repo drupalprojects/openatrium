@@ -13,7 +13,7 @@ function oa_favorites_flag_default_flags() {
   $flags['favorite_space'] = array(
     'content_type' => 'node',
     'title' => 'Favorite Space',
-    'global' => '0',
+    'global' => 0,
     'types' => array(
       0 => 'oa_space',
     ),
@@ -27,10 +27,10 @@ function oa_favorites_flag_default_flags() {
     'link_type' => 'toggle',
     'roles' => array(
       'flag' => array(
-        0 => '2',
+        0 => 2,
       ),
       'unflag' => array(
-        0 => '2',
+        0 => 2,
       ),
     ),
     'weight' => 0,
