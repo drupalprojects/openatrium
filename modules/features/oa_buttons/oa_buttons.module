@@ -242,8 +242,7 @@ function oa_buttons_get_command_buttons($node) {
       $items = field_get_items('node', $node, 'field_oa_space_type');
     }
 
-    if (!empty($items) && $tid = reset($items)) {
-      $term = taxonomy_term_load($tid['tid']);
+    if (!empty($items) && ($tid = reset($items)) && ($term = taxonomy_term_load($tid['tid']))) {
       $node_options = field_get_items('taxonomy_term', $term, 'field_oa_node_types');
     }
   }
