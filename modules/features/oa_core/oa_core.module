@@ -61,11 +61,11 @@ function oa_core_menu() {
     'page arguments' => array('oa_core_configure_form'),
     'access arguments' => array('administer site configuration'),
   );
-  $items['group/%/%/remove/%'] = array(
+  $items['group/%/%/remove/%/%'] = array(
     'title' => 'Remove member',
     'type' => MENU_CALLBACK,
     'page callback' => 'oa_core_remove_member',
-    'page arguments' => array(1, 2, 4),
+    'page arguments' => array(1, 2, 4, 5),
     'access callback' => 'oa_core_user_access_group',
     'access arguments' => array('manage members', 1, 2),
   );
@@ -311,20 +311,38 @@ function oa_core_add_member($group_type, $gid, $uid, $goto = TRUE) {
  * @param  $gid
  * @param  $uid
  */
-function oa_core_remove_member($group_type, $gid, $uid) {
+function oa_core_remove_member($group_type, $gid, $from_children, $uid, $type = 'nojs') {
+  if (!isset($_GET['token']) || !drupal_valid_token($_GET['token'], $group_type . '_' . $gid . '_' . $uid)) {
+    return MENU_ACCESS_DENIED;
+  }
   $account = user_load($uid);
   $group = entity_load_single($group_type, $gid);
   $label = entity_label($group_type, $group);
+  $username = format_username($account);
   og_ungroup('node', $group->nid, 'user', $account);
+  if ($from_children == 'all' && module_exists('oa_subspaces') && og_user_access('node', $group->nid, 'administer group') && ($children = og_subgroups_children_load('node', $group->nid)) && ($user_groups = og_get_entity_groups('user', $account))) {
+    if ($remove = og_subgroups_intersect_groups($children, $user_groups)) {
+      foreach ($remove as $entity_type => $ids) {
+        foreach ($ids as $id) {
+          $child_group = entity_load_single($entity_type, $id);
+          og_ungroup($entity_type, $id, 'user', $account);
+          $child_label = entity_label($entity_type, $child_group);
+          drupal_set_message(t('%user has been removed from child @type %title.', array('@type' => drupal_strtolower(node_type_get_name($child_group->type)), '%user' => $username, '%title' => $child_label)));
+        }
+      }
+    }
+  }
 
-  drupal_set_message(t('%user has been removed from the space %title.', array('%user' => format_username($account), '%title' => $label)));
-  if ($group->type == OA_SPACE_TYPE) {
-    drupal_goto('node/' . $gid . '/members');
+  drupal_set_message(t('%user has been removed from the @type %title.', array('@type' => drupal_strtolower(node_type_get_name($group->type)), '%user' => $username, '%title' => $label)));
+  if ($type != 'ajax') {
+    drupal_goto();
   }
   else {
-    drupal_goto('node/' . $gid);
+    $commands = array();
+    $commands[] = ajax_command_append('#oa-core-messages', theme('status_messages'));
+    $page = array('#type' => 'ajax', '#commands' => $commands);
+    ajax_deliver($page);
   }
-  return;
 }
 
 /**
@@ -333,7 +351,10 @@ function oa_core_remove_member($group_type, $gid, $uid) {
  * @param  $gid
  * @param  $uid
  */
-function oa_core_add_admin($group_type, $gid, $uid) {
+function oa_core_add_admin($group_type, $gid, $uid, $type = 'nojs') {
+  if (!isset($_GET['token']) || !drupal_valid_token($_GET['token'], $group_type . '_' . $gid . '_' . $uid)) {
+    return MENU_ACCESS_DENIED;
+  }
   $account = user_load($uid);
   $group = entity_load_single($group_type, $gid);
   $label = entity_label($group_type, $group);
@@ -346,13 +367,15 @@ function oa_core_add_admin($group_type, $gid, $uid) {
 
     drupal_set_message(t('%user has been added as an Admin to the space %title.', array('%user' => format_username($account), '%title' => $label)));
   }
-  if ($group->type == OA_SPACE_TYPE) {
-    drupal_goto('node/' . $gid . '/members');
+  if ($type != 'ajax') {
+    drupal_goto();
   }
   else {
-    drupal_goto('node/' . $gid);
+    $commands = array();
+    $commands[] = ajax_command_append('#oa-core-messages', theme('status_messages'));
+    $page = array('#type' => 'ajax', '#commands' => $commands);
+    ajax_deliver($page);
   }
-  return;
 }
 
 /**
@@ -361,7 +384,10 @@ function oa_core_add_admin($group_type, $gid, $uid) {
  * @param  $gid
  * @param  $uid
  */
-function oa_core_remove_admin($group_type, $gid, $uid) {
+function oa_core_remove_admin($group_type, $gid, $uid, $type = 'nojs') {
+  if (!isset($_GET['token']) || !drupal_valid_token($_GET['token'], $group_type . '_' . $gid . '_' . $uid)) {
+    return MENU_ACCESS_DENIED;
+  }
   $account = user_load($uid);
   $group = entity_load_single($group_type, $gid);
   $label = entity_label($group_type, $group);
@@ -374,11 +400,14 @@ function oa_core_remove_admin($group_type, $gid, $uid) {
 
     drupal_set_message(t('%user has been removed as Admin of space %title.', array('%user' => format_username($account), '%title' => $label)));
   }
-  if ($group->type == OA_SPACE_TYPE) {
-    drupal_goto('node/' . $gid . '/members');
+  if ($type != 'ajax') {
+    drupal_goto();
   }
   else {
-    drupal_goto('node/' . $gid);
+    $commands = array();
+    $commands[] = ajax_command_append('#oa-core-messages', theme('status_messages'));
+    $page = array('#type' => 'ajax', '#commands' => $commands);
+    ajax_deliver($page);
   }
   return;
 }

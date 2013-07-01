@@ -17,6 +17,7 @@
 <?php
   $well = (!empty($title)) ? ' well well-small' : '';
 ?>
+<div id="oa-core-messages"></div>
 <?php if (!empty($parents)): ?>
 <div class='clearfix <?php print $well;?> parents'>
   <?php if (!empty($title['parents'])):?>
@@ -51,7 +52,7 @@
         <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
           <ul>
             <li><?php print l(t('Dashboard'), $links['dashboard'] . $owner['uid']); ?></li>
-            <li><?php print l(t('Remove as Admin'), $links['remove-admin'] . $owner['uid']); ?></li>
+            <li><?php print l(t('Remove as Admin'), $links['remove-admin'] . $owner['uid'] . '/nojs', $owner['options']); ?></li>
           </ul>
         </div>
       </div>
@@ -91,8 +92,11 @@
         <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
           <ul>
             <li><?php print l(t('Dashboard'), $links['dashboard'] . $member['uid']); ?></li>
-            <li><?php print l(t('Remove from ') . $title['members'], $links['remove'] . $member['uid']); ?></li>
-            <li><?php print l(t('Add as Admin'), $links['add-admin'] . $member['uid']); ?></li>
+            <li><?php print l(t('Remove from @label', array('@label' => $title['members'])), $links['remove'] . $member['uid'] . '/nojs', $member['options']); ?></li>
+            <?php if (!empty($links['remove-child'])): ?>
+              <li><?php print l(t('Remove from @label and any children spaces', array('@label' => $title['members'])), $links['remove-child'] . $member['uid'] . '/nojs', $member['options']); ?></li>
+            <?php endif;?>
+            <li><?php print l(t('Add as Admin'), $links['add-admin'] . $member['uid'] . '/nojs', $member['options']); ?></li>
           </ul>
         </div>
       </div>

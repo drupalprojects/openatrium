@@ -94,7 +94,7 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     $vars[$key] = array();
     if ($entities) {
       foreach ($entities as $id => $entity) {
-        $vars[$key][$id] = oa_core_entity_build_display($entity, $id);
+        $vars[$key][$id] = oa_core_entity_build_display($entity, $id, $space);
         if ($entity->uid == $space->uid) {
           // don't show links for main space owner
           $vars[$key][$id]['uid'] = 0;
@@ -113,7 +113,10 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   if ($is_admin) {
     $vars['links']['remove'] = 'group/node/' . $space->nid . '/remove/';
     $vars['links']['add-admin'] = 'group/node/' . $space->nid . '/add-admin/';
-    $vars['links']['remove-admin'] = 'group/node/' . $space->nid . '/remove-admin/';
+    $vars['links']['remove-admin'] = 'group/node/' . $space->nid . '/remove-admin/single';
+    if (og_user_access('node', $space->nid, 'administer group') && module_exists('oa_subspaces') && og_subgroups_children_load('node', $space->nid, FALSE)) {
+      $vars['links']['remove-child'] = 'group/node/' . $space->nid . '/remove/all/';
+    }
   }
   else {
     $vars['links']['remove'] = '';
@@ -142,7 +145,7 @@ function oa_core_get_last_word($string) {
 /**
  * Convert known entities in to a simple array of title and picture.
  */
-function oa_core_entity_build_display($entity, $id) {
+function oa_core_entity_build_display($entity, $id, $space) {
   if (!empty($entity->nid)) {
     if (node_access('view', $entity)) {
       $display['title'] = l($entity->title, 'node/' . $entity->nid);
@@ -152,11 +155,20 @@ function oa_core_entity_build_display($entity, $id) {
     }
     $display['picture'] = '';
     $display['uid'] = 0;
+    $display['options'] = array();
   }
   else {
     $display['title'] = l(format_username($entity), 'user/' . $entity->uid);
     $display['uid'] = $entity->uid;
     $display['picture'] = oa_users_picture($entity);
+    $display['options'] = array(
+      'attributes' => array(
+        'class' => array('use-ajax'),
+      ),
+      'query' => drupal_get_destination() + array(
+        'token' => drupal_get_token('node_' . $space->nid . '_' . $entity->uid),
+      ),
+    );
   }
 
   return $display;
