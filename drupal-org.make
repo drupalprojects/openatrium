@@ -462,6 +462,7 @@ projects[panopoly_pages][subdir] = panopoly
 projects[panopoly_pages][download][type] = git
 projects[panopoly_pages][download][revision] = 4125aa6
 projects[panopoly_pages][download][branch] = 7.x-1.x
+projects[panopoly_magic][patch][2008762] = http://drupal.org/files/2008762-panopoly_pages-missing-depedency-1.patch
 
 projects[panopoly_wysiwyg][version] = 1.x-dev
 projects[panopoly_wysiwyg][subdir] = panopoly
