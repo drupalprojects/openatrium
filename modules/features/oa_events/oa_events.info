@@ -18,6 +18,7 @@ dependencies[] = field_group
 dependencies[] = file
 dependencies[] = fullcalendar
 dependencies[] = fullcalendar_colors
+dependencies[] = fullcalendar_legend
 dependencies[] = fullcalendar_options
 dependencies[] = geocoder
 dependencies[] = geofield

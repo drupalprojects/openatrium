@@ -228,6 +228,29 @@ function oa_events_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-5';
     $pane->panel = 'sidebar';
+    $pane->type = 'fullcalendar_legend';
+    $pane->subtype = 'fullcalendar_legend';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view' => 'oa_fullcalendar-oa_calendar_month',
+      'legend_type' => 'taxonomy',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['sidebar'][0] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_content_visibility';
     $pane->subtype = 'oa_widgets_content_visibility';
     $pane->shown = TRUE;
@@ -249,12 +272,12 @@ function oa_events_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['sidebar'][0] = 'new-5';
+    $display->content['new-6'] = $pane;
+    $display->panels['sidebar'][1] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-7';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_add_content';
     $pane->subtype = 'oa_widgets_add_content';
@@ -290,12 +313,12 @@ function oa_events_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['sidebar'][1] = 'new-6';
+    $display->content['new-7'] = $pane;
+    $display->panels['sidebar'][2] = 'new-7';
     $pane = new stdClass();
-    $pane->pid = 'new-7';
+    $pane->pid = 'new-8';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
     $pane->subtype = 'oa_event_list-oa_events_upcoming_small';
@@ -312,10 +335,10 @@ function oa_events_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['sidebar'][2] = 'new-7';
+    $display->content['new-8'] = $pane;
+    $display->panels['sidebar'][3] = 'new-8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
