@@ -20,11 +20,16 @@ $plugin = array(
 function oa_favorites_favorites_button_render($subtype, $conf, $args, $context = NULL) {
   $block = new stdClass();
   $block->title = '';
+  $node = menu_get_object();
 
   global $user;
   if ($user->uid) {
     $items = oa_favorites_get_spaces($user);
+    // favorites flag link
+    if(@$node->nid) $items['links'][] = flag_create_link(FAVORITE_SPACE, $node->nid);
     if (!empty($items['links'])) {
+      // include css
+      drupal_add_css(drupal_get_path('module', 'oa_favorites') . '/oa_favorites.css');
       $vars['spaces_favorite'] = theme('item_list', array(
         'items' => $items['links'],
         'title' => t('Favorite Spaces'),
