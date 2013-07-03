@@ -41,13 +41,25 @@ function oa_subspaces_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'oa_parent_space',
-    'label' => 'Parent Space',
+    'label' => 'Parents',
+    'options_limit' => 0,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(
+      'body' => 0,
+      'field_featured_image' => 0,
+      'group_access' => 0,
+      'group_group' => 0,
+      'oa_parent_space' => 0,
+      'og_site_role_assign_role' => 0,
+      'og_user_inheritance' => 0,
+      'og_user_permission_inheritance' => 0,
+    ),
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
           'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
+            'widget_type' => 'options_select',
           ),
           'default' => array(
             'widget_type' => 'options_select',
@@ -211,13 +223,28 @@ function oa_subspaces_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'oa_parent_space',
-    'label' => 'Parent Space',
+    'label' => 'Parents',
+    'options_limit' => 0,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(
+      'body' => 0,
+      'field_featured_image' => 0,
+      'field_oa_node_types' => 0,
+      'field_oa_section_override' => 0,
+      'field_oa_space_type' => 0,
+      'group_access' => 0,
+      'group_group' => 0,
+      'oa_parent_space' => 0,
+      'og_roles_permissions' => 0,
+      'og_user_inheritance' => 0,
+      'og_user_permission_inheritance' => 0,
+    ),
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
           'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
+            'widget_type' => 'options_select',
           ),
           'default' => array(
             'widget_type' => 'options_select',
@@ -354,7 +381,7 @@ function oa_subspaces_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Group user inheritance');
   t('Group user permission inheritance');
-  t('Parent Space');
+  t('Parents');
   t('The parent space to optionally inherit members from.');
 
   return $field_instances;

@@ -26,9 +26,21 @@ function oa_subspaces_form_node_form_alter(&$form, $form_state, $form_id) {
     $form['#validate'][] = 'oa_subspaces_form_node_form_validate';
 
     // clean up the edit form
-    unset($form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['admin']);
-    $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#title'] = t('Parent Spaces');
-    $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#description'] = t('Inherit membership from the selected spaces.');
+    if (!empty($form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['admin']['#options'])) {
+      $all = array();
+      foreach ($form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#options'] + $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['admin']['#options'] as $op => $value) {
+        if (is_array($value)) {
+          $all += $value;
+        }
+        else {
+          $all[$op] = $value;
+        }
+      }
+      $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#options'] = $all;
+      unset($form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['admin']);
+    }
+    $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#title'] = t('Parents');
+    $form[OA_PARENT_SPACE][LANGUAGE_NONE][0]['default']['#description'] = t('Inherit membership from the selected parents.');
     $type = $form['#node']->type;
     $admin_access = user_access('create ' . $type . ' content') || user_access('administer group');
     if (empty($form['#node']->nid)) {
