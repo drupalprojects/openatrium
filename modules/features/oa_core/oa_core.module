@@ -500,6 +500,12 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
   $pane = $form_state['pane'];
   // Add in te Active options
   // @todo be a bit smarter on this, check type of field.
+  if (isset($form['exposed']['filter-oa_parent_space_target_id']['oa_parent_space_target_id'])) {
+    $form['exposed']['filter-oa_parent_space_target_id']['oa_parent_space_target_id']['#options'] = array('' => t('- Active Space -')) + $form['exposed']['filter-oa_parent_space_target_id']['oa_parent_space_target_id']['#options'];
+    if (!isset($pane->configuration['exposed']['oa_parent_space_target_id'])) {
+      $pane->configuration['exposed']['oa_parent_space_target_id'] = '';
+    }
+  }
   if (isset($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id'])) {
     $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options'] = array('' => t('- Active Space -')) + $form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options'];
     if (!isset($pane->configuration['exposed']['og_group_ref_target_id'])) {

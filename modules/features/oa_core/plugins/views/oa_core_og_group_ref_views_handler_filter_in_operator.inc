@@ -47,7 +47,6 @@ class oa_core_og_group_ref_views_handler_filter_in_operator extends views_handle
     parent::query();
     if (!empty($this->fail_build)) {
       $this->view->build_info['fail'] = TRUE;
-      drupal_seT_message('fail build');
     }
   }
 
