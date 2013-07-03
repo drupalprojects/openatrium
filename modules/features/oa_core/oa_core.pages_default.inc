@@ -253,6 +253,9 @@ function oa_core_default_page_manager_pages() {
       'hide_owner' => 0,
       'hide_teams' => 0,
       'show_number' => '0',
+      'hide_members' => 0,
+      'hide_inherited' => 0,
+      'show_as_tabs' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
