@@ -399,6 +399,14 @@ function oa_core_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -470,7 +478,7 @@ function oa_core_views_default_views() {
   /* Display: All spaces and groups */
   $handler = $view->new_display('panel_pane', 'All spaces and groups', 'panel_pane_all');
   $handler->display->display_options['pane_title'] = 'Spaces & Groups';
-  $handler->display->display_options['pane_category']['name'] = 'AHRQ';
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
@@ -487,6 +495,10 @@ function oa_core_views_default_views() {
       'type' => '',
       'oa_parent_space_target_id' => '',
       'flagged' => '',
+    ),
+    'sorts' => array(
+      'created' => '',
+      'title' => '',
     ),
   );
   $export['open_atrium_groups'] = $view;
