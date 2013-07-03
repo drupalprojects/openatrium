@@ -229,12 +229,18 @@ function oa_core_user_spaces_og_links($entity, $account) {
     if ($settings['field_name']) {
       $url .= '/' . $settings['field_name'];
     }
+    $url .= '/nojs';
 
     if (og_user_access($entity_type, $id, 'subscribe without approval', $account)) {
       $links['title'] = t('Subscribe to group');
       if ($account->uid) {
         $links['href'] = $url;
-        $links['options'] = array('query' => array('destination' => current_path()));
+        $links['options'] = array(
+          'query' => array(
+            'destination' => current_path(),
+            'token' => drupal_get_token('node_' . $id . '_' . $account->uid),
+          ),
+        );
       }
       else {
         $links['href'] = 'user/login';
@@ -245,7 +251,13 @@ function oa_core_user_spaces_og_links($entity, $account) {
       $links['title'] = t('Request group membership');
       if ($account->uid) {
         $links['href'] = $url;
-      }
+        $links['options'] = array(
+          'query' => array(
+            'destination' => current_path(),
+            'token' => drupal_get_token('node_' . $id . '_' . $account->uid),
+          ),
+        );
+     }
       else {
         $links['href'] = 'user/login';
         $links['options'] = array('query' => array('destination' => $url));

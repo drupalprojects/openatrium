@@ -280,87 +280,103 @@ function oa_core_field_attach_view_alter(&$output, $context) {
 }
 
 /**
- * Menu callback to add user to group
- * Mostly taken from og_ui_subscribe in og_ui_pages.inc
- * @param  $group_type
- * @param  $gid
- * @param  $uid
+ * Helper function to add a user to a group
+ * @param  [type]  $group_type [description]
+ * @param  [type]  $gid        [description]
+ * @param  [type]  $uid        [description]
+ * @param  [type]  $override  if TRUE, add pending members to space
+ * @return [type]              [description]
  */
-function oa_core_add_member($group_type, $gid, $uid, $field_name = NULL, $goto = TRUE) {
-  global $user;
-  if (!$uid) {
-    // Anonymous user can't request membership.
-    $dest = drupal_get_destination();
-    if (variable_get('user_register', 1)) {
-      drupal_set_message(t('In order to join any group, you must <a href="!login">login</a>. After you have successfully done so, you will need to request membership again.', array('!login' => url("user/login", array('query' => $dest)))));
-    }
-    else {
-      drupal_set_message(t('In order to join any group, you must <a href="!login">login</a> or <a href="!register">register</a> a new account. After you have successfully done so, you will need to request membership again.', array('!register' => url("user/register", array('query' => $dest)), '!login' => url("user/login", array('query' => $dest)))));
-    }
-    drupal_goto('user');
-  }
-
+function oa_core_add_member_api($group_type, $gid, $uid, $override = FALSE) {
   $account = user_load($uid);
   $group = entity_load_single($group_type, $gid);
   $label = entity_label($group_type, $group);
   $entity_type = 'node';
 
-  $redirect = FALSE;
   $message = '';
   $params = array();
   $params['@user'] = format_username($account);
   // Show the group name only if user has access to it.
   $params['@group'] = entity_access('view', $entity_type, $group) ?  entity_label($entity_type, $group) : t('Private group');
 
-  if (og_is_member($entity_type, $gid, 'user', $account, array(OG_STATE_BLOCKED))) {
-    // User is blocked, access denied.
-    drupal_access_denied();
-    return;
-  }
-  if (og_is_member($entity_type, $gid, 'user', $account, array(OG_STATE_PENDING))) {
-    // User is pending, return them back.
-    $message = $user->uid == $user->uid ? t('You already have a pending membership for the group @group.', $params) : t('@user already has a pending membership for the  the group @group.', $params);
-    $redirect = TRUE;
-  }
-
-  if (og_is_member($entity_type, $gid, 'user', $account, array(OG_STATE_ACTIVE))) {
-    // User is already a member, return them back.
-    $message = $user->uid == $account->uid ? t('You are already a member of the group @group.', $params) : t('@user is already a member of the group @group.', $params);
-    $redirect = TRUE;
-  }
-
-  if ($redirect) {
-    drupal_set_message($message, 'warning');
-    $url = entity_uri($entity_type, $group);
-    drupal_goto($url['path'], $url['options']);
-  }
-
-  if (module_exists('og_ui') && ($user->uid == $account->uid)) {
-    module_load_include('inc', 'og_ui', 'og_ui.pages');
-    // user is requesting their own membership, so show the confirmation form
-    if (og_user_access($entity_type, $gid, 'subscribe', $account) || og_user_access($entity_type, $gid, 'subscribe without approval', $account)) {
-      // Show the user a subscription confirmation.
-      return drupal_get_form('og_ui_confirm_subscribe', $entity_type, $gid, $account, $field_name);
-    }
-    drupal_access_denied();
-  }
-
-  // otherwise, admin is adding a user, so just allow it
-
-  // Ungroup user, in case they were already registered.
-  og_ungroup('node', $gid, 'user', $account);
-  // add user to group
-  og_group('node', $gid, array('entity' => $account));
-
-  drupal_set_message(t('%user has been added to the space %title.', array('%user' => format_username($account), '%title' => $label)));
-  if ($goto) {
-    if ($group->type == OA_SPACE_TYPE) {
-      drupal_goto('node/' . $gid . '/members');
+  if (!$uid) {
+    // Anonymous user can't request membership.
+    $dest = drupal_get_destination();
+    if (variable_get('user_register', 1)) {
+      $message = t('In order to join any group, you must <a href="!login">login</a>. After you have successfully done so, you will need to request membership again.', array('!login' => url("user/login", array('query' => $dest))));
     }
     else {
-      drupal_goto('node/' . $gid);
+      $message = t('In order to join any group, you must <a href="!login">login</a> or <a href="!register">register</a> a new account. After you have successfully done so, you will need to request membership again.', array('!register' => url("user/register", array('query' => $dest)), '!login' => url("user/login", array('query' => $dest))));
     }
   }
+  elseif (og_is_member($entity_type, $gid, 'user', $account, array(OG_STATE_BLOCKED))) {
+    // User is blocked, access denied.
+    $message = t('@user is blocked and cannot be addded.', $params);
+  }
+  elseif (!$override && og_is_member($entity_type, $gid, 'user', $account, array(OG_STATE_PENDING))) {
+    // User is pending, return them back.
+    $message = t('@user already has a pending membership for the  the group @group.', $params);
+  }
+  elseif (og_is_member($entity_type, $gid, 'user', $account, array(OG_STATE_ACTIVE))) {
+    // User is already a member, return them back.
+    $message = t('@user is already a member of the group @group.', $params);
+  }
+
+  if (empty($message)) {
+    // Ungroup user, in case they were already registered.
+    og_ungroup('node', $group->nid, 'user', $account);
+    // add user to group
+    og_group('node', $group->nid, array('entity' => $account));
+
+    $message = t('%user has been added to the space %title.', array('%user' => format_username($account), '%title' => $label));
+  }
+
+  drupal_set_message($message);
+
+  return $message;
+}
+
+/**
+ * Menu callback to add user to group
+ * Mostly taken from og_ui_subscribe in og_ui_pages.inc
+ * @param  $group_type
+ * @param  $gid
+ * @param  $uid
+ */
+function oa_core_add_member($group_type, $gid, $uid, $field_name = NULL, $type = 'nojs') {
+  global $user;
+
+  if (!isset($_GET['token']) || !drupal_valid_token($_GET['token'], $group_type . '_' . $gid . '_' . $uid)) {
+    return MENU_ACCESS_DENIED;
+  }
+
+  $message = '';
+  $account = user_load($uid);
+
+  $is_user = ($user->uid == $account->uid) && ($user->uid != 1);
+
+  if (module_exists('og_ui') && ($type != 'ajax') && $is_user) {
+    module_load_include('inc', 'og_ui', 'og_ui.pages');
+    // user is requesting their own membership, so show the confirmation form
+    if (og_user_access('node', $gid, 'subscribe', $account) || og_user_access($entity_type, $gid, 'subscribe without approval', $account)) {
+      // Show the user a subscription confirmation.
+      return drupal_get_form('og_ui_confirm_subscribe', 'node', $gid, $account, $field_name);
+    }
+    drupal_access_denied();
+  }
+
+  $message = oa_core_add_member_api($group_type, $gid, $uid, !$is_user);
+
+  if ($type != 'ajax') {
+    drupal_goto();
+  }
+  else {
+    $commands = array();
+    $commands[] = ajax_command_append('#oa-core-messages', theme('status_messages'));
+    $page = array('#type' => 'ajax', '#commands' => $commands);
+    ajax_deliver($page);
+  }
+
   return;
 }
 

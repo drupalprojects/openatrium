@@ -98,7 +98,7 @@ function oa_core_add_member_form_validate($form, &$form_state) {
 function oa_core_add_member_form_submit($form, &$form_state) {
   $space = $form['#space'];
   $account = user_load_by_name($form_state['values']['name']);
-  oa_core_add_member('node', $space->nid, $account->uid, NULL, FALSE);
+  oa_core_add_member_api('node', $space->nid, $account->uid);
 }
 
 

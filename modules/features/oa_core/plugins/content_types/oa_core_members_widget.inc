@@ -19,6 +19,7 @@ $plugin = array(
     'hide_members' => FALSE,
     'hide_inherited' => FALSE,
     'show_number' => 10,
+    'show_as_tabs' => FALSE,
   ),
 );
 
@@ -38,12 +39,16 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   $block = new stdClass();
   $block->title = t('Members');
 
+  $teams = array();
   if (empty($conf['hide_teams']) && module_exists('oa_teams') && ($teams = oa_teams_get_teams_for_space($space->nid))) {
     $teams = node_load_multiple(array_keys($teams));
   }
-  else {
-    $teams = array();
+
+  $pending = array();
+  if ($is_admin) {
+    $pending = oa_core_get_users_for_space($space->nid, OG_STATE_PENDING);
   }
+
   $members = empty($conf['hide_owner']) || empty($conf['hide_members']) ? oa_core_get_users_for_space($space->nid) : array();
   uasort($members, '_oa_core_sort_user_by_name');
   $owners = array();
@@ -76,53 +81,108 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   else {
     $vars['see_all_link'] = '';
   }
+  $vars['show_as_tabs'] = isset($conf['show_as_tabs']) ? $conf['show_as_tabs'] : FALSE;
+  // set the order the tabs/categories show on page
+  $vars['categories'] = $vars['show_as_tabs']
+    ? array('members', 'pending', 'owners', 'parents', 'teams')
+    : array('owners', 'parents', 'teams', 'pending', 'members');
 
-  $space_title = node_type_get_name($space->type);
-  $vars['title'] = array(
-    'teams' => t('Teams'),
-    'members' => check_plain($space_title),
-    'owners' => t('@type administrators', array('@type' => $space_title)),
-    'parents' => t('Inheriting members from'),
-  );
-  $items = array(
-    'teams' => $teams,
-    'members' => empty($conf['hide_members']) ? $members : array(),
-    'owners' => $owners,
-    'parents' => $parents,
-  );
-  foreach ($items as $key => $entities) {
-    $vars[$key] = array();
-    if ($entities) {
-      foreach ($entities as $id => $entity) {
-        $vars[$key][$id] = oa_core_entity_build_display($entity, $id, $space);
+  $space_type = node_type_get_name($space->type);
+
+  $tabs = array();
+  if (count($members) > 0) {
+    $tabs['members'] = array(
+      'caption' => t('Members'),
+      'title' => '',
+      'items' => $members,
+      'links' => array('dashboard', 'remove', 'remove-child', 'add-admin'),
+    );
+  }
+  if (count($pending) > 0) {
+    $tabs['pending'] = array(
+      'caption' => t('Pending') . ' <span class="oa_pending_count">' . count($pending) . '</span>',
+      'title' => t('Pending members'),
+      'items' => $pending,
+      'links' => array('dashboard', 'add', 'remove'),
+    );
+  }
+  if (count($owners) > 0) {
+    $tabs['owners'] = array(
+      'caption' => t('Administrators'),
+      'title' => t('@type administrators', array('@type' => $space_type)),
+      'items' => $owners,
+      'links' => array('dashboard', 'remove-admin'),
+    );
+  }
+  if (count($parents) > 0) {
+    $tabs['parents'] = array(
+      'caption' => t('Inherited'),
+      'title' => t('Inheriting members from'),
+      'items' => $parents,
+      'links' => array(),
+    );
+  }
+  if (count($teams) > 0) {
+    $tabs['teams'] = array(
+      'caption' => t('Teams'),
+      'title' => t('Teams'),
+      'items' => $teams,
+      'links' => array(),
+    );
+  }
+
+  foreach ($tabs as $category => $tab) {
+    $tabs[$category]['items'] = array();
+    if ($tab['items']) {
+      foreach ($tab['items'] as $id => $entity) {
+        $tabs[$category]['items'][$id] = oa_core_entity_build_display($entity, $id, $space);
         if ($entity->uid == $space->uid) {
           // don't show links for main space owner
-          $vars[$key][$id]['uid'] = 0;
+          $tabs[$category]['items'][$id]['uid'] = 0;
         }
       }
     }
     else {
-      unset($vars['title'][$key]);
+      unset($tabs[$category]);
     }
   }
-  if (count($vars['title']) == 1) {
-    unset($vars['title']);
+  // don't show extra title if only one type of user being shown in a block
+  if (count($tabs) == 1) {
+    unset($tabs[key($tabs)]['title']);
   }
 
-  $vars['links']['dashboard'] = 'user/';
-  if ($is_admin) {
-    $vars['links']['remove'] = 'group/node/' . $space->nid . '/remove/single/';
-    $vars['links']['add-admin'] = 'group/node/' . $space->nid . '/add-admin/';
-    $vars['links']['remove-admin'] = 'group/node/' . $space->nid . '/remove-admin/';
-    if (og_user_access('node', $space->nid, 'administer group') && module_exists('oa_subspaces') && og_subgroups_children_load('node', $space->nid, FALSE)) {
-      $vars['links']['remove-child'] = 'group/node/' . $space->nid . '/remove/all/';
-    }
-  }
-  else {
-    $vars['links']['remove'] = '';
-    $vars['links']['add-admin'] = '';
-    $vars['links']['remove-admin'] = '';
-  }
+  $links = array(
+    'dashboard' => array(
+      'title' => t('Dashboard'),
+      'url' => 'user/%uid',
+    ),
+    'remove' => array(
+      'title' => t('Remove from @label', array('@label' => $space_type)),
+      'url' => $is_admin ? 'group/node/' . $space->nid . '/remove/single/%uid/nojs' : '',
+    ),
+    'add' => array(
+      'title' => t('Approve/Add to @label', array('@label' => $space_type)),
+      'url' => $is_admin ? 'group/node/' . $space->nid . '/add-member/%uid/' . OA_SPACE_FIELD . '/nojs' : '',
+    ),
+    'add-admin' => array(
+      'title' => t('Add as Admin'),
+      'url' => $is_admin ? 'group/node/' . $space->nid . '/add-admin/%uid/nojs' : '',
+    ),
+    'remove-admin' => array(
+      'title' => t('Remove as Admin'),
+      'url' => $is_admin ? 'group/node/' . $space->nid . '/remove-admin/%uid/nojs' : '',
+    ),
+    'remove-child' => array(
+      'title' => t('Remove from @label and any children spaces', array('@label' => $space_type)),
+      'url' => (og_user_access('node', $space->nid, 'administer group') && module_exists('oa_subspaces') && og_subgroups_children_load('node', $space->nid, FALSE))
+        ? 'group/node/' . $space->nid . '/remove/all/%uid/nojs'
+        : '',
+    ),
+  );
+
+  $vars['tabs'] = $tabs;
+  $vars['links'] = $links;
+  $vars['active'] = 'members';
 
   $block->content = theme('oa_core_members_widget', $vars);
   return $block;
@@ -180,6 +240,11 @@ function oa_core_entity_build_display($entity, $id, $space) {
 function oa_core_members_widget_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
 
+  $form['show_as_tabs'] = array(
+    '#title' => t('Show as Tabs'),
+    '#type' => 'checkbox',
+    '#default_value' => $conf['show_as_tabs'],
+  );
   $form['hide_owner'] = array(
     '#title' => t('Hide administrators'),
     '#type' => 'checkbox',

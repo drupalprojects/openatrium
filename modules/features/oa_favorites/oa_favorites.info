@@ -9,4 +9,5 @@ dependencies[] = ctools
 dependencies[] = flag
 features[features_api][] = api:2
 features[flag][] = favorite_space
+stylesheets[all][] = oa_favorites.css
 project path = profiles/openatrium/modules/features
