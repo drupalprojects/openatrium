@@ -69,6 +69,14 @@ function oa_core_menu() {
     'access callback' => 'oa_core_user_access_group',
     'access arguments' => array('manage members', 1, 2),
   );
+  $items['group/%/%/block/%'] = array(
+    'title' => 'Block member',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'oa_core_block_member',
+    'page arguments' => array(1, 2, 4),
+    'access callback' => 'oa_core_user_access_group',
+    'access arguments' => array('manage members', 1, 2),
+  );
   $items['group/%/%/add-member/%'] = array(
     'title' => 'Add member',
     'type' => MENU_CALLBACK,
@@ -309,7 +317,7 @@ function oa_core_add_member_api($group_type, $gid, $uid, $override = FALSE) {
       $message = t('In order to join any group, you must <a href="!login">login</a> or <a href="!register">register</a> a new account. After you have successfully done so, you will need to request membership again.', array('!register' => url("user/register", array('query' => $dest)), '!login' => url("user/login", array('query' => $dest))));
     }
   }
-  elseif (og_is_member($entity_type, $gid, 'user', $account, array(OG_STATE_BLOCKED))) {
+  elseif (!$override && og_is_member($entity_type, $gid, 'user', $account, array(OG_STATE_BLOCKED))) {
     // User is blocked, access denied.
     $message = t('@user is blocked and cannot be addded.', $params);
   }
@@ -409,6 +417,37 @@ function oa_core_remove_member($group_type, $gid, $from_children, $uid, $type = 
   }
 
   drupal_set_message(t('%user has been removed from the @type %title.', array('@type' => drupal_strtolower(node_type_get_name($group->type)), '%user' => $username, '%title' => $label)));
+  if ($type != 'ajax') {
+    drupal_goto();
+  }
+  else {
+    $commands = array();
+    $commands[] = ajax_command_append('#oa-core-messages', theme('status_messages'));
+    $page = array('#type' => 'ajax', '#commands' => $commands);
+    ajax_deliver($page);
+  }
+}
+
+/**
+ * Menu callback to block a user from group
+ * @param  $group_type
+ * @param  $gid
+ * @param  $uid
+ */
+function oa_core_block_member($group_type, $gid, $uid, $type = 'nojs') {
+  if (!isset($_GET['token']) || !drupal_valid_token($_GET['token'], $group_type . '_' . $gid . '_' . $uid)) {
+    return MENU_ACCESS_DENIED;
+  }
+  $account = user_load($uid);
+  $group = entity_load_single($group_type, $gid);
+  $label = entity_label($group_type, $group);
+  $username = format_username($account);
+  og_ungroup('node', $group->nid, 'user', $account);
+  // add user to group
+  og_group('node', $group->nid, array('entity' => $account, 'state' => OG_STATE_BLOCKED));
+
+  drupal_set_message(t('%user has been blocked.', array('%user' => format_username($account), '%title' => $label)));
+
   if ($type != 'ajax') {
     drupal_goto();
   }

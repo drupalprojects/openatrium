@@ -45,8 +45,13 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   }
 
   $pending = array();
-  if ($is_admin) {
+  if ($is_admin && empty($conf['hide_members']) && empty($conf['hide_owner'])) {
     $pending = oa_core_get_users_for_space($space->nid, OG_STATE_PENDING);
+  }
+
+  $blocked = array();
+  if ($is_admin && empty($conf['hide_members']) && empty($conf['hide_owner'])) {
+    $blocked = oa_core_get_users_for_space($space->nid, OG_STATE_BLOCKED);
   }
 
   $members = empty($conf['hide_owner']) || empty($conf['hide_members']) ? oa_core_get_users_for_space($space->nid) : array();
@@ -84,8 +89,8 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
   $vars['show_as_tabs'] = isset($conf['show_as_tabs']) ? $conf['show_as_tabs'] : FALSE;
   // set the order the tabs/categories show on page
   $vars['categories'] = $vars['show_as_tabs']
-    ? array('members', 'pending', 'owners', 'parents', 'teams')
-    : array('owners', 'parents', 'teams', 'pending', 'members');
+    ? array('members', 'pending', 'blocked', 'owners', 'parents', 'teams')
+    : array('owners', 'parents', 'teams', 'pending', 'members', 'blocked');
 
   $space_type = node_type_get_name($space->type);
 
@@ -95,7 +100,7 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
       'caption' => t('Members'),
       'title' => '',
       'items' => $members,
-      'links' => array('dashboard', 'remove', 'remove-child', 'add-admin'),
+      'links' => array('dashboard', 'remove', 'remove-child', 'add-admin', 'block'),
     );
   }
   if (count($pending) > 0) {
@@ -103,6 +108,14 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
       'caption' => t('Pending') . ' <span class="oa_pending_count">' . count($pending) . '</span>',
       'title' => t('Pending members'),
       'items' => $pending,
+      'links' => array('dashboard', 'add', 'remove'),
+    );
+  }
+  if (count($blocked) > 0) {
+    $tabs['blocked'] = array(
+      'caption' => t('Blocked'),
+      'title' => t('Blocked users'),
+      'items' => $blocked,
       'links' => array('dashboard', 'add', 'remove'),
     );
   }
@@ -163,6 +176,10 @@ function oa_core_members_widget_render($subtype, $conf, $args, $context = NULL) 
     'add' => array(
       'title' => t('Approve/Add to @label', array('@label' => $space_type)),
       'url' => $is_admin ? 'group/node/' . $space->nid . '/add-member/%uid/' . OA_SPACE_FIELD . '/nojs' : '',
+    ),
+    'block' => array(
+      'title' => t('Block user'),
+      'url' => $is_admin ? 'group/node/' . $space->nid . '/block/%uid/nojs' : '',
     ),
     'add-admin' => array(
       'title' => t('Add as Admin'),
