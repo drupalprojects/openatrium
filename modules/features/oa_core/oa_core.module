@@ -201,7 +201,10 @@ function oa_core_form_node_form_alter(&$form, &$form_state, $form_id) {
   // we are in an edit form
   // autofill empty group audience field
   if (isset($form[OA_SPACE_FIELD]) && empty($form[OA_SPACE_FIELD][LANGUAGE_NONE][0]['default']['#default_value'])) {
-    if (!empty($_SESSION['og_context']['gid'])) {
+    if (!empty($_GET['og_group_ref'])) {
+      $form[OA_SPACE_FIELD][LANGUAGE_NONE][0]['default']['#default_value'] = check_plain($_GET['og_group_ref']);
+    }
+    elseif (!empty($_SESSION['og_context']['gid'])) {
       $form[OA_SPACE_FIELD][LANGUAGE_NONE][0]['default']['#default_value'] = $_SESSION['og_context']['gid'];
     }
   }
