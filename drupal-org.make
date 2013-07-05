@@ -26,9 +26,10 @@ projects[ctools][download][type] = git
 projects[ctools][download][url] = http://git.drupal.org/project/ctools.git
 projects[ctools][download][revision] = 83817fa
 projects[ctools][download][branch] = 7.x-1.x
-projects[ctools][patch][1838544] = http://drupal.org/files/1901106-ctools-views_content-exposed_form_override-13.patch
+projects[ctools][patch][1901106] = http://drupal.org/files/1901106-ctools-views_content-exposed_form_override-13.patch
 projects[ctools][patch][2016559] = http://drupal.org/files/ctools_views_content_numeric_pager_id.patch
 projects[ctools][patch][2023705] = http://drupal.org/files/2023705-ctools-autosubmit-2.patch
+projects[ctools][patch][1910608] = https://drupal.org/files/1910608-views_content-ajax-4.patch
 
 ; Override panopoly_core.make: 3.1
 ; Update Panelizer to latest dev version
@@ -117,7 +118,7 @@ projects[features][patch][2027023] = http://drupal.org/files/features_conflict_c
 projects[views][version] = 3.7
 projects[views][subdir] = contrib
 projects[views][patch][1979926] = http://drupal.org/files/1979926-views-reset_fetch_data-2.patch
-projects[views][patch][1735096] = http://drupal.org/files/multi-instance-exposed-form-safety.patch
+projects[views][patch][1735096] = http://drupal.org/files/1735096-views-mltiple-instance-exposed-form-8.patch
 
 ; Organic Groups
 projects[og][download][type] = git
