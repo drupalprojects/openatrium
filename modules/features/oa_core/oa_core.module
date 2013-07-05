@@ -632,7 +632,10 @@ function oa_core_form_views_content_views_panes_content_type_edit_form_alter(&$f
  */
 function oa_core_refresh_section_values($element) {
   $element['#options'] = array_intersect_key($element['#options'], array(NULL => '', 'All' => ''));
-  $element['#options'] += current(entityreference_get_selection_handler(field_info_field('oa_section_ref'))->getReferencableEntities());
+  $values = entityreference_get_selection_handler(field_info_field('oa_section_ref'))->getReferencableEntities();
+  if ($values) {
+    $element['#options'] += current($values);
+  }
   if ($element['#value'] && !array_key_exists($element['#value'], $element['#options'])) {
     $element['#value'] = 'All';
   }

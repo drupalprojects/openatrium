@@ -230,7 +230,7 @@ function _oa_subspaces_find_view_settings($view = NULL, $form_state = NULL) {
     else {
       $return[$key] = FALSE;
     }
-    if ($return[$key] === 'All') {
+    if ($return[$key] === 'All'  || !is_numeric($return[$key])) {
       $return[$key] = FALSE;
     }
   }
