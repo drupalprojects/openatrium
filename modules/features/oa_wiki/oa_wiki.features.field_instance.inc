@@ -92,7 +92,7 @@ function oa_wiki_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
-      'file_directory' => ',
+      'file_directory' => '',
       'file_extensions' => 'gif png jpg jpeg pdf doc docx xls xlsx txt',
       'max_filesize' => '',
       'user_register_form' => FALSE,
