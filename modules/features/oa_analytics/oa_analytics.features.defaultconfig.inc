@@ -30,7 +30,7 @@ function oa_analytics_defaultconfig_strongarm() {
       1 => array(
         'slot' => 1,
         'name' => 'oa_group',
-        'value' => '[site:og-context--node:title]',
+        'value' => ',
         'scope' => '3',
       ),
       2 => array(
