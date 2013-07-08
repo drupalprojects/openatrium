@@ -43,7 +43,6 @@ projects[panelizer][patch][1992106] = http://drupal.org/files/1992106_panelizer_
 projects[panelizer][patch][1982654] = http://drupal.org/files/1982654-panelizer-dontaskmethatagain-2.patch
 projects[panelizer][patch][2022541] = http://drupal.org/files/2022541-panelizer-node-page-unpublished-1.patch
 
-
 ; Override panopoly_core.make: 1.0
 ; Update Entity Reference to work with Devel Generate (#1852112)
 projects[entityreference][type] = module
@@ -82,11 +81,8 @@ projects[token][download][branch] = 7.x-1.x
 projects[token][download][revision] = 72f3d17
 projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-warnings.patch
 
-
-
 ; ************ End Panopoly Overrides ************
 ; ************************************************
-
 
 ; ************************************************
 ; ********** OPEN ATRIUM'S DEPENDENCIES **********
@@ -107,108 +103,6 @@ projects[views][subdir] = contrib
 projects[views][patch][1979926] = http://drupal.org/files/1979926-views-reset_fetch_data-2.patch
 projects[views][patch][1735096] = http://drupal.org/files/1735096-views-mltiple-instance-exposed-form-8.patch
 
-; Organic Groups
-projects[og][download][type] = git
-projects[og][subdir] = contrib
-projects[og][download][url] = http://git.drupal.org/project/og.git
-projects[og][download][branch] = 7.x-2.x
-projects[og][download][revision] = 05ee95269e2c31492158dc6eabd2e386aec1c931
-projects[og][patch][1995012] = http://drupal.org/files/og_membership_alter.patch
-projects[og][patch][998094] = http://drupal.org/files/998094-og_membership_administer_member-16.patch
-
-; Organic Groups Vocabulary
-projects[og_vocab][subdir] = contrib
-projects[og_vocab][version] = 1.1
-
-; Organic Groups Subgroups
-projects[og_subgroups][subdir] = contrib
-projects[og_subgroups][download][type] = git
-projects[og_subgroups][download][url] = http://git.drupal.org/project/og_subgroups.git
-projects[og_subgroups][download][branch] = 7.x-2.x
-projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-5.patch
-projects[og_subgroups][patch][1995018] = http://drupal.org/files/1995018-og_subgroups_og_alter-5.patch
-
-; Message
-projects[message][subdir] = contrib
-projects[message][version] = 1.8
-
-; Message Notify
-projects[message_notify][subdir] = contrib
-projects[message_notify][version] = 2.5
-
-; Message Subscribe
-projects[message_subscribe][subdir] = contrib
-projects[message_subscribe][version] = 1.0-alpha5
-
-; Markdown
-projects[markdown][subdir] = contrib
-projects[markdown][version] = 1.1
-
-; Flag
-projects[flag][subdir] = contrib
-projects[flag][version] = 2.0
-projects[flag][download][type] = git
-projects[flag][download][url] = http://git.drupal.org/project/flag.git
-projects[flag][download][branch] = 7.x-2.x
-projects[flag][download][revision] = 32cac54
-projects[flag][patch][471212] = http://drupal.org/files/471212-14-flag-all-bundles.patch
-projects[flag][patch][2027091] = http://drupal.org/files/flag_hook_flag_default_flags_alter.patch
-
-; RealName
-projects[realname][subdir] = contrib
-projects[realname][version] = 1.1
-
-; Chosen
-projects[chosen][subdir] = contrib
-projects[chosen][version] = 2.0-alpha1
-
-libraries[chosen][download][type]    = git
-libraries[chosen][download][url]     = https://github.com/harvesthq/chosen.git
-libraries[chosen][download][tag]     = v0.9.15
-
-; Twitter Bootstrap UI
-;; Currently removed Twitter Bootstrap because of license issue:
-;; http://drupal.org/node/1449452 http://drupal.org/node/1445226#comment-7343538
-;; Instead, we load the Bootstrap JS via external CDN in template.php
-;;projects[twitter_bootstrap_ui][type] = module
-;;projects[twitter_bootstrap_ui][subdir] = contrib
-;;projects[twitter_bootstrap_ui][download][type] = git
-;;projects[twitter_bootstrap_ui][download][url] = http://git.drupal.org/project/twitter_bootstrap_ui.git
-;;projects[twitter_bootstrap_ui][download][branch] = 7.x-2.x
-;;projects[twitter_bootstrap_ui][patch][1906722] = http://drupal.org/files/twitter_bootstrap_ui-allow_admin_configuration-1906722-5.patch
-; tie to previous commit before the (2.x) was added to libraries
-; since that doesn't work when module is patched in inherited profile
-;;projects[twitter_bootstrap_ui][download][revision] = 0328b6ff027287fe7e62b058fc4dea12362956f5
-
-;;libraries[twitter_bootstrap][download][type] = file
-;;libraries[twitter_bootstrap][download][url] = http://twitter.github.com/bootstrap/assets/bootstrap.zip
-
-; Make file for oa_media
-; Colorbox
-projects[colorbox][subdir] = contrib
-projects[colorbox][version] = 2.4
-
-projects[media_colorbox][subdir] = contrib
-projects[media_colorbox][version] = 1.0-rc3
-
-libraries[colorbox][download][type] = file
-libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.x.zip
-libraries[colorbox][directory_name] = colorbox
-
-; Devel
-projects[devel][type] = module
-projects[devel][download][type] = git
-projects[devel][download][url] = http://git.drupal.org/project/devel.git
-projects[devel][download][branch] = 7.x-1.x
-projects[devel][subdir] = contrib
-
-; Coder
-projects[coder][type] = module
-projects[coder][download][type] = git
-projects[coder][download][url] = http://git.drupal.org/project/coder.git
-projects[coder][download][branch] = 7.x-2.x
-projects[coder][subdir] = contrib
-
 ; Diff
 projects[diff][subdir] = contrib
 projects[diff][version] = 3.2
@@ -217,33 +111,6 @@ projects[diff][version] = 3.2
 projects[job_scheduler][subdir] = contrib
 projects[job_scheduler][version] = 2.0-alpha3
 
-; Feeds
-projects[feeds][type] = module
-projects[feeds][subdir] = contrib
-projects[feeds][download][type] = git
-projects[feeds][download][url] = http://git.drupal.org/project/feeds.git
-projects[feeds][download][branch] = 7.x-2.x
-projects[feeds][download][revision] = 7e6679d
-
-; Command buttons
-projects[command_buttons][type] = module
-projects[command_buttons][subdir] = contrib
-projects[command_buttons][download][type] = git
-projects[command_buttons][download][url] = http://git.drupal.org/project/command_buttons.git
-projects[command_buttons][download][branch] = 7.x-1.x
-projects[command_buttons][download][revision] = 8f6c4f4
-
-; Google Analytics
-projects[google_analytics][subdir] = contrib
-projects[google_analytics][version] = 1.3
-
-; Views Load More
-projects[views_load_more][subdir] = contrib
-projects[views_load_more][download][type] = git
-projects[views_load_more][download][url] = http://git.drupal.org/project/views_load_more.git
-projects[views_load_more][download][branch] = 7.x-1.x
-projects[views_load_more][download][revision] = 28de384
-
 ; Mail System
 projects[mailsystem][subdir] = contrib
 projects[mailsystem][version] = 2.34
@@ -251,67 +118,6 @@ projects[mailsystem][version] = 2.34
 ; HTML Mail
 projects[htmlmail][subdir] = contrib
 projects[htmlmail][version] = 2.65
-
-; Date Facets
-projects[date_facets][subdir] = contrib
-projects[date_facets][download][type] = git
-projects[date_facets][download][url] = http://git.drupal.org/project/date_facets.git
-projects[date_facets][download][branch] = 7.x-1.x
-projects[date_facets][download][revision] = a7a35f8
-
-; Og menu single
-projects[og_menu_single][subdir] = contrib
-projects[og_menu_single][download][type] = git
-projects[og_menu_single][download][url] = http://git.drupal.org/project/og_menu_single.git
-projects[og_menu_single][download][branch] = 7.x-1.x
-projects[og_menu_single][type] = module
-
-; Variable
-projects[variable][subdir] = contrib
-projects[variable][version] = 2.2
-
-; Og Variables
-projects[og_variables][subdir] = contrib
-projects[og_variables][download][type] = git
-projects[og_variables][download][url] = http://git.drupal.org/project/og_variables.git
-projects[og_variables][download][branch] = 7.x-1.x
-projects[og_variables][type] = module
-
-; Reference Option Limit
-projects[reference_option_limit][subdir] = contrib
-projects[reference_option_limit][download][type] = git
-projects[reference_option_limit][download][url] = http://git.drupal.org/project/reference_option_limit.git
-projects[reference_option_limit][download][branch] = 7.x-1.x
-projects[reference_option_limit][download][revision] = 74bee91
-projects[reference_option_limit][type] = module
-projects[reference_option_limit][patch][1986532] = http://drupal.org/files/1986532_reference_option_limit_og-2.patch
-projects[reference_option_limit][patch][1986526] = http://drupal.org/files/1986526_reference_option_limit_3.patch
-
-; Conditional Fields
-projects[conditional_fields][subdir] = contrib
-projects[conditional_fields][download][branch] = 7.x-3.x
-projects[conditional_fields][download][revision] = cd29b00
-projects[conditional_fields][patch][1982276] = http://drupal.org/files/conditional_fields-typo-in-if-condition-1982276-1.patch
-projects[conditional_fields][patch][2027307] = http://drupal.org/files/conditional_fields-export-0.patch
-projects[conditional_fields][patch][1916988] = http://drupal.org/files/1916988-conditional-fields-alter-3.patch
-
-; Trash Flag
-projects[trash_flag][type] = module
-projects[trash_flag][download][type] = git
-projects[trash_flag][subdir] = contrib
-projects[trash_flag][download][url] = http://git.drupal.org/project/trash_flag.git
-projects[trash_flag][download][branch] = 7.x-1.x
-
-projects[panels_customerror][type] = module
-projects[panels_customerror][subdir] = contrib
-projects[panels_customerror][download][type] = git
-projects[panels_customerror][download][url] = http://git.drupal.org/project/panels_customerror.git
-projects[panels_customerror][download][branch] = 7.x-1.x
-
-; Jquery Update
-projects[jquery_update][subdir] = contrib
-projects[jquery_update][version] = 2.3
-projects[jquery_update][patch][1448490] = http://drupal.org/files/jquery_update-fixes-states-js-1448490.patch
 
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************
@@ -369,6 +175,51 @@ projects[oa_radix][download][branch] = 7.x-2.x
 ; ********** End Open Atrium's Plugins ***********
 ; ************************************************
 
+; ************************************************
+; ************* Open Atrium Modules **************
+; (Modules in distro, not yet their own separate projects)
+
+; ##### oa_subspaces #####
+; Organic Groups Subgroups
+projects[og_subgroups][subdir] = contrib
+projects[og_subgroups][download][type] = git
+projects[og_subgroups][download][url] = http://git.drupal.org/project/og_subgroups.git
+projects[og_subgroups][download][branch] = 7.x-2.x
+projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-5.patch
+projects[og_subgroups][patch][1995018] = http://drupal.org/files/1995018-og_subgroups_og_alter-5.patch
+
+; ##### oa_markdown #####
+; Markdown
+projects[markdown][subdir] = contrib
+projects[markdown][version] = 1.1
+
+; ##### oa_search #####
+; Date Facets
+projects[date_facets][subdir] = contrib
+projects[date_facets][download][type] = git
+projects[date_facets][download][url] = http://git.drupal.org/project/date_facets.git
+projects[date_facets][download][branch] = 7.x-1.x
+projects[date_facets][download][revision] = a7a35f8
+
+; ##### oa_analytics #####
+; Google Analytics
+projects[google_analytics][subdir] = contrib
+projects[google_analytics][version] = 1.3
+
+; ##### oa_devel #####
+; Devel
+projects[devel][type] = module
+projects[devel][download][type] = git
+projects[devel][download][url] = http://git.drupal.org/project/devel.git
+projects[devel][download][branch] = 7.x-1.x
+projects[devel][subdir] = contrib
+
+; Coder
+projects[coder][type] = module
+projects[coder][download][type] = git
+projects[coder][download][url] = http://git.drupal.org/project/coder.git
+projects[coder][download][branch] = 7.x-2.x
+projects[coder][subdir] = contrib
 
 ; ************************************************
 ; ******************* PANOPOLY *******************
