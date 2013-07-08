@@ -91,19 +91,6 @@ projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-w
 ; ************************************************
 ; ********** OPEN ATRIUM'S DEPENDENCIES **********
 
-; Parent Theme
-projects[radix][download][type] = git
-projects[radix][download][url] = http://git.drupal.org/project/radix.git
-projects[radix][download][branch] = 7.x-2.x
-projects[radix][download][revision] = d92c98b
-
-; Parent Theme
-;projects[radix][download][type] = git
-;projects[radix][download][url] = http://git.drupal.org/project/radix.git
-;projects[radix][download][branch] = 7.x-2.x
-;projects[radix][download][revision] = fbcbc725ba78792efc4fe2aee78d37b1cc567fc6
-;projects[radix][patch][1975516] = http://drupal.org/files/radix_button_parent-1975516.patch
-
 ; Features Override
 projects[features_override][subdir] = contrib
 projects[features_override][version] = 2.0-beta2
@@ -355,6 +342,11 @@ projects[oa_events_import][subdir] = contrib
 projects[oa_events_import][download][type] = git
 projects[oa_events_import][download][url] = http://git.drupal.org/project/oa_events_import.git
 projects[oa_events_import][download][branch] = 7.x-2.x
+
+projects[oa_radix][type] = theme
+projects[oa_radix][download][type] = git
+projects[oa_radix][download][url] = http://git.drupal.org/project/oa_radix.git
+projects[oa_radix][download][branch] = 7.x-2.x
 
 ; ********** End Open Atrium's Plugins ***********
 ; ************************************************
