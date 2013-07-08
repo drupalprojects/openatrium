@@ -12,6 +12,7 @@ dependencies[] = features
 dependencies[] = list
 dependencies[] = message
 dependencies[] = number
+dependencies[] = oa_core
 dependencies[] = og
 dependencies[] = og_ui
 dependencies[] = options

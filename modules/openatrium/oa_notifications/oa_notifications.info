@@ -4,6 +4,7 @@ core = 7.x
 package = Open Atrium
 php = 5.2.4
 dependencies[] = ctools
+dependencies[] = flag
 dependencies[] = oa_core
 dependencies[] = page_manager
 features[ctools][] = page_manager:pages_default:1
