@@ -334,61 +334,25 @@ projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = 2.3
 projects[jquery_update][patch][1448490] = http://drupal.org/files/jquery_update-fixes-states-js-1448490.patch
 
-
-; Open Atrium Events Makefile
-;; eventually this gets moved to oa_events when it's a full drupal.org project
-; Open Atrium Events Makefile
-projects[fullcalendar][type] = module
-projects[fullcalendar][subdir] = contrib
-projects[fullcalendar][download][url] = http://git.drupal.org/project/fullcalendar.git
-projects[fullcalendar][download][type] = git
-projects[fullcalendar][version] = 2.0
-projects[fullcalendar][download][branch] = 7.x-2.x
-
-projects[colors][type] = module
-projects[colors][subdir] = contrib
-projects[colors][download][url] = http://git.drupal.org/project/colors.git
-projects[colors][download][type] = git
-projects[colors][version] = 1.0-rc1
-projects[colors][download][branch] = 7.x-1.x
-projects[colors][patch][1814972] = http://drupal.org/files/og-7.x-2.x_0.patch
-
-projects[date_ical][type] = module
-projects[date_ical][subdir] = contrib
-projects[date_ical][version] = 2.7
-projects[date_ical][download][url] = http://git.drupal.org/project/date_ical.git
-projects[date_ical][download][type] = git
-projects[date_ical][download][branch] = 7.x-2.x
-
-; iCalCreator library
-libraries[icalcreator][download][type] = file
-libraries[icalcreator][download][url] = http://kigkonsult.se/downloads/dl.php?f=iCalcreator-2.16.12
-libraries[icalcreator][directory_name] = iCalcreator
-
-projects[geophp][type] = module
-projects[geophp][subdir] = contrib
-projects[geophp][version] = 1.7
-
-projects[geofield][type] = module
-projects[geofield][subdir] = contrib
-projects[geofield][version] = 1.1
-
-projects[geocoder][type] = module
-projects[geocoder][subdir] = contrib
-projects[geocoder][download][type] = git
-projects[geocoder][download][url] = http://git.drupal.org/project/geocoder.git
-projects[geocoder][download][branch] = 7.x-1.x
-projects[geocoder][download][revision] = f6b34bc
-projects[geocoder][patch][1996592] = http://drupal.org/files/1996592-geocoder_geocode_values.patch
-
-libraries[fullcalendar][download][type] = get
-libraries[fullcalendar][download][url] = http://arshaw.com/fullcalendar/downloads/fullcalendar-1.6.1.zip
-libraries[fullcalendar][directory_name] = fullcalendar
-libraries[fullcalendar][destination] = libraries
-libraries[fullcalendar][download][subtree] = fullcalendar-1.6.1/fullcalendar
-
-
 ; ******** End Open Atrium's Dependencies ********
+; ************************************************
+
+; ************************************************
+; ************* Open Atrium Plugins **************
+
+projects[oa_events][type] = module
+projects[oa_events][subdir] = contrib
+projects[oa_events][download][type] = git
+projects[oa_events][download][url] = http://git.drupal.org/project/oa_events.git
+projects[oa_events][download][branch] = 7.x-2.x
+
+projects[oa_events_import][type] = module
+projects[oa_events_import][subdir] = contrib
+projects[oa_events_import][download][type] = git
+projects[oa_events_import][download][url] = http://git.drupal.org/project/oa_events_import.git
+projects[oa_events_import][download][branch] = 7.x-2.x
+
+; ********** End Open Atrium's Plugins ***********
 ; ************************************************
 
 
