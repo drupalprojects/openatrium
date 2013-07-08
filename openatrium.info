@@ -111,7 +111,6 @@ dependencies[] = oa_media
 dependencies[] = oa_permissions
 dependencies[] = oa_admin
 dependencies[] = oa_search
-dependencies[] = oa_mailhandler
 dependencies[] = oa_variables
 dependencies[] = oa_buttons
 

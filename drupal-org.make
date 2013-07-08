@@ -250,14 +250,6 @@ projects[command_buttons][download][revision] = 8f6c4f4
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = 1.3
 
-; Mailhandler
-projects[mailhandler][subdir] = contrib
-projects[mailhandler][download][type] = git
-projects[mailhandler][download][url] = http://git.drupal.org/project/mailhandler.git
-projects[mailhandler][download][branch] = 7.x-2.x
-projects[mailhandler][download][revision] = c57579b
-projects[mailhandler][patch][1961780] = http://drupal.org/files/mailhandler-version-requirement-1961780-1.patch
-
 ; Views Load More
 projects[views_load_more][subdir] = contrib
 projects[views_load_more][download][type] = git
@@ -345,6 +337,12 @@ projects[oa_discussion][subdir] = contrib
 projects[oa_discussion][download][type] = git
 projects[oa_discussion][download][url] = http://git.drupal.org/project/oa_discussion.git
 projects[oa_discussion][download][branch] = 7.x-2.x
+
+projects[oa_wiki][type] = module
+projects[oa_wiki][subdir] = contrib
+projects[oa_wiki][download][type] = git
+projects[oa_wiki][download][url] = http://git.drupal.org/project/oa_wiki.git
+projects[oa_wiki][download][branch] = 7.x-2.x
 
 projects[oa_events][type] = module
 projects[oa_events][subdir] = contrib
