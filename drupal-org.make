@@ -355,6 +355,12 @@ projects[oa_notifications][download][type] = git
 projects[oa_notifications][download][url] = http://git.drupal.org/project/oa_notifications.git
 projects[oa_notifications][download][branch] = 7.x-2.x
 
+projects[oa_media][type] = module
+projects[oa_media][subdir] = contrib
+projects[oa_media][download][type] = git
+projects[oa_media][download][url] = http://git.drupal.org/project/oa_media.git
+projects[oa_media][download][branch] = 7.x-2.x
+
 projects[oa_radix][type] = theme
 projects[oa_radix][download][type] = git
 projects[oa_radix][download][url] = http://git.drupal.org/project/oa_radix.git
