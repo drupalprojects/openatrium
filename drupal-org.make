@@ -319,6 +319,12 @@ projects[jquery_update][patch][1448490] = http://drupal.org/files/jquery_update-
 ; ************************************************
 ; ************* Open Atrium Plugins **************
 
+projects[oa_core][type] = module
+projects[oa_core][subdir] = contrib
+projects[oa_core][download][type] = git
+projects[oa_core][download][url] = http://git.drupal.org/project/oa_core.git
+projects[oa_core][download][branch] = 7.x-2.x
+
 projects[oa_discussion][type] = module
 projects[oa_discussion][subdir] = contrib
 projects[oa_discussion][download][type] = git
