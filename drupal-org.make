@@ -343,6 +343,12 @@ projects[oa_events_import][download][type] = git
 projects[oa_events_import][download][url] = http://git.drupal.org/project/oa_events_import.git
 projects[oa_events_import][download][branch] = 7.x-2.x
 
+projects[oa_notifications][type] = module
+projects[oa_notifications][subdir] = contrib
+projects[oa_notifications][download][type] = git
+projects[oa_notifications][download][url] = http://git.drupal.org/project/oa_notifications.git
+projects[oa_notifications][download][branch] = 7.x-2.x
+
 projects[oa_radix][type] = theme
 projects[oa_radix][download][type] = git
 projects[oa_radix][download][url] = http://git.drupal.org/project/oa_radix.git
