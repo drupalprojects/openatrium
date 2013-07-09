@@ -18,7 +18,7 @@ projects[panels][download][url] = http://git.drupal.org/project/panels.git
 projects[panels][download][revision] = a915408
 projects[panels][download][branch] = 7.x-3.x
 projects[panels][patch][1838544] = http://drupal.org/files/1838544-panels_ipe_region_style_0.patch
-projects[panels][patch][2024441] = http://drupal.org/files/2024441-panels_standard_render_form_include-4.patch
+projects[panels][patch][2024441] = http://drupal.org/files/2024441-panels_standard_render_form_include-5.patch
 
 projects[ctools][type] = module
 projects[ctools][subdir] = contrib
