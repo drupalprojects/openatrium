@@ -18,7 +18,7 @@ projects[panels][download][url] = http://git.drupal.org/project/panels.git
 projects[panels][download][revision] = a915408
 projects[panels][download][branch] = 7.x-3.x
 projects[panels][patch][1838544] = http://drupal.org/files/1838544-panels_ipe_region_style_0.patch
-projects[panels][patch][2024441] = http://drupal.org/files/panels_edit_style_settings_form_validate_include_plugins.patch
+projects[panels][patch][2024441] = http://drupal.org/files/2024441-panels_standard_render_form_include-4.patch
 
 projects[ctools][type] = module
 projects[ctools][subdir] = contrib
@@ -266,7 +266,7 @@ projects[panopoly_magic][download][revision] = 16add888f93577ad9a27379ca309fcf7b
 projects[panopoly_magic][download][branch] = 7.x-1.x
 projects[panopoly_magic][patch][2016527] = http://drupal.org/files/2016527-panopoly_magic_parents_exposed-2.patch
 projects[panopoly_magic][patch][2016643] = http://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-3-do-not-test.patch
-projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-7.patch
+projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-11.patch
 
 
 projects[panopoly_widgets][version] = 1.x-dev
