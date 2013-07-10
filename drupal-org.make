@@ -29,7 +29,7 @@ projects[ctools][download][branch] = 7.x-1.x
 projects[ctools][patch][1901106] = http://drupal.org/files/1901106-ctools-views_content-exposed_form_override-13.patch
 projects[ctools][patch][2016559] = http://drupal.org/files/ctools_views_content_numeric_pager_id.patch
 projects[ctools][patch][2023705] = http://drupal.org/files/2023705-ctools-autosubmit-2.patch
-projects[ctools][patch][1910608] = https://drupal.org/files/1910608-views_content-ajax-4.patch
+projects[ctools][patch][1910608] = http://drupal.org/files/1910608-views_content-ajax-4.patch
 
 ; Override panopoly_core.make: 3.1
 ; Update Panelizer to latest dev version
@@ -185,7 +185,7 @@ projects[og_subgroups][subdir] = contrib
 projects[og_subgroups][download][type] = git
 projects[og_subgroups][download][url] = http://git.drupal.org/project/og_subgroups.git
 projects[og_subgroups][download][branch] = 7.x-2.x
-projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-5.patch
+projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-8.patch
 projects[og_subgroups][patch][1995018] = http://drupal.org/files/1995018-og_subgroups_og_alter-5.patch
 
 ; ##### oa_markdown #####
