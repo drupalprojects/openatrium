@@ -9,6 +9,15 @@ core = 7.x
 ; Therefore PANOPOLY OVERRIDES need to be listed AT THE TOP of this makefile,
 ; so we can patch or update certain projects fetched by Panopoly's makefiles.
 
+
+; ##### oa_devel #####
+; Devel
+projects[devel][type] = module
+projects[devel][download][type] = git
+projects[devel][download][url] = http://git.drupal.org/project/devel.git
+projects[devel][download][branch] = 7.x-1.x
+projects[devel][subdir] = contrib
+
 ; Override panopoly_core.make: a915408
 ; Patch Panels to fix issue with custom region styles (#1838544)
 projects[panels][type] = module
@@ -205,14 +214,6 @@ projects[date_facets][download][revision] = a7a35f8
 ; Google Analytics
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = 1.3
-
-; ##### oa_devel #####
-; Devel
-projects[devel][type] = module
-projects[devel][download][type] = git
-projects[devel][download][url] = http://git.drupal.org/project/devel.git
-projects[devel][download][branch] = 7.x-1.x
-projects[devel][subdir] = contrib
 
 ; Coder
 projects[coder][type] = module
