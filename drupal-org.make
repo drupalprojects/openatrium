@@ -9,6 +9,15 @@ core = 7.x
 ; Therefore PANOPOLY OVERRIDES need to be listed AT THE TOP of this makefile,
 ; so we can patch or update certain projects fetched by Panopoly's makefiles.
 
+
+; ##### oa_devel #####
+; Devel
+projects[devel][type] = module
+projects[devel][download][type] = git
+projects[devel][download][url] = http://git.drupal.org/project/devel.git
+projects[devel][download][branch] = 7.x-1.x
+projects[devel][subdir] = contrib
+
 ; Override panopoly_core.make: a915408
 ; Patch Panels to fix issue with custom region styles (#1838544)
 projects[panels][type] = module
@@ -18,7 +27,7 @@ projects[panels][download][url] = http://git.drupal.org/project/panels.git
 projects[panels][download][revision] = a915408
 projects[panels][download][branch] = 7.x-3.x
 projects[panels][patch][1838544] = http://drupal.org/files/1838544-panels_ipe_region_style_0.patch
-projects[panels][patch][2024441] = http://drupal.org/files/panels_edit_style_settings_form_validate_include_plugins.patch
+projects[panels][patch][2024441] = http://drupal.org/files/2024441-panels_standard_render_form_include-5.patch
 
 projects[ctools][type] = module
 projects[ctools][subdir] = contrib
@@ -29,7 +38,7 @@ projects[ctools][download][branch] = 7.x-1.x
 projects[ctools][patch][1901106] = http://drupal.org/files/1901106-ctools-views_content-exposed_form_override-13.patch
 projects[ctools][patch][2016559] = http://drupal.org/files/ctools_views_content_numeric_pager_id.patch
 projects[ctools][patch][2023705] = http://drupal.org/files/2023705-ctools-autosubmit-2.patch
-projects[ctools][patch][1910608] = https://drupal.org/files/1910608-views_content-ajax-4.patch
+projects[ctools][patch][1910608] = http://drupal.org/files/1910608-views_content-ajax-4.patch
 
 ; Override panopoly_core.make: 3.1
 ; Update Panelizer to latest dev version
@@ -185,7 +194,7 @@ projects[og_subgroups][subdir] = contrib
 projects[og_subgroups][download][type] = git
 projects[og_subgroups][download][url] = http://git.drupal.org/project/og_subgroups.git
 projects[og_subgroups][download][branch] = 7.x-2.x
-projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-5.patch
+projects[og_subgroups][patch][2029123] = http://drupal.org/files/2029123-og_permission_and_cache-9.patch
 projects[og_subgroups][patch][1995018] = http://drupal.org/files/1995018-og_subgroups_og_alter-5.patch
 
 ; ##### oa_markdown #####
@@ -205,14 +214,6 @@ projects[date_facets][download][revision] = a7a35f8
 ; Google Analytics
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = 1.3
-
-; ##### oa_devel #####
-; Devel
-projects[devel][type] = module
-projects[devel][download][type] = git
-projects[devel][download][url] = http://git.drupal.org/project/devel.git
-projects[devel][download][branch] = 7.x-1.x
-projects[devel][subdir] = contrib
 
 ; Coder
 projects[coder][type] = module
@@ -266,7 +267,7 @@ projects[panopoly_magic][download][revision] = 16add888f93577ad9a27379ca309fcf7b
 projects[panopoly_magic][download][branch] = 7.x-1.x
 projects[panopoly_magic][patch][2016527] = http://drupal.org/files/2016527-panopoly_magic_parents_exposed-2.patch
 projects[panopoly_magic][patch][2016643] = http://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-3-do-not-test.patch
-projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-7.patch
+projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-11.patch
 
 
 projects[panopoly_widgets][version] = 1.x-dev
