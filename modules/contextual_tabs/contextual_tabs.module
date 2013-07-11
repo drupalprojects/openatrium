@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * @file
+ * Moves the drupal primary tabs into a contextual popup menu
+ * Inspired from sandbox https://drupal.org/sandbox/onkeltem/1730244
+ */
+
+/**
+ * Implements hook_theme()
+ */
+function contextual_tabs_theme() {
+  return array(
+    'contextual_tabs' => array(
+      'template'  => 'contextual-tabs',
+      'arguments' => array(
+        'public' => NULL,
+        'links'  => array(),
+      ),
+      'path' => drupal_get_path('module', 'contextual_tabs'),
+    ),
+  );
+}
+
+function _contextual_tabs_links($new_tabs_links = array()) {
+  static $tabs_links = NULL;
+  if (!isset($tabs_links)) {
+    $local_tasks = menu_local_tasks();
+    $tabs_links = array();
+    foreach($local_tasks['tabs']['output'] as $link) {
+      $tabs_links[] = $link['#link'];
+    }
+  }
+  if (count($new_tabs_links)) {
+    $tabs_links = $new_tabs_links;
+  }
+  return $tabs_links;
+}
+
+function contextual_tabs_preprocess_page(&$variables) {
+  $dont_show_in = array('admin', 'user');
+  if (!in_array(arg(0), $dont_show_in)) {
+    $tabs_links = _contextual_tabs_links();
+    $current = current_path();
+    $current_link = NULL;
+    $links = array();
+    $link_by_name = array();
+    foreach($tabs_links as $id => $link) {
+      $key = 'link-' . $id;
+      $links[$key] = l($link['title'], $link['href']);
+      $link_by_name[$link['title']] = $id;
+      if ($link['href'] == $current) {
+        $current_link = $link;
+      }
+    }
+    $buttons = array();
+    if (isset($current_link) && ($current_link['title'] == 'Edit')) {
+      // expose the View link
+      $id = $link_by_name['View'];
+      $key = 'link-' . $id;
+      $buttons[] = array(
+        'title' => t('Cancel'), // t($tabs_links[$id]['title']);
+        'link' => url($tabs_links[$id]['href']),
+        'icon' => 'icon-remove',
+      );
+      unset($links[$key]);
+      unset($links['link-' . $link_by_name['Edit']]);
+    }
+    elseif (isset($current_link) && ($current_link['title'] == 'View') && @$link_by_name['Edit']) {
+      // expose the Edit link
+      $id = $link_by_name['Edit'];
+      $key = 'link-' . $id;
+      $buttons[] = array(
+        'title' => t($tabs_links[$id]['title']),
+        'link' => url($tabs_links[$id]['href']),
+        'icon' => 'icon-pencil',
+      );
+      unset($links[$key]);
+      unset($links['link-' . $link_by_name['View']]);
+    }
+
+    $build = array(
+      'title' => t('Configure'),
+      'buttons' => $buttons,
+    );
+    $build['visibility'] = '';
+    if (module_exists('oa_widgets')) {
+      $node = menu_get_object();
+      if (isset($node->type)) {
+        $vars = oa_core_visibility_data($node);
+        $vars['oa_toolbar_btn_class'] = 'btn-small';
+        $build['visibility'] = theme('oa_widgets_visibility_toolbar', $vars);
+      }
+    }
+
+    if (!empty($links)) {
+      $build['links'] = theme('item_list', array(
+        'items' => $links,
+        'type' => 'ul',
+      ));
+    }
+    unset($variables['tabs']['#primary']);
+    $variables['primarytabs'] = theme('contextual_tabs', $build);
+  }
+}
+

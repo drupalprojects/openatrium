@@ -18,15 +18,26 @@ $plugin = array(
  * Render callback for the panel.
  */
 function oa_favorites_favorites_button_render($subtype, $conf, $args, $context = NULL) {
+  global $user;
+
   $block = new stdClass();
   $block->title = '';
-  $node = menu_get_object();
+  $node = NULL;
+  $space_id = oa_core_get_space_context();
+  if (!empty($space_id)) {
+    $node = node_load($space_id);
+  }
 
-  global $user;
   if ($user->uid) {
     $items = oa_favorites_get_spaces($user);
+    $classes = '';
     // favorites flag link
-    if(@$node->nid) $items['links'][] = flag_create_link(FAVORITE_SPACE, $node->nid);
+    if (isset($node->nid)) {
+      $items['links'][] = flag_create_link(FAVORITE_SPACE, $node->nid);
+      if (oa_favorites_is_favorite_space($user->uid, $node->nid)) {
+        $classes .= 'oa-is-favorite';
+      }
+    }
     if (!empty($items['links'])) {
       // include css
       drupal_add_css(drupal_get_path('module', 'oa_favorites') . '/oa_favorites.css');
@@ -36,7 +47,8 @@ function oa_favorites_favorites_button_render($subtype, $conf, $args, $context =
         'type' => 'ul',
       ));
       $vars['title'] = t('Favorites');
-      $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
+      $vars['oa_toolbar_btn_class'] = $classes;
+      $vars['oa_toolbar_btn_class'] .= variable_get('oa_toolbar_style', 0) ? '' : ' btn-inverse';
       $block->content = theme('oa_favorites_favorites_button', $vars);
     }
   }

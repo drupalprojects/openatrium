@@ -13,6 +13,7 @@
 }
 /* styles for flag button in favorites dropdown */
 #oa_favorites .flag {
+  width: 100%;
   border: none;
   background: none;
   -webkit-border-radius: 0;
@@ -27,8 +28,12 @@
   text-shadow: none;
   text-align: left;
 }
+#oa_favorites .oa-is-favorite .icon-star {
+  color: gold;
+}
 #oa_favorites .flag:hover {
-  color: #FFF;
+  color: white;
+  background-color: #08c;
 }
 /* hide flag throbber to clean up dropdown */
 #oa_favorites .flag-throbber {

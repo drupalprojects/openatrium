@@ -1,0 +1,18 @@
+#contextual-tabs {
+  float: right;
+  margin-top: 13px;
+}
+
+#contextual-tabs > li {
+  display: inline-block;
+}
+
+#contextual-tabs .btn span {
+  float: left;
+  text-indent: -99999px;
+  width: 0;
+}
+
+#contextual-tabs .item-list ul > li {
+  margin-left: 0;
+}
