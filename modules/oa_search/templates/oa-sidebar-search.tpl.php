@@ -12,7 +12,7 @@
     <div class="input-append">
       <input type="text" class="search-text">
       <button type="submit" class="btn submit">
-        <i class="icon-search"></i>
+        <i class="icon-search"></i><span class="element-invisible"><?php print t('Search Button');?></span>
       </button>
     </div>
     <ul class="options">
