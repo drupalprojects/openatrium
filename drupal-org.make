@@ -91,10 +91,11 @@ projects[token][download][revision] = 72f3d17
 projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-warnings.patch
 
 
-; Fix did bug
+; Fix undefined did bug and installation issues.
 projects[defaultconfig][subdir] = contrib
 projects[defaultconfig][version] = 1.0-alpha9
 projects[defaultconfig][patch][2042799] = http://drupal.org/files/default_config_delete_only_if_overriden.patch
+projects[defaultconfig][patch][2043307] = http://drupal.org/files/defaultconfig_include_features_file.patch
 
 
 ; ************ End Panopoly Overrides ************
@@ -104,8 +105,13 @@ projects[defaultconfig][patch][2042799] = http://drupal.org/files/default_config
 ; ********** OPEN ATRIUM'S DEPENDENCIES **********
 
 ; Features Override
+projects[features_override][type] = module
+projects[features_override][download][type] = git
 projects[features_override][subdir] = contrib
-projects[features_override][version] = 2.0-beta2
+projects[features_override][download][url] = http://git.drupal.org/project/features_override.git
+projects[features_override][download][branch] = 7.x-2.x
+; Remove array_filter warning
+projects[features_override][download][revision] = 73b3437d7fc692ec1020c39048acfd7faed79a26
 
 ; Features
 projects[features][subdir] = contrib
