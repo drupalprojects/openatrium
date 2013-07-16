@@ -145,7 +145,7 @@ function _oa_subspaces_get_children_groups($group_type, $group_id, &$children_gr
   }
 }
 
-/** 
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_subspaces_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
@@ -175,17 +175,15 @@ function _oa_subspaces_rearrange_options(&$options) {
   $options = array_diff_key($options, $parent_and_children) + $parent_and_children;
 }
 
-/** 
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function oa_subspaces_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
-  // Doing it to the exposed form alone doesn't work :(. 
+  // Doing it to the exposed form alone doesn't work :(.
   if (!empty($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id'])) {
     $settings = _oa_subspaces_find_view_settings($form_state['view'], $form_state);
     _oa_subspaces_rearrange_options($form['exposed']['filter-og_group_ref_target_id']['og_group_ref_target_id']['#options']);
-    if ($settings['og_group_ref_target_id'] && oa_subspaces_get_children_groups('node', $settings['og_group_ref_target_id'])) {
-      _oa_subspaces_add_element($form['exposed']['filter-og_group_ref_target_id'], $settings['og_subspaces_view_all'], array('exposed', 'og_subspaces_view_all'));
-    }
+    _oa_subspaces_add_element($form['exposed']['filter-og_group_ref_target_id'], $settings['og_subspaces_view_all'], array('exposed', 'og_subspaces_view_all'));
   }
 }
 
@@ -238,9 +236,10 @@ function _oa_subspaces_find_view_settings($view = NULL, $form_state = NULL) {
     $return['og_group_ref_target_id'] = FALSE;
     $return['og_subspaces_view_all'] = FALSE;
   }
-  if ($return['oa_section_ref_target_id'] || !$return['og_group_ref_target_id']) {
+  if ($return['oa_section_ref_target_id']) {
     $return['og_subspaces_view_all'] = FALSE;
   }
+
   return $return;
 }
 
