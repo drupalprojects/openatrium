@@ -90,6 +90,13 @@ projects[token][download][branch] = 7.x-1.x
 projects[token][download][revision] = 72f3d17
 projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-warnings.patch
 
+
+; Fix did bug
+projects[defaultconfig][subdir] = contrib
+projects[defaultconfig][version] = 1.0-alpha9
+projects[defaultconfig][patch][2042799] = http://drupal.org/files/default_config_delete_only_if_overriden.patch
+
+
 ; ************ End Panopoly Overrides ************
 ; ************************************************
 
