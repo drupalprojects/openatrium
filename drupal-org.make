@@ -171,6 +171,12 @@ projects[oa_events_import][download][type] = git
 projects[oa_events_import][download][url] = http://git.drupal.org/project/oa_events_import.git
 projects[oa_events_import][download][branch] = 7.x-2.x
 
+projects[oa_contextual_tabs][type] = module
+projects[oa_contextual_tabs][subdir] = contrib
+projects[oa_contextual_tabs][download][type] = git
+projects[oa_contextual_tabs][download][url] = http://git.drupal.org/project/oa_contextual_tabs.git
+projects[oa_contextual_tabs][download][branch] = 7.x-2.x
+
 projects[oa_notifications][type] = module
 projects[oa_notifications][subdir] = contrib
 projects[oa_notifications][download][type] = git
