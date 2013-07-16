@@ -90,6 +90,14 @@ projects[token][download][branch] = 7.x-1.x
 projects[token][download][revision] = 72f3d17
 projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-warnings.patch
 
+
+; Fix undefined did bug and installation issues.
+projects[defaultconfig][subdir] = contrib
+projects[defaultconfig][version] = 1.0-alpha9
+projects[defaultconfig][patch][2042799] = http://drupal.org/files/default_config_delete_only_if_overriden.patch
+projects[defaultconfig][patch][2043307] = http://drupal.org/files/defaultconfig_include_features_file.patch
+
+
 ; ************ End Panopoly Overrides ************
 ; ************************************************
 
@@ -97,8 +105,13 @@ projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-w
 ; ********** OPEN ATRIUM'S DEPENDENCIES **********
 
 ; Features Override
+projects[features_override][type] = module
+projects[features_override][download][type] = git
 projects[features_override][subdir] = contrib
-projects[features_override][version] = 2.0-beta2
+projects[features_override][download][url] = http://git.drupal.org/project/features_override.git
+projects[features_override][download][branch] = 7.x-2.x
+; Remove array_filter warning
+projects[features_override][download][revision] = 73b3437d7fc692ec1020c39048acfd7faed79a26
 
 ; Features
 projects[features][subdir] = contrib
@@ -163,6 +176,12 @@ projects[oa_events_import][subdir] = contrib
 projects[oa_events_import][download][type] = git
 projects[oa_events_import][download][url] = http://git.drupal.org/project/oa_events_import.git
 projects[oa_events_import][download][branch] = 7.x-2.x
+
+projects[oa_contextual_tabs][type] = module
+projects[oa_contextual_tabs][subdir] = contrib
+projects[oa_contextual_tabs][download][type] = git
+projects[oa_contextual_tabs][download][url] = http://git.drupal.org/project/oa_contextual_tabs.git
+projects[oa_contextual_tabs][download][branch] = 7.x-2.x
 
 projects[oa_notifications][type] = module
 projects[oa_notifications][subdir] = contrib
