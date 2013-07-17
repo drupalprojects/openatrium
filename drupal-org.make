@@ -265,6 +265,7 @@ projects[panopoly_core][download][type] = git
 projects[panopoly_core][download][revision] = 6a257ac
 projects[panopoly_core][download][branch] = 7.x-1.x
 projects[panopoly_core][patch][1979558] = http://drupal.org/files/1979558-panopoly-core-update-patch-4.patch
+projects[panopoly_core][patch][1816688] = http://drupal.org/files/1816688-panopoly_core-apps-6.patch
 
 projects[panopoly_images][version] = 1.x-dev
 projects[panopoly_images][subdir] = panopoly
