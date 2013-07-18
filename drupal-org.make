@@ -205,6 +205,12 @@ projects[oa_media][download][type] = git
 projects[oa_media][download][url] = http://git.drupal.org/project/oa_media.git
 projects[oa_media][download][branch] = 7.x-2.x
 
+projects[oa_subspaces][type] = module
+projects[oa_subspaces][subdir] = contrib
+projects[oa_subspaces][download][type] = git
+projects[oa_subspaces][download][url] = http://git.drupal.org/project/oa_subspaces.git
+projects[oa_subspaces][download][branch] = 7.x-2.x
+
 projects[oa_radix][type] = theme
 projects[oa_radix][download][type] = git
 projects[oa_radix][download][url] = http://git.drupal.org/project/oa_radix.git
