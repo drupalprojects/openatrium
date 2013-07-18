@@ -2,7 +2,6 @@ api = 2
 core = 7.x
 ; Include the definition for how to build Drupal core directly, including patches:
 includes[] = drupal-org-core.make
-includes[] = drupal-org.make
 ; Download the OpenAtrium install profile and recursively build all its dependencies:
 projects[openatrium][type] = profile
 projects[openatrium][download][type] = git
