@@ -54,8 +54,6 @@ function openatrium_update_7005() {
   module_enable($enable);
 }
 
-
-
 /**
  * Enable date_all_day.
  */
@@ -66,4 +64,22 @@ function openatrium_update_7006() {
   module_enable($enable);
 }
 
+/**
+ * Enable panels_customerror.
+ */
+function openatrium_update_7007() {
+  $enable = array(
+    'panels_customerror',
+  );
+  module_enable($enable);
+}
 
+/**
+ * Enable oa_contextual_tabs.
+ */
+function openatrium_update_7008() {
+  $enable = array(
+    'oa_contextual_tabs',
+  );
+  module_enable($enable);
+}

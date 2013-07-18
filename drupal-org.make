@@ -10,6 +10,16 @@ core = 7.x
 ; so we can patch or update certain projects fetched by Panopoly's makefiles.
 
 
+
+; Overwrite wysiwyg to fix file_get_contents error
+projects[wysiwyg][subdir] = contrib
+projects[wysiwyg][download][type] = git
+projects[wysiwyg][download][url] = http://git.drupal.org/project/wysiwyg.git
+projects[wysiwyg][download][branch] = 7.x-1.x
+projects[wysiwyg][download][revision] = cab91b85bbcc01b1cb3d15e357493af79b8f5faa
+projects[wysiwyg][patch][1489096] = http://drupal.org/files/wysiwyg-table-format.patch
+projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
+
 ; ##### oa_devel #####
 ; Devel
 projects[devel][type] = module
@@ -38,7 +48,7 @@ projects[ctools][download][branch] = 7.x-1.x
 projects[ctools][patch][1901106] = http://drupal.org/files/1901106-ctools-views_content-exposed_form_override-13.patch
 projects[ctools][patch][2016559] = http://drupal.org/files/ctools_views_content_numeric_pager_id.patch
 projects[ctools][patch][2023705] = http://drupal.org/files/2023705-ctools-autosubmit-2.patch
-projects[ctools][patch][1910608] = http://drupal.org/files/1910608-views_content-ajax-4.patch
+projects[ctools][patch][1910608] = http://drupal.org/files/1910608-views_content-ajax-7.patch
 
 ; Override panopoly_core.make: 3.1
 ; Update Panelizer to latest dev version
@@ -265,6 +275,8 @@ projects[panopoly_core][download][type] = git
 projects[panopoly_core][download][revision] = 6a257ac
 projects[panopoly_core][download][branch] = 7.x-1.x
 projects[panopoly_core][patch][1979558] = http://drupal.org/files/1979558-panopoly-core-update-patch-4.patch
+projects[panopoly_core][patch][1816688] = http://drupal.org/files/1816688-panopoly_core-apps-6.patch
+projects[panopoly_core][patch][2044425] = http://drupal.org/files/panopoly_core_defaultcontent_dep.patch
 
 projects[panopoly_images][version] = 1.x-dev
 projects[panopoly_images][subdir] = panopoly

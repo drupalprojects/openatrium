@@ -127,8 +127,8 @@ dependencies[] = oa_home
 
 ; Contrib Optional
 dependencies[] = panels_customerror
+dependencies[] = apps
 
-features_exclude[dependencies][trash_flag] = trash_flag
 ; Development Modules - Temporary
 dependencies[] = devel
 dependencies[] = diff
