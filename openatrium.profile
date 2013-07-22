@@ -26,7 +26,6 @@ function openatrium_install_tasks(&$install_state) {
 
 function open_atrium_features_revert_all() {
   drupal_set_time_limit(0);
-  watchdog('hereee', 'herreeeee');
   features_revert(array('oa_core' => array('field_base'), 'oa_sections' => array('field_base', 'field_instance')));
   features_revert();
 }
