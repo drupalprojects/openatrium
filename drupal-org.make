@@ -180,10 +180,9 @@ projects[oa_media][subdir] = contrib
 projects[oa_media][version][branch] = 2.0-beta1
 
 projects[oa_subspaces][subdir] = contrib
-projects[oa_subspaces][version][branch] = 2.0-beta1
+projects[oa_subspaces][version][branch] = 2.0-beta2
 
 projects[oa_radix][type] = theme
-projects[oa_radix][subdir] = contrib
 projects[oa_radix][version][branch] = 2.0-beta1
 
 ; ********** End Open Atrium's Plugins ***********
