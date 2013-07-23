@@ -265,7 +265,7 @@ projects[panopoly_magic][download][revision] = 16add888f93577ad9a27379ca309fcf7b
 projects[panopoly_magic][download][branch] = 7.x-1.x
 projects[panopoly_magic][patch][2016527] = http://drupal.org/files/2016527-panopoly_magic_parents_exposed-2.patch
 projects[panopoly_magic][patch][2016643] = http://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-3-do-not-test.patch
-projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-11.patch
+projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-12.patch
 projects[panopoly_magic][patch][2046055] = http://drupal.org/files/panopoly_magic_css_unfloat_labels.patch
 
 projects[panopoly_widgets][version] = 1.x-dev
