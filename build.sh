@@ -5,7 +5,7 @@ if [ $# -eq 0 ]; then
   echo "Usage $0 target_build_dir"
   exit 1
 fi
-DRUSH_OPTS='--working-copy --no-gitinfofile'
+DRUSH_OPTS='--working-copy --no-gitinfofile --no-cache'
 MAKEFILE='build-openatrium.make'
 TARGET=$1
 # Make sure we have a target directory
