@@ -1,6 +1,8 @@
 api = 2
 core = 7.x
 
+includes[] = drupal-org-dev.make
+
 ; ************************************************
 ; ************** PANOPOLY OVERRIDES **************
 
