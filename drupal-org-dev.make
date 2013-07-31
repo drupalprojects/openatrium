@@ -45,3 +45,12 @@ projects[oa_radix][type] = theme
 projects[oa_radix][download][type] = git
 projects[oa_radix][download][url] = http://git.drupal.org/project/oa_radix.git
 projects[oa_radix][download][branch] = 7.x-2.x
+
+; ##### oa_devel #####
+; Devel
+projects[devel][type] = module
+projects[devel][download][type] = git
+projects[devel][download][url] = http://git.drupal.org/project/devel.git
+projects[devel][download][branch] = 7.x-1.x
+projects[devel][subdir] = contrib
+

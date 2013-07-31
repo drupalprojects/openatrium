@@ -69,6 +69,7 @@ dependencies[] = features_override
 dependencies[] = panels_mini
 dependencies[] = job_scheduler
 dependencies[] = feeds
+dependencies[] = trash_flag
 
 ; Organic Groups
 dependencies[] = og
@@ -113,7 +114,6 @@ dependencies[] = oa_admin
 dependencies[] = oa_search
 dependencies[] = oa_variables
 dependencies[] = oa_buttons
-dependencies[] = contextual_tabs
 dependencies[] = oa_contextual_tabs
 
 ; Open Atrium 2.0 Plugins
@@ -128,7 +128,3 @@ dependencies[] = oa_home
 ; Contrib Optional
 dependencies[] = panels_customerror
 dependencies[] = apps
-
-; Development Modules - Temporary
-dependencies[] = devel
-dependencies[] = diff
