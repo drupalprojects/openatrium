@@ -20,14 +20,6 @@ projects[wysiwyg][download][revision] = cab91b85bbcc01b1cb3d15e357493af79b8f5faa
 projects[wysiwyg][patch][1489096] = http://drupal.org/files/wysiwyg-table-format.patch
 projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
 
-; ##### oa_devel #####
-; Devel
-projects[devel][type] = module
-projects[devel][download][type] = git
-projects[devel][download][url] = http://git.drupal.org/project/devel.git
-projects[devel][download][branch] = 7.x-1.x
-projects[devel][subdir] = contrib
-
 ; Override panopoly_core.make: a915408
 ; Patch Panels to fix issue with custom region styles (#1838544)
 projects[panels][type] = module
@@ -36,7 +28,8 @@ projects[panels][download][type] = git
 projects[panels][download][url] = http://git.drupal.org/project/panels.git
 projects[panels][download][revision] = a915408
 projects[panels][download][branch] = 7.x-3.x
-projects[panels][patch][1838544] = http://drupal.org/files/1838544-panels_ipe_region_style_0.patch
+projects[panels][patch][1354572] = http://drupal.org/files/ipe-duplicate-1354572-7.patch
+projects[panels][patch][2012188] = http://drupal.org/files/panels_ipe-title-ctools.patch
 projects[panels][patch][2024441] = http://drupal.org/files/2024441-panels_standard_render_form_include-5.patch
 
 projects[ctools][type] = module
@@ -82,13 +75,8 @@ projects[fape][download][revision] = 1143ee2
 projects[fape][patch][1846156] = http://drupal.org/files/fape-1846156-5.patch
 
 ; Override panopoly_widgets.make: 5418cbe
-; Update Media Youtube to work with private filesystem (#1946002)
-projects[media_youtube][type] = module
 projects[media_youtube][subdir] = contrib
-projects[media_youtube][download][type] = git
-projects[media_youtube][download][url] = http://git.drupal.org/project/media_youtube.git
-projects[media_youtube][download][branch] = 7.x-2.x
-projects[media_youtube][download][revision] = c53660c
+projects[media_youtube][version] = 2.0-rc3
 
 ; Override panopoly_core.make: 72f3d17
 ; Update token to allow disabling of empty token errors during test runs
@@ -97,9 +85,8 @@ projects[token][subdir] = contrib
 projects[token][download][type] = git
 projects[token][download][url] = http://git.drupal.org/project/token.git
 projects[token][download][branch] = 7.x-1.x
-projects[token][download][revision] = 72f3d17
+projects[token][version] = 1.5
 projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-warnings.patch
-
 
 ; Fix undefined did bug and installation issues.
 projects[defaultconfig][subdir] = contrib
@@ -256,7 +243,6 @@ projects[panopoly_theme][subdir] = panopoly
 projects[panopoly_theme][download][type] = git
 projects[panopoly_theme][download][revision] = 7715ded
 projects[panopoly_theme][download][branch] = 7.x-1.x
-
 
 projects[panopoly_magic][version] = 1.x-dev
 projects[panopoly_magic][subdir] = panopoly
