@@ -27,10 +27,10 @@ projects[panels][type] = module
 projects[panels][subdir] = contrib
 projects[panels][download][type] = git
 projects[panels][download][url] = http://git.drupal.org/project/panels.git
-projects[panels][download][revision] = a915408
+projects[panels][download][revision] = 2bb470e
 projects[panels][download][branch] = 7.x-3.x
 projects[panels][patch][1354572] = http://drupal.org/files/ipe-duplicate-1354572-7.patch
-projects[panels][patch][2012188] = http://drupal.org/files/panels_ipe-title-ctools.patch
+projects[panels][patch][2012188] = http://drupal.org/files/panels_ipe-title-ctools-2012188-3.patch
 projects[panels][patch][2024441] = http://drupal.org/files/2024441-panels_standard_render_form_include-5.patch
 
 projects[ctools][type] = module
