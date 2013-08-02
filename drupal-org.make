@@ -1,6 +1,7 @@
 api = 2
 core = 7.x
 
+; uncomment next line for -dev releases
 includes[] = drupal-org-dev.make
 
 ; ************************************************
@@ -101,22 +102,15 @@ projects[defaultconfig][patch][2043307] = http://drupal.org/files/defaultconfig_
 ; ************************************************
 ; ********** OPEN ATRIUM'S DEPENDENCIES **********
 
-; Features Override
-projects[features_override][type] = module
-projects[features_override][download][type] = git
-projects[features_override][subdir] = contrib
-projects[features_override][download][url] = http://git.drupal.org/project/features_override.git
-projects[features_override][download][branch] = 7.x-2.x
-; Remove array_filter warning
-projects[features_override][download][revision] = 73b3437d7fc692ec1020c39048acfd7faed79a26
-
 ; Features
+projects[features][version] = 2.0-rc2
 projects[features][subdir] = contrib
-projects[features][download][type] = git
-projects[features][download][url] = http://git.drupal.org/project/features.git
-projects[features][download][branch] = 7.x-2.x
-projects[features][patch][2027023] = http://drupal.org/files/features_conflict_components.patch
 
+; Features Override
+projects[features_override][version] = 2.0-beta3
+projects[features_override][type] = module
+
+; Views
 projects[views][version] = 3.7
 projects[views][subdir] = contrib
 projects[views][patch][1979926] = http://drupal.org/files/1979926-views-reset_fetch_data-2.patch
@@ -216,81 +210,45 @@ projects[coder][subdir] = contrib
 
 ; Someday maybe we can turn this on to just inherit Panopoly
 ;projects[panopoly][type] = profile
-;projects[panopoly][download][type] = git
-;projects[panopoly][download][url] = http://git.drupal.org/project/panopoly.git
-;projects[panopoly][download][branch] = 7.x-1.x
-
-; Drupal.org does not support recursive profiles
+;projects[panopoly][version] = 1.0-rc5
+; but, Drupal.org does not support recursive profiles
 ; and also does not support include[]
 ; so we need to copy the panopoly.make file here
 
-projects[panopoly_core][version] = 1.x-dev
+projects[panopoly_core][version] = 1.0-rc5
 projects[panopoly_core][subdir] = panopoly
-projects[panopoly_core][download][type] = git
-projects[panopoly_core][download][revision] = 6a257ac
-projects[panopoly_core][download][branch] = 7.x-1.x
-projects[panopoly_core][patch][1979558] = http://drupal.org/files/1979558-panopoly-core-update-patch-4.patch
-projects[panopoly_core][patch][1816688] = http://drupal.org/files/1816688-panopoly_core-apps-6.patch
-projects[panopoly_core][patch][2044425] = http://drupal.org/files/panopoly_core_defaultcontent_dep.patch
 
-projects[panopoly_images][version] = 1.x-dev
+projects[panopoly_images][version] = 1.0-rc5
 projects[panopoly_images][subdir] = panopoly
-projects[panopoly_images][download][type] = git
-projects[panopoly_images][download][revision] = b57b48f
-projects[panopoly_images][download][branch] = 7.x-1.x
 
-projects[panopoly_theme][version] = 1.x-dev
+projects[panopoly_theme][version] = 1.0-rc5
 projects[panopoly_theme][subdir] = panopoly
-projects[panopoly_theme][download][type] = git
-projects[panopoly_theme][download][revision] = 7715ded
-projects[panopoly_theme][download][branch] = 7.x-1.x
 
-projects[panopoly_magic][version] = 1.x-dev
+projects[panopoly_magic][version] = 1.0-rc5
 projects[panopoly_magic][subdir] = panopoly
-projects[panopoly_magic][download][type] = git
-projects[panopoly_magic][download][revision] = 16add888f93577ad9a27379ca309fcf7bd870a80
 projects[panopoly_magic][download][branch] = 7.x-1.x
-projects[panopoly_magic][patch][2016527] = http://drupal.org/files/2016527-panopoly_magic_parents_exposed-2.patch
-projects[panopoly_magic][patch][2016643] = http://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-3-do-not-test.patch
-projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-12.patch
-projects[panopoly_magic][patch][2046055] = http://drupal.org/files/panopoly_magic_css_unfloat_labels.patch
+projects[panopoly_magic][patch][2016527] = https://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-3-do-not-test.patch
+projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-14.patch
 
-projects[panopoly_widgets][version] = 1.x-dev
+projects[panopoly_widgets][version] = 1.0-rc5
 projects[panopoly_widgets][subdir] = panopoly
-projects[panopoly_widgets][download][type] = git
-projects[panopoly_widgets][download][revision] = 6ca2f97
-projects[panopoly_widgets][download][branch] = 7.x-1.x
 
-projects[panopoly_admin][version] = 1.x-dev
+projects[panopoly_admin][version] = 1.0-rc5
 projects[panopoly_admin][subdir] = panopoly
-projects[panopoly_admin][download][type] = git
-projects[panopoly_admin][download][revision] = 4d9d071
-projects[panopoly_admin][download][branch] = 7.x-1.x
 
-projects[panopoly_users][version] = 1.x-dev
+projects[panopoly_users][version] = 1.0-rc5
 projects[panopoly_users][subdir] = panopoly
-projects[panopoly_users][download][type] = git
-projects[panopoly_users][download][revision] = cb4ca09
-projects[panopoly_users][download][branch] = 7.x-1.x
 
-projects[panopoly_pages][version] = 1.x-dev
+projects[panopoly_pages][version] = 1.0-rc5
 projects[panopoly_pages][subdir] = panopoly
-projects[panopoly_pages][download][type] = git
-projects[panopoly_pages][download][revision] = 4125aa6
 projects[panopoly_pages][download][branch] = 7.x-1.x
 projects[panopoly_pages][patch][2008762] = http://drupal.org/files/2008762-panopoly_pages-missing-depedency-1.patch
 
-projects[panopoly_wysiwyg][version] = 1.x-dev
+projects[panopoly_wysiwyg][version] = 1.0-rc5
 projects[panopoly_wysiwyg][subdir] = panopoly
-projects[panopoly_wysiwyg][download][type] = git
-projects[panopoly_wysiwyg][download][revision] = 227335f
-projects[panopoly_wysiwyg][download][branch] = 7.x-1.x
 
-projects[panopoly_search][version] = 1.x-dev
+projects[panopoly_search][version] = 1.0-rc5
 projects[panopoly_search][subdir] = panopoly
-projects[panopoly_search][download][type] = git
-projects[panopoly_search][download][revision] = c981ec3
-projects[panopoly_search][download][branch] = 7.x-1.x
 
 ; ***************** End Panopoly *****************
 ; ************************************************
