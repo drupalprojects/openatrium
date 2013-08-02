@@ -12,15 +12,6 @@ includes[] = drupal-org-dev.make
 ; Therefore PANOPOLY OVERRIDES need to be listed AT THE TOP of this makefile,
 ; so we can patch or update certain projects fetched by Panopoly's makefiles.
 
-; Overwrite wysiwyg to fix file_get_contents error
-projects[wysiwyg][subdir] = contrib
-projects[wysiwyg][download][type] = git
-projects[wysiwyg][download][url] = http://git.drupal.org/project/wysiwyg.git
-projects[wysiwyg][download][branch] = 7.x-1.x
-projects[wysiwyg][download][revision] = cab91b85bbcc01b1cb3d15e357493af79b8f5faa
-projects[wysiwyg][patch][1489096] = http://drupal.org/files/wysiwyg-table-format.patch
-projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
-
 ; Override panopoly_core.make: a915408
 ; Patch Panels to fix issue with custom region styles (#1838544)
 projects[panels][type] = module
