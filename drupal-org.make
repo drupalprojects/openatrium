@@ -128,7 +128,6 @@ projects[features][subdir] = contrib
 projects[features][download][type] = git
 projects[features][download][url] = http://git.drupal.org/project/features.git
 projects[features][download][branch] = 7.x-2.x
-projects[features][patch][2027023] = http://drupal.org/files/features_conflict_components.patch
 
 projects[views][version] = 3.7
 projects[views][subdir] = contrib
