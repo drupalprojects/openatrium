@@ -41,7 +41,8 @@ set +e
 # Build Symlinks
 echo 'Setting up symlinks...'
 DRUPAL=`cd "$TARGET"; pwd -P`
-ln -s "$ABS_CALLPATH" "$DRUPAL/profiles/openatrium"
+# openatrium profile now fully included in distro, so no link is needed
+# ln -s "$ABS_CALLPATH" "$DRUPAL/profiles/openatrium"
 ln -s /opt/files/openatrium "$DRUPAL/sites/default/files"
 # Restore settings
 echo 'Restoring settings...'
