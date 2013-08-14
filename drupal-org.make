@@ -83,6 +83,8 @@ projects[token][patch][1999298] = http://drupal.org/files/1999298-disable-test-w
 ; Fix undefined did bug and installation issues.
 projects[defaultconfig][subdir] = contrib
 projects[defaultconfig][version] = 1.0-alpha9
+projects[defaultconfig][download][type] = git
+projects[defaultconfig][download][branch] = 7.x-1.x
 projects[defaultconfig][patch][2042799] = http://drupal.org/files/default_config_delete_only_if_overriden.patch
 projects[defaultconfig][patch][2043307] = http://drupal.org/files/defaultconfig_include_features_file.patch
 projects[defaultconfig][patch][2008178] = http://drupal.org/files/defaultconfig-rebuild-filters-2008178-4_0.patch
