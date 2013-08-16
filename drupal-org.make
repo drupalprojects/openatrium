@@ -5,12 +5,57 @@ core = 7.x
 includes[] = drupal-org-dev.make
 
 ; ************************************************
-; ************** PANOPOLY OVERRIDES **************
+; ******************* PANOPOLY *******************
 
-; Note that makefiles are parsed bottom-up and that in Drush concurrency might
-; interfere with recursion.
-; Therefore PANOPOLY OVERRIDES need to be listed AT THE TOP of this makefile,
-; so we can patch or update certain projects fetched by Panopoly's makefiles.
+; Someday maybe we can turn this on to just inherit Panopoly
+;projects[panopoly][type] = profile
+;projects[panopoly][version] = 1.0-rc5
+; but, Drupal.org does not support recursive profiles
+; and also does not support include[]
+; so we need to copy the panopoly.make file here
+
+projects[panopoly_core][version] = 1.0-rc5
+projects[panopoly_core][subdir] = panopoly
+
+projects[panopoly_images][version] = 1.0-rc5
+projects[panopoly_images][subdir] = panopoly
+
+projects[panopoly_theme][version] = 1.0-rc5
+projects[panopoly_theme][subdir] = panopoly
+
+projects[panopoly_magic][version] = 1.0-rc5
+projects[panopoly_magic][subdir] = panopoly
+projects[panopoly_magic][download][branch] = 7.x-1.x
+projects[panopoly_magic][download][type] = git
+projects[panopoly_magic][patch][2016527] = http://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-5.patch
+projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-16.patch
+
+projects[panopoly_widgets][version] = 1.0-rc5
+projects[panopoly_widgets][subdir] = panopoly
+
+projects[panopoly_admin][version] = 1.0-rc5
+projects[panopoly_admin][subdir] = panopoly
+
+projects[panopoly_users][version] = 1.0-rc5
+projects[panopoly_users][subdir] = panopoly
+
+projects[panopoly_pages][version] = 1.0-rc5
+projects[panopoly_pages][subdir] = panopoly
+projects[panopoly_pages][download][branch] = 7.x-1.x
+projects[panopoly_pages][download][type] = git
+projects[panopoly_pages][patch][2008762] = http://drupal.org/files/2008762-panopoly_pages-missing-depedency-1.patch
+
+projects[panopoly_wysiwyg][version] = 1.0-rc5
+projects[panopoly_wysiwyg][subdir] = panopoly
+
+projects[panopoly_search][version] = 1.0-rc5
+projects[panopoly_search][subdir] = panopoly
+
+; ***************** End Panopoly *****************
+; ************************************************
+
+; ************************************************
+; ************** PANOPOLY OVERRIDES **************
 
 ; Override panopoly_core.make: a915408
 ; Patch Panels to fix issue with custom region styles (#1838544)
@@ -102,6 +147,7 @@ projects[features][subdir] = contrib
 ; Features Override
 projects[features_override][version] = 2.0-beta3
 projects[features_override][type] = module
+projects[features_override][subdir] = contrib
 
 ; Views
 projects[views][version] = 3.7
@@ -194,58 +240,3 @@ projects[coder][download][type] = git
 projects[coder][download][url] = http://git.drupal.org/project/coder.git
 projects[coder][download][branch] = 7.x-2.x
 projects[coder][subdir] = contrib
-
-; ************************************************
-; ******************* PANOPOLY *******************
-
-; Note that makefiles are parsed bottom-up, and that in Drush concurrency might
-; interfere with recursion.
-; Therefore PANOPOLY needs to be listed AT THE BOTTOM of this makefile,
-; so we can patch or update certain projects fetched by Panopoly's makefiles.
-
-; Someday maybe we can turn this on to just inherit Panopoly
-;projects[panopoly][type] = profile
-;projects[panopoly][version] = 1.0-rc5
-; but, Drupal.org does not support recursive profiles
-; and also does not support include[]
-; so we need to copy the panopoly.make file here
-
-projects[panopoly_core][version] = 1.0-rc5
-projects[panopoly_core][subdir] = panopoly
-
-projects[panopoly_images][version] = 1.0-rc5
-projects[panopoly_images][subdir] = panopoly
-
-projects[panopoly_theme][version] = 1.0-rc5
-projects[panopoly_theme][subdir] = panopoly
-
-projects[panopoly_magic][version] = 1.0-rc5
-projects[panopoly_magic][subdir] = panopoly
-projects[panopoly_magic][download][branch] = 7.x-1.x
-projects[panopoly_magic][download][type] = git
-projects[panopoly_magic][patch][2016527] = http://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-5.patch
-projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-16.patch
-
-projects[panopoly_widgets][version] = 1.0-rc5
-projects[panopoly_widgets][subdir] = panopoly
-
-projects[panopoly_admin][version] = 1.0-rc5
-projects[panopoly_admin][subdir] = panopoly
-
-projects[panopoly_users][version] = 1.0-rc5
-projects[panopoly_users][subdir] = panopoly
-
-projects[panopoly_pages][version] = 1.0-rc5
-projects[panopoly_pages][subdir] = panopoly
-projects[panopoly_pages][download][branch] = 7.x-1.x
-projects[panopoly_pages][download][type] = git
-projects[panopoly_pages][patch][2008762] = http://drupal.org/files/2008762-panopoly_pages-missing-depedency-1.patch
-
-projects[panopoly_wysiwyg][version] = 1.0-rc5
-projects[panopoly_wysiwyg][subdir] = panopoly
-
-projects[panopoly_search][version] = 1.0-rc5
-projects[panopoly_search][subdir] = panopoly
-
-; ***************** End Panopoly *****************
-; ************************************************
