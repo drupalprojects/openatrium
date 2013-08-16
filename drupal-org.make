@@ -106,6 +106,8 @@ projects[features_override][type] = module
 ; Views
 projects[views][version] = 3.7
 projects[views][subdir] = contrib
+projects[views][download][type] = git
+projects[views][download][branch] = 7.x-3.x
 projects[views][patch][1979926] = http://drupal.org/files/1979926-views-reset_fetch_data-2.patch
 projects[views][patch][1735096] = http://drupal.org/files/1735096-views-mltiple-instance-exposed-form-8.patch
 
@@ -220,6 +222,7 @@ projects[panopoly_theme][subdir] = panopoly
 projects[panopoly_magic][version] = 1.0-rc5
 projects[panopoly_magic][subdir] = panopoly
 projects[panopoly_magic][download][branch] = 7.x-1.x
+projects[panopoly_magic][download][type] = git
 projects[panopoly_magic][patch][2016527] = http://drupal.org/files/2016643_panopoly_magic_screw_pre_render_with_2016527-5.patch
 projects[panopoly_magic][patch][2017159] = http://drupal.org/files/2017159_panopoly_magic_preview_post_render-16.patch
 
@@ -235,6 +238,7 @@ projects[panopoly_users][subdir] = panopoly
 projects[panopoly_pages][version] = 1.0-rc5
 projects[panopoly_pages][subdir] = panopoly
 projects[panopoly_pages][download][branch] = 7.x-1.x
+projects[panopoly_pages][download][type] = git
 projects[panopoly_pages][patch][2008762] = http://drupal.org/files/2008762-panopoly_pages-missing-depedency-1.patch
 
 projects[panopoly_wysiwyg][version] = 1.0-rc5
