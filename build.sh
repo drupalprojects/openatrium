@@ -48,14 +48,10 @@ ln -s /opt/files/openatrium "$DRUPAL/sites/default/files"
 echo 'Restoring settings...'
 ln -s "$BASE_PATH/settings.php" "$DRUPAL/sites/default/settings.php"
 
-# Move libraries from inherited profiles into site libraries
-#   These instructions should be incorporated into the make file in the future
-#   No longer need to do this until drupal.org supports inherited profiles
-#mkdir $DRUPAL/sites/all/libraries
-#mv -v $DRUPAL/profiles/panopoly/libraries/tinymce $DRUPAL/sites/all/libraries/tinymce
-#mv -v $DRUPAL/profiles/panopoly/libraries/markitup $DRUPAL/sites/all/libraries/markitup
-#mv -v $DRUPAL/profiles/panopoly/libraries/respondjs $DRUPAL/sites/all/libraries/respondjs
-#mv -v $DRUPAL/profiles/panopoly/libraries/SolrPhpClient $DRUPAL/sites/all/libraries/SolrPhpClient
+# Move libraries from profile into site libraries
+# Modules properly using Library API don't need this, but many modules
+# don't support libraries in the profile (like WYSIWYG)
+mv $DRUPAL/profiles/openatrium/libraries $DRUPAL/sites/all/libraries
 
 # Clear caches and Run updates
 cd "$DRUPAL"
