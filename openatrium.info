@@ -48,6 +48,7 @@ dependencies[] = simplified_menu_admin
 dependencies[] = save_draft
 dependencies[] = module_filter
 dependencies[] = date_popup_authored
+dependencies[] = views_ui
 
 ;
 ; Open Atrium required modules
