@@ -2,7 +2,7 @@ api = 2
 core = 7.x
 
 ; uncomment next line for -dev releases
-includes[] = drupal-org-dev.make
+includes[openatrium] = drupal-org-dev.make
 
 ; ************************************************
 ; ********** OPEN ATRIUM'S DEPENDENCIES **********
