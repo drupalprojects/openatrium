@@ -6,3 +6,6 @@ includes[] = drupal-org-core.make
 projects[openatrium][type] = profile
 projects[openatrium][download][type] = git
 projects[openatrium][download][branch] = 7.x-2.x
+; Provide a -dev version until drupal.org supports include files
+; Comment this out for a normal release.  Uncomment for -dev release
+projects[openatrium][patch][2071051] = "http://drupal.org/files/openatrium-dev-release-2071051-1.patch"
