@@ -47,9 +47,10 @@ projects[oa_events][download][type] = git
 projects[oa_events][download][url] = http://git.drupal.org/project/oa_events.git
 projects[oa_events][download][branch] = 7.x-2.x
 
-projects[oa_events_import][download][type] = git
-projects[oa_events_import][download][url] = http://git.drupal.org/project/oa_events_import.git
-projects[oa_events_import][download][branch] = 7.x-2.x
+; Removing oa_events_import until iCalCreator is in whitelist
+;projects[oa_events_import][download][type] = git
+;projects[oa_events_import][download][url] = http://git.drupal.org/project/oa_events_import.git
+;projects[oa_events_import][download][branch] = 7.x-2.x
 
 projects[oa_contextual_tabs][download][type] = git
 projects[oa_contextual_tabs][download][url] = http://git.drupal.org/project/oa_contextual_tabs.git
