@@ -32,39 +32,48 @@ projects[htmlmail][version] = 2.65
 ; ************* Open Atrium Plugins - DEV ********
 
 projects[oa_core][download][type] = git
+projects[oa_core][subdir] = contrib
 projects[oa_core][download][url] = http://git.drupal.org/project/oa_core.git
 projects[oa_core][download][branch] = 7.x-2.x
 
 projects[oa_discussion][download][type] = git
+projects[oa_discussion][subdir] = contrib
 projects[oa_discussion][download][url] = http://git.drupal.org/project/oa_discussion.git
 projects[oa_discussion][download][branch] = 7.x-2.x
 
 projects[oa_wiki][download][type] = git
+projects[oa_wiki][subdir] = contrib
 projects[oa_wiki][download][url] = http://git.drupal.org/project/oa_wiki.git
 projects[oa_wiki][download][branch] = 7.x-2.x
 
 projects[oa_events][download][type] = git
+projects[oa_events][subdir] = contrib
 projects[oa_events][download][url] = http://git.drupal.org/project/oa_events.git
 projects[oa_events][download][branch] = 7.x-2.x
 
 ; Removing oa_events_import until iCalCreator is in whitelist
 ;projects[oa_events_import][download][type] = git
+;projects[oa_events_import][subdir] = contrib
 ;projects[oa_events_import][download][url] = http://git.drupal.org/project/oa_events_import.git
 ;projects[oa_events_import][download][branch] = 7.x-2.x
 
 projects[oa_contextual_tabs][download][type] = git
+projects[oa_contextual_tabs][subdir] = contrib
 projects[oa_contextual_tabs][download][url] = http://git.drupal.org/project/oa_contextual_tabs.git
 projects[oa_contextual_tabs][download][branch] = 7.x-2.x
 
 projects[oa_notifications][download][type] = git
+projects[oa_notifications][subdir] = contrib
 projects[oa_notifications][download][url] = http://git.drupal.org/project/oa_notifications.git
 projects[oa_notifications][download][branch] = 7.x-2.x
 
 projects[oa_media][download][type] = git
+projects[oa_media][subdir] = contrib
 projects[oa_media][download][url] = http://git.drupal.org/project/oa_media.git
 projects[oa_media][download][branch] = 7.x-2.x
 
 projects[oa_subspaces][download][type] = git
+projects[oa_subspaces][subdir] = contrib
 projects[oa_subspaces][download][url] = http://git.drupal.org/project/oa_subspaces.git
 projects[oa_subspaces][download][branch] = 7.x-2.x
 
