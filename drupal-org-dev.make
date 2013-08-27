@@ -10,7 +10,7 @@ projects[features_override][subdir] = contrib
 projects[features_override][type] = module
 projects[features_override][download][branch] = 7.x-2.x
 projects[features_override][download][type] = git
-projects[features_override][patch][2075183] = http://drupal.org/files/features_override-recursion-2075183-1.patch
+projects[features_override][patch][2075183] = http://drupal.org/files/features_override-recursion-2075183-2.patch
 
 ; Diff
 projects[diff][subdir] = contrib
