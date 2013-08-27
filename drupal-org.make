@@ -140,7 +140,7 @@ projects[panopoly_core][version] = 1.0-rc5
 projects[panopoly_core][subdir] = panopoly
 projects[panopoly_core][download][branch] = 7.x-1.x
 projects[panopoly_core][download][type] = git
-projects[panopoly_core][patch][1837312] = http://drupal.org/files/panopoly_core-hook_enable-1837312-24.patch
+projects[panopoly_core][patch][1837312] = http://drupal.org/files/panopoly_core-hook_enable-1837312-26.patch
 
 projects[panopoly_images][version] = 1.0-rc5
 projects[panopoly_images][subdir] = panopoly
@@ -172,7 +172,7 @@ projects[panopoly_pages][subdir] = panopoly
 projects[panopoly_pages][download][branch] = 7.x-1.x
 projects[panopoly_pages][download][type] = git
 projects[panopoly_pages][patch][2008762] = http://drupal.org/files/2008762-panopoly_pages-missing-depedency-1.patch
-projects[panopoly_pages][patch][1837312] = http://drupal.org/files/panopoly_pages-hook_enable-1837312-24.patch
+projects[panopoly_pages][patch][1837312] = http://drupal.org/files/panopoly_pages-hook_enable-1837312-26.patch
 
 projects[panopoly_wysiwyg][version] = 1.0-rc5
 projects[panopoly_wysiwyg][subdir] = panopoly
