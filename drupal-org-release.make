@@ -5,9 +5,12 @@ core = 7.x
 ; ********** OPEN ATRIUM'S DEPENDENCIES **********
 
 ; Features Override
-projects[features_override][subdir] = contrib
 projects[features_override][version] = 2.0-beta3
+projects[features_override][subdir] = contrib
 projects[features_override][type] = module
+projects[features_override][download][branch] = 7.x-2.x
+projects[features_override][download][type] = git
+projects[features_override][patch][2075183] = http://drupal.org/files/features_override-recursion-2075183-2.patch
 
 ; Diff
 projects[diff][subdir] = contrib
@@ -29,22 +32,22 @@ projects[htmlmail][version] = 2.65
 ; ************************************************
 
 ; ************************************************
-; ************* Open Atrium Plugins **************
+; ************* Open Atrium Plugins - ************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.0-beta2
+projects[oa_core][version] = 2.0-beta3
 
 projects[oa_discussion][subdir] = contrib
-projects[oa_discussion][version] = 2.0-beta1
+projects[oa_discussion][version] = 2.0-beta2
 
 projects[oa_wiki][subdir] = contrib
-projects[oa_wiki][version] = 2.0-beta1
+projects[oa_wiki][version] = 2.0-beta2
 
 projects[oa_events][subdir] = contrib
-projects[oa_events][version] = 2.0-beta2
+projects[oa_events][version] = 2.0-beta3
 
 projects[oa_events_import][subdir] = contrib
-projects[oa_events_import][version] = 2.0-beta1
+projects[oa_events_import][version] = 2.0-beta2
 
 projects[oa_contextual_tabs][subdir] = contrib
 projects[oa_contextual_tabs][version] = 2.0-beta1
@@ -56,10 +59,10 @@ projects[oa_media][subdir] = contrib
 projects[oa_media][version] = 2.0-beta1
 
 projects[oa_subspaces][subdir] = contrib
-projects[oa_subspaces][version] = 2.0-beta2
+projects[oa_subspaces][version] = 2.0-beta3
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 2.0-beta1
+projects[oa_radix][version] = 2.0-beta2
 
 ; ********** End Open Atrium's Plugins ***********
 ; ************************************************
@@ -86,13 +89,6 @@ projects[date_facets][download][revision] = a7a35f8
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = 1.3
 
-; Coder
-projects[coder][type] = module
-projects[coder][download][type] = git
-projects[coder][download][url] = http://git.drupal.org/project/coder.git
-projects[coder][download][branch] = 7.x-2.x
-projects[coder][subdir] = contrib
-
 ; ************************************************
 ; ******************* PANOPOLY *******************
 
@@ -110,6 +106,9 @@ projects[coder][subdir] = contrib
 
 projects[panopoly_core][version] = 1.0-rc5
 projects[panopoly_core][subdir] = panopoly
+projects[panopoly_core][download][branch] = 7.x-1.x
+projects[panopoly_core][download][type] = git
+projects[panopoly_core][patch][1837312] = http://drupal.org/files/panopoly_core-panelizer_default_permissions-1837312-26.patch
 
 projects[panopoly_images][version] = 1.0-rc5
 projects[panopoly_images][subdir] = panopoly
@@ -129,6 +128,8 @@ projects[panopoly_widgets][subdir] = panopoly
 
 projects[panopoly_admin][version] = 1.0-rc5
 projects[panopoly_admin][subdir] = panopoly
+projects[panopoly_admin][download][branch] = 7.x-1.x
+projects[panopoly_admin][download][type] = git
 projects[panopoly_admin][patch][2071133] = http://drupal.org/files/panopoly_admin-2071133-3.patch
 
 projects[panopoly_users][version] = 1.0-rc5
@@ -138,7 +139,8 @@ projects[panopoly_pages][version] = 1.0-rc5
 projects[panopoly_pages][subdir] = panopoly
 projects[panopoly_pages][download][branch] = 7.x-1.x
 projects[panopoly_pages][download][type] = git
-projects[panopoly_pages][patch][2008762] = http://drupal.org/files/2008762-panopoly_pages-missing-depedency-1.patch
+projects[panopoly_pages][patch][2008762] = http://drupal.org/files/2008762-panopoly_pages-missing-depedency-15.patch
+projects[panopoly_pages][patch][1837312] = http://drupal.org/files/panopoly_pages-panelizer_default_permissions-1837312-26.patch
 
 projects[panopoly_wysiwyg][version] = 1.0-rc5
 projects[panopoly_wysiwyg][subdir] = panopoly
