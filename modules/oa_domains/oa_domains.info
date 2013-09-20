@@ -1,0 +1,4 @@
+core = 7.x
+name = Open Atrium Domains
+description = Provides domain per space
+package = Open Atrium
