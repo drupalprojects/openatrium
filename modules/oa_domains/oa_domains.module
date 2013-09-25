@@ -33,6 +33,15 @@ define('OA_DOMAINS_BASE', '<base_domain>');
  * Implements hook_url_outbound_alter().
  */
 function oa_domains_url_outbound_alter(&$path, &$options, $original_path) {
+  static $prevent_loop = FALSE;
+
+  if ($prevent_loop) {
+    // anything that calls menu_get_item (like og_session_context_get_context)
+    // will end up calling this again
+    return;
+  }
+  $prevent_loop = TRUE;
+
   $domain = variable_get('oa_domains_base', '');
   if (empty($domain)) {
     return;
