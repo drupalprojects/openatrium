@@ -128,4 +128,5 @@ dependencies[] = oa_home
 
 ; Contrib Optional
 dependencies[] = panels_customerror
+dependencies[] = colorizer
 dependencies[] = apps
