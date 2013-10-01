@@ -125,8 +125,8 @@ dependencies[] = oa_events_import
 
 ; Open Atrium 2.0 Optional
 dependencies[] = oa_home
+dependencies[] = oa_colorizer
 
 ; Contrib Optional
 dependencies[] = panels_customerror
-dependencies[] = colorizer
 dependencies[] = apps

@@ -28,12 +28,6 @@ projects[mailsystem][version] = 2.34
 projects[htmlmail][subdir] = contrib
 projects[htmlmail][version] = 2.65
 
-; Colorizer
-projects[colorizer][download][type] = git
-projects[colorizer][subdir] = contrib
-projects[colorizer][download][url] = http://git.drupal.org/project/colorizer.git
-projects[colorizer][download][branch] = 7.x-1.x
-
 ; ******** End Open Atrium's Dependencies ********
 ; ************************************************
 
