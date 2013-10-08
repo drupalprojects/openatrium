@@ -62,6 +62,7 @@ dependencies[] = navbar
 dependencies[] = module_filter
 dependencies[] = chosen
 dependencies[] = message_subscribe
+dependencies[] = message_digest
 dependencies[] = message_subscribe_email
 dependencies[] = message_subscribe_ui
 dependencies[] = flag
@@ -71,6 +72,7 @@ dependencies[] = panels_mini
 dependencies[] = job_scheduler
 dependencies[] = feeds
 dependencies[] = trash_flag
+dependencies[] = bootstrap_tour
 
 ; Organic Groups
 dependencies[] = og
