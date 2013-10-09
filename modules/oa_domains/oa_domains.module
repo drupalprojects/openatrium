@@ -40,12 +40,12 @@ function oa_domains_url_outbound_alter(&$path, &$options, $original_path) {
     // will end up calling this again
     return;
   }
-  $prevent_loop = TRUE;
-
   $domain = variable_get('oa_domains_base', '');
   if (empty($domain)) {
     return;
   }
+
+  $prevent_loop = TRUE;
 
   global $base_url;
 
@@ -66,6 +66,7 @@ function oa_domains_url_outbound_alter(&$path, &$options, $original_path) {
   if (isset($cache[$original_path])) {
     $path = $cache[$original_path]['path'];
     $options = $cache[$original_path]['options'];
+    $prevent_loop = FALSE;
     return;
   }
   else if (preg_match('#^node/(\d+)$#', $path, $matches)) {
@@ -88,7 +89,7 @@ function oa_domains_url_outbound_alter(&$path, &$options, $original_path) {
         $options['external'] = TRUE;
       }
     }
-    else {
+    elseif (FALSE) {
       // for other content nodes, check custom domain of space
       if ($space_path = oa_domains_get_space_path($space_id)) {
         $space_alias = drupal_get_path_alias('node/' . $space_id) . '/';
@@ -118,6 +119,7 @@ function oa_domains_url_outbound_alter(&$path, &$options, $original_path) {
     $cache[$original_path]['path'] = $path;
     $cache[$original_path]['options'] = $options;
   }
+  $prevent_loop = FALSE;
 }
 
 /**
