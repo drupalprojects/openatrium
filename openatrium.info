@@ -117,6 +117,7 @@ dependencies[] = oa_admin
 dependencies[] = oa_search
 dependencies[] = oa_variables
 dependencies[] = oa_buttons
+dependencies[] = oa_tour
 dependencies[] = oa_contextual_tabs
 
 ; Open Atrium 2.0 Plugins
