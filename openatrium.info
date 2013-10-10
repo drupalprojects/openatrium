@@ -125,6 +125,7 @@ dependencies[] = oa_discussion
 dependencies[] = oa_wiki
 dependencies[] = oa_events
 dependencies[] = oa_events_import
+dependencies[] = oa_worktracker
 
 ; Open Atrium 2.0 Optional
 dependencies[] = oa_home

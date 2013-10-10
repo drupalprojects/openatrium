@@ -46,6 +46,9 @@ projects[oa_wiki][version] = 2.0-beta2
 projects[oa_events][subdir] = contrib
 projects[oa_events][version] = 2.0-beta3
 
+projects[oa_worktracker][subdir] = contrib
+projects[oa_worktracker][version] = 1.0-alpha6
+
 projects[oa_events_import][subdir] = contrib
 projects[oa_events_import][version] = 2.0-beta2
 
