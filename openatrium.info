@@ -104,6 +104,7 @@ dependencies[] = oa_teams
 dependencies[] = oa_sections
 dependencies[] = oa_subspaces
 dependencies[] = oa_messages
+dependencies[] = oa_messages_digest
 dependencies[] = oa_layouts
 dependencies[] = oa_news
 dependencies[] = oa_favorites
@@ -117,6 +118,7 @@ dependencies[] = oa_admin
 dependencies[] = oa_search
 dependencies[] = oa_variables
 dependencies[] = oa_buttons
+dependencies[] = oa_tour
 dependencies[] = oa_contextual_tabs
 
 ; Open Atrium 2.0 Plugins
