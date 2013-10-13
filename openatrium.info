@@ -105,6 +105,7 @@ dependencies[] = oa_sections
 dependencies[] = oa_subspaces
 dependencies[] = oa_messages
 dependencies[] = oa_messages_digest
+dependencies[] = oa_sandbox
 dependencies[] = oa_layouts
 dependencies[] = oa_news
 dependencies[] = oa_favorites
