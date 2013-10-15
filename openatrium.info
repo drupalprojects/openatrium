@@ -121,6 +121,7 @@ dependencies[] = oa_variables
 dependencies[] = oa_buttons
 dependencies[] = oa_tour
 dependencies[] = oa_contextual_tabs
+dependencies[] = oa_responsive_regions
 
 ; Open Atrium 2.0 Plugins
 dependencies[] = oa_discussion
@@ -131,7 +132,7 @@ dependencies[] = oa_worktracker
 
 ; Open Atrium 2.0 Optional
 dependencies[] = oa_home
-dependencies[] = oa_colorizer
+dependencies[] = oa_appearance
 
 ; Contrib Optional
 dependencies[] = panels_customerror
