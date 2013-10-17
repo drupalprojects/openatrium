@@ -31,10 +31,8 @@ projects[htmlmail][version] = 2.65
 ; ************************************************
 ; ************* Open Atrium Plugins RELEASE ******
 
-projects[oa_core][download][type] = git
 projects[oa_core][subdir] = contrib
-projects[oa_core][download][url] = http://git.drupal.org/project/oa_core.git
-projects[oa_core][download][branch] = 7.x-2.x
+projects[oa_core][version] = 2.0-beta4
 
 projects[oa_discussion][subdir] = contrib
 projects[oa_discussion][version] = 2.0-beta3
@@ -48,10 +46,8 @@ projects[oa_events][version] = 2.0-beta4
 projects[oa_events_import][subdir] = contrib
 projects[oa_events_import][version] = 2.0-beta2
 
-projects[oa_worktracker][download][type] = git
 projects[oa_worktracker][subdir] = contrib
-projects[oa_worktracker][download][url] = http://git.drupal.org/project/oa_worktracker.git
-projects[oa_worktracker][download][branch] = 7.x-1.x
+projects[oa_worktracker][version] = 1.0-beta1
 
 projects[oa_contextual_tabs][subdir] = contrib
 projects[oa_contextual_tabs][version] = 2.0-beta1
@@ -66,9 +62,7 @@ projects[oa_subspaces][subdir] = contrib
 projects[oa_subspaces][version] = 2.0-beta4
 
 projects[oa_radix][type] = theme
-projects[oa_radix][download][type] = git
-projects[oa_radix][download][url] = http://git.drupal.org/project/oa_radix.git
-projects[oa_radix][download][branch] = 7.x-2.x
+projects[oa_radix][version] = 2.0-beta3
 
 ; ********** End Open Atrium's Plugins ***********
 ; ************************************************
