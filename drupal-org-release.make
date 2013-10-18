@@ -32,7 +32,7 @@ projects[htmlmail][version] = 2.65
 ; ************* Open Atrium Plugins RELEASE ******
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.0-beta5
+projects[oa_core][version] = 2.0-rc1
 
 projects[oa_discussion][subdir] = contrib
 projects[oa_discussion][version] = 2.0-beta3
@@ -62,7 +62,7 @@ projects[oa_subspaces][subdir] = contrib
 projects[oa_subspaces][version] = 2.0-beta4
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 2.0-beta3
+projects[oa_radix][version] = 2.0-rc1
 
 ; ********** End Open Atrium's Plugins ***********
 ; ************************************************
