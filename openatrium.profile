@@ -23,10 +23,6 @@ function openatrium_install_tasks(&$install_state) {
     'type' => 'normal',
   );
 
-  $tasks['open_atrium_rebuild_search'] = array(
-    'type' => 'normal',
-  );
-
   return $tasks;
 }
 
