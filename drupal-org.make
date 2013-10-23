@@ -31,10 +31,8 @@ projects[htmlmail][version] = 2.65
 ; ************************************************
 ; ************* Open Atrium Plugins RELEASE ******
 
-projects[oa_core][download][type] = git
 projects[oa_core][subdir] = contrib
-projects[oa_core][download][url] = http://git.drupal.org/project/oa_core.git
-projects[oa_core][download][branch] = 7.x-2.x
+projects[oa_core][version] = 2.0
 
 projects[oa_discussion][subdir] = contrib
 projects[oa_discussion][version] = 2.0
