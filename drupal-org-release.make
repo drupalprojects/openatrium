@@ -32,13 +32,13 @@ projects[htmlmail][version] = 2.65
 ; ************* Open Atrium Plugins RELEASE ******
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.0
+projects[oa_core][version] = 2.01
 
 projects[oa_discussion][subdir] = contrib
 projects[oa_discussion][version] = 2.0
 
 projects[oa_wiki][subdir] = contrib
-projects[oa_wiki][version] = 2.0
+projects[oa_wiki][version] = 2.01
 
 projects[oa_events][subdir] = contrib
 projects[oa_events][version] = 2.0
