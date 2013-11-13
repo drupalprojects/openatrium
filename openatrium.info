@@ -3,6 +3,8 @@ distribution_name = Open Atrium 2
 description = A team collaboration platform
 core = 7.x
 exclusive = TRUE
+hidden = FALSE
+version = "7.x-2.04"
 
 base[] = panopoly
 
@@ -135,7 +137,7 @@ dependencies[] = oa_worktracker
 ; Open Atrium 2.0 Optional
 dependencies[] = oa_home
 dependencies[] = oa_appearance
-dependencies[] = oa_htmlemail
+dependencies[] = oa_htmlmail
 
 ; Contrib Optional
 dependencies[] = panels_customerror
