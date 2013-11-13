@@ -135,6 +135,7 @@ dependencies[] = oa_worktracker
 ; Open Atrium 2.0 Optional
 dependencies[] = oa_home
 dependencies[] = oa_appearance
+dependencies[] = oa_htmlemail
 
 ; Contrib Optional
 dependencies[] = panels_customerror
