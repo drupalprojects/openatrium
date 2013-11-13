@@ -3,7 +3,6 @@ distribution_name = Open Atrium 2
 description = A team collaboration platform
 core = 7.x
 exclusive = TRUE
-hidden = FALSE
 version = "7.x-2.04"
 
 base[] = panopoly
@@ -65,8 +64,6 @@ dependencies[] = module_filter
 dependencies[] = chosen
 dependencies[] = message_subscribe
 dependencies[] = message_digest
-dependencies[] = message_subscribe_email
-dependencies[] = message_subscribe_ui
 dependencies[] = flag
 dependencies[] = realname
 dependencies[] = features_override
