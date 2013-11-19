@@ -41,7 +41,7 @@ projects[oa_wiki][subdir] = contrib
 projects[oa_wiki][version] = 2.01
 
 projects[oa_events][subdir] = contrib
-projects[oa_events][version] = 2.01
+projects[oa_events][version] = 2.02
 
 projects[oa_events_import][subdir] = contrib
 projects[oa_events_import][version] = 2.0
