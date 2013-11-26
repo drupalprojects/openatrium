@@ -143,9 +143,8 @@ projects[google_analytics][version] = 1.3
 
 projects[panopoly_core][subdir] = panopoly
 projects[panopoly_core][download][branch] = 7.x-1.x
-projects[panopoly_core][download][revision] = 68d38a
+projects[panopoly_core][download][revision] = 4f4996
 projects[panopoly_core][download][type] = git
-projects[panopoly_core][patch][1837312] = http://drupal.org/files/panopoly_core-panelizer_default_permissions-1837312-26.patch
 
 projects[panopoly_images][version] = 1.0-rc5
 projects[panopoly_images][subdir] = panopoly
@@ -166,23 +165,25 @@ projects[panopoly_widgets][subdir] = panopoly
 projects[panopoly_admin][subdir] = panopoly
 projects[panopoly_admin][download][branch] = 7.x-1.x
 projects[panopoly_admin][download][type] = git
-projects[panopoly_admin][download][revision] = 53f59e
+projects[panopoly_admin][download][revision] = 39caff
 
 projects[panopoly_users][version] = 1.0-rc5
 projects[panopoly_users][subdir] = panopoly
 
 projects[panopoly_pages][subdir] = panopoly
 projects[panopoly_pages][download][branch] = 7.x-1.x
-projects[panopoly_pages][download][revision] = 4125aa
+projects[panopoly_pages][download][revision] = 97638f
 projects[panopoly_pages][download][type] = git
-projects[panopoly_pages][patch][2008762] = http://drupal.org/files/2008762-panopoly_pages-missing-depedency-15.patch
-projects[panopoly_pages][patch][1837312] = http://drupal.org/files/panopoly_pages-panelizer_default_permissions-1837312-26.patch
 
-projects[panopoly_wysiwyg][version] = 1.0-rc5
 projects[panopoly_wysiwyg][subdir] = panopoly
+projects[panopoly_wysiwyg][download][branch] = 7.x-1.x
+projects[panopoly_wysiwyg][download][revision] = 0aaf3b
+projects[panopoly_wysiwyg][download][type] = git
 
-projects[panopoly_search][version] = 1.0-rc5
 projects[panopoly_search][subdir] = panopoly
+projects[panopoly_search][download][branch] = 7.x-1.x
+projects[panopoly_search][download][revision] = 5bf251
+projects[panopoly_search][download][type] = git
 
 ; ***************** End Panopoly *****************
 ; ************************************************
