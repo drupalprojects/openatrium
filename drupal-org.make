@@ -2,34 +2,7 @@ api = 2
 core = 7.x
 
 ; ************************************************
-; ********** OPEN ATRIUM'S DEPENDENCIES **********
-
-; Features Override
-projects[features_override][version] = 2.0-rc1
-projects[features_override][subdir] = contrib
-projects[features_override][type] = module
-
-; Diff
-projects[diff][subdir] = contrib
-projects[diff][version] = 3.2
-
-; Job Scheduler
-projects[job_scheduler][subdir] = contrib
-projects[job_scheduler][version] = 2.0-alpha3
-
-; Mail System
-projects[mailsystem][subdir] = contrib
-projects[mailsystem][version] = 2.34
-
-; HTML Mail
-projects[htmlmail][subdir] = contrib
-projects[htmlmail][version] = 2.65
-
-; ******** End Open Atrium's Dependencies ********
-; ************************************************
-
-; ************************************************
-; ************* Open Atrium Plugins RELEASE ******
+; ************* Open Atrium Plugins DEV **********
 
 projects[oa_core][download][type] = git
 projects[oa_core][subdir] = contrib
