@@ -11,6 +11,8 @@
 function openatrium_install() {
   node_access_rebuild();
   _openatrium_set_up_theme();
+  // update admin and member permissions
+  oa_adminrole_update_roles();
 }
 
 /**
