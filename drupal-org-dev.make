@@ -32,7 +32,7 @@ projects[oa_events_import][download][branch] = 7.x-2.x
 projects[oa_worktracker][download][type] = git
 projects[oa_worktracker][subdir] = contrib
 projects[oa_worktracker][download][url] = http://git.drupal.org/project/oa_worktracker.git
-projects[oa_worktracker][download][branch] = 7.x-1.x
+projects[oa_worktracker][download][branch] = 7.x-2.x
 
 projects[oa_contextual_tabs][download][type] = git
 projects[oa_contextual_tabs][subdir] = contrib
