@@ -49,14 +49,6 @@ projects[oa_radix][version] = 2.11
 projects[markdown][subdir] = contrib
 projects[markdown][version] = 1.1
 
-; ##### oa_search #####
-; Date Facets
-projects[date_facets][subdir] = contrib
-projects[date_facets][download][type] = git
-projects[date_facets][download][url] = http://git.drupal.org/project/date_facets.git
-projects[date_facets][download][branch] = 7.x-1.x
-projects[date_facets][download][revision] = a7a35f8
-
 ; ##### oa_analytics #####
 ; Google Analytics
 projects[google_analytics][subdir] = contrib
