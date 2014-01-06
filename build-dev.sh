@@ -59,7 +59,7 @@ ln -s "$BASE_PATH/settings.php" "$DRUPAL/sites/default/settings.php"
 mv $DRUPAL/profiles/openatrium/libraries $DRUPAL/sites/all/libraries
 
 # Set up the github remotes
-./add-remotes $DRUPAL/profiles/openatrium
+./add-remotes.sh $DRUPAL/profiles/openatrium
 # Clear caches and Run updates
 cd "$DRUPAL"
 echo 'Clearing caches...'
