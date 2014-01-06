@@ -59,20 +59,7 @@ ln -s "$BASE_PATH/settings.php" "$DRUPAL/sites/default/settings.php"
 mv $DRUPAL/profiles/openatrium/libraries $DRUPAL/sites/all/libraries
 
 # Set up the github remotes
-echo 'Adding remotes...'
-submodules=( "oa_core" "oa_discussion" "oa_wiki" "oa_events" "oa_events_import" "oa_contextual_tabs" "oa_notifications" "oa_media" "oa_subspaces" )
-for subdir in "${submodules[@]}"
-do
-  cd $DRUPAL/profiles/openatrium/modules/contrib/$subdir
-  git remote add --track 7.x-2.x github git@github.com:phase2/$subdir.git
-done
-subthemes=( "oa_radix" )
-for subdir in "${subthemes[@]}"
-do
-  cd $DRUPAL/profiles/openatrium/themes/$subdir
-  git remote add --track 7.x-2.x github git@github.com:phase2/$subdir.git
-done
-
+./add-remotes $DRUPAL/profiles/openatrium
 # Clear caches and Run updates
 cd "$DRUPAL"
 echo 'Clearing caches...'
