@@ -132,25 +132,31 @@ projects[panopoly_widgets][download][branch] = 7.x-1.x
 projects[panopoly_widgets][download][revision] = 5555e3
 projects[panopoly_widgets][download][type] = git
 
-projects[panopoly_admin][version] = 1.0
+; projects[panopoly_admin][version] = 1.0
 projects[panopoly_admin][subdir] = panopoly
+projects[panopoly_admin][download][branch] = 7.x-1.x
+projects[panopoly_admin][download][revision] = 36aec4
+projects[panopoly_admin][download][type] = git
 
 ; projects[panopoly_users][version] = 1.0
 projects[panopoly_users][subdir] = panopoly
 projects[panopoly_users][download][branch] = 7.x-1.x
-projects[panopoly_users][download][revision] = c7bc02
+projects[panopoly_users][download][revision] = 2ccc76
 projects[panopoly_users][download][type] = git
 
 projects[panopoly_pages][version] = 1.0
 projects[panopoly_pages][subdir] = panopoly
 
-projects[panopoly_wysiwyg][version] = 1.0
+; projects[panopoly_wysiwyg][version] = 1.0
 projects[panopoly_wysiwyg][subdir] = panopoly
+projects[panopoly_wysiwyg][download][branch] = 7.x-1.x
+projects[panopoly_wysiwyg][download][revision] = a5973c
+projects[panopoly_wysiwyg][download][type] = git
 
 ; projects[panopoly_search][version] = 1.0
 projects[panopoly_search][subdir] = panopoly
 projects[panopoly_search][download][branch] = 7.x-1.x
-projects[panopoly_search][download][revision] = 2afd1d
+projects[panopoly_search][download][revision] = 5f3562
 projects[panopoly_search][download][type] = git
 
 ; ***************** End Panopoly *****************
