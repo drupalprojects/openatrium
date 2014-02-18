@@ -73,7 +73,8 @@ if [ $DEV_BUILD -eq 1 ]; then
     echo "Downloading latest profile..."
     git init .
     git remote add --track 7.x-2.x origin http://git.drupal.org/project/openatrium.git
-    git pull origin 7.x-2.x
+    git fetch
+    git checkout 7.x-2.x
   fi
   cd $CURDIR
 else
