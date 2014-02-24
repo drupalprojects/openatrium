@@ -123,6 +123,7 @@ dependencies[] = oa_tour_defaults
 dependencies[] = oa_contextual_tabs
 dependencies[] = oa_responsive_regions
 dependencies[] = oa_update
+dependencies[] = oa_clone
 
 ; Open Atrium 2.0 Plugins
 dependencies[] = oa_discussion
