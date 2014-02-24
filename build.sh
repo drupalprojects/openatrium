@@ -98,6 +98,10 @@ if [ -e "$TARGET/profiles/openatrium/modules/contrib/oa_core" ]; then
   if [ -e "$ORIG_TARGET" ]; then
     rm -rf "$ORIG_TARGET"
   fi
+  if [ -e "$ORIG_TARGET" ]; then
+    echo "Error removing old files.  Please fix permissions."
+    exit 1
+  fi
   mv $TARGET $ORIG_TARGET
   DRUPAL=`cd "$ORIG_TARGET"; pwd -P`
 
