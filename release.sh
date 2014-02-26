@@ -15,6 +15,6 @@ git commit -a -m "Updating version info"
 git push origin 7.x-2.x
 echo "Creating tag...$DRUPAL_VERSION"
 git checkout 7.x-2.x
-#git tag $DRUPAL_VERSION
-#git push origin tag $DRUPAL_VERSION
+git tag $DRUPAL_VERSION
+git push origin tag $DRUPAL_VERSION
 echo "Release complete!"
