@@ -12,6 +12,7 @@ DRUPAL_VERSION="7.x-"$VERSION
 echo "Patching version info..."
 sed -i "s/version = .*/version = \"$DRUPAL_VERSION\"/" openatrium.info
 echo "Creating tag...$DRUPAL_VERSION"
-echo "git checkout 7.x-2.x"
-echo "git tag $DRUPAL_VERSION"
-echo "git push origin tag $DRUPAL_VERSION"
+git checkout 7.x-2.x
+git tag $DRUPAL_VERSION
+git push origin tag $DRUPAL_VERSION
+echo "Release complete!"
