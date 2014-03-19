@@ -54,6 +54,7 @@ dependencies[] = views_ui
 ;
 ; Open Atrium required modules
 ;
+dependencies[] = advagg
 dependencies[] = entity
 dependencies[] = panelizer
 dependencies[] = libraries
