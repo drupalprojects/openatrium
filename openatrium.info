@@ -72,6 +72,7 @@ dependencies[] = panels_mini
 dependencies[] = job_scheduler
 dependencies[] = feeds
 dependencies[] = bootstrap_tour
+dependencies[] = conditional_styles
 
 ; Organic Groups
 dependencies[] = og
