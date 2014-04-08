@@ -26,7 +26,7 @@ projects[oa_contextual_tabs][subdir] = contrib
 projects[oa_contextual_tabs][version] = 2.16
 
 projects[oa_notifications][subdir] = contrib
-projects[oa_notifications][version] = 2.16
+projects[oa_notifications][version] = 2.17
 
 projects[oa_media][subdir] = contrib
 projects[oa_media][version] = 2.16
