@@ -5,7 +5,7 @@ core = 7.x
 ; ************* Open Atrium Plugins RELEASE ******
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.15
+projects[oa_core][version] = 2.16
 
 projects[oa_discussion][subdir] = contrib
 projects[oa_discussion][version] = 2.16
