@@ -35,7 +35,7 @@ projects[oa_subspaces][subdir] = contrib
 projects[oa_subspaces][version] = 2.16
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 2.16
+projects[oa_radix][version] = 2.17
 
 ; ************************************************
 ; ************* Open Atrium Modules **************
