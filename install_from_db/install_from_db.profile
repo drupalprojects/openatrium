@@ -58,18 +58,21 @@ function install_from_db_install_quickstart_form($form, &$form_state, &$install_
     // can't do quickstart if no db dump exists
     // also only allow quickstart for mysql databases currently
     unset($install_state['parameters']['quickstart']);
+    $form_state['executed'] = TRUE;
     return;
   }
   $install_state['parameters']['db_import_filename'] = $filename;
 
   if (isset($install_state['parameters']['quickstart'])) {
     // if url argument is already specified, then just use it
+    $form_state['executed'] = TRUE;
     return;
   }
 
   if (!$install_state['interactive']) {
     // no url argument, and not running interactively, so default to drupal standard
     $install_state['parameters']['quickstart'] = 'standard';
+    $form_state['executed'] = TRUE;
     return;
   }
 
