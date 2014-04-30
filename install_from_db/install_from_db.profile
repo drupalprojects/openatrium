@@ -246,7 +246,9 @@ function _install_from_db_read_sql_batch($file, &$table) {
   $line = '';
   $table = '';
   $skip = FALSE;
-  $skip_tables = array('batch', 'cache', 'sessions', 'queue', 'semaphore', 'users');
+  $skip_tables = array('batch', 'cache', 'sessions', 'queue', 'semaphore', 'users',
+    'advagg_aggregates', 'advagg_aggregates_hashes', 'advagg_aggregates_versions',
+    'advagg_files');
   while (($newline = _install_from_db_read_sql_command_from_file($file)) !== false) {
     // process the line read.
     $newline_prefix = _install_from_db_replace_prefix($newline, $conn);
