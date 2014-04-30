@@ -233,12 +233,6 @@ function _install_from_db_install_db_import($line, $table, &$context) {
     // installation tasks will now have full access to the profile's modules.
     _install_from_db_cc_all();
   }
-  if (empty($table)) {
-    $context['message'] = st('Database import completed.');
-  }
-  else {
-    $context['message'] = st('Imported table @table', array('@table' => $table));
-  }
 }
 
 /**
