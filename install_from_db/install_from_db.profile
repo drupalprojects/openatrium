@@ -21,7 +21,7 @@ function install_from_db_install_tasks_alter(&$tasks, $install_state) {
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
     );
   $tasks = _install_from_db_insert_before_key($tasks, 'install_profile_modules',
-    'install_from_db_install_quickstart_form', $quickstart);
+    'install_from_db_form', $quickstart);
 }
 
 /**
@@ -46,10 +46,10 @@ function _install_from_db_insert_before_key( $originalArray, $originalKey, $inse
  * TODO: Check db to be sure it is mysql, or provide mechanism for
  * using dumps of other database types.
  *
- * @see install_from_db_install_quickstart_form_validate()
- * @see install_from_db_install_quickstart_form_submit()
+ * @see install_from_db_form_validate()
+ * @see install_from_db_form_submit()
  */
-function install_from_db_install_quickstart_form($form, &$form_state, &$install_state) {
+function install_from_db_form($form, &$form_state, &$install_state) {
   $profile = $install_state['parameters']['profile'];
   // find database dump in the /db folder within the profile
   // TODO: support different database dump formats
@@ -103,19 +103,19 @@ function install_from_db_install_quickstart_form($form, &$form_state, &$install_
 }
 
 /**
- * Form validation handler for install_from_db_install_quickstart_form().
+ * Form validation handler for install_from_db_form().
  *
- * @see install_from_db_install_quickstart_form_submit()
+ * @see install_from_db_form_submit()
  */
-function install_from_db_install_quickstart_form_validate($form, &$form_state) {
+function install_from_db_form_validate($form, &$form_state) {
 }
 
 /**
- * Form submission handler for install_from_db_install_quickstart_form().
+ * Form submission handler for install_from_db_form().
  *
- * @see install_from_db_install_quickstart_form_validate()
+ * @see install_from_db_form_validate()
  */
-function install_from_db_install_quickstart_form_submit($form, &$form_state) {
+function install_from_db_form_submit($form, &$form_state) {
   global $install_state;
   $install_state['parameters']['quickstart'] = $form_state['input']['quickstart'];
 }
@@ -383,7 +383,11 @@ function install_from_db_install_finished(&$install_state) {
   //
   // NO!  Don't do this after installing profile from DB since we have the
   // module versions we want and the Update module is potentially enabled
+  //
   // drupal_cron_run();
+  //
+  // Mark cron as run so it doesn't run on next page load either
+  variable_set('cron_last', REQUEST_TIME);
 
   return $output;
 }
