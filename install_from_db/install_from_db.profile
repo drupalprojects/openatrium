@@ -65,17 +65,17 @@ function install_from_db_form($form, &$form_state, &$install_state) {
   }
   $install_state['parameters']['db_import_filename'] = $filename;
 
-  if (isset($install_state['parameters']['quickstart'])) {
+  if ($install_state['interactive'] && isset($install_state['parameters']['quickstart'])) {
     // if url argument is already specified, then just use it
+    $form_state['input']['quickstart'] = $install_state['parameters']['quickstart'];
     $form_state['executed'] = TRUE;
     return;
   }
 
   if (!$install_state['interactive']) {
-    // no url argument, and not running interactively, so default to quick start
+    // default non-interactive to quickstart
     $install_state['parameters']['quickstart'] = 'quick';
-    $form_state['executed'] = TRUE;
-    return;
+    $form_state['input']['quickstart'] = 'quick';
   }
 
   $form['quickstart']['quick'] = array(
@@ -128,6 +128,9 @@ function install_from_db_form_submit($form, &$form_state) {
  */
 function install_from_db_install_profile_modules(&$install_state) {
   if (!empty($install_state['parameters']['quickstart']) && ($install_state['parameters']['quickstart'] === 'quick') && !empty($install_state['parameters']['db_import_filename'])) {
+    if (!$install_state['interactive']) {
+      print "Installing from database\n";
+    }
     // bypass normal module installation
     // load database dump instead
     // uses batch because normal module install task uses batch
@@ -165,6 +168,9 @@ function install_from_db_install_profile_modules(&$install_state) {
       'finished' => '_install_from_db_install_db_import_finished',
     );
     return $batch;
+  }
+  if (!$install_state['interactive']) {
+    print "Standard Drupal install\n";
   }
   return install_profile_modules($install_state);
 }
