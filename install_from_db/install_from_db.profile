@@ -72,8 +72,8 @@ function install_from_db_form($form, &$form_state, &$install_state) {
   }
 
   if (!$install_state['interactive']) {
-    // no url argument, and not running interactively, so default to drupal standard
-    $install_state['parameters']['quickstart'] = 'standard';
+    // no url argument, and not running interactively, so default to quick start
+    $install_state['parameters']['quickstart'] = 'quick';
     $form_state['executed'] = TRUE;
     return;
   }
