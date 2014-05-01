@@ -20,7 +20,7 @@ projects[oa_events_import][subdir] = contrib
 projects[oa_events_import][version] = 2.18
 
 projects[oa_worktracker][subdir] = contrib
-projects[oa_worktracker][version] = 2.0-beta12
+projects[oa_worktracker][version] = 2.0-beta13
 
 projects[oa_contextual_tabs][subdir] = contrib
 projects[oa_contextual_tabs][version] = 2.18
