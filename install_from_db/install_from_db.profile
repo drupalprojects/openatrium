@@ -129,6 +129,7 @@ function install_from_db_form_submit($form, &$form_state) {
 function install_from_db_install_profile_modules(&$install_state) {
   if (!empty($install_state['parameters']['quickstart']) && ($install_state['parameters']['quickstart'] === 'quick') && !empty($install_state['parameters']['db_import_filename'])) {
     if (!$install_state['interactive']) {
+      watchdog('install', 'Installing from database import.', array(), WATCHDOG_INFO);
       print "Installing from database\n";
     }
     // bypass normal module installation
@@ -170,6 +171,7 @@ function install_from_db_install_profile_modules(&$install_state) {
     return $batch;
   }
   if (!$install_state['interactive']) {
+    watchdog('install', 'Performing standard Drupal install.', array(), WATCHDOG_INFO);
     print "Standard Drupal install\n";
   }
   return install_profile_modules($install_state);
