@@ -257,7 +257,7 @@ function _install_from_db_read_sql_batch($file, &$table) {
   $table = '';
   $skip = FALSE;
   $skip_tables = array('batch', 'cache', 'sessions', 'queue', 'semaphore', 'users',
-    'watchdog', 'advagg_aggregates', 'advagg_aggregates_hashes',
+    'advagg_aggregates', 'advagg_aggregates_hashes',
     'advagg_aggregates_versions', 'advagg_files');
   while (($newline = _install_from_db_read_sql_command_from_file($file)) !== false) {
     // process the line read.
