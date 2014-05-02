@@ -29,7 +29,6 @@ $options['structure-tables']['common'] = array(
   'cache_variable',
   'cache_views',
   'cache_views_data',
-  'cache_views_datacache_bootstrap',
   'history',
   'realname',
   'search_dataset',
@@ -38,7 +37,6 @@ $options['structure-tables']['common'] = array(
   'search_total',
   'sessions',
   'users',
-  'watchdog',
 );
 // Use the list of cache tables above.
 $options['structure-tables-key'] = 'common';
