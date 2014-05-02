@@ -146,11 +146,7 @@ function install_from_db_install_profile_modules(&$install_state) {
         while (($line = _install_from_db_read_sql_batch($file, $table)) !== false) {
           if (!empty($line)) {
             // don't process blank lines
-            if ($table === '') {
-              // skip operations at end of dump that don't have a table,
-              // like SET TIME_ZONE=@OLD_TIME_ZONE
-            }
-            elseif (in_array($table, array('system'))) {
+            if (in_array($table, array('system'))) {
               $defer_operations[] = array('_install_from_db_install_db_import', array($line, $table));
             }
             else {
@@ -262,24 +258,33 @@ function _install_from_db_read_sql_batch($file, &$table) {
   while (($newline = _install_from_db_read_sql_command_from_file($file)) !== false) {
     // process the line read.
     $newline_prefix = _install_from_db_replace_prefix($newline, $conn);
-    if (!$skip) {
-      // block of SQL starts with a DROP TABLE command
-      if (preg_match('/\A(DROP TABLE IF EXISTS )`([^`]+)`/', $newline, $matches)) {
-        $table = $matches[2];
+    // block of SQL starts with a Table structure comment
+    if (preg_match('/Table structure for table `([^`]+)`/', $newline, $matches)) {
+      $new_table = $matches[1];
+      if (!empty($table) && ($new_table !== $table)) {
+        // close out the previous table
+        // put this line back into the read buffer for the next time
+        _install_from_db_read_sql_command_from_file($file, $newline);
+        break;
+      }
+      $table = $new_table;
+      if (!$skip) {
         if (in_array($table, $skip_tables) || (strpos($table, 'cache_') === 0)) {
           // skip listed tables, along with any cache_* table
           $skip = TRUE;
         }
       }
     }
-    else if (preg_match('/\A(CREATE TABLE )`([^`]+)`/', $newline, $matches)) {
-      if ($matches[2] === $table) {
-        // even though we are skipping a table, be sure it exists
-        $newline_prefix = preg_replace('/\ACREATE TABLE/', 'CREATE TABLE IF NOT EXISTS', $newline_prefix);
+    if (preg_match('/\A(CREATE TABLE )`([^`]+)`/', $newline, $matches)) {
+      // always check first before creating tables
+      $newline_prefix = preg_replace('/\ACREATE TABLE/', 'CREATE TABLE IF NOT EXISTS', $newline_prefix);
+      if ($skip) {
+        // make sure skipped tables are still created
         $line .= $newline_prefix;
       }
     }
-    if (preg_match('/SET TIME_ZONE/', $newline, $matches)) {
+    if (!empty($newline) && substr($newline, 0, 2) == '--') {
+      // otherwise skip comments
       $newline_prefix = '';
     }
     if (!$skip && !empty($newline_prefix)) {
@@ -290,7 +295,6 @@ function _install_from_db_read_sql_batch($file, &$table) {
       // be sure to turn autocommit back on for Drupal batch system and other database
       // queries to work properly
       $line .= 'set autocommit=1;';
-      break;
     }
   }
   if (empty($line) && ($newline === FALSE)) {
@@ -305,11 +309,31 @@ function _install_from_db_read_sql_batch($file, &$table) {
  * Supports the formatting created by mysqldump, but won't handle multiline comments.
  * Taken from backup_migrate module
  */
-function _install_from_db_read_sql_command_from_file($file) {
+function _install_from_db_read_sql_command_from_file($file, $save_line = '') {
+  static $save_for_later = '';
+
+  if (!empty($save_for_later)) {
+    // check if a previous line was saved
+    $out = $save_for_later;
+    $save_for_later = '';
+    return trim($out);
+  }
+
+  if (!empty($save_line)) {
+    // save this text for the next time we read from file
+    // used to stuff the previous line back into the read buffer
+    $save_for_later = $save_line;
+    return;
+  }
+
   $out = '';
   while (($line = fgets($file)) !== false) {
     $line = trim($line);
-    // Ignore single line comments.
+    if (empty($out) && !empty($line) && substr($line, 0, 2) == '--') {
+      // return single line comments
+      return trim($line);
+    }
+    // Otherwise, ignore single line comments within a sql statement.
     if (!empty($line) && substr($line, 0, 2) != '--') {
       $out .= ' ' . $line;
       // If a line ends in ; or */ it is a sql command.
