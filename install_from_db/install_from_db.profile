@@ -279,7 +279,10 @@ function _install_from_db_read_sql_batch($file, &$table) {
         $line .= $newline_prefix;
       }
     }
-    if (!$skip) {
+    if (preg_match('/SET TIME_ZONE/', $newline, $matches)) {
+      $newline_prefix = '';
+    }
+    if (!$skip && !empty($newline_prefix)) {
       $line .= $newline_prefix;
     }
     // block of SQL ends with a commit command.
