@@ -72,7 +72,7 @@ function install_from_db_form($form, &$form_state, &$install_state) {
     return;
   }
 
-  if (!$install_state['interactive']) {
+  if (!$install_state['interactive'] && !isset($form_state['values']['quickstart'])) {
     // default non-interactive to quickstart
     $install_state['parameters']['quickstart'] = 'quick';
     $form_state['input']['quickstart'] = 'quick';
