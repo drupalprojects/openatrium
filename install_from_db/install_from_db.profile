@@ -53,7 +53,7 @@ function install_from_db_form($form, &$form_state, &$install_state) {
   $profile = $install_state['parameters']['profile'];
   // find database dump in the /db folder within the profile
   // TODO: support different database dump formats
-  $filename = DRUPAL_ROOT . '/profiles/' . $profile . '/db/' . $profile . '.sql';
+  $filename = DRUPAL_ROOT . '/profiles/' . $profile . '/db/' . $profile . '.mysql';
 
   $conn = Database::getConnection('default');
   if (!file_exists($filename) || !$conn || ($conn->driver() !== 'mysql')) {
@@ -65,7 +65,7 @@ function install_from_db_form($form, &$form_state, &$install_state) {
   }
   $install_state['parameters']['db_import_filename'] = $filename;
 
-  if ($install_state['interactive'] && isset($install_state['parameters']['quickstart'])) {
+  if ($install_state['interactive'] && !empty($install_state['parameters']['quickstart'])) {
     // if url argument is already specified, then just use it
     $form_state['input']['quickstart'] = $install_state['parameters']['quickstart'];
     $form_state['executed'] = TRUE;
