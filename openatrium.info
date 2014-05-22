@@ -121,7 +121,6 @@ dependencies[] = oa_search
 dependencies[] = oa_variables
 dependencies[] = oa_buttons
 dependencies[] = oa_tour
-dependencies[] = oa_tour_defaults
 dependencies[] = oa_contextual_tabs
 dependencies[] = oa_responsive_regions
 dependencies[] = oa_update
@@ -139,6 +138,7 @@ dependencies[] = oa_home
 dependencies[] = oa_appearance
 dependencies[] = oa_htmlmail
 dependencies[] = oa_archive
+dependencies[] = oa_tour_defaults
 
 ; Contrib Optional
 dependencies[] = panels_customerror
