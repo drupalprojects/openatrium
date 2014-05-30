@@ -42,9 +42,9 @@ function openatrium_install_tasks(&$install_state) {
 
 function openatrium_features_revert_all() {
   global $install_state;
+  drupal_set_time_limit(0);
   // only revert features when not doing a quick install
   if (empty($install_state['parameters']['quickstart']) || ($install_state['parameters']['quickstart'] != 'quick')) {
-    drupal_set_time_limit(0);
     features_revert(array(
       'oa_core' => array('field_base'),
       'oa_sections' => array('field_base', 'field_instance'),
