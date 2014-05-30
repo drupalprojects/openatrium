@@ -51,10 +51,14 @@ dependencies[] = module_filter
 dependencies[] = date_popup_authored
 dependencies[] = views_ui
 
+; advagg no longer enabled by default
+; enable it if you subtheme oa_radix and have
+; selector issues in Internet Explorer
+;;dependencies[] = advagg
+
 ;
 ; Open Atrium required modules
 ;
-dependencies[] = advagg
 dependencies[] = entity
 dependencies[] = panelizer
 dependencies[] = libraries
@@ -125,6 +129,7 @@ dependencies[] = oa_contextual_tabs
 dependencies[] = oa_responsive_regions
 dependencies[] = oa_update
 dependencies[] = oa_clone
+dependencies[] = oa_access
 
 ; Open Atrium 2.0 Plugins
 dependencies[] = oa_discussion
