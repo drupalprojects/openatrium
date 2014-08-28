@@ -107,6 +107,7 @@ projects[google_analytics][subdir] = contrib
 
 projects[panopoly_core][version] = 1.10
 projects[panopoly_core][subdir] = panopoly
+projects[panopoly_core][patch][2303783] = http://drupal.org/files/issues/2303783-panopoly_core-apps-1.patch
 
 projects[panopoly_images][version] = 1.10
 projects[panopoly_images][subdir] = panopoly
