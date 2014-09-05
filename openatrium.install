@@ -15,6 +15,8 @@ function openatrium_install() {
   oa_adminrole_update_roles();
   // rebuild content permissions for first time
   node_access_rebuild();
+  // Put modules into contrib.
+  variable_set('apps_install_path', 'sites/all/modules/contrib');
 }
 
 /**

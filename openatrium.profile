@@ -8,6 +8,25 @@
 include_once 'install_from_db/install_from_db.profile';
 
 /**
+ * Implements hook_appstore_stores_info().
+ */
+function openatrium_apps_servers_info() {
+ $info =  drupal_parse_info_file(dirname(__file__) . '/openatrium.info');
+ return array(
+   'openatrium' => array(
+     'title' => 'OpenAtrium',
+     'description' => "Apps for the OpenAtrium distribution",
+     // @CHANGE this to -stable for stable releases.
+     'manifest' => 'http://appserver.openatrium.com/app/query/openatrium-development',
+     'profile' => 'openatrium',
+     'profile_version' => isset($info['version']) ? $info['version'] : '7.x-2.x-dev',
+     'server_name' => !empty($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : '',
+     'server_ip' => !empty($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : '',
+   ),
+ );
+}
+
+/**
  * Implements hook_install_tasks()
  */
 function openatrium_install_tasks(&$install_state) {
@@ -16,30 +35,29 @@ function openatrium_install_tasks(&$install_state) {
   // Add our custom CSS file for the installation process
   drupal_add_css(drupal_get_path('profile', 'openatrium') . '/openatrium.css');
 
-  // Add the Panopoly app selection to the installation process
-
-// Don't install Apps at this time until we have Open Atrium apps
-//  require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
-//  $tasks = $tasks + apps_profile_install_tasks($install_state, array('machine name' => 'openatrium', 'default apps' => array()));
-
-// Default theme set in openatrium.install
-// Disable the theme selection screen
-  // Add the Panopoly theme selection to the installation process
-  //require_once(drupal_get_path('module', 'panopoly_theme') . '/panopoly_theme.profile.inc');
-  //$tasks = $tasks + panopoly_theme_profile_theme_selection_install_task($install_state);
-
   $tasks['openatrium_features_revert_all'] = array(
     'type' => 'normal',
   );
 
-// Need to rebuild search index tables since oa_search changes panopoly_search
+  // Need to rebuild search index tables since oa_search changes panopoly_search.
   $tasks['openatrium_rebuild_search'] = array(
     'type' => 'normal',
   );
 
+
+  require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
+  $server = array(
+    'machine name' => 'openatrium',
+    'default apps' => array(),
+  );
+  $tasks = array_merge($tasks, apps_profile_install_tasks($install_state, $server));
+
   return $tasks;
 }
 
+/**
+ * Revert all features.
+ */
 function openatrium_features_revert_all() {
   global $install_state;
   drupal_set_time_limit(0);
@@ -54,6 +72,9 @@ function openatrium_features_revert_all() {
   }
 }
 
+/**
+ * Rebuild search index.
+ */
 function openatrium_rebuild_search() {
   global $install_state;
   // only rebuild search when not doing a quick install
@@ -72,25 +93,26 @@ function openatrium_rebuild_search() {
 function openatrium_install_tasks_alter(&$tasks, $install_state) {
   require_once(drupal_get_path('module', 'oa_core') . '/oa_core.profile.inc');
   $tasks['install_load_profile']['function'] = 'oa_core_install_load_profile';
-  // add option for importing from db
+  // Add option for importing from db.
   install_from_db_install_tasks_alter($tasks, $install_state);
 }
 
 /**
- * Implements hook_form_FORM_ID_alter()
+ * Implements hook_form_FORM_ID_alter() for install_configure_form.
  */
 function openatrium_form_install_configure_form_alter(&$form, $form_state) {
+  // @todo Why am I here?
 }
 
 /**
- * Implements hook_form_FORM_ID_alter()
+ * Implements hook_form_FORM_ID_alter() for apps_profile_apps_select.
  */
 function openatrium_form_apps_profile_apps_select_form_alter(&$form, $form_state) {
   // panopoly_form_apps_profile_apps_select_form_alter($form, $form_state);
   ############## INCLUDE FROM PANOPOLY #####################
-    // For some things there are no need
+  // Disabling showing of these for now.
   $form['apps_message']['#access'] = FALSE;
-  $form['apps_fieldset']['apps']['#title'] = NULL;
+  unset($form['apps_fieldset']['apps']['#title']);
 
   // Improve style of apps selection form
   if (isset($form['apps_fieldset'])) {
@@ -108,10 +130,10 @@ function openatrium_form_apps_profile_apps_select_form_alter(&$form, $form_state
 }
 
 /**
- * Implements hook_form_FORM_ID_alter()
+ * Implements hook_form_FORM_ID_alter() for panopoly_theme_selection_form.
  */
 function openatrium_form_panopoly_theme_selection_form_alter(&$form, &$form_state, $form_id) {
-  // change the default theme in the selection form
+  // Change the default theme in the selection form.
   unset($form['theme_wrapper']['theme']['#options']['radix']);
   unset($form['theme_wrapper']['theme']['#options']['radix_starter']);
   $form['theme_wrapper']['theme']['#default_value'] = 'oa_radix';
