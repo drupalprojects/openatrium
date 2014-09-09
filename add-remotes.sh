@@ -19,6 +19,8 @@ do
     git remote rename origin drupal
     # add Phase2 dev repo as origin
     git remote add --track 7.x-2.x origin git@github.com:phase2/$subdir.git
+    git config branch.7.x-2.x.remote origin
+    git config branch.7.x-2.x.merge origin
     # pull latest code from Phase2 dev
     git pull origin 7.x-2.x
   else
@@ -35,6 +37,8 @@ do
     git remote rename origin drupal
     # add Phase2 dev repo as origin
     git remote add --track 7.x-2.x origin git@github.com:phase2/$subdir.git
+    git config branch.7.x-2.x.remote origin
+    git config branch.7.x-2.x.merge origin
     # pull latest code from Phase2 dev
     git pull origin 7.x-2.x
   else
