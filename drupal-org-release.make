@@ -21,6 +21,7 @@ projects[oa_events_import][version] = 2.20
 
 projects[oa_worktracker][subdir] = contrib
 projects[oa_worktracker][version] = 2.0-beta15
+projects[oa_worktracker][patch][2335741] = http://drupal.org/files/issues/2335741-oa_worktracker-app-3.patch
 
 projects[oa_contextual_tabs][subdir] = contrib
 projects[oa_contextual_tabs][version] = 2.21
