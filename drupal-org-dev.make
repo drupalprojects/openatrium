@@ -29,7 +29,7 @@ projects[oa_events_import][subdir] = contrib
 projects[oa_events_import][download][type] = git
 projects[oa_events_import][download][branch] = 7.x-2.x
 
-projects[oa_worktracker][patch][2335741] = http://drupal.org/files/issues/2335741-oa_worktracker-app-3.patchP
+projects[oa_worktracker][patch][2335741] = http://drupal.org/files/issues/2335741-oa_worktracker-app-4.patchP
 projects[oa_worktracker][version] = 2.x-dev
 projects[oa_worktracker][subdir] = contrib
 projects[oa_worktracker][download][type] = git
