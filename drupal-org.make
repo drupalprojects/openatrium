@@ -100,3 +100,14 @@ projects[panopoly_search][subdir] = panopoly
 
 ; ***************** End Panopoly *****************
 ; ************************************************
+
+; ************************************************
+; ************* Open Atrium Apps *****************
+; (Local apps that included by default)
+
+
+projects[oa_admin][version] = 2.0-alpha2
+projects[oa_admin][subdir] = apps
+
+; ***************** End Apps *********************
+; ************************************************

@@ -138,3 +138,16 @@ projects[panopoly_search][subdir] = panopoly
 
 ; ***************** End Panopoly *****************
 ; ************************************************
+
+
+; ************************************************
+; ************* Open Atrium Apps *****************
+; (Local apps that included by default)
+
+projects[oa_admin][version] = 2.x-dev
+projects[oa_admin][subdir] = apps
+projects[oa_admin][download][type] = git
+projects[oa_admin][download][branch] = 7.x-2.x
+
+; ***************** End Apps *********************
+; ************************************************
