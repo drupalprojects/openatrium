@@ -149,5 +149,10 @@ projects[oa_admin][subdir] = apps
 projects[oa_admin][download][type] = git
 projects[oa_admin][download][branch] = 7.x-2.x
 
+projects[oa_archive][version] = 2.x-dev
+projects[oa_archive][subdir] = apps
+projects[oa_archive][download][type] = git
+projects[oa_archive][download][branch] = 7.x-2.x
+
 ; ***************** End Apps *********************
 ; ************************************************

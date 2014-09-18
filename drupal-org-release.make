@@ -109,5 +109,8 @@ projects[panopoly_search][subdir] = panopoly
 projects[oa_admin][version] = 2.0-alpha2
 projects[oa_admin][subdir] = apps
 
+projects[oa_archive][version] = 2.0-alpha1
+projects[oa_archive][subdir] = apps
+
 ; ***************** End Apps *********************
 ; ************************************************
