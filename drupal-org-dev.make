@@ -159,6 +159,11 @@ projects[oa_clone][subdir] = apps
 projects[oa_clone][download][type] = git
 projects[oa_clone][download][branch] = 7.x-2.x
 
+projects[oa_domains][version] = 2.x-dev
+projects[oa_domains][subdir] = apps
+projects[oa_domains][download][type] = git
+projects[oa_domains][download][branch] = 7.x-2.x
+
 projects[oa_toolbar][version] = 2.x-dev
 projects[oa_toolbar][subdir] = apps
 projects[oa_toolbar][download][type] = git
