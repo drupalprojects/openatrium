@@ -118,6 +118,9 @@ projects[oa_clone][subdir] = apps
 projects[oa_domains][version] = 2.0-alpha1
 projects[oa_domains][subdir] = apps
 
+projects[oa_favorites][version] = 2.0-alpha1
+projects[oa_favorites][subdir] = apps
+
 projects[oa_toolbar][version] = 2.0-alpha1
 projects[oa_toolbar][subdir] = apps
 
