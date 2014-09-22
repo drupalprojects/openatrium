@@ -69,9 +69,9 @@ projects[oa_mailhandler][download][type] = git
 projects[oa_mailhandler][download][branch] = 7.x-2.x
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 2.x-dev
+projects[oa_radix][version] = 3.x-dev
 projects[oa_radix][download][type] = git
-projects[oa_radix][download][branch] = 7.x-2.x
+projects[oa_radix][download][branch] = 7.x-3.x
 projects[oa_radix][download][url] =  git@github.com:phase2/oa_radix.git
 
 ; ##### oa_devel #####
