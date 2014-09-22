@@ -115,5 +115,8 @@ projects[oa_archive][subdir] = apps
 projects[oa_clone][version] = 2.0-alpha1
 projects[oa_clone][subdir] = apps
 
+projects[oa_toolbar][version] = 2.0-alpha1
+projects[oa_toolbar][subdir] = apps
+
 ; ***************** End Apps *********************
 ; ************************************************
