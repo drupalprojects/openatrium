@@ -121,8 +121,26 @@ projects[oa_domains][subdir] = apps
 projects[oa_favorites][version] = 2.0-alpha1
 projects[oa_favorites][subdir] = apps
 
-projects[oa_toolbar][version] = 2.0-alpha1
+projects[oa_htmlmail][version] = 2.0-alpha1
+projects[oa_htmlmail][subdir] = apps
+
+projects[oa_home][version] = 2.0-alpha1
+projects[oa_home][subdir] = apps
+
+projects[oa_messages_digest][version] = 2.0-alpha1
+projects[oa_messages_digest][subdir] = apps
+
+projects[oa_toolbar][version] = 2.0-alpha2
 projects[oa_toolbar][subdir] = apps
+
+projects[oa_tour][version] = 2.0-alpha1
+projects[oa_tour][subdir] = apps
+
+projects[oa_tour_defaults][version] = 2.0-alpha1
+projects[oa_tour_defaults][subdir] = apps
+
+projects[oa_sandbox][version] = 2.0-alpha1
+projects[oa_sandbox][subdir] = apps
 
 ; ***************** End Apps *********************
 ; ************************************************
