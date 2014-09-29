@@ -159,6 +159,11 @@ projects[oa_admin][subdir] = apps
 projects[oa_admin][download][type] = git
 projects[oa_admin][download][branch] = 7.x-2.x
 
+projects[oa_appearance][version] = 2.x-dev
+projects[oa_appearance][subdir] = apps
+projects[oa_appearance][download][type] = git
+projects[oa_appearance][download][branch] = 7.x-2.x
+
 projects[oa_archive][version] = 2.x-dev
 projects[oa_archive][subdir] = apps
 projects[oa_archive][download][type] = git
@@ -203,6 +208,11 @@ projects[oa_sandbox][version] = 2.x-dev
 projects[oa_sandbox][subdir] = apps
 projects[oa_sandbox][download][type] = git
 projects[oa_sandbox][download][branch] = 7.x-2.x
+
+projects[oa_styles][version] = 2.x-dev
+projects[oa_styles][subdir] = apps
+projects[oa_styles][download][type] = git
+projects[oa_styles][download][branch] = 7.x-2.x
 
 projects[oa_tour][version] = 2.x-dev
 projects[oa_tour][subdir] = apps

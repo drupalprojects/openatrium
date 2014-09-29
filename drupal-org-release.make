@@ -105,9 +105,11 @@ projects[panopoly_search][subdir] = panopoly
 ; ************* Open Atrium Apps *****************
 ; (Local apps that included by default)
 
-
 projects[oa_admin][version] = 2.0-alpha2
 projects[oa_admin][subdir] = apps
+
+projects[oa_appearance][version] = 2.0-alpha2
+projects[oa_appearance][subdir] = apps
 
 projects[oa_archive][version] = 2.0-alpha2
 projects[oa_archive][subdir] = apps
@@ -130,6 +132,12 @@ projects[oa_home][subdir] = apps
 projects[oa_messages_digest][version] = 2.0-alpha2
 projects[oa_messages_digest][subdir] = apps
 
+projects[oa_sandbox][version] = 2.0-alpha2
+projects[oa_sandbox][subdir] = apps
+
+projects[oa_styles][version] = 2.0-alpha2
+projects[oa_styles][subdir] = apps
+
 projects[oa_toolbar][version] = 2.0-alpha3
 projects[oa_toolbar][subdir] = apps
 
@@ -138,9 +146,6 @@ projects[oa_tour][subdir] = apps
 
 projects[oa_tour_defaults][version] = 2.0-alpha2
 projects[oa_tour_defaults][subdir] = apps
-
-projects[oa_sandbox][version] = 2.0-alpha2
-projects[oa_sandbox][subdir] = apps
 
 ; ***************** End Apps *********************
 ; ************************************************
