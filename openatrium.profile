@@ -48,7 +48,30 @@ function openatrium_install_tasks(&$install_state) {
   require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
   $server = array(
     'machine name' => 'openatrium',
-    'default apps' => array(),
+    'default apps' => array(
+      'oa_discussion',
+      'oa_wiki',
+      'oa_events',
+      'oa_events_import',
+      'oa_worktracker',
+      'oa_home',
+      'oa_appearance',
+      'oa_htmlmail',
+      'oa_archive',
+      'oa_tour_defaults',
+      'oa_tour',
+      'oa_admin',
+      'oa_styles',
+      'oa_media',
+      'oa_contextual_tabs',
+      'oa_clone',
+      'oa_subspaces',
+      'oa_sandbox',
+      'oa_messages_digest',
+      'oa_favorites',
+      'oa_notifications',
+      'oa_toolbar',
+    ),
   );
   $tasks = array_merge($tasks, apps_profile_install_tasks($install_state, $server));
 

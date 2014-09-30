@@ -7,32 +7,32 @@ core = 7.x
 projects[oa_core][subdir] = contrib
 projects[oa_core][version] = 2.21
 
-projects[oa_discussion][subdir] = contrib
+projects[oa_discussion][subdir] = apps
 projects[oa_discussion][version] = 2.20
 
-projects[oa_wiki][subdir] = contrib
+projects[oa_wiki][subdir] = apps
 projects[oa_wiki][version] = 2.20
 
-projects[oa_events][subdir] = contrib
+projects[oa_events][subdir] = apps
 projects[oa_events][version] = 2.21
 
-projects[oa_events_import][subdir] = contrib
+projects[oa_events_import][subdir] = apps
 projects[oa_events_import][version] = 2.20
 
-projects[oa_worktracker][subdir] = contrib
+projects[oa_worktracker][subdir] = apps
 projects[oa_worktracker][version] = 2.0-beta15
 projects[oa_worktracker][patch][2335741] = http://drupal.org/files/issues/2335741-oa_worktracker-app-4.patch
 
-projects[oa_contextual_tabs][subdir] = contrib
+projects[oa_contextual_tabs][subdir] = apps
 projects[oa_contextual_tabs][version] = 2.21
 
-projects[oa_notifications][subdir] = contrib
+projects[oa_notifications][subdir] = apps
 projects[oa_notifications][version] = 2.20
 
-projects[oa_media][subdir] = contrib
+projects[oa_media][subdir] = apps
 projects[oa_media][version] = 2.20
 
-projects[oa_subspaces][subdir] = contrib
+projects[oa_subspaces][subdir] = apps
 projects[oa_subspaces][version] = 2.21
 
 projects[oa_radix][type] = theme
