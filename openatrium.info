@@ -122,3 +122,5 @@ dependencies[] = oa_access
 ; Contrib Optional
 dependencies[] = panels_customerror
 dependencies[] = apps
+dependencies[] = radix_layouts
+dependencies[] = bootstrap_library
