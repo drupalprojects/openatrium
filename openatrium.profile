@@ -73,7 +73,15 @@ function openatrium_install_tasks(&$install_state) {
       'oa_toolbar',
     ),
   );
+  $original_tasks = $tasks;
   $tasks = array_merge($tasks, apps_profile_install_tasks($install_state, $server));
+  if (!empty($install_state['parameters']['quickstart']) && $install_state['parameters']['quickstart'] == 'quick') {
+    foreach ($tasks as $task_name => $task) {
+      if (empty($original_tasks[$task_name])) {
+        $tasks[$task_name]['run'] = INSTALL_TASK_SKIP;
+      }
+    }
+  }
 
   return $tasks;
 }
