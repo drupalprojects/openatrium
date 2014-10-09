@@ -1,8 +1,0 @@
-name = Open Atrium Markdown
-description = Provides a markdown filter for Open Atrium. Warning: switching between markdown and wysiwyg fiter formats may cause issues.
-core = 7.x
-package = Open Atrium
-dependencies[] = features
-dependencies[] = markdown
-features[features_api][] = api:2
-features[filter][] = markdown

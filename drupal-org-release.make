@@ -108,6 +108,9 @@ projects[panopoly_search][subdir] = panopoly
 projects[oa_admin][version] = 2.0-alpha2
 projects[oa_admin][subdir] = apps
 
+projects[oa_analytics][version] = 2.0-alpha1
+projects[oa_analytics][subdir] = apps
+
 projects[oa_appearance][version] = 2.0-alpha2
 projects[oa_appearance][subdir] = apps
 
@@ -116,6 +119,9 @@ projects[oa_archive][subdir] = apps
 
 projects[oa_clone][version] = 2.0-alpha2
 projects[oa_clone][subdir] = apps
+
+projects[oa_devel][version] = 2.0-alpha1
+projects[oa_devel][subdir] = apps
 
 projects[oa_domains][version] = 2.0-alpha2
 projects[oa_domains][subdir] = apps
@@ -128,6 +134,9 @@ projects[oa_htmlmail][subdir] = apps
 
 projects[oa_home][version] = 2.0-alpha2
 projects[oa_home][subdir] = apps
+
+projects[oa_markdown][version] = 2.0-alpha2
+projects[oa_markdown][subdir] = apps
 
 projects[oa_messages_digest][version] = 2.0-alpha2
 projects[oa_messages_digest][subdir] = apps

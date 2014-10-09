@@ -159,6 +159,12 @@ projects[oa_admin][subdir] = apps
 projects[oa_admin][download][type] = git
 projects[oa_admin][download][branch] = 7.x-2.x
 
+projects[oa_analytics][version] = 2.x-dev
+projects[oa_analytics][subdir] = apps
+projects[oa_analytics][download][type] = git
+projects[oa_analytics][download][branch] = 7.x-2.x
+projects[oa_analytics][type] = module
+
 projects[oa_appearance][version] = 2.x-dev
 projects[oa_appearance][subdir] = apps
 projects[oa_appearance][download][type] = git
@@ -173,6 +179,12 @@ projects[oa_clone][version] = 2.x-dev
 projects[oa_clone][subdir] = apps
 projects[oa_clone][download][type] = git
 projects[oa_clone][download][branch] = 7.x-2.x
+
+projects[oa_devel][version] = 2.x-dev
+projects[oa_devel][subdir] = apps
+projects[oa_devel][download][type] = git
+projects[oa_devel][download][branch] = 7.x-2.x
+projects[oa_devel][type] = module
 
 projects[oa_domains][version] = 2.x-dev
 projects[oa_domains][subdir] = apps
@@ -193,6 +205,12 @@ projects[oa_home][version] = 2.x-dev
 projects[oa_home][subdir] = apps
 projects[oa_home][download][type] = git
 projects[oa_home][download][branch] = 7.x-2.x
+
+projects[oa_markdown][version] = 2.x-dev
+projects[oa_markdown][subdir] = apps
+projects[oa_markdown][download][type] = git
+projects[oa_markdown][download][branch] = 7.x-2.x
+projects[oa_markdown][type] = module
 
 projects[oa_messages_digest][version] = 2.x-dev
 projects[oa_messages_digest][subdir] = apps
