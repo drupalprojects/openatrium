@@ -139,25 +139,12 @@ function openatrium_form_install_configure_form_alter(&$form, $form_state) {
  * Implements hook_form_FORM_ID_alter() for apps_profile_apps_select.
  */
 function openatrium_form_apps_profile_apps_select_form_alter(&$form, $form_state) {
-  // panopoly_form_apps_profile_apps_select_form_alter($form, $form_state);
-  ############## INCLUDE FROM PANOPOLY #####################
   // Disabling showing of these for now.
   $form['apps_message']['#access'] = FALSE;
   unset($form['apps_fieldset']['apps']['#title']);
 
-  // Improve style of apps selection form
-  if (isset($form['apps_fieldset'])) {
-    $manifest = apps_manifest(apps_servers('panopoly'));
-    foreach ($manifest['apps'] as $name => $app) {
-      if ($name != '#theme') {
-        $form['apps_fieldset']['apps']['#options'][$name] = '<strong>' . $app['name'] . '</strong><p><div class="admin-options"><div class="form-item">' . theme('image', array('path' => $app['logo']['path'], 'height' => '32', 'width' => '32')) . '</div>' . $app['description'] . '</div></p>';
-      }
-    }
-  }
-
   // Remove the demo content selection option since this is handled through the Panopoly demo module.
   $form['default_content_fieldset']['#access'] = FALSE;
-  // ########### END PANOPOLY ################
 }
 
 /**
@@ -169,4 +156,3 @@ function openatrium_form_panopoly_theme_selection_form_alter(&$form, &$form_stat
   unset($form['theme_wrapper']['theme']['#options']['radix_starter']);
   $form['theme_wrapper']['theme']['#default_value'] = 'oa_radix';
 }
-

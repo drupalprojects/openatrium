@@ -108,7 +108,7 @@ projects[panopoly_search][subdir] = panopoly
 projects[oa_admin][version] = 2.0-alpha2
 projects[oa_admin][subdir] = apps
 
-projects[oa_analytics][version] = 2.0-alpha1
+projects[oa_analytics][version] = 2.0-alpha2
 projects[oa_analytics][subdir] = apps
 
 projects[oa_appearance][version] = 2.0-alpha2
@@ -144,6 +144,11 @@ projects[oa_messages_digest][subdir] = apps
 projects[oa_sandbox][version] = 2.0-alpha2
 projects[oa_sandbox][subdir] = apps
 
+projects[oa_sitemap][version] = 2.0-alpha1
+projects[oa_sitemap][subdir] = apps
+projects[oa_sitemap][type] = module
+projects[oa_sitemap][download][url] = https://github.com/phase2/oa_sitemap/archive/7.x-2.0-alpha1.tar.gz
+
 projects[oa_styles][version] = 2.0-alpha2
 projects[oa_styles][subdir] = apps
 
@@ -155,6 +160,11 @@ projects[oa_tour][subdir] = apps
 
 projects[oa_tour_defaults][version] = 2.0-alpha2
 projects[oa_tour_defaults][subdir] = apps
+
+projects[oa_wizard][version] = 2.0-alpha1
+projects[oa_wizard][subdir] = apps
+projects[oa_wizard][type] = module
+projects[oa_wizard][download][url] = https://github.com/phase2/oa_wizard/archive/7.x-2.0-alpha1.tar.gz
 
 ; ***************** End Apps *********************
 ; ************************************************

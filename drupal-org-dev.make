@@ -227,6 +227,13 @@ projects[oa_sandbox][subdir] = apps
 projects[oa_sandbox][download][type] = git
 projects[oa_sandbox][download][branch] = 7.x-2.x
 
+projects[oa_sitemap][version] = 2.x-dev
+projects[oa_sitemap][subdir] = apps
+projects[oa_sitemap][type] = module
+projects[oa_sitemap][download][type] = git
+projects[oa_sitemap][download][branch] = 7.x-2.x
+projects[oa_sitemap][download][url] =  git@github.com:phase2/oa_sitemap.git
+
 projects[oa_styles][version] = 2.x-dev
 projects[oa_styles][subdir] = apps
 projects[oa_styles][download][type] = git
@@ -241,6 +248,13 @@ projects[oa_tour_defaults][version] = 2.x-dev
 projects[oa_tour_defaults][subdir] = apps
 projects[oa_tour_defaults][download][type] = git
 projects[oa_tour_defaults][download][branch] = 7.x-2.x
+
+projects[oa_wizard][version] = 2.x-dev
+projects[oa_wizard][subdir] = apps
+projects[oa_wizard][type] = module
+projects[oa_wizard][download][type] = git
+projects[oa_wizard][download][branch] = 7.x-2.x
+projects[oa_wizard][download][url] =  git@github.com:phase2/oa_wizard.git
 
 ; ***************** End Apps *********************
 ; ************************************************
