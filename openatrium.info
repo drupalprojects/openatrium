@@ -56,71 +56,47 @@ dependencies[] = views_ui
 ; selector issues in Internet Explorer
 ;;dependencies[] = advagg
 
-;
-; Open Atrium required modules
-;
-dependencies[] = entity
-dependencies[] = panelizer
-dependencies[] = libraries
-dependencies[] = message
-dependencies[] = message_notify
-dependencies[] = navbar
-dependencies[] = module_filter
-dependencies[] = chosen
-dependencies[] = message_subscribe
-dependencies[] = message_digest
-dependencies[] = flag
-dependencies[] = realname
-dependencies[] = features_override
-dependencies[] = panels_mini
-dependencies[] = job_scheduler
-dependencies[] = feeds
-dependencies[] = bootstrap_tour
-dependencies[] = conditional_styles
-
-; Organic Groups
-dependencies[] = og
-dependencies[] = og_access
-dependencies[] = og_context
-dependencies[] = og_register
-dependencies[] = og_ui
-dependencies[] = og_subgroups
-dependencies[] = og_menu_single
-
-; Libraries
-; not until drupal is GPLv3
-; for now, include twitter js in theme from cdn
-;dependencies[] = twitter_bootstrap_ui
-
-; Open Atrium 2.0 Modules
+; Open Atrium 2.0 Required Modules
+; See openatrium.profile for list of default Apps to enable
 dependencies[] = oa_core
+
+; oa_core required submodules
+dependencies[] = oa_access
+dependencies[] = oa_adminrole
+dependencies[] = oa_buttons
+dependencies[] = oa_config
 dependencies[] = oa_date
 dependencies[] = oa_diff
-dependencies[] = og_session_context
-dependencies[] = oa_section_context
-dependencies[] = oa_adminrole
-
-; Open Atrium 2.0 Features
-dependencies[] = oa_config
-dependencies[] = oa_widgets
-dependencies[] = oa_teams
-dependencies[] = oa_sections
-dependencies[] = oa_messages
 dependencies[] = oa_layouts
+dependencies[] = oa_messages
 dependencies[] = oa_news
-dependencies[] = oa_river
-dependencies[] = oa_users
 dependencies[] = oa_panopoly_users
 dependencies[] = oa_permissions
-dependencies[] = oa_search
-dependencies[] = oa_variables
-dependencies[] = oa_buttons
 dependencies[] = oa_responsive_regions
+dependencies[] = oa_river
+dependencies[] = oa_search
+dependencies[] = oa_section_context
+dependencies[] = oa_sections
+dependencies[] = oa_teams
 dependencies[] = oa_update
-dependencies[] = oa_access
+dependencies[] = oa_users
+dependencies[] = oa_variables
+dependencies[] = oa_widgets
+
+; Open Atrium 2.0 Theme required
+dependencies[] = radix_layouts
+dependencies[] = bootstrap_library
+
+;
+; Open Atrium required contrib modules
+;
+dependencies[] = apps
+dependencies[] = features_override
+dependencies[] = feeds
+dependencies[] = job_scheduler
+dependencies[] = libraries
+dependencies[] = variable
 
 ; Contrib Optional
 dependencies[] = panels_customerror
-dependencies[] = apps
-dependencies[] = radix_layouts
-dependencies[] = bootstrap_library
+dependencies[] = ultimate_cron

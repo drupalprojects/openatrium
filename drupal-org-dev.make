@@ -96,15 +96,15 @@ projects[oa_favorites][subdir] = apps
 projects[oa_favorites][download][type] = git
 projects[oa_favorites][download][branch] = 7.x-2.x
 
-projects[oa_htmlmail][version] = 2.x-dev
-projects[oa_htmlmail][subdir] = apps
-projects[oa_htmlmail][download][type] = git
-projects[oa_htmlmail][download][branch] = 7.x-2.x
-
 projects[oa_home][version] = 2.x-dev
 projects[oa_home][subdir] = apps
 projects[oa_home][download][type] = git
 projects[oa_home][download][branch] = 7.x-2.x
+
+projects[oa_htmlmail][version] = 2.x-dev
+projects[oa_htmlmail][subdir] = apps
+projects[oa_htmlmail][download][type] = git
+projects[oa_htmlmail][download][branch] = 7.x-2.x
 
 projects[oa_markdown][version] = 2.x-dev
 projects[oa_markdown][subdir] = apps
@@ -128,11 +128,6 @@ projects[oa_notifications][download][type] = git
 projects[oa_notifications][download][branch] = 7.x-2.x
 projects[oa_notifications][download][url] = git@github.com:phase2/oa_notifications.git
 
-projects[oa_toolbar][version] = 2.x-dev
-projects[oa_toolbar][subdir] = apps
-projects[oa_toolbar][download][type] = git
-projects[oa_toolbar][download][branch] = 7.x-2.x
-
 projects[oa_sandbox][version] = 2.x-dev
 projects[oa_sandbox][subdir] = apps
 projects[oa_sandbox][download][type] = git
@@ -148,6 +143,17 @@ projects[oa_styles][version] = 2.x-dev
 projects[oa_styles][subdir] = apps
 projects[oa_styles][download][type] = git
 projects[oa_styles][download][branch] = 7.x-2.x
+
+projects[oa_subspaces][version] = 2.x-dev
+projects[oa_subspaces][subdir] = apps
+projects[oa_subspaces][download][type] = git
+projects[oa_subspaces][download][branch] = 7.x-2.x
+projects[oa_subspaces][download][url] = git@github.com:phase2/oa_subspaces.git
+
+projects[oa_toolbar][version] = 2.x-dev
+projects[oa_toolbar][subdir] = apps
+projects[oa_toolbar][download][type] = git
+projects[oa_toolbar][download][branch] = 7.x-2.x
 
 projects[oa_tour][version] = 2.x-dev
 projects[oa_tour][subdir] = apps
