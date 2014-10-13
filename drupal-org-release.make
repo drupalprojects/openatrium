@@ -83,7 +83,6 @@ projects[oa_sandbox][subdir] = apps
 
 projects[oa_sitemap][version] = 2.0-alpha1
 projects[oa_sitemap][subdir] = apps
-projects[oa_sitemap][download][url] = https://github.com/phase2/oa_sitemap/archive/7.x-2.0-alpha1.tar.gz
 
 projects[oa_subspaces][subdir] = apps
 projects[oa_subspaces][version] = 2.21
@@ -102,7 +101,6 @@ projects[oa_tour_defaults][subdir] = apps
 
 projects[oa_wizard][version] = 2.0-alpha1
 projects[oa_wizard][subdir] = apps
-projects[oa_wizard][download][url] = https://github.com/phase2/oa_wizard/archive/7.x-2.0-alpha1.tar.gz
 
 ; ***************** End Apps *********************
 ; ************************************************
