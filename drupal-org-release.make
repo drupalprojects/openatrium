@@ -60,11 +60,11 @@ projects[oa_events_import][version] = 2.20
 projects[oa_favorites][version] = 2.0-alpha2
 projects[oa_favorites][subdir] = apps
 
-projects[oa_htmlmail][version] = 2.0-alpha2
-projects[oa_htmlmail][subdir] = apps
-
 projects[oa_home][version] = 2.0-alpha2
 projects[oa_home][subdir] = apps
+
+projects[oa_htmlmail][version] = 2.0-alpha2
+projects[oa_htmlmail][subdir] = apps
 
 projects[oa_markdown][version] = 2.0-alpha2
 projects[oa_markdown][subdir] = apps
@@ -84,11 +84,11 @@ projects[oa_sandbox][subdir] = apps
 projects[oa_sitemap][version] = 2.0-alpha1
 projects[oa_sitemap][subdir] = apps
 
-projects[oa_subspaces][subdir] = apps
-projects[oa_subspaces][version] = 2.21
-
 projects[oa_styles][version] = 2.0-alpha2
 projects[oa_styles][subdir] = apps
+
+projects[oa_subspaces][subdir] = apps
+projects[oa_subspaces][version] = 2.21
 
 projects[oa_toolbar][version] = 2.0-alpha3
 projects[oa_toolbar][subdir] = apps
