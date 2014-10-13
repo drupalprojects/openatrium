@@ -66,6 +66,9 @@ projects[oa_home][subdir] = apps
 projects[oa_htmlmail][version] = 2.0-alpha2
 projects[oa_htmlmail][subdir] = apps
 
+projects[oa_mailhandler][version] = 2.14
+projects[oa_mailhandler][subdir] = apps
+
 projects[oa_markdown][version] = 2.0-alpha2
 projects[oa_markdown][subdir] = apps
 
