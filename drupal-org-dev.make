@@ -224,6 +224,7 @@ projects[panopoly_magic][subdir] = panopoly
 
 projects[panopoly_widgets][version] = 1.10
 projects[panopoly_widgets][subdir] = panopoly
+projects[panopoly_widgets][patch][2357405] = https://www.drupal.org/files/issues/panopoly_widget-tablefield-do-not-test.patch
 
 projects[panopoly_admin][version] = 1.10
 projects[panopoly_admin][subdir] = panopoly
