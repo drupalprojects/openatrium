@@ -74,7 +74,6 @@ dependencies[] = oa_panopoly_users
 dependencies[] = oa_permissions
 dependencies[] = oa_responsive_regions
 dependencies[] = oa_river
-dependencies[] = oa_search
 dependencies[] = oa_section_context
 dependencies[] = oa_sections
 dependencies[] = oa_teams

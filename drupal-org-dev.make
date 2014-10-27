@@ -138,6 +138,11 @@ projects[oa_sandbox][subdir] = apps
 projects[oa_sandbox][download][type] = git
 projects[oa_sandbox][download][branch] = 7.x-2.x
 
+projects[oa_search][version] = 2.x-dev
+projects[oa_search][subdir] = apps
+projects[oa_search][download][type] = git
+projects[oa_search][download][branch] = 7.x-2.x
+
 projects[oa_sitemap][version] = 2.x-dev
 projects[oa_sitemap][subdir] = apps
 projects[oa_sitemap][download][type] = git
