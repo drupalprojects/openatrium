@@ -140,6 +140,7 @@ projects[oa_radix][version] = 2.21
 
 projects[panopoly_core][version] = 1.13
 projects[panopoly_core][subdir] = panopoly
+projects[panopoly_core][patch][2361927] = https://www.drupal.org/files/issues/2361927-apps-beta18.patch
 
 projects[panopoly_images][version] = 1.13
 projects[panopoly_images][subdir] = panopoly
