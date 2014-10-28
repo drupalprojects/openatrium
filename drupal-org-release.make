@@ -87,7 +87,7 @@ projects[oa_sandbox][subdir] = apps
 projects[oa_sitemap][version] = 2.0-alpha1
 projects[oa_sitemap][subdir] = apps
 
-projects[oa_search][version] = 2.0-alpha1
+projects[oa_search][version] = 2.0-alpha2
 projects[oa_search][subdir] = apps
 
 projects[oa_styles][version] = 2.0-alpha2

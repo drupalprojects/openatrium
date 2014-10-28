@@ -84,7 +84,7 @@ projects[oa_notifications][version] = 2.20
 projects[oa_sandbox][version] = 2.0-alpha2
 projects[oa_sandbox][subdir] = apps
 
-projects[oa_search][version] = 2.0-alpha1
+projects[oa_search][version] = 2.0-alpha2
 projects[oa_search][subdir] = apps
 
 projects[oa_sitemap][version] = 2.0-alpha1
