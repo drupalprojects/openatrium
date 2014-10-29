@@ -33,7 +33,7 @@ projects[oa_worktracker][patch][2335741] = http://drupal.org/files/issues/233574
 projects[oa_admin][version] = 2.0-rc1
 projects[oa_admin][subdir] = apps
 
-projects[oa_analytics][version] = 2.0-rc1
+projects[oa_analytics][version] = 2.0-rc2
 projects[oa_analytics][subdir] = apps
 
 projects[oa_appearance][version] = 2.0-rc1
@@ -60,7 +60,7 @@ projects[oa_events_import][version] = 2.21
 projects[oa_favorites][version] = 2.0-rc1
 projects[oa_favorites][subdir] = apps
 
-projects[oa_home][version] = 2.0-rc2
+projects[oa_home][version] = 2.0-rc3
 projects[oa_home][subdir] = apps
 
 projects[oa_htmlmail][version] = 2.0-rc1
@@ -72,7 +72,7 @@ projects[oa_markdown][subdir] = apps
 projects[oa_media][subdir] = apps
 projects[oa_media][version] = 2.21
 
-projects[oa_messages_digest][version] = 2.0-rc1
+projects[oa_messages_digest][version] = 2.0-rc2
 projects[oa_messages_digest][subdir] = apps
 
 projects[oa_notifications][subdir] = apps
@@ -84,7 +84,7 @@ projects[oa_sandbox][subdir] = apps
 projects[oa_search][version] = 2.0-rc1
 projects[oa_search][subdir] = apps
 
-projects[oa_sitemap][version] = 2.0-rc1
+projects[oa_sitemap][version] = 2.0-rc2
 projects[oa_sitemap][subdir] = apps
 
 projects[oa_styles][version] = 2.0-rc1
