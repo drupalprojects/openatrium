@@ -96,7 +96,7 @@ projects[oa_subspaces][version] = 2.22
 projects[oa_toolbar][version] = 2.0-rc1
 projects[oa_toolbar][subdir] = apps
 
-projects[oa_tour][version] = 2.0-rc
+projects[oa_tour][version] = 2.0-rc1
 projects[oa_tour][subdir] = apps
 
 projects[oa_tour_defaults][version] = 2.0-rc1
@@ -113,7 +113,7 @@ projects[oa_wizard][subdir] = apps
 ; ************** Open Atrium Themes **************
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 3.0
+projects[oa_radix][version] = 3.1
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************
