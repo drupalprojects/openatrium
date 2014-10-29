@@ -63,7 +63,7 @@ projects[oa_favorites][subdir] = apps
 projects[oa_home][version] = 2.0-rc3
 projects[oa_home][subdir] = apps
 
-projects[oa_htmlmail][version] = 2.0-rc1
+projects[oa_htmlmail][version] = 2.0-rc2
 projects[oa_htmlmail][subdir] = apps
 
 projects[oa_mailhandler][version] = 2.15
