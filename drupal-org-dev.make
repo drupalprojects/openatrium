@@ -106,6 +106,11 @@ projects[oa_htmlmail][subdir] = apps
 projects[oa_htmlmail][download][type] = git
 projects[oa_htmlmail][download][branch] = 7.x-2.x
 
+projects[oa_mailhandler][version] = 2.x-dev
+projects[oa_mailhandler][subdir] = apps
+projects[oa_mailhandler][download][type] = git
+projects[oa_mailhandler][download][branch] = 7.x-2.x
+
 projects[oa_markdown][version] = 2.x-dev
 projects[oa_markdown][subdir] = apps
 projects[oa_markdown][download][type] = git
