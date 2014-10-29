@@ -19,8 +19,7 @@ projects[oa_wiki][subdir] = apps
 projects[oa_wiki][version] = 2.21
 
 projects[oa_worktracker][subdir] = apps
-projects[oa_worktracker][version] = 2.0-beta15
-projects[oa_worktracker][patch][2335741] = http://drupal.org/files/issues/2335741-oa_worktracker-app-4.patch
+projects[oa_worktracker][version] = 2.0-beta16
 
 ; ******** End Open Atrium Builtin Apps **********
 ; ************************************************
