@@ -155,6 +155,8 @@ projects[panopoly_widgets][subdir] = panopoly
 
 projects[panopoly_admin][version] = 1.13
 projects[panopoly_admin][subdir] = panopoly
+projects[panopoly_admin][patch][2361927] = https://www.drupal.org/files/issues/restore_automatic_menu-2317411-3.patch
+
 
 projects[panopoly_users][version] = 1.13
 projects[panopoly_users][subdir] = panopoly
