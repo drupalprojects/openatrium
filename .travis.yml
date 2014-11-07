@@ -1,40 +1,26 @@
 language: php
-
 php:
-  - 5.4
-
+- 5.4
 mysql:
   database: drupal
   username: root
   encoding: utf8
-
 env:
-  - UPGRADE=none
-  - UPGRADE=7.x-2.22
-
+- UPGRADE=none
+- UPGRADE=7.x-2.22
 matrix:
   fast_finish: true
-
 install:
-  # Make some variables available to the travis-ci.sh script.
-  - export UPDATE TRAVIS_BUILD_DIR
-
-  # Copy the script into a stable location.
-  - cp travis-ci.sh $HOME/
-
-  # Move to the directory above, where we should remain.
-  - cd ..
-
-  # Start by doing system installation.
-  - $HOME/travis-ci.sh system-install
-
+- export UPDATE TRAVIS_BUILD_DIR
+- cp travis-ci.sh $HOME/
+- cd ..
+- $HOME/travis-ci.sh system-install
 before_script:
-  - $HOME/travis-ci.sh before-tests
-
+- $HOME/travis-ci.sh before-tests
 script:
-  - $HOME/travis-ci.sh run-tests
-
+- $HOME/travis-ci.sh run-tests
 after_script:
-  - $HOME/travis-ci.sh after-tests
-
+- $HOME/travis-ci.sh after-tests
 notifications:
+  flowdock:
+    secure: EX07lzUtOsCgSVB3trVyXAhhdsijKUF1ibiRTqd8exPLm59qQROtuwkI8dFuFKUi4yjY7LUHcl8XtcfmlU1k4jxDrzvfEYEzLkAIY/9ZiR6JORs+9gdubNtUkzxXIoVYHw70IXGhUVJDFeJp+RjS4IjQ9NuVuL9vKdWgQwtQR3Y=
