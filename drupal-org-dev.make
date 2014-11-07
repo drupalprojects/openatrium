@@ -9,6 +9,10 @@ projects[oa_core][download][type] = git
 projects[oa_core][download][branch] = 7.x-2.x
 projects[oa_core][download][url] = git@github.com:phase2/oa_core.git
 
+projects[oa_test][version] = 2.x-dev
+projects[oa_test][subdir] = contrib
+projects[oa_test][download][type] = git
+projects[oa_test][download][branch] = 7.x-2.x
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
