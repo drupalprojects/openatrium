@@ -124,8 +124,8 @@ before_tests() {
   if [[ "$UPGRADE" != none ]]; then
     header Upgrading to latest version
     cp -a ../openatrium-$UPGRADE/sites/default/* sites/default/ && drush updb --yes
-    drush cc all
   fi
+  drush cc all
 
   # Our tests depend on panopoly_test.
   drush en -y oa_test
