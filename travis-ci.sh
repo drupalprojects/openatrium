@@ -44,10 +44,6 @@ system_install() {
   pwd
   drush make --yes profiles/openatrium/drupal-org-core.make --prepare-install
   drush make --yes profiles/openatrium/drupal-org-dev.make --no-core --contrib-destination=profiles/openatrium
-  ls -al profiles/openatrium
-  ls -al profiles/openatrium/modules
-  ls -al profiles/openatrium/modules/contrib
-  ls -al profiles/openatrium/modules/contrib/oa_test
   mkdir sites/default/files
   mkdir sites/default/files/private
   mkdir sites/default/files/temp
@@ -60,7 +56,10 @@ system_install() {
 
   # Verify that all the .make files will work on Drupal.org.
   header Verifying .make file
-  drush verify-makefile drupal/profiles/openatrium/drupal-org-dev.make
+  #don't verify -dev makefile since it has github links
+  #verify the release makefile instead
+  #drush verify-makefile drupal/profiles/openatrium/drupal-org-dev.make
+  drush verify-makefile drupal/profiles/openatrium/drupal-org.make
   find drupal/profiles/openatrium/modules -name \*.make -print0 | xargs -0 -n1 drush verify-makefile
 
   # Download an old version to test upgrading from.
