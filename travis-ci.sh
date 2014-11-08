@@ -41,8 +41,13 @@ system_install() {
   # Build the current branch.
   header Building Open Atrium from current branch
   cd drupal
+  pwd
   drush make --yes profiles/openatrium/drupal-org-core.make --prepare-install
-  drush make --yes profiles/openatrium/drupal-org-dev.make --no-cache --no-core --contrib-destination=profiles/openatrium
+  drush make --yes profiles/openatrium/drupal-org-dev.make --no-core --contrib-destination=profiles/openatrium
+  ls -al profiles/openatrium
+  ls -al profiles/openatrium/modules
+  ls -al profiles/openatrium/modules/contrib
+  ls -al profiles/openatrium/modules/contrib/oa_test
   mkdir sites/default/files
   mkdir sites/default/files/private
   mkdir sites/default/files/temp
@@ -154,9 +159,9 @@ run_tests() {
   cd drupal/profiles/openatrium/modules/contrib/oa_test/tests
 
   # If this isn't an upgrade, we test if any features are overridden.
-  if [[ "$UPGRADE" == none ]]; then
-    run_test ../../../../scripts/check-overridden.sh
-  fi
+  #if [[ "$UPGRADE" == none ]]; then
+  #  run_test ../../../../scripts/check-overridden.sh
+  #fi
 
   # First, run all the tests in Firefox.
   run_test ./bin/behat --config behat.travis.yml
