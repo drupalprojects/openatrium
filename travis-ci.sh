@@ -43,7 +43,7 @@ system_install() {
   cd drupal
   pwd
   drush make --yes profiles/openatrium/drupal-org-core.make --prepare-install
-  drush make --yes profiles/openatrium/drush6.make --no-core --contrib-destination=profiles/openatrium
+  drush make --yes profiles/openatrium/drush6-dev.make --no-core --contrib-destination=profiles/openatrium
   mkdir sites/default/files
   mkdir sites/default/files/private
   mkdir sites/default/files/temp
