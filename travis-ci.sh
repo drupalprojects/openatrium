@@ -150,9 +150,9 @@ before_tests() {
 # Run the tests.
 #
 run_tests() {
-  ls -al profiles/openatrium/modules/contrib/
-  ls -al profiles/openatrium/modules/contrib/views_bulk_operations/
-  ls -al profiles/openatrium/modules/contrib/views_bulk_operations/actions/
+  ls -al drupal/profiles/openatrium/modules/contrib/
+  ls -al drupal/profiles/openatrium/modules/contrib/views_bulk_operations/
+  ls -al drupal/profiles/openatrium/modules/contrib/views_bulk_operations/actions/
   header Running tests
 
   # Make the Travis tests repos agnostic by injecting drupal_root with BEHAT_PARAMS
