@@ -43,7 +43,7 @@ system_install() {
   cd drupal
   pwd
   drush make --yes profiles/openatrium/drupal-org-core.make --prepare-install
-  drush make --yes profiles/openatrium/drupal-org-dev.make --no-core --contrib-destination=profiles/openatrium
+  drush make --yes profiles/openatrium/drush6.make --no-core --contrib-destination=profiles/openatrium
   mkdir sites/default/files
   mkdir sites/default/files/private
   mkdir sites/default/files/temp
@@ -150,9 +150,6 @@ before_tests() {
 # Run the tests.
 #
 run_tests() {
-  ls -al drupal/profiles/openatrium/modules/contrib/
-  ls -al drupal/profiles/openatrium/modules/contrib/views_bulk_operations/
-  ls -al drupal/profiles/openatrium/modules/contrib/views_bulk_operations/actions/
   header Running tests
 
   # Make the Travis tests repos agnostic by injecting drupal_root with BEHAT_PARAMS
