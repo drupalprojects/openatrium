@@ -128,7 +128,7 @@ before_tests() {
   drush cc all
 
   # Our tests depend on panopoly_test.
-  drush en -y oa_test
+  drush en -y panopoly_test
 
   # Run the webserver
   header Starting webserver
@@ -160,7 +160,8 @@ run_tests() {
   # Make the Travis tests repos agnostic by injecting drupal_root with BEHAT_PARAMS
   export BEHAT_PARAMS="extensions[Drupal\\DrupalExtension\\Extension][drupal][drupal_root]=$BUILD_TOP/drupal"
 
-  cd drupal/profiles/openatrium/modules/contrib/oa_test/tests
+  # cd drupal/profiles/openatrium/modules/contrib/oa_test/tests
+  cd drupal/profiles/openatrium/modules/panopoly/panopoly_test/tests
 
   # If this isn't an upgrade, we test if any features are overridden.
   #if [[ "$UPGRADE" == none ]]; then
