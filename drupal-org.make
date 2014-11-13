@@ -8,7 +8,7 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.25
+projects[oa_core][version] = 2.26
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
@@ -17,7 +17,7 @@ projects[oa_discussion][subdir] = apps
 projects[oa_discussion][version] = 2.22
 
 projects[oa_events][subdir] = apps
-projects[oa_events][version] = 2.23
+projects[oa_events][version] = 2.24
 
 projects[oa_wiki][subdir] = apps
 projects[oa_wiki][version] = 2.21
@@ -45,20 +45,20 @@ projects[oa_appearance][subdir] = apps
 projects[oa_archive][version] = 2.0-rc2
 projects[oa_archive][subdir] = apps
 
-projects[oa_clone][version] = 2.0-rc1
+projects[oa_clone][version] = 2.0-rc2
 projects[oa_clone][subdir] = apps
 
 projects[oa_contextual_tabs][subdir] = apps
 projects[oa_contextual_tabs][version] = 2.22
 
-projects[oa_devel][version] = 2.0-rc1
+projects[oa_devel][version] = 2.0-rc2
 projects[oa_devel][subdir] = apps
 
 projects[oa_domains][version] = 2.0-rc1
 projects[oa_domains][subdir] = apps
 
 projects[oa_events_import][subdir] = apps
-projects[oa_events_import][version] = 2.21
+projects[oa_events_import][version] = 2.22
 
 projects[oa_favorites][version] = 2.0-rc1
 projects[oa_favorites][subdir] = apps
@@ -69,7 +69,7 @@ projects[oa_home][subdir] = apps
 projects[oa_htmlmail][version] = 2.0-rc2
 projects[oa_htmlmail][subdir] = apps
 
-projects[oa_mailhandler][version] = 2.15
+projects[oa_mailhandler][version] = 2.16
 projects[oa_mailhandler][subdir] = apps
 
 projects[oa_markdown][version] = 2.0-rc1
@@ -108,7 +108,7 @@ projects[oa_tour][subdir] = apps
 projects[oa_tour_defaults][version] = 2.0-rc1
 projects[oa_tour_defaults][subdir] = apps
 
-projects[oa_wizard][version] = 2.0-rc1
+projects[oa_wizard][version] = 2.0-rc2
 projects[oa_wizard][subdir] = apps
 
 ; ***************** End Apps *********************
@@ -143,7 +143,7 @@ projects[oa_radix][version] = 3.3
 
 projects[panopoly_core][version] = 1.13
 projects[panopoly_core][subdir] = panopoly
-projects[panopoly_core][patch][2361927] = https://www.drupal.org/files/issues/2361927-apps-beta18.patch
+projects[panopoly_core][patch][2374727] = https://www.drupal.org/files/issues/2374727-apps-panopoly-core-4-1.13-do-not-test.patch
 
 projects[panopoly_images][version] = 1.13
 projects[panopoly_images][subdir] = panopoly

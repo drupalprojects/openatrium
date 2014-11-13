@@ -12,7 +12,7 @@ core = 7.x
 
 projects[panopoly_core][version] = 1.13
 projects[panopoly_core][subdir] = panopoly
-projects[panopoly_core][patch][2361927] = https://www.drupal.org/files/issues/2361927-apps-beta18.patch
+projects[panopoly_core][patch][2374727] = https://www.drupal.org/files/issues/2374727-apps-panopoly-core-4-1.13-do-not-test.patch
 
 projects[panopoly_images][version] = 1.13
 projects[panopoly_images][subdir] = panopoly
