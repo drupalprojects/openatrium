@@ -1,6 +1,10 @@
 api = 2
 core = 7.x
 
+; MAKE file for Open Atrium RELEASE version.  Used by Drupal.org packager
+; Drupal.org packager uses Drush 5, so OA comes before Panopoly in this file
+; Drupal.org does not support recursive include[] files so everything is in this file
+
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
@@ -115,7 +119,7 @@ projects[oa_wizard][subdir] = apps
 ; ************** Open Atrium Themes **************
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 3.2
+projects[oa_radix][version] = 3.3
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************

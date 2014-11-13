@@ -12,7 +12,7 @@ matrix:
   fast_finish: true
 install:
 - export UPDATE TRAVIS_BUILD_DIR
-- cp travis-ci.sh $HOME/
+- cp scripts/travis-ci.sh $HOME/
 - cd ..
 - $HOME/travis-ci.sh system-install
 before_script:
