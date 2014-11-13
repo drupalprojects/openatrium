@@ -16,6 +16,12 @@ projects[oa_test][subdir] = contrib
 projects[oa_test][download][type] = git
 projects[oa_test][download][branch] = 7.x-2.x
 
+projects[apps][version] = 1.x-dev
+projects[apps][subdir] = contrib
+projects[apps][download][type] = git
+projects[apps][download][branch] = 7.x-1.x
+
+
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
 
