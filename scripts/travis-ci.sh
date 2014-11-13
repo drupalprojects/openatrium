@@ -135,6 +135,7 @@ before_tests() {
   drush runserver --server=builtin 8888 > /dev/null 2>&1 &
   echo $! > /tmp/web-server-pid
   wait_for_port 8888
+  sleep 3
 
   cd ..
 
@@ -144,9 +145,9 @@ before_tests() {
   echo $! > /tmp/selenium-server-pid
   wait_for_port 4444
 
-  # Wait for web page to be ready, runs poormanscron, etc.  Prevents behat from timing out
-  header Waiting for webpage
-  curl http://127.0.0.1:8888/ >/dev/null
+  # Prime the site to prevent timeouts when the tests run
+  wget -q -O - http://localhost:8888 > /dev/null
+  sleep 3
 }
 
 # before_tests
