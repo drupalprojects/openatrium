@@ -40,7 +40,8 @@ system_install() {
 
   header Downloading OA 2.24 files
   wget http://ftp.drupal.org/files/projects/openatrium-7.x-2.24-core.tar.gz
-  tar xzf openatrium-7.x-2.24-core.tar.gz -C drupal
+  tar xzf openatrium-7.x-2.24-core.tar.gz
+  mv openatrium-7.x-2.24 drupal
   cd drupal
 
   # Build the current branch.
@@ -158,7 +159,7 @@ before_tests() {
   wait_for_port 4444
 
   # Prime the site to prevent timeouts when the tests run
-  wget -q -O - http://localhost:8888 > /dev/null
+  wget -q -O - http://localhost:8888
   sleep 3
 }
 
