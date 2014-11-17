@@ -40,7 +40,7 @@ system_install() {
 
   header Downloading OA 2.24 files
   wget http://ftp.drupal.org/files/projects/openatrium-7.x-2.24-core.tar.gz
-  tar xzf openatrium-7.x-2.24-core.tar.gz drupal
+  tar xzf openatrium-7.x-2.24-core.tar.gz -C drupal
   cd drupal
 
   # Build the current branch.
