@@ -143,7 +143,7 @@ projects[oa_radix][version] = 3.3
 
 projects[panopoly_core][version] = 1.13
 projects[panopoly_core][subdir] = panopoly
-projects[panopoly_core][patch][2374727] = https://www.drupal.org/files/issues/2374727-apps-panopoly-core-4-1.13-do-not-test.patch
+projects[panopoly_core][patch][2374727] = https://www.drupal.org/files/issues/2374727-apps-panopoly-core-5-1.13-do-not-test.patch
 
 projects[panopoly_images][version] = 1.13
 projects[panopoly_images][subdir] = panopoly
