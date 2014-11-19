@@ -38,19 +38,13 @@ system_install() {
   mkdir drupal
   mv profiles drupal/
 
-  header Downloading OA 2.24 files
-  wget http://ftp.drupal.org/files/projects/openatrium-7.x-2.24-core.tar.gz
-  tar xzf openatrium-7.x-2.24-core.tar.gz
-  mv openatrium-7.x-2.24 drupal
-  cd drupal
-
   # Build the current branch.
-  #header Building Open Atrium from current branch
-  #cd drupal
-  #pwd
-  #drush make --yes profiles/openatrium/drupal-org-core.make --prepare-install
-  #drush make --yes profiles/openatrium/scripts/oa-drush6-dev.make --no-core --contrib-destination=profiles/openatrium
-  drush dl panopoly_demo-1.x-dev
+  header Building Open Atrium from current branch
+  cd drupal
+  pwd
+  drush make --yes profiles/openatrium/drupal-org-core.make --prepare-install
+  drush make --yes profiles/openatrium/scripts/oa-drush6-dev.make --no-core --contrib-destination=profiles/openatrium
+  drush dl panopoly_demo-7.x-1.x-dev
   mkdir sites/default/files
   mkdir sites/default/files/private
   mkdir sites/default/files/temp
