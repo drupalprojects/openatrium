@@ -20,7 +20,7 @@ projects[oa_events][subdir] = apps
 projects[oa_events][version] = 2.24
 
 projects[oa_wiki][subdir] = apps
-projects[oa_wiki][version] = 2.21
+projects[oa_wiki][version] = 2.22
 
 projects[oa_worktracker][subdir] = apps
 projects[oa_worktracker][version] = 2.0-beta16
@@ -45,7 +45,7 @@ projects[oa_appearance][subdir] = apps
 projects[oa_archive][version] = 2.0-rc2
 projects[oa_archive][subdir] = apps
 
-projects[oa_clone][version] = 2.0-rc2
+projects[oa_clone][version] = 2.0-rc3
 projects[oa_clone][subdir] = apps
 
 projects[oa_contextual_tabs][subdir] = apps
@@ -87,19 +87,19 @@ projects[oa_notifications][version] = 2.21
 projects[oa_sandbox][version] = 2.0-rc1
 projects[oa_sandbox][subdir] = apps
 
-projects[oa_search][version] = 2.0-rc1
+projects[oa_search][version] = 2.0-rc2
 projects[oa_search][subdir] = apps
 
-projects[oa_sitemap][version] = 2.0-rc2
+projects[oa_sitemap][version] = 2.0-rc3
 projects[oa_sitemap][subdir] = apps
 
-projects[oa_styles][version] = 2.0-rc1
+projects[oa_styles][version] = 2.0-rc2
 projects[oa_styles][subdir] = apps
 
 projects[oa_subspaces][subdir] = apps
 projects[oa_subspaces][version] = 2.22
 
-projects[oa_toolbar][version] = 2.0-rc1
+projects[oa_toolbar][version] = 2.0-rc2
 projects[oa_toolbar][subdir] = apps
 
 projects[oa_tour][version] = 2.0-rc1
