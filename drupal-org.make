@@ -25,16 +25,16 @@ projects[content_profile][subdir] = "contrib"
 projects[content_profile][version] = "1.0"
 
 projects[context][subdir] = "contrib"
-projects[context][version] = "3.1"
+projects[context][version] = "3.3"
 
 projects[crayon][subdir] = "contrib"
 projects[crayon][version] = "1.0-beta3"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.10"
+projects[ctools][version] = "1.11"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.9"
+projects[date][version] = "2.10"
 
 projects[designkit][subdir] = "contrib"
 projects[designkit][version] = "1.0-beta1"
@@ -85,13 +85,13 @@ projects[mailhandler][subdir] = "contrib"
 projects[mailhandler][version] = "1.11"
 
 projects[markdown][subdir] = "contrib"
-projects[markdown][version] = "1.3"
+projects[markdown][version] = "1.4"
 
 projects[messaging][subdir] = "contrib"
 projects[messaging][version] = "2.4"
 
 projects[nodeformcols][subdir] = "contrib"
-projects[nodeformcols][version] = "1.6"
+projects[nodeformcols][version] = "1.7"
 
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "2.3"
@@ -119,7 +119,7 @@ projects[reldate][subdir] = "contrib"
 projects[reldate][version] = "1.0-beta2"
 
 projects[spaces][subdir] = "contrib"
-projects[spaces][version = "3.6"
+projects[spaces][version = "3.7"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.2"
