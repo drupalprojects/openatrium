@@ -63,9 +63,8 @@ projects[oa_events_import][version] = 2.23
 projects[oa_favorites][version] = 2.0-rc1
 projects[oa_favorites][subdir] = apps
 
-;oa_files not quite ready for release yet
-;projects[oa_files][version] = 2.0-rc1
-;projects[oa_files][subdir] = apps
+projects[oa_files][version] = 2.0-rc1
+projects[oa_files][subdir] = apps
 
 projects[oa_home][version] = 2.0
 projects[oa_home][subdir] = apps
@@ -87,6 +86,9 @@ projects[oa_messages_digest][subdir] = apps
 
 projects[oa_notifications][subdir] = apps
 projects[oa_notifications][version] = 2.21
+
+projects[oa_related][version] = 2.0-rc1
+projects[oa_related][subdir] = apps
 
 projects[oa_sandbox][version] = 2.0-rc1
 projects[oa_sandbox][subdir] = apps

@@ -38,6 +38,7 @@ function openatrium_install_tasks(&$install_state) {
       'oa_media',
       'oa_messages_digest',
       'oa_notifications',
+      'oa_related',
       'oa_sandbox',
       'oa_search',
       'oa_sitemap',

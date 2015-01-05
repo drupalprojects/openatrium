@@ -151,6 +151,12 @@ projects[oa_notifications][download][type] = git
 projects[oa_notifications][download][branch] = 7.x-2.x
 projects[oa_notifications][download][url] = https://github.com/phase2/oa_notifications.git
 
+projects[oa_related][version] = 2.x-dev
+projects[oa_related][subdir] = apps
+projects[oa_related][type] = module
+projects[oa_related][download][type] = git
+projects[oa_related][download][branch] = 7.x-2.x
+
 projects[oa_sandbox][version] = 2.x-dev
 projects[oa_sandbox][subdir] = apps
 projects[oa_sandbox][download][type] = git
