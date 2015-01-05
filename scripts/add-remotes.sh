@@ -9,7 +9,43 @@ if [ -z "$TARGET" ]; then
 fi
 TARGET=`cd "$TARGET"; pwd -P`
 echo 'Adding remotes...'
-submodules=( "oa_core" "oa_discussion" "oa_wiki" "oa_events" "oa_events_import" "oa_contextual_tabs" "oa_notifications" "oa_media" "oa_subspaces" )
+
+submodules=(
+  "oa_core"
+  "oa_discussion"
+  "oa_events"
+  "oa_wiki"
+  "oa_admin"
+  "oa_analytics"
+  "oa_appearance"
+  "oa_archive"
+  "oa_clone"
+  "oa_contextual_tabs"
+  "oa_devel"
+  "oa_domains"
+  "oa_events_import"
+  "oa_favorites"
+  "oa_files"
+  "oa_home"
+  "oa_htmlmail"
+  "oa_mailhandler"
+  "oa_markdown"
+  "oa_media"
+  "oa_messages_digest"
+  "oa_notifications"
+  "oa_sandbox"
+  "oa_search"
+  "oa_sitemap"
+  "oa_styles"
+  "oa_subspaces"
+  "oa_toolbar"
+  "oa_tour"
+  "oa_tour_defaults"
+  "oa_wizard"
+  "oa_files"
+  "oa_related"
+)
+
 for subdir in "${submodules[@]}"
 do
   if [ -e "$TARGET/modules/contrib/$subdir/.git" ]; then
