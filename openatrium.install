@@ -107,6 +107,7 @@ function openatrium_rebuild_search() {
  */
 function openatrium_node_access_rebuild() {
   node_access_rebuild();
+  openatrium_remove_message('Content permissions have been rebuilt');
 }
 
 /**
