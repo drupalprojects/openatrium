@@ -54,6 +54,8 @@ function openatrium_features_post_restore($op, $items) {
 
 /**
  * Remove a message as set by drupal_set_message().
+ *
+ * This is used during install to remove irrelavent messages.
  */
 function openatrium_remove_message($partial_message, $type = 'status') {
   if (!empty($_SESSION['messages'][$type])) {
