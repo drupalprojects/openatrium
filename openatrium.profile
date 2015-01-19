@@ -35,3 +35,19 @@ function openatrium_form_panopoly_theme_selection_form_alter(&$form, &$form_stat
   unset($form['theme_wrapper']['theme']['#options']['radix_starter']);
   $form['theme_wrapper']['theme']['#default_value'] = 'oa_radix';
 }
+
+/**
+ * Implements hook_features_post_restore().
+ */
+function openatrium_features_post_restore($op, $items) {
+  if (!empty($_SESSION['messages']['warning'])) {
+    foreach ($_SESSION['messages']['warning'] as $key => $message) {
+      if (strpos($message, 'The following views were using the index ') === 0) {
+        unset($_SESSION['messages']['warning'][$key]);
+      }
+    }
+    if (empty($_SESSION['messages']['warning'])) {
+      unset($_SESSION['messages']['warning']);
+    }
+  }
+}
