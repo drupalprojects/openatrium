@@ -56,6 +56,11 @@ function openatrium_install_tasks(&$install_state) {
     'type' => 'normal',
   );
 
+  // set default permissions
+  $tasks['openatrium_set_permissions'] = array(
+    'type' => 'normal',
+  );
+
   // Need to rebuild search index tables since oa_search changes panopoly_search.
   $tasks['openatrium_rebuild_search'] = array(
     'type' => 'normal',
@@ -88,6 +93,14 @@ function openatrium_features_revert_all() {
     'oa_users' => array('field_instance'),
   ));
   features_revert();
+}
+
+/**
+ * Revert all features.
+ */
+function openatrium_set_permissions() {
+  // update admin and member permissions
+  oa_adminrole_update_roles();
 }
 
 /**
@@ -139,8 +152,6 @@ function openatrium_form_apps_profile_apps_select_form_alter(&$form, $form_state
 function openatrium_install() {
   // set the default theme
   _openatrium_set_up_theme();
-  // update admin and member permissions
-  oa_adminrole_update_roles();
   // Put modules into contrib.
   variable_set('apps_install_path', 'sites/all/modules/contrib');
 }
