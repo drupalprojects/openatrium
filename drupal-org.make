@@ -87,7 +87,7 @@ projects[oa_messages_digest][subdir] = apps
 projects[oa_notifications][subdir] = apps
 projects[oa_notifications][version] = 2.21
 
-projects[oa_related][version] = 2.0-rc1
+projects[oa_related][version] = 2.0-rc3
 projects[oa_related][subdir] = apps
 
 projects[oa_sandbox][version] = 2.0-rc1
