@@ -62,6 +62,11 @@ projects[oa_analytics][subdir] = apps
 projects[oa_analytics][download][type] = git
 projects[oa_analytics][download][branch] = 7.x-2.x
 
+projects[oa_angular][version] = 1.x-dev
+projects[oa_angular][subdir] = contrib
+projects[oa_angular][download][type] = git
+projects[oa_angular][download][branch] = 7.x-1.x
+
 projects[oa_appearance][version] = 2.x-dev
 projects[oa_appearance][subdir] = apps
 projects[oa_appearance][download][type] = git

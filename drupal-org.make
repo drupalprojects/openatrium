@@ -39,6 +39,9 @@ projects[oa_admin][subdir] = apps
 projects[oa_analytics][version] = 2.0-rc2
 projects[oa_analytics][subdir] = apps
 
+projects[oa_angular][version] = 1.0-rc1
+projects[oa_angular][subdir] = apps
+
 projects[oa_appearance][version] = 2.0
 projects[oa_appearance][subdir] = apps
 
