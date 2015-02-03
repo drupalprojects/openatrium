@@ -62,11 +62,6 @@ projects[oa_analytics][subdir] = apps
 projects[oa_analytics][download][type] = git
 projects[oa_analytics][download][branch] = 7.x-2.x
 
-projects[oa_angular][version] = 1.x-dev
-projects[oa_angular][subdir] = contrib
-projects[oa_angular][download][type] = git
-projects[oa_angular][download][branch] = 7.x-1.x
-
 projects[oa_appearance][version] = 2.x-dev
 projects[oa_appearance][subdir] = apps
 projects[oa_appearance][download][type] = git
@@ -213,3 +208,32 @@ projects[oa_radix][download][branch] = 7.x-3.x
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************
+
+
+
+; ************************************************
+; ************** Open Atrium Contrib *************
+
+projects[bootstrap_tour][version] = 1.x-dev
+projects[bootstrap_tour][subdir] = contrib
+projects[bootstrap_tour][download][type] = git
+projects[bootstrap_tour][download][branch] = 7.x-1.x
+
+projects[command_buttons][version] = 1.x-dev
+projects[command_buttons][subdir] = contrib
+projects[command_buttons][download][type] = git
+projects[command_buttons][download][branch] = 7.x-1.x
+
+projects[contextual_tabs][version] = 1.x-dev
+projects[contextual_tabs][subdir] = contrib
+projects[contextual_tabs][download][type] = git
+projects[contextual_tabs][download][branch] = 7.x-1.x
+
+projects[oa_angular][version] = 1.x-dev
+projects[oa_angular][subdir] = contrib
+projects[oa_angular][download][type] = git
+projects[oa_angular][download][branch] = 7.x-1.x
+
+; *********** End Open Atrium Contrib ************
+; ************************************************
+

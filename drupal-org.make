@@ -39,9 +39,6 @@ projects[oa_admin][subdir] = apps
 projects[oa_analytics][version] = 2.0-rc2
 projects[oa_analytics][subdir] = apps
 
-projects[oa_angular][version] = 1.0-rc1
-projects[oa_angular][subdir] = apps
-
 projects[oa_appearance][version] = 2.0
 projects[oa_appearance][subdir] = apps
 
@@ -183,3 +180,21 @@ projects[panopoly_search][subdir] = panopoly
 ; ***************** End Panopoly *****************
 ; ************************************************
 
+
+; ************************************************
+; ************** Open Atrium Contrib *************
+
+projects[bootstrap_tour][version] = 1.0-beta9
+projects[bootstrap_tour][subdir] = contrib
+
+projects[command_buttons][version] = 1.9
+projects[command_buttons][subdir] = contrib
+
+projects[contextual_tabs][version] = 1.0-beta3
+projects[contextual_tabs][subdir] = contrib
+
+projects[oa_angular][version] = 1.0-rc1
+projects[oa_angular][subdir] = contrib
+
+; *********** End Open Atrium Contrib ************
+; ************************************************
