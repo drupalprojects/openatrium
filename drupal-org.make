@@ -190,7 +190,7 @@ projects[bootstrap_tour][subdir] = contrib
 projects[command_buttons][version] = 1.9
 projects[command_buttons][subdir] = contrib
 
-projects[contextual_tabs][version] = 1.0-beta4
+projects[contextual_tabs][version] = 1.0-beta5
 projects[contextual_tabs][subdir] = contrib
 
 projects[oa_angular][version] = 1.0-rc2
