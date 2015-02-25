@@ -177,6 +177,7 @@ projects[panopoly_wysiwyg][subdir] = panopoly
 
 projects[panopoly_search][version] = 1.17
 projects[panopoly_search][subdir] = panopoly
+projects[panopoly_search][patch][2436351] = https://www.drupal.org/files/issues/2436351-panopoly_search-patches-1.patch
 
 ; ***************** End Panopoly *****************
 ; ************************************************
