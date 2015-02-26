@@ -7,7 +7,7 @@ if [ $# -eq 0 ]; then
 fi
 DEV_BUILD=0
 PANOPOLY_DEV=0
-while getopts ":d" opt; do
+while getopts ":dp" opt; do
   case $opt in
     d) # dev arguments
       DRUSH_OPTS='--working-copy --no-gitinfofile --no-cache'
