@@ -32,4 +32,4 @@ projects[drupal][patch][1919338] = http://drupal.org/files/issues/options_drupal
 projects[drupal][patch][1311820] = https://www.drupal.org/files/issues/1311820-drupal-registry_update-13.patch
 
 ; Make node access queries more performant
-projects[drupal][patch][106721] = https://www.drupal.org/files/issues/drupal-106721-optimize_node_access_queries-110.patch
+projects[drupal][patch][106721] = https://www.drupal.org/files/issues/drupal-106721-optimize_node_access_queries-115.patch
