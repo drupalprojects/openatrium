@@ -165,6 +165,7 @@ projects[panopoly_widgets][subdir] = panopoly
 
 projects[panopoly_admin][version] = 1.18
 projects[panopoly_admin][subdir] = panopoly
+projects[panopoly_admin][patch][2449855] = https://www.drupal.org/files/issues/2449855-panopoly_admin-breakpoints-1.patch
 
 projects[panopoly_users][version] = 1.18
 projects[panopoly_users][subdir] = panopoly
