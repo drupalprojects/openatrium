@@ -8,19 +8,19 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.41
+projects[oa_core][version] = 2.42
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
 
 projects[oa_discussion][subdir] = apps
-projects[oa_discussion][version] = 2.28
+projects[oa_discussion][version] = 2.29
 
 projects[oa_events][subdir] = apps
-projects[oa_events][version] = 2.27
+projects[oa_events][version] = 2.28
 
 projects[oa_wiki][subdir] = apps
-projects[oa_wiki][version] = 2.25
+projects[oa_wiki][version] = 2.26
 
 projects[oa_worktracker][subdir] = apps
 projects[oa_worktracker][version] = 2.0-rc1
@@ -39,17 +39,17 @@ projects[oa_admin][subdir] = apps
 projects[oa_analytics][version] = 2.0-rc2
 projects[oa_analytics][subdir] = apps
 
-projects[oa_appearance][version] = 2.1
+projects[oa_appearance][version] = 2.2
 projects[oa_appearance][subdir] = apps
 
-projects[oa_archive][version] = 2.0-rc2
+projects[oa_archive][version] = 2.0-rc3
 projects[oa_archive][subdir] = apps
 
-projects[oa_clone][version] = 2.1
+projects[oa_clone][version] = 2.2
 projects[oa_clone][subdir] = apps
 
 projects[oa_contextual_tabs][subdir] = apps
-projects[oa_contextual_tabs][version] = 2.24
+projects[oa_contextual_tabs][version] = 2.25
 
 projects[oa_devel][version] = 2.0
 projects[oa_devel][subdir] = apps
@@ -63,7 +63,7 @@ projects[oa_events_import][version] = 2.24
 projects[oa_favorites][version] = 2.0-rc3
 projects[oa_favorites][subdir] = apps
 
-projects[oa_files][version] = 2.1
+projects[oa_files][version] = 2.2
 projects[oa_files][subdir] = apps
 
 projects[oa_home][version] = 2.1
@@ -72,7 +72,7 @@ projects[oa_home][subdir] = apps
 projects[oa_htmlmail][version] = 2.0-rc2
 projects[oa_htmlmail][subdir] = apps
 
-projects[oa_mailhandler][version] = 2.16
+projects[oa_mailhandler][version] = 2.17
 projects[oa_mailhandler][subdir] = apps
 
 projects[oa_markdown][version] = 2.0-rc1
@@ -103,7 +103,7 @@ projects[oa_styles][version] = 2.0-rc2
 projects[oa_styles][subdir] = apps
 
 projects[oa_subspaces][subdir] = apps
-projects[oa_subspaces][version] = 2.27
+projects[oa_subspaces][version] = 2.28
 
 projects[oa_toolbar][version] = 2.0-rc6
 projects[oa_toolbar][subdir] = apps
