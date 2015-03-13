@@ -48,6 +48,9 @@ projects[oa_archive][subdir] = apps
 projects[oa_clone][version] = 2.2
 projects[oa_clone][subdir] = apps
 
+projects[oa_comment][subdir] = apps
+projects[oa_comment][version] = 2.0-alpha1
+
 projects[oa_contextual_tabs][subdir] = apps
 projects[oa_contextual_tabs][version] = 2.25
 
