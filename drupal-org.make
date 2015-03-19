@@ -8,19 +8,19 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.42
+projects[oa_core][version] = 2.43
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
 
 projects[oa_discussion][subdir] = apps
-projects[oa_discussion][version] = 2.29
+projects[oa_discussion][version] = 2.30
 
 projects[oa_events][subdir] = apps
-projects[oa_events][version] = 2.28
+projects[oa_events][version] = 2.29
 
 projects[oa_wiki][subdir] = apps
-projects[oa_wiki][version] = 2.26
+projects[oa_wiki][version] = 2.27
 
 projects[oa_worktracker][subdir] = apps
 projects[oa_worktracker][version] = 2.0-rc1
@@ -66,7 +66,7 @@ projects[oa_events_import][version] = 2.24
 projects[oa_favorites][version] = 2.0-rc3
 projects[oa_favorites][subdir] = apps
 
-projects[oa_files][version] = 2.2
+projects[oa_files][version] = 2.3
 projects[oa_files][subdir] = apps
 
 projects[oa_home][version] = 2.1
@@ -106,9 +106,9 @@ projects[oa_styles][version] = 2.0-rc2
 projects[oa_styles][subdir] = apps
 
 projects[oa_subspaces][subdir] = apps
-projects[oa_subspaces][version] = 2.28
+projects[oa_subspaces][version] = 2.29
 
-projects[oa_toolbar][version] = 2.0-rc6
+projects[oa_toolbar][version] = 2.0-rc7
 projects[oa_toolbar][subdir] = apps
 
 projects[oa_tour][version] = 2.0-rc3
