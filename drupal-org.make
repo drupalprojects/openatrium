@@ -66,7 +66,7 @@ projects[oa_events_import][version] = 2.24
 projects[oa_favorites][version] = 2.0-rc3
 projects[oa_favorites][subdir] = apps
 
-projects[oa_files][version] = 2.3
+projects[oa_files][version] = 2.4
 projects[oa_files][subdir] = apps
 
 projects[oa_home][version] = 2.1
