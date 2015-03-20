@@ -20,7 +20,7 @@ projects[oa_events][subdir] = apps
 projects[oa_events][version] = 2.29
 
 projects[oa_wiki][subdir] = apps
-projects[oa_wiki][version] = 2.27
+projects[oa_wiki][version] = 2.29
 
 projects[oa_worktracker][subdir] = apps
 projects[oa_worktracker][version] = 2.0-rc1
