@@ -165,6 +165,7 @@ projects[panopoly_magic][subdir] = panopoly
 
 projects[panopoly_widgets][version] = 1.19
 projects[panopoly_widgets][subdir] = panopoly
+projects[panopoly_widgets][patch][2458039] = https://www.drupal.org/files/issues/2458039-panopoly_widgets-media-multiselect-1.patch
 
 projects[panopoly_admin][version] = 1.19
 projects[panopoly_admin][subdir] = panopoly

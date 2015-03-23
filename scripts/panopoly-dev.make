@@ -30,6 +30,7 @@ projects[panopoly_magic][download][branch] = 7.x-1.x
 projects[panopoly_widgets][subdir] = panopoly
 projects[panopoly_widgets][download][type] = git
 projects[panopoly_widgets][download][branch] = 7.x-1.x
+projects[panopoly_widgets][patch][2458039] = https://www.drupal.org/files/issues/2458039-panopoly_widgets-media-multiselect-1.patch
 
 projects[panopoly_admin][subdir] = panopoly
 projects[panopoly_admin][download][type] = git
