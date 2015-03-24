@@ -13,8 +13,7 @@ projects[drupal][version] = 7.35
 projects[drupal][patch][1356276] = http://drupal.org/files/1356276-make-D7-21.patch
 
 ; Patch for fixing node_access across non-required Views relationships
-; NOTE: This patch is not fully reviewed/accepted yet, so review the latest status
-projects[drupal][patch][1349080] = http://drupal.org/files/d7_move_access_to_join_condition-1349080-89.patch
+projects[drupal][patch][1349080] = https://www.drupal.org/files/issues/1349080-231-d7-move-access-to-join-condition_rework-placeholders.patch
 
 ; Patch for simpletest
 projects[drupal][patch][911354] = http://drupal.org/files/911354-drupal-profile-85.patch
@@ -32,7 +31,7 @@ projects[drupal][patch][1919338] = http://drupal.org/files/issues/options_drupal
 projects[drupal][patch][1311820] = https://www.drupal.org/files/issues/1311820-drupal-registry_update-13.patch
 
 ; Make node access queries more performant
-projects[drupal][patch][106721] = https://www.drupal.org/files/issues/drupal-106721-optimize_node_access_queries-115.patch
+projects[drupal][patch][106721] = https://www.drupal.org/files/issues/106721-drupal-optomize-queries-1349080-do-not-test.patch
 
 ; Cache user grants.
 projects[drupal][patch][2199001] = https://www.drupal.org/files/issues/node_access_grants-static-cache-11.patch
