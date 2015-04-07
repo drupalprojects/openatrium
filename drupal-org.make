@@ -153,6 +153,7 @@ projects[oa_radix][version] = 3.10
 projects[panopoly_core][version] = 1.19
 projects[panopoly_core][subdir] = panopoly
 projects[panopoly_core][patch][2426337] = https://www.drupal.org/files/issues/2426337-panopoly_core-panelizer-1.patch
+projects[panopoly_core][patch][2466935] = https://www.drupal.org/files/issues/2466935-panopoly_core-update_apps-1.patch
 
 projects[panopoly_images][version] = 1.19
 projects[panopoly_images][subdir] = panopoly
