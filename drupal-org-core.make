@@ -35,3 +35,6 @@ projects[drupal][patch][106721] = https://www.drupal.org/files/issues/drupal-106
 
 ; Cache user grants.
 projects[drupal][patch][2199001] = https://www.drupal.org/files/issues/node_access_grants-static-cache-11.patch
+
+; Fix comment pager added via ctools plugins.
+projects[drupal][patch][2472611] = https://www.drupal.org/files/issues/comment-add_pager_id-2472611-1.patch
