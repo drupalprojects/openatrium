@@ -150,39 +150,39 @@ projects[oa_radix][version] = 3.10
 ; and also does not support include[]
 ; so we need to copy the panopoly.make file here
 
-projects[panopoly_core][version] = 1.19
+projects[panopoly_core][version] = 1.20
 projects[panopoly_core][subdir] = panopoly
 projects[panopoly_core][patch][2426337] = https://www.drupal.org/files/issues/2426337-panopoly_core-panelizer-1.patch
 projects[panopoly_core][patch][2466935] = https://www.drupal.org/files/issues/2466935-panopoly_core-update_apps-1.patch
 
-projects[panopoly_images][version] = 1.19
+projects[panopoly_images][version] = 1.20
 projects[panopoly_images][subdir] = panopoly
 
-projects[panopoly_theme][version] = 1.19
+projects[panopoly_theme][version] = 1.20
 projects[panopoly_theme][subdir] = panopoly
 
-projects[panopoly_magic][version] = 1.19
+projects[panopoly_magic][version] = 1.20
 projects[panopoly_magic][subdir] = panopoly
 
-projects[panopoly_widgets][version] = 1.19
+projects[panopoly_widgets][version] = 1.20
 projects[panopoly_widgets][subdir] = panopoly
 projects[panopoly_widgets][patch][2458039] = https://www.drupal.org/files/issues/2458039-panopoly_widgets-media-multiselect-1.patch
 projects[panopoly_widgets][patch][2473495] = https://www.drupal.org/files/issues/clicking_images_in_my-2473495-2.patch
 
-projects[panopoly_admin][version] = 1.19
+projects[panopoly_admin][version] = 1.20
 projects[panopoly_admin][subdir] = panopoly
 projects[panopoly_admin][patch][2449855] = https://www.drupal.org/files/issues/2449855-panopoly_admin-breakpoints-1.patch
 
-projects[panopoly_users][version] = 1.19
+projects[panopoly_users][version] = 1.20
 projects[panopoly_users][subdir] = panopoly
 
-projects[panopoly_pages][version] = 1.19
+projects[panopoly_pages][version] = 1.20
 projects[panopoly_pages][subdir] = panopoly
 
-projects[panopoly_wysiwyg][version] = 1.19
+projects[panopoly_wysiwyg][version] = 1.20
 projects[panopoly_wysiwyg][subdir] = panopoly
 
-projects[panopoly_search][version] = 1.19
+projects[panopoly_search][version] = 1.20
 projects[panopoly_search][subdir] = panopoly
 projects[panopoly_search][patch][2469005] = https://www.drupal.org/files/issues/2469005-panopoly_search-search_api-1.patch
 
