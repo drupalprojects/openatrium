@@ -8,7 +8,7 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.44
+projects[oa_core][version] = 2.45
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
@@ -52,7 +52,7 @@ projects[oa_comment][subdir] = apps
 projects[oa_comment][version] = 2.0-rc1
 
 projects[oa_contextual_tabs][subdir] = apps
-projects[oa_contextual_tabs][version] = 2.25
+projects[oa_contextual_tabs][version] = 2.26
 
 projects[oa_devel][version] = 2.0
 projects[oa_devel][subdir] = apps
@@ -61,12 +61,12 @@ projects[oa_domains][version] = 2.0
 projects[oa_domains][subdir] = apps
 
 projects[oa_events_import][subdir] = apps
-projects[oa_events_import][version] = 2.24
+projects[oa_events_import][version] = 2.25
 
 projects[oa_favorites][version] = 2.0
 projects[oa_favorites][subdir] = apps
 
-projects[oa_files][version] = 2.4
+projects[oa_files][version] = 2.5
 projects[oa_files][subdir] = apps
 
 projects[oa_home][version] = 2.1
@@ -208,7 +208,7 @@ projects[command_buttons][subdir] = contrib
 projects[contextual_tabs][version] = 1.0-beta5
 projects[contextual_tabs][subdir] = contrib
 
-projects[oa_angular][version] = 1.0
+projects[oa_angular][version] = 2.0
 projects[oa_angular][subdir] = contrib
 
 ; *********** End Open Atrium Contrib ************
