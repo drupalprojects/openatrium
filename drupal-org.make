@@ -170,11 +170,6 @@ projects[panopoly_widgets][download][branch] = 7.x-1.x
 projects[panopoly_widgets][download][revision] = 	45faa0d
 projects[panopoly_widgets][patch][2473495] = https://www.drupal.org/files/issues/clicking_images_in_my-2473495-3.patch
 
-projects[panopoly_widgets][version] = 1.20
-projects[panopoly_widgets][subdir] = panopoly
-projects[panopoly_widgets][patch][2458039] = https://www.drupal.org/files/issues/2458039-panopoly_widgets-media-multiselect-1.patch
-projects[panopoly_widgets][patch][2473495] = https://www.drupal.org/files/issues/clicking_images_in_my-2473495-2.patch
-
 projects[panopoly_admin][version] = 1.20
 projects[panopoly_admin][subdir] = panopoly
 projects[panopoly_admin][patch][2449855] = https://www.drupal.org/files/issues/2449855-panopoly_admin-breakpoints-1.patch
