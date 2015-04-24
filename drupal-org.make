@@ -2,7 +2,6 @@ api = 2
 core = 7.x
 
 ; MAKE file for Open Atrium RELEASE version.  Used by Drupal.org packager
-; Drupal.org packager uses Drush 5, so OA comes before Panopoly in this file
 ; Drupal.org does not support recursive include[] files so everything is in this file
 
 ; ******************** RELEASE *******************
