@@ -14,6 +14,12 @@ projects[panopoly_core][version] = 1.20
 projects[panopoly_core][subdir] = panopoly
 projects[panopoly_core][patch][2426337] = https://www.drupal.org/files/issues/2426337-panopoly_core-panelizer-1.patch
 projects[panopoly_core][patch][2466935] = https://www.drupal.org/files/issues/2466935-panopoly_core-update_apps-1.patch
+projects[panopoly_core][patch][2477347] = https://www.drupal.org/files/issues/2477347-panopoly_core-views-1.patch
+projects[panopoly_core][patch][2477363] = https://www.drupal.org/files/issues/2477363-panopoly_core-ctools-2.patch
+projects[panopoly_core][patch][2477369] = https://www.drupal.org/files/issues/2477369-panopoly_core-entity-1.patch
+projects[panopoly_core][patch][2477375] = https://www.drupal.org/files/issues/2477375-panopoly_core-entityreference-1.patch
+projects[panopoly_core][patch][2477379] = https://www.drupal.org/files/issues/2477379-panopoly_core-token-1.patch
+projects[panopoly_core][patch][2477391] = https://www.drupal.org/files/issues/2477391-panopoly_core-features-1.patch
 
 projects[panopoly_images][version] = 1.20
 projects[panopoly_images][subdir] = panopoly
@@ -29,6 +35,7 @@ projects[panopoly_widgets][download][type] = git
 projects[panopoly_widgets][download][branch] = 7.x-1.x
 projects[panopoly_widgets][download][revision] = 	45faa0d
 projects[panopoly_widgets][patch][2473495] = https://www.drupal.org/files/issues/clicking_images_in_my-2473495-3.patch
+projects[panopoly_widgets][patch][2477397] = https://www.drupal.org/files/issues/2477397-panopoly_widgets-file_entity-1.patch
 
 projects[panopoly_admin][version] = 1.20
 projects[panopoly_admin][subdir] = panopoly
