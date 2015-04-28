@@ -179,6 +179,7 @@ projects[panopoly_widgets][patch][2477397] = https://www.drupal.org/files/issues
 projects[panopoly_admin][version] = 1.20
 projects[panopoly_admin][subdir] = panopoly
 projects[panopoly_admin][patch][2449855] = https://www.drupal.org/files/issues/2449855-panopoly_admin-breakpoints-1.patch
+projects[panopoly_admin][patch][2235081] = https://www.drupal.org/files/issues/2235081-panopoly_admin-jquery_update-10.patch
 
 projects[panopoly_users][version] = 1.20
 projects[panopoly_users][subdir] = panopoly
