@@ -7,22 +7,22 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.47
+projects[oa_core][version] = 2.48
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
 
 projects[oa_discussion][subdir] = apps
-projects[oa_discussion][version] = 2.31
+projects[oa_discussion][version] = 2.32
 
 projects[oa_events][subdir] = apps
-projects[oa_events][version] = 2.30
+projects[oa_events][version] = 2.31
 
 projects[oa_wiki][subdir] = apps
-projects[oa_wiki][version] = 2.30
+projects[oa_wiki][version] = 2.31
 
 projects[oa_worktracker][subdir] = apps
-projects[oa_worktracker][version] = 2.0-rc1
+projects[oa_worktracker][version] = 2.0
 
 ; ******** End Open Atrium Builtin Apps **********
 ; ************************************************
@@ -89,7 +89,7 @@ projects[oa_messages_digest][subdir] = apps
 projects[oa_notifications][subdir] = apps
 projects[oa_notifications][version] = 2.25
 
-projects[oa_related][version] = 2.0
+projects[oa_related][version] = 2.1
 projects[oa_related][subdir] = apps
 
 projects[oa_sandbox][version] = 2.0
