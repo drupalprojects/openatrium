@@ -199,7 +199,7 @@ projects[panopoly_search][patch][2469005] = https://www.drupal.org/files/issues/
 ; ************************************************
 ; ************** Open Atrium Contrib *************
 
-projects[bootstrap_tour][version] = 2.0
+projects[bootstrap_tour][version] = 2.01
 projects[bootstrap_tour][subdir] = contrib
 
 projects[command_buttons][version] = 1.9
