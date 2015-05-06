@@ -81,7 +81,7 @@ projects[oa_markdown][version] = 2.0
 projects[oa_markdown][subdir] = apps
 
 projects[oa_media][subdir] = apps
-projects[oa_media][version] = 2.26
+projects[oa_media][version] = 2.27
 
 projects[oa_messages_digest][version] = 2.0
 projects[oa_messages_digest][subdir] = apps
