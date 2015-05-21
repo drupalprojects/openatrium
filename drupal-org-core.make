@@ -35,3 +35,6 @@ projects[drupal][patch][106721] = https://www.drupal.org/files/issues/drupal-106
 
 ; Cache user grants.
 projects[drupal][patch][2199001] = https://www.drupal.org/files/issues/node_access_grants-static-cache-11.patch
+
+; Fix javascript error with angular
+projects[drupal][patch][2492993] = https://www.drupal.org/files/issues/2492993-drupal-hash-1.patch
