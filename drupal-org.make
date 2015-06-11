@@ -143,7 +143,7 @@ projects[oa_radix][version] = 3.12
 
 projects[panopoly_core][version] = 1.22
 projects[panopoly_core][subdir] = panopoly
-projects[panopoly_core][patch][2429549] = https://www.drupal.org/files/issues/2429549-panopoly_core-update-latest-panelizer-20.patch
+projects[panopoly_core][patch][2429549] = https://www.drupal.org/files/issues/panopoly_core-update-panelizer-2429549-24-do-not-test.patch
 projects[panopoly_core][patch][2477347] = https://www.drupal.org/files/issues/2477347-panopoly_core-views-2.patch
 projects[panopoly_core][patch][2477363] = https://www.drupal.org/files/issues/2477363-panopoly_core-ctools-7.patch
 projects[panopoly_core][patch][2477369] = https://www.drupal.org/files/issues/2477369-panopoly_core-entity-1.patch
