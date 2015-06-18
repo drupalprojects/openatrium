@@ -13,14 +13,12 @@ core = 7.x
 projects[panopoly_core][subdir] = panopoly
 projects[panopoly_core][download][type] = git
 projects[panopoly_core][download][branch] = 7.x-1.x
-projects[panopoly_core][patch][2429549] = https://www.drupal.org/files/issues/panopoly_core-update-panelizer-2429549-24-do-not-test.patch
+projects[panopoly_core][patch][2429549] = https://www.drupal.org/files/issues/2429549-panopoly_core-update-latest-panelizer-20.patch
 projects[panopoly_core][patch][2477347] = https://www.drupal.org/files/issues/2477347-panopoly_core-views-2.patch
 projects[panopoly_core][patch][2477363] = https://www.drupal.org/files/issues/2477363-panopoly_core-ctools-7.patch
 projects[panopoly_core][patch][2477369] = https://www.drupal.org/files/issues/2477369-panopoly_core-entity-1.patch
 projects[panopoly_core][patch][2477375] = https://www.drupal.org/files/issues/2477375-panopoly_core-entityreference-1.patch
 projects[panopoly_core][patch][2477379] = https://www.drupal.org/files/issues/2477379-panopoly_core-token-1.patch
-projects[panopoly_core][patch][2477391] = https://www.drupal.org/files/issues/2477391-panopoly_core-features-4.patch
-projects[panopoly_core][patch][2235081] = https://www.drupal.org/files/issues/2235081-22-panopoly_core-jquery_update.patch
 
 projects[panopoly_images][subdir] = panopoly
 projects[panopoly_images][download][type] = git
