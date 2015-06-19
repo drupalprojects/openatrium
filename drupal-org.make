@@ -16,7 +16,7 @@ projects[oa_discussion][subdir] = apps
 projects[oa_discussion][version] = 2.34
 
 projects[oa_events][subdir] = apps
-projects[oa_events][version] = 2.32
+projects[oa_events][version] = 2.33
 
 projects[oa_wiki][subdir] = apps
 projects[oa_wiki][version] = 2.32
