@@ -32,7 +32,7 @@ projects[panopoly_magic][subdir] = panopoly
 
 projects[panopoly_widgets][version] = 1.23
 projects[panopoly_widgets][subdir] = panopoly
-projects[panopoly_widgets][patch][2473495] = https://www.drupal.org/files/issues/clicking_images_in_my-2473495-4.patch
+projects[panopoly_widgets][patch][2473495] = https://www.drupal.org/files/issues/clicking_images_in_my-2473495-7.patch
 projects[panopoly_widgets][patch][2477397] = https://www.drupal.org/files/issues/2477397-panopoly_widgets-file_entity-2.patch
 
 projects[panopoly_admin][version] = 1.23
