@@ -222,7 +222,10 @@ function _install_from_db_install_db_import($line, $table, &$context) {
     // save/restore some variables needed by installer or unique to new site
     $saved_vars = array('install_task', 'install_current_batch', 'cron_key', 'drupal_private_key');
     foreach ($saved_vars as $var) {
-      $saved_values[$var] = variable_get($var, '');
+      $value = variable_get($var);
+      if (isset($value)) {
+        $saved_values[$var] = $value;
+      }
     }
   }
 
