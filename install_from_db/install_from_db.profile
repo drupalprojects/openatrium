@@ -238,8 +238,8 @@ function _install_from_db_install_db_import($line, $table, &$context) {
 
   if ($table === 'variable') {
     // restore saved variables
-    foreach ($saved_vars as $var) {
-      variable_set($var, $saved_values[$var]);
+    foreach ($saved_values as $key => $value) {
+      variable_set($key, $value);
     }
   }
 }
