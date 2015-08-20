@@ -49,4 +49,4 @@ projects[drupal][patch][1891228] = https://www.drupal.org/files/issues/image_sys
 
 ; Fixes an issue where _registry_check_code() gets called early in the bootstrap process. Stills throws a warning but
 ; keeps it from throwing a fatal.
-projects[drupal][patch][412808] = https://www.drupal.org/files/_fix_registry.patch
+projects[drupal][patch][412808] = https://www.drupal.org/files/issues/drupal-registry_fix-412808-32.patch
