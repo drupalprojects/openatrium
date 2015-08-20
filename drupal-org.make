@@ -7,7 +7,7 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.57
+projects[oa_core][version] = 2.58
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
@@ -149,7 +149,6 @@ projects[panopoly_core][patch][2477363] = https://www.drupal.org/files/issues/24
 projects[panopoly_core][patch][2477369] = https://www.drupal.org/files/issues/2477369-panopoly_core-entity-1.patch
 projects[panopoly_core][patch][2477375] = https://www.drupal.org/files/issues/2477375-panopoly_core-entityreference-1.patch
 projects[panopoly_core][patch][2477379] = https://www.drupal.org/files/issues/2477379-panopoly_core-token-1.patch
-projects[panopoly_core][patch][2510944] = https://www.drupal.org/files/issues/2510944-panopoly_core-apps-1.patch
 
 projects[panopoly_images][version] = 1.26
 projects[panopoly_images][subdir] = panopoly
