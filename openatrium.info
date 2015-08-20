@@ -81,6 +81,7 @@ dependencies[] = oa_update
 dependencies[] = oa_users
 dependencies[] = oa_variables
 dependencies[] = oa_widgets
+dependencies[] = oa_wysiwyg
 
 ; Open Atrium 2.0 Theme required
 dependencies[] = radix_layouts
