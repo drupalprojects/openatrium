@@ -79,6 +79,13 @@ function openatrium_install_tasks(&$install_state) {
     }
   }
 
+  /*** TASKS BELOW RUN EVEN WITH QUICKSTART ***/
+
+  // Revert bootstrap tour defaults
+  $tasks['openatrium_revert_tours'] = array(
+    'type' => 'normal',
+  );
+
   return $tasks;
 }
 
@@ -97,7 +104,16 @@ function openatrium_features_revert_all() {
 }
 
 /**
- * Revert all features.
+ * Revert oa_tour_default feature.
+ */
+function openatrium_revert_tours() {
+  features_revert(array(
+    'oa_tour_defaults' => array('bootstrap_tour'),
+  ));
+}
+
+/**
+ * Update permissions.
  */
 function openatrium_set_permissions() {
   // update admin and member permissions
