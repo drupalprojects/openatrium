@@ -44,6 +44,9 @@ projects[oa_appearance][subdir] = apps
 projects[oa_archive][version] = 2.1
 projects[oa_archive][subdir] = apps
 
+projects[oa_brand][version] = 2.0-rc1
+projects[oa_brand][subdir] = apps
+
 projects[oa_clone][version] = 2.7
 projects[oa_clone][subdir] = apps
 

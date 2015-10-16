@@ -28,6 +28,7 @@ function openatrium_install_tasks(&$install_state) {
       'oa_admin',
       'oa_appearance',
       'oa_archive',
+      'oa_brand',
       'oa_clone',
       'oa_comment',
       'oa_contextual_tabs',
