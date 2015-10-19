@@ -33,6 +33,7 @@ function openatrium_install_tasks(&$install_state) {
       'oa_comment',
       'oa_contextual_tabs',
       'oa_events_import',
+      'oa_export',
       'oa_favorites',
       'oa_files',
       'oa_home',
@@ -300,6 +301,16 @@ function openatrium_update_7007() {
 function openatrium_update_7008() {
   $enable = array(
     'oa_contextual_tabs',
+  );
+  module_enable($enable);
+}
+
+/**
+ * Enable oa_export.
+ */
+function openatrium_update_7009() {
+  $enable = array(
+    'oa_export',
   );
   module_enable($enable);
 }
