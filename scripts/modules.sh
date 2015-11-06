@@ -136,12 +136,12 @@ do
       status=`git status --porcelain --untracked-files=no`
       tag=`git describe --tags`
       old_tag=`git describe --abbrev=0 --tags`
-      if [ "$tag" = "$old_tag" ]; then
-        echo "$module: $tag"
-      elif [ "$status" = '' ]; then
-        printf "$YELLOW$module: $tag$NORMAL\n"
-      else
+      if [ ! "$status" = "" ]; then
         printf "$RED$module: $tag (DIRTY)$NORMAL\n"
+      elif [ "$tag" = "$old_tag" ]; then
+        echo "$module: $tag"
+      else
+        printf "$YELLOW$module: $tag$NORMAL\n"
       fi
     fi
 
