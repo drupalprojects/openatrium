@@ -117,7 +117,7 @@ do
 
   if [ -e "$TARGET/.git" ]; then
     cd $TARGET
-    if [ $PULL = 1 ]; then
+    if [ $PULL = 1 -o $RELEASE = 1 ]; then
       echo "Pulling $module"
       git fetch --tags
       if [ $module = "openatrium" ]; then
@@ -140,14 +140,21 @@ do
         echo "$module $full_tag : no release is needed"
       else
         # increment and release new tag
+        new_tag="${old_tag/-beta/-beta.}"
+        new_tag="${new_tag/-alpha/-alpha.}"
+        new_tag="${new_tag/-rc/-rc.}"
         # http://stackoverflow.com/questions/8653126/how-to-increment-version-number-in-a-shell-script
-        new_tag=$(echo $old_tag | \
+        new_tag=$(echo $new_tag | \
           awk -F"." '{$NF+=1}{print $0RT}' OFS="." ORS="") #increments $old_tag
+        new_tag="${new_tag/-beta./-beta}"
+        new_tag="${new_tag/-alpha./-alpha}"
+        new_tag="${new_tag/-rc./-rc}"
+
         if [ ! "$old_tag" = "$new_tag" ]; then
           echo "$module: Tagging with $new_tag"
-          #git tag $new_tag
-          #git push origin tag $new_tag
-          notes=$(drush rn $old_tag 7.x-2.x)
+          git tag $new_tag
+          git push origin tag $new_tag
+          notes=$(drush rn $old_tag $new_tag)
           # use printf instead of echo to handle multiline
           printf "$notes\n"
           name=$(grep "name =" "$module".info | sed "s/name = //")
