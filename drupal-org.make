@@ -71,7 +71,7 @@ projects[oa_events_import][version] = 2.27
 projects[oa_favorites][version] = 2.2
 projects[oa_favorites][subdir] = apps
 
-projects[oa_files][version] = 2.13
+projects[oa_files][version] = 2.14
 projects[oa_files][subdir] = apps
 
 projects[oa_home][version] = 2.2
@@ -80,7 +80,7 @@ projects[oa_home][subdir] = apps
 projects[oa_htmlmail][version] = 2.1
 projects[oa_htmlmail][subdir] = apps
 
-projects[oa_mailhandler][version] = 2.22
+projects[oa_mailhandler][version] = 2.23
 projects[oa_mailhandler][subdir] = apps
 
 projects[oa_markdown][version] = 2.1
@@ -113,7 +113,7 @@ projects[oa_styles][subdir] = apps
 projects[oa_subspaces][version] = 2.35
 projects[oa_subspaces][subdir] = apps
 
-projects[oa_toolbar][version] = 2.6
+projects[oa_toolbar][version] = 2.7
 projects[oa_toolbar][subdir] = apps
 
 projects[oa_tour][version] = 2.4
