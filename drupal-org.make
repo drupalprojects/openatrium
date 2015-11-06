@@ -62,7 +62,7 @@ projects[oa_devel][subdir] = apps
 projects[oa_domains][version] = 2.2
 projects[oa_domains][subdir] = apps
 
-projects[oa_export][version] = 2.0-beta1
+projects[oa_export][version] = 2.0-beta2
 projects[oa_export][subdir] = apps
 
 projects[oa_events_import][subdir] = apps
@@ -80,7 +80,7 @@ projects[oa_home][subdir] = apps
 projects[oa_htmlmail][version] = 2.1
 projects[oa_htmlmail][subdir] = apps
 
-projects[oa_mailhandler][version] = 2.21
+projects[oa_mailhandler][version] = 2.22
 projects[oa_mailhandler][subdir] = apps
 
 projects[oa_markdown][version] = 2.1
@@ -95,7 +95,7 @@ projects[oa_messages_digest][subdir] = apps
 projects[oa_notifications][subdir] = apps
 projects[oa_notifications][version] = 2.26
 
-projects[oa_related][version] = 2.7
+projects[oa_related][version] = 2.8
 projects[oa_related][subdir] = apps
 
 projects[oa_sandbox][version] = 2.1
