@@ -10,6 +10,10 @@ if [ $# -eq 0 ]; then
   echo "  [module] specifies specific module, or if omitted, all modules are processed"
   exit 1
 fi
+RED="\033[0;31m"
+YELLOW="\033[0;33m"
+NORMAL="\033[0;0m"
+
 CURRENT=`pwd -P`
 LOGFILE="$CURRENT/release.txt"
 PULL=0
@@ -129,8 +133,16 @@ do
     fi
 
     if [ $DESCRIBE = 1 ]; then
+      status=`git status --porcelain --untracked-files=no`
       tag=`git describe --tags`
-      echo "$module: $tag"
+      old_tag=`git describe --abbrev=0 --tags`
+      if [ "$tag" = "$old_tag" ]; then
+        echo "$module: $tag"
+      elif [ "$status" = '' ]; then
+        printf "$YELLOW$module: $tag$NORMAL\n"
+      else
+        printf "$RED$module: $tag (DIRTY)$NORMAL\n"
+      fi
     fi
 
     if [ $RELEASE = 1 ]; then
