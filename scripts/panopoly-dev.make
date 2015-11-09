@@ -34,6 +34,7 @@ projects[panopoly_theme][download][branch] = 7.x-1.x
 projects[panopoly_magic][subdir] = panopoly
 projects[panopoly_magic][download][type] = git
 projects[panopoly_magic][download][branch] = 7.x-1.x
+projects[panopoly_magic][patch][2611876] = https://www.drupal.org/files/issues/panopoly_magic-add_descriptions_to-2611876-2.patch
 
 projects[panopoly_widgets][subdir] = panopoly
 projects[panopoly_widgets][download][type] = git
