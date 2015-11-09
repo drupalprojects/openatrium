@@ -16,7 +16,7 @@ projects[oa_discussion][subdir] = apps
 projects[oa_discussion][version] = 2.38
 
 projects[oa_events][subdir] = apps
-projects[oa_events][version] = 2.38
+projects[oa_events][version] = 2.39
 
 projects[oa_wiki][subdir] = apps
 projects[oa_wiki][version] = 2.36
@@ -133,7 +133,7 @@ projects[oa_wizard][subdir] = apps
 ; ************** Open Atrium Themes **************
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 3.21
+projects[oa_radix][version] = 3.22
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************
