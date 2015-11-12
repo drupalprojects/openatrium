@@ -62,7 +62,7 @@ projects[oa_devel][subdir] = apps
 projects[oa_domains][version] = 2.2
 projects[oa_domains][subdir] = apps
 
-projects[oa_export][version] = 2.0-beta2
+projects[oa_export][version] = 2.0-beta3
 projects[oa_export][subdir] = apps
 
 projects[oa_events_import][subdir] = apps
