@@ -35,7 +35,7 @@ projects[oa_worktracker][version] = 2.4
 projects[oa_admin][version] = 2.2
 projects[oa_admin][subdir] = apps
 
-projects[oa_analytics][version] = 2.1
+projects[oa_analytics][version] = 2.2
 projects[oa_analytics][subdir] = apps
 
 projects[oa_appearance][version] = 2.5
@@ -44,10 +44,10 @@ projects[oa_appearance][subdir] = apps
 projects[oa_archive][version] = 2.3
 projects[oa_archive][subdir] = apps
 
-projects[oa_brand][version] = 2.0-rc2
+projects[oa_brand][version] = 2.0-rc3
 projects[oa_brand][subdir] = apps
 
-projects[oa_clone][version] = 2.8
+projects[oa_clone][version] = 2.9
 projects[oa_clone][subdir] = apps
 
 projects[oa_comment][version] = 2.7
@@ -71,7 +71,7 @@ projects[oa_events_import][version] = 2.27
 projects[oa_favorites][version] = 2.2
 projects[oa_favorites][subdir] = apps
 
-projects[oa_files][version] = 2.14
+projects[oa_files][version] = 2.15
 projects[oa_files][subdir] = apps
 
 projects[oa_home][version] = 2.2
@@ -80,7 +80,7 @@ projects[oa_home][subdir] = apps
 projects[oa_htmlmail][version] = 2.1
 projects[oa_htmlmail][subdir] = apps
 
-projects[oa_mailhandler][version] = 2.23
+projects[oa_mailhandler][version] = 2.24
 projects[oa_mailhandler][subdir] = apps
 
 projects[oa_markdown][version] = 2.1
@@ -133,7 +133,7 @@ projects[oa_wizard][subdir] = apps
 ; ************** Open Atrium Themes **************
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 3.22
+projects[oa_radix][version] = 3.23
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************
