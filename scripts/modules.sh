@@ -170,7 +170,8 @@ do
     fi
 
     if [ "${BRANCH}" != "" ]; then
-      git checkout -B $BRANCH
+      git branch $BRANCH > /dev/null
+      git checkout $BRANCH
     fi
 
     if [ $RELEASE = 1 ]; then
