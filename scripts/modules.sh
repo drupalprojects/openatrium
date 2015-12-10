@@ -98,6 +98,7 @@ submodules=(
   "oa_wizard"
   "oa_radix"
   "bootstrap_tour"
+  "colorizer"
   "command_buttons"
   "contextual_tabs"
   "oa_angular"
