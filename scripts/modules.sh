@@ -11,6 +11,7 @@ if [ $# -eq 0 ]; then
   echo "  -r tag a new release of the module"
   echo "  -f force module into local directory"
   echo "  -b switches to the specified branch (and creates if needed)"
+  echo "     use 'dev' as branch-name to switch to current dev branch"
   echo "  [module] specifies specific module, or if omitted, all modules are processed"
   return 1
 fi
@@ -90,6 +91,8 @@ submodules=(
   "oa_sandbox"
   "oa_search"
   "oa_sitemap"
+  "oa_site_layout"
+  "oa_site_layout_defaults"
   "oa_styles"
   "oa_subspaces"
   "oa_toolbar"
@@ -159,8 +162,8 @@ do
       local old_tag=""
 
       stat=$(git status --porcelain --untracked-files=no)
-      tag=$(git describe --tags)
-      old_tag=$(git describe --abbrev=0 --tags)
+      tag=$(git describe --tag)
+      old_tag=$(git describe --abbrev=0 --tag)
       if [ ! "$stat" = "" ]; then
         printf "$RED$module: $tag (DIRTY)$NORMAL\n"
       elif [ "$tag" = "$old_tag" ]; then
@@ -171,8 +174,14 @@ do
     fi
 
     if [ "${BRANCH}" != "" ]; then
-      git branch $BRANCH > /dev/null
-      git checkout $BRANCH
+      if [ "${BRANCH}" = "dev" ]; then
+        local old_tag=$(git describe --abbrev=0 --tag)
+        local dev_tag=${old_tag:0:6}
+        git checkout "${dev_tag}-x"
+      else
+        git branch ${BRANCH} 2>/dev/null
+        git checkout ${BRANCH}
+      fi
     fi
 
     if [ $RELEASE = 1 ]; then
@@ -181,7 +190,7 @@ do
       local new_tag=""
 
       full_tag=$(git describe --tag)
-      old_tag=$(git describe --abbrev=0 --tags)
+      old_tag=$(git describe --abbrev=0 --tag)
       if [ "$full_tag" = "$old_tag" ]; then
         echo "$module $full_tag : no release is needed"
       else
