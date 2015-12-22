@@ -177,7 +177,7 @@ do
       if [ "${BRANCH}" = "dev" ]; then
         local old_tag=$(git describe --abbrev=0 --tag)
         local dev_tag=${old_tag:0:6}
-        git checkout "${dev_tag}-x"
+        git checkout "${dev_tag}x"
       else
         git branch ${BRANCH} 2>/dev/null
         git checkout ${BRANCH}
