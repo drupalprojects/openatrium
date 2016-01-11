@@ -160,16 +160,18 @@ do
       local stat=""
       local tag=""
       local old_tag=""
+      local branch=""
 
       stat=$(git status --porcelain --untracked-files=no)
       tag=$(git describe --tag)
       old_tag=$(git describe --abbrev=0 --tag)
+      branch=$(git rev-parse --abbrev-ref HEAD)
       if [ ! "$stat" = "" ]; then
         printf "$RED$module: $tag (DIRTY)$NORMAL\n"
       elif [ "$tag" = "$old_tag" ]; then
         echo "$module: $tag"
       elif [ "$stat" = '' ]; then
-        printf "$YELLOW$module: $tag$NORMAL\n"
+        printf "$YELLOW$module: $tag ($branch)$NORMAL\n"
       fi
     fi
 
