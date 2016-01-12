@@ -174,7 +174,7 @@ projects[oa_search][subdir] = apps
 projects[oa_search][download][type] = git
 projects[oa_search][download][branch] = 7.x-2.x
 
-projects[oa_site_layout][version] = 2.x-dev
+; projects[oa_site_layout][version] = 2.x-dev
 projects[oa_site_layout][subdir] = apps
 projects[oa_site_layout][download][type] = git
 projects[oa_site_layout][download][branch] = 7.x-2.x
@@ -227,12 +227,12 @@ projects[oa_radix][download][type] = git
 projects[oa_radix][download][branch] = 7.x-3.x
 
 projects[oa_basetheme][type] = theme
-projects[oa_basetheme][version] = 2.x-dev
+; projects[oa_basetheme][version] = 2.x-dev
 projects[oa_basetheme][download][type] = git
 projects[oa_basetheme][download][branch] = 7.x-2.x
 
 projects[oa_theme][type] = theme
-projects[oa_theme][version] = 2.x-dev
+; projects[oa_theme][version] = 2.x-dev
 projects[oa_theme][download][type] = git
 projects[oa_theme][download][branch] = 7.x-2.x
 
