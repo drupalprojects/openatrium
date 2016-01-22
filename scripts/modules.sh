@@ -100,6 +100,8 @@ submodules=(
   "oa_tour_defaults"
   "oa_wizard"
   "oa_radix"
+  "oa_basetheme"
+  "oa_theme"
   "bootstrap_tour"
   "colorizer"
   "command_buttons"
