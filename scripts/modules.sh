@@ -88,6 +88,7 @@ submodules=(
   "oa_messages_digest"
   "oa_notifications"
   "oa_related"
+  "oa_responsive_regions"
   "oa_sandbox"
   "oa_search"
   "oa_sitemap"
