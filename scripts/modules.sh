@@ -88,7 +88,6 @@ submodules=(
   "oa_messages_digest"
   "oa_notifications"
   "oa_related"
-  "oa_responsive_regions"
   "oa_sandbox"
   "oa_search"
   "oa_sitemap"
@@ -108,6 +107,7 @@ submodules=(
   "command_buttons"
   "contextual_tabs"
   "oa_angular"
+  "oa_responsive_regions"
   "openatrium"
 )
 local module=""
