@@ -220,5 +220,8 @@ projects[contextual_tabs][subdir] = contrib
 projects[oa_angular][version] = 2.0
 projects[oa_angular][subdir] = contrib
 
+projects[oa_responsive_regions][version] = 1.0
+projects[oa_responsive_regions][subdir] = contrib
+
 ; *********** End Open Atrium Contrib ************
 ; ************************************************
