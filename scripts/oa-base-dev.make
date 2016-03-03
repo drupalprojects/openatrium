@@ -158,9 +158,13 @@ projects[oa_notifications][subdir] = apps
 projects[oa_notifications][download][type] = git
 projects[oa_notifications][download][branch] = 7.x-2.x
 
+projects[oa_project][version] = 2.x-dev
+projects[oa_project][subdir] = apps
+projects[oa_project][download][type] = git
+projects[oa_project][download][branch] = 7.x-2.x
+
 projects[oa_related][version] = 2.x-dev
 projects[oa_related][subdir] = apps
-projects[oa_related][type] = module
 projects[oa_related][download][type] = git
 projects[oa_related][download][branch] = 7.x-2.x
 
