@@ -142,7 +142,7 @@ projects[oa_basetheme][type] = theme
 projects[oa_basetheme][version] = 2.0
 
 projects[oa_theme][type] = theme
-projects[oa_theme][version] = 3.25
+projects[oa_theme][version] = 2.0
 
 projects[oa_radix][type] = theme
 projects[oa_radix][version] = 3.25
