@@ -253,6 +253,11 @@ projects[bootstrap_tour][subdir] = contrib
 projects[bootstrap_tour][download][type] = git
 projects[bootstrap_tour][download][branch] = 7.x-2.x
 
+projects[colorizer][version] = 1.x-dev
+projects[colorizer][subdir] = contrib
+projects[colorizer][download][type] = git
+projects[colorizer][download][branch] = 7.x-1.x
+
 projects[command_buttons][version] = 1.x-dev
 projects[command_buttons][subdir] = contrib
 projects[command_buttons][download][type] = git
