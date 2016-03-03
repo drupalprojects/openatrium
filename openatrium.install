@@ -41,7 +41,9 @@ function openatrium_install_tasks(&$install_state) {
       'oa_media',
       'oa_messages_digest',
       'oa_notifications',
-      'oa_project',
+// Currently having problems with oa_project enabling during install
+// So leave this off for now
+//      'oa_project',
       'oa_related',
       'oa_sandbox',
       'oa_search',
