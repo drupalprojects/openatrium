@@ -7,7 +7,7 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.71
+projects[oa_core][version] = 2.72
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
@@ -19,10 +19,10 @@ projects[oa_events][subdir] = apps
 projects[oa_events][version] = 2.40
 
 projects[oa_wiki][subdir] = apps
-projects[oa_wiki][version] = 2.37
+projects[oa_wiki][version] = 2.38
 
 projects[oa_worktracker][subdir] = apps
-projects[oa_worktracker][version] = 2.6
+projects[oa_worktracker][version] = 2.7
 
 ; ******** End Open Atrium Builtin Apps **********
 ; ************************************************
@@ -44,7 +44,7 @@ projects[oa_appearance][subdir] = apps
 projects[oa_archive][version] = 2.3
 projects[oa_archive][subdir] = apps
 
-projects[oa_brand][version] = 2.2
+projects[oa_brand][version] = 2.3
 projects[oa_brand][subdir] = apps
 
 projects[oa_clone][version] = 2.9
@@ -53,7 +53,7 @@ projects[oa_clone][subdir] = apps
 projects[oa_comment][version] = 2.9
 projects[oa_comment][subdir] = apps
 
-projects[oa_contextual_tabs][version] = 2.31
+projects[oa_contextual_tabs][version] = 2.32
 projects[oa_contextual_tabs][subdir] = apps
 
 projects[oa_devel][version] = 2.0
@@ -83,7 +83,7 @@ projects[oa_htmlmail][subdir] = apps
 projects[oa_mailhandler][version] = 2.25
 projects[oa_mailhandler][subdir] = apps
 
-projects[oa_markdown][version] = 2.1
+projects[oa_markdown][version] = 2.2
 projects[oa_markdown][subdir] = apps
 
 projects[oa_media][subdir] = apps
@@ -93,7 +93,7 @@ projects[oa_messages_digest][version] = 2.1
 projects[oa_messages_digest][subdir] = apps
 
 projects[oa_notifications][subdir] = apps
-projects[oa_notifications][version] = 2.28
+projects[oa_notifications][version] = 2.29
 
 projects[oa_project][version] = 2.1
 projects[oa_project][subdir] = apps
@@ -107,7 +107,7 @@ projects[oa_sandbox][subdir] = apps
 projects[oa_search][version] = 2.7
 projects[oa_search][subdir] = apps
 
-projects[oa_site_layout][version] = 2.1
+projects[oa_site_layout][version] = 2.2
 projects[oa_site_layout][subdir] = apps
 
 projects[oa_sitemap][version] = 2.10
@@ -119,7 +119,7 @@ projects[oa_styles][subdir] = apps
 projects[oa_subspaces][version] = 2.36
 projects[oa_subspaces][subdir] = apps
 
-projects[oa_toolbar][version] = 2.10
+projects[oa_toolbar][version] = 2.11
 projects[oa_toolbar][subdir] = apps
 
 projects[oa_tour][version] = 2.5
@@ -139,10 +139,10 @@ projects[oa_wizard][subdir] = apps
 ; ************** Open Atrium Themes **************
 
 projects[oa_basetheme][type] = theme
-projects[oa_basetheme][version] = 2.1
+projects[oa_basetheme][version] = 2.2
 
 projects[oa_theme][type] = theme
-projects[oa_theme][version] = 2.1
+projects[oa_theme][version] = 2.2
 
 projects[oa_radix][type] = theme
 projects[oa_radix][version] = 3.25
