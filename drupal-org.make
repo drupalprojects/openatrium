@@ -56,7 +56,7 @@ projects[oa_comment][subdir] = apps
 projects[oa_contextual_tabs][version] = 2.32
 projects[oa_contextual_tabs][subdir] = apps
 
-projects[oa_devel][version] = 2.0
+projects[oa_devel][version] = 2.1
 projects[oa_devel][subdir] = apps
 
 projects[oa_domains][version] = 2.2
