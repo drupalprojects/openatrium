@@ -35,7 +35,7 @@ projects[oa_worktracker][version] = 2.8
 projects[oa_admin][version] = 2.2
 projects[oa_admin][subdir] = apps
 
-projects[oa_analytics][version] = 2.2
+projects[oa_analytics][version] = 2.3
 projects[oa_analytics][subdir] = apps
 
 projects[oa_appearance][version] = 2.7
