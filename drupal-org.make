@@ -161,7 +161,6 @@ projects[oa_radix][version] = 3.25
 
 projects[panopoly_core][version] = 1.40
 projects[panopoly_core][subdir] = panopoly
-projects[panopoly_core][patch][2786243] = https://www.drupal.org/files/issues/2786243-panopoly_core-panelizer-6.patch
 projects[panopoly_core][patch][2477347] = https://www.drupal.org/files/issues/2477347-panopoly_core-views-4.patch
 projects[panopoly_core][patch][2477363] = https://www.drupal.org/files/issues/2477363-panopoly_core-ctools-17.patch
 projects[panopoly_core][patch][2477369] = https://www.drupal.org/files/issues/2477369-panopoly_core-entity-5.patch
