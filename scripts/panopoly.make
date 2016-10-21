@@ -50,6 +50,7 @@ projects[panopoly_wysiwyg][subdir] = panopoly
 
 projects[panopoly_search][version] = 1.40
 projects[panopoly_search][subdir] = panopoly
+projects[panopoly_search][patch][2469005] = https://www.drupal.org/files/issues/2469005-panopoly_search-search_api-1.patch
 
 ; ***************** End Panopoly *****************
 ; ************************************************
