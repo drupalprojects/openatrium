@@ -199,7 +199,7 @@ projects[panopoly_wysiwyg][subdir] = panopoly
 
 projects[panopoly_search][version] = 1.40
 projects[panopoly_search][subdir] = panopoly
-projects[panopoly_search][patch][2469005] = https://www.drupal.org/files/issues/2469005-panopoly_search-search_api-1.patch
+projects[panopoly_search][patch][2790595] = https://www.drupal.org/files/issues/solrphpclient_cannot_be-2790595-10.patch
 
 ; ***************** End Panopoly *****************
 ; ************************************************
