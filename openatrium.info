@@ -6,8 +6,6 @@ exclusive = TRUE
 
 base[] = panopoly
 
-files[] = openatrium.profile
-
 ; Drupal Core
 dependencies[] = menu
 dependencies[] = image
