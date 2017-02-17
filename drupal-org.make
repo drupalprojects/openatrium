@@ -16,7 +16,7 @@ projects[oa_discussion][subdir] = apps
 projects[oa_discussion][version] = 2.41
 
 projects[oa_events][subdir] = apps
-projects[oa_events][version] = 2.44
+projects[oa_events][version] = 2.45
 
 projects[oa_wiki][subdir] = apps
 projects[oa_wiki][version] = 2.40
@@ -41,16 +41,16 @@ projects[oa_analytics][subdir] = apps
 projects[oa_appearance][version] = 2.7
 projects[oa_appearance][subdir] = apps
 
-projects[oa_archive][version] = 2.5
+projects[oa_archive][version] = 2.6
 projects[oa_archive][subdir] = apps
 
 projects[oa_brand][version] = 2.5
 projects[oa_brand][subdir] = apps
 
-projects[oa_clone][version] = 2.11
+projects[oa_clone][version] = 2.12
 projects[oa_clone][subdir] = apps
 
-projects[oa_comment][version] = 2.11
+projects[oa_comment][version] = 2.13
 projects[oa_comment][subdir] = apps
 
 projects[oa_contextual_tabs][version] = 2.33
@@ -87,13 +87,13 @@ projects[oa_markdown][version] = 2.2
 projects[oa_markdown][subdir] = apps
 
 projects[oa_media][subdir] = apps
-projects[oa_media][version] = 2.33
+projects[oa_media][version] = 2.34
 
 projects[oa_messages_digest][version] = 2.1
 projects[oa_messages_digest][subdir] = apps
 
 projects[oa_notifications][subdir] = apps
-projects[oa_notifications][version] = 2.32
+projects[oa_notifications][version] = 2.34
 
 projects[oa_project][version] = 2.2
 projects[oa_project][subdir] = apps
