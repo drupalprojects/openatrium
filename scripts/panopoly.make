@@ -33,6 +33,7 @@ projects[panopoly_magic][patch][2611876] = https://www.drupal.org/files/issues/p
 
 projects[panopoly_widgets][version] = 1.43
 projects[panopoly_widgets][subdir] = panopoly
+projects[panopoly_widgets][patch][2869079] = https://www.drupal.org/files/issues/panopoly_widgets-media-20-2869079-2.patch
 projects[panopoly_widgets][patch][2473495] = https://www.drupal.org/files/issues/2473495-panopoly_widgets-media-16.patch
 projects[panopoly_widgets][patch][2477397] = https://www.drupal.org/files/issues/2477397-panopoly_widgets-file_entity-2.patch
 
