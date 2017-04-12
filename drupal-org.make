@@ -7,7 +7,7 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.83
+projects[oa_core][version] = 2.84
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
@@ -50,7 +50,7 @@ projects[oa_brand][subdir] = apps
 projects[oa_clone][version] = 2.12
 projects[oa_clone][subdir] = apps
 
-projects[oa_comment][version] = 2.13
+projects[oa_comment][version] = 2.14
 projects[oa_comment][subdir] = apps
 
 projects[oa_contextual_tabs][version] = 2.33
