@@ -47,10 +47,10 @@ projects[oa_archive][subdir] = apps
 projects[oa_brand][version] = 2.5
 projects[oa_brand][subdir] = apps
 
-projects[oa_clone][version] = 2.12
+projects[oa_clone][version] = 2.13
 projects[oa_clone][subdir] = apps
 
-projects[oa_comment][version] = 2.15
+projects[oa_comment][version] = 2.16
 projects[oa_comment][subdir] = apps
 
 projects[oa_contextual_tabs][version] = 2.33
@@ -71,7 +71,7 @@ projects[oa_events_import][version] = 2.27
 projects[oa_favorites][version] = 2.5
 projects[oa_favorites][subdir] = apps
 
-projects[oa_files][version] = 2.18
+projects[oa_files][version] = 2.19
 projects[oa_files][subdir] = apps
 
 projects[oa_home][version] = 2.5
@@ -218,7 +218,7 @@ projects[contextual_tabs][subdir] = contrib
 projects[oa_angular][version] = 2.0
 projects[oa_angular][subdir] = contrib
 
-projects[oa_responsive_regions][version] = 1.1
+projects[oa_responsive_regions][version] = 1.2
 projects[oa_responsive_regions][subdir] = contrib
 
 ; *********** End Open Atrium Contrib ************
