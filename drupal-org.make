@@ -80,7 +80,7 @@ projects[oa_home][subdir] = apps
 projects[oa_htmlmail][version] = 2.1
 projects[oa_htmlmail][subdir] = apps
 
-projects[oa_mailhandler][version] = 2.26
+projects[oa_mailhandler][version] = 2.27
 projects[oa_mailhandler][subdir] = apps
 
 projects[oa_markdown][version] = 2.2
