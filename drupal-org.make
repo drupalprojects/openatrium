@@ -199,6 +199,7 @@ projects[panopoly_wysiwyg][subdir] = panopoly
 
 projects[panopoly_search][version] = 1.48
 projects[panopoly_search][subdir] = panopoly
+projects[panopoly_search][patch][2930863] = https://www.drupal.org/files/issues/2930863-panopoly_search-2.patch
 
 ; ***************** End Panopoly *****************
 ; ************************************************

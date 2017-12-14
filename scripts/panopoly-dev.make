@@ -60,6 +60,7 @@ projects[panopoly_wysiwyg][download][branch] = 7.x-1.x
 projects[panopoly_search][subdir] = panopoly
 projects[panopoly_search][download][type] = git
 projects[panopoly_search][download][branch] = 7.x-1.x
+projects[panopoly_search][patch][2930863] = https://www.drupal.org/files/issues/2930863-panopoly_search-2.patch
 
 ; ***************** End Panopoly *****************
 ; ************************************************
