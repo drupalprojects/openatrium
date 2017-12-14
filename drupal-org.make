@@ -7,7 +7,7 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.87
+projects[oa_core][version] = 2.88
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
@@ -50,13 +50,13 @@ projects[oa_brand][subdir] = apps
 projects[oa_clone][version] = 2.13
 projects[oa_clone][subdir] = apps
 
-projects[oa_comment][version] = 2.16
+projects[oa_comment][version] = 2.17
 projects[oa_comment][subdir] = apps
 
 projects[oa_contextual_tabs][version] = 2.33
 projects[oa_contextual_tabs][subdir] = apps
 
-projects[oa_devel][version] = 2.3
+projects[oa_devel][version] = 2.4
 projects[oa_devel][subdir] = apps
 
 projects[oa_domains][version] = 2.3
@@ -66,7 +66,7 @@ projects[oa_export][version] = 2.3
 projects[oa_export][subdir] = apps
 
 projects[oa_events_import][subdir] = apps
-projects[oa_events_import][version] = 2.27
+projects[oa_events_import][version] = 2.28
 
 projects[oa_favorites][version] = 2.5
 projects[oa_favorites][subdir] = apps
@@ -119,7 +119,7 @@ projects[oa_styles][subdir] = apps
 projects[oa_subspaces][version] = 2.37
 projects[oa_subspaces][subdir] = apps
 
-projects[oa_toolbar][version] = 2.15
+projects[oa_toolbar][version] = 2.17
 projects[oa_toolbar][subdir] = apps
 
 projects[oa_tour][version] = 2.5
@@ -139,13 +139,13 @@ projects[oa_wizard][subdir] = apps
 ; ************** Open Atrium Themes **************
 
 projects[oa_basetheme][type] = theme
-projects[oa_basetheme][version] = 2.4
+projects[oa_basetheme][version] = 2.5
 
 projects[oa_theme][type] = theme
 projects[oa_theme][version] = 2.4
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 3.25
+projects[oa_radix][version] = 3.26
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************
