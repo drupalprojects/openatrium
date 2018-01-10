@@ -7,7 +7,7 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.88
+projects[oa_core][version] = 2.89
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
@@ -93,12 +93,12 @@ projects[oa_messages_digest][version] = 2.1
 projects[oa_messages_digest][subdir] = apps
 
 projects[oa_notifications][subdir] = apps
-projects[oa_notifications][version] = 2.34
+projects[oa_notifications][version] = 2.35
 
 projects[oa_project][version] = 2.2
 projects[oa_project][subdir] = apps
 
-projects[oa_related][version] = 2.13
+projects[oa_related][version] = 2.14
 projects[oa_related][subdir] = apps
 
 projects[oa_sandbox][version] = 2.2
@@ -210,7 +210,7 @@ projects[panopoly_search][patch][2930863] = https://www.drupal.org/files/issues/
 projects[bootstrap_tour][version] = 2.5
 projects[bootstrap_tour][subdir] = contrib
 
-projects[command_buttons][version] = 1.13
+projects[command_buttons][version] = 1.14
 projects[command_buttons][subdir] = contrib
 
 projects[contextual_tabs][version] = 1.0
