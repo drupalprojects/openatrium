@@ -16,7 +16,7 @@ projects[oa_discussion][subdir] = apps
 projects[oa_discussion][version] = 2.41
 
 projects[oa_events][subdir] = apps
-projects[oa_events][version] = 2.46
+projects[oa_events][version] = 2.47
 
 projects[oa_wiki][subdir] = apps
 projects[oa_wiki][version] = 2.40
@@ -107,7 +107,7 @@ projects[oa_sandbox][subdir] = apps
 projects[oa_search][version] = 2.10
 projects[oa_search][subdir] = apps
 
-projects[oa_site_layout][version] = 2.2
+projects[oa_site_layout][version] = 2.3
 projects[oa_site_layout][subdir] = apps
 
 projects[oa_sitemap][version] = 2.12
