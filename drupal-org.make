@@ -161,8 +161,8 @@ projects[oa_radix][version] = 3.26
 
 projects[panopoly_core][version] = 1.51
 projects[panopoly_core][subdir] = panopoly
-projects[panopoly_core][patch][2477347] = https://www.drupal.org/files/issues/2018-03-27/2477347-panopoly_core-views-8.patch
-projects[panopoly_core][patch][2477363] = https://www.drupal.org/files/issues/2018-03-27/2477363-panopoly_core-ctools-24.patch
+projects[panopoly_core][patch][2477347] = https://www.drupal.org/files/issues/2477347-panopoly_core-views-7.patch
+projects[panopoly_core][patch][2477363] = https://www.drupal.org/files/issues/2477363-panopoly_core-ctools-23.patch
 projects[panopoly_core][patch][2477369] = https://www.drupal.org/files/issues/2477369-panopoly_core-entity-7.patch
 projects[panopoly_core][patch][2477375] = https://www.drupal.org/files/issues/2477375-panopoly_core-entityreference-9.patch
 projects[panopoly_core][patch][2477379] = https://www.drupal.org/files/issues/2477379-panopoly_core-token-1.patch
