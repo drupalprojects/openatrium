@@ -18,12 +18,11 @@ projects[panopoly_core][patch][2477363] = https://www.drupal.org/files/issues/20
 projects[panopoly_core][patch][2477369] = https://www.drupal.org/files/issues/2477369-panopoly_core-entity-7.patch
 projects[panopoly_core][patch][2477375] = https://www.drupal.org/files/issues/2477375-panopoly_core-entityreference-9.patch
 projects[panopoly_core][patch][2477379] = https://www.drupal.org/files/issues/2477379-panopoly_core-token-1.patch
-projects[panopoly_core][patch][2592821] = https://www.drupal.org/files/issues/2592821-panopoly_core-apps-3.patch
+projects[panopoly_core][patch][2592821] = https://www.drupal.org/files/issues/2018-05-08/2592821-panopoly_core-apps-4.patch
 
 projects[panopoly_images][subdir] = panopoly
 projects[panopoly_images][download][type] = git
 projects[panopoly_images][download][branch] = 7.x-1.x
-projects[panopoly_images][patch][2521968] = https://www.drupal.org/files/issues/panopoly_images-manualcrop_is_showing_for_videos-2521968-1.patch
 
 projects[panopoly_theme][subdir] = panopoly
 projects[panopoly_theme][download][type] = git
