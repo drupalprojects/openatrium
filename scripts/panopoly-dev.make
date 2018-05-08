@@ -38,7 +38,7 @@ projects[panopoly_magic][patch][2611876] = https://www.drupal.org/files/issues/p
 projects[panopoly_widgets][subdir] = panopoly
 projects[panopoly_widgets][download][type] = git
 projects[panopoly_widgets][download][branch] = 7.x-1.x
-projects[panopoly_widgets][patch][2477397] = https://www.drupal.org/files/issues/2477397-panopoly_widgets-file_entity-7.patch
+projects[panopoly_widgets][patch][2477397] = https://www.drupal.org/files/issues/2018-05-08/2477397-panopoly_widgets-file_entity-7.patch
 
 projects[panopoly_admin][subdir] = panopoly
 projects[panopoly_admin][download][type] = git
