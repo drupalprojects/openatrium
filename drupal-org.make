@@ -170,7 +170,6 @@ projects[panopoly_core][patch][2592821] = https://www.drupal.org/files/issues/20
 
 projects[panopoly_images][version] = 1.54
 projects[panopoly_images][subdir] = panopoly
-projects[panopoly_images][patch][2521968] = https://www.drupal.org/files/issues/panopoly_images-manualcrop_is_showing_for_videos-2521968-1.patch
 
 projects[panopoly_theme][version] = 1.54
 projects[panopoly_theme][subdir] = panopoly
